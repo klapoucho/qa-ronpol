@@ -452,8 +452,9 @@ work tracked like a real backlog:
 - `gh` installed, version 2.99 or later (the Playwright CLI skill uses `--attach`).
 - Logged in as **`klapoucho`** with access to `klapoucho/qa-ronpol`. Another GitHub account is
   also logged in on the author's machine, so `gh api user --jq .login` must print `klapoucho`
-  before any `gh` write; switch with
-  `gh auth switch -u klapoucho`. The coordinator checks this itself before assigning.
+  before **every** `gh` command, reads included (as `CLAUDE.md` requires). On a mismatch, stop
+  and ask the author; the fix is `gh auth switch -u klapoucho`. The `qa-pick` coordinator runs
+  this check before its first `gh` call, not only before assigning.
 - CI does not need `gh`; GitHub Actions uses its own token.
 
 ### Required adaptations before the first run
@@ -465,6 +466,8 @@ work tracked like a real backlog:
   `npm run typecheck`, `npx eslint <files>`, `npx playwright test --list <files>`, main branch
   `main`, issue repository `klapoucho/qa-ronpol`, GitHub account `klapoucho`, app repository
   `jaktestowac/rolnopol`.
+- Move the `qa-pick` coordinator's account check (`gh api user --jq .login`) before its first
+  `gh` read of the issue. The skill currently checks only before assigning.
 - Add the self-assignment exception to the rules in `CLAUDE.md`: `/qa-pick` may add the
   `klapoucho` account as assignee of the issue it tests without asking. Every other GitHub write
   still needs approval.
