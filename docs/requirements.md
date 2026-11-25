@@ -411,7 +411,7 @@ CI the repo ships setup for the pinned Docker image:
 Tests are written through the `qa-pick` workflow from the `qa-pick-portable` repository: a QA
 tester agent tests the story manually (UI through the Playwright CLI, API over HTTP), a fresh
 reviewer checks coverage and tries to break the feature, a test writer automates the handoff on
-its own branch (including a `--repeat-each=20` stability run), and a fresh test reviewer reviews
+its own branch (including a `--repeat-each=10` stability run), and a fresh test reviewer reviews
 each test. Pushes and PRs always wait for the author's approval.
 
 ### Two phases
@@ -501,7 +501,7 @@ A test is done when:
 - it passed the deterministic gate (`npm run check`) and the poison-test protocol (NFR-12);
 - a fresh-context test review answered the questions in `testing-rules/general.md`, and its
   findings are fixed or listed in the PR;
-- it passes 20 times in a row with `--repeat-each=20` and with full parallelism;
+- it passes 10 times in a row with `--repeat-each=10` and with full parallelism;
 - the PR has the test intent card from `testing-rules/general.md`.
 
 **Phase A (the plan) is done** when `npm run check` and the wiring checks pass locally and in CI

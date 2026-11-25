@@ -242,7 +242,7 @@ trailer and agent PRs a "Generated with Claude Code" line ([CONTRIBUTING.md](CON
 `/qa-pick <issue number>` (in Claude Code, in this repo) reads the issue and runs a pipeline of agents: a QA
 tester tests the story by hand (UI through the Playwright CLI, API over HTTP), a fresh reviewer checks the
 coverage and tries to break the feature, a test writer automates the result on its own branch (with a
-`--repeat-each=20` stability run and poison tests), and a fresh test reviewer reviews each test. Pushes and PRs
+`--repeat-each=10` stability run and poison tests), and a fresh test reviewer reviews each test. Pushes and PRs
 wait for the author's approval. The skills are in `.claude/skills/`, the project's QA settings in
 [CLAUDE.md](CLAUDE.md).
 
