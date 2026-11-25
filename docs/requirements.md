@@ -467,10 +467,10 @@ work tracked like a real backlog:
 - **`.qa/` is committed, not ignored** (D-09). The skills assume it is ignored and pass absolute
   paths for that reason; that still works. Decide in the plan which branch carries each run's
   folder (with its test branch, or its own `docs/` branch).
-- **Skill name clash.** The author's user-level skills already include `qa-pick` and `qa-review`
-  (a different version). Check which one Claude Code loads in this repo. If the
-  user-level one wins, rename the project copies (for example `rolnopol-qa-pick`) and update
-  the cross-references.
+- **Skill names.** Claude Code runs a user-level skill over a project skill with the same name.
+  The author had user-level skills named `qa-pick` and `qa-review` (another version); they were
+  renamed on 2026-11-25, so the project copies keep their names. Before the first run, confirm
+  that `/qa-pick` in this repo loads the project copy.
 - Install the Playwright CLI the skills use (`@playwright/cli`) at a version checked at
   install time.
 - `.claude/worktrees/` and `.playwright-cli/` are ignored. So is `.qa/runs/*/scratch/`
