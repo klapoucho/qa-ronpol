@@ -38,7 +38,7 @@ Compose, GitHub Actions. Exact versions are pinned in `package-lock.json`.
 | D-13 | Docker locally and in CI; agents may start the app, only the author resets it                                  | Same app version everywhere; a reset during a run destroys its data.                                           |
 | D-14 | Import alias `#src/*` through `package.json` `imports`, written with the `.ts` extension                       | `tsc`, Playwright and plain Node all resolve it; no second mechanism needed.                                   |
 
-All fifteen decisions, with the alternatives considered, are in
+All seventeen decisions, with the alternatives considered, are in
 [requirements section 12](docs/requirements.md#12-decisions).
 
 ## Project structure
@@ -48,7 +48,7 @@ Type of test first, then feature (D-04). Each folder under `tests/` is one Playw
 ```text
 .
 ├── .claude/skills/        # qa-pick workflow skills and testing rules (committed for reviewers)
-├── .github/workflows/     # CI: checks and tests on every pull request and on main
+├── .github/workflows/     # CI: checks, then the tests a pull request needs; the full suite on main
 ├── .husky/                # git hooks: lint-staged on commit, commitlint on the message
 ├── .qa/                   # qa-pick runs, bug files, lessons (committed, except runs/*/scratch/)
 ├── docs/                  # requirements, implementation plan, test case issue texts
@@ -161,6 +161,22 @@ A new environment, such as `staging`, is one more profile plus its `BASE_URL`; t
 - `test-results/`: per failed test, a screenshot and a video; a trace on the first retry (so in CI).
 - In CI: the HTML report and `reports/` (JUnit XML and the app's container log) are uploaded as workflow
   artifacts and kept for 7 days.
+
+### CI
+
+GitHub Actions (`.github/workflows/tests.yml`) runs `npm run check`, starts the app in Docker and runs the tests
+with the `ci` profile. How many tests depends on the trigger:
+
+| Trigger                     | Tests                                                                             |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| pull request                | the `@smoke` files plus the test files the change touches (`scripts/pr-tests.sh`) |
+| push to `main`              | the full suite                                                                    |
+| nightly (03:00 UTC), manual | the full suite                                                                    |
+
+"Touches" follows imports: a change in `src/` runs every test file that uses the changed code, and a
+documentation-only change runs only the smoke tests. A change Playwright cannot follow (`playwright.config.ts`,
+global setup, `src/config/`, dependencies, `compose.yaml`, the workflow) runs the full suite. To see what a branch
+would run: `DRY_RUN=1 scripts/pr-tests.sh origin/main`.
 
 ## The app under test
 

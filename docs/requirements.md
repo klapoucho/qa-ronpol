@@ -399,6 +399,8 @@ CI the repo ships setup for the pinned Docker image:
   installed on the author's machine before the framework core (section 10, step 3), so
   `compose.yaml` and the `app:*` scripts are verified locally, not only in CI.
 - CI starts the same container with `npm run app:up` before the tests.
+- On pull requests CI runs the `@smoke` files plus the test files the change touches; `main`, a
+  nightly run and manual runs run the full suite (D-17, `scripts/pr-tests.sh`).
 - The README also mentions the fallback for people without Docker: a local clone of Rolnopol
   started with `npm start`, with the note that the tests target 1.126.0 and that a running clone
   writes to its tracked `data/*.json` files.
@@ -532,6 +534,7 @@ test criteria above, merged with CI green on `main`.
 | D-14 | Import alias: `package.json` `imports` (`#src/*`), imports written with the `.ts` extension | `tsconfig` `paths` (`@src/*`) | Spike: `tsc --noEmit`, Playwright and plain Node all resolved `#src/spike.ts`; no second mechanism needed |
 | D-15 | A run's folder (without `scratch/`) and its bug files are committed on the run's test branch, in one `docs(qa): add qa-pick run <run-id>` commit; a run with no test branch (automation skipped, BLOCKED) uses `docs/qa-run-<slug>`; lessons go with the retro's skill-edit branch | A separate `docs/` branch per run; leaving `.qa/` uncommitted until later | The evidence reaches `main` in the same PR as the tests it explains |
 | D-16 | Test traffic sends `X-Synthetic-Token`; compose starts the app with the matching `SYNTHETIC_TOKEN` (a local, non-secret default) | `NODE_ENV=test` in compose; fewer workers | The app's own exemption for automated checks lifts only the API rate limit. `NODE_ENV=test` also skips the feature-flag overrides and changes DB writes, so the tests would run against a different app |
+| D-17 | Pull requests run the `@smoke` files plus the test files the change touches (`--only-changed`, which follows imports); a change Playwright cannot follow (config, global setup, dependencies, `compose.yaml`, CI) runs the full suite; `main`, a nightly run and manual runs always run the full suite | The full suite on every pull request; smoke only on pull requests | Pull-request runs stay short as the suite grows, without merging untested changes to the code a test uses. Anything a pull request skips is covered on `main` the same day. Sharding comes next if the full suite outgrows NFR-16 |
 
 ## 13. Left to the builder and future work
 
@@ -544,7 +547,8 @@ Left to the plan or the builder:
 Possible extensions, not in the first delivery:
 
 - More features (farm resources, finance), following NFR-17.
-- Firefox and WebKit projects; sharding with merged blob reports.
+- Firefox and WebKit projects; sharding with merged blob reports, once the full suite outgrows
+  NFR-16.
 - Types and schemas generated from Rolnopol's OpenAPI.
 - Contract tests of the mocks against the live API.
 - Feature-flag-driven tests (commodities trading, 2FA), GraphQL and WebSocket clients.
