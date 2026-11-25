@@ -71,3 +71,9 @@ ci: run tests on pull requests
 ```
 
 One logical change per commit. Unrelated changes go into separate commits, or better, separate branches.
+
+## AI-assisted work
+
+This project is built together with an AI coding agent (Claude Code), and that is stated openly.
+Commits the agent authored or co-authored end with a `Co-Authored-By:` trailer naming the model,
+and PRs it opened end with a "Generated with Claude Code" line. Keep them, never strip them.
