@@ -357,15 +357,19 @@ Type of test first, then feature (D-04). Each top-level test folder is one Playw
 └── package.json
 ```
 
-How this maps to the testimation layout it is based on:
+Why this layout:
 
-| testimation (pytest) | Here | Why it changed |
-| -------------------- | ---- | -------------- |
-| `library/clients/rest_api/` split by HTTP method | `src/api/clients/` split by resource | Per-resource classes type better in TypeScript |
-| `library/clients/ui_pwa/{pages,locators,modules}` | `src/ui/{pages,components}` | Locators live in the page or component that owns them |
-| `conftest.py` | `src/fixtures/` | Playwright fixtures replace pytest fixtures |
-| `config/environments/*.json` | `.env` + `src/config/` profiles | Validated at startup, overridable in CI |
-| `tests/rest_api/<endpoint>/<method>/<role>/<positive\|negative>/params/*.json` | `tests/api/<feature>/<name>.spec.ts` + `<name>.params.ts` | Role and positive/negative become test titles and cases; deep folders add no value with Playwright projects and tags |
+- **API clients per resource** (`MarketplaceApi`), not per HTTP method: one class holds every
+  call for a resource, which types well and reads like the domain.
+- **Locators live in the page or component that owns them**, not in separate locator files, so
+  a screen change touches one class.
+- **Playwright fixtures** provide clients, users and pages, so tests never build their own setup.
+- **Configuration from environment variables**, validated at startup, so CI and other
+  environments override it without new files.
+- **No folders per endpoint, method, role or positive/negative.** Playwright projects already
+  separate the test levels; role and positive/negative belong in test titles, tags and
+  parametrized cases. Extra folder levels would repeat that information and make tests harder
+  to find.
 
 **Naming.** Files in kebab-case; specs `*.spec.ts`; params `*.params.ts`; classes in PascalCase
 named after the screen or resource (`MarketplacePage`, `MarketplaceApi`). Test titles describe
@@ -442,8 +446,9 @@ work tracked like a real backlog:
 `/qa-pick <number>` needs the GitHub CLI:
 
 - `gh` installed, version 2.99 or later (the Playwright CLI skill uses `--attach`).
-- Logged in as **`klapoucho`** with access to `klapoucho/qa-ronpol`. The machine also has a work
-  account, so `gh api user --jq .login` must print `klapoucho` before any `gh` write; switch with
+- Logged in as **`klapoucho`** with access to `klapoucho/qa-ronpol`. Another GitHub account is
+  also logged in on the author's machine, so `gh api user --jq .login` must print `klapoucho`
+  before any `gh` write; switch with
   `gh auth switch -u klapoucho`. The coordinator checks this itself before assigning.
 - CI does not need `gh`; GitHub Actions uses its own token.
 
@@ -463,7 +468,7 @@ work tracked like a real backlog:
   paths for that reason; that still works. Decide in the plan which branch carries each run's
   folder (with its test branch, or its own `docs/` branch).
 - **Skill name clash.** The author's user-level skills already include `qa-pick` and `qa-review`
-  (a different, work-specific version). Check which one Claude Code loads in this repo. If the
+  (a different version). Check which one Claude Code loads in this repo. If the
   user-level one wins, rename the project copies (for example `rolnopol-qa-pick`) and update
   the cross-references.
 - Install the Playwright CLI the skills use (`@playwright/cli`) at a version checked at
@@ -500,7 +505,7 @@ test criteria above, merged with CI green on `main`.
 | D-01 | The framework runs against `BASE_URL` and does not start the app. Docker setup for 1.126.0 is provided. | Playwright `webServer` starting a pinned clone; Docker only | Author's choice: keep the framework independent of how the app is hosted. The Docker image pins the version and isolates the app's Node version. |
 | D-02 | TypeScript 6.0.x | TypeScript 7.0 | `typescript-eslint` does not support 7.x yet |
 | D-03 | ESLint + Prettier | Biome | Biome has no Playwright rules; a missing `await` before `expect` is the most common Playwright bug |
-| D-04 | `tests/<type>/<feature>/` | `tests/<feature>/<type>/`; testimation's deep endpoint/method/role folders | Type maps 1:1 to Playwright projects (different browser, auth and network setup), CI can run one type alone, and it follows testimation's top level |
+| D-04 | `tests/<type>/<feature>/` | `tests/<feature>/<type>/`; deeper endpoint/method/role folders | Type maps 1:1 to Playwright projects (different browser, auth and network setup), and CI can run one type alone |
 | D-05 | Per-test data through the API; DB reset only on request in global setup | Reset before every test; shared demo data | Resets between tests break parallel runs; shared data couples tests |
 | D-06 | Known app bugs: `test.fail()` with a link to the bug file | Leave the test red; skip it | Suite stays green while the bug stays visible; Playwright flags the test when the bug is fixed |
 | D-07 | Params in typed `.params.ts` files | JSON files | Type checking, factories, editor hints. JSON only if non-developers edit cases |
