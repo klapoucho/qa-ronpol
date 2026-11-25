@@ -1,0 +1,45 @@
+{
+  "run_id": "",
+  "title": "",
+  "source": {
+    "type": "text | github-issue",
+    "issue_url": null,
+    "pr_url": null,
+    "pr_head_sha": null
+  },
+  "kind": "api | ui | ui+api",
+  "status": "PASS | FAIL | PASS_WITH_FINDINGS | BLOCKED",
+  "blocked_reason": null,
+  "env": "",
+  "app_version": "",
+  "platforms": [],
+  "roles": [],
+  "items": [
+    {
+      "id": "1",
+      "check": "",
+      "requirement": "AC … | assumption",
+      "role": "",
+      "platform": "",
+      "result": "PASS | FAIL | BLOCKED | NOT_RUN",
+      "evidence": "artifacts/..."
+    }
+  ],
+  "findings": [
+    {
+      "title": "",
+      "severity": "critical | major | minor | cosmetic",
+      "bug_file": null,
+      "evidence": "artifacts/..."
+    }
+  ],
+  "automation": {
+    "status": "pending | in_progress | done | skipped",
+    "skip_reason": null,
+    "branch": null,
+    "pr_url": null
+  },
+  "assumptions": [],
+  "lessons": [],
+  "struggles": []
+}
