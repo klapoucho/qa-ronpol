@@ -6,5 +6,6 @@ A test automation framework for [Rolnopol](https://github.com/jaktestowac/rolnop
 
 ## Documentation
 
+- [Framework requirements](docs/requirements.md): scope, decisions and the first five tests
 - [Original task requirements](docs/requirements-original.md) (Polish)
 - [Contributing](CONTRIBUTING.md): branch naming, commit messages, pull request workflow
