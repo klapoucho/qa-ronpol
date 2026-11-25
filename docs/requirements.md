@@ -149,9 +149,9 @@ its cases live in a separate params file (FR-09).
 | **T4** | UI | **Buyer buys an offer.** Offer seeded through the API; funded buyer buys it in Browse and confirms in the modal. Assert the balance shown, the offer gone from Browse, the entry in transaction history. | AC-4, AC-5 | Full user path on the real backend |
 | **T5** | UI on mocks | **Browse renders API data (parametrized).** Mocked API returns: a page of offers, several pages, no offers, a 500 error. Assert cards (type, price, seller, item details), pagination, the empty state, the error message. | AC-3, AC-8 | Frontend logic without a backend, deterministic data, mock layer and network guard |
 
-**Test size rule (NFR-11):** one business scenario per test, about 5–12 steps and 3–8
-assertions, finishing in under 15 s. No one-assertion smoke tests, no journeys across the whole
-app.
+**Test size rule (NFR-11):** one business behaviour per test, together with its outcome. No
+fixed step or assertion counts: a test that needs a second behaviour is split, and many fields
+of one object are checked by one assertion (FR-20).
 
 ## 6. Functional requirements
 
@@ -234,6 +234,18 @@ app.
   failure. Every test has a title stating the expected behaviour and uses `test.step` for its
   main stages, so the report reads as a scenario.
 
+### Assertions
+
+- **FR-20 Domain assertions.** When a check covers many fields or several sources (an offer
+  card, a filled form, a settled sale across balances, ownership and history), it is one custom
+  matcher registered with Playwright's `expect.extend`, for example
+  `await expect(page.offerCard(id)).toShowOffer(offer)`. Matchers live in `src/assertions/` and
+  are exported through the fixtures entry point. Each matcher:
+  - reports **every** mismatching field in one failure message, not only the first one;
+  - retries until its timeout when it reads the UI, like the built-in web-first assertions;
+  - is used only where a built-in matcher does not fit: for plain API data, `toEqual` or
+    `toMatchObject` on the whole object is already one assertion.
+
 ## 7. Non-functional requirements
 
 ### 7.1 Tooling and versions
@@ -272,7 +284,11 @@ Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix
 
 ### 7.3 Tests
 
-- **NFR-11 Size.** One scenario per test, 5–12 steps, 3–8 assertions, under 15 s (section 5).
+- **NFR-11 Size.** One business behaviour per test, with its outcome, readable as a scenario. No
+  fixed step or assertion counts. A test that needs a second behaviour is split. Many fields of
+  one object are one assertion (FR-20). Fewer assertions never means fewer checks: NFR-12 still
+  applies to every field a matcher covers. A test running longer than about 15 s is a signal to
+  review it, not a hard limit.
 - **NFR-12 Assertions that can fail.** Each new test goes through the poison-test protocol of
   `testing-rules/general.md`: a wrong expected value and a partly broken scenario must both make
   it fail.
@@ -286,9 +302,12 @@ Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix
 
 ### 7.4 Scalability
 
-- **NFR-17 Adding a feature** touches only new files: `tests/{api,ui,ui-mocked}/<feature>/`, new
-  clients, pages, components, factories and mocks in `src/`, plus their exports. No change to
-  existing tests, configs or folder layout.
+- **NFR-17 The layout absorbs growth.** The folder layout and the layers are designed for the
+  full app, not for the first five tests. A new feature gets its own folders
+  (`tests/{api,ui,ui-mocked}/<feature>/`) and its own clients, pages, components, factories,
+  mocks and assertions in `src/`. It never requires moving existing tests or reorganising the
+  layout. Existing tests and shared code do change when the feature changes their behaviour, or
+  when a refactor removes duplication; that is normal maintenance.
 - **NFR-18 Adding an environment or browser** is a config change (FR-07, FR-16).
 - **NFR-19 Conventions are written down.** The README has a "How to add a test or feature"
   section with naming rules and a checklist.
@@ -318,6 +337,7 @@ Type of test first, then feature (D-04). Each top-level test folder is one Playw
 │   ├── ui/
 │   │   ├── pages/             # MarketplacePage, …
 │   │   └── components/        # OfferCard, Pagination, ConfirmationModal, Toast, NavBar
+│   ├── assertions/            # custom matchers (expect.extend)
 │   ├── mocks/                 # route handlers, payload builders, network guard
 │   ├── data/factories/        # user, field, animal, offer factories
 │   ├── fixtures/              # Playwright fixtures; exports test and expect
