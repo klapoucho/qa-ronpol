@@ -1,0 +1,74 @@
+{
+  "check": 13,
+  "price": 30,
+  "responses": [
+    {
+      "buyer": 1,
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T19:55:47.934Z",
+        "data": {
+          "transaction": {
+            "id": 9,
+            "offerId": 40,
+            "sellerId": 47,
+            "buyerId": 48,
+            "itemType": "field",
+            "itemId": 51,
+            "price": 30,
+            "status": "completed",
+            "createdAt": "2026-11-25T19:55:47.915Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      }
+    },
+    {
+      "buyer": 2,
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:55:47.936Z",
+        "error": "Offer not found or not available"
+      }
+    }
+  ],
+  "balances": {
+    "seller": 30,
+    "buyer1": 70,
+    "buyer2": 100
+  },
+  "owners": {
+    "seller": false,
+    "buyer1": true,
+    "buyer2": false
+  },
+  "offerStatus": "sold",
+  "sellerMarketplaceTx": [
+    {
+      "id": 9,
+      "offerId": 40,
+      "sellerId": 47,
+      "buyerId": 48,
+      "itemType": "field",
+      "itemId": 51,
+      "price": 30,
+      "status": "completed",
+      "createdAt": "2026-11-25T19:55:47.915Z"
+    }
+  ],
+  "sellerFinancialTx": [
+    {
+      "id": 49,
+      "type": "income",
+      "amount": 30,
+      "description": "Marketplace sale",
+      "category": "marketplace",
+      "referenceId": null,
+      "timestamp": "2026-11-25T19:55:46.886Z",
+      "balanceBefore": 0,
+      "balanceAfter": 30
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "fieldId": 64,
+  "offerId": 55,
+  "browseBeforeEdit": {
+    "id": 55,
+    "sellerId": 81,
+    "itemType": "field",
+    "itemId": 64,
+    "price": 99,
+    "description": "Big field 100 ha",
+    "status": "active",
+    "createdAt": "2026-11-25T20:05:28.936Z",
+    "updatedAt": "2026-11-25T20:05:28.936Z",
+    "details": {
+      "name": "QA big field",
+      "area": 100
+    },
+    "sellerLabel": "qa_rvedit_11c87902"
+  },
+  "put": {
+    "method": "PUT",
+    "path": "fields/64",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:28.993Z",
+      "data": {
+        "userId": 81,
+        "name": "QA big field",
+        "area": 0.01,
+        "id": 64
+      },
+      "message": "Updated successfully"
+    },
+    "requestBody": {
+      "name": "QA big field",
+      "area": 0.01
+    }
+  },
+  "browseAfterEdit": {
+    "id": 55,
+    "sellerId": 81,
+    "itemType": "field",
+    "itemId": 64,
+    "price": 99,
+    "description": "Big field 100 ha",
+    "status": "active",
+    "createdAt": "2026-11-25T20:05:28.936Z",
+    "updatedAt": "2026-11-25T20:05:28.936Z",
+    "details": {
+      "name": "QA big field",
+      "area": 0.01
+    },
+    "sellerLabel": "qa_rvedit_11c87902"
+  },
+  "buy": {
+    "method": "POST",
+    "path": "marketplace/buy",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:33.072Z",
+      "data": {
+        "transaction": {
+          "id": 19,
+          "offerId": 55,
+          "sellerId": 81,
+          "buyerId": 82,
+          "itemType": "field",
+          "itemId": 64,
+          "price": 99,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:05:33.054Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    },
+    "requestBody": {
+      "offerId": 55
+    }
+  },
+  "buyerFields": [
+    {
+      "userId": 82,
+      "name": "QA big field",
+      "area": 0.01,
+      "id": 64
+    }
+  ],
+  "animalOfferId": 56,
+  "animalBrowseBefore": {
+    "id": 56,
+    "sellerId": 81,
+    "itemType": "animal",
+    "itemId": 35,
+    "price": 50,
+    "description": "Ten cows",
+    "status": "active",
+    "createdAt": "2026-11-25T20:05:33.126Z",
+    "updatedAt": "2026-11-25T20:05:33.126Z",
+    "details": {
+      "type": "cow",
+      "amount": 10
+    },
+    "sellerLabel": "qa_rvedit_11c87902"
+  },
+  "animalPut": {
+    "method": "PUT",
+    "path": "animals/35",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:33.190Z",
+      "data": {
+        "userId": 81,
+        "type": "rat",
+        "amount": 1,
+        "createdAt": "2026-11-25T20:05:33.096Z",
+        "id": 35
+      },
+      "message": "Animal updated"
+    },
+    "requestBody": {
+      "type": "rat",
+      "amount": 1
+    }
+  },
+  "animalBrowseAfter": {
+    "id": 56,
+    "sellerId": 81,
+    "itemType": "animal",
+    "itemId": 35,
+    "price": 50,
+    "description": "Ten cows",
+    "status": "active",
+    "createdAt": "2026-11-25T20:05:33.126Z",
+    "updatedAt": "2026-11-25T20:05:33.126Z",
+    "details": {
+      "type": "rat",
+      "amount": 1
+    },
+    "sellerLabel": "qa_rvedit_11c87902"
+  },
+  "animalBuy": {
+    "method": "POST",
+    "path": "marketplace/buy",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:37.259Z",
+      "data": {
+        "transaction": {
+          "id": 20,
+          "offerId": 56,
+          "sellerId": 81,
+          "buyerId": 82,
+          "itemType": "animal",
+          "itemId": 35,
+          "price": 50,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:05:37.242Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    },
+    "requestBody": {
+      "offerId": 56
+    }
+  },
+  "buyerAnimals": [
+    {
+      "userId": 82,
+      "type": "rat",
+      "amount": 1,
+      "createdAt": "2026-11-25T20:05:33.096Z",
+      "id": 35
+    }
+  ]
+}

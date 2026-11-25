@@ -1,0 +1,50 @@
+{
+  "check": 18,
+  "buy": 200,
+  "sellerRelist": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T19:56:41.276Z",
+      "error": "Item not found or not owned by user"
+    }
+  },
+  "buyerRelist": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T19:56:41.297Z",
+      "data": {
+        "offer": {
+          "id": 46,
+          "sellerId": 59,
+          "itemType": "field",
+          "itemId": 56,
+          "price": 7,
+          "description": "QA offer",
+          "status": "active",
+          "createdAt": "2026-11-25T19:56:41.279Z",
+          "updatedAt": "2026-11-25T19:56:41.279Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    }
+  },
+  "newOfferInSellerBrowse": {
+    "id": 46,
+    "sellerId": 59,
+    "itemType": "field",
+    "itemId": 56,
+    "price": 7,
+    "description": "QA offer",
+    "status": "active",
+    "createdAt": "2026-11-25T19:56:41.279Z",
+    "updatedAt": "2026-11-25T19:56:41.279Z",
+    "details": {
+      "name": "QA field 58b19e",
+      "area": 3.5
+    },
+    "sellerLabel": "qa_relist_bdf2cb18"
+  }
+}

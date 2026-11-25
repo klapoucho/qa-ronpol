@@ -1,0 +1,197 @@
+{
+  "fieldId": 69,
+  "offerId": 64,
+  "buy": {
+    "method": "POST",
+    "path": "marketplace/buy",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:07:15.884Z",
+      "data": {
+        "transaction": {
+          "id": 26,
+          "offerId": 64,
+          "sellerId": 96,
+          "buyerId": 97,
+          "itemType": "field",
+          "itemId": 69,
+          "price": 30,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:07:15.858Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    },
+    "requestBody": {
+      "offerId": 64
+    },
+    "ms": 4101
+  },
+  "animal": {
+    "method": "POST",
+    "path": "animals",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:07:13.329Z",
+      "data": {
+        "userId": 96,
+        "type": "sheep",
+        "amount": 4,
+        "fieldId": 69,
+        "createdAt": "2026-11-25T20:07:13.303Z",
+        "id": 39
+      },
+      "message": "Animal added"
+    },
+    "requestBody": {
+      "type": "sheep",
+      "amount": 4,
+      "fieldId": 69
+    },
+    "ms": 1545
+  },
+  "after": {
+    "sellerBalance": 30,
+    "buyerBalance": 70,
+    "sellerFields": [],
+    "buyerFields": [
+      {
+        "userId": 97,
+        "name": "QA field ef7092",
+        "area": 3.5,
+        "id": 69
+      }
+    ],
+    "sellerAnimals": [
+      {
+        "userId": 96,
+        "type": "sheep",
+        "amount": 4,
+        "fieldId": 69,
+        "createdAt": "2026-11-25T20:07:13.303Z",
+        "id": 39
+      }
+    ],
+    "buyerAnimals": [],
+    "sellerMarketTx": [
+      {
+        "id": 26,
+        "offerId": 64,
+        "sellerId": 96,
+        "buyerId": 97,
+        "itemType": "field",
+        "itemId": 69,
+        "price": 30,
+        "status": "completed",
+        "createdAt": "2026-11-25T20:07:15.858Z"
+      }
+    ],
+    "buyerMarketTx": [
+      {
+        "id": 26,
+        "offerId": 64,
+        "sellerId": 96,
+        "buyerId": 97,
+        "itemType": "field",
+        "itemId": 69,
+        "price": 30,
+        "status": "completed",
+        "createdAt": "2026-11-25T20:07:15.858Z"
+      }
+    ],
+    "sellerFinTx": [
+      {
+        "id": 107,
+        "type": "income",
+        "amount": 30,
+        "description": "Marketplace sale",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:07:14.831Z",
+        "balanceBefore": 0,
+        "balanceAfter": 30
+      }
+    ],
+    "buyerFinTx": [
+      {
+        "id": 106,
+        "type": "expense",
+        "amount": 30,
+        "description": "Marketplace purchase",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:07:12.800Z",
+        "balanceBefore": 100,
+        "balanceAfter": 70
+      },
+      {
+        "id": 105,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:07:10.742Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "offer": {
+      "id": 64,
+      "sellerId": 96,
+      "itemType": "field",
+      "itemId": 69,
+      "price": 30,
+      "description": "QA offer",
+      "status": "sold",
+      "createdAt": "2026-11-25T20:07:11.770Z",
+      "updatedAt": "2026-11-25T20:07:15.858Z",
+      "details": {
+        "name": "QA field ef7092",
+        "area": 3.5
+      },
+      "sellerLabel": "qa_rvras_826bcbcb"
+    }
+  },
+  "buyerAnimalOnField": {
+    "method": "POST",
+    "path": "animals",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:07:15.961Z",
+      "data": {
+        "userId": 97,
+        "type": "duck",
+        "amount": 1,
+        "fieldId": 69,
+        "createdAt": "2026-11-25T20:07:15.938Z",
+        "id": 40
+      },
+      "message": "Animal added"
+    },
+    "requestBody": {
+      "type": "duck",
+      "amount": 1,
+      "fieldId": 69
+    }
+  },
+  "buyerRelist": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T20:07:15.966Z",
+      "error": "Cannot sell field with assigned animals"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 69,
+      "price": 31,
+      "description": "QA offer"
+    }
+  }
+}

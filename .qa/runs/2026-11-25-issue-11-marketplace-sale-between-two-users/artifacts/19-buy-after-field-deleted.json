@@ -1,0 +1,99 @@
+{
+  "check": 19,
+  "deleteField": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T19:56:49.490Z",
+      "data": {
+        "message": "field deleted"
+      }
+    }
+  },
+  "offerStatusBeforeBuy": "unavailable",
+  "response": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T19:56:49.535Z",
+      "error": "Offer not found or not available"
+    }
+  },
+  "changedKeys": [],
+  "before": {
+    "sellerBalance": 0,
+    "buyerBalance": 50,
+    "sellerOwnsField": false,
+    "buyerOwnsField": false,
+    "offerStatus": "unavailable",
+    "offerInBuyerBrowse": false,
+    "sellerMarketplaceTx": [],
+    "buyerMarketplaceTx": [],
+    "sellerFinancialTx": [],
+    "buyerFinancialTx": [
+      {
+        "id": 61,
+        "type": "income",
+        "amount": 50,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:56:48.424Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50
+      }
+    ],
+    "sellerAccountTx": [],
+    "buyerAccountTx": [
+      {
+        "id": 61,
+        "type": "income",
+        "amount": 50,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:56:48.424Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50
+      }
+    ]
+  },
+  "after": {
+    "sellerBalance": 0,
+    "buyerBalance": 50,
+    "sellerOwnsField": false,
+    "buyerOwnsField": false,
+    "offerStatus": "unavailable",
+    "offerInBuyerBrowse": false,
+    "sellerMarketplaceTx": [],
+    "buyerMarketplaceTx": [],
+    "sellerFinancialTx": [],
+    "buyerFinancialTx": [
+      {
+        "id": 61,
+        "type": "income",
+        "amount": 50,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:56:48.424Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50
+      }
+    ],
+    "sellerAccountTx": [],
+    "buyerAccountTx": [
+      {
+        "id": 61,
+        "type": "income",
+        "amount": 50,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:56:48.424Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50
+      }
+    ]
+  }
+}

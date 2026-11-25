@@ -1,0 +1,90 @@
+{
+  "check": 11,
+  "sellerFunded": 100,
+  "price": 5,
+  "response": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T19:55:13.273Z",
+      "error": "Cannot buy your own offer"
+    }
+  },
+  "changedKeys": [],
+  "before": {
+    "sellerBalance": 100,
+    "buyerBalance": 0,
+    "sellerOwnsField": true,
+    "buyerOwnsField": false,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerMarketplaceTx": [],
+    "buyerMarketplaceTx": [],
+    "sellerFinancialTx": [
+      {
+        "id": 41,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:12.179Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "buyerFinancialTx": [],
+    "sellerAccountTx": [
+      {
+        "id": 41,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:12.179Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "buyerAccountTx": []
+  },
+  "after": {
+    "sellerBalance": 100,
+    "buyerBalance": 0,
+    "sellerOwnsField": true,
+    "buyerOwnsField": false,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerMarketplaceTx": [],
+    "buyerMarketplaceTx": [],
+    "sellerFinancialTx": [
+      {
+        "id": 41,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:12.179Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "buyerFinancialTx": [],
+    "sellerAccountTx": [
+      {
+        "id": 41,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:12.179Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "buyerAccountTx": []
+  }
+}

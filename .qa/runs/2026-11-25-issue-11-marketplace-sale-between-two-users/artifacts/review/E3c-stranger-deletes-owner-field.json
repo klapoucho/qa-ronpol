@@ -1,0 +1,78 @@
+{
+  "fieldId": 71,
+  "assign": {
+    "method": "POST",
+    "path": "fields/assign",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:08:33.358Z",
+      "data": {
+        "userId": 106,
+        "fieldId": 71,
+        "staffId": 25,
+        "createdAt": "2026-11-25T20:08:33.338Z",
+        "id": 14
+      },
+      "message": "Assignment created"
+    },
+    "requestBody": {
+      "fieldId": 71,
+      "staffId": 25
+    }
+  },
+  "before": {
+    "ownerAssign": [
+      {
+        "userId": 106,
+        "fieldId": 71,
+        "staffId": 25,
+        "createdAt": "2026-11-25T20:08:33.338Z",
+        "id": 14
+      }
+    ],
+    "ownerFields": [
+      {
+        "userId": 106,
+        "name": "QA owner field",
+        "area": 4,
+        "id": 71
+      }
+    ]
+  },
+  "strangerDelete": {
+    "method": "DELETE",
+    "path": "fields/71",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:08:33.423Z",
+      "data": {
+        "message": "field deleted"
+      }
+    }
+  },
+  "after": {
+    "ownerAssign": [],
+    "ownerFields": [
+      {
+        "userId": 106,
+        "name": "QA owner field",
+        "area": 4,
+        "id": 71
+      }
+    ]
+  },
+  "strangerDeleteNonExistent": {
+    "method": "DELETE",
+    "path": "fields/999999",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:08:33.492Z",
+      "data": {
+        "message": "field deleted"
+      }
+    }
+  }
+}

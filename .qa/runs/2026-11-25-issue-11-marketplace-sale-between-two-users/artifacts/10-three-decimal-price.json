@@ -1,0 +1,47 @@
+{
+  "check": 10,
+  "requestedPrice": 10.555,
+  "storedPriceA": 10.56,
+  "buyAtStoredPrice": {
+    "buyerFunded": 10.56,
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T19:54:56.851Z",
+        "data": {
+          "transaction": {
+            "id": 7,
+            "offerId": 36,
+            "sellerId": 38,
+            "buyerId": 39,
+            "itemType": "field",
+            "itemId": 47,
+            "price": 10.56,
+            "status": "completed",
+            "createdAt": "2026-11-25T19:54:56.834Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      }
+    },
+    "after": {
+      "buyer": 0,
+      "seller": 10.56,
+      "offer": "sold"
+    }
+  },
+  "storedPriceB": 10.56,
+  "buyOneCentBelow": {
+    "buyerFunded": 10.55,
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:55:05.048Z",
+        "error": "Insufficient funds to complete purchase (no overdraft allowed)"
+      }
+    },
+    "changedKeys": []
+  }
+}

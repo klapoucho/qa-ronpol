@@ -1,0 +1,238 @@
+{
+  "animalId": 32,
+  "offerId": 52,
+  "offer": {
+    "success": true,
+    "timestamp": "2026-11-25T20:04:47.132Z",
+    "data": {
+      "offer": {
+        "id": 52,
+        "sellerId": 74,
+        "itemType": "animal",
+        "itemId": 32,
+        "price": 40.5,
+        "description": "QA offer",
+        "status": "active",
+        "createdAt": "2026-11-25T20:04:47.111Z",
+        "updatedAt": "2026-11-25T20:04:47.111Z"
+      },
+      "message": "Offer created successfully"
+    },
+    "message": 201
+  },
+  "browseBefore": {
+    "id": 52,
+    "sellerId": 74,
+    "itemType": "animal",
+    "itemId": 32,
+    "price": 40.5,
+    "description": "QA offer",
+    "status": "active",
+    "createdAt": "2026-11-25T20:04:47.111Z",
+    "updatedAt": "2026-11-25T20:04:47.111Z",
+    "details": {
+      "type": "cow",
+      "amount": 3
+    },
+    "sellerLabel": "qa_rvanim_c3be57aa"
+  },
+  "buy": {
+    "method": "POST",
+    "path": "marketplace/buy",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:04:51.249Z",
+      "data": {
+        "transaction": {
+          "id": 17,
+          "offerId": 52,
+          "sellerId": 74,
+          "buyerId": 75,
+          "itemType": "animal",
+          "itemId": 32,
+          "price": 40.5,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:04:51.230Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    },
+    "requestBody": {
+      "offerId": 52
+    }
+  },
+  "before": {
+    "sellerBalance": 0,
+    "buyerBalance": 100,
+    "sellerFields": [],
+    "buyerFields": [],
+    "sellerAnimals": [
+      {
+        "userId": 74,
+        "type": "cow",
+        "amount": 3,
+        "createdAt": "2026-11-25T20:04:47.087Z",
+        "id": 32
+      }
+    ],
+    "buyerAnimals": [],
+    "sellerMarketTx": [],
+    "buyerMarketTx": [],
+    "sellerFinTx": [],
+    "buyerFinTx": [
+      {
+        "id": 77,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:04:43.018Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "offer": {
+      "id": 52,
+      "sellerId": 74,
+      "itemType": "animal",
+      "itemId": 32,
+      "price": 40.5,
+      "description": "QA offer",
+      "status": "active",
+      "createdAt": "2026-11-25T20:04:47.111Z",
+      "updatedAt": "2026-11-25T20:04:47.111Z",
+      "details": {
+        "type": "cow",
+        "amount": 3
+      },
+      "sellerLabel": "qa_rvanim_c3be57aa"
+    }
+  },
+  "after": {
+    "sellerBalance": 40.5,
+    "buyerBalance": 59.5,
+    "sellerFields": [],
+    "buyerFields": [],
+    "sellerAnimals": [],
+    "buyerAnimals": [
+      {
+        "userId": 75,
+        "type": "cow",
+        "amount": 3,
+        "createdAt": "2026-11-25T20:04:47.087Z",
+        "id": 32
+      }
+    ],
+    "sellerMarketTx": [
+      {
+        "id": 17,
+        "offerId": 52,
+        "sellerId": 74,
+        "buyerId": 75,
+        "itemType": "animal",
+        "itemId": 32,
+        "price": 40.5,
+        "status": "completed",
+        "createdAt": "2026-11-25T20:04:51.230Z"
+      }
+    ],
+    "buyerMarketTx": [
+      {
+        "id": 17,
+        "offerId": 52,
+        "sellerId": 74,
+        "buyerId": 75,
+        "itemType": "animal",
+        "itemId": 32,
+        "price": 40.5,
+        "status": "completed",
+        "createdAt": "2026-11-25T20:04:51.230Z"
+      }
+    ],
+    "sellerFinTx": [
+      {
+        "id": 79,
+        "type": "income",
+        "amount": 40.5,
+        "description": "Marketplace sale",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:04:50.196Z",
+        "balanceBefore": 0,
+        "balanceAfter": 40.5
+      }
+    ],
+    "buyerFinTx": [
+      {
+        "id": 78,
+        "type": "expense",
+        "amount": 40.5,
+        "description": "Marketplace purchase",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:04:48.180Z",
+        "balanceBefore": 100,
+        "balanceAfter": 59.5
+      },
+      {
+        "id": 77,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:04:43.018Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "offer": {
+      "id": 52,
+      "sellerId": 74,
+      "itemType": "animal",
+      "itemId": 32,
+      "price": 40.5,
+      "description": "QA offer",
+      "status": "sold",
+      "createdAt": "2026-11-25T20:04:47.111Z",
+      "updatedAt": "2026-11-25T20:04:51.230Z",
+      "details": {
+        "type": "cow",
+        "amount": 3
+      },
+      "sellerLabel": "qa_rvanim_c3be57aa"
+    }
+  },
+  "browseAfterThird": null,
+  "thirdMarketTx": [],
+  "statsBefore": {
+    "totalActiveOffers": 29,
+    "totalOffers": 51,
+    "totalTransactions": 16,
+    "totalVolume": 1284.26,
+    "offersByType": {
+      "field": 37,
+      "animal": 14
+    },
+    "activeOffersByType": {
+      "field": 19,
+      "animal": 10
+    }
+  },
+  "statsAfter": {
+    "totalActiveOffers": 29,
+    "totalOffers": 52,
+    "totalTransactions": 17,
+    "totalVolume": 1324.76,
+    "offersByType": {
+      "field": 37,
+      "animal": 15
+    },
+    "activeOffersByType": {
+      "field": 19,
+      "animal": 10
+    }
+  }
+}

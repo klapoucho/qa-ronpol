@@ -1,0 +1,150 @@
+{
+  "put": {
+    "method": "PUT",
+    "path": "animals/33",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:04:59.543Z",
+      "data": {
+        "userId": 77,
+        "type": "pig",
+        "amount": 2,
+        "fieldId": 62,
+        "createdAt": "2026-11-25T20:04:59.473Z",
+        "id": 33
+      },
+      "message": "Animal updated"
+    },
+    "requestBody": {
+      "type": "pig",
+      "amount": 2,
+      "fieldId": 62
+    }
+  },
+  "buy": {
+    "method": "POST",
+    "path": "marketplace/buy",
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T20:04:59.610Z",
+      "error": "Offer not found or not available"
+    },
+    "requestBody": {
+      "offerId": 53
+    }
+  },
+  "before": {
+    "sellerBalance": 0,
+    "buyerBalance": 100,
+    "sellerFields": [
+      {
+        "userId": 77,
+        "name": "QA field 9b9e67",
+        "area": 3.5,
+        "id": 62
+      }
+    ],
+    "buyerFields": [],
+    "sellerAnimals": [
+      {
+        "userId": 77,
+        "type": "pig",
+        "amount": 2,
+        "fieldId": 62,
+        "createdAt": "2026-11-25T20:04:59.473Z",
+        "id": 33
+      }
+    ],
+    "buyerAnimals": [],
+    "sellerMarketTx": [],
+    "buyerMarketTx": [],
+    "sellerFinTx": [],
+    "buyerFinTx": [
+      {
+        "id": 80,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:04:58.409Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "offer": {
+      "id": 53,
+      "sellerId": 77,
+      "itemType": "animal",
+      "itemId": 33,
+      "price": 20,
+      "description": "QA offer",
+      "status": "unavailable",
+      "createdAt": "2026-11-25T20:04:59.498Z",
+      "updatedAt": "2026-11-25T20:04:59.587Z",
+      "details": {
+        "type": "pig",
+        "amount": 2
+      },
+      "sellerLabel": "qa_rvamov_7d3ec271"
+    }
+  },
+  "after": {
+    "sellerBalance": 0,
+    "buyerBalance": 100,
+    "sellerFields": [
+      {
+        "userId": 77,
+        "name": "QA field 9b9e67",
+        "area": 3.5,
+        "id": 62
+      }
+    ],
+    "buyerFields": [],
+    "sellerAnimals": [
+      {
+        "userId": 77,
+        "type": "pig",
+        "amount": 2,
+        "fieldId": 62,
+        "createdAt": "2026-11-25T20:04:59.473Z",
+        "id": 33
+      }
+    ],
+    "buyerAnimals": [],
+    "sellerMarketTx": [],
+    "buyerMarketTx": [],
+    "sellerFinTx": [],
+    "buyerFinTx": [
+      {
+        "id": 80,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:04:58.409Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "offer": {
+      "id": 53,
+      "sellerId": 77,
+      "itemType": "animal",
+      "itemId": 33,
+      "price": 20,
+      "description": "QA offer",
+      "status": "unavailable",
+      "createdAt": "2026-11-25T20:04:59.498Z",
+      "updatedAt": "2026-11-25T20:04:59.587Z",
+      "details": {
+        "type": "pig",
+        "amount": 2
+      },
+      "sellerLabel": "qa_rvamov_7d3ec271"
+    }
+  }
+}

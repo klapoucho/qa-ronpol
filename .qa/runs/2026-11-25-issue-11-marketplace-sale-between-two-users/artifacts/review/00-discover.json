@@ -1,0 +1,394 @@
+{
+  "types": {
+    "method": "GET",
+    "path": "animals/types",
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": {
+        "chicken": {
+          "key": "chicken",
+          "fullName": "Chicken",
+          "description": "Feathered alarm system with legs. Lays eggs, questions reality, and reminds farmers that panic is also a survival strategy.",
+          "icon": "🐔"
+        },
+        "chick": {
+          "key": "chick",
+          "fullName": "Chick",
+          "description": "Tiny feathered bundle of potential. Chirps with optimism, pecks at the world, and serves as a reminder that even the smallest employees can have big dreams.",
+          "icon": "🐣"
+        },
+        "cow": {
+          "key": "cow",
+          "fullName": "Cow",
+          "description": "Gentle milk philosopher with four stomachs and one eternal thought: chew first, understand later.",
+          "icon": "🐄"
+        },
+        "pig": {
+          "key": "pig",
+          "fullName": "Pig",
+          "description": "Domestic swine - best known for involvement in the invention of bacon",
+          "icon": "🐖"
+        },
+        "majesticHog": {
+          "key": "majesticHog",
+          "fullName": "Majestic Hog",
+          "description": "Legendary pig with a crown of flowers. Known for its regal presence and the ability to turn mud into a throne.",
+          "icon": "🐷"
+        },
+        "piglet": {
+          "key": "piglet",
+          "fullName": "Piglet",
+          "description": "Tiny swine with big dreams. Known for its playful nature and ability to find joy in mud puddles.",
+          "icon": "🐖"
+        },
+        "sheep": {
+          "key": "sheep",
+          "fullName": "Sheep",
+          "description": "Woolly cloud with legs. Follows the herd until the herd gets lost, then calls it collective wisdom.",
+          "icon": "🐑"
+        },
+        "lamb": {
+          "key": "lamb",
+          "fullName": "Lamb",
+          "description": "Young woolly cloud with legs. Innocent, curious, and a reminder that even the smallest members of the herd have a voice.",
+          "icon": "🐑"
+        },
+        "goat": {
+          "key": "goat",
+          "fullName": "Goat",
+          "description": "Mountain goblin disguised as livestock. Eats cans, climbs problems, and teaches that chaos is just ambition without a chair.",
+          "icon": "🐐"
+        },
+        "duck": {
+          "key": "duck",
+          "fullName": "Duck",
+          "description": "Waterproof philosopher of the pond. Calm above the water, furious little engine of nonsense underneath.",
+          "icon": "🦆"
+        },
+        "turkey": {
+          "key": "turkey",
+          "fullName": "Turkey",
+          "description": "Dramatic feather committee with seasonal anxiety. Gobbles like it knows a prophecy and refuses to explain it.",
+          "icon": "🦃"
+        },
+        "rabbit": {
+          "key": "rabbit",
+          "fullName": "Rabbit",
+          "description": "Soft little multiplication wizard. Appears harmless, then suddenly the farm has seventeen more problems with ears.",
+          "icon": "🐇"
+        },
+        "fish": {
+          "key": "fish",
+          "fullName": "Fish",
+          "description": "Silent aquatic minimalist. Says nothing, knows everything, and judges land animals for needing so much gravity.",
+          "icon": "🐟"
+        },
+        "shrimp": {
+          "key": "shrimp",
+          "fullName": "Shrimp",
+          "description": "Tiny sea comma with big existential energy. Small enough to ignore, wise enough to survive the soup of history.",
+          "icon": "🦐"
+        },
+        "oyster": {
+          "key": "oyster",
+          "fullName": "Oyster",
+          "description": "Closed-shell introvert hiding treasure and opinions. Teaches that pressure creates pearls, but also social avoidance.",
+          "icon": "🦪"
+        },
+        "squid": {
+          "key": "squid",
+          "fullName": "Squid",
+          "description": "Ink-powered escape artist with too many arms and not enough accountability. When clarity fails, deploy darkness.",
+          "icon": "🦑"
+        },
+        "dinosaur": {
+          "key": "dinosaur",
+          "fullName": "Dinosaur T-Rex",
+          "description": "Ancient farm guardian with tiny arms and enormous opinions. Excellent for security, terrible for delicate crops and emotional nuance.",
+          "icon": "🦖"
+        },
+        "diplodocus": {
+          "key": "diplodocus",
+          "fullName": "Diplodocus",
+          "description": "Long-necked gentle giant who sees problems before anyone else. Slow to anger, quick to snack on treetops and unrealistic plans.",
+          "icon": "🦕"
+        },
+        "ent": {
+          "key": "ent",
+          "fullName": "Ent",
+          "description": "Sentient tree-like creature from fantasy lore. Guardians of the forest and nature. A wise and powerful ally for sustainable farming and environmental stewardship.",
+          "icon": "🌳"
+        },
+        "rat": {
+          "key": "rat",
+          "fullName": "Rat",
+          "description": "Small rodent known for adaptability and resourcefulness. Can be a pest or a pet, depending on the context. Sometimes can deliver You a surprise - a Plague!",
+          "icon": "🐀"
+        },
+        "goose": {
+          "key": "goose",
+          "fullName": "Goose",
+          "description": "Waterfowl known for its honking and aggressive behavior. Honk honk! Honk lauder! A noisy but loyal companion for farm life, always ready to defend its territory.",
+          "icon": "🦢"
+        },
+        "snail": {
+          "key": "snail",
+          "fullName": "Snail",
+          "description": "Ultra-slow productivity consultant. Will reach the barn eventually, probably after the next software release.",
+          "icon": "🐌"
+        },
+        "bee": {
+          "key": "bee",
+          "fullName": "Bee",
+          "description": "Small flying employee with excellent teamwork skills. Produces honey, pollinates crops, and has a strict no-nonsense attitude.",
+          "icon": "🐝"
+        },
+        "hedgehog": {
+          "key": "hedgehog",
+          "fullName": "Hedgehog",
+          "description": "Small defensive potato with legs. Excellent at looking cute while being emotionally unavailable.",
+          "icon": "🦔"
+        },
+        "owl": {
+          "key": "owl",
+          "fullName": "Owl",
+          "description": "Night-shift supervisor with silent wings and strong code review energy. The owls are not what they seem, especially near the Red Room.",
+          "icon": "🦉"
+        },
+        "lobster": {
+          "key": "lobster",
+          "fullName": "Lobster",
+          "description": "Armored sea aristocrat with built-in scissors. Useful for underwater farm politics and aggressively opening packages.",
+          "icon": "🦞"
+        },
+        "yak": {
+          "key": "yak",
+          "fullName": "Yak",
+          "description": "Mountain-grade cow alternative with premium fluff. Perfect for cold farms, dramatic weather, and looking like it knows ancient secrets.",
+          "icon": "🐂"
+        },
+        "boar": {
+          "key": "boar",
+          "fullName": "Boar",
+          "description": "Wild pig with unstoppable delivery energy. Proves that moving fast can solve problems, create problems, and destroy the fence between them.",
+          "icon": "🐗"
+        },
+        "ant": {
+          "key": "ant",
+          "fullName": "Ant",
+          "description": "Tiny logistics engineer with terrifying team alignment. Proves that big systems are built by small creatures who never skip standup.",
+          "icon": "🐜"
+        },
+        "tardigrade": {
+          "key": "tardigrade",
+          "fullName": "Tardigrade",
+          "description": "Microscopic survival legend. Laughs at drought, frost, chaos, and release deadlines, then asks whether that was supposed to be difficult.",
+          "icon": "🦠"
+        },
+        "tortoise": {
+          "key": "tortoise",
+          "fullName": "Tortoise",
+          "description": "Ancient walking helmet with premium patience. Wins by arriving late enough for everyone else to make the mistakes first.",
+          "icon": "🐢"
+        }
+      },
+      "message": "Allowed animal types"
+    }
+  },
+  "field": {
+    "method": "POST",
+    "path": "fields",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:32.977Z",
+      "data": {
+        "userId": 73,
+        "name": "QA field c38b0b",
+        "area": 3.5,
+        "id": 61
+      },
+      "message": "field added"
+    },
+    "requestBody": {
+      "name": "QA field c38b0b",
+      "area": 3.5
+    }
+  },
+  "animalFree": {
+    "method": "POST",
+    "path": "animals",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.004Z",
+      "data": {
+        "userId": 73,
+        "type": "chicken",
+        "amount": 5,
+        "createdAt": "2026-11-25T20:03:32.982Z",
+        "id": 30
+      },
+      "message": "Animal added"
+    },
+    "requestBody": {
+      "type": "chicken",
+      "amount": 5
+    }
+  },
+  "animalOnField": {
+    "method": "POST",
+    "path": "animals",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.026Z",
+      "data": {
+        "userId": 73,
+        "type": "chicken",
+        "amount": 2,
+        "fieldId": 61,
+        "createdAt": "2026-11-25T20:03:33.008Z",
+        "id": 31
+      },
+      "message": "Animal added"
+    },
+    "requestBody": {
+      "type": "chicken",
+      "amount": 2,
+      "fieldId": 61
+    }
+  },
+  "staff": {
+    "method": "POST",
+    "path": "staff",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.054Z",
+      "data": {
+        "userId": 73,
+        "name": "Jan",
+        "surname": "Kowalski",
+        "age": 30,
+        "id": 19
+      },
+      "message": "staf added"
+    },
+    "requestBody": {
+      "name": "Jan",
+      "surname": "Kowalski",
+      "age": 30
+    }
+  },
+  "assign": {
+    "method": "POST",
+    "path": "fields/assign",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.078Z",
+      "data": {
+        "userId": 73,
+        "fieldId": 61,
+        "staffId": 19,
+        "createdAt": "2026-11-25T20:03:33.059Z",
+        "id": 13
+      },
+      "message": "Assignment created"
+    },
+    "requestBody": {
+      "fieldId": 61,
+      "staffId": 19
+    }
+  },
+  "assignments": {
+    "method": "GET",
+    "path": "assignments",
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T20:03:33.093Z",
+      "error": "API endpoint not found"
+    }
+  },
+  "assignGet": {
+    "method": "GET",
+    "path": "fields/assign",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.098Z",
+      "data": [
+        {
+          "userId": 73,
+          "fieldId": 61,
+          "staffId": 19,
+          "createdAt": "2026-11-25T20:03:33.059Z",
+          "id": 13
+        }
+      ]
+    }
+  },
+  "stats": {
+    "method": "GET",
+    "path": "financial/marketplace-stats",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.106Z",
+      "data": {
+        "totalActiveOffers": 29,
+        "totalOffers": 51,
+        "totalTransactions": 16,
+        "totalVolume": 1284.26,
+        "offersByType": {
+          "field": 37,
+          "animal": 14
+        },
+        "activeOffersByType": {
+          "field": 19,
+          "animal": 10
+        }
+      }
+    }
+  },
+  "putField": {
+    "method": "PUT",
+    "path": "fields/61",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.136Z",
+      "data": {
+        "userId": 73,
+        "name": "QA field c38b0b",
+        "area": 1,
+        "id": 61
+      },
+      "message": "Updated successfully"
+    },
+    "requestBody": {
+      "name": "QA field c38b0b",
+      "area": 1
+    }
+  },
+  "fieldsAfter": {
+    "method": "GET",
+    "path": "fields",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:03:33.141Z",
+      "data": [
+        {
+          "userId": 73,
+          "name": "QA field c38b0b",
+          "area": 1,
+          "id": 61
+        }
+      ]
+    }
+  }
+}

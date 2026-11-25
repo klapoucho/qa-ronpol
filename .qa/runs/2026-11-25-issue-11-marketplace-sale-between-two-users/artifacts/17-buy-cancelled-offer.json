@@ -1,0 +1,23 @@
+{
+  "check": 17,
+  "cancel": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T19:56:28.980Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "statusBeforeBuy": "cancelled",
+  "response": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T19:56:29.028Z",
+      "error": "Offer not found or not available"
+    }
+  },
+  "changedKeys": []
+}

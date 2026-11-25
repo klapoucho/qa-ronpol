@@ -1,0 +1,63 @@
+{
+  "check": 1,
+  "seed": {
+    "field": {
+      "success": true,
+      "timestamp": "2026-11-25T19:54:08.529Z",
+      "data": {
+        "userId": 30,
+        "name": "QA field 9b06bb",
+        "area": 3.5,
+        "id": 43
+      },
+      "message": "field added"
+    },
+    "offer": {
+      "success": true,
+      "timestamp": "2026-11-25T19:54:10.572Z",
+      "data": {
+        "offer": {
+          "id": 32,
+          "sellerId": 30,
+          "itemType": "field",
+          "itemId": 43,
+          "price": 123.45,
+          "description": "QA offer",
+          "status": "active",
+          "createdAt": "2026-11-25T19:54:10.555Z",
+          "updatedAt": "2026-11-25T19:54:10.555Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    }
+  },
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/marketplace/buy",
+    "body": {
+      "offerId": 32
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T19:54:14.709Z",
+      "data": {
+        "transaction": {
+          "id": 5,
+          "offerId": 32,
+          "sellerId": 30,
+          "buyerId": 31,
+          "itemType": "field",
+          "itemId": 43,
+          "price": 123.45,
+          "status": "completed",
+          "createdAt": "2026-11-25T19:54:14.689Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  }
+}

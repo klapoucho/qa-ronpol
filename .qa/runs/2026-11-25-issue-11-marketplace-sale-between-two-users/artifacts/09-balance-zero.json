@@ -1,0 +1,42 @@
+{
+  "check": 9,
+  "price": 1,
+  "buyerFunded": 0,
+  "response": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T19:54:44.619Z",
+      "error": "Insufficient funds to complete purchase (no overdraft allowed)"
+    }
+  },
+  "changedKeys": [],
+  "before": {
+    "sellerBalance": 0,
+    "buyerBalance": 0,
+    "sellerOwnsField": true,
+    "buyerOwnsField": false,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerMarketplaceTx": [],
+    "buyerMarketplaceTx": [],
+    "sellerFinancialTx": [],
+    "buyerFinancialTx": [],
+    "sellerAccountTx": [],
+    "buyerAccountTx": []
+  },
+  "after": {
+    "sellerBalance": 0,
+    "buyerBalance": 0,
+    "sellerOwnsField": true,
+    "buyerOwnsField": false,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerMarketplaceTx": [],
+    "buyerMarketplaceTx": [],
+    "sellerFinancialTx": [],
+    "buyerFinancialTx": [],
+    "sellerAccountTx": [],
+    "buyerAccountTx": []
+  }
+}

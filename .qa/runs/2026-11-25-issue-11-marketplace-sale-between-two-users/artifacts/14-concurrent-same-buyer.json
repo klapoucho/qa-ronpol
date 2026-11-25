@@ -1,0 +1,152 @@
+{
+  "check": 14,
+  "price": 30,
+  "buyerFunded": 100,
+  "responses": [
+    {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T19:56:00.208Z",
+        "data": {
+          "transaction": {
+            "id": 10,
+            "offerId": 41,
+            "sellerId": 50,
+            "buyerId": 51,
+            "itemType": "field",
+            "itemId": 52,
+            "price": 30,
+            "status": "completed",
+            "createdAt": "2026-11-25T19:56:00.189Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      }
+    },
+    {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:00.211Z",
+        "error": "Offer not found or not available"
+      }
+    },
+    {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:00.213Z",
+        "error": "Offer not found or not available"
+      }
+    }
+  ],
+  "after": {
+    "sellerBalance": 30,
+    "buyerBalance": 70,
+    "sellerOwnsField": false,
+    "buyerOwnsField": true,
+    "offerStatus": "sold",
+    "offerInBuyerBrowse": false,
+    "sellerMarketplaceTx": [
+      {
+        "id": 10,
+        "offerId": 41,
+        "sellerId": 50,
+        "buyerId": 51,
+        "itemType": "field",
+        "itemId": 52,
+        "price": 30,
+        "status": "completed",
+        "createdAt": "2026-11-25T19:56:00.189Z"
+      }
+    ],
+    "buyerMarketplaceTx": [
+      {
+        "id": 10,
+        "offerId": 41,
+        "sellerId": 50,
+        "buyerId": 51,
+        "itemType": "field",
+        "itemId": 52,
+        "price": 30,
+        "status": "completed",
+        "createdAt": "2026-11-25T19:56:00.189Z"
+      }
+    ],
+    "sellerFinancialTx": [
+      {
+        "id": 52,
+        "type": "income",
+        "amount": 30,
+        "description": "Marketplace sale",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:59.154Z",
+        "balanceBefore": 0,
+        "balanceAfter": 30
+      }
+    ],
+    "buyerFinancialTx": [
+      {
+        "id": 51,
+        "type": "expense",
+        "amount": 30,
+        "description": "Marketplace purchase",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:57.142Z",
+        "balanceBefore": 100,
+        "balanceAfter": 70
+      },
+      {
+        "id": 50,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:55.091Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "sellerAccountTx": [
+      {
+        "id": 52,
+        "type": "income",
+        "amount": 30,
+        "description": "Marketplace sale",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:59.154Z",
+        "balanceBefore": 0,
+        "balanceAfter": 30
+      }
+    ],
+    "buyerAccountTx": [
+      {
+        "id": 50,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:55.091Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      },
+      {
+        "id": 51,
+        "type": "expense",
+        "amount": 30,
+        "description": "Marketplace purchase",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:55:57.142Z",
+        "balanceBefore": 100,
+        "balanceAfter": 70
+      }
+    ]
+  }
+}

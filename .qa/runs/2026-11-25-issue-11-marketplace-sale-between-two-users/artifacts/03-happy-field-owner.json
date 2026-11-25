@@ -1,0 +1,29 @@
+{
+  "check": 3,
+  "fieldId": 43,
+  "before": {
+    "sellerOwns": true,
+    "buyerOwns": false
+  },
+  "after": {
+    "sellerOwns": false,
+    "buyerOwns": true
+  },
+  "sellerFieldsAfter": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.796Z",
+    "data": []
+  },
+  "buyerFieldsAfter": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.809Z",
+    "data": [
+      {
+        "userId": 31,
+        "name": "QA field 9b06bb",
+        "area": 3.5,
+        "id": 43
+      }
+    ]
+  }
+}

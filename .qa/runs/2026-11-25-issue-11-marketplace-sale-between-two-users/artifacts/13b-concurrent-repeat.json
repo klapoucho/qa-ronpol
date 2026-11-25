@@ -1,0 +1,71 @@
+{
+  "check": "13b",
+  "price": 40,
+  "buyersFunded": 100,
+  "note": "balances/owners order: seller, buyer1, buyer2",
+  "rounds": [
+    {
+      "offerId": 49,
+      "statuses": [
+        200,
+        404,
+        404,
+        404
+      ],
+      "balances": [
+        40,
+        60,
+        100
+      ],
+      "owners": [
+        false,
+        true,
+        false
+      ],
+      "sellerSaleEntries": 1,
+      "sellerMarketplaceTx": 1
+    },
+    {
+      "offerId": 50,
+      "statuses": [
+        200,
+        404,
+        404,
+        404
+      ],
+      "balances": [
+        40,
+        60,
+        100
+      ],
+      "owners": [
+        false,
+        true,
+        false
+      ],
+      "sellerSaleEntries": 1,
+      "sellerMarketplaceTx": 1
+    },
+    {
+      "offerId": 51,
+      "statuses": [
+        200,
+        404,
+        404,
+        404
+      ],
+      "balances": [
+        40,
+        60,
+        100
+      ],
+      "owners": [
+        false,
+        true,
+        false
+      ],
+      "sellerSaleEntries": 1,
+      "sellerMarketplaceTx": 1
+    }
+  ]
+}

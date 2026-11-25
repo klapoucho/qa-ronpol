@@ -1,0 +1,24 @@
+{
+  "check": 16,
+  "noToken": {
+    "status": 401,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T19:56:16.658Z",
+      "error": "Access token required"
+    }
+  },
+  "malformedToken": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T19:56:16.659Z",
+      "error": "Invalid or expired token"
+    }
+  },
+  "changedKeys": [],
+  "positiveControlWithToken": {
+    "status": 200,
+    "success": true
+  }
+}

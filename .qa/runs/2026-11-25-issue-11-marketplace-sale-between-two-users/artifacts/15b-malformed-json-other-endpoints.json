@@ -1,0 +1,46 @@
+{
+  "check": "15b",
+  "requestBody": "{\"offerId\":",
+  "results": {
+    "marketplace/buy": {
+      "status": 500,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:57:09.292Z",
+        "error": "Internal server error"
+      }
+    },
+    "marketplace/offers": {
+      "status": 500,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:57:09.300Z",
+        "error": "Internal server error"
+      }
+    },
+    "fields": {
+      "status": 500,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:57:09.302Z",
+        "error": "Internal server error"
+      }
+    },
+    "financial/transactions": {
+      "status": 500,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:57:09.304Z",
+        "error": "Internal server error"
+      }
+    },
+    "marketplace/buy (no token)": {
+      "status": 500,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:57:09.306Z",
+        "error": "Internal server error"
+      }
+    }
+  }
+}
