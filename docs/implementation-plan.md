@@ -35,6 +35,10 @@ Every task's requirements include these lines.
 - **Layers (FR-01, FR-05):** tests import `test` and `expect` only from the fixtures entry point
   (`src/fixtures/index.ts`), never from `@playwright/test`. No raw HTTP calls, raw selectors or data literals
   in tests.
+- **Wire formats (4.1, FR-02, FR-15):** most endpoints use the envelope `{ success, timestamp, data | error }`;
+  `GET /api/v1/statistics` returns a bare object and `GET /api/version` returns a bare `{ version }`.
+  Schemas, clients and mock payloads keep each endpoint's real format; nothing wraps a bare response or
+  unwraps one that has no envelope.
 - **Locators (FR-14):** `getByTestId`, then `getByRole` with a name, `getByLabel`, `getByText`. CSS only as a
   documented last resort, never nth-index.
 - **No fixed waits (NFR-13):** never `waitForTimeout`.
@@ -47,8 +51,10 @@ Every task's requirements include these lines.
 - **Commits (NFR-10, `CONTRIBUTING.md`):** Conventional Commits, one logical change each, each commit passes
   `npm run check` from the commit that introduces it. Agent commits end with
   `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
-- **GitHub (`CLAUDE.md`):** ask the author before every `git push`, PR, or other GitHub write. Before any
-  `gh` command, `gh api user --jq .login` must print `klapoucho`. Never merge a PR, never commit to `main`.
+- **GitHub (`CLAUDE.md`, section 10):** ask the author before every `git push`, PR, or other GitHub write.
+  Before **every** `gh` command, reads included, `gh api user --jq .login` must print `klapoucho`; on a
+  mismatch, stop and ask the author (the fix is `gh auth switch -u klapoucho`). Never merge a PR, never
+  commit to `main`.
 - **Secrets (NFR-20):** none in the repo, reports, `.qa/` or test step titles. `.env` is ignored.
 - **Language:** English in code, docs, commits, branches and PRs.
 
@@ -66,10 +72,11 @@ Inputs and conditions the spec implies but no ordinary test meets. Each one has 
    If the fixture registers users through the test's `request` context, every later "anonymous" call is
    silently logged in as the last user, and T2-style negative tests pass for the wrong reason. Check:
    Task 5, `auth.spec.ts`, second test.
-4. **Requests the mocks do not cover:** pages call `/api/version` (outside `/api/v1`), feature flags and
-   `authorization` on every load. Any unmatched `/api/` request is answered with 501, recorded, and fails
-   the test with its method and path, including requests fired after the test body. Check: Task 7,
-   `network-guard` test and the poison step.
+4. **Requests the mocks do not cover:** every page calls `authorization`, `feature-flags` and
+   `/api/version` (outside `/api/v1`, bare format) on load. The shared handlers answer them in every
+   `ui-mocked` test without the test asking; any other unmatched `/api/` request is answered with 501,
+   recorded, and fails the test with its method and path, including requests fired after the test body.
+   Check: Task 7, `network-guard` test and the poison steps.
 5. **App not in the expected state:** app down, a different version (the author's 1.127.0 clone), or
    port 3000 already taken when `npm run app:up` runs. Expected: a stop with the start command, a warning
    and a normal run, and a compose error that names the port. Check: Task 3, step 5 and Task 4, step 7.
@@ -118,9 +125,10 @@ src/assertions/field-diff.ts, ui-matchers.ts, index.ts         Task 6
 src/ui/session.ts, src/ui/pages/profile-page.ts                Task 6
 src/fixtures/ui.fixtures.ts                                    Task 6
 tests/ui/framework/session.spec.ts                             Task 6
-src/mocks/mock-api.ts, envelope.ts                             Task 7
-src/api/models/app-shell.ts                                    Task 7
-src/mocks/handlers/app-shell.ts, profile.ts                    Task 7
+src/mocks/mock-api.ts, replies.ts                              Task 7
+src/api/models/shared.ts      authorization, feature flags     Task 7
+src/mocks/handlers/shared.ts  every page's load calls          Task 7
+src/mocks/handlers/profile.ts feature handlers, profile page   Task 7
 src/mocks/payloads/profile.ts                                  Task 7
 src/fixtures/mock.fixtures.ts                                  Task 7
 tests/ui-mocked/framework/mocked-session.spec.ts               Task 7
@@ -292,11 +300,15 @@ FR-16, FR-17, FR-18, FR-19, NFR-14, NFR-15.
   - `class ApiResponse<T> { readonly status: number; readonly ok: boolean; readonly error: string | undefined; readonly body: unknown; get data(): T }`.
     `data` throws `ApiRequestError` with `"<METHOD> <path> -> <status>: <error>"` when `ok` is false.
   - `abstract class BaseApi { constructor(request: APIRequestContext, token?: string) }` with protected
-    `get<T>(path, schema)`, `post<T>(path, body, schema)`, `put<T>(path, body, schema)`, `delete<T>(path, schema)`,
-    each `Promise<ApiResponse<T>>`. A path without a leading `/` is relative to `/api/v1/`; one with `/` is
-    used as is. A token is sent as `Authorization: Bearer <token>`.
+    `get<T>(path, schema, options?)`, `post<T>(path, body, schema, options?)`, `put<T>(path, body, schema, options?)`,
+    `delete<T>(path, schema, options?)`, each `Promise<ApiResponse<T>>`, where
+    `options: { envelope?: boolean }` (default `true`). A path without a leading `/` is relative to
+    `/api/v1/`; one with `/` is used as is. A token is sent as `Authorization: Bearer <token>`.
+    With `envelope: false` (bare endpoints, 4.1), `ok` is the HTTP 2xx check, the whole body is validated
+    by the schema, and `error` is the body's `error` string when present, else `HTTP <status>`.
   - `type ApiClientClass<T extends BaseApi> = new (request: APIRequestContext, token?: string) => T`.
-  - `HealthApi.healthcheck(): Promise<ApiResponse<Healthcheck>>`, `HealthApi.about(): Promise<ApiResponse<About>>`.
+  - `HealthApi.healthcheck(): Promise<ApiResponse<Healthcheck>>`, `HealthApi.about(): Promise<ApiResponse<About>>`,
+    `HealthApi.version(): Promise<ApiResponse<AppVersion>>` (`GET /api/version`, `envelope: false`).
   - `DebugApi.restoreBaseDatabase(): Promise<ApiResponse<unknown>>` (`POST /api/debug/database/restore-base`).
   - Fixture `apiAs: <T extends BaseApi>(Client: ApiClientClass<T>, user?: { token: string }) => T`, built on
     the test's `request` fixture.
@@ -313,6 +325,12 @@ test('app reports a healthy status', { tag: '@smoke' }, async ({ apiAs }) => {
 
   expect(health.status).toBe(200);
   expect(health.data.status).toBe('healthy');
+});
+
+test('app reports its version in the bare format', async ({ apiAs }) => {
+  const version = await apiAs(HealthApi).version();
+
+  expect(version.data.version).toMatch(/^\d+\.\d+\.\d+$/);
 });
 ```
 
@@ -331,8 +349,10 @@ test('app reports a healthy status', { tag: '@smoke' }, async ({ apiAs }) => {
       `{ success: false, timestamp, error: string, details? }`. `BaseApi` parses JSON, picks the envelope by
       `success`, and validates `data` with the given schema; a schema mismatch throws with the request line
       and the zod issues (FR-03). A non-JSON body gives `ok: false` and `error: 'Non-JSON response'`.
-      `health.ts`: `healthcheckSchema` (`status`, `version`) and `aboutSchema` (`name`, `version`); zod
-      objects keep their default key stripping, so new app fields do not break them.
+      `health.ts`: `healthcheckSchema` (`status`, `version`), `aboutSchema` (`name`, `version`) and
+      `appVersionSchema` (`version`, bare); zod objects keep their default key stripping, so new app fields
+      do not break them. First confirm the bare shape: `curl -s localhost:3000/api/version` prints a body
+      without `success`.
 - [ ] **Step 5: Playwright config, global setup, scripts.** `playwright.config.ts` reads `config`:
       `fullyParallel: true`, `globalSetup: './tests/global-setup.ts'`, `use.baseURL`,
       `trace: 'on-first-retry'`, `screenshot: 'only-on-failure'`, `video: 'retain-on-failure'`, profile
@@ -345,16 +365,17 @@ test('app reports a healthy status', { tag: '@smoke' }, async ({ apiAs }) => {
       (`playwright test`), `test:api` (`--project=api`), `test:smoke` (`--grep @smoke`), `report`
       (`playwright show-report`); `check` gains `&& playwright test --list`.
 - [ ] **Step 6: Run and verify (Review Focus 1).**
-      Run: `npm run test:api` → Expected: `1 passed`.
+      Run: `npm run test:api` → Expected: `2 passed`.
       Run: `TEST_ENV=staging npx playwright test --list`, `BASE_URL=localhost:3000 npx playwright test --list`,
       `RESET_DB=yes npx playwright test --list` → Expected: each exits non-zero, prints
       `Invalid configuration:` and names its variable.
 - [ ] **Step 7: Verify global setup (Review Focus 5).**
       Run: `BASE_URL=http://localhost:3999 npm run test:api` → Expected: stops before any test with the
       `npm run app:up` message.
-      Run: `EXPECTED_APP_VERSION=9.9.9 npm run test:api` → Expected: the warning line, then `1 passed`.
-- [ ] **Step 8: Poison check (NFR-12).** Change `'healthy'` to `'unhealthy'` in the spec, run, expect a
-      failure, revert.
+      Run: `EXPECTED_APP_VERSION=9.9.9 npm run test:api` → Expected: the warning line, then `2 passed`.
+- [ ] **Step 8: Poison checks (NFR-12).** (a) Change `'healthy'` to `'unhealthy'` in the spec: it must
+      fail; revert. (b) Drop `envelope: false` from `HealthApi.version()`: the version test must fail (no
+      envelope to unwrap); revert.
 - [ ] **Step 9: Commit.** `npm run check`, then commit all files above with
       `feat(config): add env config, api client base and healthcheck wiring check`.
 
@@ -377,10 +398,11 @@ Branch `feat/framework-core`. Covers FR-02, FR-03, FR-10, FR-11, FR-12.
     (at most 20); password of 12+ characters with upper, lower, digit and special character, so it also
     passes when `registrationStrongPasswordEnabled` is on.
   - `AuthApi.register(input: UserInput): Promise<ApiResponse<RegisterResult>>` with
-    `RegisterResult = { user: User; token: string }`; `AuthApi.login(email: string, password: string)`.
+    `RegisterResult = { user: User; token: string; loginTime: string }` (the backend returns the ISO login
+    time it also sets as a cookie); `AuthApi.login(email: string, password: string)`, same result type.
   - `type UserProfile` inferred from `profileSchema` in `user.ts` (at least `id`, `email`, `displayedName`).
   - `UsersApi.profile(): Promise<ApiResponse<UserProfile>>` (`GET users/profile`).
-  - `type TestUser = { input: UserInput; id: User['id']; token: string }`.
+  - `type TestUser = { input: UserInput; id: User['id']; token: string; loginTime: string }`.
   - Fixture `createUser: (overrides?: Partial<UserInput>) => Promise<TestUser>`. It registers through a
     fresh `playwright.request.newContext({ baseURL })` and disposes it, so the test's `request` context never
     stores a `rolnopolToken` cookie (Review Focus 3). A failed registration throws
@@ -457,10 +479,15 @@ Branch `feat/framework-core`. Covers FR-04, FR-13, FR-14, FR-16, FR-20.
     a `FieldView`. It re-reads every field's `innerText` until all match or the timeout (default: the
     configured expect timeout) runs out, then fails listing **every** mismatching field. Registered with
     `expect.extend` in `src/assertions/index.ts`, with the TypeScript `Matchers` declaration.
-  - `sessionCookies(token: string, baseURL: string): Cookie[]`: `rolnopolToken` =
-    `encodeURIComponent(token)` (the frontend decodes it) and `rolnopolIsLogged` = `true`, path `/`, domain
-    from `baseURL`.
-  - Fixture `loginAs: (user: { token: string }) => Promise<void>`: adds `sessionCookies` to `context`.
+  - `type Session = { token: string; userId: User['id']; userLabel: string; loginTime: string }` and
+    `toSession(user: TestUser): Session` (`userLabel` = `displayedName`, as the login page uses
+    `displayedName || email`).
+  - `sessionCookies(session: Session, baseURL: string): Cookie[]`: the five cookies the login page sets
+    (FR-13, 4.1): `rolnopolToken` = `encodeURIComponent(token)` (the frontend decodes it),
+    `rolnopolIsLogged` = `true`, `rolnopolUserId`, `rolnopolUserLabel`, and `rolnopolLoginTime` =
+    `encodeURIComponent(loginTime)` (as Express's `res.cookie` writes it). Path `/`, domain from `baseURL`.
+  - Fixture `loginAs: (user: TestUser) => Promise<void>`: adds `sessionCookies(toSession(user), baseURL)`
+    to `context`.
   - `class ProfilePage { constructor(page: Page); goto(): Promise<void>; readonly details: FieldView<'email' | 'displayedName'> }`
     on `/profile.html`, fields `getByTestId('email-value')` and `getByTestId('displayed-name')`.
   - Fixture `profilePage: ProfilePage`.
@@ -486,58 +513,67 @@ test('user logged in through cookies sees their own profile', async ({ createUse
 - [ ] **Step 3: Implement** the Produces list. Project `ui`: `testDir: 'tests/ui'`,
       `use: { ...devices['Desktop Chrome'] }`. Script `test:ui` (`--project=ui`).
 - [ ] **Step 4: Run.** Run: `npx playwright install chromium && npm run test:ui` → Expected: `1 passed`.
-- [ ] **Step 5: Poison checks.** (a) Set the cookie without `encodeURIComponent`: if the test still passes,
-      keep the encoding anyway (it matches the frontend) and note it in the commit body. (b) Expect
+- [ ] **Step 5: Poison checks.** (a) Compare the cookies with a real UI login: log in once through
+      `/login.html` (a `curl`-registered user) and list the cookies (`playwright-cli cookie-list`); names and
+      value formats must match `sessionCookies`. (b) Leave out `rolnopolToken`: the test must fail (redirect
+      to login); revert. (c) Expect
       `displayedName: 'Somebody Else'`: the test must fail with a message naming `displayedName`; revert.
 - [ ] **Step 6: Commit** with `feat(ui): add cookie login, profile page and field matcher`.
 
 ### Task 7: Mock layer, network guard, `ui-mocked` wiring checks
 
-Branch `feat/framework-core`. Covers FR-03 (shared types), FR-15, FR-16, D-08, D-11.
+Branch `feat/framework-core`. Covers FR-03 (shared types), FR-15 (shared and feature handlers), FR-16,
+4.1 (wire formats, page load calls), D-08, D-11.
 
 **Files:**
-- Create: `src/mocks/{mock-api,envelope}.ts`, `src/api/models/app-shell.ts`,
-  `src/mocks/handlers/{app-shell,profile}.ts`, `src/mocks/payloads/profile.ts`,
+- Create: `src/mocks/{mock-api,replies}.ts`, `src/api/models/shared.ts`,
+  `src/mocks/handlers/{shared,profile}.ts`, `src/mocks/payloads/profile.ts`,
   `src/fixtures/mock.fixtures.ts`, `tests/ui-mocked/framework/mocked-session.spec.ts`
 - Modify: `src/fixtures/index.ts`, `playwright.config.ts` (project `ui-mocked`), `package.json`
   (`test:ui-mocked`)
 
 **Interfaces:**
-- Consumes: `ProfilePage`, `toShowFields`, `sessionCookies` (Task 6); `UserProfile` type (Task 5).
+- Consumes: `ProfilePage`, `toShowFields`, `Session`, `sessionCookies` (Task 6); `UserProfile` (Task 5);
+  `appVersionSchema` (Task 4).
 - Produces:
   - `type MockReply = { status?: number; body: unknown }` (status default 200).
   - `class MockApi { on(method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE', path: string | RegExp, reply: MockReply | ((request: Request) => MockReply | Promise<MockReply>)): this; readonly unhandled: readonly string[]; clearUnhandled(): void }`.
     One `context.route('**/api/**')` dispatcher matches on method and URL pathname (`/api/v1/users/profile`,
-    query ignored); a later `on` for the same method and path replaces the earlier one. An unmatched request
-    is answered `501` with an error envelope and recorded as `"<METHOD> <pathname>"`.
-  - `ok<T>(data: T, message?: string)` and `fail(error: string, status: number)` in `src/mocks/envelope.ts`,
-    returning `MockReply` with the app's envelope.
-  - `mockAppShell(api: MockApi): void`: the calls every page makes on load (from step 1: at least
-    `GET /api/v1/feature-flags`, `GET /api/v1/authorization`, `GET /api/version`), with payloads typed by
-    `src/api/models/app-shell.ts` and feature flags at the image's defaults.
-  - `buildProfile(overrides?: Partial<UserProfile>): UserProfile`; `mockProfile(api: MockApi, profile: UserProfile): void`
-    (the profile page's own calls).
+    query ignored); a later `on` for the same method and path replaces the earlier one, so a test can
+    override a shared handler. An unmatched request is answered `501` with an error envelope and recorded
+    as `"<METHOD> <pathname>"`.
+  - In `src/mocks/replies.ts`, each returning `MockReply` in the endpoint's real wire format (4.1):
+    `ok<T>(data: T, message?: string)` and `fail(error: string, status: number)` for envelope endpoints,
+    `bare<T>(body: T, status?: number)` for bare ones (`/api/version`, `statistics`).
+  - **Shared handlers:** `installSharedHandlers(api: MockApi, session: Session): void` in
+    `src/mocks/handlers/shared.ts`: `GET /api/v1/authorization` (a successful response for the session's
+    user), `GET /api/v1/feature-flags` (the image's default flags) and `GET /api/version` (`bare`,
+    `{ version: '1.126.0' }`). Payloads are typed by `src/api/models/shared.ts` and `appVersionSchema`.
+  - **Feature handlers (profile page only, the wiring check's feature):**
+    `buildProfile(overrides?: Partial<UserProfile>): UserProfile` in `src/mocks/payloads/profile.ts`;
+    `mockProfile(api: MockApi, profile: UserProfile): void` in `src/mocks/handlers/profile.ts`: the
+    profile page's own calls from step 1. Phase B adds `src/mocks/handlers/marketplace.ts` the same way.
   - Option fixture `networkGuard: boolean` (default `false`; `true` in the `ui-mocked` project). When true,
-    the `context` fixture override attaches a `MockApi` before the test and, after it, fails with
-    `Network guard: <n> API request(s) reached no mock handler:` plus one line per request.
+    the `context` fixture override attaches a `MockApi`, installs the shared handlers for `mockSession`,
+    and sets that session's cookies, so every `ui-mocked` test starts logged in with the page-load calls
+    answered. After the test it fails with `Network guard: <n> API request(s) reached no mock handler:`
+    plus one line per request.
+  - Fixture `mockSession: Session`: a fake session (`token: 'mock-token'`, id and label from a
+    `buildProfile()` default), so feature handlers can return the same user.
   - Fixture `mockApi: MockApi`: the context's instance; throws "mockApi needs networkGuard: true (the
     ui-mocked project)" otherwise.
-  - Fixture `fakeLogin: () => Promise<void>`: `sessionCookies('mock-token', baseURL)`.
 
 - [ ] **Step 1: Record what the page calls.** Load `/profile.html` once with real cookies (a user from
-      `curl` register) and list the `/api/` requests (`playwright-cli requests` or the trace). With fake
-      cookies the page gets 403 from `GET /api/v1/authorization` and redirects to `/login.html`, so the
-      authorized list is the one to mock. Capture the real bodies of each call for the schemas.
+      `curl` register) and list the `/api/` requests (`playwright-cli requests` or the trace). Split them
+      into the shared set (4.1: `authorization`, `feature-flags`, `/api/version`) and the profile page's
+      own calls. Capture the real bodies for the schemas, and note which are bare. With fake cookies and no
+      mock the page gets 403 from `GET /api/v1/authorization` and redirects to `/login.html`; that is why the
+      shared set answers `authorization` with success.
 - [ ] **Step 2: Write the checks** `tests/ui-mocked/framework/mocked-session.spec.ts`:
 
 ```ts
-test.beforeEach(async ({ mockApi, fakeLogin }) => {
-  mockAppShell(mockApi);
-  await fakeLogin();
-});
-
-test('profile shows the user the API returns', async ({ mockApi, profilePage }) => {
-  const profile = buildProfile();
+test('profile shows the user the API returns', async ({ mockApi, mockSession, profilePage }) => {
+  const profile = buildProfile({ id: mockSession.userId });
   mockProfile(mockApi, profile);
 
   await profilePage.goto();
@@ -551,7 +587,7 @@ test('network guard records API requests no handler serves', async ({ mockApi, p
 
   await page.evaluate(() => fetch('/api/v1/not-mocked?page=2', { method: 'POST' }));
 
-  expect(mockApi.unhandled).toContain('POST /api/v1/not-mocked');
+  expect(mockApi.unhandled).toEqual(['POST /api/v1/not-mocked']);
   mockApi.clearUnhandled();
 });
 
@@ -565,19 +601,24 @@ test('field matcher lists every mismatching field', async ({ mockApi, profilePag
 });
 ```
 
+  The guard test asserts `toEqual` on the whole list: the shared calls on page load must not show up in
+  it, so the shared set is proven complete for the profile page.
+
 - [ ] **Step 3: Run them to see them fail.** Run: `npx playwright test --project=ui-mocked` → Expected: fails.
 - [ ] **Step 4: Implement** the Produces list. Project `ui-mocked`: `testDir: 'tests/ui-mocked'`,
       `use: { ...devices['Desktop Chrome'], networkGuard: true }`. Script `test:ui-mocked`.
-- [ ] **Step 5: Run.** Run: `npm run test:ui-mocked` → Expected: `3 passed`. If the first test fails on the
-      guard, its message lists the missing handlers: add them to `mockAppShell` or `mockProfile`, never
-      to the test.
+- [ ] **Step 5: Run.** Run: `npm run test:ui-mocked` → Expected: `3 passed`. If a test fails on the guard,
+      its message lists the missing handlers: a call every page makes goes to `installSharedHandlers`, a
+      profile call to `mockProfile`, never into the test.
 - [ ] **Step 6: Poison checks (Review Focus 4).** (a) Remove `mockApi.clearUnhandled()`: the guard test must
       fail after its body with `POST /api/v1/not-mocked` in the message; revert. (b) Remove the
-      `/api/version` handler: the first test must fail naming `GET /api/version`; revert. (c) Stop the
-      guard's dispatcher from fulfilling (call `route.continue()`): the guard test must fail; revert.
+      `/api/version` shared handler: the first test must fail naming `GET /api/version`; revert. (c) Make
+      the shared `authorization` handler return 403: the first test must fail (redirect to login); revert.
+      (d) Stop the dispatcher from fulfilling (call `route.continue()`): the guard test
+      must fail; revert.
 - [ ] **Step 7: Full run.** Run: `npm run check && npm test && npx playwright test --repeat-each=5` →
       Expected: all pass, no flaky tests (NFR-14, NFR-15).
-- [ ] **Step 8: Commit** with `feat(mocks): add mock api with network guard and mocked profile check`.
+- [ ] **Step 8: Commit** with `feat(mocks): add mock api with shared handlers and network guard`.
 - [ ] **Step 9: Open the PR** for `feat/framework-core` after the author's yes.
 
 ---
@@ -617,6 +658,14 @@ Branch `chore/qa-pick-setup`. Covers section 10 ("Required adaptations"), D-09, 
   `.qa/lessons.md`
 - Modify: `.claude/skills/qa-pick/SKILL.md`, `CLAUDE.md`, `.gitignore`, `docs/requirements.md` (D-15)
 
+- [ ] **Step 0: Account check in the coordinator (author's repo first).** Section 10 requires the
+      coordinator to run `gh api user --jq .login` before its **first** `gh` call. The portable `qa-pick`
+      checks only before assigning (§1 step 3), after reading the issue in step 2. That fix belongs in
+      `~/PycharmProjects/piotr/qa-pick-portable`, the author's repository: ask the author to move the check
+      to the start of §1 step 2 there, and copy only after that. Verify after the copy:
+      `grep -n "gh api user" .claude/skills/qa-pick/SKILL.md` shows the check before the first
+      `gh api repos/` line. If the author wants to proceed without it, apply the same move to the copy in
+      the adaptation commit (step 9) and note it as a divergence from portable.
 - [ ] **Step 1: Copy the skills.** Run: `cp -R ~/PycharmProjects/piotr/qa-pick-portable/.claude/skills/. .claude/skills/`.
       Expected: `playwright-cli`, `playwright-trace`, `qa-pick`, `qa-review`, `qa-test`, `testing-rules`.
       `playwright-cli` and `playwright-trace` stay unchanged (upstream copies).
@@ -717,7 +766,8 @@ Branch `docs/test-case-issues`. Covers section 5 and section 10 ("Test cases as 
     clearly, so that I always know what is on offer."
 - [ ] **Step 3: Commit** with `docs(test-cases): add issue texts for t1–t5`, open the PR after the author's yes.
 - [ ] **Step 4: Create the labels and issues (GitHub write: ask first).** After the author approves the
-      texts: check `gh api user --jq .login` prints `klapoucho`; create the missing labels with
+      texts: before each `gh` command below, check `gh api user --jq .login` prints `klapoucho` (stop and
+      ask on a mismatch); create the missing labels with
       `gh label create <name> --repo klapoucho/qa-ronpol`; for each T,
       `gh issue create --repo klapoucho/qa-ronpol --title "<title>" --body-file docs/test-cases/<file> --label marketplace,<level>,test-case`.
       Fill the issue numbers in the index and commit `docs(test-cases): record issue numbers` on the same
@@ -747,7 +797,9 @@ Run it last: it describes what Tasks 1–10 built.
      its tracked `data/*.json`).
   7. How to add a test or feature (NFR-19): naming rules (section 8) and a checklist: folders per project,
      client extends `BaseApi` and is used with `apiAs`, zod schema in `src/api/models/`, factory, page
-     object and components, matcher only when FR-20 says so, mock handlers built from the schemas,
+     object and components, matcher only when FR-20 says so, feature mock handlers in
+     `src/mocks/handlers/<feature>.ts` built from the schemas in each endpoint's real wire format (shared
+     page-load calls are already handled),
      `.params.ts` for cases, tags, `test.fail()` with a bug link, `npm run check`, poison test.
   8. AI-assisted workflow: Phase A and B, the issue list (Task 10 numbers), how to run `/qa-pick <issue>`,
      what lands in `.qa/` (D-09, D-15), attribution.
