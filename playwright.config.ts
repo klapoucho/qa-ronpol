@@ -1,9 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
 import { config } from '#src/config/index.ts';
+import type { MockOptions } from '#src/fixtures/mock.fixtures.ts';
 
 const { profile } = config;
 
-export default defineConfig({
+export default defineConfig<MockOptions>({
   fullyParallel: true,
   globalSetup: './tests/global-setup.ts',
   retries: profile.retries,
@@ -22,5 +23,10 @@ export default defineConfig({
   projects: [
     { name: 'api', testDir: 'tests/api' },
     { name: 'ui', testDir: 'tests/ui', use: { ...devices['Desktop Chrome'] } },
+    {
+      name: 'ui-mocked',
+      testDir: 'tests/ui-mocked',
+      use: { ...devices['Desktop Chrome'], networkGuard: true },
+    },
   ],
 });
