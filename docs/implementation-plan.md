@@ -296,7 +296,7 @@ FR-16, FR-17, FR-18, FR-19, NFR-14, NFR-15.
     `  <NAME>: <zod message>`.
   - `config: Env & { profile: Profile }` from `src/config/index.ts`, which first calls
     `process.loadEnvFile('.env')` when the file exists.
-  - `Profile = { retries: number; workers: number | undefined; forbidOnly: boolean; timeout: number; expectTimeout: number; reporter: ReporterDescription[] }`.
+  - `Profile = { retries: number; workers: number | undefined; forbidOnly: boolean; failOnFlakyTests: boolean; timeout: number; expectTimeout: number; reporter: ReporterDescription[] }`.
   - `class ApiResponse<T> { readonly status: number; readonly ok: boolean; readonly error: string | undefined; readonly body: unknown; get data(): T }`.
     `data` throws `ApiRequestError` with `"<METHOD> <path> -> <status>: <error>"` when `ok` is false.
   - `abstract class BaseApi { constructor(request: APIRequestContext, token?: string) }` with protected
@@ -336,12 +336,14 @@ test('app reports its version in the bare format', async ({ apiAs }) => {
 
 - [ ] **Step 2: Run it to see it fail.** Run: `npx playwright test tests/api/framework` → Expected: fails to
       resolve `#src/fixtures/index.ts`.
-- [ ] **Step 3: Config.** `env.ts`: zod schema with `BASE_URL` `z.url()` default `http://localhost:3000`,
+- [ ] **Step 3: Config.** `env.ts`: zod schema with `BASE_URL` `z.url({ protocol: /^https?$/ })` default `http://localhost:3000`
+      (plain `z.url()` accepts `localhost:3000` as a URL with the scheme `localhost:`),
       `TEST_ENV` `z.enum(['local','ci'])` default `local`, `EXPECTED_APP_VERSION` semver string default
       `1.126.0`, `RESET_DB` `z.enum(['true','false'])` default `false` transformed to boolean. `profiles.ts`
       (our call, section 13): `local` = retries 0, workers `undefined` (Playwright default), forbidOnly
-      false, timeout 30 000, expect 5 000, reporters `list` + `html` (`open: 'never'`); `ci` = retries 1,
-      workers 4, forbidOnly true, same timeouts, reporters `github` + `html` (`open: 'never'`) + `junit`
+      false, failOnFlakyTests false, timeout 30 000, expect 5 000, reporters `list` + `html` (`open: 'never'`);
+      `ci` = retries 1, workers 4, forbidOnly true, failOnFlakyTests true (NFR-15: a test that passes only on
+      retry fails the run), same timeouts, reporters `github` + `html` (`open: 'never'`) + `junit`
       (`outputFile: 'reports/junit.xml'`). `.env.example` lists the four variables with their defaults and
       one comment line each.
 - [ ] **Step 4: API base and clients.** `envelope.ts`: `successEnvelope(dataSchema)` for
@@ -375,7 +377,10 @@ test('app reports its version in the bare format', async ({ apiAs }) => {
       Run: `EXPECTED_APP_VERSION=9.9.9 npm run test:api` → Expected: the warning line, then `2 passed`.
 - [ ] **Step 8: Poison checks (NFR-12).** (a) Change `'healthy'` to `'unhealthy'` in the spec: it must
       fail; revert. (b) Drop `envelope: false` from `HealthApi.version()`: the version test must fail (no
-      envelope to unwrap); revert.
+      envelope to unwrap); revert. (c) Flaky test under the CI profile (NFR-15): add a throwaway
+      `tests/api/framework/flaky-probe.spec.ts` whose test asserts `expect(test.info().retry).toBe(1)`, so
+      it fails the first attempt and passes the retry. Run `TEST_ENV=ci npx playwright test tests/api/framework/flaky-probe.spec.ts`
+      → Expected: reported as flaky and a non-zero exit code. Delete the file.
 - [ ] **Step 9: Commit.** `npm run check`, then commit all files above with
       `feat(config): add env config, api client base and healthcheck wiring check`.
 
