@@ -24,9 +24,14 @@ export const registerResultSchema = z.object({
 });
 export type RegisterResult = z.infer<typeof registerResultSchema>;
 
+// GET /api/v1/users/profile and GET /api/v1/authorization answer with this record. updatedAt
+// appears once the user has logged in or changed the profile.
 export const profileSchema = z.object({
   id: userId,
   email: z.string(),
   displayedName: z.string(),
+  isActive: z.boolean(),
+  lastLogin: z.string().nullable(),
+  updatedAt: z.string().optional(),
 });
 export type UserProfile = z.infer<typeof profileSchema>;
