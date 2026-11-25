@@ -94,12 +94,12 @@ Filter noise before it reaches a human: cheap, rule-shaped feedback is fixed by 
    npx playwright test --list <files>
    ```
    All exit 0, and the listing shows the number of tests you expect. Then run the new tests by path. Don't continue until this passes.
-2. **Stability (flakiness)** — UI and API tests alike. Run the new tests 20 times, in parallel, with retries off, so a retry can't hide a flake:
+2. **Stability (flakiness)** — UI and API tests alike. Run the new tests 10 times, in parallel, with retries off, so a retry can't hide a flake:
    ```bash
-   npx playwright test <files> --repeat-each=20 --retries=0 --workers=4
+   npx playwright test <files> --repeat-each=10 --retries=0 --workers=4
    ```
-   Every run must pass. A single failure is a flaky test: find the cause (a missing wait, shared data between workers, order dependence, a time-dependent value) and fix it — never add retries or fixed waits to make it pass. Then rerun the 20.
-   **UI tests also run once on a slow connection** (see `ui.md` → "Slow network"). A test that passes only on a fast connection is waiting for the wrong thing. Record both results (passes out of 20, slow-network pass) in the test intent card.
+   Every run must pass. A single failure is a flaky test: find the cause (a missing wait, shared data between workers, order dependence, a time-dependent value) and fix it — never add retries or fixed waits to make it pass. Then rerun the 10.
+   **UI tests also run once on a slow connection** (see `ui.md` → "Slow network"). A test that passes only on a fast connection is waiting for the wrong thing. Record both results (passes out of 10, slow-network pass) in the test intent card.
 3. **`/simplify`, then `/code-review`** on the branch; fix the findings. Commit first and pass the level and branch explicitly (e.g. `/code-review medium <branch>`); a review that reports an empty diff did not see your changes, so rerun it.
 4. **Test review** — a subagent with fresh context that gets only the story, the test plan and the diff (not your reasoning) and answers, for each new test:
    - Why does this test exist — which acceptance criterion does it cover?
@@ -114,7 +114,7 @@ Filter noise before it reaches a human: cheap, rule-shaped feedback is fixed by 
 
 The PR description carries a **test intent card**, one row per test:
 
-| Test | Why (acceptance criterion) | Regression it catches | Poison that failed it | Stability (x/20, slow network) | Level + why | Overlaps with |
+| Test | Why (acceptance criterion) | Regression it catches | Poison that failed it | Stability (x/10, slow network) | Level + why | Overlaps with |
 |---|---|---|---|---|---|---|
 
 followed by **Decisions for the reviewer** — the open points from step 4 (or "none").
