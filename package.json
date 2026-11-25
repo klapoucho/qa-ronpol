@@ -29,6 +29,7 @@
     "@commitlint/cli": "21.2.4",
     "@commitlint/config-conventional": "21.2.4",
     "@eslint/js": "10.0.1",
+    "@faker-js/faker": "10.6.0",
     "@playwright/test": "1.65.1",
     "@tsconfig/node26": "26.0.2",
     "@types/node": "26.6.10",
