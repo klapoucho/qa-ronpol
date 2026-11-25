@@ -16,6 +16,7 @@ export default defineConfig<MockOptions>({
   reporter: profile.reporter,
   use: {
     baseURL: config.BASE_URL,
+    extraHTTPHeaders: config.syntheticHeaders,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',

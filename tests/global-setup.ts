@@ -4,7 +4,10 @@ import { DebugApi } from '#src/api/clients/debug-api.ts';
 import { config } from '#src/config/index.ts';
 
 export default async function globalSetup(): Promise<void> {
-  const context = await request.newContext({ baseURL: config.BASE_URL });
+  const context = await request.newContext({
+    baseURL: config.BASE_URL,
+    extraHTTPHeaders: config.syntheticHeaders,
+  });
   try {
     const notReachable = (cause?: unknown) =>
       new Error(`Rolnopol is not reachable at ${config.BASE_URL}. Start it with: npm run app:up`, { cause });
@@ -16,6 +19,16 @@ export default async function globalSetup(): Promise<void> {
     });
     if (probe.status() !== 200) {
       throw notReachable();
+    }
+
+    // Without a verified token, parallel runs hit the app's limit of 100 API requests per 30 s and
+    // fail with 429s that look like flaky tests. Stop here with the cause instead.
+    if (probe.headers()['x-synthetic-verified'] !== 'true') {
+      throw new Error(
+        `Rolnopol at ${config.BASE_URL} does not accept SYNTHETIC_TOKEN, so the tests would hit its API rate limit. ` +
+          'The app must run with the same SYNTHETIC_TOKEN as the tests (compose.yaml and .env). ' +
+          'Recreating it with npm run app:up resets its data, so only the author does that.',
+      );
     }
 
     const health = await new HealthApi(context).healthcheck();

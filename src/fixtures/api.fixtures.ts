@@ -13,11 +13,11 @@ export const test = base.extend<{ apiAs: ApiAs; createUser: CreateUser }>({
   apiAs: async ({ request }, use) => {
     await use((Client, user) => new Client(request, user?.token));
   },
-  createUser: async ({ playwright, baseURL }, use) => {
+  createUser: async ({ playwright, baseURL, extraHTTPHeaders }, use) => {
     await use(async (overrides) => {
       const input = buildUser(overrides);
       // A fresh context per user: register sets a rolnopolToken cookie on the context it runs in.
-      const context = await playwright.request.newContext({ baseURL });
+      const context = await playwright.request.newContext({ baseURL, extraHTTPHeaders });
       try {
         const registered = await new AuthApi(context).register(input);
         if (!registered.ok) {
