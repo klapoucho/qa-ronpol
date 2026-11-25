@@ -10,8 +10,8 @@ Create the labels and the issues only after the author approves the texts. Befor
 
 | T  | Title | Labels | File | Issue |
 | -- | ----- | ------ | ---- | ----- |
-| T1 | `Marketplace: sale between two users (API)` | `marketplace`, `api`, `test-case` | [t1-sale-between-two-users.md](t1-sale-between-two-users.md) |  |
-| T2 | `Marketplace: business rules for offers and purchases (API)` | `marketplace`, `api`, `test-case` | [t2-business-rules.md](t2-business-rules.md) |  |
-| T3 | `Marketplace: seller lists an item (UI)` | `marketplace`, `ui`, `test-case` | [t3-seller-lists-an-item.md](t3-seller-lists-an-item.md) |  |
-| T4 | `Marketplace: buyer buys an offer (UI)` | `marketplace`, `ui`, `test-case` | [t4-buyer-buys-an-offer.md](t4-buyer-buys-an-offer.md) |  |
-| T5 | `Marketplace: browse renders API data (UI on mocks)` | `marketplace`, `ui-mocked`, `test-case` | [t5-browse-renders-api-data.md](t5-browse-renders-api-data.md) |  |
+| T1 | `Marketplace: sale between two users (API)` | `marketplace`, `api`, `test-case` | [t1-sale-between-two-users.md](t1-sale-between-two-users.md) | [#11](https://github.com/klapoucho/qa-ronpol/issues/11) |
+| T2 | `Marketplace: business rules for offers and purchases (API)` | `marketplace`, `api`, `test-case` | [t2-business-rules.md](t2-business-rules.md) | [#12](https://github.com/klapoucho/qa-ronpol/issues/12) |
+| T3 | `Marketplace: seller lists an item (UI)` | `marketplace`, `ui`, `test-case` | [t3-seller-lists-an-item.md](t3-seller-lists-an-item.md) | [#13](https://github.com/klapoucho/qa-ronpol/issues/13) |
+| T4 | `Marketplace: buyer buys an offer (UI)` | `marketplace`, `ui`, `test-case` | [t4-buyer-buys-an-offer.md](t4-buyer-buys-an-offer.md) | [#14](https://github.com/klapoucho/qa-ronpol/issues/14) |
+| T5 | `Marketplace: browse renders API data (UI on mocks)` | `marketplace`, `ui-mocked`, `test-case` | [t5-browse-renders-api-data.md](t5-browse-renders-api-data.md) | [#15](https://github.com/klapoucho/qa-ronpol/issues/15) |
