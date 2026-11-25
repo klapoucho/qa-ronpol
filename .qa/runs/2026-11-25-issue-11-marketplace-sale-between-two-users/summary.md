@@ -3,7 +3,7 @@
 **Verdict: FAIL** · **Reviewer:** GAPS CLOSED (recommended FAIL) · **Run:** 2026-11-25-issue-11-marketplace-sale-between-two-users · **Source:** https://github.com/klapoucho/qa-ronpol/issues/11 (no linked PR)
 **Env:** http://localhost:3000/api/v1 · Rolnopol 1.126.0 (Docker) · API via Node fetch scripts · 2026-11-25
 **Roles covered:** seller, buyer, third user, stranger, former owner, anonymous · **Skipped:** admin (not in the buy flow), demo accounts (forbidden)
-**Automation:** done — branch `test/api-marketplace-sale`, `tests/api/marketplace/sale.spec.ts` (T1); 10/10 stable, 4 poison runs failed as intended; PR not opened yet
+**Automation:** done — branch `test/api-marketplace-sale`, `tests/api/marketplace/sale.spec.ts` (T1); 10/10 stable, 4 poison runs failed as intended; PR https://github.com/klapoucho/qa-ronpol/pull/18
 
 On the normal path AC-4 and AC-5 hold for fields and animals: the price, the item, the offer status and both histories move exactly, refusals change nothing, and concurrent buys produce one sale. The run fails on what a seller can do around a listing.
 
@@ -54,7 +54,7 @@ GAPS CLOSED. The tester's evidence and negative controls held up. The gaps were 
 - Test writer (background subagent, Opus, own worktree): T1 plus the clients, models, factories and fixtures it needs; resumed once with the test review's fixes.
 - Test reviewer (background subagent, Opus, fresh context, read-only): 6 fixes, 7 decision points (5 go to the PR, 2 settled: the poison and stability evidence is in the intent card, and register does create the financial account).
 
-## Lessons applied (branch `docs/qa-lessons-issue-11`)
+## Lessons applied (branch `docs/qa-lessons-issue-11`, PR https://github.com/klapoucho/qa-ronpol/pull/19)
 - Tester prompt: transfer/ownership stories cover every item type, and what the previous owner and other users can do before, during and after the transfer.
 - "Changed by" assertions start every actor at a non-zero, non-round value (`testing-rules/general.md`, tester prompt).
 - QA settings install command runs `nvm use` first (`CLAUDE.md`); also saved to memory.

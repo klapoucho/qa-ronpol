@@ -172,7 +172,7 @@ n/a — API-only run.
 - None listed for this area (`.qa/bugs/` is empty).
 
 ## Automation
-Branch `test/api-marketplace-sale`: `tests/api/marketplace/sale.spec.ts`, one `@critical` API test covering T1 (AC-4 success half, AC-5). New framework parts: `FieldsApi`, `FinancialApi`, `MarketplaceApi`, zod models, `buildField`/`buildOffer`/`buildIncome`, seed fixtures and a `readSale` fixture.
+Branch `test/api-marketplace-sale`, PR https://github.com/klapoucho/qa-ronpol/pull/18: `tests/api/marketplace/sale.spec.ts`, one `@critical` API test covering T1 (AC-4 success half, AC-5). New framework parts: `FieldsApi`, `FinancialApi`, `MarketplaceApi`, zod models, `buildField`/`buildOffer`/`buildIncome`, seed fixtures and a `readSale` fixture.
 - Gate: typecheck, eslint, prettier, `--list` pass; existing framework tests 6/6.
 - Stability: `--repeat-each=10 --workers=4 --retries=0` → 10/10 (23–37 s each, `test.slow()`).
 - Poison: wrong buyer remainder, seller buys own offer, buy step skipped, seller expected to hold only the price → each failed on the targeted assertion.

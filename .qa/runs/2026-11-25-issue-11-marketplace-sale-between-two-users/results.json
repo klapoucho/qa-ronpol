@@ -413,7 +413,7 @@
     "status": "done",
     "skip_reason": null,
     "branch": "test/api-marketplace-sale",
-    "pr_url": null
+    "pr_url": "https://github.com/klapoucho/qa-ronpol/pull/18"
   },
   "assumptions": [
     "Money has 2 decimal places; check 10 relies on the stored rounded price.",
