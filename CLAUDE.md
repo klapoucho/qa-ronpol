@@ -7,7 +7,7 @@ Guidance for Claude Code in this repository.
 A test automation framework for [Rolnopol](https://github.com/jaktestowac/rolnopol), built with Playwright
 and TypeScript as a recruitment task. The task is in `docs/requirements-original.md` (Polish).
 
-Current phase: Phase A, building the framework by `docs/implementation-plan.md`. Marketplace tests are not written by hand: the author writes them in Phase B with `/qa-pick <issue>`.
+Current phase: Phase B: the author writes the Marketplace tests with `/qa-pick <issue>`.
 
 ## Conventions
 
