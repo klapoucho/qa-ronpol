@@ -321,8 +321,14 @@ Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix
 ### 7.5 Security and portability
 
 - **NFR-20 No secrets in the repo.** Tests need none: users are created per run. `.env` is
-  ignored; `.env.example` is committed. Reports and `.qa/` files never contain tokens or
-  passwords.
+  ignored; `.env.example` is committed. Committed files, `.qa/` reports and test or step
+  titles never contain tokens or passwords.
+  Test artifacts are the one exception. Traces, videos and the HTML report (FR-19) record the
+  requests a test makes, so they hold the tokens, cookies and passwords of the throwaway users
+  that test created. These values work only against the app instance the run used: in CI that
+  container is gone when the job ends. Artifacts are therefore never committed, and CI keeps
+  them for 7 days. Redacting traces was considered and rejected: it means rewriting Playwright's
+  trace archives after every run, which breaks when their format changes.
 - **NFR-21 Third-party run.** A clean machine with Node 26 and Docker runs the suite with
   `npm ci`, `npx playwright install --with-deps chromium`, `npm run app:up`, `npm test`.
 
