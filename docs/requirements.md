@@ -529,13 +529,14 @@ test criteria above, merged with CI green on `main`.
 | D-12 | The plan builds the framework and `qa-pick` setup only; T1–T5 are five GitHub issues the author runs through `/qa-pick` | The plan writes the tests; one `qa-pick` story for the whole Marketplace | The author drives the QA runs; issues give `qa-pick` a stable input and show a tracked backlog |
 | D-13 | Docker locally and in CI; agents may start the app, only the author resets it | Local clone as the dev backend; agents free to reset | Same app version everywhere; a reset during a run destroys its data |
 | D-14 | Import alias: `package.json` `imports` (`#src/*`), imports written with the `.ts` extension | `tsconfig` `paths` (`@src/*`) | Spike: `tsc --noEmit`, Playwright and plain Node all resolved `#src/spike.ts`; no second mechanism needed |
+| D-15 | A run's folder (without `scratch/`) and its bug files are committed on the run's test branch, in one `docs(qa): add qa-pick run <run-id>` commit; a run with no test branch (automation skipped, BLOCKED) uses `docs/qa-run-<slug>`; lessons go with the retro's skill-edit branch | A separate `docs/` branch per run; leaving `.qa/` uncommitted until later | The evidence reaches `main` in the same PR as the tests it explains |
 
 ## 13. Left to the builder and future work
 
 Left to the plan or the builder:
 
 - The alias mechanism (NFR-05): decided, see D-14.
-- Which branch carries `.qa/` run folders (section 10).
+- Which branch carries `.qa/` run folders (section 10): decided, see D-15.
 - Workers and timeouts per environment profile.
 
 Possible extensions, not in the first delivery:

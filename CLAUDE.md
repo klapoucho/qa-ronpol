@@ -23,3 +23,18 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - Never commit to `main` directly. Never force-push `main`. Use `--force-with-lease` on a working branch only as part of an approved push.
 - The git identity is set locally in this repo (`klapoucho`). Do not change it.
 - This repo belongs to the `klapoucho` GitHub account. Before any `gh` command, check that `gh api user --jq .login` prints `klapoucho`. If it does not, stop and ask, because the machine also has a work account logged in.
+- Exception: `/qa-pick` may add the `klapoucho` account as assignee of the issue it tests (`gh issue edit --add-assignee @me`) without asking. Every other GitHub write still needs approval.
+
+## QA settings
+
+- App URL: http://localhost:3000 (Rolnopol 1.126.0 in Docker)
+- API base URL: http://localhost:3000/api/v1
+- Start the app: `npm run app:up` in this repo. Agents may start the app when it is not running. They never stop or reset it (`npm run app:down`, `npm run app:reset`, `RESET_DB=true`, `POST /api/debug/database/restore-base`); only the author does.
+- Roles: user → `POST /api/v1/register` with `{ email, displayedName, password }` returns a token. New users have 0 ROL; add funds with `POST /api/v1/financial/transactions`. Never use the demo accounts.
+- Test framework: Playwright Test (TypeScript). Framework code in `src/`, tests in `tests/{api,ui,ui-mocked}/<feature>/`, conventions in `README.md`. Runner process name: `playwright`
+- Install dependencies: `npm ci`
+- Gate: `npm run typecheck`, `npx eslint <files>`, `npx playwright test --list <files>`
+- Main branch: main
+- Issue repository: klapoucho/qa-ronpol
+- GitHub account: klapoucho
+- App repository: jaktestowac/rolnopol
