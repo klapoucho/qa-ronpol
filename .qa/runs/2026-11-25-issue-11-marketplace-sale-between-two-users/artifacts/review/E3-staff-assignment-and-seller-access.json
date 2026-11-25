@@ -1,0 +1,195 @@
+{
+  "fieldId": 63,
+  "staffAssign": {
+    "success": true,
+    "timestamp": "2026-11-25T20:05:16.459Z",
+    "data": {
+      "userId": 79,
+      "fieldId": 63,
+      "staffId": 20,
+      "createdAt": "2026-11-25T20:05:16.441Z",
+      "id": 14
+    },
+    "message": "Assignment created"
+  },
+  "offer": {
+    "success": true,
+    "timestamp": "2026-11-25T20:05:16.481Z",
+    "data": {
+      "offer": {
+        "id": 54,
+        "sellerId": 79,
+        "itemType": "field",
+        "itemId": 63,
+        "price": 15,
+        "description": "QA offer",
+        "status": "active",
+        "createdAt": "2026-11-25T20:05:16.463Z",
+        "updatedAt": "2026-11-25T20:05:16.463Z"
+      },
+      "message": "Offer created successfully"
+    },
+    "message": 201
+  },
+  "buy": {
+    "method": "POST",
+    "path": "marketplace/buy",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:20.573Z",
+      "data": {
+        "transaction": {
+          "id": 18,
+          "offerId": 54,
+          "sellerId": 79,
+          "buyerId": 80,
+          "itemType": "field",
+          "itemId": 63,
+          "price": 15,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:05:20.547Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    },
+    "requestBody": {
+      "offerId": 54
+    }
+  },
+  "after": {
+    "sellerAssign": [
+      {
+        "userId": 79,
+        "fieldId": 63,
+        "staffId": 20,
+        "createdAt": "2026-11-25T20:05:16.441Z",
+        "id": 14
+      }
+    ],
+    "buyerAssign": [],
+    "buyerFields": [
+      {
+        "userId": 80,
+        "name": "QA field ce13d6",
+        "area": 7,
+        "id": 63
+      }
+    ],
+    "sellerFields": []
+  },
+  "buyerAssign": {
+    "method": "POST",
+    "path": "fields/assign",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:20.657Z",
+      "data": {
+        "userId": 80,
+        "fieldId": 63,
+        "staffId": 21,
+        "createdAt": "2026-11-25T20:05:20.641Z",
+        "id": 15
+      },
+      "message": "Assignment created"
+    },
+    "requestBody": {
+      "fieldId": 63,
+      "staffId": 21
+    }
+  },
+  "sellerNewAssign": {
+    "method": "POST",
+    "path": "fields/assign",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:20.681Z",
+      "data": {
+        "userId": 79,
+        "fieldId": 63,
+        "staffId": 20,
+        "createdAt": "2026-11-25T20:05:20.663Z",
+        "id": 16
+      },
+      "message": "Assignment created"
+    },
+    "requestBody": {
+      "fieldId": 63,
+      "staffId": 20
+    }
+  },
+  "sellerPut": {
+    "method": "PUT",
+    "path": "fields/63",
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T20:05:20.704Z",
+      "error": "Not found"
+    },
+    "requestBody": {
+      "name": "Hijacked by seller",
+      "area": 0.1
+    }
+  },
+  "sellerAnimal": {
+    "method": "POST",
+    "path": "animals",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:20.727Z",
+      "data": {
+        "userId": 79,
+        "type": "goat",
+        "amount": 1,
+        "fieldId": 63,
+        "createdAt": "2026-11-25T20:05:20.710Z",
+        "id": 34
+      },
+      "message": "Animal added"
+    },
+    "requestBody": {
+      "type": "goat",
+      "amount": 1,
+      "fieldId": 63
+    }
+  },
+  "sellerDelete": {
+    "method": "DELETE",
+    "path": "fields/63",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:05:20.772Z",
+      "data": {
+        "message": "field deleted"
+      }
+    }
+  },
+  "final": {
+    "buyerFields": [
+      {
+        "userId": 80,
+        "name": "QA field ce13d6",
+        "area": 7,
+        "id": 63
+      }
+    ],
+    "buyerAssign": [],
+    "sellerAssign": [],
+    "sellerAnimals": [
+      {
+        "userId": 79,
+        "type": "goat",
+        "amount": 1,
+        "fieldId": 63,
+        "createdAt": "2026-11-25T20:05:20.710Z",
+        "id": 34
+      }
+    ],
+    "buyerAnimals": []
+  }
+}

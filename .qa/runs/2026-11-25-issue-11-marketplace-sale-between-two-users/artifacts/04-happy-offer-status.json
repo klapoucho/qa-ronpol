@@ -1,0 +1,35 @@
+{
+  "check": 4,
+  "offerId": 32,
+  "statusBefore": "active",
+  "statusAfter": "sold",
+  "inBuyerBrowseBefore": true,
+  "inBuyerBrowseAfter": false,
+  "inThirdBrowseBefore": true,
+  "inThirdBrowseAfter": false,
+  "sellerMyOffersAfter": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.798Z",
+    "data": {
+      "offers": [
+        {
+          "id": 32,
+          "sellerId": 30,
+          "itemType": "field",
+          "itemId": 43,
+          "price": 123.45,
+          "description": "QA offer",
+          "status": "sold",
+          "createdAt": "2026-11-25T19:54:10.555Z",
+          "updatedAt": "2026-11-25T19:54:14.689Z",
+          "details": {
+            "name": "QA field 9b06bb",
+            "area": 3.5
+          },
+          "sellerLabel": "qa_happys_f1edea7a"
+        }
+      ],
+      "total": 1
+    }
+  }
+}

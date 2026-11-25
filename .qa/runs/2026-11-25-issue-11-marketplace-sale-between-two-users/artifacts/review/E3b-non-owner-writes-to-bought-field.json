@@ -1,0 +1,346 @@
+{
+  "fieldId": 65,
+  "offerId": 59,
+  "controlFieldId": 66,
+  "ids": {
+    "S": 87,
+    "B": 88,
+    "T": 90
+  },
+  "steps": [
+    {
+      "name": "fund B",
+      "status": 201,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:32.841Z",
+        "data": {
+          "transaction": {
+            "id": 95,
+            "type": "income",
+            "amount": 50,
+            "description": "QA seed funds",
+            "category": "seed",
+            "referenceId": null,
+            "timestamp": "2026-11-25T20:06:31.830Z",
+            "balanceBefore": 0,
+            "balanceAfter": 50
+          }
+        },
+        "message": "Transaction added successfully"
+      }
+    },
+    {
+      "name": "S assigns own staff to own field F",
+      "status": 201,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:32.944Z",
+        "data": {
+          "userId": 87,
+          "fieldId": 65,
+          "staffId": 22,
+          "createdAt": "2026-11-25T20:06:32.920Z",
+          "id": 14
+        },
+        "message": "Assignment created"
+      }
+    },
+    {
+      "name": "B buys F",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:38.949Z",
+        "data": {
+          "transaction": {
+            "id": 23,
+            "offerId": 59,
+            "sellerId": 87,
+            "buyerId": 88,
+            "itemType": "field",
+            "itemId": 65,
+            "price": 15,
+            "status": "completed",
+            "createdAt": "2026-11-25T20:06:38.929Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      }
+    },
+    {
+      "name": "read S assignments after sale",
+      "status": 200,
+      "body": {
+        "data": [
+          {
+            "userId": 87,
+            "fieldId": 65,
+            "staffId": 22,
+            "createdAt": "2026-11-25T20:06:32.920Z",
+            "id": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "read B assignments after sale",
+      "status": 200,
+      "body": {
+        "data": []
+      }
+    },
+    {
+      "name": "B assigns own staff to bought F (positive control)",
+      "status": 201,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:39.033Z",
+        "data": {
+          "userId": 88,
+          "fieldId": 65,
+          "staffId": 23,
+          "createdAt": "2026-11-25T20:06:39.016Z",
+          "id": 15
+        },
+        "message": "Assignment created"
+      }
+    },
+    {
+      "name": "read B assignments",
+      "status": 200,
+      "body": {
+        "data": [
+          {
+            "userId": 88,
+            "fieldId": 65,
+            "staffId": 23,
+            "createdAt": "2026-11-25T20:06:39.016Z",
+            "id": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "S PUT /fields/F (control: ownership enforced)",
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T20:06:39.065Z",
+        "error": "Not found"
+      }
+    },
+    {
+      "name": "T PUT /fields/F",
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T20:06:39.093Z",
+        "error": "Not found"
+      }
+    },
+    {
+      "name": "S POST /animals onto F",
+      "status": 201,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:39.116Z",
+        "data": {
+          "userId": 87,
+          "type": "goat",
+          "amount": 1,
+          "fieldId": 65,
+          "createdAt": "2026-11-25T20:06:39.098Z",
+          "id": 36
+        },
+        "message": "Animal added"
+      }
+    },
+    {
+      "name": "T POST /animals onto F",
+      "status": 201,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:39.140Z",
+        "data": {
+          "userId": 90,
+          "type": "rat",
+          "amount": 1,
+          "fieldId": 65,
+          "createdAt": "2026-11-25T20:06:39.121Z",
+          "id": 37
+        },
+        "message": "Animal added"
+      }
+    },
+    {
+      "name": "T POST /animals onto non-existent field 999999 (validation control)",
+      "status": 201,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:39.162Z",
+        "data": {
+          "userId": 90,
+          "type": "rat",
+          "amount": 1,
+          "fieldId": 999999,
+          "createdAt": "2026-11-25T20:06:39.145Z",
+          "id": 38
+        },
+        "message": "Animal added"
+      }
+    },
+    {
+      "name": "T POST /fields/assign own staff onto F",
+      "status": 201,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:39.210Z",
+        "data": {
+          "userId": 90,
+          "fieldId": 65,
+          "staffId": 24,
+          "createdAt": "2026-11-25T20:06:39.191Z",
+          "id": 16
+        },
+        "message": "Assignment created"
+      }
+    },
+    {
+      "name": "read B animals",
+      "status": 200,
+      "body": {
+        "data": []
+      }
+    },
+    {
+      "name": "read B fields",
+      "status": 200,
+      "body": {
+        "data": [
+          {
+            "userId": 88,
+            "name": "QA sold field",
+            "area": 5,
+            "id": 65
+          }
+        ]
+      }
+    },
+    {
+      "name": "B lists F (impact)",
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T20:06:39.229Z",
+        "error": "Cannot sell field with assigned animals"
+      }
+    },
+    {
+      "name": "B lists own clean field G (positive control)",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:39.278Z",
+        "data": {
+          "offer": {
+            "id": 61,
+            "sellerId": 88,
+            "itemType": "field",
+            "itemId": 66,
+            "price": 20,
+            "description": "QA offer",
+            "status": "active",
+            "createdAt": "2026-11-25T20:06:39.260Z",
+            "updatedAt": "2026-11-25T20:06:39.260Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    {
+      "name": "read B assignments before S DELETE",
+      "status": 200,
+      "body": {
+        "data": [
+          {
+            "userId": 88,
+            "fieldId": 65,
+            "staffId": 23,
+            "createdAt": "2026-11-25T20:06:39.016Z",
+            "id": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "S DELETE /fields/F",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:39.336Z",
+        "data": {
+          "message": "field deleted"
+        }
+      }
+    },
+    {
+      "name": "read B fields after S DELETE",
+      "status": 200,
+      "body": {
+        "data": [
+          {
+            "userId": 88,
+            "name": "QA sold field",
+            "area": 5,
+            "id": 65
+          },
+          {
+            "userId": 88,
+            "name": "QA control field",
+            "area": 2,
+            "id": 66
+          }
+        ]
+      }
+    },
+    {
+      "name": "read B assignments after S DELETE",
+      "status": 200,
+      "body": {
+        "data": []
+      }
+    },
+    {
+      "name": "read S assignments after S DELETE",
+      "status": 200,
+      "body": {
+        "data": []
+      }
+    },
+    {
+      "name": "read T assignments after S DELETE",
+      "status": 200,
+      "body": {
+        "data": []
+      }
+    },
+    {
+      "name": "read S animals",
+      "status": 200,
+      "body": {
+        "data": [
+          {
+            "userId": 87,
+            "type": "goat",
+            "amount": 1,
+            "fieldId": 65,
+            "createdAt": "2026-11-25T20:06:39.098Z",
+            "id": 36
+          }
+        ]
+      }
+    }
+  ]
+}

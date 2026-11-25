@@ -1,0 +1,445 @@
+{
+  "run_id": "2026-11-25-issue-11-marketplace-sale-between-two-users",
+  "title": "Marketplace: sale between two users (API)",
+  "source": {
+    "type": "github-issue",
+    "issue_url": "https://github.com/klapoucho/qa-ronpol/issues/11",
+    "pr_url": null,
+    "pr_head_sha": null
+  },
+  "kind": "api",
+  "status": "FAIL",
+  "blocked_reason": null,
+  "env": "http://localhost:3000/api/v1",
+  "app_version": "Rolnopol 1.126.0 (Docker image jaktestowac/rolnopol:1.126.0)",
+  "platforms": [
+    "API"
+  ],
+  "roles": [
+    "seller (registered user)",
+    "buyer (registered user)",
+    "third user (bystander)",
+    "anonymous"
+  ],
+  "items": [
+    {
+      "id": "1",
+      "check": "Funded buyer buys a field offer at 123.45: 200 + transaction body",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/01-happy-buy-response.json"
+    },
+    {
+      "id": "2",
+      "check": "Buyer 200 -> 76.55, seller 0 -> 123.45",
+      "requirement": "AC-5",
+      "role": "buyer, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/02-happy-balances.json"
+    },
+    {
+      "id": "3",
+      "check": "Field in buyer's GET /fields, gone from seller's",
+      "requirement": "AC-5",
+      "role": "buyer, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/03-happy-field-owner.json"
+    },
+    {
+      "id": "4",
+      "check": "Offer active -> sold in my-offers; gone from buyer's and third user's browse",
+      "requirement": "AC-5",
+      "role": "seller, buyer, third",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/04-happy-offer-status.json"
+    },
+    {
+      "id": "5",
+      "check": "Same marketplace transaction in buyer's and seller's history, not in third user's",
+      "requirement": "AC-5",
+      "role": "buyer, seller, third",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/05-happy-marketplace-history.json"
+    },
+    {
+      "id": "6",
+      "check": "Buyer expense / seller income 123.45, category marketplace, in /financial/transactions and /financial/account",
+      "requirement": "AC-5",
+      "role": "buyer, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/06-happy-financial-history.json"
+    },
+    {
+      "id": "7",
+      "check": "Balance exactly equal to price (50.25) buys; buyer ends at 0",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/07-balance-equals-price.json"
+    },
+    {
+      "id": "8",
+      "check": "Balance one cent below price refused 400, nothing changes",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/08-balance-one-cent-below.json"
+    },
+    {
+      "id": "9",
+      "check": "Balance 0 refused 400, nothing changes",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/09-balance-zero.json"
+    },
+    {
+      "id": "10",
+      "check": "Price 10.555 stored 10.56; buyer with 10.56 buys, with 10.55 refused",
+      "requirement": "assumption (2-decimal money)",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/10-three-decimal-price.json"
+    },
+    {
+      "id": "11",
+      "check": "Funded seller buys own offer: 400, nothing changes",
+      "requirement": "AC-6",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/11-buy-own-offer.json"
+    },
+    {
+      "id": "12",
+      "check": "Sold offer bought again (same and other buyer): 404, no second payment",
+      "requirement": "AC-4",
+      "role": "buyer, buyer 2",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/12-buy-sold-offer-again.json"
+    },
+    {
+      "id": "13",
+      "check": "Two buyers concurrently: exactly one sale (1 + 3 rounds)",
+      "requirement": "AC-4, AC-5",
+      "role": "buyer, buyer 2",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/13-concurrent-two-buyers.json, artifacts/13b-concurrent-repeat.json"
+    },
+    {
+      "id": "14",
+      "check": "Same buyer 3 concurrent buys: one 200, debited once",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/14-concurrent-same-buyer.json"
+    },
+    {
+      "id": "15",
+      "check": "Non-existent / missing / null / negative / object offerId refused, nothing changes",
+      "requirement": "assumption (api.md)",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/15-invalid-offer-ids.json"
+    },
+    {
+      "id": "15a",
+      "check": "offerId as string of an active offer -> 404; offerId 0 -> 'Missing required field'",
+      "requirement": "assumption (api.md)",
+      "role": "buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/15-invalid-offer-ids.json"
+    },
+    {
+      "id": "15b",
+      "check": "Malformed JSON body -> 500 on buy and other POSTs",
+      "requirement": "assumption (api.md)",
+      "role": "buyer, anonymous",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/15b-malformed-json-other-endpoints.json"
+    },
+    {
+      "id": "16",
+      "check": "No token -> 401, nothing changes; positive control with token succeeds",
+      "requirement": "assumption (api.md)",
+      "role": "anonymous",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/16-buy-without-auth.json"
+    },
+    {
+      "id": "16a",
+      "check": "Malformed token -> 403 instead of 401",
+      "requirement": "assumption (api.md)",
+      "role": "anonymous",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/16-buy-without-auth.json"
+    },
+    {
+      "id": "17",
+      "check": "Cancelled offer cannot be bought (404), nothing changes",
+      "requirement": "AC-7",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/17-buy-cancelled-offer.json"
+    },
+    {
+      "id": "18",
+      "check": "After sale seller cannot relist (404), buyer can",
+      "requirement": "AC-1 + AC-5 (user expectation)",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/18-relist-after-sale.json"
+    },
+    {
+      "id": "19",
+      "check": "Seller deletes listed field; buy refused 404, buyer keeps funds",
+      "requirement": "user expectation",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/19-buy-after-field-deleted.json"
+    },
+    {
+      "id": "20",
+      "check": "Latency: income 2.0 s, buy 4.1 s (observation)",
+      "requirement": "n/a",
+      "role": "-",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/20-latency.json"
+    },
+    {
+      "id": "21",
+      "check": "Create offer returns 200 + message 201 instead of 201",
+      "requirement": "AC-1 neighbour / OpenAPI",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/01-happy-buy-response.json"
+    },
+    {
+      "id": "R1",
+      "check": "Animal sale end to end: cow x3 moves to the buyer, 100->59.5 / 0->40.5, offer sold, both histories, third user's history empty, marketplace-stats +1 transaction / +40.5 volume",
+      "requirement": "AC-4, AC-5",
+      "role": "seller, buyer, third",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/E1-animal-sale.json"
+    },
+    {
+      "id": "R2",
+      "check": "Listed animal moved onto a field before the buy: buy 404, offer unavailable, nothing paid",
+      "requirement": "AC-4",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/E2-animal-moved-to-field.json"
+    },
+    {
+      "id": "R3",
+      "check": "Seller deletes the listed field during an in-flight buy: buyer charged, no field, offer sold",
+      "requirement": "AC-5",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/E5-race-delete-field-during-buy-round1.json, artifacts/review/E5-race-delete-field-during-buy-round2.json"
+    },
+    {
+      "id": "R4",
+      "check": "Field and animal edited after listing are sold at the listed price (100 ha -> 0.01 ha; 10 cows -> 1 rat)",
+      "requirement": "user expectation",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/E4-item-edited-after-listing.json"
+    },
+    {
+      "id": "R5",
+      "check": "A non-owner (former owner or stranger) can POST /animals and /fields/assign onto another user's field (201); the owner's listing is then refused",
+      "requirement": "user expectation (ownership)",
+      "role": "former owner, stranger, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/E3b-non-owner-writes-to-bought-field.json"
+    },
+    {
+      "id": "R6",
+      "check": "DELETE /fields/:id by a non-owner answers 200 and wipes the owner's assignments; a non-existent id also answers 200",
+      "requirement": "user expectation (ownership)",
+      "role": "stranger, former owner",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/E3c-stranger-deletes-owner-field.json"
+    },
+    {
+      "id": "R7",
+      "check": "Seller adds animals to the field during an in-flight buy: the buyer receives an encumbered field and cannot relist it",
+      "requirement": "AC-5",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/E6-race-animal-on-field-during-buy.json"
+    },
+    {
+      "id": "R8",
+      "check": "Seller cancels during an in-flight buy: cancel 200 'cancelled', yet the sale completes and the offer is sold",
+      "requirement": "AC-7 / AC-5",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/E7-race-cancel-during-buy-round1.json, artifacts/review/E7-race-cancel-during-buy-round2.json"
+    },
+    {
+      "id": "R9",
+      "check": "Seller's staff assignment stays on the buyer's field after the sale",
+      "requirement": "user expectation",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/E3-staff-assignment-and-seller-access.json"
+    },
+    {
+      "id": "R10",
+      "check": "Buyer spends the balance in parallel with a buy (100: buy 80 + expense 50): buy 200, expense 400, balance 20",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/E8-race-spend-during-buy.json"
+    }
+  ],
+  "findings": [
+    {
+      "title": "Buyer pays and receives nothing when the seller deletes the field during the purchase (5/6)",
+      "severity": "major",
+      "bug_file": ".qa/bugs/api-marketplace-buy--field-deleted-during-buy.md",
+      "evidence": "artifacts/review/E5-race-delete-field-during-buy-round2.json"
+    },
+    {
+      "title": "Listed field/animal can be edited after listing; buyer pays the listed price for the edited item",
+      "severity": "major",
+      "bug_file": ".qa/bugs/api-marketplace-offers--item-edited-after-listing.md",
+      "evidence": "artifacts/review/E4-item-edited-after-listing.json"
+    },
+    {
+      "title": "Any user can attach animals and staff to another user's field, blocking its sale",
+      "severity": "major",
+      "bug_file": ".qa/bugs/api-fields-ownership--non-owner-attaches-animals-and-staff.md",
+      "evidence": "artifacts/review/E3b-non-owner-writes-to-bought-field.json"
+    },
+    {
+      "title": "DELETE /fields/:id by a non-owner answers 200 and wipes the owner's staff assignments",
+      "severity": "major",
+      "bug_file": ".qa/bugs/api-fields-ownership--non-owner-delete-wipes-assignments.md",
+      "evidence": "artifacts/review/E3c-stranger-deletes-owner-field.json"
+    },
+    {
+      "title": "Create offer answers HTTP 200 with \"message\": 201 instead of HTTP 201",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/api-marketplace-offers--create-offer-status-in-message.md",
+      "evidence": "artifacts/01-happy-buy-response.json"
+    },
+    {
+      "title": "Malformed JSON body gets 500 Internal server error instead of 400 (app-wide)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/api-app-input--malformed-json-500.md",
+      "evidence": "artifacts/15b-malformed-json-other-endpoints.json"
+    },
+    {
+      "title": "Buy with offerId as a string answers 404 for an existing active offer",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/api-marketplace-buy--string-offer-id-404.md",
+      "evidence": "artifacts/15-invalid-offer-ids.json"
+    },
+    {
+      "title": "Invalid token on buy gets 403 instead of 401",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/api-auth-token--invalid-token-403.md",
+      "evidence": "artifacts/16-buy-without-auth.json"
+    },
+    {
+      "title": "Buyer receives a field holding the seller's animals when they are added during the purchase",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/api-marketplace-buy--animals-added-during-buy.md",
+      "evidence": "artifacts/review/E6-race-animal-on-field-during-buy.json"
+    },
+    {
+      "title": "Seller gets 'Offer cancelled successfully' but the offer is sold anyway (race)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/api-marketplace-offers--cancel-during-buy-still-sold.md",
+      "evidence": "artifacts/review/E7-race-cancel-during-buy-round2.json"
+    },
+    {
+      "title": "Seller's staff assignment stays on the buyer's field after a sale",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/api-marketplace-buy--seller-assignment-survives-sale.md",
+      "evidence": "artifacts/review/E3-staff-assignment-and-seller-access.json"
+    },
+    {
+      "title": "offerId 0 refused as 'Missing required field: offerId'",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/api-marketplace-buy--offer-id-zero-message.md",
+      "evidence": "artifacts/15-invalid-offer-ids.json"
+    },
+    {
+      "title": "OpenAPI marketplace transaction history shape differs from the real response",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/api-marketplace-docs--openapi-history-shape.md",
+      "evidence": "artifacts/05-happy-marketplace-history.json"
+    }
+  ],
+  "automation": {
+    "status": "done",
+    "skip_reason": null,
+    "branch": "test/api-marketplace-sale",
+    "pr_url": null
+  },
+  "assumptions": [
+    "Money has 2 decimal places; check 10 relies on the stored rounded price.",
+    "'Offer no longer active' = status sold in my-offers and absent from browse.",
+    "'Appears in financial history' = one entry with category marketplace and amount = price; entries have referenceId null, so they cannot be linked to a specific sale.",
+    "Status codes for invalid ids, missing auth and malformed bodies follow testing-rules/api.md (not in the requirements)."
+  ],
+  "lessons": [
+    "Refusals checked against 12 read-back surfaces, not the status code alone.",
+    "Race check repeated (1 + 3 rounds) before calling the ledger lock reliable.",
+    "Tester prompt: transfer/ownership stories cover every item type and what the previous owner and others can do before, during and after the transfer.",
+    "\"Changed by\" assertions start every actor at a non-zero, non-round value (testing-rules/general.md, tester prompt).",
+    "QA settings install command runs `nvm use` first (CLAUDE.md)."
+  ],
+  "struggles": [
+    "First register failed: displayedName must be 3-20 chars of letters, digits, space, '-', '_' (my label was too long); shortened it in scratch/lib.mjs.",
+    "Income (POST /financial/transactions type income) requires a Luhn-valid cardNumber + cvv; used the published Visa test number in scratch/lib.mjs.",
+    "Harness blocked a plain `sleep 60` wait; waited with an until-loop on the probe log instead.",
+    "Writing report.md into the run folder was refused by the harness ('subagents should return findings as text'); its contents are returned in the tester's final message for the coordinator to save.",
+    "reviewer: update_plan was refused because subagents may not use it. No impact.",
+    "reviewer: no Playwright CLI problems; API-only story, no browser needed.",
+    "reviewer: assignment ids get reused after deletes (id 14 came up three times in different users' runs); noted only, not filed.",
+    "tester: the harness refused the subagent's write of report.md ('Subagents should return findings as text'); the coordinator saved it from the final message.",
+    "writer: npm ci in the worktree failed with EBADENGINE (shell Node 22, repo pins Node 26); every shell call needed `. ~/.nvm/nvm.sh && nvm use`, husky commits included.",
+    "writer: the handoff's recipe, endpoints and payloads were all correct; nothing had to be rediscovered.",
+    "writer: the bug file named in the create-offer workaround comment existed only untracked on main; the coordinator commits it with the run evidence.",
+    "test reviewer: the seller started at 0, so 'balance rises by the price' could not be told from 'set to the price'; fixed by funding the seller with 10 (expected 133.45)."
+  ]
+}

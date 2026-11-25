@@ -1,0 +1,25 @@
+{
+  "check": "latency",
+  "rowsMs": [
+    [
+      "POST /fields",
+      35,
+      201
+    ],
+    [
+      "POST /financial/transactions (income)",
+      2028,
+      201
+    ],
+    [
+      "POST /marketplace/offers",
+      30,
+      200
+    ],
+    [
+      "POST /marketplace/buy",
+      4072,
+      200
+    ]
+  ]
+}

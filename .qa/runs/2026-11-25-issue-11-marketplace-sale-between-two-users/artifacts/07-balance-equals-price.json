@@ -1,0 +1,172 @@
+{
+  "check": 7,
+  "price": 50.25,
+  "buyerFunded": 50.25,
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T19:54:30.199Z",
+      "data": {
+        "transaction": {
+          "id": 6,
+          "offerId": 33,
+          "sellerId": 32,
+          "buyerId": 33,
+          "itemType": "field",
+          "itemId": 44,
+          "price": 50.25,
+          "status": "completed",
+          "createdAt": "2026-11-25T19:54:30.183Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  },
+  "before": {
+    "sellerBalance": 0,
+    "buyerBalance": 50.25,
+    "sellerOwnsField": true,
+    "buyerOwnsField": false,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerMarketplaceTx": [],
+    "buyerMarketplaceTx": [],
+    "sellerFinancialTx": [],
+    "buyerFinancialTx": [
+      {
+        "id": 33,
+        "type": "income",
+        "amount": 50.25,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:25.025Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50.25
+      }
+    ],
+    "sellerAccountTx": [],
+    "buyerAccountTx": [
+      {
+        "id": 33,
+        "type": "income",
+        "amount": 50.25,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:25.025Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50.25
+      }
+    ]
+  },
+  "after": {
+    "sellerBalance": 50.25,
+    "buyerBalance": 0,
+    "sellerOwnsField": false,
+    "buyerOwnsField": true,
+    "offerStatus": "sold",
+    "offerInBuyerBrowse": false,
+    "sellerMarketplaceTx": [
+      {
+        "id": 6,
+        "offerId": 33,
+        "sellerId": 32,
+        "buyerId": 33,
+        "itemType": "field",
+        "itemId": 44,
+        "price": 50.25,
+        "status": "completed",
+        "createdAt": "2026-11-25T19:54:30.183Z"
+      }
+    ],
+    "buyerMarketplaceTx": [
+      {
+        "id": 6,
+        "offerId": 33,
+        "sellerId": 32,
+        "buyerId": 33,
+        "itemType": "field",
+        "itemId": 44,
+        "price": 50.25,
+        "status": "completed",
+        "createdAt": "2026-11-25T19:54:30.183Z"
+      }
+    ],
+    "sellerFinancialTx": [
+      {
+        "id": 35,
+        "type": "income",
+        "amount": 50.25,
+        "description": "Marketplace sale",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:29.163Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50.25
+      }
+    ],
+    "buyerFinancialTx": [
+      {
+        "id": 34,
+        "type": "expense",
+        "amount": 50.25,
+        "description": "Marketplace purchase",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:27.142Z",
+        "balanceBefore": 50.25,
+        "balanceAfter": 0
+      },
+      {
+        "id": 33,
+        "type": "income",
+        "amount": 50.25,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:25.025Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50.25
+      }
+    ],
+    "sellerAccountTx": [
+      {
+        "id": 35,
+        "type": "income",
+        "amount": 50.25,
+        "description": "Marketplace sale",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:29.163Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50.25
+      }
+    ],
+    "buyerAccountTx": [
+      {
+        "id": 33,
+        "type": "income",
+        "amount": 50.25,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:25.025Z",
+        "balanceBefore": 0,
+        "balanceAfter": 50.25
+      },
+      {
+        "id": 34,
+        "type": "expense",
+        "amount": 50.25,
+        "description": "Marketplace purchase",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T19:54:27.142Z",
+        "balanceBefore": 50.25,
+        "balanceAfter": 0
+      }
+    ]
+  }
+}

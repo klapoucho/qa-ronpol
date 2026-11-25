@@ -1,0 +1,138 @@
+{
+  "buy": {
+    "method": "POST",
+    "path": "marketplace/buy",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-25T20:07:03.610Z",
+      "data": {
+        "transaction": {
+          "id": 25,
+          "offerId": 63,
+          "sellerId": 94,
+          "buyerId": 95,
+          "itemType": "field",
+          "itemId": 68,
+          "price": 80,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:07:03.588Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    },
+    "requestBody": {
+      "offerId": 63
+    }
+  },
+  "spend": {
+    "method": "POST",
+    "path": "financial/transactions",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-25T20:07:03.611Z",
+      "error": "Insufficient funds: overdraft is not allowed"
+    },
+    "requestBody": {
+      "type": "expense",
+      "amount": 50,
+      "description": "QA parallel spend",
+      "category": "seed"
+    }
+  },
+  "after": {
+    "sellerBalance": 80,
+    "buyerBalance": 20,
+    "sellerFields": [],
+    "buyerFields": [
+      {
+        "userId": 95,
+        "name": "QA field 5d3260",
+        "area": 3.5,
+        "id": 68
+      }
+    ],
+    "sellerAnimals": [],
+    "buyerAnimals": [],
+    "sellerMarketTx": [
+      {
+        "id": 25,
+        "offerId": 63,
+        "sellerId": 94,
+        "buyerId": 95,
+        "itemType": "field",
+        "itemId": 68,
+        "price": 80,
+        "status": "completed",
+        "createdAt": "2026-11-25T20:07:03.588Z"
+      }
+    ],
+    "buyerMarketTx": [
+      {
+        "id": 25,
+        "offerId": 63,
+        "sellerId": 94,
+        "buyerId": 95,
+        "itemType": "field",
+        "itemId": 68,
+        "price": 80,
+        "status": "completed",
+        "createdAt": "2026-11-25T20:07:03.588Z"
+      }
+    ],
+    "sellerFinTx": [
+      {
+        "id": 104,
+        "type": "income",
+        "amount": 80,
+        "description": "Marketplace sale",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:07:02.553Z",
+        "balanceBefore": 0,
+        "balanceAfter": 80
+      }
+    ],
+    "buyerFinTx": [
+      {
+        "id": 103,
+        "type": "expense",
+        "amount": 80,
+        "description": "Marketplace purchase",
+        "category": "marketplace",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:07:00.533Z",
+        "balanceBefore": 100,
+        "balanceAfter": 20
+      },
+      {
+        "id": 102,
+        "type": "income",
+        "amount": 100,
+        "description": "QA seed funds",
+        "category": "seed",
+        "referenceId": null,
+        "timestamp": "2026-11-25T20:06:58.428Z",
+        "balanceBefore": 0,
+        "balanceAfter": 100
+      }
+    ],
+    "offer": {
+      "id": 63,
+      "sellerId": 94,
+      "itemType": "field",
+      "itemId": 68,
+      "price": 80,
+      "description": "QA offer",
+      "status": "sold",
+      "createdAt": "2026-11-25T20:06:59.488Z",
+      "updatedAt": "2026-11-25T20:07:03.588Z",
+      "details": {
+        "name": "QA field 5d3260",
+        "area": 3.5
+      },
+      "sellerLabel": "qa_rvrss_ba82a3e3"
+    }
+  }
+}

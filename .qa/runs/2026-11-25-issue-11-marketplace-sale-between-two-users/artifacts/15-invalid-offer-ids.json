@@ -1,0 +1,94 @@
+{
+  "check": 15,
+  "buyerCanReadOwnAccount": 200,
+  "realOfferId": 42,
+  "cases": {
+    "nonExistent": {
+      "request": {
+        "offerId": 99999999
+      },
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.454Z",
+        "error": "Offer not found or not available"
+      }
+    },
+    "missing": {
+      "request": {},
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.458Z",
+        "error": "Missing required field: offerId"
+      }
+    },
+    "nullId": {
+      "request": {
+        "offerId": null
+      },
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.461Z",
+        "error": "Missing required field: offerId"
+      }
+    },
+    "zero": {
+      "request": {
+        "offerId": 0
+      },
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.463Z",
+        "error": "Missing required field: offerId"
+      }
+    },
+    "negative": {
+      "request": {
+        "offerId": -1
+      },
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.466Z",
+        "error": "Offer not found or not available"
+      }
+    },
+    "stringId": {
+      "request": {
+        "offerId": "42"
+      },
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.468Z",
+        "error": "Offer not found or not available"
+      }
+    },
+    "objectId": {
+      "request": {
+        "offerId": {
+          "$gt": 0
+        }
+      },
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.470Z",
+        "error": "Offer not found or not available"
+      }
+    },
+    "malformedJson": {
+      "request": "{\"offerId\":",
+      "status": 500,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T19:56:08.473Z",
+        "error": "Internal server error"
+      }
+    }
+  },
+  "changedKeys": []
+}

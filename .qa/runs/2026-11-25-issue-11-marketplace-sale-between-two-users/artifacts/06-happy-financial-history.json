@@ -1,0 +1,97 @@
+{
+  "check": 6,
+  "sellerTransactions": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.793Z",
+    "data": {
+      "transactions": [
+        {
+          "id": 32,
+          "type": "income",
+          "amount": 123.45,
+          "description": "Marketplace sale",
+          "category": "marketplace",
+          "referenceId": null,
+          "timestamp": "2026-11-25T19:54:13.657Z",
+          "balanceBefore": 0,
+          "balanceAfter": 123.45
+        }
+      ],
+      "total": 1,
+      "limit": 100,
+      "offset": 0,
+      "hasMore": false
+    }
+  },
+  "buyerTransactions": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.806Z",
+    "data": {
+      "transactions": [
+        {
+          "id": 31,
+          "type": "expense",
+          "amount": 123.45,
+          "description": "Marketplace purchase",
+          "category": "marketplace",
+          "referenceId": null,
+          "timestamp": "2026-11-25T19:54:11.634Z",
+          "balanceBefore": 200,
+          "balanceAfter": 76.55
+        },
+        {
+          "id": 30,
+          "type": "income",
+          "amount": 200,
+          "description": "QA seed funds",
+          "category": "seed",
+          "referenceId": null,
+          "timestamp": "2026-11-25T19:54:09.540Z",
+          "balanceBefore": 0,
+          "balanceAfter": 200
+        }
+      ],
+      "total": 2,
+      "limit": 100,
+      "offset": 0,
+      "hasMore": false
+    }
+  },
+  "sellerAccountTransactions": [
+    {
+      "id": 32,
+      "type": "income",
+      "amount": 123.45,
+      "description": "Marketplace sale",
+      "category": "marketplace",
+      "referenceId": null,
+      "timestamp": "2026-11-25T19:54:13.657Z",
+      "balanceBefore": 0,
+      "balanceAfter": 123.45
+    }
+  ],
+  "buyerAccountTransactions": [
+    {
+      "id": 30,
+      "type": "income",
+      "amount": 200,
+      "description": "QA seed funds",
+      "category": "seed",
+      "referenceId": null,
+      "timestamp": "2026-11-25T19:54:09.540Z",
+      "balanceBefore": 0,
+      "balanceAfter": 200
+    },
+    {
+      "id": 31,
+      "type": "expense",
+      "amount": 123.45,
+      "description": "Marketplace purchase",
+      "category": "marketplace",
+      "referenceId": null,
+      "timestamp": "2026-11-25T19:54:11.634Z",
+      "balanceBefore": 200,
+      "balanceAfter": 76.55
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+[
+  {
+    "delay": 300,
+    "fieldId": 65,
+    "offerId": 57,
+    "buy": {
+      "method": "POST",
+      "path": "marketplace/buy",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:12.768Z",
+        "data": {
+          "transaction": {
+            "id": 21,
+            "offerId": 57,
+            "sellerId": 83,
+            "buyerId": 84,
+            "itemType": "field",
+            "itemId": 65,
+            "price": 60,
+            "status": "completed",
+            "createdAt": "2026-11-25T20:06:12.742Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      },
+      "requestBody": {
+        "offerId": 57
+      },
+      "ms": 4086
+    },
+    "del": {
+      "method": "DELETE",
+      "path": "fields/65",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:09.031Z",
+        "data": {
+          "message": "field deleted"
+        }
+      },
+      "ms": 347
+    },
+    "after": {
+      "sellerBalance": 60,
+      "buyerBalance": 40,
+      "sellerFields": [],
+      "buyerFields": [],
+      "sellerAnimals": [],
+      "buyerAnimals": [],
+      "sellerMarketTx": [
+        {
+          "id": 21,
+          "offerId": 57,
+          "sellerId": 83,
+          "buyerId": 84,
+          "itemType": "field",
+          "itemId": 65,
+          "price": 60,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:06:12.742Z"
+        }
+      ],
+      "buyerMarketTx": [
+        {
+          "id": 21,
+          "offerId": 57,
+          "sellerId": 83,
+          "buyerId": 84,
+          "itemType": "field",
+          "itemId": 65,
+          "price": 60,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:06:12.742Z"
+        }
+      ],
+      "sellerFinTx": [
+        {
+          "id": 91,
+          "type": "income",
+          "amount": 60,
+          "description": "Marketplace sale",
+          "category": "marketplace",
+          "referenceId": null,
+          "timestamp": "2026-11-25T20:06:11.726Z",
+          "balanceBefore": 0,
+          "balanceAfter": 60
+        }
+      ],
+      "buyerFinTx": [
+        {
+          "id": 90,
+          "type": "expense",
+          "amount": 60,
+          "description": "Marketplace purchase",
+          "category": "marketplace",
+          "referenceId": null,
+          "timestamp": "2026-11-25T20:06:09.703Z",
+          "balanceBefore": 100,
+          "balanceAfter": 40
+        },
+        {
+          "id": 89,
+          "type": "income",
+          "amount": 100,
+          "description": "QA seed funds",
+          "category": "seed",
+          "referenceId": null,
+          "timestamp": "2026-11-25T20:06:07.621Z",
+          "balanceBefore": 0,
+          "balanceAfter": 100
+        }
+      ],
+      "offer": {
+        "id": 57,
+        "sellerId": 83,
+        "itemType": "field",
+        "itemId": 65,
+        "price": 60,
+        "description": "QA offer",
+        "status": "sold",
+        "createdAt": "2026-11-25T20:06:08.661Z",
+        "updatedAt": "2026-11-25T20:06:12.742Z",
+        "details": {},
+        "sellerLabel": "qa_rvrd30_a4fbcbe6"
+      }
+    }
+  },
+  {
+    "delay": 1500,
+    "fieldId": 65,
+    "offerId": 58,
+    "buy": {
+      "method": "POST",
+      "path": "marketplace/buy",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:25.706Z",
+        "data": {
+          "transaction": {
+            "id": 22,
+            "offerId": 58,
+            "sellerId": 85,
+            "buyerId": 86,
+            "itemType": "field",
+            "itemId": 65,
+            "price": 60,
+            "status": "completed",
+            "createdAt": "2026-11-25T20:06:25.682Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      },
+      "requestBody": {
+        "offerId": 58
+      },
+      "ms": 4699
+    },
+    "del": {
+      "method": "DELETE",
+      "path": "fields/65",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:22.568Z",
+        "data": {
+          "message": "field deleted"
+        }
+      },
+      "ms": 1560
+    },
+    "after": {
+      "sellerBalance": 60,
+      "buyerBalance": 40,
+      "sellerFields": [],
+      "buyerFields": [],
+      "sellerAnimals": [],
+      "buyerAnimals": [],
+      "sellerMarketTx": [
+        {
+          "id": 22,
+          "offerId": 58,
+          "sellerId": 85,
+          "buyerId": 86,
+          "itemType": "field",
+          "itemId": 65,
+          "price": 60,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:06:25.682Z"
+        }
+      ],
+      "buyerMarketTx": [
+        {
+          "id": 22,
+          "offerId": 58,
+          "sellerId": 85,
+          "buyerId": 86,
+          "itemType": "field",
+          "itemId": 65,
+          "price": 60,
+          "status": "completed",
+          "createdAt": "2026-11-25T20:06:25.682Z"
+        }
+      ],
+      "sellerFinTx": [
+        {
+          "id": 94,
+          "type": "income",
+          "amount": 60,
+          "description": "Marketplace sale",
+          "category": "marketplace",
+          "referenceId": null,
+          "timestamp": "2026-11-25T20:06:24.666Z",
+          "balanceBefore": 0,
+          "balanceAfter": 60
+        }
+      ],
+      "buyerFinTx": [
+        {
+          "id": 93,
+          "type": "expense",
+          "amount": 60,
+          "description": "Marketplace purchase",
+          "category": "marketplace",
+          "referenceId": null,
+          "timestamp": "2026-11-25T20:06:22.018Z",
+          "balanceBefore": 100,
+          "balanceAfter": 40
+        },
+        {
+          "id": 92,
+          "type": "income",
+          "amount": 100,
+          "description": "QA seed funds",
+          "category": "seed",
+          "referenceId": null,
+          "timestamp": "2026-11-25T20:06:19.913Z",
+          "balanceBefore": 0,
+          "balanceAfter": 100
+        }
+      ],
+      "offer": {
+        "id": 58,
+        "sellerId": 85,
+        "itemType": "field",
+        "itemId": 65,
+        "price": 60,
+        "description": "QA offer",
+        "status": "sold",
+        "createdAt": "2026-11-25T20:06:20.985Z",
+        "updatedAt": "2026-11-25T20:06:25.682Z",
+        "details": {},
+        "sellerLabel": "qa_rvrd15_0fc48a96"
+      }
+    }
+  },
+  {
+    "delay": 3000,
+    "fieldId": 66,
+    "offerId": 60,
+    "buy": {
+      "method": "POST",
+      "path": "marketplace/buy",
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-25T20:06:38.952Z",
+        "error": "Item no longer available for purchase"
+      },
+      "requestBody": {
+        "offerId": 60
+      },
+      "ms": 4055
+    },
+    "del": {
+      "method": "DELETE",
+      "path": "fields/66",
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-25T20:06:37.943Z",
+        "data": {
+          "message": "field deleted"
+        }
+      },
+      "ms": 3046
+    },
+    "after": {
+      "sellerBalance": 0,
+      "buyerBalance": 100,
+      "sellerFields": [],
+      "buyerFields": [],
+      "sellerAnimals": [],
+      "buyerAnimals": [],
+      "sellerMarketTx": [],
+      "buyerMarketTx": [],
+      "sellerFinTx": [],
+      "buyerFinTx": [
+        {
+          "id": 96,
+          "type": "income",
+          "amount": 100,
+          "description": "QA seed funds",
+          "category": "seed",
+          "referenceId": null,
+          "timestamp": "2026-11-25T20:06:33.847Z",
+          "balanceBefore": 0,
+          "balanceAfter": 100
+        }
+      ],
+      "offer": {
+        "id": 60,
+        "sellerId": 89,
+        "itemType": "field",
+        "itemId": 66,
+        "price": 60,
+        "description": "QA offer",
+        "status": "unavailable",
+        "createdAt": "2026-11-25T20:06:34.879Z",
+        "updatedAt": "2026-11-25T20:06:39.003Z",
+        "details": {},
+        "sellerLabel": "qa_rvrd30_cc1eb6a9"
+      }
+    }
+  }
+]

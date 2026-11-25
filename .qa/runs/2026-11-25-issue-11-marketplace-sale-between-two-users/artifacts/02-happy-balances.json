@@ -1,0 +1,78 @@
+{
+  "check": 2,
+  "price": 123.45,
+  "buyerFunded": 200,
+  "before": {
+    "seller": 0,
+    "buyer": 200
+  },
+  "after": {
+    "seller": 123.45,
+    "buyer": 76.55
+  },
+  "sellerAccount": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.791Z",
+    "data": {
+      "account": {
+        "id": 21,
+        "userId": 30,
+        "balance": 123.45,
+        "currency": "ROL",
+        "createdAt": "2026-11-25T19:54:04.451Z",
+        "updatedAt": "2026-11-25T19:54:13.658Z",
+        "transactions": [
+          {
+            "id": 32,
+            "type": "income",
+            "amount": 123.45,
+            "description": "Marketplace sale",
+            "category": "marketplace",
+            "referenceId": null,
+            "timestamp": "2026-11-25T19:54:13.657Z",
+            "balanceBefore": 0,
+            "balanceAfter": 123.45
+          }
+        ]
+      }
+    }
+  },
+  "buyerAccount": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.804Z",
+    "data": {
+      "account": {
+        "id": 22,
+        "userId": 31,
+        "balance": 76.55,
+        "currency": "ROL",
+        "createdAt": "2026-11-25T19:54:07.491Z",
+        "updatedAt": "2026-11-25T19:54:11.636Z",
+        "transactions": [
+          {
+            "id": 30,
+            "type": "income",
+            "amount": 200,
+            "description": "QA seed funds",
+            "category": "seed",
+            "referenceId": null,
+            "timestamp": "2026-11-25T19:54:09.540Z",
+            "balanceBefore": 0,
+            "balanceAfter": 200
+          },
+          {
+            "id": 31,
+            "type": "expense",
+            "amount": 123.45,
+            "description": "Marketplace purchase",
+            "category": "marketplace",
+            "referenceId": null,
+            "timestamp": "2026-11-25T19:54:11.634Z",
+            "balanceBefore": 200,
+            "balanceAfter": 76.55
+          }
+        ]
+      }
+    }
+  }
+}

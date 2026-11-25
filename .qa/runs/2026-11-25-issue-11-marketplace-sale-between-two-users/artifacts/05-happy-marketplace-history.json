@@ -1,0 +1,56 @@
+{
+  "check": 5,
+  "txId": 5,
+  "seller": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.795Z",
+    "data": {
+      "transactions": [
+        {
+          "id": 5,
+          "offerId": 32,
+          "sellerId": 30,
+          "buyerId": 31,
+          "itemType": "field",
+          "itemId": 43,
+          "price": 123.45,
+          "status": "completed",
+          "createdAt": "2026-11-25T19:54:14.689Z"
+        }
+      ],
+      "total": 1
+    }
+  },
+  "buyer": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.808Z",
+    "data": {
+      "transactions": [
+        {
+          "id": 5,
+          "offerId": 32,
+          "sellerId": 30,
+          "buyerId": 31,
+          "itemType": "field",
+          "itemId": 43,
+          "price": 123.45,
+          "status": "completed",
+          "createdAt": "2026-11-25T19:54:14.689Z"
+        }
+      ],
+      "total": 1
+    }
+  },
+  "third": {
+    "success": true,
+    "timestamp": "2026-11-25T19:54:14.825Z",
+    "data": {
+      "transactions": [],
+      "total": 0
+    }
+  },
+  "beforeCounts": {
+    "seller": 0,
+    "buyer": 0
+  }
+}
