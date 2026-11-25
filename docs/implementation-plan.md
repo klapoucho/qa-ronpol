@@ -55,7 +55,9 @@ Every task's requirements include these lines.
   Before **every** `gh` command, reads included, `gh api user --jq .login` must print `klapoucho`; on a
   mismatch, stop and ask the author (the fix is `gh auth switch -u klapoucho`). Never merge a PR, never
   commit to `main`.
-- **Secrets (NFR-20):** none in the repo, reports, `.qa/` or test step titles. `.env` is ignored.
+- **Secrets (NFR-20):** no tokens or passwords in committed files, `.qa/` reports, or test and step
+  titles. `.env` is ignored. Test artifacts (traces, videos, HTML report) may hold the credentials of the
+  throwaway users a run created; they are never committed, and CI keeps them for 7 days.
 - **Language:** English in code, docs, commits, branches and PRs.
 
 ## Review Focus
@@ -643,7 +645,7 @@ Branch `ci/github-actions-workflow`. Covers FR-19, NFR-15, NFR-16, NFR-21, secti
       `TEST_ENV: ci`. Steps: checkout; setup-node with `node-version-file: .nvmrc` and `cache: npm`;
       `npm ci`; `npm run check`; `npx playwright install --with-deps chromium`; `npm run app:up`; `npm test`;
       `if: always()`: `docker compose logs --no-color > reports/app.log`, upload `playwright-report/` and
-      `reports/` as artifacts (14 days).
+      `reports/` as artifacts with `retention-days: 7` (NFR-20).
 - [ ] **Step 3: Local dry run.** Run: `TEST_ENV=ci npm test` → Expected: all pass with the CI reporters,
       `reports/junit.xml` exists.
 - [ ] **Step 4: Commit** with `ci: run checks and tests on pull requests`.
@@ -808,8 +810,9 @@ Run it last: it describes what Tasks 1–10 built.
      `.params.ts` for cases, tags, `test.fail()` with a bug link, `npm run check`, poison test.
   8. AI-assisted workflow: Phase A and B, the issue list (Task 10 numbers), how to run `/qa-pick <issue>`,
      what lands in `.qa/` (D-09, D-15), attribution.
-  9. Assumptions and limits: Chromium only, Marketplace only, intentional app bugs, traces and reports may
-     hold session cookies of throwaway users (reports are not committed), the image platform note if
+  9. Assumptions and limits: Chromium only, Marketplace only, intentional app bugs; test artifacts hold the
+     credentials of throwaway users, valid only on that run's app instance (NFR-20: never committed, 7 days
+     in CI); the image platform note if
      Task 3 needed it.
 - [ ] **Step 2: Third-party run (G4, NFR-21).** In the scratchpad, `git clone` the repo at this branch, then
       follow the README commands exactly. Expected: `npm run check` and `npm test` pass. Every command
