@@ -22,9 +22,10 @@ that is meant to grow, not just to hold five tests.
   targeting ES2025 (section 7.1).
 - **Isolated, parallel tests.** Every test creates its own users and data through the API, so
   tests run in parallel with no shared state and no database resets between them.
-- **AI-assisted, in the open.** Tests are written through the `qa-pick` workflow (manual QA by
-  an agent, review, then a test writer and a test reviewer). Its reports are committed as
-  evidence of the process (section 10).
+- **AI-assisted, in the open.** The implementation plan builds the framework and the `qa-pick`
+  workflow, not the tests. Each of the five test cases is a GitHub issue; the author runs
+  `/qa-pick <issue>` (manual QA by an agent, review, then a test writer and a test reviewer). Its
+  reports are committed as evidence of the process (section 10).
 
 ## 2. Context and intent
 
@@ -139,7 +140,8 @@ from them becomes a bug report, not a silent change to the tests.
 ## 5. First delivery: five tests
 
 Each `T` is one spec covering one business scenario. A parametrized spec counts as one `T`, and
-its cases live in a separate params file (FR-09).
+its cases live in a separate params file (FR-09). Each `T` is published as a GitHub issue, which
+is the input for its `qa-pick` run (section 10).
 
 | ID | Level | Scenario | Covers | What it shows |
 | -- | ----- | -------- | ------ | ------------- |
@@ -395,36 +397,68 @@ CI the repo ships setup for the pinned Docker image:
 Tests are written through the `qa-pick` workflow from the `qa-pick-portable` repository: a QA
 tester agent tests the story manually (UI through the Playwright CLI, API over HTTP), a fresh
 reviewer checks coverage and tries to break the feature, a test writer automates the handoff on
-its own branch, and a fresh test reviewer reviews each test. Pushes and PRs always wait for the
-author's approval.
+its own branch (including a `--repeat-each=20` stability run), and a fresh test reviewer reviews
+each test. Pushes and PRs always wait for the author's approval.
 
-Order of work:
+### Two phases
+
+**Phase A: the implementation plan.** It builds everything `qa-pick` needs, and **no
+Marketplace tests**:
 
 1. This document.
 2. Tooling skeleton: package, TypeScript, ESLint, Prettier, hooks, commitlint.
-3. Framework core: config, global setup, fixtures, API client base, auth, factories, mock layer
-   and guard, Docker scripts. Built by hand or through the normal plan workflow, not by
-   `qa-pick`, with one throwaway test per project to prove the wiring.
+3. Framework core: config, global setup, fixtures, API client base, auth, factories, assertion
+   and mock infrastructure with the network guard, Docker scripts. Each Playwright project gets
+   one minimal wiring check (for example the healthcheck through the API client, a page load
+   for `ui`, a mocked page load for `ui-mocked`). These are framework checks, not tests of
+   T1–T5.
 4. CI workflow.
 5. `qa-pick` installation and adaptation (below).
-6. Marketplace runs through `/qa-pick`, producing T1–T5. The test writer adds the
-   feature-specific clients, pages, components, factories and mocks, following section 8.
-7. README with decisions, structure, run instructions, assumptions and limits.
+6. The five test cases T1–T5 published as GitHub issues in `klapoucho/qa-ronpol` (below).
+7. README with decisions, structure, run instructions, assumptions and limits, and how to run
+   `/qa-pick <issue>`.
 
-**Fitting the deadline** (D-12): the whole Marketplace (AC-1 to AC-8) goes into **one**
-`qa-pick` story of kind `ui+api`, so there is one run, not three. Its manual phases (tester and
-reviewer) need only the running app, so they start as soon as Docker runs and overlap with steps
-2–4. The test writer starts once the framework core exists. A second test-review round happens
-only if the first one asks for substantial changes.
+**Phase B: the author's QA runs, outside the plan.** The author runs `/qa-pick <issue number>`
+for each issue. The coordinator reads the issue, assigns the author if not assigned yet, and
+runs the pipeline. The test writer adds the feature-specific clients, pages, components,
+factories, assertions and mocks the test needs, following section 8. Phase A must not write
+these Marketplace parts in advance.
 
-**Required adaptations** before the first run:
+### Test cases as GitHub issues
+
+Each `T` from section 5 becomes one issue, so `qa-pick` takes it by number, and reviewers see the
+work tracked like a real backlog:
+
+- **Title:** the scenario, e.g. `Marketplace: sale between two users (API)`.
+- **Body:** a short user story, the feature context from 4.2, the acceptance criteria it covers
+  (copied, not referenced), the test level and what the test must prove (the "What it shows"
+  column), and a link to this document.
+- **Labels:** `marketplace`, the level (`api`, `ui`, `ui-mocked`) and `test-case`.
+- Creating the issues and labels is a GitHub write: the plan prepares their text in the repo,
+  and the author approves before they are created.
+
+### GitHub CLI
+
+`/qa-pick <number>` needs the GitHub CLI:
+
+- `gh` installed, version 2.99 or later (the Playwright CLI skill uses `--attach`).
+- Logged in as **`klapoucho`** with access to `klapoucho/qa-ronpol`. The machine also has a work
+  account, so `gh api user --jq .login` must print `klapoucho` before any `gh` write; switch with
+  `gh auth switch -u klapoucho`. The coordinator checks this itself before assigning.
+- CI does not need `gh`; GitHub Actions uses its own token.
+
+### Required adaptations before the first run
 
 - Copy the skills to `.claude/skills/` and commit them, so reviewers can read the workflow.
 - Add the **QA settings** section to `CLAUDE.md`: app URL, API base `/api/v1`, start command
   `npm run app:up` (agents may start the app, never stop or reset it; section 9), how to create a
-  user (`POST /api/v1/register`), framework and test folders,
-  install `npm ci`, gate `npm run typecheck`, `npx eslint <files>`,
-  `npx playwright test --list <files>`, main branch `main`.
+  user (`POST /api/v1/register`), framework and test folders, install `npm ci`, gate
+  `npm run typecheck`, `npx eslint <files>`, `npx playwright test --list <files>`, main branch
+  `main`, issue repository `klapoucho/qa-ronpol`, GitHub account `klapoucho`, app repository
+  `jaktestowac/rolnopol`.
+- Add the self-assignment exception to the rules in `CLAUDE.md`: `/qa-pick` may add the
+  `klapoucho` account as assignee of the issue it tests without asking. Every other GitHub write
+  still needs approval.
 - **`.qa/` is committed, not ignored** (D-09). The skills assume it is ignored and pass absolute
   paths for that reason; that still works. Decide in the plan which branch carries each run's
   folder (with its test branch, or its own `docs/` branch).
@@ -449,11 +483,15 @@ A test is done when:
 - it passed the deterministic gate (`npm run check`) and the poison-test protocol (NFR-12);
 - a fresh-context test review answered the questions in `testing-rules/general.md`, and its
   findings are fixed or listed in the PR;
-- it passes 5 times in a row with `--repeat-each=5` and with full parallelism;
+- it passes 20 times in a row with `--repeat-each=20` and with full parallelism;
 - the PR has the test intent card from `testing-rules/general.md`.
 
-The first delivery is done when T1–T5 meet the above, CI is green on `main`, and the README
+**Phase A (the plan) is done** when `npm run check` and the wiring checks pass locally and in CI
+against the Docker app, `qa-pick` is installed and adapted, the five issues exist, and the README
 covers the four items the task asks for.
+
+**The first delivery is done** when the author's `qa-pick` runs have produced T1–T5 meeting the
+test criteria above, merged with CI green on `main`.
 
 ## 12. Decisions
 
@@ -470,7 +508,7 @@ covers the four items the task asks for.
 | D-09 | `.qa/` committed, except `runs/*/scratch/` | Ignored | Shows reviewers the QA process behind each test; scratch holds tokens |
 | D-10 | Marketplace as the single feature | Several areas, one test each | One coherent story across levels; the feature touches finance and farm resources, which limits the narrower coverage |
 | D-11 | Mocked UI tests in `tests/ui-mocked/`, own project | Inside `tests/ui/` with a tag; `tests/integration/` | Different contract and setup (fake auth, network guard); "integration" is ambiguous |
-| D-12 | One `qa-pick` run for the whole Marketplace, manual QA overlapping with the framework build | Three runs (API, UI, mocks) | The 2026-11-26 deadline; one run still shows the full process |
+| D-12 | The plan builds the framework and `qa-pick` setup only; T1–T5 are five GitHub issues the author runs through `/qa-pick` | The plan writes the tests; one `qa-pick` story for the whole Marketplace | The author drives the QA runs; issues give `qa-pick` a stable input and show a tracked backlog |
 | D-13 | Docker locally and in CI; agents may start the app, only the author resets it | Local clone as the dev backend; agents free to reset | Same app version everywhere; a reset during a run destroys its data |
 
 ## 13. Left to the builder and future work
