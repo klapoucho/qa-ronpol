@@ -30,6 +30,7 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - App URL: http://localhost:3000 (Rolnopol 1.126.0 in Docker)
 - API base URL: http://localhost:3000/api/v1
 - Start the app: `npm run app:up` in this repo. Agents may start the app when it is not running. They never stop or reset it (`npm run app:down`, `npm run app:reset`, `RESET_DB=true`, `POST /api/debug/database/restore-base`); only the author does.
+- Rate limit: 100 API requests per 30 s per IP, shared by every worker and agent. Send `X-Synthetic-Token: local-synthetic-token` (or `SYNTHETIC_TOKEN` from `.env`) on manual API calls to skip it; the Playwright config already sends it.
 - Roles: user → `POST /api/v1/register` with `{ email, displayedName, password }` returns a token. New users have 0 ROL; add funds with `POST /api/v1/financial/transactions`. Never use the demo accounts.
 - Test framework: Playwright Test (TypeScript). Framework code in `src/`, tests in `tests/{api,ui,ui-mocked}/<feature>/`, conventions in `README.md`. Runner process name: `playwright`
 - Install dependencies: `npm ci`

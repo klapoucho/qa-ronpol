@@ -143,6 +143,7 @@ any test, with a message naming the variable.
 | `BASE_URL`             | `http://localhost:3000` | the app under test (`http` or `https`)                                        |
 | `TEST_ENV`             | `local`                 | run profile: `local` or `ci`                                                  |
 | `EXPECTED_APP_VERSION` | `1.126.0`               | the version the suite targets; a different one logs a warning and continues   |
+| `SYNTHETIC_TOKEN`      | `local-synthetic-token` | sent as `X-Synthetic-Token` so test traffic skips the app's API rate limit    |
 | `RESET_DB`             | `false`                 | `true` restores the base database once before the run (wipes shared data)     |
 
 Profiles (`src/config/profiles.ts`) set retries, workers, reporters and timeouts:
@@ -175,6 +176,12 @@ come from the app, and global setup checks it for every project.
 - **Who may reset the app.** Anyone, including AI agents, may start it with `npm run app:up`. Only the author
   stops or resets it (`npm run app:down`, `npm run app:reset`, `RESET_DB=true`): a reset wipes the data another
   run may depend on. Tests never need a reset; each creates its own users.
+- **Rate limit.** The app allows 100 API requests per 30 s per IP, and all workers share one IP. `compose.yaml`
+  starts it with `SYNTHETIC_TOKEN`, and every request the tests make sends the same value as `X-Synthetic-Token`,
+  which the app exempts from that limit. The value is a local default, not a secret; browsers send it to every
+  origin a page loads, CDNs included. Global setup stops the run when the app does not accept the token, for
+  example an app started before this setting or with another `.env`. Recreating it (`npm run app:up` after
+  changing the value) resets its data, so only the author does that.
 - **Port 3000 is taken.** `npm run app:up` fails with
   `Bind for 0.0.0.0:3000 failed: port is already allocated`. Stop whatever listens on port 3000 (for example a
   local Rolnopol clone started with `npm start`) and run it again. The Compose project is named after the folder,
