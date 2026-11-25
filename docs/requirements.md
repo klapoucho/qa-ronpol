@@ -97,13 +97,13 @@ commit `fb7fd89`, only dependencies and the OpenAPI version string differ):
 
 | Fact | Consequence |
 | ---- | ----------- |
-| API base is `/api/v1`. Responses use an envelope `{ success, timestamp, data \| error }`. | API clients unwrap the envelope in one place. |
+| API base is `/api/v1`. Most responses use an envelope `{ success, timestamp, data \| error }`. Exceptions: `GET /api/v1/statistics` returns a bare object (the frontend reads `totalValue` directly), and `GET /api/version` (outside `/api/v1`) returns `{ version }`. | API clients unwrap the envelope in one place. Schemas, clients and mocks follow each endpoint's real wire format, so the exceptions keep their bare shape. |
 | `POST /api/v1/register` returns a token. A new user starts with balance 0 ROL and can add income through `POST /api/v1/financial/transactions`. | Tests create and fund their own users. No demo accounts. |
 | `GET /api/v1/healthcheck` and `GET /api/v1/about` (returns `version`). | Global setup checks the app is up and is the expected version. |
 | `POST /api/debug/database/restore-base` (outside `/api/v1`, no login needed) restores the whole DB. | Used only on request, never between tests (D-05). |
 | Browse loads all active offers in one response and paginates in the browser. | Pagination is a frontend concern: T5 covers it on mocks; T4 must find its offer on any page. |
-| The frontend treats a user as logged in when the cookies `rolnopolToken` and `rolnopolIsLogged` exist. It checks them only in the browser. | UI tests log in by setting cookies from an API token. Mocked UI tests can use fake cookies. |
-| The Marketplace page calls 11 endpoints: `marketplace/offers`, `my-offers`, `buy`, `transactions`, `offers/{id}` (DELETE), `financial/account`, `financial/stats`, `financial/marketplace-stats`, `fields`, `animals`, `statistics`. | The mock layer covers this set; the guard catches anything else. |
+| The frontend treats a user as logged in when the cookies `rolnopolToken` and `rolnopolIsLogged` exist. Login also sets `rolnopolUserId`, `rolnopolUserLabel` and `rolnopolLoginTime`. On page load the frontend calls `GET /api/v1/authorization` to check the token. | UI tests log in by setting the same cookies from an API token. Mocked UI tests use fake cookies plus a successful `authorization` mock. |
+| Every page load calls shared endpoints: `authorization`, `feature-flags` and `/api/version`. The Marketplace page adds `financial/account`, `financial/stats`, `financial/marketplace-stats`, `fields`, `animals`, `marketplace/offers`, `marketplace/my-offers`, `marketplace/transactions` and `statistics` on load, and `marketplace/offers` (POST), `marketplace/buy`, `marketplace/offers/{id}` (DELETE) on user actions. (Captured from the browser's network log.) | The mock layer covers the shared set for every page and the feature set per page; the guard catches anything else. |
 | The Marketplace page has `data-testid` only on the confirmation modal. | Locators fall back to role and label (FR-14); missing test ids are recorded as findings. |
 
 ### 4.2 Marketplace: the feature we test
@@ -164,8 +164,8 @@ of one object are checked by one assertion (FR-20).
   selectors, or data literals that belong in factories or params files.
 - **FR-02 API clients.** One client class per API resource (`MarketplaceApi`, `FinancialApi`,
   `FieldsApi`, `AnimalsApi`, `AuthApi`, …) built on Playwright's `APIRequestContext`. Clients
-  unwrap the response envelope, return typed data, and expose the status and error message, so
-  negative tests can assert them without try/catch.
+  unwrap the response envelope where the endpoint uses one (4.1), return typed data, and expose
+  the status and error message, so negative tests can assert them without try/catch.
 - **FR-03 Models and schemas.** Request and response types live in `src/api/models/` as zod
   schemas with inferred TypeScript types. API tests validate responses against them. Mock
   payloads are built from the same types, so a contract change breaks compilation or validation
@@ -210,14 +210,18 @@ of one object are checked by one assertion (FR-20).
 ### Auth, mocking, locators
 
 - **FR-13 Login without the UI.** UI tests get a logged-in page by registering or logging in
-  through the API and setting the `rolnopolToken` and `rolnopolIsLogged` cookies.
+  through the API and setting the cookies the login page sets (4.1).
 - **FR-14 Locators.** Use `getByTestId` where a test id exists; otherwise `getByRole` with a
   name, then `getByLabel`, then `getByText`. CSS only as a documented last resort, never
   nth-index. Scope to a container (card, row, modal) before asserting. This follows
   `testing-rules/ui.md` from `qa-pick`.
-- **FR-15 Mock layer.** `src/mocks/` provides route handlers and payload builders for the
-  endpoints in 4.1. In the `ui-mocked` project a guard fails the test on any `/api/` request
-  that no handler served, so nothing reaches the real backend by accident.
+- **FR-15 Mock layer.** `src/mocks/` provides route handlers and payload builders in two
+  groups: **shared** handlers for the requests every page makes on load (`authorization` with a
+  successful response, `feature-flags`, `/api/version`), installed for every `ui-mocked` test,
+  and **feature** handlers per page (for the Marketplace, the endpoints in 4.1). Payloads keep
+  each endpoint's real wire format, including the bare responses. In the `ui-mocked` project a
+  guard fails the test on any `/api/` request that no handler served, so nothing reaches the
+  real backend by accident.
 
 ### Running and reporting
 
