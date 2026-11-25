@@ -1,12 +1,19 @@
 name: Tests
 
+# Pull requests run the smoke tests plus the tests their change touches (scripts/pr-tests.sh).
+# main, the nightly run and manual runs check the full suite, so nothing goes untested for long.
 on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
 
+# A pull request shares one group, so a new push replaces its older run. Every other run gets a
+# group of its own: full-suite runs never cancel or replace each other, pending ones included.
 concurrency:
-  group: tests-${{ github.ref }}
+  group: tests-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
   cancel-in-progress: true
 
 permissions:
@@ -20,6 +27,9 @@ jobs:
       TEST_ENV: ci
     steps:
       - uses: actions/checkout@v7
+        with:
+          # The pull-request selection compares the change with its base branch.
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
@@ -28,7 +38,14 @@ jobs:
       - run: npm run check
       - run: npx playwright install --with-deps chromium
       - run: npm run app:up
-      - run: npm test
+      - name: Run the tests this pull request needs
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: scripts/pr-tests.sh "origin/$BASE_REF"
+      - name: Run the full suite
+        if: github.event_name != 'pull_request'
+        run: npm test
       - name: Collect application logs
         if: always()
         run: |
