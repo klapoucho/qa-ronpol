@@ -1,0 +1,19 @@
+services:
+  rolnopol:
+    image: jaktestowac/rolnopol:1.126.0
+    # The image is published for linux/amd64 only; Apple Silicon runs it under emulation.
+    platform: linux/amd64
+    ports:
+      - '3000:3000'
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3000/api/v1/healthcheck').then(r => process.exit(r.ok ? 0 : 1), () => process.exit(1))",
+        ]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+      start_period: 5s
