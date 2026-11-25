@@ -8,4 +8,9 @@ if (existsSync('.env')) {
 
 const env = parseEnv(process.env);
 
-export const config: Env & { profile: Profile } = { ...env, profile: profiles[env.TEST_ENV] };
+export const config: Env & { profile: Profile; syntheticHeaders: Record<string, string> } = {
+  ...env,
+  profile: profiles[env.TEST_ENV],
+  // Marks test traffic as a verified synthetic monitor, which the app exempts from its API rate limit.
+  syntheticHeaders: { 'X-Synthetic-Token': env.SYNTHETIC_TOKEN },
+};

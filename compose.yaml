@@ -5,6 +5,10 @@ services:
     platform: linux/amd64
     ports:
       - '3000:3000'
+    environment:
+      # Requests carrying this value in X-Synthetic-Token skip the app's limit of 100 API requests
+      # per 30 s per IP. The default must match SYNTHETIC_TOKEN in src/config/env.ts.
+      SYNTHETIC_TOKEN: ${SYNTHETIC_TOKEN:-local-synthetic-token}
     healthcheck:
       test:
         [

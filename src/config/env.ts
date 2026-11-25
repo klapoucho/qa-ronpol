@@ -7,6 +7,8 @@ const envSchema = z.object({
     .string()
     .regex(/^\d+\.\d+\.\d+$/, 'Expected a version like 1.126.0')
     .default('1.126.0'),
+  // A local, non-secret value. The default must match SYNTHETIC_TOKEN in compose.yaml.
+  SYNTHETIC_TOKEN: z.string().min(1).default('local-synthetic-token'),
   RESET_DB: z
     .enum(['true', 'false'])
     .default('false')
