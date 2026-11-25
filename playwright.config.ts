@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 import { config } from '#src/config/index.ts';
 
 const { profile } = config;
@@ -19,5 +19,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
-  projects: [{ name: 'api', testDir: 'tests/api' }],
+  projects: [
+    { name: 'api', testDir: 'tests/api' },
+    { name: 'ui', testDir: 'tests/ui', use: { ...devices['Desktop Chrome'] } },
+  ],
 });
