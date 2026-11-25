@@ -70,6 +70,8 @@ An assertion that always passes is worse than none — it creates false confiden
 2. **Partial breakage** — at least one per new test: break the *scenario*, not just the expected value — skip a step, seed half the data, run as the wrong role, point at the wrong row. The test must fail. A test that only fails on a wrong literal can still pass while the feature is half broken.
 3. **Read the failure, not the summary.** Confirm the failure names the assertion you poisoned, not a compile or setup error.
 
+**"Changed by" needs a non-zero start.** When a test asserts that a balance, counter or quantity rises or falls by an amount, start every actor at a non-zero, non-round value. From 0, "rose by X" and "was set to X" give the same result.
+
 **"Did it pick the right one?" needs a wrong one to pick.** When a test checks that the app opened, selected or revealed a specific record, seed at least two candidates and target one that isn't first.
 
 ### Common anti-patterns
