@@ -33,7 +33,7 @@ Project specifics (app URL, how to start it, API base URL, accounts/roles, test 
 | Templates | `templates/` next to this file |
 | Testing rules | `.claude/skills/testing-rules/` |
 
-**Give every agent absolute paths** (`{RUN_DIR}` = `<repo root>/.qa/runs/<run-id>`, skills = `<repo root>/.claude/skills`): `.qa/` is gitignored, so it doesn't exist in the writer's worktree, and the skills may not be on the main branch yet.
+**Give every agent absolute paths** (`{RUN_DIR}` = `<repo root>/.qa/runs/<run-id>`, skills = `<repo root>/.claude/skills`): the run folder is not committed until §6 or §8, so it does not exist in the writer's worktree, and the skills may not be on the main branch yet. In this repo `.qa/` is committed, except `runs/*/scratch/`, which holds live tokens and is ignored.
 
 Never write outside the repository. Secrets (passwords, tokens) never go into reports, the bug KB, skills or anything committed.
 
@@ -112,7 +112,7 @@ Start a background tester agent (or several, one per area — see "Agents and se
 > While testing, collect what a test writer will need and fill `.claude/skills/qa-pick/templates/handoff.md`.
 > Write into `{RUN_DIR}`: `plan.md`, `report.md` (from `templates/report.md`; Automation section: "pending — test writer"), `results.json` (from `templates/results.json`; `automation.status`: `pending`, or `skipped` + `skip_reason` if nothing is worth automating; fill `struggles`), `handoff.md` and `artifacts/`. If a file write is refused, return that file's full contents in your final message under a `## <file name>` header instead. End with a 3-line summary: status, top finding, automation candidates count.
 
-When it finishes, check that `report.md`, `results.json` (validate: `python3 -m json.tool`) and `handoff.md` exist in `{RUN_DIR}`; save any file returned in the message instead. If the story is BLOCKED, skip §4 and §6 and write the summary (§5) with the blocker.
+When it finishes, check that `report.md`, `results.json` (validate: `python3 -m json.tool`) and `handoff.md` exist in `{RUN_DIR}`; save any file returned in the message instead. If the story is BLOCKED, skip §4 and §6, write the summary (§5) with the blocker, then §8.
 
 ## 4. QA reviewer — prove it, then try to break it
 
@@ -131,7 +131,7 @@ When it finishes, make sure `review.md` is in the run folder and merge its outpu
 
 ## 6. Test writer + test reviewer
 
-Skip this section when `automation.status` is `skipped`, the story is BLOCKED, or the repository has no test framework yet (set `skipped`, reason "no framework", keep the candidates in `handoff.md`).
+Skip this section (go on to §7, then §8) when `automation.status` is `skipped`, the story is BLOCKED, or the repository has no test framework yet (set `skipped`, reason "no framework", keep the candidates in `handoff.md`).
 
 **Writer** — a background agent, or a separate session when the user may want to follow the branch work directly:
 
@@ -144,6 +144,7 @@ When it replies, start the **test reviewer** — a background agent with fresh c
 
 Then `SendMessage` the writer with the reviewer's reply: fix what can be fixed, re-run the gate, the stability runs of changed tests and any affected poison test, commit. If the fixes were substantial, run another fresh reviewer round. Then:
 
+- **Commit the run evidence** to the test branch: copy `{RUN_DIR}` without `scratch/`, and the bug files this run created or updated, into the worktree at the same paths. Update `report.md`, `results.json` and `summary.md` with the branch first. Grep the copy for `token`, `password` and `Bearer`, judge each hit (prose mentions of the words are fine) and remove live values. Commit as `docs(qa): add qa-pick run <run-id>`.
 - **ask the user** before pushing the branch and opening the PR (title in the repo's commit format, body: test intent card + **Decisions for the reviewer** — the reviewer's open points, or "none"). Push and open it only after a yes, and follow the repo's own rules for PRs and AI attribution.
 - update `report.md` (Automation section), `results.json` (`automation`: `done`, branch, pr_url; append the writer's `struggles` prefixed `writer:`) and `summary.md`
 - tell the user: branch / PR link + decisions needing them (one line each)
@@ -159,9 +160,18 @@ Read `struggles` in `results.json` (tester, reviewer and writer; ask the agent i
 - skill or rule edits go on their own branch, one coherent commit per run, and reach the main branch only through a PR — ask before pushing
 - log every applied lesson as one line at the top of `.qa/lessons.md` and list them in `summary.md`
 
+## 8. Final evidence and clean-up
+
+Run this at the end of every run, including skipped and BLOCKED ones.
+
+a. **Test branch exists:** re-copy `{RUN_DIR}` without `scratch/`, and the bug files this run created or updated, into the worktree. The re-copy overwrites the files §6 cleaned, so run the same grep for `token`, `password` and `Bearer` on it and remove live values again. If anything differs from the evidence commit (`pr_url`, struggles, retro lessons in `summary.md`, bug-file updates), commit it as `docs(qa): update qa-pick run <run-id>` on the test branch and ask the user before pushing it.
+b. **No test branch** (automation skipped, BLOCKED, or no framework): commit the same set on `docs/qa-run-<slug>` in a worktree cut from `origin/<main branch>`, with the same grep for `token`, `password` and `Bearer` (judge each hit: prose mentions of the words are fine; remove live values), and ask before pushing it.
+c. **Only after** confirming the commit exists on the branch (`git -C <worktree> log --oneline -1 -- .qa/runs/<run-id>`), remove from the main checkout the `.qa/` files now committed there (`git checkout -- <path>` for tracked files, delete untracked ones; `scratch/` stays). Otherwise pulling `main` after the merge stops on untracked files. `.qa/lessons.md` is not touched by the clean-up: commit it with the retro's skill-edit branch, or alone on `docs/qa-lessons-<run-id>`.
+d. Remove the run's worktree (`git worktree remove`) only after its branch is pushed or the user declines, never before.
+
 ## Follow-ups
 
-"Follow up on <run-id>: <what>" → route it to the right agent: more manual testing → the tester, "try to break X" → the reviewer, test changes → the writer. If that agent is still reachable, `SendMessage` it; otherwise start a new one with the same prompt plus "Previous report: `{RUN_DIR}/report.md` — read it first; this run only covers: <request>". Results append to `report.md` under a dated "Follow-up" heading and `summary.md` is updated.
+"Follow up on <run-id>: <what>" → if §8 already ran, restore the run first: put the committed run files and bug files back into the main checkout from the run's branch (`git restore --source=<branch> -- .qa/runs/<run-id> <bug files>`; `scratch/` was never removed), and re-add the worktree if §8d removed it (`git worktree add .claude/worktrees/<run-id> <branch>`). If that branch is already merged, pull the main branch instead and commit the follow-up's evidence through §8b. Then route it to the right agent: more manual testing → the tester, "try to break X" → the reviewer, test changes → the writer. If that agent is still reachable, `SendMessage` it; otherwise start a new one with the same prompt plus "Previous report: `{RUN_DIR}/report.md` — read it first; this run only covers: <request>". Results append to `report.md` under a dated "Follow-up" heading and `summary.md` is updated. After a follow-up, re-run §8a or §8b.
 
 ## External bugs
 
