@@ -9,7 +9,7 @@ Everything is written in English (code, docs, commits, branches, PRs). The only 
 
 1. Never commit directly to `main`. Every change starts on its own branch cut from the latest `main`.
 2. Keep the branch small and focused on one topic.
-3. Before opening a PR, rebase on `main` (`git fetch && git rebase origin/main`) and make sure lint and tests pass.
+3. Before opening a PR, rebase on `main` (`git fetch && git rebase origin/main`) and run all available checks. During the documentation/planning phase, build, lint and test checks are not yet available; the build/lint/test requirements here and below apply once the corresponding tooling is introduced.
 4. Open a PR to `main`. The PR title follows the commit format below.
 5. PRs are merged with **Rebase and merge**. Every commit on the branch lands on `main` as it is, and the history stays linear with no merge commits.
 
