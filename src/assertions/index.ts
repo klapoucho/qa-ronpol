@@ -5,7 +5,7 @@ declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace PlaywrightTest {
     interface Matchers<R, T> {
-      /** Retries until every listed field of a FieldView matches; fails listing all mismatches. */
+      /** Retries until every listed field of a FieldView is visible and matches; fails listing all mismatches. */
       toShowFields(
         expected: T extends FieldView<infer K> ? Partial<Record<K, string | RegExp>> : never,
         options?: { timeout?: number },
