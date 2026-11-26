@@ -1,0 +1,44 @@
+{
+  "browseBefore": [
+    {
+      "id": 233,
+      "status": "active",
+      "sellerLabel": "qa_r3s_1882ac3e"
+    },
+    {
+      "id": 234,
+      "status": "active",
+      "sellerLabel": "qa_r3s_1882ac3e"
+    }
+  ],
+  "deleteAccount": {
+    "status": 200,
+    "message": "Account deleted successfully"
+  },
+  "deletedSellerProfile": {
+    "status": 404,
+    "error": "User not found"
+  },
+  "browseAfterDelete": [],
+  "buyFieldFromDeletedSeller": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:28:54.361Z",
+      "error": "Offer not found or not available"
+    }
+  },
+  "buyer": {
+    "balanceBefore": 21.21,
+    "balanceAfter": 21.21,
+    "ownsField": false,
+    "financialTx": [
+      "income:21.21:QA seed funds"
+    ]
+  },
+  "deletedSellerCancelsAnimalOffer": {
+    "status": 400,
+    "error": "Offer is not active"
+  },
+  "browseEnd": []
+}

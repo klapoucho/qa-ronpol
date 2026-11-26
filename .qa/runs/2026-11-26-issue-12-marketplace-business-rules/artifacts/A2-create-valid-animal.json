@@ -1,0 +1,88 @@
+{
+  "request": {
+    "itemType": "animal",
+    "itemId": 42,
+    "price": 12.34,
+    "description": "QA valid animal offer"
+  },
+  "before": {
+    "sellerOffers": [
+      {
+        "id": 123,
+        "status": "cancelled",
+        "itemType": "field",
+        "itemId": 127,
+        "price": 12.34,
+        "description": "QA valid field offer"
+      }
+    ],
+    "observerBrowseFromSeller": [],
+    "sellerBalance": 17.43,
+    "sellerOwnsItem": true
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:13:34.772Z",
+      "data": {
+        "offer": {
+          "id": 124,
+          "sellerId": 225,
+          "itemType": "animal",
+          "itemId": 42,
+          "price": 12.34,
+          "description": "QA valid animal offer",
+          "status": "active",
+          "createdAt": "2026-11-26T12:13:34.754Z",
+          "updatedAt": "2026-11-26T12:13:34.754Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    }
+  },
+  "after": {
+    "sellerOffers": [
+      {
+        "id": 123,
+        "status": "cancelled",
+        "itemType": "field",
+        "itemId": 127,
+        "price": 12.34,
+        "description": "QA valid field offer"
+      },
+      {
+        "id": 124,
+        "status": "active",
+        "itemType": "animal",
+        "itemId": 42,
+        "price": 12.34,
+        "description": "QA valid animal offer"
+      }
+    ],
+    "observerBrowseFromSeller": [
+      {
+        "id": 124,
+        "status": "active",
+        "itemType": "animal",
+        "itemId": 42,
+        "price": 12.34,
+        "description": "QA valid animal offer"
+      }
+    ],
+    "sellerBalance": 17.43,
+    "sellerOwnsItem": true
+  },
+  "cancelAfter": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:13:34.808Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "pass": true
+}

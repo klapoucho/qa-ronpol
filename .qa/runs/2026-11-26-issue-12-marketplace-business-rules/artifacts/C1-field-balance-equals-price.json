@@ -1,0 +1,61 @@
+{
+  "offerId": 206,
+  "price": 50.25,
+  "before": {
+    "sellerBalance": 17.43,
+    "buyerBalance": 50.25,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:50.25:seed"
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:16:55.426Z",
+      "data": {
+        "transaction": {
+          "id": 78,
+          "offerId": 206,
+          "sellerId": 234,
+          "buyerId": 237,
+          "itemType": "field",
+          "itemId": 137,
+          "price": 50.25,
+          "status": "completed",
+          "createdAt": "2026-11-26T12:16:55.400Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  },
+  "after": {
+    "sellerBalance": 67.68,
+    "buyerBalance": 0,
+    "offerStatus": "sold",
+    "offerInBuyerBrowse": false,
+    "sellerOwnsItem": false,
+    "buyerOwnsItem": true,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:50.25:marketplace",
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:50.25:marketplace",
+      "income:50.25:seed"
+    ]
+  },
+  "expectedSellerBalance": 67.68,
+  "pass": true
+}

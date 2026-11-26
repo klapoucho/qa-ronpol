@@ -1,0 +1,60 @@
+{
+  "deleteAccount": 200,
+  "loginAfterDelete": {
+    "status": 401,
+    "error": "Invalid credentials"
+  },
+  "deletedBuyerBalance": {
+    "before": 15.15,
+    "after": 10.1
+  },
+  "buy": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:30:06.710Z",
+      "data": {
+        "transaction": {
+          "id": 91,
+          "offerId": 238,
+          "sellerId": 281,
+          "buyerId": 280,
+          "itemType": "field",
+          "itemId": 163,
+          "price": 5.05,
+          "status": "completed",
+          "createdAt": "2026-11-26T12:30:06.688Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  },
+  "deletedTokenFields": {
+    "status": 200,
+    "ids": [
+      163
+    ]
+  },
+  "seller": {
+    "balanceAfter": 9.37,
+    "start": 4.32,
+    "ownsField": false,
+    "marketplaceTx": [
+      {
+        "id": 91,
+        "offerId": 238,
+        "sellerId": 281,
+        "buyerId": 280,
+        "itemType": "field",
+        "itemId": 163,
+        "price": 5.05,
+        "status": "completed",
+        "createdAt": "2026-11-26T12:30:06.688Z"
+      }
+    ],
+    "relist": {
+      "status": 404,
+      "error": "Item not found or not owned by user"
+    }
+  }
+}

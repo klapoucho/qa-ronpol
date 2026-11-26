@@ -1,0 +1,38 @@
+{
+  "offerId": 228,
+  "stranger": [
+    {
+      "path": "228.0",
+      "status": 403,
+      "error": "Not authorized to cancel this offer"
+    },
+    {
+      "path": "228%20",
+      "status": 403,
+      "error": "Not authorized to cancel this offer"
+    },
+    {
+      "path": "0228",
+      "status": 403,
+      "error": "Not authorized to cancel this offer"
+    },
+    {
+      "path": "+228",
+      "status": 403,
+      "error": "Not authorized to cancel this offer"
+    }
+  ],
+  "statusAfterStranger": "active",
+  "ownerWithDotZero": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:27:55.289Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "statusAfterOwner": "cancelled",
+  "pass": true
+}

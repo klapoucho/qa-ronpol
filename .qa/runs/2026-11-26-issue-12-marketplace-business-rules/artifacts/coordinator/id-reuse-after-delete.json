@@ -1,0 +1,118 @@
+{
+  "deletedUser": {
+    "id": 3853,
+    "fund": 201,
+    "fieldCreate": 201,
+    "fieldId": 1062,
+    "accountBeforeDelete": {
+      "success": true,
+      "timestamp": "2026-11-26T13:36:00.197Z",
+      "data": {
+        "account": {
+          "id": 3844,
+          "userId": 3853,
+          "balance": 12.34,
+          "currency": "ROL",
+          "createdAt": "2026-11-26T13:35:57.061Z",
+          "updatedAt": "2026-11-26T13:35:59.139Z",
+          "transactions": [
+            {
+              "id": 836,
+              "type": "income",
+              "amount": 12.34,
+              "description": "QA seed funds",
+              "category": "seed",
+              "referenceId": null,
+              "timestamp": "2026-11-26T13:35:59.139Z",
+              "balanceBefore": 0,
+              "balanceAfter": 12.34
+            }
+          ]
+        }
+      }
+    },
+    "deleteStatus": 200,
+    "deleteBody": {
+      "success": true,
+      "timestamp": "2026-11-26T13:36:01.349Z",
+      "data": {
+        "displayedName": "qa_idreus_3e3bd155",
+        "email": "qa.t2.idreuseA.3e3bd155@example.test",
+        "isActive": true,
+        "lastLogin": null,
+        "id": 3853
+      },
+      "message": "Account deleted successfully"
+    }
+  },
+  "nextRegisteredUser": {
+    "id": 3853,
+    "sameIdAsDeleted": true,
+    "profile": {
+      "success": true,
+      "timestamp": "2026-11-26T13:36:02.417Z",
+      "data": {
+        "displayedName": "qa_idreus_3f21f137",
+        "email": "qa.t2.idreuseB.3f21f137@example.test",
+        "isActive": true,
+        "lastLogin": null,
+        "id": 3853
+      }
+    },
+    "account": {
+      "success": true,
+      "timestamp": "2026-11-26T13:36:02.389Z",
+      "data": {
+        "account": {
+          "id": 3844,
+          "userId": 3853,
+          "balance": 12.34,
+          "currency": "ROL",
+          "createdAt": "2026-11-26T13:35:57.061Z",
+          "updatedAt": "2026-11-26T13:35:59.139Z",
+          "transactions": [
+            {
+              "id": 836,
+              "type": "income",
+              "amount": 12.34,
+              "description": "QA seed funds",
+              "category": "seed",
+              "referenceId": null,
+              "timestamp": "2026-11-26T13:35:59.139Z",
+              "balanceBefore": 0,
+              "balanceAfter": 12.34
+            }
+          ]
+        }
+      }
+    },
+    "financialTransactions": {
+      "success": true,
+      "timestamp": "2026-11-26T13:36:02.407Z",
+      "data": {
+        "transactions": [
+          {
+            "id": 836,
+            "type": "income",
+            "amount": 12.34,
+            "description": "QA seed funds",
+            "category": "seed",
+            "referenceId": null,
+            "timestamp": "2026-11-26T13:35:59.139Z",
+            "balanceBefore": 0,
+            "balanceAfter": 12.34
+          }
+        ],
+        "total": 1,
+        "limit": 100,
+        "offset": 0,
+        "hasMore": false
+      }
+    },
+    "fields": {
+      "success": true,
+      "timestamp": "2026-11-26T13:36:02.399Z",
+      "data": []
+    }
+  }
+}

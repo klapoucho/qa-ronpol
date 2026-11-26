@@ -1,0 +1,62 @@
+{
+  "offerId": 225,
+  "relistDuringBuy": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:19:23.896Z",
+      "error": "Item is already offered for sale"
+    }
+  },
+  "buy": {
+    "status": 200,
+    "ms": 4086,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:19:26.763Z",
+      "data": {
+        "transaction": {
+          "id": 88,
+          "offerId": 225,
+          "sellerId": 262,
+          "buyerId": 263,
+          "itemType": "animal",
+          "itemId": 142,
+          "price": 20.02,
+          "status": "completed",
+          "createdAt": "2026-11-26T12:19:26.745Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  },
+  "relistAfterBuy": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:19:26.770Z",
+      "error": "Item not found or not owned by user"
+    }
+  },
+  "sellerOffersForItem": [
+    "225:sold"
+  ],
+  "after": {
+    "sellerBalance": 22.24,
+    "buyerBalance": 10.01,
+    "offerStatus": "sold",
+    "offerInBuyerBrowse": false,
+    "sellerOwnsItem": false,
+    "buyerOwnsItem": true,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:20.02:marketplace",
+      "income:2.22:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:20.02:marketplace",
+      "income:30.03:seed"
+    ]
+  }
+}

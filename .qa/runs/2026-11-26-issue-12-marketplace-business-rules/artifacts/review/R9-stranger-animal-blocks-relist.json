@@ -1,0 +1,18 @@
+{
+  "offerId": 245,
+  "inBrowseBefore": true,
+  "strangerAttach": 201,
+  "inBrowseAfter": false,
+  "sellerMyOffersStatus": "unavailable",
+  "sellerCancel": {
+    "status": 400,
+    "error": "Offer is not active"
+  },
+  "sellerRelist": {
+    "status": 400,
+    "error": "Cannot sell field with assigned animals"
+  },
+  "sellerSeesAnimals": [],
+  "strangerRemovesAnimal": 200,
+  "relistAfterStrangerRemoves": 200
+}

@@ -1,0 +1,452 @@
+[
+  {
+    "case": "price 0.01 (minimum)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 0.01,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.821Z",
+        "data": {
+          "offer": {
+            "id": 131,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 0.01,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.802Z",
+            "updatedAt": "2026-11-26T12:13:35.802Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 0.01,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 0.01,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price 0.005 (rounds up to 0.01)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 0.005,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.868Z",
+        "data": {
+          "offer": {
+            "id": 132,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 0.01,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.852Z",
+            "updatedAt": "2026-11-26T12:13:35.852Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 0.01,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 0.01,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price 10.555 (rounds to 10.56)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 10.555,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.914Z",
+        "data": {
+          "offer": {
+            "id": 133,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 10.56,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.898Z",
+            "updatedAt": "2026-11-26T12:13:35.898Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 10.56,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 10.56,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price 99999999.99",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 99999999.99,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.968Z",
+        "data": {
+          "offer": {
+            "id": 134,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 99999999.99,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.950Z",
+            "updatedAt": "2026-11-26T12:13:35.950Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 99999999.99,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 99999999.99,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price \"5\" (numeric string)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": "5",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.021Z",
+        "data": {
+          "offer": {
+            "id": 135,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 5,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.003Z",
+            "updatedAt": "2026-11-26T12:13:36.003Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 5,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 5,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price 0.01 (minimum)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 0.01,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.079Z",
+        "data": {
+          "offer": {
+            "id": 136,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 0.01,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.062Z",
+            "updatedAt": "2026-11-26T12:13:36.062Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 0.01,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 0.01,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price 0.005 (rounds up to 0.01)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 0.005,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.135Z",
+        "data": {
+          "offer": {
+            "id": 137,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 0.01,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.118Z",
+            "updatedAt": "2026-11-26T12:13:36.118Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 0.01,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 0.01,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price 10.555 (rounds to 10.56)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 10.555,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.196Z",
+        "data": {
+          "offer": {
+            "id": 138,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 10.56,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.178Z",
+            "updatedAt": "2026-11-26T12:13:36.178Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 10.56,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 10.56,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price 99999999.99",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 99999999.99,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.251Z",
+        "data": {
+          "offer": {
+            "id": 139,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 99999999.99,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.232Z",
+            "updatedAt": "2026-11-26T12:13:36.232Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 99999999.99,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 99999999.99,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "price \"5\" (numeric string)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": "5",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.306Z",
+        "data": {
+          "offer": {
+            "id": 140,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 5,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.288Z",
+            "updatedAt": "2026-11-26T12:13:36.288Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 5,
+      "description": "QA price case",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "QA price case"
+    },
+    "expected": {
+      "price": 5,
+      "description": "QA price case"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  }
+]

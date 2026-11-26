@@ -1,0 +1,62 @@
+{
+  "cancel": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:15:54.615Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "relist": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:15:54.640Z",
+      "data": {
+        "offer": {
+          "id": 195,
+          "sellerId": 231,
+          "itemType": "field",
+          "itemId": 132,
+          "price": 16.16,
+          "description": "QA relist",
+          "status": "active",
+          "createdAt": "2026-11-26T12:15:54.621Z",
+          "updatedAt": "2026-11-26T12:15:54.621Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    }
+  },
+  "activeOffersForItem": [
+    {
+      "id": 195,
+      "status": "active",
+      "itemType": "field",
+      "itemId": 132,
+      "price": 16.16,
+      "description": "QA relist"
+    }
+  ],
+  "allOffersForItem": [
+    {
+      "id": 194,
+      "status": "cancelled",
+      "itemType": "field",
+      "itemId": 132,
+      "price": 15.15,
+      "description": "QA first offer"
+    },
+    {
+      "id": 195,
+      "status": "active",
+      "itemType": "field",
+      "itemId": 132,
+      "price": 16.16,
+      "description": "QA relist"
+    }
+  ]
+}

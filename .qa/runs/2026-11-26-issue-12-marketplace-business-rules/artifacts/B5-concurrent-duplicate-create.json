@@ -1,0 +1,182 @@
+[
+  {
+    "type": "field",
+    "round": 1,
+    "itemId": 134,
+    "responses": [
+      {
+        "status": 200,
+        "success": true,
+        "offerId": 200
+      },
+      {
+        "status": 400,
+        "success": false,
+        "error": "Item is already offered for sale"
+      }
+    ],
+    "activeOffers": [
+      {
+        "id": 200,
+        "status": "active",
+        "itemType": "field",
+        "itemId": 134,
+        "price": 6.06,
+        "description": "QA race one"
+      }
+    ],
+    "observerSeesForItem": [
+      200
+    ]
+  },
+  {
+    "type": "field",
+    "round": 2,
+    "itemId": 135,
+    "responses": [
+      {
+        "status": 200,
+        "success": true,
+        "offerId": 201
+      },
+      {
+        "status": 400,
+        "success": false,
+        "error": "Item is already offered for sale"
+      }
+    ],
+    "activeOffers": [
+      {
+        "id": 201,
+        "status": "active",
+        "itemType": "field",
+        "itemId": 135,
+        "price": 6.06,
+        "description": "QA race one"
+      }
+    ],
+    "observerSeesForItem": [
+      201
+    ]
+  },
+  {
+    "type": "field",
+    "round": 3,
+    "itemId": 136,
+    "responses": [
+      {
+        "status": 200,
+        "success": true,
+        "offerId": 202
+      },
+      {
+        "status": 400,
+        "success": false,
+        "error": "Item is already offered for sale"
+      }
+    ],
+    "activeOffers": [
+      {
+        "id": 202,
+        "status": "active",
+        "itemType": "field",
+        "itemId": 136,
+        "price": 6.06,
+        "description": "QA race one"
+      }
+    ],
+    "observerSeesForItem": [
+      202
+    ]
+  },
+  {
+    "type": "animal",
+    "round": 1,
+    "itemId": 134,
+    "responses": [
+      {
+        "status": 200,
+        "success": true,
+        "offerId": 203
+      },
+      {
+        "status": 400,
+        "success": false,
+        "error": "Item is already offered for sale"
+      }
+    ],
+    "activeOffers": [
+      {
+        "id": 203,
+        "status": "active",
+        "itemType": "animal",
+        "itemId": 134,
+        "price": 6.06,
+        "description": "QA race one"
+      }
+    ],
+    "observerSeesForItem": [
+      203
+    ]
+  },
+  {
+    "type": "animal",
+    "round": 2,
+    "itemId": 135,
+    "responses": [
+      {
+        "status": 200,
+        "success": true,
+        "offerId": 204
+      },
+      {
+        "status": 400,
+        "success": false,
+        "error": "Item is already offered for sale"
+      }
+    ],
+    "activeOffers": [
+      {
+        "id": 204,
+        "status": "active",
+        "itemType": "animal",
+        "itemId": 135,
+        "price": 6.06,
+        "description": "QA race one"
+      }
+    ],
+    "observerSeesForItem": [
+      204
+    ]
+  },
+  {
+    "type": "animal",
+    "round": 3,
+    "itemId": 136,
+    "responses": [
+      {
+        "status": 200,
+        "success": true,
+        "offerId": 205
+      },
+      {
+        "status": 400,
+        "success": false,
+        "error": "Item is already offered for sale"
+      }
+    ],
+    "activeOffers": [
+      {
+        "id": 205,
+        "status": "active",
+        "itemType": "animal",
+        "itemId": 136,
+        "price": 6.06,
+        "description": "QA race one"
+      }
+    ],
+    "observerSeesForItem": [
+      205
+    ]
+  }
+]

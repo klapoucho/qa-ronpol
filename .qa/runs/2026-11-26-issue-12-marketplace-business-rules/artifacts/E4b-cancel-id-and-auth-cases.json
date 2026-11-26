@@ -1,0 +1,82 @@
+[
+  {
+    "case": "unknown id 99999999",
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:39.259Z",
+      "error": "Offer not found"
+    }
+  },
+  {
+    "case": "id \"abc\"",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:39.261Z",
+      "error": "Invalid offerId format. Must be a positive integer."
+    }
+  },
+  {
+    "case": "id 0",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:39.263Z",
+      "error": "Invalid offerId format. Must be a positive integer."
+    }
+  },
+  {
+    "case": "id -1",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:39.265Z",
+      "error": "Invalid offerId format. Must be a positive integer."
+    }
+  },
+  {
+    "case": "id 1.5",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:39.267Z",
+      "error": "Invalid offerId format. Must be a positive integer."
+    }
+  },
+  {
+    "case": "no token",
+    "status": 401,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:39.269Z",
+      "error": "Access token required"
+    }
+  },
+  {
+    "case": "invalid token",
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:39.270Z",
+      "error": "Invalid or expired token"
+    }
+  },
+  {
+    "case": "stranger cancels own offer (control)",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:17:39.298Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    },
+    "strangerOffersBefore": [
+      "215:active"
+    ],
+    "strangerOffersAfter": [
+      "215:cancelled"
+    ]
+  }
+]

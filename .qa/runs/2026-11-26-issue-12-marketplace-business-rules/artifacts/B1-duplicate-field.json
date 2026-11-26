@@ -1,0 +1,80 @@
+{
+  "firstCreate": {
+    "status": 200,
+    "success": true,
+    "offerId": 194
+  },
+  "cases": [
+    {
+      "case": "same price and description",
+      "request": {
+        "itemType": "field",
+        "itemId": 132,
+        "price": 15.15,
+        "description": "QA first offer"
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T12:15:54.520Z",
+          "error": "Item is already offered for sale"
+        }
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Item is already offered for sale",
+        "changed": [],
+        "activeOffersForItem": 1
+      }
+    },
+    {
+      "case": "different price and description",
+      "request": {
+        "itemType": "field",
+        "itemId": 132,
+        "price": 3.03,
+        "description": "QA cheaper duplicate"
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T12:15:54.550Z",
+          "error": "Item is already offered for sale"
+        }
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Item is already offered for sale",
+        "changed": [],
+        "activeOffersForItem": 1
+      }
+    },
+    {
+      "case": "itemId as string",
+      "request": {
+        "itemType": "field",
+        "itemId": "132",
+        "price": 4.04
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T12:15:54.574Z",
+          "error": "Item is already offered for sale"
+        }
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Item is already offered for sale",
+        "changed": [],
+        "activeOffersForItem": 1
+      }
+    }
+  ]
+}

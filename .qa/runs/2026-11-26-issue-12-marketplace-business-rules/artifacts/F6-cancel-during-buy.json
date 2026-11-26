@@ -1,0 +1,112 @@
+[
+  {
+    "delay": 1500,
+    "offerId": 222,
+    "cancel": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:18:41.246Z",
+        "data": {
+          "message": "Offer cancelled successfully"
+        }
+      },
+      "ms": 1534
+    },
+    "buy": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:18:43.806Z",
+        "data": {
+          "transaction": {
+            "id": 85,
+            "offerId": 222,
+            "sellerId": 256,
+            "buyerId": 257,
+            "itemType": "field",
+            "itemId": 149,
+            "price": 25.25,
+            "status": "completed",
+            "createdAt": "2026-11-26T12:18:43.782Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      },
+      "ms": 4096
+    },
+    "after": {
+      "sellerBalance": 39.39,
+      "buyerBalance": 41.41,
+      "offerStatus": "sold",
+      "offerInBuyerBrowse": false,
+      "sellerOwnsItem": false,
+      "buyerOwnsItem": true,
+      "sellerMarketplaceTx": 1,
+      "buyerMarketplaceTx": 1,
+      "sellerFinancialTx": [
+        "income:25.25:marketplace",
+        "income:14.14:seed"
+      ],
+      "buyerFinancialTx": [
+        "expense:25.25:marketplace",
+        "income:66.66:seed"
+      ]
+    }
+  },
+  {
+    "delay": 800,
+    "offerId": 223,
+    "cancel": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:18:54.898Z",
+        "data": {
+          "message": "Offer cancelled successfully"
+        }
+      },
+      "ms": 841
+    },
+    "buy": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:18:58.135Z",
+        "data": {
+          "transaction": {
+            "id": 86,
+            "offerId": 223,
+            "sellerId": 258,
+            "buyerId": 259,
+            "itemType": "field",
+            "itemId": 150,
+            "price": 25.25,
+            "status": "completed",
+            "createdAt": "2026-11-26T12:18:58.118Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      },
+      "ms": 4076
+    },
+    "after": {
+      "sellerBalance": 39.39,
+      "buyerBalance": 41.41,
+      "offerStatus": "sold",
+      "offerInBuyerBrowse": false,
+      "sellerOwnsItem": false,
+      "buyerOwnsItem": true,
+      "sellerMarketplaceTx": 1,
+      "buyerMarketplaceTx": 1,
+      "sellerFinancialTx": [
+        "income:25.25:marketplace",
+        "income:14.14:seed"
+      ],
+      "buyerFinancialTx": [
+        "expense:25.25:marketplace",
+        "income:66.66:seed"
+      ]
+    }
+  }
+]

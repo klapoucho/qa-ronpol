@@ -1,0 +1,47 @@
+{
+  "offerId": 206,
+  "price": 50.25,
+  "buyer": "czero",
+  "before": {
+    "sellerBalance": 17.43,
+    "buyerBalance": 0,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": []
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:16:51.298Z",
+      "error": "Insufficient funds to complete purchase (no overdraft allowed)"
+    }
+  },
+  "after": {
+    "sellerBalance": 17.43,
+    "buyerBalance": 0,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": []
+  },
+  "verdict": {
+    "pass": true,
+    "status": 400,
+    "message": "Insufficient funds to complete purchase (no overdraft allowed)",
+    "changed": []
+  }
+}

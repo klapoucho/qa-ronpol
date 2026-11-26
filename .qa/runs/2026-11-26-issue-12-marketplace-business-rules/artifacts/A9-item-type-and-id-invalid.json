@@ -1,0 +1,484 @@
+[
+  {
+    "case": "itemType missing",
+    "itemType": "field",
+    "request": {
+      "itemId": 127,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.686Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemType \"Field\" (case)",
+    "itemType": "field",
+    "request": {
+      "itemType": "Field",
+      "itemId": 127,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.707Z",
+        "error": "Invalid item type. Must be \"field\" or \"animal\""
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\""
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\"",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemType \"tractor\"",
+    "itemType": "field",
+    "request": {
+      "itemType": "tractor",
+      "itemId": 127,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.728Z",
+        "error": "Invalid item type. Must be \"field\" or \"animal\""
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\""
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\"",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId missing",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.751Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId 0",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 0,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.773Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId -1",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": -1,
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.795Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 404,
+      "message": "Item not found or not owned by user"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId 99999999 (no such item)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 99999999,
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.820Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 404,
+      "message": "Item not found or not owned by user"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId \"abc\"",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": "abc",
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.841Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId 1.5",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 1.5,
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.864Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemType missing",
+    "itemType": "animal",
+    "request": {
+      "itemId": 42,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.891Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemType \"Field\" (case)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "Animal",
+      "itemId": 42,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.912Z",
+        "error": "Invalid item type. Must be \"field\" or \"animal\""
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\""
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\"",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemType \"tractor\"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "tractor",
+      "itemId": 42,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.935Z",
+        "error": "Invalid item type. Must be \"field\" or \"animal\""
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\""
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Invalid item type. Must be \"field\" or \"animal\"",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId missing",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.957Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId 0",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 0,
+      "price": 5
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:40.982Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId -1",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": -1,
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.006Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 404,
+      "message": "Item not found or not owned by user"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId 99999999 (no such item)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 99999999,
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.031Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 404,
+      "message": "Item not found or not owned by user"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId \"abc\"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": "abc",
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.052Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  },
+  {
+    "case": "itemId 1.5",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 1.5,
+      "price": 5
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.073Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    }
+  }
+]

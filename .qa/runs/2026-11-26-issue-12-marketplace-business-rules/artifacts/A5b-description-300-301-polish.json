@@ -1,0 +1,60 @@
+[
+  {
+    "itemType": "field",
+    "sentLengths": {
+      "p300": 300,
+      "p301": 301
+    },
+    "accepted300": {
+      "status": 200,
+      "storedLength": 300,
+      "storedEqualsSent": true,
+      "browseEqualsSent": true,
+      "cancel": 200,
+      "pass": true
+    },
+    "refused301": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:15:42.261Z",
+        "error": "Description cannot exceed 300 characters"
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Description cannot exceed 300 characters",
+        "changed": []
+      }
+    }
+  },
+  {
+    "itemType": "animal",
+    "sentLengths": {
+      "p300": 300,
+      "p301": 301
+    },
+    "accepted300": {
+      "status": 200,
+      "storedLength": 300,
+      "storedEqualsSent": true,
+      "browseEqualsSent": true,
+      "cancel": 200,
+      "pass": true
+    },
+    "refused301": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:15:42.356Z",
+        "error": "Description cannot exceed 300 characters"
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Description cannot exceed 300 characters",
+        "changed": []
+      }
+    }
+  }
+]

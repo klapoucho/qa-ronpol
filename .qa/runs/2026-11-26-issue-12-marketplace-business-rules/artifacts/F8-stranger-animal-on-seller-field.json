@@ -1,0 +1,56 @@
+{
+  "strangerAnimalOnUnlisted": {
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:17:51.596Z",
+      "data": {
+        "userId": 251,
+        "type": "rat",
+        "amount": 1,
+        "fieldId": 145,
+        "createdAt": "2026-11-26T12:17:51.576Z",
+        "id": 140
+      },
+      "message": "Animal added"
+    }
+  },
+  "strangerAnimalOnListed": {
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:17:51.621Z",
+      "data": {
+        "userId": 251,
+        "type": "rat",
+        "amount": 1,
+        "fieldId": 146,
+        "createdAt": "2026-11-26T12:17:51.604Z",
+        "id": 141
+      },
+      "message": "Animal added"
+    }
+  },
+  "ownerListsUnlisted": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:51.630Z",
+      "error": "Cannot sell field with assigned animals"
+    }
+  },
+  "sellerSeesAnimals": [],
+  "listedOfferInObserverBrowse": {
+    "before": "active",
+    "after": null
+  },
+  "listedOfferInSellerMyOffers": "unavailable",
+  "sellerCancelsAfterwards": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:51.675Z",
+      "error": "Offer is not active"
+    }
+  }
+}

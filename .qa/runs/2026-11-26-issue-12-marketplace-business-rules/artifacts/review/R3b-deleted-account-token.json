@@ -1,0 +1,51 @@
+{
+  "deleteAccount": 200,
+  "withDeletedToken": {
+    "profile": {
+      "status": 404,
+      "error": "User not found"
+    },
+    "myOffers": {
+      "status": 200,
+      "count": 0
+    },
+    "browse": {
+      "status": 200,
+      "count": 49
+    },
+    "account": {
+      "status": 200,
+      "balance": 15.15
+    },
+    "create": {
+      "status": 400,
+      "error": "User not found"
+    },
+    "buy": {
+      "status": 200
+    }
+  },
+  "buyBody": {
+    "success": true,
+    "timestamp": "2026-11-26T12:29:32.026Z",
+    "data": {
+      "transaction": {
+        "id": 90,
+        "offerId": 237,
+        "sellerId": 279,
+        "buyerId": 278,
+        "itemType": "field",
+        "itemId": 162,
+        "price": 5.05,
+        "status": "completed",
+        "createdAt": "2026-11-26T12:29:32.007Z"
+      },
+      "message": "Purchase completed successfully"
+    }
+  },
+  "seller": {
+    "offerStatus": "sold",
+    "balance": 5.05,
+    "ownsField": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "own": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:27:34.581Z",
+      "error": "Forbidden: Admin access required"
+    }
+  },
+  "other": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:27:34.627Z",
+      "error": "Forbidden: Admin access required"
+    }
+  },
+  "before": {
+    "a": 13.57,
+    "b": 24.68
+  },
+  "after": {
+    "a": 13.57,
+    "b": 24.68
+  },
+  "pass": true
+}

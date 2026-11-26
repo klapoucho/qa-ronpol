@@ -1,0 +1,71 @@
+{
+  "request": {
+    "itemType": "field",
+    "itemId": 127,
+    "price": 12.34,
+    "description": "QA valid field offer"
+  },
+  "before": {
+    "sellerOffers": [],
+    "observerBrowseFromSeller": [],
+    "sellerBalance": 17.43,
+    "sellerOwnsItem": true
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:13:34.688Z",
+      "data": {
+        "offer": {
+          "id": 123,
+          "sellerId": 225,
+          "itemType": "field",
+          "itemId": 127,
+          "price": 12.34,
+          "description": "QA valid field offer",
+          "status": "active",
+          "createdAt": "2026-11-26T12:13:34.667Z",
+          "updatedAt": "2026-11-26T12:13:34.667Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    }
+  },
+  "after": {
+    "sellerOffers": [
+      {
+        "id": 123,
+        "status": "active",
+        "itemType": "field",
+        "itemId": 127,
+        "price": 12.34,
+        "description": "QA valid field offer"
+      }
+    ],
+    "observerBrowseFromSeller": [
+      {
+        "id": 123,
+        "status": "active",
+        "itemType": "field",
+        "itemId": 127,
+        "price": 12.34,
+        "description": "QA valid field offer"
+      }
+    ],
+    "sellerBalance": 17.43,
+    "sellerOwnsItem": true
+  },
+  "cancelAfter": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:13:34.732Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "pass": true
+}

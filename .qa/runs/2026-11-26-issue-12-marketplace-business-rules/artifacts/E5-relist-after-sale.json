@@ -1,0 +1,30 @@
+{
+  "field": {
+    "formerOwner": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:16:59.696Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "newOwner": {
+      "status": 200,
+      "success": true
+    }
+  },
+  "animal": {
+    "formerOwner": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:16:59.749Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "newOwner": {
+      "status": 200,
+      "success": true
+    }
+  }
+}

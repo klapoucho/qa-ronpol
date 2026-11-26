@@ -1,0 +1,69 @@
+{
+  "offerId": 213,
+  "observerBrowseBefore": true,
+  "cancel": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:17:34.944Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "myOffersStatus": "cancelled",
+  "observerBrowseAfter": false,
+  "buyAfterCancel": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:34.958Z",
+      "error": "Offer not found or not available"
+    }
+  },
+  "cancelAgain": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:34.961Z",
+      "error": "Offer is not active"
+    }
+  },
+  "before": {
+    "sellerBalance": 24.84,
+    "buyerBalance": 33.17,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:12.5:marketplace",
+      "income:12.34:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:12.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "after": {
+    "sellerBalance": 24.84,
+    "buyerBalance": 33.17,
+    "offerStatus": "cancelled",
+    "offerInBuyerBrowse": false,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:12.5:marketplace",
+      "income:12.34:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:12.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "pass": true
+}

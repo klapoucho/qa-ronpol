@@ -1,0 +1,38 @@
+[
+  {
+    "itemType": "field",
+    "itemId": 129,
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.305Z",
+        "error": "Cannot sell field with assigned animals"
+      }
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Cannot sell field with assigned animals",
+      "changed": []
+    }
+  },
+  {
+    "itemType": "animal",
+    "itemId": 44,
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.333Z",
+        "error": "Cannot sell animal assigned to a field"
+      }
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Cannot sell animal assigned to a field",
+      "changed": []
+    }
+  }
+]

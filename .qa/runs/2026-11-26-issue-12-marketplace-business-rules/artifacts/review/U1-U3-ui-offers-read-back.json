@@ -1,0 +1,13 @@
+{
+  "myOffersAfterUi": [
+    {
+      "id": 239,
+      "status": "active",
+      "price": 5,
+      "description": "Żółta łąka (1,7 ha): świetna!",
+      "itemType": "field",
+      "itemId": 164
+    }
+  ],
+  "cleanupCancel": 200
+}
