@@ -8,7 +8,7 @@
 | **Tested** | issue #14 (no linked PR) |
 | **Roles** | buyer, seller, rival buyer, observer, logged-out user (all fresh, non-round balances) · skipped: deleted account — deleting accounts hands their data to the next registration (critical known bug), the open bug is cited |
 | **Reviewer** | GAPS CLOSED — 5 gaps closed (Financial page, own offer and logged-out gate in the UI, refusal console, ownership in the UI); 11 experiments, 9 held, 2 broke (minor) |
-| **Automation** | 1 UI test on branch `test/ui-marketplace-buyer-buys-offer` (PR pending): runs alone in a new `ui-ledger` project because of problem 5; 10/10 stable, slow network passes, poisons 7/7 |
+| **Automation** | 1 UI test on branch `test/ui-marketplace-buyer-buys-offer` — https://github.com/klapoucho/qa-ronpol/pull/34: runs alone in a new `ui-ledger` project because of problem 5; 10/10 stable, slow network passes, poisons 7/7 |
 
 The buyer's own path works. Buy Now → "Confirm Purchase" → Buy Now gives "Purchase completed successfully!", the balance updates without a reload (40.17 → 16.72), the offer leaves Browse while a decoy stays, and Transaction History and the Financial page show the purchase. AC-5 holds through the API for a field and an animal group. No overdraft: one cent below the price is refused with 400 and nothing changes; an exact balance buys; two buys that together exceed the balance give one 200 and one 400.
 
@@ -206,7 +206,7 @@ The buyer's own path works. Buy Now → "Confirm Purchase" → Buy Now gives "Pu
 <summary><b>Run notes</b> — agents, lessons applied</summary>
 
 - **Agents:** QA tester — Opus 5.5, default effort — exploratory UI+API testing of a money-moving flow; QA reviewer — Opus 5.5, fresh context — coverage check and break attempts; test writer — Opus 5.5, own worktree — one UI test from the handoff (two user decisions on the 4-worker flake: isolate money UI tests in a `ui-ledger` project; seller funded again once isolated); test reviewer — Opus 5.5, fresh context, 7 fixes and 5 human decisions.
-- **Lessons applied** (branch `docs/qa-retro-issue-14`):
+- **Lessons applied** (https://github.com/klapoucho/qa-ronpol/pull/35):
   - tester times money operations alone and in parallel and records the page's request timeout in the handoff; an app-caused flake is filed and isolated, never worked around;
   - handoff template asks for seed calls that must not run in parallel, write timings and large responses;
   - money-moving scripts check state before each write and save after every step (the tester's script bought twice before crashing);

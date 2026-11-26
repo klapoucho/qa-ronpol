@@ -206,7 +206,7 @@ The buyer's path works. In Browse, Buy Now opens "Confirm Purchase" and Buy Now 
 - `ghissue-13/ui-marketplace-browse--long-description-word-overflows.md`: still reproduces in the buyer's Browse (U26: 2246 px document width in a 1366 px viewport).
 
 ## Automation
-Branch `test/ui-marketplace-buyer-buys-offer` (3 commits: page object, `ui-ledger` project, test). PR: not opened yet.
+Branch `test/ui-marketplace-buyer-buys-offer` (3 commits: page object, `ui-ledger` project, test). PR: https://github.com/klapoucho/qa-ronpol/pull/34 (retro lessons: https://github.com/klapoucho/qa-ronpol/pull/35).
 
 | Test | Why (acceptance criterion) | Regression it catches | Poison that failed it | Stability (x/10, slow network) | Level + why | Overlaps with |
 |---|---|---|---|---|---|---|

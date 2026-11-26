@@ -581,7 +581,7 @@
     "status": "done",
     "skip_reason": null,
     "branch": "test/ui-marketplace-buyer-buys-offer",
-    "pr_url": null,
+    "pr_url": "https://github.com/klapoucho/qa-ronpol/pull/34",
     "tests": [
       "tests/ui/marketplace/buy-offer.spec.ts"
     ],
