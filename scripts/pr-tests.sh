@@ -18,6 +18,7 @@ while IFS= read -r file; do
     tests/global-setup.ts | src/config/*) full="$file" ;; # not reached through test imports
     tests/* | src/*) ;;                                   # followed by --only-changed
     *.md | docs/* | .claude/* | .qa/*) ;;                 # cannot change a test result
+    scripts/api-coverage.ts) ;;                           # reads the tests, runs none
     *) full="$file" ;;                                    # config, dependencies, app, CI
   esac
 done <<<"$changed"

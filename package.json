@@ -15,6 +15,7 @@
     "test:ui-mocked": "playwright test --project=ui-mocked",
     "test:smoke": "playwright test --grep @smoke",
     "report": "playwright show-report",
+    "coverage:api": "node scripts/api-coverage.ts --area Marketplace",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

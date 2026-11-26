@@ -9,7 +9,7 @@ These augment `general.md` when testing HTTP endpoints.
 
 ## Contract vs live
 
-The contract is the app's OpenAPI (served live at `/schema/openapi.json`). Treat every difference between it and the running app as a finding, not a side note.
+The contract is the app's OpenAPI (in this repo: `docs/api/openapi.json`, served live at `/schema/openapi.json`). Treat every difference between it and the running app as a finding, not a side note.
 
 - Before testing an endpoint, note what the contract documents for it: statuses, required fields, response shape, auth.
 - Compare every response you observe with it. A defect signal is any of:
@@ -20,7 +20,7 @@ The contract is the app's OpenAPI (served live at `/schema/openapi.json`). Treat
   - auth, validation, content type or caching handled differently on similar endpoints.
 - On a signal: keep the first evidence (request without secrets, status, body), then reproduce it with the smallest request sequence, up to 3 attempts on disposable data, and stop early when a repeat would touch shared data. Report it as a finding with that evidence straight away; never drop it because it looks minor or "only the docs".
 - Say who is wrong. **Docs wrong** (the app behaves correctly, the contract does not say so): kind `contract`, usually `minor`. **App wrong**: the kind of the broken behaviour (`functional`, `permission-gate`, `security`). Unclear: kind `contract`, both readings in the bug.
-- In automated tests, a docs-wrong gap does not block the test: it asserts the live, correct behaviour and passes. An app-wrong bug is an expected failure linked to its bug file.
+- In automated tests, a docs-wrong gap does not block the test: it asserts the live, correct behaviour and passes, and the coverage report lists the status as tested but not documented. An app-wrong bug is an expected failure linked to its bug file.
 
 ## Status codes
 
@@ -52,6 +52,12 @@ Always check:
 - After PATCH/PUT: GET it and check that only the intended fields changed.
 - After DELETE: GET returns 404; lists no longer contain it.
 - PUT and some PATCH implementations **replace** nested objects or lists instead of merging them: read the current value, change it, send the full value back — and test that behaviour explicitly.
+
+## Automated API specs
+
+- Tests of one endpoint's responses go in a `test.describe` titled with the method and the path as the app serves it, OpenAPI parameters kept (`POST /api/v1/marketplace/offers`, `DELETE /api/v1/marketplace/offers/{offerId}`), with one nested `test.describe` per status, ascending (`'200'`, `'400'`, `'401'`, `'403'`, `'404'`). Titles inside still state the behaviour.
+- A scenario that chains several calls (a sale end to end) stays outside these groups.
+- `npm run coverage:api` reads the groups and shows what each operation still misses; run it after adding API tests and name the gaps you left in the handoff or PR.
 
 ## Pagination, sorting, filtering
 

@@ -234,7 +234,7 @@ of one object are checked by one assertion (FR-20).
   hitting a known app bug is marked `test.fail()` with an annotation linking the bug file
   (D-06).
 - **FR-18 npm scripts.** `test`, `test:api`, `test:ui`, `test:ui-mocked`, `test:smoke`,
-  `report`, `lint`, `lint:fix`, `format`, `format:check`, `typecheck`, `check` (typecheck +
+  `report`, `coverage:api` (FR-21), `lint`, `lint:fix`, `format`, `format:check`, `typecheck`, `check` (typecheck +
   lint + format check + `playwright test --list`), and the app scripts in section 9.
 - **FR-19 Reporting.** The built-in HTML report always. Locally the `list` reporter; in CI
   `github`, `html` and `junit`. Trace on first retry, screenshot on failure, video kept on
@@ -254,6 +254,26 @@ of one object are checked by one assertion (FR-20).
     sources (a settled sale across balances, ownership and history) is a fixture that reads them
     into one plain object, compared with one `toEqual` (`readSale` in
     `src/fixtures/marketplace.fixtures.ts`).
+
+### API contract coverage
+
+- **FR-21 Coverage against the OpenAPI.** API tests of one endpoint's responses sit in a
+  `test.describe` titled `<METHOD> <path>`, the path as the app serves it with the OpenAPI
+  parameters kept (`DELETE /api/v1/marketplace/offers/{offerId}`), and inside it one
+  `test.describe` per status code, ascending. Scenarios that chain several calls stay outside
+  these groups. `npm run coverage:api` (`scripts/api-coverage.ts`) reads the groups from
+  `playwright test --list` and reports, against the contract in `docs/api/openapi.json`:
+  operations with a test, documented responses with a test, both per area (OpenAPI tag), and the
+  tested statuses and operations the contract does not document. It never runs a test.
+  - **Fresh contract first.** When the app is reachable, the script compares the checked-in
+    contract with the live `/schema/openapi.json` (operations and documented statuses) and fails
+    on any difference, so a stale file never becomes the denominator. `--update-contract`
+    refreshes it after an app update.
+  - **Contract gaps are findings.** A status or operation the tests prove but the contract does
+    not document is filed as a `contract` bug
+    (`.claude/skills/testing-rules/api.md`); the test keeps asserting the live
+    behaviour when that behaviour is right.
+  - CI writes the report to the run's summary page.
 
 ## 7. Non-functional requirements
 
@@ -381,8 +401,9 @@ Why this layout:
   environments override it without new files.
 - **No folders per endpoint, method, role or positive/negative.** Playwright projects already
   separate the test levels; role and positive/negative belong in test titles, tags and
-  parametrized cases. Extra folder levels would repeat that information and make tests harder
-  to find.
+  parametrized cases. Inside an API spec, describe blocks group the tests by operation and
+  status (FR-21), which the HTML report and the coverage script read. Extra folder levels would
+  repeat that information and make tests harder to find.
 
 **Naming.** Files in kebab-case; specs `*.spec.ts`; params `*.params.ts`; classes in PascalCase
 named after the screen or resource (`MarketplacePage`, `MarketplaceApi`). Test titles describe
@@ -537,6 +558,7 @@ test criteria above, merged with CI green on `main`.
 | D-15 | A run's folder (without `scratch/`) and its bug files are committed on the run's test branch, in one `docs(qa): add qa-pick run <run-id>` commit; a run with no test branch (automation skipped, BLOCKED) uses `docs/qa-run-<slug>`; lessons go with the retro's skill-edit branch | A separate `docs/` branch per run; leaving `.qa/` uncommitted until later | The evidence reaches `main` in the same PR as the tests it explains |
 | D-16 | Test traffic sends `X-Synthetic-Token`; compose starts the app with the matching `SYNTHETIC_TOKEN` (a local, non-secret default) | `NODE_ENV=test` in compose; fewer workers | The app's own exemption for automated checks lifts only the API rate limit. `NODE_ENV=test` also skips the feature-flag overrides and changes DB writes, so the tests would run against a different app |
 | D-17 | Pull requests run the `@smoke` files plus the test files the change touches (`--only-changed`, which follows imports); a change Playwright cannot follow (config, global setup, dependencies, `compose.yaml`, CI) runs the full suite; `main`, a nightly run and manual runs always run the full suite | The full suite on every pull request; smoke only on pull requests | Pull-request runs stay short as the suite grows, without merging untested changes to the code a test uses. Anything a pull request skips is covered on `main` the same day. Sharding comes next if the full suite outgrows NFR-16 |
+| D-18 | API specs group tests in describe blocks by operation (`<METHOD> <path>`), then status; `scripts/api-coverage.ts` measures coverage from `playwright test --list` against a checked-in OpenAPI that it first compares with the live one (FR-21) | One spec file per operation; per-test annotations; an OpenAPI coverage tool that records live traffic | Shows what is untested and where the docs and the app disagree, not only how many tests pass. Describe blocks fit the planned scenario and params files and read well in the HTML report; the checked-in contract keeps the denominator fixed to the pinned app, and the live comparison catches drift. Adapted from an API testing course framework |
 
 ## 13. Left to the builder and future work
 
