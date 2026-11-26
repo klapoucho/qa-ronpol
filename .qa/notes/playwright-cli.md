@@ -8,6 +8,7 @@ Never edit the upstream `playwright-cli` skill copy; record it here.
 - **Cause:** the CLI writes its session output into `.playwright-cli/` under the shell's current directory.
 - **Workaround:** run the CLI from the run's scratch folder (`cd {RUN_DIR}/scratch && playwright-cli -s=<session> …`) so the output stays in the ignored `scratch/`, and give screenshots an absolute `--filename`.
 - Seen: 2026-11-26-issue-12-marketplace-business-rules (reviewer); reproduced with 0.1.24.
+- Seen again: 2026-11-26-issue-15-marketplace-browse-renders-api-data (reviewer): `snapshot` without `--filename` prints the snapshot inline and writes `page-*.yml` under the shell's current directory, not under the folder the agent expected; reproduced with 0.1.24.
 
 ## A screenshot with a relative `--filename` is written relative to the shell's current directory (0.1.24)
 - **Symptom:** `screenshot --filename=artifacts/review/x.png` did not appear in `artifacts/review/`.
@@ -51,3 +52,21 @@ Never edit the upstream `playwright-cli` skill copy; record it here.
 - **Cause:** the command reports every error since the page loaded, not since the last call.
 - **Workaround:** explain repeated errors in the report's Console section and never cite a console file as the only evidence for a PASS.
 - Seen: 2026-11-26-issue-13-marketplace-seller-lists-an-item (tester); observed, not re-run.
+
+## `run-code --filename` fails on a file ending with `};` (0.1.24)
+- **Symptom:** `run-code --filename=case.js` answers "SyntaxError: Unexpected token ';'" for a file `async page => { … };`.
+- **Cause:** the CLI wraps the file's text as `await (<text>)(page);`, so a trailing semicolon lands inside the parentheses.
+- **Workaround:** end the file with the function's closing brace, no semicolon (a formatter may add it back: keep these files out of Prettier's reach, in `scratch/`).
+- Seen: 2026-11-26-issue-15-marketplace-browse-renders-api-data (tester); reproduced with 0.1.24.
+
+## `eval` prints a returned string JSON-encoded (0.1.24)
+- **Symptom:** `eval "JSON.stringify({a:1})"` prints `"{\"a\":1}"` under `### Result`, followed by a "Ran Playwright code" block; slicing the output by line numbers cut the value.
+- **Cause:** the result is always printed as JSON, so a string result is quoted and escaped once more.
+- **Workaround:** take the line right after `### Result` and `JSON.parse` it twice, or return an object and parse once.
+- Seen: 2026-11-26-issue-15-marketplace-browse-renders-api-data (tester); reproduced with 0.1.24.
+
+## `requests` hides static files and covers the whole session (0.1.24)
+- **Symptom:** `requests` listed only a part of the page's requests, and no view per navigation.
+- **Cause:** by default it leaves out static files ("N static requests not shown, run with --static"), and it lists every request since the session opened, earlier pages included.
+- **Workaround:** add `--static` for the full list; to see one step's calls, record them inside a `run-code` case with `page.on('request')` and return them in the result. Redirecting the output to a file works (an empty file seen once did not reproduce).
+- Seen: 2026-11-26-issue-15-marketplace-browse-renders-api-data (tester); reproduced with 0.1.24.
