@@ -1,6 +1,6 @@
 ---
 title: <one line, user-facing: what breaks for whom>
-area: <ui|api>/<feature>/<sub-area>      # e.g. ui/login/validation; file name: ui-login-validation--<slug>.md
+area: <ui|api>/<feature>/<sub-area>      # e.g. ui/login/validation; file: .qa/bugs/<group>/ui-login-validation--<slug>.md
 severity: <critical|major|minor|cosmetic>
 kind: <functional|permission-gate|security|ui-consistency|ux|performance>
 status: <open|fixed|wont-fix|unknown>

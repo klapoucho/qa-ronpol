@@ -272,7 +272,7 @@ wait for the author's approval. The skills are in `.claude/skills/`, the project
 [CLAUDE.md](CLAUDE.md).
 
 Each run leaves evidence in `.qa/` (D-09): `runs/<run-id>/` with the story, plan, report, results and
-screenshots, bug files in `bugs/`, and lessons in `lessons.md`. A run's folder is committed on its test branch,
+screenshots, bug files in `bugs/<group>/` (for example `bugs/ghissue-11/`), and lessons in `lessons.md`. A run's folder is committed on its test branch,
 so it reaches `main` in the same PR as the tests it explains (D-15). `runs/*/scratch/` holds live tokens and is
 ignored. Details: [.qa/README.md](.qa/README.md).
 

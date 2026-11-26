@@ -33,6 +33,6 @@ Agent writes the test → deterministic gate (type check, lint, test listing) �
 ## Layout
 
 - `.qa/runs/<run-id>/` — `story.md`, `plan.md`, `report.md`, `results.json`, `handoff.md`, `review.md`, `summary.md`, `artifacts/`, `scratch/`.
-- `.qa/bugs/<area>--<slug>.md` — one bug per file, from `templates/bug.md` (`/` in the area becomes `-`).
+- `.qa/bugs/<group>/<area>--<slug>.md` — one bug per file, from `templates/bug.md` (`/` in the area becomes `-`), grouped by what found it: `ghissue-<N>`, the `<run-id>` of a story-text run, or `external`.
 - `.qa/notes/<tool>.md` — tool quirks and workarounds.
 - `.qa/lessons.md` — lessons applied, newest first.
