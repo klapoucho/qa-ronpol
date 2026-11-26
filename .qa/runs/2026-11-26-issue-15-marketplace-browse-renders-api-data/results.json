@@ -447,7 +447,7 @@
     "status": "done",
     "skip_reason": null,
     "branch": "test/ui-mocked-marketplace-browse",
-    "pr_url": null
+    "pr_url": "https://github.com/klapoucho/qa-ronpol/pull/36"
   },
   "assumptions": [
     "'Filters by item type' = filter-field select 'Item Type' plus the type typed in the text box; there is no dedicated type dropdown.",

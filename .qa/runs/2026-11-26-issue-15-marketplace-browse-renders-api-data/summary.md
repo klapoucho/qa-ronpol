@@ -8,7 +8,7 @@
 | **Tested** | issue #15, no linked PR. Live app, plus a mocked `GET /api/v1/marketplace/offers` (Playwright `page.route`) for empty, error and pagination edges |
 | **Roles** | registered user as viewer and as seller · logged-out visitor · skipped: deleted-account token — Browse moves nothing, and it would need a deletion |
 | **Reviewer** | GAPS CLOSED — coverage and evidence hold; the one gap (other open text on the card) broke with a new stored XSS through the field area |
-| **Automation** | branch `test/ui-mocked-marketplace-browse`: 5 ui-mocked tests (page, full page, several pages, no offers, 500 — the in-list error is an expected failure until problem 1 is fixed) · 50/50 stable · PR pending |
+| **Automation** | branch `test/ui-mocked-marketplace-browse`: 5 ui-mocked tests (page, full page, several pages, no offers, 500 — the in-list error is an expected failure until problem 1 is fixed) · 50/50 stable · PR https://github.com/klapoucho/qa-ronpol/pull/36 |
 
 **How Browse works:** one call, `GET /api/v1/marketplace/offers`, no query params; the server returns every active offer of other users (AC-3 holds). Type filter, 9/18/36 per page and pagination all run in the browser. Empty list → "No offers available" (works). Failed load → see problem 1.
 
@@ -131,7 +131,11 @@ Outside this story, filed for the record: `PUT /api/v1/users/profile` with `disp
 <summary><b>Run notes</b> — agents, lessons applied</summary>
 
 - **Agents:** QA tester — Opus 5.5 — exploratory UI + API with route mocks, one agent (the screen is small); QA reviewer — Opus 5.5, fresh context — coverage check and break attempts; test writer — Opus 5.5 — one parametrized ui-mocked spec; test reviewer — Opus 5.5, fresh context — 6 fixes applied, 4 decisions for the PR.
-- **Lessons applied:** pending (retro after the test PR).
+- **Lessons applied** (branch `docs/qa-lessons-issue-15`):
+  - known bugs are grepped on `origin/main` after a fetch — the local `main` was behind, so "9 per page" was filed again (now pointed at the issue-14 bug);
+  - the tester tries HTML in every value a rendering screen shows — the reviewer found the field-area XSS the tester had not tried;
+  - the tester's seed/probe scripts take the session name and output folder as parameters;
+  - Playwright CLI notes: `run-code` trailing semicolon, `eval` JSON-encoded strings, `requests` hiding static files.
 
 </details>
 
