@@ -51,6 +51,7 @@ Use the `playwright-cli` skill for the command reference.
    playwright-cli -s=<run-id> open <app URL> --headed --profile={RUN_DIR}/scratch/profile
    playwright-cli -s=<run-id> resize 1366 768
    ```
+   Keep the CLI's default browser (0.1.24: the installed Google Chrome, `chrome` channel); do not pass `--browser` or a config. The automated tests run on Playwright's bundled Chromium, and the versions may differ. Record the real browser and version in the report's env line (`run-code "async page => page.context().browser().version()"`).
 2. Map the navigation once: snapshot, grep it for links/buttons, find the path to the screen under test. If the path is still unclear after one attempt, record what you tried — don't guess 10 URLs.
    Snapshots don't show test ids. On each screen under test list them once for the handoff (test ids come first in automation, see `testing-rules/ui.md`):
    ```bash

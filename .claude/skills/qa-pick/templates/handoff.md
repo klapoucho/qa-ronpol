@@ -10,7 +10,7 @@
 
 ## Verified locators / endpoints
 <!-- Only what you saw work.
-     UI: the test id first (`getByTestId`); for elements without one, role + accessible name, and mark them "no test id". Never nth-index or CSS structure. Name any overlay/spinner that intercepts the first click. Give the URL a click lands on as observed, and the state a FRESH user starts in.
+     UI: the test id first (`getByTestId`); for elements without one, role + accessible name, and mark them "no test id". Never nth-index or CSS structure. Name any overlay/spinner that intercepts the first click. Give the URL a click lands on as observed, and the state a FRESH user starts in. Page readiness: name the data a page loads once on start that later controls are built from (dropdowns, lists) and the responses a test must wait for before using them — on a slow network an early pick can leave the control empty for good.
      API: method + path + real payload + response shape (trimmed). List every Set-Cookie / Location a response carries when the test depends on them.
      Collapsed, virtualised or "+N more" content: say HOW a test reads the hidden items and what identifies each one. For a select/focus/reveal check, say how many candidates the seed needs to prove the RIGHT one was picked. -->
 | What | Locator / request | Response / state | Note |

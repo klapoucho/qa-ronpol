@@ -15,7 +15,7 @@ GitHub-flavoured Markdown: this file is posted as an issue comment (SKILL.md §5
 | | |
 |---|---|
 | **Run** | `<run-id>` · <YYYY-MM-DD> |
-| **Env** | <app URL> · <app version / commit> · <web Chromium / API> |
+| **Env** | <app URL> · <app version / commit> · <web: browser + version (playwright-cli default) / API> |
 | **Tested** | <issue / PR + head SHA, or "story text"> |
 | **Roles** | <tested roles> · skipped: <role — why> |
 | **Reviewer** | <coverage verdict in one line> |
