@@ -1,5 +1,5 @@
 import { errors, type Locator } from '@playwright/test';
-import { diffFields, formatMismatches } from '#src/assertions/field-diff.ts';
+import { diffFields, formatMismatches, type FieldRead } from '#src/assertions/field-diff.ts';
 
 export interface FieldView<K extends string = string> {
   readonly fields: Readonly<Record<K, Locator>>;
@@ -10,9 +10,13 @@ const RETRY_DELAY_MS = 100;
 const MIN_READ_MS = 250;
 const MAX_READ_MS = 1000;
 
-async function readField(locator: Locator, timeout: number): Promise<string | undefined> {
+async function readField(locator: Locator, timeout: number): Promise<FieldRead> {
   try {
-    return await locator.innerText({ timeout });
+    const text = await locator.innerText({ timeout });
+    // innerText also returns the text of an element hidden by CSS (display:none on it or on an
+    // ancestor, as in an unopened tab), so visibility is checked apart from the text.
+    const visible = await locator.isVisible();
+    return { text, visible };
   } catch (error) {
     // Only "not found in time" counts as a missing element. Anything else (strict-mode
     // violation, closed page or context) is a real error and must surface with its cause.
@@ -26,7 +30,7 @@ async function readFields(
   fields: Record<string, Locator>,
   names: readonly string[],
   timeout: number,
-): Promise<Record<string, string | undefined>> {
+): Promise<Record<string, FieldRead>> {
   const entries = await Promise.all(
     names.map(async (name) => {
       const locator = fields[name];
@@ -34,7 +38,7 @@ async function readFields(
       return [name, await readField(locator, timeout)];
     }),
   );
-  return Object.fromEntries(entries) as Record<string, string | undefined>;
+  return Object.fromEntries(entries) as Record<string, FieldRead>;
 }
 
 export async function toShowFields<K extends string>(

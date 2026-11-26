@@ -42,3 +42,17 @@ test('field matcher lists every mismatching field', async ({ mockApi, profilePag
     ),
   );
 });
+
+test('field matcher fails on a field the user cannot see', async ({ mockApi, page, profilePage }) => {
+  const profile = buildProfile();
+  mockProfile(mockApi, profile);
+  await profilePage.goto();
+  await expect(profilePage.details).toShowFields({ email: profile.email });
+
+  // Hides an ancestor, as an unopened tab does: the field keeps its text but the user does not see it.
+  await page.addStyleTag({ content: ':has(> [data-testid="email-value"]) { display: none; }' });
+
+  await expect(
+    expect(profilePage.details).toShowFields({ email: profile.email }, { timeout: 1_000 }),
+  ).rejects.toThrow(`email: expected ${profile.email}, received ${JSON.stringify(profile.email)} (hidden)`);
+});
