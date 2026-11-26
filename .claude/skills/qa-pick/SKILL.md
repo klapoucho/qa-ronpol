@@ -86,11 +86,23 @@ On the issue path with a linked PR, check at every notification whether the PR m
    - Re-check the account right before assigning (`gh api user --jq .login`, as in step 2): the active account can change during a run. If it is not the account step 2 checked, stop and tell the user to switch: never assign the wrong person.
    - `gh issue edit <N> --repo <repo> --add-assignee @me`. This only adds; never remove other assignees. If someone else is already assigned, mention it in chat and continue.
    - Do this without asking only when the project's `CLAUDE.md` allows self-assignment for `/qa-pick`; otherwise ask once before assigning.
+   - Set the issue's Status to **In progress** (see "Issue status" below).
 4. **Known bugs** in the area: `grep -ril -e <kw1> -e <kw2> -e <kw3> .qa/bugs/` with 2–3 keywords from the story (skip if the folder doesn't exist yet).
 5. **Kind**: `api` (only endpoints), `ui` (screens), or `ui+api`. Decide from the story; when unsure, `ui+api`.
 6. Check the app is reachable (`curl -s -o /dev/null -w '%{http_code}' <app URL>`). If not, tell the user the start command from **QA settings** and wait.
 
 Nothing else is asked — the rest is unattended.
+
+### Issue status
+
+GitHub issues have a native **Status** (Backlog, Todo, In progress, In review, Done, Not planned, Duplicate; a preview feature, set through GraphQL, not `gh issue edit`). `/qa-pick` sets it twice: **In progress** when it takes the issue (§1 step 3), **In review** when the run ends (§8e). It never sets Done and never closes the issue: the author does that after reading the results. Test PRs therefore reference the issue with `Refs #<N>`, never `Closes`, `Fixes` or `Resolves`: a merge would close the issue and set it to Done.
+```bash
+# status ids by name, and the issue's node id
+gh api graphql -f query='{repository(owner:"<owner>",name:"<name>"){planningStatuses(first:20){nodes{id name}} issue(number:<N>){id status{name}}}}'
+# set it
+gh api graphql -f query='mutation($i:ID!,$s:ID!){setIssueStatus(input:{issueId:$i,statusId:$s}){issue{number status{name}}}}' -f i=<issue id> -f s=<status id>
+```
+Look the ids up by name each time; don't hard-code them. Re-check the account first, as for every GitHub write. A closed issue must be reopened first (`gh issue reopen`); reopening resets the status to Backlog. Do it without asking only when the project's `CLAUDE.md` allows it for `/qa-pick`.
 
 ## 2. Plan check
 
@@ -161,7 +173,7 @@ When it replies, start the **test reviewer** — a background agent with fresh c
 Then `SendMessage` the writer with the reviewer's reply: fix what can be fixed, re-run the gate, the stability runs of changed tests and any affected poison test, commit. If the fixes were substantial, run another fresh reviewer round. Then:
 
 - **Commit the run evidence** to the test branch: copy `{RUN_DIR}` without `scratch/`, and the bug files this run created or updated, into the worktree at the same paths. Update `report.md`, `results.json` and `summary.md` with the branch first. Grep the copy for `token`, `password` and `Bearer`, judge each hit (prose mentions of the words are fine) and remove live values. Commit as `docs(qa): add qa-pick run <run-id>`.
-- **ask the user** before pushing the branch and opening the PR (title in the repo's commit format, body: test intent card + **Decisions for the reviewer** — the reviewer's open points, or "none"). Push and open it only after a yes, and follow the repo's own rules for PRs and AI attribution.
+- **ask the user** before pushing the branch and opening the PR (title in the repo's commit format, body: `Refs #<N>` (never `Closes`/`Fixes`, see "Issue status"), test intent card + **Decisions for the reviewer** — the reviewer's open points, or "none"). Push and open it only after a yes, and follow the repo's own rules for PRs and AI attribution.
 - update `report.md` (Automation section), `results.json` (`automation`: `done`, branch, pr_url; append the writer's `struggles` prefixed `writer:`) and `summary.md`, then update the issue comment (§5 step 4)
 - tell the user: branch / PR link + decisions needing them (one line each)
 
@@ -184,6 +196,7 @@ a. **Test branch exists:** re-copy `{RUN_DIR}` without `scratch/`, and the bug f
 b. **No test branch** (automation skipped, BLOCKED, or no framework): commit the same set on `docs/qa-run-<slug>` in a worktree cut from `origin/<main branch>`, with the same grep for `token`, `password` and `Bearer` (judge each hit: prose mentions of the words are fine; remove live values), and ask before pushing it.
 c. **Only after** confirming the commit exists on the branch (`git -C <worktree> log --oneline -1 -- .qa/runs/<run-id>`), remove from the main checkout the `.qa/` files now committed there (`git checkout -- <path>` for tracked files, delete untracked ones; `scratch/` stays). Otherwise pulling `main` after the merge stops on untracked files. `.qa/lessons.md` is not touched by the clean-up: commit it with the retro's skill-edit branch, or alone on `docs/qa-lessons-<run-id>`.
 d. Remove the run's worktree (`git worktree remove`) only after its branch is pushed or the user declines, never before.
+e. **Issue path:** set the issue's Status to **In review** ("Issue status"), after the PR is open or the user declined the push. Never Done, never close the issue.
 
 ## Follow-ups
 

@@ -25,7 +25,8 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - Use the GitHub account that has access to the issue repository. If the QA settings pin a **GitHub account** (usually in your own `CLAUDE.local.md`), check before any `gh` command that `gh api user --jq .login` prints it. If it does not, stop and ask: the machine may have another account logged in.
 - Exceptions: `/qa-pick` may do these on the issue it tests without asking:
   - add the current `gh` account as assignee (`gh issue edit --add-assignee @me`);
-  - post its testing summary as one comment and edit that same comment later (§5 of the skill).
+  - post its testing summary as one comment and edit that same comment later (§5 of the skill);
+  - set the issue's native Status to In progress when it takes the issue and to In review when the run ends. Never Done and never close the issue; PRs use `Refs #N`, not `Closes #N`.
   Every other GitHub write still needs approval.
 
 ## QA settings
@@ -40,5 +41,6 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - Gate: `npm run typecheck`, `npx eslint <files>`, `npx playwright test --list <files>`
 - Main branch: main
 - Issue repository: klapoucho/qa-ronpol
+- Issue status: the issue's native Status (GraphQL `setIssueStatus`), In progress → In review; the author sets Done. No Project board.
 - GitHub account: not pinned here. Pin yours in `CLAUDE.local.md` (ignored by git) when the machine has more than one `gh` account logged in.
 - App repository: jaktestowac/rolnopol
