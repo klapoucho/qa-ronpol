@@ -23,7 +23,10 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - Never commit to `main` directly. Never force-push `main`. Use `--force-with-lease` on a working branch only as part of an approved push.
 - The git identity is set locally in this repo (`klapoucho`). Do not change it.
 - This repo belongs to the `klapoucho` GitHub account. Before any `gh` command, check that `gh api user --jq .login` prints `klapoucho`. If it does not, stop and ask, because the machine also has a work account logged in.
-- Exception: `/qa-pick` may add the `klapoucho` account as assignee of the issue it tests (`gh issue edit --add-assignee @me`) without asking. Every other GitHub write still needs approval.
+- Exceptions: `/qa-pick` may do these on the issue it tests without asking:
+  - add the `klapoucho` account as assignee (`gh issue edit --add-assignee @me`);
+  - post its testing summary as one comment and edit that same comment later (§5 of the skill).
+  Every other GitHub write still needs approval.
 
 ## QA settings
 
