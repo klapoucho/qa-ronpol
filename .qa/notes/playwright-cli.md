@@ -33,11 +33,18 @@ Never edit the upstream `playwright-cli` skill copy; record it here.
 - **Workaround:** never save raw `run-code` output as evidence; keep only the `### Result` part (for example `| tail -1`), and keep tokens out of artifacts.
 - Seen: 2026-11-26-issue-13-marketplace-seller-lists-an-item (tester); reproduced with 0.1.24.
 
-## `run-code` has no Node globals such as `process` (0.1.24)
+## `run-code` has no Node or DOM globals such as `process` or `document` (0.1.24)
 - **Symptom:** a `run-code --filename` script using `process.env` failed with "ReferenceError: process is not defined" after its click had already fired, which left a stray offer in the app. `typeof process` returns `"undefined"`.
-- **Cause:** the code runs in the CLI's Playwright context, not as a Node script.
-- **Workaround:** inline values (absolute paths, ids) into the code, read everything a script needs before its first action, and log any data a failed script left behind.
-- Seen: 2026-11-26-issue-13-marketplace-seller-lists-an-item (tester); reproduced with 0.1.24.
+- **Symptom (DOM):** a script that used `document` outside `page.evaluate` threw a ReferenceError after its buy had already completed, so the result was lost. `typeof document` also returns `"undefined"`.
+- **Cause:** the code runs in the CLI's Playwright context, neither as a Node script nor in the page.
+- **Workaround:** inline values (absolute paths, ids) into the code, put every DOM access inside `page.evaluate`, read everything a script needs before its first action, and log any data a failed script left behind.
+- Seen: 2026-11-26-issue-13-marketplace-seller-lists-an-item (tester), 2026-11-26-issue-14-marketplace-buyer-buys-an-offer (reviewer, `document`); reproduced with 0.1.24.
+
+## A screenshot right after `waitFor()` can catch a modal mid-animation (0.1.24)
+- **Symptom:** a screenshot taken right after `getByTestId('confirmation-modal').waitFor()` showed an empty dimmed page: the modal's content was at opacity 0 during its 0.3 s slide-in.
+- **Cause:** `waitFor()` waits for visibility, and an element at opacity 0 counts as visible; it does not wait for CSS transitions. A repro with a 0.3 s opacity transition returns `"0"` right after `waitFor()`.
+- **Workaround:** before capturing, wait until the computed opacity is 1 (or about 600 ms), and say in the report what the screenshot shows.
+- Seen: 2026-11-26-issue-14-marketplace-buyer-buys-an-offer (reviewer); reproduced with 0.1.24.
 
 ## `console error` output accumulates per page load (0.1.24)
 - **Symptom:** console files saved after later steps repeat earlier errors, and several "0 errors" files are byte-identical, which the duplicate check flags.

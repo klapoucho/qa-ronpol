@@ -2,6 +2,11 @@
 
 Lessons applied after `/qa-pick` runs, newest first. One line per lesson, with the run id.
 
+- 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: tester prompt times money operations alone and in parallel and records the page's request timeout in the handoff; general.md says an app-caused flake is filed and isolated, never worked around — the writer's UI buy test failed 3/10 at 4 workers because a global ledger lock queued buys past the page's 15 s timeout, which cost two user decisions.
+- 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: handoff template asks for seed calls that must not run in parallel, write timings and large responses — the writer rediscovered the same-user field-create race and the 460 KB offers response.
+- 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: unattended-runs and the tester prompt require money-moving scripts to check state before each write and save after every step — the tester's main script bought twice before crashing and a blind rerun overwrote its evidence.
+- 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: `.qa/notes/playwright-cli.md` adds DOM globals to the run-code note and a note on screenshots during CSS animations — the reviewer lost an R8 result to `document` in run-code and captured a modal at opacity 0.
+
 - 2026-11-26-issue-13-marketplace-seller-lists-an-item: qa-pick sets the issue's native Status to In progress when it takes the story and In review when the run ends, never Done; test PRs say `Refs #N` — `Closes #N` in the test PRs closed issues 11, 12 and 13 as Done.
 - 2026-11-26-issue-13-marketplace-seller-lists-an-item: a critical or major problem on the story's flow (security above all, known bugs included) makes the verdict FAIL; vision.md holds the rule, and qa-pick, qa-test and the templates point to it — issue 13 was posted as PASS WITH FINDINGS with two major security bugs on its flow, and the author corrected it.
 - 2026-11-26-issue-13-marketplace-seller-lists-an-item: qa-test keeps playwright-cli's default browser (installed Google Chrome) and records its version; report, summary and bug templates name the real browser — env lines said "Chromium" for a Chrome run, and the author chose to keep each tool's own default.
