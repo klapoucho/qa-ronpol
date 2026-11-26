@@ -7,6 +7,21 @@ These augment `general.md` when testing HTTP endpoints.
 - Find the endpoint's contract first: the app's API docs (Swagger/OpenAPI), the source, or the network log of the screen that calls it. Don't assume full CRUD — some resources have no DELETE or no PUT.
 - Note required vs optional fields, allowed values for enum fields, length limits and read-only fields before you design inputs.
 
+## Contract vs live
+
+The contract is the app's OpenAPI (served live at `/schema/openapi.json`). Treat every difference between it and the running app as a finding, not a side note.
+
+- Before testing an endpoint, note what the contract documents for it: statuses, required fields, response shape, auth.
+- Compare every response you observe with it. A defect signal is any of:
+  - an unexpected `5xx`;
+  - a status the contract does not list for that operation (a `401` on an endpoint whose contract lists none, a `404` where it documents `400`);
+  - a body shape or field type that differs from the documented schema;
+  - an operation the app serves that the contract does not list, or one it lists that the app does not serve;
+  - auth, validation, content type or caching handled differently on similar endpoints.
+- On a signal: keep the first evidence (request without secrets, status, body), then reproduce it with the smallest request sequence, up to 3 attempts on disposable data, and stop early when a repeat would touch shared data. Report it as a finding with that evidence straight away; never drop it because it looks minor or "only the docs".
+- Say who is wrong. **Docs wrong** (the app behaves correctly, the contract does not say so): kind `contract`, usually `minor`. **App wrong**: the kind of the broken behaviour (`functional`, `permission-gate`, `security`). Unclear: kind `contract`, both readings in the bug.
+- In automated tests, a docs-wrong gap does not block the test: it asserts the live, correct behaviour and passes. An app-wrong bug is an expected failure linked to its bug file.
+
 ## Status codes
 
 Expected by operation: GET 200 · POST 201 (or 200 if documented) · PUT/PATCH 200 · DELETE 204/200 · invalid input 400/422 · no auth 401 · wrong role 403 · missing resource 404 · method not allowed 405.
