@@ -21,10 +21,10 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - You may create branches and commit to them without asking, following CONTRIBUTING.md.
 - **Ask before every `git push`**, before opening a PR, and before any other GitHub write (issues, comments, repo settings). Never merge a PR.
 - Never commit to `main` directly. Never force-push `main`. Use `--force-with-lease` on a working branch only as part of an approved push.
-- The git identity is set locally in this repo (`klapoucho`). Do not change it.
-- This repo belongs to the `klapoucho` GitHub account. Before any `gh` command, check that `gh api user --jq .login` prints `klapoucho`. If it does not, stop and ask, because the machine also has a work account logged in.
+- Each contributor sets their git identity locally in this repo. Do not change it.
+- Use the GitHub account that has access to the issue repository. If the QA settings pin a **GitHub account** (usually in your own `CLAUDE.local.md`), check before any `gh` command that `gh api user --jq .login` prints it. If it does not, stop and ask: the machine may have another account logged in.
 - Exceptions: `/qa-pick` may do these on the issue it tests without asking:
-  - add the `klapoucho` account as assignee (`gh issue edit --add-assignee @me`);
+  - add the current `gh` account as assignee (`gh issue edit --add-assignee @me`);
   - post its testing summary as one comment and edit that same comment later (§5 of the skill).
   Every other GitHub write still needs approval.
 
@@ -40,5 +40,5 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - Gate: `npm run typecheck`, `npx eslint <files>`, `npx playwright test --list <files>`
 - Main branch: main
 - Issue repository: klapoucho/qa-ronpol
-- GitHub account: klapoucho
+- GitHub account: not pinned here. Pin yours in `CLAUDE.local.md` (ignored by git) when the machine has more than one `gh` account logged in.
 - App repository: jaktestowac/rolnopol

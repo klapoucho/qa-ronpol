@@ -8,3 +8,4 @@ reports/
 .claude/worktrees/
 .playwright-cli/
 .qa/runs/*/scratch/
+CLAUDE.local.md
