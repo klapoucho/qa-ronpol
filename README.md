@@ -13,7 +13,7 @@ and data through the API, so the suite runs fully in parallel without database r
 **Status: the framework is built (Phase A); the Marketplace tests are being written (Phase B).** The framework,
 the Docker setup, CI and the AI-assisted QA workflow are in place, with framework checks that prove the wiring
 (`tests/*/framework/`). The five Marketplace tests (T1–T5) are written one `/qa-pick` run each (see
-[AI-assisted workflow](#ai-assisted-workflow)): T1–T3 are done, T4 and T5 come next.
+[AI-assisted workflow](#ai-assisted-workflow)): T1–T4 are done, T5 is the last.
 
 The full requirements, with IDs (`FR-xx`, `NFR-xx`, `D-xx`) that commits and PRs refer to, are in
 [docs/requirements.md](docs/requirements.md). This README summarises them.
@@ -90,7 +90,7 @@ is `ui-ledger`, which runs the `@ledger` tests of `tests/ui/` on their own (see 
 ```
 
 Each project folder holds a `framework/` folder with the wiring checks. Marketplace tests go into
-`tests/{api,ui,ui-mocked}/marketplace/` (today `api` and `ui`; `ui-mocked` comes with T5).
+`tests/{api,ui,ui-mocked}/marketplace/`.
 
 ## Prerequisites
 
@@ -294,9 +294,10 @@ trailer and agent PRs a "Generated with Claude Code" line ([CONTRIBUTING.md](CON
 
 - **Phase A** (built): the framework, CI, the `qa-pick` skills adapted to this repo, and the issue texts, built
   task by task from [docs/implementation-plan.md](docs/implementation-plan.md). No Marketplace tests.
-- **Phase B** (in progress): the author writes T1–T5 with `/qa-pick <issue>`, one issue per test. T1–T3 are
+- **Phase B** (in progress): the author writes T1–T5 with `/qa-pick <issue>`, one issue per test. T1–T4 are
   done ([#18](https://github.com/klapoucho/qa-ronpol/pull/18), [#25](https://github.com/klapoucho/qa-ronpol/pull/25),
-  [#28](https://github.com/klapoucho/qa-ronpol/pull/28)). The issue texts and
+  [#28](https://github.com/klapoucho/qa-ronpol/pull/28), [#34](https://github.com/klapoucho/qa-ronpol/pull/34)); T5
+  ([#15](https://github.com/klapoucho/qa-ronpol/issues/15)) adds the `ui-mocked` Browse spec. The issue texts and
   their titles are in [docs/test-cases/](docs/test-cases/README.md); the issue numbers are added there once the
   issues exist in `klapoucho/qa-ronpol`.
 
