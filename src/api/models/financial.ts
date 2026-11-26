@@ -49,3 +49,33 @@ export const transactionListSchema = z.object({
   offset: z.number().int(),
   hasMore: z.boolean(),
 });
+
+// GET /api/v1/financial/stats: the user's own totals.
+export const financialStatsResultSchema = z.object({
+  statistics: z.object({
+    currentBalance: z.number(),
+    totalIncome: z.number(),
+    totalExpenses: z.number(),
+    totalTransferred: z.number(),
+    transactionCount: z.number().int(),
+    categories: z.record(z.string(), z.object({ count: z.number().int(), total: z.number() })),
+    monthlyStats: z.record(
+      z.string(),
+      z.object({ income: z.number(), expenses: z.number(), count: z.number().int() }),
+    ),
+  }),
+});
+export type FinancialStats = z.infer<typeof financialStatsResultSchema>;
+
+const countsByType = z.object({ field: z.number().int(), animal: z.number().int() });
+
+// GET /api/v1/financial/marketplace-stats: totals across every user, shown in the Marketplace header.
+export const marketplaceStatsSchema = z.object({
+  totalActiveOffers: z.number().int(),
+  totalOffers: z.number().int(),
+  totalTransactions: z.number().int(),
+  totalVolume: z.number(),
+  offersByType: countsByType,
+  activeOffersByType: countsByType,
+});
+export type MarketplaceStats = z.infer<typeof marketplaceStatsSchema>;
