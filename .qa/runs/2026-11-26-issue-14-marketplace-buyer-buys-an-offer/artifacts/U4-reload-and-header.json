@@ -1,0 +1,40 @@
+{
+  "headerBeforeReload": {
+    "totalOffers": "1267",
+    "myOffersCount": "0",
+    "totalTransactions": "208",
+    "totalValue": "508 072,77",
+    "userBalance": "16.72 ROL"
+  },
+  "apiStatsBeforeReload": {
+    "success": true,
+    "timestamp": "2026-11-26T17:50:25.219Z",
+    "data": {
+      "totalActiveOffers": 1266,
+      "totalOffers": 1708,
+      "totalTransactions": 209,
+      "totalVolume": 13246.200000000106,
+      "offersByType": {
+        "field": 993,
+        "animal": 715
+      },
+      "activeOffersByType": {
+        "field": 723,
+        "animal": 543
+      }
+    }
+  },
+  "reload": {
+    "balance": "16.72 ROL",
+    "history": [
+      "Purchase: QA T4 main3 t4run8955 26/11/2026 -23.45 ROL"
+    ]
+  },
+  "headerAfterReload": {
+    "totalOffers": "1266",
+    "myOffersCount": "0",
+    "totalTransactions": "209",
+    "totalValue": "508 072,77",
+    "userBalance": "16.72 ROL"
+  }
+}

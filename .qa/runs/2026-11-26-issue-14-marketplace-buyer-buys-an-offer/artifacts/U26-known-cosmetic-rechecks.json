@@ -1,0 +1,189 @@
+{
+  "longword": {
+    "balance": "20.2 ROL",
+    "filter": "t4run8955 aaaa",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1704,
+        "price": "1.11 ROL",
+        "name": "field #1819",
+        "meta": "Field: QA T4 longword t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "longwordGeometry": {
+    "viewportWidth": 1366,
+    "documentScrollWidth": 2246,
+    "horizontalScroll": true,
+    "card": {
+      "x": 103,
+      "y": 470.390625,
+      "width": 373.328125,
+      "height": 290.765625,
+      "top": 470.390625,
+      "right": 476.328125,
+      "bottom": 761.15625,
+      "left": 103
+    },
+    "descriptionScrollWidth": 2121,
+    "descriptionClientWidth": 329
+  },
+  "cards": {
+    "balance": "20.2 ROL",
+    "filter": "main3",
+    "filterField": "",
+    "cards": [],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "tagged": {
+    "balance": "20.2 ROL",
+    "filter": "t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1667,
+        "price": "23.54 ROL",
+        "name": "field #1789",
+        "meta": "Field: QA T4 decoy t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1670,
+        "price": "11.11 ROL",
+        "name": "field #1791",
+        "meta": "Field: QA T4 dismiss t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1671,
+        "price": "12.21 ROL",
+        "name": "field #1792",
+        "meta": "Field: QA T4 pickx t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1677,
+        "price": "17.17 ROL",
+        "name": "field #1798",
+        "meta": "Field: QA T4 balmid t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1680,
+        "price": "9.09 ROL",
+        "name": "field #1801",
+        "meta": "Field: QA T4 session t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "3",
+      "4",
+      "Next »"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "dot": [
+    {
+      "id": "1667",
+      "price": {
+        "l": 354.8046875,
+        "r": 454.328125,
+        "t": 492.390625,
+        "b": 524.390625
+      },
+      "dot": {
+        "l": 448.328125,
+        "r": 460.328125,
+        "t": 486.390625,
+        "b": 498.390625
+      },
+      "overlaps": true,
+      "heading": "field #1789",
+      "meta": "Field: QA T4 decoy t4run8955, Area: 3.5 ha"
+    },
+    {
+      "id": "1670",
+      "price": {
+        "l": 760.578125,
+        "r": 847.6640625,
+        "t": 492.390625,
+        "b": 524.390625
+      },
+      "dot": {
+        "l": 841.6640625,
+        "r": 853.6640625,
+        "t": 486.390625,
+        "b": 498.390625
+      },
+      "overlaps": true,
+      "heading": "field #1791",
+      "meta": "Field: QA T4 dismiss t4run8955, Area: 3.5 ha"
+    },
+    {
+      "id": "1671",
+      "price": {
+        "l": 1147.6015625,
+        "r": 1241,
+        "t": 492.390625,
+        "b": 524.390625
+      },
+      "dot": {
+        "l": 1235,
+        "r": 1247,
+        "t": 486.390625,
+        "b": 498.390625
+      },
+      "overlaps": true,
+      "heading": "field #1792",
+      "meta": "Field: QA T4 pickx t4run8955, Area: 3.5 ha"
+    }
+  ]
+}

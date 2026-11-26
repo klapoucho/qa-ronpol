@@ -1,0 +1,623 @@
+{
+  "run_id": "2026-11-26-issue-14-marketplace-buyer-buys-an-offer",
+  "title": "Marketplace: buyer buys an offer (UI)",
+  "source": {
+    "type": "github-issue",
+    "issue_url": "https://github.com/klapoucho/qa-ronpol/issues/14",
+    "pr_url": null,
+    "pr_head_sha": null,
+    "summary_comment_url": "https://github.com/klapoucho/qa-ronpol/issues/14#issuecomment-7200327892"
+  },
+  "kind": "ui+api",
+  "status": "FAIL",
+  "blocked_reason": null,
+  "env": "http://localhost:3000",
+  "app_version": "Rolnopol 1.126.0 (Docker jaktestowac/rolnopol:1.126.0)",
+  "platforms": [
+    "Google Chrome 158.0.8127.88 via playwright-cli 0.1.24, 1366x768 (U24 also 375x812)",
+    "API (Node fetch, X-Synthetic-Token)"
+  ],
+  "roles": [
+    "buyer",
+    "seller",
+    "rival buyer",
+    "observer",
+    "logged-out user"
+  ],
+  "items": [
+    {
+      "id": "U1",
+      "check": "Browse filtered to the run shows the offer and the decoy; balance 40.17 ROL",
+      "requirement": "AC-4",
+      "role": "buyer B1m",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U1-U3-main-buy.json"
+    },
+    {
+      "id": "U2",
+      "check": "Buy Now opens Confirm Purchase with price and Cancel / Buy Now",
+      "requirement": "AC-4",
+      "role": "buyer B1m",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U2-confirm-modal.png"
+    },
+    {
+      "id": "U3",
+      "check": "Confirm: one POST, 200, success toast, balance 16.72 without reload, offer gone, decoy stays, history entry",
+      "requirement": "AC-4, AC-5",
+      "role": "buyer B1m",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U1-U3-main-buy.json"
+    },
+    {
+      "id": "U3a",
+      "check": "AC-5 read-back through both users' API (balances, field owner, offer sold, both histories)",
+      "requirement": "AC-5",
+      "role": "buyer + seller",
+      "platform": "api",
+      "result": "PASS",
+      "evidence": "artifacts/U1-U3-main-buy.json"
+    },
+    {
+      "id": "U3c",
+      "check": "Seller's My Offers shows Sold, history shows the sale",
+      "requirement": "AC-5",
+      "role": "seller S1m",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U3c-seller-view-after-sale.json"
+    },
+    {
+      "id": "U4",
+      "check": "Reload keeps balance and history; header counters stale before reload",
+      "requirement": "AC-5",
+      "role": "buyer B1m",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U4-reload-and-header.json"
+    },
+    {
+      "id": "U5",
+      "check": "Animal group bought in the UI moves to the buyer, balances change by 7.07",
+      "requirement": "AC-4, AC-5",
+      "role": "buyer B1",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U5-animal-buy.json"
+    },
+    {
+      "id": "U6",
+      "check": "One cent below the price: 400 insufficient funds, error toast, nothing changes",
+      "requirement": "AC-4",
+      "role": "buyer B3",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U6-one-cent-below.json"
+    },
+    {
+      "id": "U7",
+      "check": "Exact balance buys the same offer, balance 0",
+      "requirement": "AC-4",
+      "role": "buyer B2",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U7-exact-balance.json"
+    },
+    {
+      "id": "U8",
+      "check": "Modal Cancel closes without a request",
+      "requirement": "assumption",
+      "role": "buyer B5",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U8-U11-modal-dismissals.json"
+    },
+    {
+      "id": "U9",
+      "check": "Modal close (x) closes without a request",
+      "requirement": "assumption",
+      "role": "buyer B5",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U8-U11-modal-dismissals.json"
+    },
+    {
+      "id": "U10",
+      "check": "Backdrop click closes without a request",
+      "requirement": "assumption",
+      "role": "buyer B5",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U8-U11-modal-dismissals.json"
+    },
+    {
+      "id": "U11",
+      "check": "Escape closes the modal; focus inside the modal",
+      "requirement": "user expectation (a11y)",
+      "role": "buyer B5",
+      "platform": "chrome",
+      "result": "FAIL",
+      "evidence": "artifacts/U11-escape-modal-still-open.png"
+    },
+    {
+      "id": "U12",
+      "check": "Cancel offer X, confirm offer Y: only Y bought",
+      "requirement": "AC-4",
+      "role": "buyer B5",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U12-cancel-x-then-buy-y.json"
+    },
+    {
+      "id": "U13",
+      "check": "Double-click on modal confirm sends one request",
+      "requirement": "user expectation",
+      "role": "buyer B5",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U13-double-click-confirm.json"
+    },
+    {
+      "id": "U14",
+      "check": "Loading state during the ~4 s buy; no second purchase attempt",
+      "requirement": "user expectation",
+      "role": "buyer B5",
+      "platform": "chrome",
+      "result": "FAIL",
+      "evidence": "artifacts/U14-buy-again-while-first-buy-runs.json"
+    },
+    {
+      "id": "U15",
+      "check": "Rival buys while the modal is open: 404, nothing charged (stale card remains)",
+      "requirement": "AC-4",
+      "role": "buyer B5, rival B4",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U15-rival-buys-while-modal-open.json"
+    },
+    {
+      "id": "U16",
+      "check": "Seller cancels while the modal is open: 404, nothing charged",
+      "requirement": "AC-4",
+      "role": "buyer B5, seller S2",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U16-seller-cancels-while-modal-open.json"
+    },
+    {
+      "id": "U17",
+      "check": "Balance drops below the price while the modal is open: 400, no overdraft",
+      "requirement": "AC-4",
+      "role": "buyer B5",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U17-balance-drops-while-modal-open.json"
+    },
+    {
+      "id": "U18",
+      "check": "Seller shrinks the field while the modal is open (known bug)",
+      "requirement": "user expectation",
+      "role": "buyer B5, seller S2",
+      "platform": "chrome+api",
+      "result": "FAIL",
+      "evidence": "artifacts/U18-seller-edits-field-while-modal-open.json"
+    },
+    {
+      "id": "U19",
+      "check": "Seller deletes the field while the modal is open: offer unavailable, 404, nothing charged",
+      "requirement": "AC-4",
+      "role": "buyer B5, seller S2",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U19-seller-deletes-field-while-modal-open.json"
+    },
+    {
+      "id": "U20",
+      "check": "Session ended while the modal is open: 403, login page, nothing moved",
+      "requirement": "AC-4",
+      "role": "buyer B6",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U20-session-ended-while-modal-open.json"
+    },
+    {
+      "id": "U21a",
+      "check": "Seller cancels during the UI buy (known bug)",
+      "requirement": "AC-4",
+      "role": "buyer B5, seller S2",
+      "platform": "chrome+api",
+      "result": "FAIL",
+      "evidence": "artifacts/U21a-seller-cancels-during-ui-buy.json"
+    },
+    {
+      "id": "U21b",
+      "check": "Seller deletes the field during the UI buy (known bug)",
+      "requirement": "AC-5",
+      "role": "buyer B5, seller S2",
+      "platform": "chrome+api",
+      "result": "FAIL",
+      "evidence": "artifacts/U21b-seller-deletes-field-during-ui-buy.json"
+    },
+    {
+      "id": "U22",
+      "check": "Filter and 9/18/36 paging before and after a buy from page 2",
+      "requirement": "story context (9/18/36)",
+      "role": "buyer B1m",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U22-U23-paging-filter.json"
+    },
+    {
+      "id": "U22b",
+      "check": "\"9 per page\" after changing the size shows 9 cards",
+      "requirement": "story context (9/18/36)",
+      "role": "buyer B1m",
+      "platform": "chrome",
+      "result": "FAIL",
+      "evidence": "artifacts/U22-9-per-page-shows-10.png"
+    },
+    {
+      "id": "U23",
+      "check": "Item Type filter after a buy matches the API count",
+      "requirement": "story context (type filter)",
+      "role": "buyer B1m",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/U22-U23-paging-filter.json"
+    },
+    {
+      "id": "U24",
+      "check": "Modal centred at 1366 and 375 px",
+      "requirement": "assumption (visual)",
+      "role": "buyer B6",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/U24-modal-geometry.json"
+    },
+    {
+      "id": "U25",
+      "check": "Field-name HTML on the Browse card and in the buyer's history (known bug)",
+      "requirement": "security",
+      "role": "buyer B6, seller S4",
+      "platform": "chrome+api",
+      "result": "FAIL",
+      "evidence": "artifacts/U25-field-name-html-browse-and-history.json"
+    },
+    {
+      "id": "U26",
+      "check": "Known cosmetic bugs on the buyer's Browse (heading id, status dot, long word)",
+      "requirement": "known bugs",
+      "role": "buyer B6",
+      "platform": "chrome",
+      "result": "FAIL",
+      "evidence": "artifacts/U26-known-cosmetic-rechecks.json"
+    },
+    {
+      "id": "A1a",
+      "check": "Own offer: 400 Cannot buy your own offer, nothing changed",
+      "requirement": "AC-4",
+      "role": "seller S2",
+      "platform": "api",
+      "result": "PASS",
+      "evidence": "artifacts/A1a-own-offer.json"
+    },
+    {
+      "id": "A1b",
+      "check": "Sold offer: 404, nothing changed",
+      "requirement": "AC-4",
+      "role": "rival B4",
+      "platform": "api",
+      "result": "PASS",
+      "evidence": "artifacts/A1b-sold-offer-again.json"
+    },
+    {
+      "id": "A2",
+      "check": "Logged-out token refused on buy (403, known: 401 expected), nothing changed",
+      "requirement": "auth",
+      "role": "logged-out user",
+      "platform": "api",
+      "result": "PASS",
+      "evidence": "artifacts/A2-logged-out-token-buy.json"
+    },
+    {
+      "id": "A3",
+      "check": "Invalid token 403 (known), missing token 401",
+      "requirement": "auth",
+      "role": "anonymous",
+      "platform": "api",
+      "result": "PASS",
+      "evidence": "artifacts/A3-invalid-and-missing-token.json"
+    },
+    {
+      "id": "A4",
+      "check": "Deleted-account token on buy",
+      "requirement": "auth",
+      "role": "deleted account",
+      "platform": "api",
+      "result": "NOT_RUN",
+      "evidence": ".qa/bugs/ghissue-12/post-api-marketplace-buy--deleted-account-token-buys.md"
+    },
+    {
+      "id": "K1",
+      "check": "Animals added to the field during a buy (known bug)",
+      "requirement": "known bug",
+      "role": "buyer B4, seller S3",
+      "platform": "api",
+      "result": "FAIL",
+      "evidence": "artifacts/A5a-animals-added-during-buy.json"
+    },
+    {
+      "id": "K2",
+      "check": "Seller staff assignment survives the sale (known bug)",
+      "requirement": "known bug",
+      "role": "buyer B4, seller S3",
+      "platform": "api",
+      "result": "FAIL",
+      "evidence": "artifacts/A5b-seller-assignment-after-sale.json"
+    },
+    {
+      "id": "K3",
+      "check": "Unavailable offer cannot be cancelled (known bug)",
+      "requirement": "known bug",
+      "role": "seller S2",
+      "platform": "api",
+      "result": "FAIL",
+      "evidence": "artifacts/K-unavailable-offer-cannot-be-cancelled.json"
+    },
+    {
+      "id": "R1",
+      "check": "Financial page after UI buys shows the buyer's expenses and the seller's incomes matching the API",
+      "requirement": "AC-5",
+      "role": "buyer, seller",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/review/R1-financial-page-buyer-and-seller.json"
+    },
+    {
+      "id": "R2",
+      "check": "Buyer's own active offer is absent from their Browse; another user sees it",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/review/R2-own-offer-in-browse.json"
+    },
+    {
+      "id": "R3",
+      "check": "Logged-out direct URL /marketplace.html redirects to login, no API calls",
+      "requirement": "auth",
+      "role": "logged-out",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/review/R3-R6-direct-url-and-back.json"
+    },
+    {
+      "id": "R4a",
+      "check": "Two offers bought back to back in the UI: final balance shown equals the API",
+      "requirement": "AC-4, AC-5",
+      "role": "buyer",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/review/R4a-two-offers-back-to-back.json"
+    },
+    {
+      "id": "R4b",
+      "check": "Two concurrent UI buys exceeding the balance: 200 + 400, no overdraft",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/review/R4b-two-offers-exceed-balance.json"
+    },
+    {
+      "id": "R5",
+      "check": "Refused buy twice: 404 + toast, nothing charged, console only expected 404s",
+      "requirement": "AC-4",
+      "role": "buyer, rival",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/review/R5-refusal-console-and-retry.json"
+    },
+    {
+      "id": "R6",
+      "check": "Browser Back from Financial keeps Browse filtered as the filter box says",
+      "requirement": "user expectation",
+      "role": "buyer",
+      "platform": "chrome",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R6b-back-repeat.json"
+    },
+    {
+      "id": "R8",
+      "check": "Full buy at 375x812",
+      "requirement": "AC-4, AC-5",
+      "role": "buyer",
+      "platform": "chrome+api",
+      "result": "PASS",
+      "evidence": "artifacts/review/R8-mobile-buy.json"
+    },
+    {
+      "id": "R9",
+      "check": "After a fresh load, bought fields are in the buyer's Create Offer list and gone from the seller's",
+      "requirement": "AC-5",
+      "role": "buyer, seller",
+      "platform": "chrome",
+      "result": "PASS",
+      "evidence": "artifacts/review/R9-ownership-in-create-offer-dropdown.json"
+    },
+    {
+      "id": "R10",
+      "check": "Without reload, Create Offer lists the just-bought field",
+      "requirement": "user expectation",
+      "role": "buyer",
+      "platform": "chrome+api",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R10-create-offer-dropdown-after-buy.json"
+    },
+    {
+      "id": "R11",
+      "check": "HTML in displayedName refused on register and profile update",
+      "requirement": "security",
+      "role": "seller",
+      "platform": "api",
+      "result": "PASS",
+      "evidence": "artifacts/review/R11-seller-name-html-api.json"
+    }
+  ],
+  "findings": [
+    {
+      "title": "Field name with HTML runs on the buyer's Browse card and, after the purchase, in the buyer's Transaction History on every load",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-12/ui-marketplace-browse--field-name-runs-as-html.md",
+      "evidence": "artifacts/U25-field-name-html-browse-and-history.json"
+    },
+    {
+      "title": "Seller's cancel during the buyer's UI purchase succeeds, yet the offer is sold",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-11/delete-api-marketplace-offers--cancel-during-buy-still-sold.md",
+      "evidence": "artifacts/U21a-seller-cancels-during-ui-buy.json"
+    },
+    {
+      "title": "Buyer charged for a field the seller deleted during the UI purchase",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-11/post-api-marketplace-buy--field-deleted-during-buy.md",
+      "evidence": "artifacts/U21b-seller-deletes-field-during-ui-buy.json"
+    },
+    {
+      "title": "Seller shrinks the field while the buyer's confirmation is open; buyer pays the listed price for 0.01 ha",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-11/put-api-marketplace-offers--item-edited-after-listing.md",
+      "evidence": "artifacts/U18-seller-edits-field-while-modal-open.json"
+    },
+    {
+      "title": "Under load the confirmation gives up after 15 s (\"signal timed out\") while the server completes and charges the purchase (test writer)",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-14/post-api-marketplace-buy--ui-gives-up-after-15s-but-charges.md",
+      "evidence": "artifacts/writer/ui-buy-aborted-after-15s-but-completed.json"
+    },
+    {
+      "title": "No loading state during the ~4 s purchase; a second click sends a second buy and shows success then error",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-buy--no-loading-state-during-purchase.md",
+      "evidence": "artifacts/U14-buy-again-while-first-buy-runs.json"
+    },
+    {
+      "title": "After a refused purchase Browse and the balance are not refreshed (stale card, stale balance)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-browse--stale-after-refused-buy.md",
+      "evidence": "artifacts/U15-rival-buys-while-modal-open.json"
+    },
+    {
+      "title": "\"9 per page\" option shows 10 offers per page",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-browse--nine-per-page-shows-ten.md",
+      "evidence": "artifacts/U22-9-per-page-shows-10.png"
+    },
+    {
+      "title": "Confirmation and buyer history name the item \"field #id\" instead of its name",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-browse--card-heading-shows-id.md",
+      "evidence": "artifacts/U2-confirm-modal.png"
+    },
+    {
+      "title": "Header counters (Active, Trades) not updated after a purchase until reload",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-header--counters-stale-after-buy.md",
+      "evidence": "artifacts/U4-reload-and-header.json"
+    },
+    {
+      "title": "Confirmation modal ignores Escape, leaves focus behind the overlay, no dialog role",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-buy--modal-ignores-escape-and-focus.md",
+      "evidence": "artifacts/U8-U11-modal-dismissals.json"
+    },
+    {
+      "title": "After a purchase Browse returns to page 1",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-browse--back-to-page-one-after-buy.md",
+      "evidence": "artifacts/U22-U23-paging-filter.json"
+    },
+    {
+      "title": "Session ended during the purchase: redirect to login without explanation",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-buy--silent-redirect-on-ended-session.md",
+      "evidence": "artifacts/U20-session-ended-while-modal-open.json"
+    },
+    {
+      "title": "Known: animals added during a buy, seller assignment survives sale, unavailable offer stuck, invalid token 403, card heading id, status dot, long word overflow — all still reproduce",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-11/post-api-marketplace-buy--animals-added-during-buy.md",
+      "evidence": "artifacts/A5a-animals-added-during-buy.json"
+    },
+    {
+      "title": "After browser Back, Browse ignores the filter text shown in the filter box (review N1)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-browse--filter-ignored-after-back.md",
+      "evidence": "artifacts/review/R6b-back-repeat.json"
+    },
+    {
+      "title": "A just-bought field is missing from Create Offer until reload (review N2)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-create--bought-field-missing-until-reload.md",
+      "evidence": "artifacts/review/R10-create-offer-dropdown-after-buy.json"
+    },
+    {
+      "title": "Concurrent POST /fields by one user answer every request with the last field's id (test writer)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/post-api-fields--concurrent-creates-return-same-id.md",
+      "evidence": "artifacts/writer/post-fields-concurrent-same-user-ids.json"
+    },
+    {
+      "title": "Marketplace money amounts drop trailing zeros (31.3, 20.2, 0 ROL); screens format money differently (corrected by review N3)",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-browse--balance-without-fixed-decimals.md",
+      "evidence": "artifacts/U6-one-cent-below-error-toast.png"
+    }
+  ],
+  "automation": {
+    "status": "done",
+    "skip_reason": null,
+    "branch": "test/ui-marketplace-buyer-buys-offer",
+    "pr_url": null,
+    "tests": [
+      "tests/ui/marketplace/buy-offer.spec.ts"
+    ],
+    "stability": "10/10 in ui-ledger (1 worker); slow network pass 44.7 s; full npm test 27/27",
+    "poison": "7/7 failed"
+  },
+  "assumptions": [
+    "\"Transaction history\" in the story is the Marketplace Transaction History tab; financial history checked through the API.",
+    "The story's \"type filter\" is the field selector next to the Browse filter input (Item Type option).",
+    "The deleted-account token case was not re-run: memory rule \"never delete accounts in parallel runs\" (id reuse hands data to the next registration); the known bug file is cited.",
+    "Two early attempts of the main scenario bought offers 1666 and 1705 before their scripts crashed; the evidence for U1-U3 is the third, guarded run (offer 1707)."
+  ],
+  "lessons": [
+    "Guard every buying script on the offer being active and save after every step; never re-run a script that may already have bought.",
+    "Toast timestamps: record Date.now() in the page and subtract the action's start time; performance.now() is relative to page load."
+  ],
+  "struggles": [
+    "Main scenario script crashed twice after its purchase had gone through (first: a broken history-step snippet; second: a dropped connection on a read-back GET), and each blind rerun of the whole script then bought nothing but overwrote the evidence; fixed with a state guard, per-step saves and a GET retry, re-seeded fresh users (about 5 min lost).",
+    "pwcli: run-code with a locator that never appears waits the default 30 s before failing (filter text that did not match my seed, 3 times); workaround: build filters from the run tag and check the card list first.",
+    "pwcli: console error accumulates per page load (known note), so most per-step console files are identical \"0 errors\"; none is cited as sole PASS evidence.",
+    "pwcli: after a run-code action that navigates (403 → /login.html), page.evaluate in the same script throws (context destroyed); toasts for that case could not be read, the screenshot shows the login page.",
+    "The Browse filter matches the field name only through details.name, and an animal's name through its type, so filtering by an animal type matched hundreds of other users' offers; descriptions with a run tag were the reliable filter.",
+    "reviewer: pwcli: run-code has no DOM globals either — `document` outside page.evaluate threw ReferenceError after the R8 buy had completed, losing the result; checked balance/offer over the API before anything else, then read the page without buying again.",
+    "reviewer: pwcli: screenshot right after getByTestId('confirmation-modal').waitFor() captures the modal at opacity 0 during its 0.3 s slide-in; wait for opacity 1 (or ~600 ms) before capturing.",
+    "reviewer: first financial-page run-code string built with chained .replace() broke the code; rewrote as a plain template.",
+    "coordinator: the harness refused the tester's write of report.md (\"Subagents should return findings as text\"); report.md and handoff.md came back in the final message and were saved by the coordinator.",
+    "writer: the new UI buy test failed 3/10 and 7/10 at --workers=4 (seller funded), then 9/10 with the seller unfunded: every money operation runs through one global ledger lock (income ~2 s, buy ~4.2 s) and the page aborts any request after 15 s, so a queued buy is shown as failed while the server completes it. Filed as a major bug; resolved by the user's decisions (seller unfunded, then a ui-ledger project with workers 1 and dependencies on the other projects). Cost about 45 min and two user decisions.",
+    "writer: parallel POST /api/v1/fields by one user answer every request with the newest id; the test creates one user's fields one at a time (bug filed).",
+    "writer: handoff gaps — it did not say one user's fields must be created one at a time, nor that the Browse offers answer is ~460 KB uncompressed (~10 s on slow network), so page loads must wait for the response bodies.",
+    "writer: Playwright applies file filters only to the selected project, not its dependencies, so a PR selecting the ui-ledger test runs the full suite (documented in the README)."
+  ],
+  "review": {
+    "verdict": "GAPS CLOSED",
+    "file": "review.md",
+    "experiments": 11,
+    "held": 9,
+    "broke": 2
+  }
+}

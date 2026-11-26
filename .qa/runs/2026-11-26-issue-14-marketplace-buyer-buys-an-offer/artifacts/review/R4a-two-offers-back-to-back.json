@@ -1,0 +1,310 @@
+{
+  "check": "R4a",
+  "prices": [
+    23.45,
+    19.19
+  ],
+  "before": {
+    "B": 61.17,
+    "S": 7.77
+  },
+  "after": {
+    "B": 18.53,
+    "S": 50.41,
+    "o1": "sold",
+    "o2": "sold"
+  },
+  "expectedB": 18.53,
+  "ui": {
+    "reqs": [
+      {
+        "t": 392,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1709}"
+      },
+      {
+        "t": 1995,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1710}"
+      },
+      {
+        "t": 4601,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 4601,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 4601,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 4601,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      },
+      {
+        "t": 8776,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 8776,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 8776,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 8776,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      }
+    ],
+    "resps": [
+      {
+        "t": 4605,
+        "u": "/api/v1/marketplace/buy",
+        "status": 200,
+        "msg": "Purchase completed successfully"
+      },
+      {
+        "t": 4622,
+        "u": "/api/v1/financial/account",
+        "status": 200,
+        "balance": 37.72
+      },
+      {
+        "t": 8777,
+        "u": "/api/v1/marketplace/buy",
+        "status": 200,
+        "msg": "Purchase completed successfully"
+      },
+      {
+        "t": 8797,
+        "u": "/api/v1/financial/account",
+        "status": 200,
+        "balance": 18.53
+      }
+    ],
+    "toasts": [
+      {
+        "t": 4598,
+        "text": "✓ Success × Purchase completed successfully!"
+      },
+      {
+        "t": 8772,
+        "text": "✓ Success × Purchase completed successfully!"
+      }
+    ],
+    "snaps": [
+      {
+        "t": 1596,
+        "at": "before second",
+        "state": {
+          "balance": "61.17 ROL",
+          "cards": [
+            {
+              "id": 1709,
+              "price": "23.45 ROL",
+              "name": "field #1824",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1710,
+              "price": "19.19 ROL",
+              "name": "field #1825",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1711,
+              "price": "31.31 ROL",
+              "name": "field #1826",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1712,
+              "price": "20.2 ROL",
+              "name": "field #1827",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1713,
+              "price": "15.15 ROL",
+              "name": "field #1828",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1715,
+              "price": "11.11 ROL",
+              "name": "field #1830",
+              "buttons": [
+                "Buy Now"
+              ]
+            }
+          ],
+          "history": []
+        }
+      },
+      {
+        "t": 2998,
+        "balance": "61.17 ROL"
+      },
+      {
+        "t": 4006,
+        "balance": "61.17 ROL"
+      },
+      {
+        "t": 5014,
+        "balance": "37.72 ROL"
+      },
+      {
+        "t": 6016,
+        "balance": "37.72 ROL"
+      },
+      {
+        "t": 7023,
+        "balance": "37.72 ROL"
+      },
+      {
+        "t": 8030,
+        "balance": "37.72 ROL"
+      },
+      {
+        "t": 9037,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 10043,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 11049,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 12057,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 13065,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 14069,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 15077,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 16085,
+        "balance": "18.53 ROL"
+      },
+      {
+        "t": 16090,
+        "at": "end",
+        "state": {
+          "balance": "18.53 ROL",
+          "cards": [
+            {
+              "id": 1711,
+              "price": "31.31 ROL",
+              "name": "field #1826",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1712,
+              "price": "20.2 ROL",
+              "name": "field #1827",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1713,
+              "price": "15.15 ROL",
+              "name": "field #1828",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1715,
+              "price": "11.11 ROL",
+              "name": "field #1830",
+              "buttons": [
+                "Buy Now"
+              ]
+            }
+          ],
+          "history": [
+            "Purchase: field #1824 26/11/2026 -23.45 ROL",
+            "Purchase: field #1825 26/11/2026 -19.19 ROL"
+          ]
+        }
+      }
+    ]
+  },
+  "buyerMarketplaceTx": {
+    "success": true,
+    "timestamp": "2026-11-26T18:10:22.714Z",
+    "data": {
+      "transactions": [
+        {
+          "id": 223,
+          "offerId": 1709,
+          "sellerId": 5888,
+          "buyerId": 5889,
+          "itemType": "field",
+          "itemId": 1824,
+          "price": 23.45,
+          "status": "completed",
+          "createdAt": "2026-11-26T18:10:09.309Z"
+        },
+        {
+          "id": 224,
+          "offerId": 1710,
+          "sellerId": 5888,
+          "buyerId": 5889,
+          "itemType": "field",
+          "itemId": 1825,
+          "price": 19.19,
+          "status": "completed",
+          "createdAt": "2026-11-26T18:10:13.486Z"
+        }
+      ],
+      "total": 2
+    }
+  }
+}

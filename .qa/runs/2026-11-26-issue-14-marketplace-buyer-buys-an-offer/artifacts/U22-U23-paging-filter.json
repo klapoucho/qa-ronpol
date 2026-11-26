@@ -1,0 +1,1840 @@
+{
+  "target": {
+    "id": 1701,
+    "price": 3.09,
+    "seller": "s3",
+    "kind": "animal",
+    "itemId": 1472
+  },
+  "apiBefore": {
+    "offer": {
+      "key": "pg19",
+      "id": 1701,
+      "price": 3.09,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s3",
+      "id": 5874,
+      "status": 200,
+      "balance": 5.55,
+      "item": {
+        "userId": 5874,
+        "type": "sheep",
+        "amount": 19,
+        "createdAt": "2026-11-26T17:46:09.355Z",
+        "id": 1472
+      },
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    },
+    "buyer": {
+      "key": "b1m",
+      "id": 5886,
+      "status": 200,
+      "balance": 16.72,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 209,
+          "offerId": 1707,
+          "sellerId": 5885,
+          "buyerId": 5886,
+          "itemType": "field",
+          "itemId": 1822,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 23.45,
+          "description": "Marketplace purchase",
+          "balanceBefore": 40.17,
+          "balanceAfter": 16.72
+        }
+      ],
+      "financialCount": 2
+    }
+  },
+  "login": {
+    "url": "http://localhost:3000/marketplace.html",
+    "balance": "16.72 ROL"
+  },
+  "f9_page1": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1687,
+        "price": "1.55 ROL",
+        "name": "field #1807",
+        "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1688,
+        "price": "1.66 ROL",
+        "name": "animal #1468",
+        "meta": "Type: sheep, Amount: 6",
+        "disabled": false
+      },
+      {
+        "id": 1689,
+        "price": "1.77 ROL",
+        "name": "field #1808",
+        "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1690,
+        "price": "1.88 ROL",
+        "name": "field #1809",
+        "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1691,
+        "price": "1.99 ROL",
+        "name": "animal #1469",
+        "meta": "Type: sheep, Amount: 9",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "3",
+      "Next »"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "f9_page3": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1701,
+        "price": "3.09 ROL",
+        "name": "animal #1472",
+        "meta": "Type: sheep, Amount: 19",
+        "disabled": false
+      },
+      {
+        "id": 1702,
+        "price": "3.2 ROL",
+        "name": "field #1817",
+        "meta": "Field: QA T4 pg20 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev",
+      "1",
+      "2",
+      "3*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page",
+    "inst": {
+      "page": 3,
+      "size": 9,
+      "totalPages": 3,
+      "filtered": 20,
+      "loaded": 1255
+    }
+  },
+  "f18_page1": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1687,
+        "price": "1.55 ROL",
+        "name": "field #1807",
+        "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1688,
+        "price": "1.66 ROL",
+        "name": "animal #1468",
+        "meta": "Type: sheep, Amount: 6",
+        "disabled": false
+      },
+      {
+        "id": 1689,
+        "price": "1.77 ROL",
+        "name": "field #1808",
+        "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1690,
+        "price": "1.88 ROL",
+        "name": "field #1809",
+        "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1691,
+        "price": "1.99 ROL",
+        "name": "animal #1469",
+        "meta": "Type: sheep, Amount: 9",
+        "disabled": false
+      },
+      {
+        "id": 1692,
+        "price": "2.1 ROL",
+        "name": "field #1810",
+        "meta": "Field: QA T4 pg10 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1693,
+        "price": "2.21 ROL",
+        "name": "field #1811",
+        "meta": "Field: QA T4 pg11 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1694,
+        "price": "2.32 ROL",
+        "name": "field #1812",
+        "meta": "Field: QA T4 pg12 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1695,
+        "price": "2.43 ROL",
+        "name": "animal #1470",
+        "meta": "Type: sheep, Amount: 13",
+        "disabled": false
+      },
+      {
+        "id": 1696,
+        "price": "2.54 ROL",
+        "name": "field #1813",
+        "meta": "Field: QA T4 pg14 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1697,
+        "price": "2.65 ROL",
+        "name": "field #1814",
+        "meta": "Field: QA T4 pg15 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1698,
+        "price": "2.76 ROL",
+        "name": "animal #1471",
+        "meta": "Type: sheep, Amount: 16",
+        "disabled": false
+      },
+      {
+        "id": 1699,
+        "price": "2.87 ROL",
+        "name": "field #1815",
+        "meta": "Field: QA T4 pg17 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1700,
+        "price": "2.98 ROL",
+        "name": "field #1816",
+        "meta": "Field: QA T4 pg18 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "Next »"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page",
+    "inst": {
+      "page": 1,
+      "size": 18,
+      "totalPages": 2,
+      "filtered": 20,
+      "loaded": 1255
+    }
+  },
+  "f18_page2": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1701,
+        "price": "3.09 ROL",
+        "name": "animal #1472",
+        "meta": "Type: sheep, Amount: 19",
+        "disabled": false
+      },
+      {
+        "id": 1702,
+        "price": "3.2 ROL",
+        "name": "field #1817",
+        "meta": "Field: QA T4 pg20 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev",
+      "1",
+      "2*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page",
+    "inst": {
+      "page": 2,
+      "size": 18,
+      "totalPages": 2,
+      "filtered": 20,
+      "loaded": 1255
+    }
+  },
+  "f36_page1": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1687,
+        "price": "1.55 ROL",
+        "name": "field #1807",
+        "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1688,
+        "price": "1.66 ROL",
+        "name": "animal #1468",
+        "meta": "Type: sheep, Amount: 6",
+        "disabled": false
+      },
+      {
+        "id": 1689,
+        "price": "1.77 ROL",
+        "name": "field #1808",
+        "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1690,
+        "price": "1.88 ROL",
+        "name": "field #1809",
+        "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1691,
+        "price": "1.99 ROL",
+        "name": "animal #1469",
+        "meta": "Type: sheep, Amount: 9",
+        "disabled": false
+      },
+      {
+        "id": 1692,
+        "price": "2.1 ROL",
+        "name": "field #1810",
+        "meta": "Field: QA T4 pg10 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1693,
+        "price": "2.21 ROL",
+        "name": "field #1811",
+        "meta": "Field: QA T4 pg11 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1694,
+        "price": "2.32 ROL",
+        "name": "field #1812",
+        "meta": "Field: QA T4 pg12 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1695,
+        "price": "2.43 ROL",
+        "name": "animal #1470",
+        "meta": "Type: sheep, Amount: 13",
+        "disabled": false
+      },
+      {
+        "id": 1696,
+        "price": "2.54 ROL",
+        "name": "field #1813",
+        "meta": "Field: QA T4 pg14 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1697,
+        "price": "2.65 ROL",
+        "name": "field #1814",
+        "meta": "Field: QA T4 pg15 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1698,
+        "price": "2.76 ROL",
+        "name": "animal #1471",
+        "meta": "Type: sheep, Amount: 16",
+        "disabled": false
+      },
+      {
+        "id": 1699,
+        "price": "2.87 ROL",
+        "name": "field #1815",
+        "meta": "Field: QA T4 pg17 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1700,
+        "price": "2.98 ROL",
+        "name": "field #1816",
+        "meta": "Field: QA T4 pg18 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1701,
+        "price": "3.09 ROL",
+        "name": "animal #1472",
+        "meta": "Type: sheep, Amount: 19",
+        "disabled": false
+      },
+      {
+        "id": 1702,
+        "price": "3.2 ROL",
+        "name": "field #1817",
+        "meta": "Field: QA T4 pg20 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "36",
+    "pageSizeLabel": "36 per page",
+    "inst": {
+      "page": 1,
+      "size": 36,
+      "totalPages": 1,
+      "filtered": 20,
+      "loaded": 1255
+    }
+  },
+  "f9again_page1": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1687,
+        "price": "1.55 ROL",
+        "name": "field #1807",
+        "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1688,
+        "price": "1.66 ROL",
+        "name": "animal #1468",
+        "meta": "Type: sheep, Amount: 6",
+        "disabled": false
+      },
+      {
+        "id": 1689,
+        "price": "1.77 ROL",
+        "name": "field #1808",
+        "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1690,
+        "price": "1.88 ROL",
+        "name": "field #1809",
+        "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1691,
+        "price": "1.99 ROL",
+        "name": "animal #1469",
+        "meta": "Type: sheep, Amount: 9",
+        "disabled": false
+      },
+      {
+        "id": 1692,
+        "price": "2.1 ROL",
+        "name": "field #1810",
+        "meta": "Field: QA T4 pg10 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "Next »"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page",
+    "inst": {
+      "page": 1,
+      "size": 10,
+      "totalPages": 2,
+      "filtered": 20,
+      "loaded": 1255
+    }
+  },
+  "f9again_page2": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1693,
+        "price": "2.21 ROL",
+        "name": "field #1811",
+        "meta": "Field: QA T4 pg11 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1694,
+        "price": "2.32 ROL",
+        "name": "field #1812",
+        "meta": "Field: QA T4 pg12 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1695,
+        "price": "2.43 ROL",
+        "name": "animal #1470",
+        "meta": "Type: sheep, Amount: 13",
+        "disabled": false
+      },
+      {
+        "id": 1696,
+        "price": "2.54 ROL",
+        "name": "field #1813",
+        "meta": "Field: QA T4 pg14 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1697,
+        "price": "2.65 ROL",
+        "name": "field #1814",
+        "meta": "Field: QA T4 pg15 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1698,
+        "price": "2.76 ROL",
+        "name": "animal #1471",
+        "meta": "Type: sheep, Amount: 16",
+        "disabled": false
+      },
+      {
+        "id": 1699,
+        "price": "2.87 ROL",
+        "name": "field #1815",
+        "meta": "Field: QA T4 pg17 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1700,
+        "price": "2.98 ROL",
+        "name": "field #1816",
+        "meta": "Field: QA T4 pg18 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1701,
+        "price": "3.09 ROL",
+        "name": "animal #1472",
+        "meta": "Type: sheep, Amount: 19",
+        "disabled": false
+      },
+      {
+        "id": 1702,
+        "price": "3.2 ROL",
+        "name": "field #1817",
+        "meta": "Field: QA T4 pg20 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev",
+      "1",
+      "2*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page",
+    "inst": {
+      "page": 2,
+      "size": 10,
+      "totalPages": 2,
+      "filtered": 20,
+      "loaded": 1255
+    }
+  },
+  "beforeBuy_f18_page2": {
+    "balance": "16.72 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1701,
+        "price": "3.09 ROL",
+        "name": "animal #1472",
+        "meta": "Type: sheep, Amount: 19",
+        "disabled": false
+      },
+      {
+        "id": 1702,
+        "price": "3.2 ROL",
+        "name": "field #1817",
+        "meta": "Field: QA T4 pg20 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev",
+      "1",
+      "2*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page",
+    "inst": {
+      "page": 2,
+      "size": 18,
+      "totalPages": 2,
+      "filtered": 20,
+      "loaded": 1255
+    }
+  },
+  "modal": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"animal #1472\" for 3.09 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "confirm": {
+    "url": "http://localhost:3000/marketplace.html",
+    "header": {
+      "totalOffers": "1255",
+      "myOffersCount": "0",
+      "totalTransactions": "218",
+      "totalValue": "508 037,42",
+      "userBalance": "13.63 ROL"
+    },
+    "requests": [
+      {
+        "t": 9,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1701}"
+      },
+      {
+        "t": 4192,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 4192,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 4192,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 4192,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      },
+      {
+        "t": 4572,
+        "m": "GET",
+        "u": "/api/v1/statistics",
+        "body": null
+      }
+    ],
+    "buyResponses": [
+      {
+        "t": 4194,
+        "status": 200,
+        "body": {
+          "success": true,
+          "timestamp": "2026-11-26T17:58:02.700Z",
+          "data": {
+            "transaction": {
+              "id": 219,
+              "offerId": 1701,
+              "sellerId": 5874,
+              "buyerId": 5886,
+              "itemType": "animal",
+              "itemId": 1472,
+              "price": 3.09,
+              "status": "completed",
+              "createdAt": "2026-11-26T17:58:02.674Z"
+            },
+            "message": "Purchase completed successfully"
+          }
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 4187,
+        "cls": "notification success",
+        "text": "✓ Success × Purchase completed successfully!"
+      }
+    ],
+    "modal": {
+      "display": "none",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"animal #1472\" for 3.09 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "browse": {
+      "balance": "13.63 ROL",
+      "filter": "pg t4run8955",
+      "filterField": "",
+      "cards": [
+        {
+          "id": 1683,
+          "price": "1.11 ROL",
+          "name": "field #1804",
+          "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1684,
+          "price": "1.22 ROL",
+          "name": "field #1805",
+          "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1685,
+          "price": "1.33 ROL",
+          "name": "animal #1467",
+          "meta": "Type: sheep, Amount: 3",
+          "disabled": false
+        },
+        {
+          "id": 1686,
+          "price": "1.44 ROL",
+          "name": "field #1806",
+          "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1687,
+          "price": "1.55 ROL",
+          "name": "field #1807",
+          "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1688,
+          "price": "1.66 ROL",
+          "name": "animal #1468",
+          "meta": "Type: sheep, Amount: 6",
+          "disabled": false
+        },
+        {
+          "id": 1689,
+          "price": "1.77 ROL",
+          "name": "field #1808",
+          "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1690,
+          "price": "1.88 ROL",
+          "name": "field #1809",
+          "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1691,
+          "price": "1.99 ROL",
+          "name": "animal #1469",
+          "meta": "Type: sheep, Amount: 9",
+          "disabled": false
+        },
+        {
+          "id": 1692,
+          "price": "2.1 ROL",
+          "name": "field #1810",
+          "meta": "Field: QA T4 pg10 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1693,
+          "price": "2.21 ROL",
+          "name": "field #1811",
+          "meta": "Field: QA T4 pg11 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1694,
+          "price": "2.32 ROL",
+          "name": "field #1812",
+          "meta": "Field: QA T4 pg12 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1695,
+          "price": "2.43 ROL",
+          "name": "animal #1470",
+          "meta": "Type: sheep, Amount: 13",
+          "disabled": false
+        },
+        {
+          "id": 1696,
+          "price": "2.54 ROL",
+          "name": "field #1813",
+          "meta": "Field: QA T4 pg14 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1697,
+          "price": "2.65 ROL",
+          "name": "field #1814",
+          "meta": "Field: QA T4 pg15 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1698,
+          "price": "2.76 ROL",
+          "name": "animal #1471",
+          "meta": "Type: sheep, Amount: 16",
+          "disabled": false
+        },
+        {
+          "id": 1699,
+          "price": "2.87 ROL",
+          "name": "field #1815",
+          "meta": "Field: QA T4 pg17 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        },
+        {
+          "id": 1700,
+          "price": "2.98 ROL",
+          "name": "field #1816",
+          "meta": "Field: QA T4 pg18 t4run8955, Area: 3.5 ha",
+          "disabled": false
+        }
+      ],
+      "pageButtons": [
+        "« Prev(d)",
+        "1*",
+        "2",
+        "Next »"
+      ],
+      "pageSizeValue": "18",
+      "pageSizeLabel": "18 per page"
+    }
+  },
+  "afterBuy": {
+    "balance": "13.63 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1687,
+        "price": "1.55 ROL",
+        "name": "field #1807",
+        "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1688,
+        "price": "1.66 ROL",
+        "name": "animal #1468",
+        "meta": "Type: sheep, Amount: 6",
+        "disabled": false
+      },
+      {
+        "id": 1689,
+        "price": "1.77 ROL",
+        "name": "field #1808",
+        "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1690,
+        "price": "1.88 ROL",
+        "name": "field #1809",
+        "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1691,
+        "price": "1.99 ROL",
+        "name": "animal #1469",
+        "meta": "Type: sheep, Amount: 9",
+        "disabled": false
+      },
+      {
+        "id": 1692,
+        "price": "2.1 ROL",
+        "name": "field #1810",
+        "meta": "Field: QA T4 pg10 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1693,
+        "price": "2.21 ROL",
+        "name": "field #1811",
+        "meta": "Field: QA T4 pg11 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1694,
+        "price": "2.32 ROL",
+        "name": "field #1812",
+        "meta": "Field: QA T4 pg12 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1695,
+        "price": "2.43 ROL",
+        "name": "animal #1470",
+        "meta": "Type: sheep, Amount: 13",
+        "disabled": false
+      },
+      {
+        "id": 1696,
+        "price": "2.54 ROL",
+        "name": "field #1813",
+        "meta": "Field: QA T4 pg14 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1697,
+        "price": "2.65 ROL",
+        "name": "field #1814",
+        "meta": "Field: QA T4 pg15 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1698,
+        "price": "2.76 ROL",
+        "name": "animal #1471",
+        "meta": "Type: sheep, Amount: 16",
+        "disabled": false
+      },
+      {
+        "id": 1699,
+        "price": "2.87 ROL",
+        "name": "field #1815",
+        "meta": "Field: QA T4 pg17 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1700,
+        "price": "2.98 ROL",
+        "name": "field #1816",
+        "meta": "Field: QA T4 pg18 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "Next »"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page",
+    "inst": {
+      "page": 1,
+      "size": 18,
+      "totalPages": 2,
+      "filtered": 19,
+      "loaded": 1254
+    }
+  },
+  "afterBuy_page2": {
+    "balance": "13.63 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1702,
+        "price": "3.2 ROL",
+        "name": "field #1817",
+        "meta": "Field: QA T4 pg20 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev",
+      "1",
+      "2*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page",
+    "inst": {
+      "page": 2,
+      "size": 18,
+      "totalPages": 2,
+      "filtered": 19,
+      "loaded": 1254
+    }
+  },
+  "typeAnimal": {
+    "balance": "13.63 ROL",
+    "filter": "animal",
+    "filterField": "itemType",
+    "cards": [
+      {
+        "id": 1,
+        "price": "130.99 ROL",
+        "name": "animal #6",
+        "meta": "Type: goat, Amount: 500",
+        "disabled": false
+      },
+      {
+        "id": 13,
+        "price": "300 ROL",
+        "name": "animal #17",
+        "meta": "Type: horse, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 14,
+        "price": "110 ROL",
+        "name": "animal #18",
+        "meta": "Type: sheep, Amount: 12",
+        "disabled": false
+      },
+      {
+        "id": 16,
+        "price": "95 ROL",
+        "name": "animal #20",
+        "meta": "Type: goat, Amount: 15",
+        "disabled": false
+      },
+      {
+        "id": 18,
+        "price": "499.99 ROL",
+        "name": "animal #21",
+        "meta": "Type: cow, Amount: 20",
+        "disabled": false
+      },
+      {
+        "id": 20,
+        "price": "799.99 ROL",
+        "name": "animal #22",
+        "meta": "Type: sheep, Amount: 35",
+        "disabled": false
+      },
+      {
+        "id": 21,
+        "price": "299.99 ROL",
+        "name": "animal #23",
+        "meta": "Type: sheep, Amount: 12",
+        "disabled": false
+      },
+      {
+        "id": 25,
+        "price": "199.99 ROL",
+        "name": "animal #26",
+        "meta": "Type: duck, Amount: 15",
+        "disabled": false
+      },
+      {
+        "id": 27,
+        "price": "299.99 ROL",
+        "name": "animal #27",
+        "meta": "Type: goat, Amount: 40",
+        "disabled": false
+      },
+      {
+        "id": 28,
+        "price": "149.99 ROL",
+        "name": "animal #28",
+        "meta": "Type: turkey, Amount: 10",
+        "disabled": false
+      },
+      {
+        "id": 199,
+        "price": "9.09 ROL",
+        "name": "animal #133",
+        "meta": "Type: duck, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 203,
+        "price": "6.06 ROL",
+        "name": "animal #134",
+        "meta": "Type: sheep, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 204,
+        "price": "6.06 ROL",
+        "name": "animal #135",
+        "meta": "Type: sheep, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 205,
+        "price": "6.06 ROL",
+        "name": "animal #136",
+        "meta": "Type: sheep, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 252,
+        "price": "0.01 ROL",
+        "name": "animal #148",
+        "meta": "Type: goat, Amount: 17",
+        "disabled": false
+      },
+      {
+        "id": 253,
+        "price": "163.56 ROL",
+        "name": "animal #144",
+        "meta": "Type: goat, Amount: 5",
+        "disabled": false
+      },
+      {
+        "id": 254,
+        "price": "64.33 ROL",
+        "name": "animal #145",
+        "meta": "Type: cow, Amount: 7",
+        "disabled": false
+      },
+      {
+        "id": 255,
+        "price": "95.68 ROL",
+        "name": "animal #146",
+        "meta": "Type: pig, Amount: 7",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "3",
+      "4",
+      "5",
+      "Next »"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page"
+  },
+  "typeAnimal_inst": {
+    "balance": "13.63 ROL",
+    "filter": "animal",
+    "filterField": "itemType",
+    "cards": [
+      {
+        "id": 1,
+        "price": "130.99 ROL",
+        "name": "animal #6",
+        "meta": "Type: goat, Amount: 500",
+        "disabled": false
+      },
+      {
+        "id": 13,
+        "price": "300 ROL",
+        "name": "animal #17",
+        "meta": "Type: horse, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 14,
+        "price": "110 ROL",
+        "name": "animal #18",
+        "meta": "Type: sheep, Amount: 12",
+        "disabled": false
+      },
+      {
+        "id": 16,
+        "price": "95 ROL",
+        "name": "animal #20",
+        "meta": "Type: goat, Amount: 15",
+        "disabled": false
+      },
+      {
+        "id": 18,
+        "price": "499.99 ROL",
+        "name": "animal #21",
+        "meta": "Type: cow, Amount: 20",
+        "disabled": false
+      },
+      {
+        "id": 20,
+        "price": "799.99 ROL",
+        "name": "animal #22",
+        "meta": "Type: sheep, Amount: 35",
+        "disabled": false
+      },
+      {
+        "id": 21,
+        "price": "299.99 ROL",
+        "name": "animal #23",
+        "meta": "Type: sheep, Amount: 12",
+        "disabled": false
+      },
+      {
+        "id": 25,
+        "price": "199.99 ROL",
+        "name": "animal #26",
+        "meta": "Type: duck, Amount: 15",
+        "disabled": false
+      },
+      {
+        "id": 27,
+        "price": "299.99 ROL",
+        "name": "animal #27",
+        "meta": "Type: goat, Amount: 40",
+        "disabled": false
+      },
+      {
+        "id": 28,
+        "price": "149.99 ROL",
+        "name": "animal #28",
+        "meta": "Type: turkey, Amount: 10",
+        "disabled": false
+      },
+      {
+        "id": 199,
+        "price": "9.09 ROL",
+        "name": "animal #133",
+        "meta": "Type: duck, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 203,
+        "price": "6.06 ROL",
+        "name": "animal #134",
+        "meta": "Type: sheep, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 204,
+        "price": "6.06 ROL",
+        "name": "animal #135",
+        "meta": "Type: sheep, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 205,
+        "price": "6.06 ROL",
+        "name": "animal #136",
+        "meta": "Type: sheep, Amount: 2",
+        "disabled": false
+      },
+      {
+        "id": 252,
+        "price": "0.01 ROL",
+        "name": "animal #148",
+        "meta": "Type: goat, Amount: 17",
+        "disabled": false
+      },
+      {
+        "id": 253,
+        "price": "163.56 ROL",
+        "name": "animal #144",
+        "meta": "Type: goat, Amount: 5",
+        "disabled": false
+      },
+      {
+        "id": 254,
+        "price": "64.33 ROL",
+        "name": "animal #145",
+        "meta": "Type: cow, Amount: 7",
+        "disabled": false
+      },
+      {
+        "id": 255,
+        "price": "95.68 ROL",
+        "name": "animal #146",
+        "meta": "Type: pig, Amount: 7",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "3",
+      "4",
+      "5",
+      "Next »"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page",
+    "inst": {
+      "page": 1,
+      "size": 18,
+      "totalPages": 31,
+      "filtered": 541,
+      "loaded": 1254
+    }
+  },
+  "descAfterBuy": {
+    "balance": "13.63 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "description",
+    "cards": [
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1687,
+        "price": "1.55 ROL",
+        "name": "field #1807",
+        "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1688,
+        "price": "1.66 ROL",
+        "name": "animal #1468",
+        "meta": "Type: sheep, Amount: 6",
+        "disabled": false
+      },
+      {
+        "id": 1689,
+        "price": "1.77 ROL",
+        "name": "field #1808",
+        "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1690,
+        "price": "1.88 ROL",
+        "name": "field #1809",
+        "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1691,
+        "price": "1.99 ROL",
+        "name": "animal #1469",
+        "meta": "Type: sheep, Amount: 9",
+        "disabled": false
+      },
+      {
+        "id": 1692,
+        "price": "2.1 ROL",
+        "name": "field #1810",
+        "meta": "Field: QA T4 pg10 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1693,
+        "price": "2.21 ROL",
+        "name": "field #1811",
+        "meta": "Field: QA T4 pg11 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1694,
+        "price": "2.32 ROL",
+        "name": "field #1812",
+        "meta": "Field: QA T4 pg12 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1695,
+        "price": "2.43 ROL",
+        "name": "animal #1470",
+        "meta": "Type: sheep, Amount: 13",
+        "disabled": false
+      },
+      {
+        "id": 1696,
+        "price": "2.54 ROL",
+        "name": "field #1813",
+        "meta": "Field: QA T4 pg14 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1697,
+        "price": "2.65 ROL",
+        "name": "field #1814",
+        "meta": "Field: QA T4 pg15 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1698,
+        "price": "2.76 ROL",
+        "name": "animal #1471",
+        "meta": "Type: sheep, Amount: 16",
+        "disabled": false
+      },
+      {
+        "id": 1699,
+        "price": "2.87 ROL",
+        "name": "field #1815",
+        "meta": "Field: QA T4 pg17 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1700,
+        "price": "2.98 ROL",
+        "name": "field #1816",
+        "meta": "Field: QA T4 pg18 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "Next »"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page"
+  },
+  "descAfterBuy_inst": {
+    "balance": "13.63 ROL",
+    "filter": "pg t4run8955",
+    "filterField": "description",
+    "cards": [
+      {
+        "id": 1683,
+        "price": "1.11 ROL",
+        "name": "field #1804",
+        "meta": "Field: QA T4 pg01 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "meta": "Field: QA T4 pg02 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1685,
+        "price": "1.33 ROL",
+        "name": "animal #1467",
+        "meta": "Type: sheep, Amount: 3",
+        "disabled": false
+      },
+      {
+        "id": 1686,
+        "price": "1.44 ROL",
+        "name": "field #1806",
+        "meta": "Field: QA T4 pg04 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1687,
+        "price": "1.55 ROL",
+        "name": "field #1807",
+        "meta": "Field: QA T4 pg05 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1688,
+        "price": "1.66 ROL",
+        "name": "animal #1468",
+        "meta": "Type: sheep, Amount: 6",
+        "disabled": false
+      },
+      {
+        "id": 1689,
+        "price": "1.77 ROL",
+        "name": "field #1808",
+        "meta": "Field: QA T4 pg07 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1690,
+        "price": "1.88 ROL",
+        "name": "field #1809",
+        "meta": "Field: QA T4 pg08 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1691,
+        "price": "1.99 ROL",
+        "name": "animal #1469",
+        "meta": "Type: sheep, Amount: 9",
+        "disabled": false
+      },
+      {
+        "id": 1692,
+        "price": "2.1 ROL",
+        "name": "field #1810",
+        "meta": "Field: QA T4 pg10 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1693,
+        "price": "2.21 ROL",
+        "name": "field #1811",
+        "meta": "Field: QA T4 pg11 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1694,
+        "price": "2.32 ROL",
+        "name": "field #1812",
+        "meta": "Field: QA T4 pg12 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1695,
+        "price": "2.43 ROL",
+        "name": "animal #1470",
+        "meta": "Type: sheep, Amount: 13",
+        "disabled": false
+      },
+      {
+        "id": 1696,
+        "price": "2.54 ROL",
+        "name": "field #1813",
+        "meta": "Field: QA T4 pg14 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1697,
+        "price": "2.65 ROL",
+        "name": "field #1814",
+        "meta": "Field: QA T4 pg15 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1698,
+        "price": "2.76 ROL",
+        "name": "animal #1471",
+        "meta": "Type: sheep, Amount: 16",
+        "disabled": false
+      },
+      {
+        "id": 1699,
+        "price": "2.87 ROL",
+        "name": "field #1815",
+        "meta": "Field: QA T4 pg17 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      },
+      {
+        "id": 1700,
+        "price": "2.98 ROL",
+        "name": "field #1816",
+        "meta": "Field: QA T4 pg18 t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "Next »"
+    ],
+    "pageSizeValue": "18",
+    "pageSizeLabel": "18 per page",
+    "inst": {
+      "page": 1,
+      "size": 18,
+      "totalPages": 2,
+      "filtered": 19,
+      "loaded": 1254
+    }
+  },
+  "apiAfter": {
+    "offer": {
+      "key": "pg19",
+      "id": 1701,
+      "price": 3.09,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {},
+    "seller": {
+      "key": "s3",
+      "id": 5874,
+      "status": 200,
+      "balance": 8.64,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 219,
+          "offerId": 1701,
+          "sellerId": 5874,
+          "buyerId": 5886,
+          "itemType": "animal",
+          "itemId": 1472,
+          "price": 3.09,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 3.09,
+          "description": "Marketplace sale",
+          "balanceBefore": 5.55,
+          "balanceAfter": 8.64
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b1m",
+      "id": 5886,
+      "status": 200,
+      "balance": 13.63,
+      "item": {
+        "userId": 5886,
+        "type": "sheep",
+        "amount": 19,
+        "createdAt": "2026-11-26T17:46:09.355Z",
+        "id": 1472
+      },
+      "marketplaceHistory": [
+        {
+          "id": 209,
+          "offerId": 1707,
+          "sellerId": 5885,
+          "buyerId": 5886,
+          "itemType": "field",
+          "itemId": 1822,
+          "price": 23.45,
+          "status": "completed"
+        },
+        {
+          "id": 219,
+          "offerId": 1701,
+          "sellerId": 5874,
+          "buyerId": 5886,
+          "itemType": "animal",
+          "itemId": 1472,
+          "price": 3.09,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 3.09,
+          "description": "Marketplace purchase",
+          "balanceBefore": 16.72,
+          "balanceAfter": 13.63
+        },
+        {
+          "type": "expense",
+          "amount": 23.45,
+          "description": "Marketplace purchase",
+          "balanceBefore": 40.17,
+          "balanceAfter": 16.72
+        }
+      ],
+      "financialCount": 3
+    }
+  },
+  "apiBrowseCounts": {
+    "total": 1254,
+    "animals": 541,
+    "taggedPg": 19
+  }
+}

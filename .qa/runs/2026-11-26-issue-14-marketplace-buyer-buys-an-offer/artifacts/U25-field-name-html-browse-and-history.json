@@ -1,0 +1,256 @@
+{
+  "apiBefore": {
+    "offer": {
+      "key": "xss",
+      "id": 1703,
+      "price": 2.22,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s4",
+      "id": 5875,
+      "status": 200,
+      "balance": 3.21,
+      "item": {
+        "userId": 5875,
+        "name": "QAt4run8955<img src=x onerror=\"document.title='QA-XSS-FIRED-T4'\">",
+        "area": 3.5,
+        "id": 1818
+      },
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    },
+    "buyer": {
+      "key": "b6",
+      "id": 5881,
+      "status": 200,
+      "balance": 20.2,
+      "item": null,
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    }
+  },
+  "titleBefore": "Rolnopol QA reset",
+  "browse": {
+    "balance": "20.2 ROL",
+    "filter": "QA xss t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1703,
+        "price": "2.22 ROL",
+        "name": "field #1818",
+        "meta": "Field: QAt4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "afterRender": {
+    "title": "QA-XSS-FIRED-T4",
+    "cardMetaHtml": "Field: <b>QAt4run8955<img src=\"x\" onerror=\"document.title='QA-XSS-FIRED-T4'\"></b>, Area: <b>3.5 ha</b>"
+  },
+  "modal": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"field #1818\" for 2.22 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "confirm": {
+    "url": "http://localhost:3000/marketplace.html",
+    "header": {
+      "totalOffers": "1254",
+      "myOffersCount": "0",
+      "totalTransactions": "219",
+      "totalValue": "508 037,42",
+      "userBalance": "17.98 ROL"
+    },
+    "requests": [
+      {
+        "t": 9,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1703}"
+      },
+      {
+        "t": 4224,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 4224,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 4224,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 4224,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      },
+      {
+        "t": 4605,
+        "m": "GET",
+        "u": "/api/v1/statistics",
+        "body": null
+      }
+    ],
+    "buyResponses": [
+      {
+        "t": 4225,
+        "status": 200,
+        "body": {
+          "success": true,
+          "timestamp": "2026-11-26T17:59:29.996Z",
+          "data": {
+            "transaction": {
+              "id": 220,
+              "offerId": 1703,
+              "sellerId": 5875,
+              "buyerId": 5881,
+              "itemType": "field",
+              "itemId": 1818,
+              "price": 2.22,
+              "status": "completed",
+              "createdAt": "2026-11-26T17:59:29.970Z"
+            },
+            "message": "Purchase completed successfully"
+          }
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 4219,
+        "cls": "notification success",
+        "text": "✓ Success × Purchase completed successfully!"
+      }
+    ],
+    "modal": {
+      "display": "none",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1818\" for 2.22 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "browse": {
+      "balance": "17.98 ROL",
+      "filter": "QA xss t4run8955",
+      "filterField": "",
+      "cards": [],
+      "pageButtons": [
+        "« Prev(d)",
+        "1*",
+        "Next »(d)"
+      ],
+      "pageSizeValue": "10",
+      "pageSizeLabel": "9 per page"
+    }
+  },
+  "historyNoReload": {
+    "title": "Rolnopol QA reset 2",
+    "items": [
+      "Purchase: field #1818"
+    ]
+  },
+  "historyAfterReload": {
+    "title": "QA-XSS-FIRED-T4",
+    "browseHasXssCard": false,
+    "items": [
+      "Purchase: QAt4run8955<img src=\"x\" onerror=\"document.title='QA-XSS-FIRED-T4'\">"
+    ],
+    "imgInHistory": 1
+  },
+  "apiAfter": {
+    "offer": {
+      "key": "xss",
+      "id": 1703,
+      "price": 2.22,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {},
+    "seller": {
+      "key": "s4",
+      "id": 5875,
+      "status": 200,
+      "balance": 5.43,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 220,
+          "offerId": 1703,
+          "sellerId": 5875,
+          "buyerId": 5881,
+          "itemType": "field",
+          "itemId": 1818,
+          "price": 2.22,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 2.22,
+          "description": "Marketplace sale",
+          "balanceBefore": 3.21,
+          "balanceAfter": 5.43
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b6",
+      "id": 5881,
+      "status": 200,
+      "balance": 17.98,
+      "item": {
+        "userId": 5881,
+        "name": "QAt4run8955<img src=x onerror=\"document.title='QA-XSS-FIRED-T4'\">",
+        "area": 3.5,
+        "id": 1818
+      },
+      "marketplaceHistory": [
+        {
+          "id": 220,
+          "offerId": 1703,
+          "sellerId": 5875,
+          "buyerId": 5881,
+          "itemType": "field",
+          "itemId": 1818,
+          "price": 2.22,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 2.22,
+          "description": "Marketplace purchase",
+          "balanceBefore": 20.2,
+          "balanceAfter": 17.98
+        }
+      ],
+      "financialCount": 2
+    }
+  }
+}

@@ -1,0 +1,899 @@
+{
+  "apiBeforeX": {
+    "offer": {
+      "key": "pickx",
+      "id": 1671,
+      "price": 12.21,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 70.92,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 pickx t4run8955",
+        "area": 3.5,
+        "id": 1792
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 14.14,
+          "description": "Marketplace sale",
+          "balanceBefore": 56.78,
+          "balanceAfter": 70.92
+        },
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 4
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 61.61,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 14.14,
+          "description": "Marketplace purchase",
+          "balanceBefore": 75.75,
+          "balanceAfter": 61.61
+        },
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 3
+    }
+  },
+  "apiBeforeY": {
+    "offer": {
+      "key": "picky",
+      "id": 1672,
+      "price": 12.12,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 70.92,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 picky t4run8955",
+        "area": 3.5,
+        "id": 1793
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 14.14,
+          "description": "Marketplace sale",
+          "balanceBefore": 56.78,
+          "balanceAfter": 70.92
+        },
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 4
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 61.61,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 14.14,
+          "description": "Marketplace purchase",
+          "balanceBefore": 75.75,
+          "balanceAfter": 61.61
+        },
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 3
+    }
+  },
+  "browse": {
+    "balance": "61.61 ROL",
+    "filter": "t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1667,
+        "price": "23.54 ROL",
+        "name": "field #1789",
+        "disabled": false
+      },
+      {
+        "id": 1670,
+        "price": "11.11 ROL",
+        "name": "field #1791",
+        "disabled": false
+      },
+      {
+        "id": 1671,
+        "price": "12.21 ROL",
+        "name": "field #1792",
+        "disabled": false
+      },
+      {
+        "id": 1672,
+        "price": "12.12 ROL",
+        "name": "field #1793",
+        "disabled": false
+      },
+      {
+        "id": 1675,
+        "price": "15.15 ROL",
+        "name": "field #1796",
+        "disabled": false
+      },
+      {
+        "id": 1676,
+        "price": "16.16 ROL",
+        "name": "field #1797",
+        "disabled": false
+      },
+      {
+        "id": 1677,
+        "price": "17.17 ROL",
+        "name": "field #1798",
+        "disabled": false
+      },
+      {
+        "id": 1678,
+        "price": "18.18 ROL",
+        "name": "field #1799",
+        "disabled": false
+      },
+      {
+        "id": 1679,
+        "price": "19.19 ROL",
+        "name": "field #1800",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "2",
+      "3",
+      "4",
+      "Next »"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "modalX": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"field #1792\" for 12.21 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "cancelX": {
+    "url": "http://localhost:3000/marketplace.html",
+    "header": {
+      "totalOffers": "1264",
+      "myOffersCount": "0",
+      "totalTransactions": "211",
+      "totalValue": "508 072,77",
+      "userBalance": "61.61 ROL"
+    },
+    "requests": [],
+    "buyResponses": [],
+    "toasts": [],
+    "modal": {
+      "display": "none",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1792\" for 12.21 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "browse": {
+      "balance": "61.61 ROL",
+      "filter": "t4run8955",
+      "filterField": "",
+      "cards": [
+        {
+          "id": 1667,
+          "price": "23.54 ROL",
+          "name": "field #1789",
+          "disabled": false
+        },
+        {
+          "id": 1670,
+          "price": "11.11 ROL",
+          "name": "field #1791",
+          "disabled": false
+        },
+        {
+          "id": 1671,
+          "price": "12.21 ROL",
+          "name": "field #1792",
+          "disabled": false
+        },
+        {
+          "id": 1672,
+          "price": "12.12 ROL",
+          "name": "field #1793",
+          "disabled": false
+        },
+        {
+          "id": 1675,
+          "price": "15.15 ROL",
+          "name": "field #1796",
+          "disabled": false
+        },
+        {
+          "id": 1676,
+          "price": "16.16 ROL",
+          "name": "field #1797",
+          "disabled": false
+        },
+        {
+          "id": 1677,
+          "price": "17.17 ROL",
+          "name": "field #1798",
+          "disabled": false
+        },
+        {
+          "id": 1678,
+          "price": "18.18 ROL",
+          "name": "field #1799",
+          "disabled": false
+        },
+        {
+          "id": 1679,
+          "price": "19.19 ROL",
+          "name": "field #1800",
+          "disabled": false
+        }
+      ],
+      "pageButtons": [
+        "« Prev(d)",
+        "1*",
+        "2",
+        "3",
+        "4",
+        "Next »"
+      ],
+      "pageSizeValue": "10",
+      "pageSizeLabel": "9 per page"
+    }
+  },
+  "modalY": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"field #1793\" for 12.12 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "confirmY": {
+    "url": "http://localhost:3000/marketplace.html",
+    "header": {
+      "totalOffers": "1264",
+      "myOffersCount": "0",
+      "totalTransactions": "211",
+      "totalValue": "508 072,77",
+      "userBalance": "49.49 ROL"
+    },
+    "requests": [
+      {
+        "t": 21,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1672}"
+      },
+      {
+        "t": 4208,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 4208,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 4208,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 4208,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      },
+      {
+        "t": 4568,
+        "m": "GET",
+        "u": "/api/v1/statistics",
+        "body": null
+      }
+    ],
+    "buyResponses": [
+      {
+        "t": 4209,
+        "status": 200,
+        "body": {
+          "success": true,
+          "timestamp": "2026-11-26T17:55:22.152Z",
+          "data": {
+            "transaction": {
+              "id": 214,
+              "offerId": 1672,
+              "sellerId": 5873,
+              "buyerId": 5880,
+              "itemType": "field",
+              "itemId": 1793,
+              "price": 12.12,
+              "status": "completed",
+              "createdAt": "2026-11-26T17:55:22.128Z"
+            },
+            "message": "Purchase completed successfully"
+          }
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 4203,
+        "cls": "notification success",
+        "text": "✓ Success × Purchase completed successfully!"
+      }
+    ],
+    "modal": {
+      "display": "none",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1793\" for 12.12 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "browse": {
+      "balance": "49.49 ROL",
+      "filter": "t4run8955",
+      "filterField": "",
+      "cards": [
+        {
+          "id": 1667,
+          "price": "23.54 ROL",
+          "name": "field #1789",
+          "disabled": false
+        },
+        {
+          "id": 1670,
+          "price": "11.11 ROL",
+          "name": "field #1791",
+          "disabled": false
+        },
+        {
+          "id": 1671,
+          "price": "12.21 ROL",
+          "name": "field #1792",
+          "disabled": false
+        },
+        {
+          "id": 1675,
+          "price": "15.15 ROL",
+          "name": "field #1796",
+          "disabled": false
+        },
+        {
+          "id": 1676,
+          "price": "16.16 ROL",
+          "name": "field #1797",
+          "disabled": false
+        },
+        {
+          "id": 1677,
+          "price": "17.17 ROL",
+          "name": "field #1798",
+          "disabled": false
+        },
+        {
+          "id": 1678,
+          "price": "18.18 ROL",
+          "name": "field #1799",
+          "disabled": false
+        },
+        {
+          "id": 1679,
+          "price": "19.19 ROL",
+          "name": "field #1800",
+          "disabled": false
+        },
+        {
+          "id": 1680,
+          "price": "9.09 ROL",
+          "name": "field #1801",
+          "disabled": false
+        }
+      ],
+      "pageButtons": [
+        "« Prev(d)",
+        "1*",
+        "2",
+        "3",
+        "4",
+        "Next »"
+      ],
+      "pageSizeValue": "10",
+      "pageSizeLabel": "9 per page"
+    }
+  },
+  "apiAfterX": {
+    "offer": {
+      "key": "pickx",
+      "id": 1671,
+      "price": 12.21,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 83.04,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 pickx t4run8955",
+        "area": 3.5,
+        "id": 1792
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 12.12,
+          "description": "Marketplace sale",
+          "balanceBefore": 70.92,
+          "balanceAfter": 83.04
+        },
+        {
+          "type": "income",
+          "amount": 14.14,
+          "description": "Marketplace sale",
+          "balanceBefore": 56.78,
+          "balanceAfter": 70.92
+        },
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 5
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 49.49,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 12.12,
+          "description": "Marketplace purchase",
+          "balanceBefore": 61.61,
+          "balanceAfter": 49.49
+        },
+        {
+          "type": "expense",
+          "amount": 14.14,
+          "description": "Marketplace purchase",
+          "balanceBefore": 75.75,
+          "balanceAfter": 61.61
+        },
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 4
+    }
+  },
+  "apiAfterY": {
+    "offer": {
+      "key": "picky",
+      "id": 1672,
+      "price": 12.12,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 83.04,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 12.12,
+          "description": "Marketplace sale",
+          "balanceBefore": 70.92,
+          "balanceAfter": 83.04
+        },
+        {
+          "type": "income",
+          "amount": 14.14,
+          "description": "Marketplace sale",
+          "balanceBefore": 56.78,
+          "balanceAfter": 70.92
+        },
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 5
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 49.49,
+      "item": {
+        "userId": 5880,
+        "name": "QA T4 picky t4run8955",
+        "area": 3.5,
+        "id": 1793
+      },
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 12.12,
+          "description": "Marketplace purchase",
+          "balanceBefore": 61.61,
+          "balanceAfter": 49.49
+        },
+        {
+          "type": "expense",
+          "amount": 14.14,
+          "description": "Marketplace purchase",
+          "balanceBefore": 75.75,
+          "balanceAfter": 61.61
+        },
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 4
+    }
+  }
+}

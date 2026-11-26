@@ -1,0 +1,148 @@
+{
+  "buyerBalance": 34.9,
+  "response": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:00:32.294Z",
+      "error": "Offer not found or not available"
+    }
+  },
+  "before": {
+    "offer": {
+      "key": "main3",
+      "id": 1707,
+      "price": 23.45,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {},
+    "seller": {
+      "key": "s1m",
+      "id": 5885,
+      "status": 200,
+      "balance": 40.88,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 209,
+          "offerId": 1707,
+          "sellerId": 5885,
+          "buyerId": 5886,
+          "itemType": "field",
+          "itemId": 1822,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 23.45,
+          "description": "Marketplace sale",
+          "balanceBefore": 17.43,
+          "balanceAfter": 40.88
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b4",
+      "id": 5879,
+      "status": 200,
+      "balance": 34.9,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 215,
+          "offerId": 1675,
+          "sellerId": 5873,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1796,
+          "price": 15.15,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 15.15,
+          "description": "Marketplace purchase",
+          "balanceBefore": 50.05,
+          "balanceAfter": 34.9
+        }
+      ],
+      "financialCount": 2
+    }
+  },
+  "after": {
+    "offer": {
+      "key": "main3",
+      "id": 1707,
+      "price": 23.45,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {},
+    "seller": {
+      "key": "s1m",
+      "id": 5885,
+      "status": 200,
+      "balance": 40.88,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 209,
+          "offerId": 1707,
+          "sellerId": 5885,
+          "buyerId": 5886,
+          "itemType": "field",
+          "itemId": 1822,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 23.45,
+          "description": "Marketplace sale",
+          "balanceBefore": 17.43,
+          "balanceAfter": 40.88
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b4",
+      "id": 5879,
+      "status": 200,
+      "balance": 34.9,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 215,
+          "offerId": 1675,
+          "sellerId": 5873,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1796,
+          "price": 15.15,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 15.15,
+          "description": "Marketplace purchase",
+          "balanceBefore": 50.05,
+          "balanceAfter": 34.9
+        }
+      ],
+      "financialCount": 2
+    }
+  },
+  "unchanged": true
+}

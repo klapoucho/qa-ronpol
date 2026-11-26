@@ -1,0 +1,44 @@
+{
+  "offer": {
+    "key": "o5",
+    "owner": "rseller",
+    "fieldId": 1828,
+    "offerId": 1713,
+    "price": 15.15
+  },
+  "R8": {
+    "note": "First pass bought o5 at 375x812 and crashed afterwards on a ReferenceError in its own return value; this is the page state read after that buy, not a second buy.",
+    "page": {
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "url": "http://localhost:3000/marketplace.html",
+      "scrollWidth": 397,
+      "state": {
+        "balance": "3.38 ROL",
+        "cards": [
+          {
+            "id": 1711,
+            "price": "31.31 ROL",
+            "name": "field #1826",
+            "buttons": [
+              "Buy Now"
+            ]
+          }
+        ],
+        "history": [
+          "Purchase: QA rvw9550 o1 26/11/2026 -23.45 ROL",
+          "Purchase: QA rvw9550 o2 26/11/2026 -19.19 ROL",
+          "Purchase: field #1828 26/11/2026 -15.15 ROL"
+        ]
+      }
+    },
+    "api": {
+      "balanceBeforeFromR4a": 18.53,
+      "balanceAfter": 3.38,
+      "o5": "sold",
+      "fieldMoved": true
+    }
+  }
+}

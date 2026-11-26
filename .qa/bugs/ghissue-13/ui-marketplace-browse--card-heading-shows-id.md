@@ -36,3 +36,6 @@ always
 
 ## Regression check
 Any offer card in Browse or My Offers: the heading should show the item name.
+
+## Re-checks
+- Re-checked 2026-11-26 in `2026-11-26-issue-14-marketplace-buyer-buys-an-offer` (U2): still reproduces (U26), and the same id-only name is used in the purchase confirmation (`Are you sure you want to buy "field #1822"…`) and in the buyer's Transaction History until a reload; the seller's history keeps it. Evidence: `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U2-confirm-modal.png`, `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U4-reload-and-header.json`, `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U3c-seller-view-after-sale.json`.

@@ -1,0 +1,322 @@
+{
+  "apiBefore": {
+    "offer": {
+      "key": "pig",
+      "id": 1668,
+      "price": 7.07,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {
+      "decoy": {
+        "id": 1667,
+        "status": "active",
+        "inBuyerBrowse": true
+      }
+    },
+    "seller": {
+      "key": "s1",
+      "id": 5872,
+      "status": 200,
+      "balance": 40.88,
+      "item": {
+        "userId": 5872,
+        "type": "pig",
+        "amount": 2,
+        "createdAt": "2026-11-26T17:46:07.118Z",
+        "id": 1466
+      },
+      "marketplaceHistory": [
+        {
+          "id": 207,
+          "offerId": 1666,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "field",
+          "itemId": 1788,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 23.45,
+          "description": "Marketplace sale",
+          "balanceBefore": 17.43,
+          "balanceAfter": 40.88
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b1",
+      "id": 5876,
+      "status": 200,
+      "balance": 16.72,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 207,
+          "offerId": 1666,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "field",
+          "itemId": 1788,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 23.45,
+          "description": "Marketplace purchase",
+          "balanceBefore": 40.17,
+          "balanceAfter": 16.72
+        }
+      ],
+      "financialCount": 2
+    }
+  },
+  "browseBefore": {
+    "balance": "16.72 ROL",
+    "filter": "pig t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1668,
+        "price": "7.07 ROL",
+        "name": "animal #1466",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "modal": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"animal #1466\" for 7.07 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "confirm": {
+    "url": "http://localhost:3000/marketplace.html",
+    "header": {
+      "totalOffers": "1266",
+      "myOffersCount": "0",
+      "totalTransactions": "209",
+      "totalValue": "508 072,77",
+      "userBalance": "9.65 ROL"
+    },
+    "requests": [
+      {
+        "t": 10,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1668}"
+      },
+      {
+        "t": 4184,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 4184,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 4184,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 4184,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      },
+      {
+        "t": 4542,
+        "m": "GET",
+        "u": "/api/v1/statistics",
+        "body": null
+      }
+    ],
+    "buyResponses": [
+      {
+        "t": 4184,
+        "status": 200,
+        "body": {
+          "success": true,
+          "timestamp": "2026-11-26T17:51:26.264Z",
+          "data": {
+            "transaction": {
+              "id": 210,
+              "offerId": 1668,
+              "sellerId": 5872,
+              "buyerId": 5876,
+              "itemType": "animal",
+              "itemId": 1466,
+              "price": 7.07,
+              "status": "completed",
+              "createdAt": "2026-11-26T17:51:26.241Z"
+            },
+            "message": "Purchase completed successfully"
+          }
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 4177,
+        "cls": "notification success",
+        "text": "✓ Success × Purchase completed successfully!"
+      }
+    ],
+    "modal": {
+      "display": "none",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"animal #1466\" for 7.07 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "browse": {
+      "balance": "9.65 ROL",
+      "filter": "pig t4run8955",
+      "filterField": "",
+      "cards": [],
+      "pageButtons": [
+        "« Prev(d)",
+        "1*",
+        "Next »(d)"
+      ],
+      "pageSizeValue": "10",
+      "pageSizeLabel": "9 per page"
+    }
+  },
+  "apiAfter": {
+    "offer": {
+      "key": "pig",
+      "id": 1668,
+      "price": 7.07,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {
+      "decoy": {
+        "id": 1667,
+        "status": "active",
+        "inBuyerBrowse": true
+      }
+    },
+    "seller": {
+      "key": "s1",
+      "id": 5872,
+      "status": 200,
+      "balance": 47.95,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 207,
+          "offerId": 1666,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "field",
+          "itemId": 1788,
+          "price": 23.45,
+          "status": "completed"
+        },
+        {
+          "id": 210,
+          "offerId": 1668,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "animal",
+          "itemId": 1466,
+          "price": 7.07,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 7.07,
+          "description": "Marketplace sale",
+          "balanceBefore": 40.88,
+          "balanceAfter": 47.95
+        },
+        {
+          "type": "income",
+          "amount": 23.45,
+          "description": "Marketplace sale",
+          "balanceBefore": 17.43,
+          "balanceAfter": 40.88
+        }
+      ],
+      "financialCount": 3
+    },
+    "buyer": {
+      "key": "b1",
+      "id": 5876,
+      "status": 200,
+      "balance": 9.65,
+      "item": {
+        "userId": 5876,
+        "type": "pig",
+        "amount": 2,
+        "createdAt": "2026-11-26T17:46:07.118Z",
+        "id": 1466
+      },
+      "marketplaceHistory": [
+        {
+          "id": 207,
+          "offerId": 1666,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "field",
+          "itemId": 1788,
+          "price": 23.45,
+          "status": "completed"
+        },
+        {
+          "id": 210,
+          "offerId": 1668,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "animal",
+          "itemId": 1466,
+          "price": 7.07,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 7.07,
+          "description": "Marketplace purchase",
+          "balanceBefore": 16.72,
+          "balanceAfter": 9.65
+        },
+        {
+          "type": "expense",
+          "amount": 23.45,
+          "description": "Marketplace purchase",
+          "balanceBefore": 40.17,
+          "balanceAfter": 16.72
+        }
+      ],
+      "financialCount": 3
+    }
+  }
+}

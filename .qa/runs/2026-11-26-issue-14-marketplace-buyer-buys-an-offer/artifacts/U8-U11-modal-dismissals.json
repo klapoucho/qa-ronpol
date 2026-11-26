@@ -1,0 +1,336 @@
+{
+  "apiBefore": {
+    "offer": {
+      "key": "dismiss",
+      "id": 1670,
+      "price": 11.11,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 43.65,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 dismiss t4run8955",
+        "area": 3.5,
+        "id": 1791
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 88.88,
+      "item": null,
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    }
+  },
+  "browse": {
+    "balance": "88.88 ROL",
+    "filter": "QA dismiss t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1670,
+        "price": "11.11 ROL",
+        "name": "field #1791",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "U8_cancel": {
+    "modalOpened": {
+      "display": "flex",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "result": {
+      "url": "http://localhost:3000/marketplace.html",
+      "header": {
+        "totalOffers": "1264",
+        "myOffersCount": "0",
+        "totalTransactions": "211",
+        "totalValue": "508 072,77",
+        "userBalance": "88.88 ROL"
+      },
+      "requests": [],
+      "buyResponses": [],
+      "toasts": [],
+      "modal": {
+        "display": "none",
+        "title": "Confirm Purchase",
+        "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+        "confirm": "Buy Now",
+        "cancel": "Cancel"
+      },
+      "browse": {
+        "balance": "88.88 ROL",
+        "filter": "QA dismiss t4run8955",
+        "filterField": "",
+        "cards": [
+          {
+            "id": 1670,
+            "price": "11.11 ROL",
+            "name": "field #1791",
+            "disabled": false
+          }
+        ],
+        "pageButtons": [
+          "« Prev(d)",
+          "1*",
+          "Next »(d)"
+        ],
+        "pageSizeValue": "10",
+        "pageSizeLabel": "9 per page"
+      }
+    }
+  },
+  "U9_close_x": {
+    "modalOpened": {
+      "display": "flex",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "result": {
+      "url": "http://localhost:3000/marketplace.html",
+      "header": {
+        "totalOffers": "1264",
+        "myOffersCount": "0",
+        "totalTransactions": "211",
+        "totalValue": "508 072,77",
+        "userBalance": "88.88 ROL"
+      },
+      "requests": [],
+      "buyResponses": [],
+      "toasts": [],
+      "modal": {
+        "display": "none",
+        "title": "Confirm Purchase",
+        "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+        "confirm": "Buy Now",
+        "cancel": "Cancel"
+      },
+      "browse": {
+        "balance": "88.88 ROL",
+        "filter": "QA dismiss t4run8955",
+        "filterField": "",
+        "cards": [
+          {
+            "id": 1670,
+            "price": "11.11 ROL",
+            "name": "field #1791",
+            "disabled": false
+          }
+        ],
+        "pageButtons": [
+          "« Prev(d)",
+          "1*",
+          "Next »(d)"
+        ],
+        "pageSizeValue": "10",
+        "pageSizeLabel": "9 per page"
+      }
+    }
+  },
+  "U10_backdrop": {
+    "modalOpened": {
+      "display": "flex",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "result": {
+      "url": "http://localhost:3000/marketplace.html",
+      "header": {
+        "totalOffers": "1264",
+        "myOffersCount": "0",
+        "totalTransactions": "211",
+        "totalValue": "508 072,77",
+        "userBalance": "88.88 ROL"
+      },
+      "requests": [],
+      "buyResponses": [],
+      "toasts": [],
+      "modal": {
+        "display": "none",
+        "title": "Confirm Purchase",
+        "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+        "confirm": "Buy Now",
+        "cancel": "Cancel"
+      },
+      "browse": {
+        "balance": "88.88 ROL",
+        "filter": "QA dismiss t4run8955",
+        "filterField": "",
+        "cards": [
+          {
+            "id": 1670,
+            "price": "11.11 ROL",
+            "name": "field #1791",
+            "disabled": false
+          }
+        ],
+        "pageButtons": [
+          "« Prev(d)",
+          "1*",
+          "Next »(d)"
+        ],
+        "pageSizeValue": "10",
+        "pageSizeLabel": "9 per page"
+      }
+    }
+  },
+  "U11_escape": {
+    "modalOpened": {
+      "display": "flex",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "focusOnOpen": {
+      "active": "<button class=\"btn-buy\" data-offer-id=\"1670\">Buy Now</button>",
+      "role": null,
+      "ariaModal": null
+    },
+    "result": {
+      "url": "http://localhost:3000/marketplace.html",
+      "header": {
+        "totalOffers": "1264",
+        "myOffersCount": "0",
+        "totalTransactions": "211",
+        "totalValue": "508 072,77",
+        "userBalance": "88.88 ROL"
+      },
+      "requests": [],
+      "buyResponses": [],
+      "toasts": [],
+      "modal": {
+        "display": "flex",
+        "title": "Confirm Purchase",
+        "message": "Are you sure you want to buy \"field #1791\" for 11.11 ROL?",
+        "confirm": "Buy Now",
+        "cancel": "Cancel"
+      },
+      "browse": {
+        "balance": "88.88 ROL",
+        "filter": "QA dismiss t4run8955",
+        "filterField": "",
+        "cards": [
+          {
+            "id": 1670,
+            "price": "11.11 ROL",
+            "name": "field #1791",
+            "disabled": false
+          }
+        ],
+        "pageButtons": [
+          "« Prev(d)",
+          "1*",
+          "Next »(d)"
+        ],
+        "pageSizeValue": "10",
+        "pageSizeLabel": "9 per page"
+      }
+    },
+    "tabFocus": {
+      "active": "<button class=\"offers-page-btn active\" data-page=\"1\">1</button>",
+      "insideModal": false
+    },
+    "closedAfterwardsWith": "none"
+  },
+  "apiAfter": {
+    "offer": {
+      "key": "dismiss",
+      "id": 1670,
+      "price": 11.11,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 43.65,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 dismiss t4run8955",
+        "area": 3.5,
+        "id": 1791
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 88.88,
+      "item": null,
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    }
+  }
+}

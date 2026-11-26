@@ -1,0 +1,20 @@
+{
+  "invalid": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:00:40.138Z",
+      "error": "Invalid or expired token"
+    }
+  },
+  "missing": {
+    "status": 401,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:00:40.140Z",
+      "error": "Access token required"
+    }
+  },
+  "unchanged": true,
+  "offerStatus": "active"
+}

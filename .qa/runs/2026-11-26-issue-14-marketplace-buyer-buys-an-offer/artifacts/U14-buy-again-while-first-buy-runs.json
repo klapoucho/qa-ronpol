@@ -1,0 +1,372 @@
+{
+  "apiBefore": {
+    "offer": {
+      "key": "inflight",
+      "id": 1674,
+      "price": 14.14,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 56.78,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 inflight t4run8955",
+        "area": 3.5,
+        "id": 1795
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 3
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 75.75,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 2
+    }
+  },
+  "browse": {
+    "balance": "75.75 ROL",
+    "filter": "QA inflight t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1674,
+        "price": "14.14 ROL",
+        "name": "field #1795",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "modal": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"field #1795\" for 14.14 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "result": {
+    "url": "http://localhost:3000/marketplace.html",
+    "header": {
+      "totalOffers": "1264",
+      "myOffersCount": "0",
+      "totalTransactions": "211",
+      "totalValue": "508 072,77",
+      "userBalance": "61.61 ROL"
+    },
+    "requests": [
+      {
+        "t": 9,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1674}"
+      },
+      {
+        "midState": {
+          "cardStillThere": true,
+          "buttonDisabled": false,
+          "buttonText": "Buy Now",
+          "spinner": false,
+          "modal": "none",
+          "balance": "75.75 ROL"
+        }
+      },
+      {
+        "t": 1709,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1674}"
+      },
+      {
+        "t": 4201,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 4201,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 4201,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 4201,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      },
+      {
+        "t": 4560,
+        "m": "GET",
+        "u": "/api/v1/statistics",
+        "body": null
+      }
+    ],
+    "buyResponses": [
+      {
+        "t": 4202,
+        "status": 200,
+        "body": {
+          "success": true,
+          "timestamp": "2026-11-26T17:54:57.444Z",
+          "data": {
+            "transaction": {
+              "id": 213,
+              "offerId": 1674,
+              "sellerId": 5873,
+              "buyerId": 5880,
+              "itemType": "field",
+              "itemId": 1795,
+              "price": 14.14,
+              "status": "completed",
+              "createdAt": "2026-11-26T17:54:57.415Z"
+            },
+            "message": "Purchase completed successfully"
+          }
+        }
+      },
+      {
+        "t": 4205,
+        "status": 404,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T17:54:57.445Z",
+          "error": "Offer not found or not available"
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 4193,
+        "cls": "notification success",
+        "text": "✓ Success × Purchase completed successfully!"
+      },
+      {
+        "t": 4198,
+        "cls": "notification error",
+        "text": "✕ Error × Offer not found or not available"
+      }
+    ],
+    "modal": {
+      "display": "none",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1795\" for 14.14 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "browse": {
+      "balance": "61.61 ROL",
+      "filter": "QA inflight t4run8955",
+      "filterField": "",
+      "cards": [],
+      "pageButtons": [
+        "« Prev(d)",
+        "1*",
+        "Next »(d)"
+      ],
+      "pageSizeValue": "10",
+      "pageSizeLabel": "9 per page"
+    }
+  },
+  "apiAfter": {
+    "offer": {
+      "key": "inflight",
+      "id": 1674,
+      "price": 14.14,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 70.92,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 14.14,
+          "description": "Marketplace sale",
+          "balanceBefore": 56.78,
+          "balanceAfter": 70.92
+        },
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 4
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 61.61,
+      "item": {
+        "userId": 5880,
+        "name": "QA T4 inflight t4run8955",
+        "area": 3.5,
+        "id": 1795
+      },
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 14.14,
+          "description": "Marketplace purchase",
+          "balanceBefore": 75.75,
+          "balanceAfter": 61.61
+        },
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 3
+    }
+  }
+}

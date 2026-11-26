@@ -1,0 +1,183 @@
+{
+  "check": "R1",
+  "buyer": {
+    "ui": {
+      "url": "http://localhost:3000/financial.html",
+      "title": "Financial Tracking - Rolnopol",
+      "heads": [
+        "Date",
+        "Type",
+        "Category",
+        "Description",
+        "Amount",
+        "Balance"
+      ],
+      "rows": [
+        [
+          "26.11.2026 19:10:10",
+          "expense",
+          "marketplace",
+          "Marketplace purchase",
+          "-19,19 ROL",
+          "18,53 ROL"
+        ],
+        [
+          "26.11.2026 19:10:06",
+          "expense",
+          "marketplace",
+          "Marketplace purchase",
+          "-23,45 ROL",
+          "37,72 ROL"
+        ],
+        [
+          "26.11.2026 19:09:23",
+          "income",
+          "seed",
+          "QA seed funds",
+          "+61,17 ROL",
+          "61,17 ROL"
+        ]
+      ],
+      "balanceTexts": [
+        "18,53 ROL",
+        "y to another user (max 999.99 ROL",
+        "Amount (ROL",
+        "ROL",
+        "mount between 0.01 and 999.99 ROL",
+        "Amount (ROL",
+        "ROL",
+        "amount between 0,01 and 9 999 ROL"
+      ]
+    },
+    "api": {
+      "balance": 18.53,
+      "tx": [
+        {
+          "type": "expense",
+          "amount": 19.19,
+          "category": "marketplace",
+          "description": "Marketplace purchase"
+        },
+        {
+          "type": "expense",
+          "amount": 23.45,
+          "category": "marketplace",
+          "description": "Marketplace purchase"
+        },
+        {
+          "type": "income",
+          "amount": 61.17,
+          "category": "seed",
+          "description": "QA seed funds"
+        }
+      ]
+    },
+    "console": [
+      "Total messages: 0 (Errors: 0, Warnings: 0)"
+    ]
+  },
+  "seller": {
+    "ui": {
+      "url": "http://localhost:3000/financial.html",
+      "title": "Financial Tracking - Rolnopol",
+      "heads": [
+        "Date",
+        "Type",
+        "Category",
+        "Description",
+        "Amount",
+        "Balance"
+      ],
+      "rows": [
+        [
+          "26.11.2026 19:10:58",
+          "income",
+          "marketplace",
+          "Marketplace sale",
+          "+11,11 ROL",
+          "81,72 ROL"
+        ],
+        [
+          "26.11.2026 19:10:33",
+          "income",
+          "marketplace",
+          "Marketplace sale",
+          "+20,20 ROL",
+          "70,61 ROL"
+        ],
+        [
+          "26.11.2026 19:10:12",
+          "income",
+          "marketplace",
+          "Marketplace sale",
+          "+19,19 ROL",
+          "50,41 ROL"
+        ],
+        [
+          "26.11.2026 19:10:08",
+          "income",
+          "marketplace",
+          "Marketplace sale",
+          "+23,45 ROL",
+          "31,22 ROL"
+        ],
+        [
+          "26.11.2026 19:09:21",
+          "income",
+          "seed",
+          "QA seed funds",
+          "+7,77 ROL",
+          "7,77 ROL"
+        ]
+      ],
+      "balanceTexts": [
+        "81,72 ROL",
+        "y to another user (max 999.99 ROL",
+        "Amount (ROL",
+        "ROL",
+        "mount between 0.01 and 999.99 ROL",
+        "Amount (ROL",
+        "ROL",
+        "amount between 0,01 and 9 999 ROL"
+      ]
+    },
+    "api": {
+      "balance": 81.72,
+      "tx": [
+        {
+          "type": "income",
+          "amount": 11.11,
+          "category": "marketplace",
+          "description": "Marketplace sale"
+        },
+        {
+          "type": "income",
+          "amount": 20.2,
+          "category": "marketplace",
+          "description": "Marketplace sale"
+        },
+        {
+          "type": "income",
+          "amount": 19.19,
+          "category": "marketplace",
+          "description": "Marketplace sale"
+        },
+        {
+          "type": "income",
+          "amount": 23.45,
+          "category": "marketplace",
+          "description": "Marketplace sale"
+        },
+        {
+          "type": "income",
+          "amount": 7.77,
+          "category": "seed",
+          "description": "QA seed funds"
+        }
+      ]
+    },
+    "console": [
+      "Total messages: 0 (Errors: 0, Warnings: 0)"
+    ]
+  }
+}

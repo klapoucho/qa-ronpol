@@ -1,0 +1,40 @@
+{
+  "check": "R11",
+  "payload": "qa<img src=x onerror=\"document.title='RVW-XSS-NAME'\">",
+  "register": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:14:47.469Z",
+      "error": "Validation failed: Displayed name must be 3-20 characters long and contain only letters, numbers, spaces, hyphens, and underscores"
+    }
+  },
+  "put users/profile": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:14:50.604Z",
+      "error": "Validation failed: Displayed name must be 3-20 characters long and contain only letters, numbers, spaces, hyphens, and underscores"
+    }
+  },
+  "put profile": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:14:50.626Z",
+      "error": "API endpoint not found"
+    }
+  },
+  "put users/me": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:14:50.642Z",
+      "error": "Invalid userId format. Must be a positive integer."
+    }
+  },
+  "profileRead": {
+    "status": 200,
+    "displayedName": "qa_rxss_d81414ca"
+  }
+}

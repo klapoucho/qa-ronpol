@@ -6,7 +6,7 @@ kind: functional
 status: open
 source: "own: 2026-11-25-issue-11-marketplace-sale-between-two-users"
 found: 2026-11-25
-last_checked: 2026-11-25 (still reproduces)
+last_checked: 2026-11-26 (still reproduces)
 ---
 
 ## Environment

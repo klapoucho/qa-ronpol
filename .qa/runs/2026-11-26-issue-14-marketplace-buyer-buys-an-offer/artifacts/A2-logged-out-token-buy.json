@@ -1,0 +1,131 @@
+{
+  "controlReadBeforeLogout": {
+    "status": 200,
+    "balance": 9.87
+  },
+  "logout": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T18:00:38.291Z",
+      "message": "Logout successful"
+    }
+  },
+  "buyWithOldToken": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:00:38.295Z",
+      "error": "Invalid or expired token"
+    }
+  },
+  "before": {
+    "offer": {
+      "key": "pg01",
+      "id": 1683,
+      "price": 1.11,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s3",
+      "id": 5874,
+      "status": 200,
+      "balance": 8.64,
+      "item": {
+        "userId": 5874,
+        "name": "QA T4 pg01 t4run8955",
+        "area": 3.5,
+        "id": 1804
+      },
+      "marketplaceHistory": [
+        {
+          "id": 219,
+          "offerId": 1701,
+          "sellerId": 5874,
+          "buyerId": 5886,
+          "itemType": "animal",
+          "itemId": 1472,
+          "price": 3.09,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 3.09,
+          "description": "Marketplace sale",
+          "balanceBefore": 5.55,
+          "balanceAfter": 8.64
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "lgout",
+      "id": 5887,
+      "status": 200,
+      "balance": 9.87,
+      "item": null,
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    }
+  },
+  "after": {
+    "offer": {
+      "key": "pg01",
+      "id": 1683,
+      "price": 1.11,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s3",
+      "id": 5874,
+      "status": 200,
+      "balance": 8.64,
+      "item": {
+        "userId": 5874,
+        "name": "QA T4 pg01 t4run8955",
+        "area": 3.5,
+        "id": 1804
+      },
+      "marketplaceHistory": [
+        {
+          "id": 219,
+          "offerId": 1701,
+          "sellerId": 5874,
+          "buyerId": 5886,
+          "itemType": "animal",
+          "itemId": 1472,
+          "price": 3.09,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 3.09,
+          "description": "Marketplace sale",
+          "balanceBefore": 5.55,
+          "balanceAfter": 8.64
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "lgout",
+      "id": 5887,
+      "status": 200,
+      "balance": 9.87,
+      "item": null,
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    }
+  },
+  "unchanged": true
+}

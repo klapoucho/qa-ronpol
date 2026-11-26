@@ -1,0 +1,87 @@
+{
+  "note": "First run of u-main.mjs: the UI buy of offer main (1666) went through, then the script crashed in its history step before saving; read back via API afterwards. B1 started 40.17, S1 17.43 (seed).",
+  "state": {
+    "offer": {
+      "key": "main",
+      "id": 1666,
+      "price": 23.45,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {
+      "decoy": {
+        "id": 1667,
+        "status": "active",
+        "inBuyerBrowse": true
+      },
+      "pig": {
+        "id": 1668,
+        "status": "active",
+        "inBuyerBrowse": true
+      }
+    },
+    "seller": {
+      "key": "s1",
+      "id": 5872,
+      "status": 200,
+      "balance": 40.88,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 207,
+          "offerId": 1666,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "field",
+          "itemId": 1788,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 23.45,
+          "description": "Marketplace sale",
+          "balanceBefore": 17.43,
+          "balanceAfter": 40.88
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b1",
+      "id": 5876,
+      "status": 200,
+      "balance": 16.72,
+      "item": {
+        "userId": 5876,
+        "name": "QA T4 main t4run8955",
+        "area": 3.5,
+        "id": 1788
+      },
+      "marketplaceHistory": [
+        {
+          "id": 207,
+          "offerId": 1666,
+          "sellerId": 5872,
+          "buyerId": 5876,
+          "itemType": "field",
+          "itemId": 1788,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 23.45,
+          "description": "Marketplace purchase",
+          "balanceBefore": 40.17,
+          "balanceAfter": 16.72
+        }
+      ],
+      "financialCount": 2
+    }
+  }
+}

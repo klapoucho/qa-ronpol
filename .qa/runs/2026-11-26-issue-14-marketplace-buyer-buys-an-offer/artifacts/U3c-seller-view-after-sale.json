@@ -1,0 +1,16 @@
+{
+  "login": {
+    "url": "http://localhost:3000/marketplace.html",
+    "balance": "40.88 ROL"
+  },
+  "myOffers": {
+    "cls": "offer-card offer-sold",
+    "name": "field #1822 (Sold)",
+    "status": "This item has been sold",
+    "cancelDisabled": true,
+    "price": "23.45 ROL"
+  },
+  "history": [
+    "Sale: field #1822 26/11/2026 +23.45 ROL"
+  ]
+}

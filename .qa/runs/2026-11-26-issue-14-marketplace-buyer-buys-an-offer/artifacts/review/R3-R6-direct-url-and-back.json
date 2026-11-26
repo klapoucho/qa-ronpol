@@ -1,0 +1,97 @@
+{
+  "R6": {
+    "url": "http://localhost:3000/marketplace.html",
+    "filter": "rvw9550",
+    "state": {
+      "balance": "3.38 ROL",
+      "cards": [
+        {
+          "id": 1,
+          "price": "130.99 ROL",
+          "name": "animal #6",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 3,
+          "price": "1200 ROL",
+          "name": "field #13",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 4,
+          "price": "300 ROL",
+          "name": "field #14",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 6,
+          "price": "400 ROL",
+          "name": "field #18",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 12,
+          "price": "250 ROL",
+          "name": "field #22",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 13,
+          "price": "300 ROL",
+          "name": "animal #17",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 14,
+          "price": "110 ROL",
+          "name": "animal #18",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 16,
+          "price": "95 ROL",
+          "name": "animal #20",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 17,
+          "price": "999.99 ROL",
+          "name": "field #27",
+          "buttons": [
+            "Buy Now"
+          ]
+        }
+      ],
+      "history": [
+        "Purchase: QA rvw9550 o1 26/11/2026 -23.45 ROL",
+        "Purchase: QA rvw9550 o2 26/11/2026 -19.19 ROL",
+        "Purchase: QA rvw9550 o5 26/11/2026 -15.15 ROL"
+      ]
+    },
+    "apiBalance": 3.38
+  },
+  "R3": {
+    "url": "http://localhost:3000/login.html",
+    "buyButtons": 0,
+    "apiRequests": []
+  },
+  "console": [
+    "Total messages: 1 (Errors: 0, Warnings: 0)"
+  ]
+}

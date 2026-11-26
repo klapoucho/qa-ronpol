@@ -1,0 +1,75 @@
+{
+  "buyer": {
+    "opts": [
+      {
+        "v": "",
+        "t": "Select an item"
+      },
+      {
+        "v": "1824",
+        "t": "QA rvw9550 o1 (4.2 ha)"
+      },
+      {
+        "v": "1825",
+        "t": "QA rvw9550 o2 (4.2 ha)"
+      },
+      {
+        "v": "1828",
+        "t": "QA rvw9550 o5 (4.2 ha)"
+      },
+      {
+        "v": "1829",
+        "t": "QA rvw9550 own (4.2 ha)"
+      }
+    ],
+    "nav": [
+      "/",
+      "/staff-fields-main.html",
+      "/financial.html",
+      "/marketplace.html",
+      "/rolnopolmap.html",
+      "/alerts.html",
+      "/docs.html",
+      "/swagger.html",
+      "/profile.html",
+      "/contact.html",
+      "/backend.html"
+    ]
+  },
+  "seller": {
+    "opts": [
+      {
+        "v": "",
+        "t": "Select an item"
+      },
+      {
+        "v": "1826",
+        "t": "QA rvw9550 o3decoy (4.2 ha)"
+      }
+    ],
+    "nav": [
+      "/",
+      "/staff-fields-main.html",
+      "/financial.html",
+      "/marketplace.html",
+      "/rolnopolmap.html",
+      "/alerts.html",
+      "/docs.html",
+      "/swagger.html",
+      "/profile.html",
+      "/contact.html",
+      "/backend.html"
+    ]
+  },
+  "summary": {
+    "buyerSees": [
+      "o1",
+      "o2",
+      "o5",
+      "own"
+    ],
+    "sellerSees": [
+      "o3decoy"
+    ]
+  }
+}
