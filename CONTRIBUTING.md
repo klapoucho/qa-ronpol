@@ -9,13 +9,30 @@ Everything is written in English (code, docs, commits, branches, PRs). The only 
 
 1. Never commit directly to `main`. Every change starts on its own branch cut from the latest `main`.
 2. Keep the branch small and focused on one topic.
-3. Before opening a PR, rebase on `main` (`git fetch && git rebase origin/main`) and run all available checks. During the documentation/planning phase, build, lint and test checks are not yet available; the build/lint/test requirements here and below apply once the corresponding tooling is introduced.
+3. Before opening a PR, rebase on `main` (`git fetch && git rebase origin/main`) and run the checks:
+   `npm run check` (types, lint, format, test listing), then the tests the change affects against the
+   running app (`npm run app:up`, then `npx playwright test <files>` or `npm test`).
 4. Open a PR to `main`. The PR title follows the commit format below.
 5. PRs are merged with **Rebase and merge**. Every commit on the branch lands on `main` as it is, and the history stays linear with no merge commits.
 
 Because each commit is kept, **every commit must be a complete, working step**: it builds, lints and passes
 its tests on its own. Clean up the branch (squash fixups, reword messages) before the merge, not after.
 Pushing a rewritten branch uses `git push --force-with-lease`, never plain `--force`, and never on `main`.
+
+### What enforces it
+
+- **Git hooks** (installed by `npm ci`): every commit runs ESLint and Prettier on the staged files
+  (lint-staged), and commitlint rejects a message that does not follow the format below.
+- **CI** (GitHub Actions, check `tests`): a PR runs `npm run check`, then the smoke tests plus the tests
+  the change touches; a change to config, dependencies, the app version or CI runs the full suite.
+  `main`, a nightly run and manual runs always run the full suite. Details: the CI section of the README.
+- **The `main` ruleset** on GitHub: changes reach `main` only through a PR with a green `tests` check,
+  merged by rebase; linear history; no force-push and no deletion. Nobody bypasses it.
+
+### Outside contributions
+
+The repository is public, but only its owner can merge. Others contribute through a PR from a fork.
+CI on a first-time contributor's PR starts only after the owner approves the run.
 
 ## Branch names
 
