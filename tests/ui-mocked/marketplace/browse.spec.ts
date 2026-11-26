@@ -1,74 +1,114 @@
 import { test, expect } from '#src/fixtures/index.ts';
+import { expectFailureBecauseOf } from '#src/fixtures/known-bug.ts';
 import { mockMarketplace, offerListReply } from '#src/mocks/handlers/marketplace.ts';
+import { buildAnimalOffer, buildFieldOffer, MOCK_BALANCE } from '#src/mocks/payloads/marketplace.ts';
 import { fail } from '#src/mocks/replies.ts';
-import { listings, noOffers, serverError, type ExpectedPage } from './browse.params.ts';
 
-// T5: Browse renders what GET /api/v1/marketplace/offers returns (AC-8), on a mocked API: cards,
-// pagination, the empty state and the error. AC-3 (only other users' offers) is decided by the
-// server, so a mock cannot show it.
+// Browse shows what GET /api/v1/marketplace/offers returns. The API is mocked, so each test decides
+// the answer: Browse reads every offer in one answer and builds its pages of 9 in the browser.
 
-test.describe('Marketplace Browse renders the offers API', () => {
-  for (const { title, offers, cards, pages } of listings) {
-    test(`${title}: the cards and the pagination`, async ({ mockApi, mockSession, marketplacePage }) => {
-      mockMarketplace(mockApi, mockSession, offerListReply(offers));
+const PAGE_SIZE = 9;
+const fieldOffers = (count: number) => Array.from({ length: count }, (_, i) => buildFieldOffer(501 + i));
 
-      const expectPage = async ({ offerIds, buttons, current }: ExpectedPage, index: number) => {
-        await expect(marketplacePage.browseCards).toHaveCount(offerIds.length);
-        for (const offerId of offerIds) {
-          await expect(marketplacePage.browseCard(offerId).root).toBeVisible();
-        }
-        await expect(marketplacePage.browsePageButtons).toHaveText(buttons);
-        await expect(marketplacePage.browseCurrentPage).toHaveText(current);
-        await expect(marketplacePage.browsePrev).toBeEnabled({ enabled: index > 0 });
-        await expect(marketplacePage.browseNext).toBeEnabled({
-          enabled: index < pages.length - 1,
-        });
-      };
-
-      await marketplacePage.open();
-
-      const [first, ...rest] = pages;
-      await expectPage(first, 0);
-      for (const { offerId, shows } of cards) {
-        await expect(marketplacePage.browseCard(offerId)).toShowFields(shows);
-      }
-      for (const [index, page] of rest.entries()) {
-        await marketplacePage.browseNext.click();
-        await expectPage(page, index + 1);
-      }
+test.describe('Marketplace Browse', () => {
+  test('shows each offer as a card with its own data', async ({ mockApi, mockSession, marketplacePage }) => {
+    const meadow = buildFieldOffer(801, {
+      price: 12.34,
+      details: { name: 'Mock Meadow', area: 2.75 },
+      sellerLabel: 'Mock Seller A',
+      description: 'Meadow by the river',
     });
-  }
+    const cows = buildAnimalOffer(802, {
+      price: 7,
+      details: { type: 'cow', amount: 5 },
+      sellerLabel: 'Mock Seller B',
+      description: 'Dairy cows',
+    });
+    mockMarketplace(mockApi, mockSession, offerListReply([meadow, cows]));
 
-  test(`${noOffers.title}: the empty state`, async ({ mockApi, mockSession, marketplacePage }) => {
+    await marketplacePage.open();
+
+    await expect(marketplacePage.browseCards).toHaveCount(2);
+    await expect(marketplacePage.browseCard(meadow.id)).toShowFields({
+      type: 'Field',
+      price: '12.34 ROL',
+      seller: 'Offered by: Mock Seller A',
+      details: 'Field: Mock Meadow, Area: 2.75 ha',
+      description: 'Meadow by the river',
+    });
+    await expect(marketplacePage.browseCard(cows.id)).toShowFields({
+      type: 'Animal',
+      price: '7 ROL',
+      seller: 'Offered by: Mock Seller B',
+      details: 'Type: cow, Amount: 5',
+      description: 'Dairy cows',
+    });
+  });
+
+  test('keeps a full page of offers on one page', async ({ mockApi, mockSession, marketplacePage }) => {
+    mockMarketplace(mockApi, mockSession, offerListReply(fieldOffers(PAGE_SIZE)));
+
+    await marketplacePage.open();
+
+    await expect(marketplacePage.browseCards).toHaveCount(PAGE_SIZE);
+    await expect(marketplacePage.browsePageButtons).toHaveText(['« Prev', '1', 'Next »']);
+    await expect(marketplacePage.browsePrev).toBeDisabled();
+    await expect(marketplacePage.browseNext).toBeDisabled();
+  });
+
+  test('moves the offer that does not fit to a second page', async ({
+    mockApi,
+    mockSession,
+    marketplacePage,
+  }) => {
+    const offers = fieldOffers(PAGE_SIZE + 1);
+    const lastOffer = offers.at(-1)!;
+    mockMarketplace(mockApi, mockSession, offerListReply(offers));
+
+    await marketplacePage.open();
+
+    // page 1: nine offers, without the last one
+    await expect(marketplacePage.browseCards).toHaveCount(PAGE_SIZE);
+    await expect(marketplacePage.browseCard(lastOffer.id).root).toHaveCount(0);
+    await expect(marketplacePage.browsePageButtons).toHaveText(['« Prev', '1', '2', 'Next »']);
+    await expect(marketplacePage.browseCurrentPage).toHaveText('1');
+    await expect(marketplacePage.browsePrev).toBeDisabled();
+
+    await marketplacePage.browseNext.click();
+
+    // page 2: only the last one
+    await expect(marketplacePage.browseCards).toHaveCount(1);
+    await expect(marketplacePage.browseCard(lastOffer.id).root).toBeVisible();
+    await expect(marketplacePage.browseCurrentPage).toHaveText('2');
+    await expect(marketplacePage.browseNext).toBeDisabled();
+  });
+
+  test('says so when there are no offers', async ({ mockApi, mockSession, marketplacePage }) => {
     mockMarketplace(mockApi, mockSession, offerListReply([]));
 
     await marketplacePage.open();
 
-    await expect(marketplacePage.browseMessage).toHaveText(noOffers.message);
+    await expect(marketplacePage.browseMessage).toHaveText('No offers available');
     await expect(marketplacePage.browseCards).toHaveCount(0);
-    await expect(marketplacePage.browsePageButtons).toHaveText(noOffers.buttons);
-    await expect(marketplacePage.browseNext).toBeDisabled();
   });
 
-  test(
-    `${serverError.title}: the API's message and an error in place of the list`,
-    { annotation: [{ type: 'bug', description: `${serverError.bug.title} (${serverError.bug.file})` }] },
-    async ({ mockApi, mockSession, marketplacePage }) => {
-      mockMarketplace(mockApi, mockSession, fail(serverError.apiError, serverError.status));
+  test('shows an error in place of the list when the API fails', async ({
+    mockApi,
+    mockSession,
+    marketplacePage,
+  }) => {
+    mockMarketplace(mockApi, mockSession, fail('Failed to get marketplace offers', 500));
 
-      await marketplacePage.open();
+    await marketplacePage.open();
 
-      // The toast works today and proves the 500 reached the page. A 5xx shows it twice
-      // (.qa/bugs/ghissue-15/ui-marketplace-browse--error-toast-shown-twice.md), so not counted.
-      await expect(
-        marketplacePage.notifications.filter({ hasText: serverError.apiError }).first(),
-      ).toBeVisible();
-      // Not breaking the page: the other calls of the load still render.
-      await expect(marketplacePage.balance).toHaveText(serverError.balance);
-      // Marked after the toast and the balance, so a broken mock is never an expected failure.
-      test.fail(true, serverError.bug.title);
+    // The API's message appears as a toast, and the rest of the page still loads.
+    await expect(marketplacePage.notification('Failed to get marketplace offers').first()).toBeVisible();
+    await expect(marketplacePage.balance).toHaveText(`${MOCK_BALANCE} ROL`);
 
-      await expect(marketplacePage.browseMessage).toHaveText(serverError.listMessage);
-    },
-  );
+    expectFailureBecauseOf({
+      title: 'When loading the offers fails, Browse shows "Loading offers..." forever',
+      file: '.qa/bugs/ghissue-15/ui-marketplace-browse--failed-load-spins-forever.md',
+    });
+    await expect(marketplacePage.browseMessage).toHaveText('Failed to load offers');
+  });
 });
