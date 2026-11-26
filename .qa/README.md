@@ -7,7 +7,7 @@ Working folder of the `/qa-pick` skill (`.claude/skills/qa-pick/`). Everything h
 | --- | --- |
 | `runs/<run-id>/` | One QA run: story, plan, report, results, summary and evidence. |
 | `runs/<run-id>/scratch/` | Seed and probe scripts and session state. **Ignored**: it holds live tokens, which must never be committed (NFR-20). |
-| `bugs/` | Bug knowledge base: one file per known bug, `<area>--<slug>.md`. |
+| `bugs/<group>/` | Bug knowledge base: one file per known bug, `<area>--<slug>.md`, in a folder for what found it: `ghissue-<N>` (a run of GitHub issue N), the `<run-id>` of a story-text run, or `external`. A known bug stays where it was filed. |
 | `notes/` | Tool notes, for example `playwright-cli.md` (symptom, cause, workaround, version). |
 | `lessons.md` | Lessons applied after runs, newest first. |
 
