@@ -35,7 +35,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npm run check
+      - id: check
+        run: npm run check
       - run: npx playwright install --with-deps chromium
       - run: npm run app:up
       - name: Run the tests this pull request needs
@@ -47,9 +48,11 @@ jobs:
         if: github.event_name != 'pull_request'
         run: npm test
       # Coverage against the OpenAPI contract, on the run's summary page. A contract that differs
-      # from the running app's fails this step (scripts/api-coverage.ts).
+      # from the running app's fails this step (scripts/api-coverage.ts). It runs whether the tests
+      # passed or failed, but only once the static checks passed: without them it cannot list the
+      # tests and would only repeat their failure.
       - name: Report API coverage
-        if: always()
+        if: ${{ !cancelled() && steps.check.outcome == 'success' }}
         run: npm run --silent coverage:api >> "$GITHUB_STEP_SUMMARY"
       - name: Collect application logs
         if: always()
