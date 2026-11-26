@@ -5,7 +5,8 @@
     "type": "text | github-issue",
     "issue_url": null,
     "pr_url": null,
-    "pr_head_sha": null
+    "pr_head_sha": null,
+    "summary_comment_url": null
   },
   "kind": "api | ui | ui+api",
   "status": "PASS | FAIL | PASS_WITH_FINDINGS | BLOCKED",
