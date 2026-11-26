@@ -2,6 +2,10 @@
 
 Lessons applied after `/qa-pick` runs, newest first. One line per lesson, with the run id.
 
+- 2026-11-26-issue-15-marketplace-browse-renders-api-data: qa-pick greps known bugs on `origin/<main>` after a fetch, and searches the same way before filing — the local `main` was 7 commits behind, so the run filed the issue-14 "9 per page" bug again.
+- 2026-11-26-issue-15-marketplace-browse-renders-api-data: tester prompt tries HTML in every value a rendering screen shows, not only the one a known bug names — the reviewer found a stored XSS through the field area the tester had not tried.
+- 2026-11-26-issue-15-marketplace-browse-renders-api-data: tester prompt asks for seed/probe scripts that take the session name and output folder as parameters — the reviewer had to copy and re-point the tester's scripts.
+- 2026-11-26-issue-15-marketplace-browse-renders-api-data: `.qa/notes/playwright-cli.md` adds the `run-code` trailing-semicolon error, `eval`'s JSON-encoded strings and `requests` hiding static files; the session-output note covers `snapshot`.
 - 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: general.md rounds money in assertions only when the test computes the expected amount, and compares a written-out literal exactly — the test reviewer flagged T4's exact `16.72` as breaking the rule, though rounding there would hide a server that stops rounding.
 - 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: tester prompt times money operations alone and in parallel and records the page's request timeout in the handoff; general.md says an app-caused flake is filed and isolated, never worked around — the writer's UI buy test failed 3/10 at 4 workers because a global ledger lock queued buys past the page's 15 s timeout, which cost two user decisions.
 - 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: handoff template asks for seed calls that must not run in parallel, write timings and large responses — the writer rediscovered the same-user field-create race and the 460 KB offers response.
