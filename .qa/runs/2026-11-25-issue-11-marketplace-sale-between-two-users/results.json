@@ -333,79 +333,79 @@
     {
       "title": "Buyer pays and receives nothing when the seller deletes the field during the purchase (5/6)",
       "severity": "major",
-      "bug_file": ".qa/bugs/api-marketplace-buy--field-deleted-during-buy.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-buy--field-deleted-during-buy.md",
       "evidence": "artifacts/review/E5-race-delete-field-during-buy-round2.json"
     },
     {
       "title": "Listed field/animal can be edited after listing; buyer pays the listed price for the edited item",
       "severity": "major",
-      "bug_file": ".qa/bugs/api-marketplace-offers--item-edited-after-listing.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-offers--item-edited-after-listing.md",
       "evidence": "artifacts/review/E4-item-edited-after-listing.json"
     },
     {
       "title": "Any user can attach animals and staff to another user's field, blocking its sale",
       "severity": "major",
-      "bug_file": ".qa/bugs/api-fields-ownership--non-owner-attaches-animals-and-staff.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-fields-ownership--non-owner-attaches-animals-and-staff.md",
       "evidence": "artifacts/review/E3b-non-owner-writes-to-bought-field.json"
     },
     {
       "title": "DELETE /fields/:id by a non-owner answers 200 and wipes the owner's staff assignments",
       "severity": "major",
-      "bug_file": ".qa/bugs/api-fields-ownership--non-owner-delete-wipes-assignments.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-fields-ownership--non-owner-delete-wipes-assignments.md",
       "evidence": "artifacts/review/E3c-stranger-deletes-owner-field.json"
     },
     {
       "title": "Create offer answers HTTP 200 with \"message\": 201 instead of HTTP 201",
       "severity": "minor",
-      "bug_file": ".qa/bugs/api-marketplace-offers--create-offer-status-in-message.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-offers--create-offer-status-in-message.md",
       "evidence": "artifacts/01-happy-buy-response.json"
     },
     {
       "title": "Malformed JSON body gets 500 Internal server error instead of 400 (app-wide)",
       "severity": "minor",
-      "bug_file": ".qa/bugs/api-app-input--malformed-json-500.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-app-input--malformed-json-500.md",
       "evidence": "artifacts/15b-malformed-json-other-endpoints.json"
     },
     {
       "title": "Buy with offerId as a string answers 404 for an existing active offer",
       "severity": "minor",
-      "bug_file": ".qa/bugs/api-marketplace-buy--string-offer-id-404.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-buy--string-offer-id-404.md",
       "evidence": "artifacts/15-invalid-offer-ids.json"
     },
     {
       "title": "Invalid token on buy gets 403 instead of 401",
       "severity": "minor",
-      "bug_file": ".qa/bugs/api-auth-token--invalid-token-403.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-auth-token--invalid-token-403.md",
       "evidence": "artifacts/16-buy-without-auth.json"
     },
     {
       "title": "Buyer receives a field holding the seller's animals when they are added during the purchase",
       "severity": "minor",
-      "bug_file": ".qa/bugs/api-marketplace-buy--animals-added-during-buy.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-buy--animals-added-during-buy.md",
       "evidence": "artifacts/review/E6-race-animal-on-field-during-buy.json"
     },
     {
       "title": "Seller gets 'Offer cancelled successfully' but the offer is sold anyway (race)",
       "severity": "minor",
-      "bug_file": ".qa/bugs/api-marketplace-offers--cancel-during-buy-still-sold.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-offers--cancel-during-buy-still-sold.md",
       "evidence": "artifacts/review/E7-race-cancel-during-buy-round2.json"
     },
     {
       "title": "Seller's staff assignment stays on the buyer's field after a sale",
       "severity": "minor",
-      "bug_file": ".qa/bugs/api-marketplace-buy--seller-assignment-survives-sale.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-buy--seller-assignment-survives-sale.md",
       "evidence": "artifacts/review/E3-staff-assignment-and-seller-access.json"
     },
     {
       "title": "offerId 0 refused as 'Missing required field: offerId'",
       "severity": "cosmetic",
-      "bug_file": ".qa/bugs/api-marketplace-buy--offer-id-zero-message.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-buy--offer-id-zero-message.md",
       "evidence": "artifacts/15-invalid-offer-ids.json"
     },
     {
       "title": "OpenAPI marketplace transaction history shape differs from the real response",
       "severity": "cosmetic",
-      "bug_file": ".qa/bugs/api-marketplace-docs--openapi-history-shape.md",
+      "bug_file": ".qa/bugs/ghissue-11/api-marketplace-docs--openapi-history-shape.md",
       "evidence": "artifacts/05-happy-marketplace-history.json"
     }
   ],
