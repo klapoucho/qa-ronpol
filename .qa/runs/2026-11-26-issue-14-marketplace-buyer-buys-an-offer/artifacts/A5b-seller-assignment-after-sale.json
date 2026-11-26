@@ -1,0 +1,31 @@
+{
+  "staff": 201,
+  "assign": {
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T18:00:45.624Z",
+      "data": {
+        "userId": 5874,
+        "fieldId": 1806,
+        "staffId": 26,
+        "createdAt": "2026-11-26T18:00:45.605Z",
+        "id": 14
+      },
+      "message": "Assignment created"
+    }
+  },
+  "buy": {
+    "status": 200
+  },
+  "sellerAssignmentsForSoldField": [
+    {
+      "userId": 5874,
+      "fieldId": 1806,
+      "staffId": 26,
+      "createdAt": "2026-11-26T18:00:45.605Z",
+      "id": 14
+    }
+  ],
+  "buyerAssignmentsForField": []
+}

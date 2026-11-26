@@ -1,0 +1,228 @@
+{
+  "buy": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T18:00:45.124Z",
+      "data": {
+        "transaction": {
+          "id": 221,
+          "offerId": 1684,
+          "sellerId": 5874,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1805,
+          "price": 1.22,
+          "status": "completed",
+          "createdAt": "2026-11-26T18:00:45.097Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  },
+  "addAnimal": {
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T18:00:42.502Z",
+      "data": {
+        "userId": 5874,
+        "type": "sheep",
+        "amount": 4,
+        "fieldId": 1805,
+        "createdAt": "2026-11-26T18:00:42.481Z",
+        "id": 1473
+      },
+      "message": "Animal added"
+    }
+  },
+  "before": {
+    "offer": {
+      "key": "pg02",
+      "id": 1684,
+      "price": 1.22,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s3",
+      "id": 5874,
+      "status": 200,
+      "balance": 8.64,
+      "item": {
+        "userId": 5874,
+        "name": "QA T4 pg02 t4run8955",
+        "area": 3.5,
+        "id": 1805
+      },
+      "marketplaceHistory": [
+        {
+          "id": 219,
+          "offerId": 1701,
+          "sellerId": 5874,
+          "buyerId": 5886,
+          "itemType": "animal",
+          "itemId": 1472,
+          "price": 3.09,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 3.09,
+          "description": "Marketplace sale",
+          "balanceBefore": 5.55,
+          "balanceAfter": 8.64
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b4",
+      "id": 5879,
+      "status": 200,
+      "balance": 34.9,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 215,
+          "offerId": 1675,
+          "sellerId": 5873,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1796,
+          "price": 15.15,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 15.15,
+          "description": "Marketplace purchase",
+          "balanceBefore": 50.05,
+          "balanceAfter": 34.9
+        }
+      ],
+      "financialCount": 2
+    }
+  },
+  "after": {
+    "offer": {
+      "key": "pg02",
+      "id": 1684,
+      "price": 1.22,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {},
+    "seller": {
+      "key": "s3",
+      "id": 5874,
+      "status": 200,
+      "balance": 9.86,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 219,
+          "offerId": 1701,
+          "sellerId": 5874,
+          "buyerId": 5886,
+          "itemType": "animal",
+          "itemId": 1472,
+          "price": 3.09,
+          "status": "completed"
+        },
+        {
+          "id": 221,
+          "offerId": 1684,
+          "sellerId": 5874,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1805,
+          "price": 1.22,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 1.22,
+          "description": "Marketplace sale",
+          "balanceBefore": 8.64,
+          "balanceAfter": 9.86
+        },
+        {
+          "type": "income",
+          "amount": 3.09,
+          "description": "Marketplace sale",
+          "balanceBefore": 5.55,
+          "balanceAfter": 8.64
+        }
+      ],
+      "financialCount": 3
+    },
+    "buyer": {
+      "key": "b4",
+      "id": 5879,
+      "status": 200,
+      "balance": 33.68,
+      "item": {
+        "userId": 5879,
+        "name": "QA T4 pg02 t4run8955",
+        "area": 3.5,
+        "id": 1805
+      },
+      "marketplaceHistory": [
+        {
+          "id": 215,
+          "offerId": 1675,
+          "sellerId": 5873,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1796,
+          "price": 15.15,
+          "status": "completed"
+        },
+        {
+          "id": 221,
+          "offerId": 1684,
+          "sellerId": 5874,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1805,
+          "price": 1.22,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 1.22,
+          "description": "Marketplace purchase",
+          "balanceBefore": 34.9,
+          "balanceAfter": 33.68
+        },
+        {
+          "type": "expense",
+          "amount": 15.15,
+          "description": "Marketplace purchase",
+          "balanceBefore": 50.05,
+          "balanceAfter": 34.9
+        }
+      ],
+      "financialCount": 3
+    }
+  },
+  "animalsOnBoughtFieldVisibleToBuyer": [],
+  "buyerRelist": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:00:45.563Z",
+      "error": "Cannot sell field with assigned animals"
+    }
+  }
+}

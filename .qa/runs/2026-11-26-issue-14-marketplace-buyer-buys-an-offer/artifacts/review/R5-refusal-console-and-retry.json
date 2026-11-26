@@ -1,0 +1,124 @@
+{
+  "check": "R5",
+  "offer": {
+    "key": "o6",
+    "owner": "rseller",
+    "fieldId": 1830,
+    "offerId": 1715,
+    "price": 11.11
+  },
+  "rivalBuyStatus": 200,
+  "first": {
+    "resps": [
+      {
+        "t": 29,
+        "status": 404,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T18:11:00.048Z",
+          "error": "Offer not found or not available"
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 28,
+        "text": "✕ Error × Offer not found or not available"
+      }
+    ],
+    "state": {
+      "balance": "18.53 ROL",
+      "cards": [
+        {
+          "id": 1711,
+          "price": "31.31 ROL",
+          "name": "field #1826",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 1713,
+          "price": "15.15 ROL",
+          "name": "field #1828",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 1715,
+          "price": "11.11 ROL",
+          "name": "field #1830",
+          "buttons": [
+            "Buy Now"
+          ]
+        }
+      ],
+      "history": [
+        "Purchase: QA rvw9550 o1 26/11/2026 -23.45 ROL",
+        "Purchase: QA rvw9550 o2 26/11/2026 -19.19 ROL"
+      ]
+    }
+  },
+  "second": {
+    "resps": [
+      {
+        "t": 401,
+        "status": 404,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T18:11:04.902Z",
+          "error": "Offer not found or not available"
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 400,
+        "text": "✕ Error × Offer not found or not available"
+      }
+    ],
+    "state": {
+      "balance": "18.53 ROL",
+      "cards": [
+        {
+          "id": 1711,
+          "price": "31.31 ROL",
+          "name": "field #1826",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 1713,
+          "price": "15.15 ROL",
+          "name": "field #1828",
+          "buttons": [
+            "Buy Now"
+          ]
+        },
+        {
+          "id": 1715,
+          "price": "11.11 ROL",
+          "name": "field #1830",
+          "buttons": [
+            "Buy Now"
+          ]
+        }
+      ],
+      "history": [
+        "Purchase: QA rvw9550 o1 26/11/2026 -23.45 ROL",
+        "Purchase: QA rvw9550 o2 26/11/2026 -19.19 ROL"
+      ]
+    }
+  },
+  "after": {
+    "B": 18.53,
+    "RV": 28.93
+  },
+  "consoleErrorLines": [
+    "Total messages: 2 (Errors: 2, Warnings: 0)",
+    "[ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/api/v1/marketplace/buy:1",
+    "[ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/api/v1/marketplace/buy:1"
+  ]
+}

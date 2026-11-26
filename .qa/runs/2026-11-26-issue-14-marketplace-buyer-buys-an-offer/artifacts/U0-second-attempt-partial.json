@@ -1,0 +1,121 @@
+{
+  "apiBefore": {
+    "offer": {
+      "key": "main2",
+      "id": 1705,
+      "price": 23.45,
+      "statusInSellerMyOffers": "sold",
+      "inBuyerBrowse": false
+    },
+    "others": {
+      "decoy2": {
+        "id": 1706,
+        "status": "active",
+        "inBuyerBrowse": true
+      }
+    },
+    "seller": {
+      "key": "s1r",
+      "id": 5883,
+      "status": 200,
+      "balance": 40.88,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 208,
+          "offerId": 1705,
+          "sellerId": 5883,
+          "buyerId": 5884,
+          "itemType": "field",
+          "itemId": 1820,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 23.45,
+          "description": "Marketplace sale",
+          "balanceBefore": 17.43,
+          "balanceAfter": 40.88
+        }
+      ],
+      "financialCount": 2
+    },
+    "buyer": {
+      "key": "b1r",
+      "id": 5884,
+      "status": 200,
+      "balance": 16.72,
+      "item": {
+        "userId": 5884,
+        "name": "QA T4 main2 t4run8955",
+        "area": 3.5,
+        "id": 1820
+      },
+      "marketplaceHistory": [
+        {
+          "id": 208,
+          "offerId": 1705,
+          "sellerId": 5883,
+          "buyerId": 5884,
+          "itemType": "field",
+          "itemId": 1820,
+          "price": 23.45,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 23.45,
+          "description": "Marketplace purchase",
+          "balanceBefore": 40.17,
+          "balanceAfter": 16.72
+        }
+      ],
+      "financialCount": 2
+    }
+  },
+  "observerHistoryBefore": {
+    "transactions": [],
+    "total": 0
+  },
+  "login": {
+    "url": "http://localhost:3000/marketplace.html",
+    "balance": "16.72 ROL"
+  },
+  "U1_browseBefore": {
+    "balance": "16.72 ROL",
+    "filter": "2 t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1684,
+        "price": "1.22 ROL",
+        "name": "field #1805",
+        "disabled": false
+      },
+      {
+        "id": 1694,
+        "price": "2.32 ROL",
+        "name": "field #1812",
+        "disabled": false
+      },
+      {
+        "id": 1706,
+        "price": "23.54 ROL",
+        "name": "field #1821",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  }
+}

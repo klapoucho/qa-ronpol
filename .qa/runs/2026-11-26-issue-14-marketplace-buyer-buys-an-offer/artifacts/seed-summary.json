@@ -1,0 +1,560 @@
+{
+  "TAG": "t4run8955",
+  "users": {
+    "s1": {
+      "id": 5872,
+      "funded": 17.43
+    },
+    "s2": {
+      "id": 5873,
+      "funded": 12.34
+    },
+    "s3": {
+      "id": 5874,
+      "funded": 5.55
+    },
+    "s4": {
+      "id": 5875,
+      "funded": 3.21
+    },
+    "b1": {
+      "id": 5876,
+      "funded": 40.17
+    },
+    "b2": {
+      "id": 5877,
+      "funded": 31.31
+    },
+    "b3": {
+      "id": 5878,
+      "funded": 31.3
+    },
+    "b4": {
+      "id": 5879,
+      "funded": 50.05
+    },
+    "b5": {
+      "id": 5880,
+      "funded": 88.88
+    },
+    "b6": {
+      "id": 5881,
+      "funded": 20.2
+    },
+    "o": {
+      "id": 5882,
+      "funded": 0
+    }
+  },
+  "offers": {
+    "main": {
+      "id": 1666,
+      "price": 23.45,
+      "seller": "s1",
+      "kind": "field",
+      "itemId": 1788
+    },
+    "decoy": {
+      "id": 1667,
+      "price": 23.54,
+      "seller": "s1",
+      "kind": "field",
+      "itemId": 1789
+    },
+    "pig": {
+      "id": 1668,
+      "price": 7.07,
+      "seller": "s1",
+      "kind": "animal",
+      "itemId": 1466
+    },
+    "bound": {
+      "id": 1669,
+      "price": 31.31,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1790
+    },
+    "dismiss": {
+      "id": 1670,
+      "price": 11.11,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1791
+    },
+    "pickx": {
+      "id": 1671,
+      "price": 12.21,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1792
+    },
+    "picky": {
+      "id": 1672,
+      "price": 12.12,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1793
+    },
+    "dbl": {
+      "id": 1673,
+      "price": 13.13,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1794
+    },
+    "inflight": {
+      "id": 1674,
+      "price": 14.14,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1795
+    },
+    "rival": {
+      "id": 1675,
+      "price": 15.15,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1796
+    },
+    "cancelmid": {
+      "id": 1676,
+      "price": 16.16,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1797
+    },
+    "balmid": {
+      "id": 1677,
+      "price": 17.17,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1798
+    },
+    "editmid": {
+      "id": 1678,
+      "price": 18.18,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1799
+    },
+    "delmid": {
+      "id": 1679,
+      "price": 19.19,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1800
+    },
+    "session": {
+      "id": 1680,
+      "price": 9.09,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1801
+    },
+    "cancelfly": {
+      "id": 1681,
+      "price": 6.06,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1802
+    },
+    "delfly": {
+      "id": 1682,
+      "price": 5.05,
+      "seller": "s2",
+      "kind": "field",
+      "itemId": 1803
+    },
+    "pg01": {
+      "id": 1683,
+      "price": 1.11,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1804
+    },
+    "pg02": {
+      "id": 1684,
+      "price": 1.22,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1805
+    },
+    "pg03": {
+      "id": 1685,
+      "price": 1.33,
+      "seller": "s3",
+      "kind": "animal",
+      "itemId": 1467
+    },
+    "pg04": {
+      "id": 1686,
+      "price": 1.44,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1806
+    },
+    "pg05": {
+      "id": 1687,
+      "price": 1.55,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1807
+    },
+    "pg06": {
+      "id": 1688,
+      "price": 1.66,
+      "seller": "s3",
+      "kind": "animal",
+      "itemId": 1468
+    },
+    "pg07": {
+      "id": 1689,
+      "price": 1.77,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1808
+    },
+    "pg08": {
+      "id": 1690,
+      "price": 1.88,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1809
+    },
+    "pg09": {
+      "id": 1691,
+      "price": 1.99,
+      "seller": "s3",
+      "kind": "animal",
+      "itemId": 1469
+    },
+    "pg10": {
+      "id": 1692,
+      "price": 2.1,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1810
+    },
+    "pg11": {
+      "id": 1693,
+      "price": 2.21,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1811
+    },
+    "pg12": {
+      "id": 1694,
+      "price": 2.32,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1812
+    },
+    "pg13": {
+      "id": 1695,
+      "price": 2.43,
+      "seller": "s3",
+      "kind": "animal",
+      "itemId": 1470
+    },
+    "pg14": {
+      "id": 1696,
+      "price": 2.54,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1813
+    },
+    "pg15": {
+      "id": 1697,
+      "price": 2.65,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1814
+    },
+    "pg16": {
+      "id": 1698,
+      "price": 2.76,
+      "seller": "s3",
+      "kind": "animal",
+      "itemId": 1471
+    },
+    "pg17": {
+      "id": 1699,
+      "price": 2.87,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1815
+    },
+    "pg18": {
+      "id": 1700,
+      "price": 2.98,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1816
+    },
+    "pg19": {
+      "id": 1701,
+      "price": 3.09,
+      "seller": "s3",
+      "kind": "animal",
+      "itemId": 1472
+    },
+    "pg20": {
+      "id": 1702,
+      "price": 3.2,
+      "seller": "s3",
+      "kind": "field",
+      "itemId": 1817
+    },
+    "xss": {
+      "id": 1703,
+      "price": 2.22,
+      "seller": "s4",
+      "kind": "field",
+      "itemId": 1818
+    },
+    "longword": {
+      "id": 1704,
+      "price": 1.11,
+      "seller": "s4",
+      "kind": "field",
+      "itemId": 1819
+    }
+  },
+  "items": {
+    "main": {
+      "kind": "field",
+      "id": 1788,
+      "name": "QA T4 main t4run8955",
+      "area": 3.5
+    },
+    "decoy": {
+      "kind": "field",
+      "id": 1789,
+      "name": "QA T4 decoy t4run8955",
+      "area": 3.5
+    },
+    "pig": {
+      "kind": "animal",
+      "id": 1466,
+      "type": "pig",
+      "amount": 2
+    },
+    "bound": {
+      "kind": "field",
+      "id": 1790,
+      "name": "QA T4 bound t4run8955",
+      "area": 3.5
+    },
+    "dismiss": {
+      "kind": "field",
+      "id": 1791,
+      "name": "QA T4 dismiss t4run8955",
+      "area": 3.5
+    },
+    "pickx": {
+      "kind": "field",
+      "id": 1792,
+      "name": "QA T4 pickx t4run8955",
+      "area": 3.5
+    },
+    "picky": {
+      "kind": "field",
+      "id": 1793,
+      "name": "QA T4 picky t4run8955",
+      "area": 3.5
+    },
+    "dbl": {
+      "kind": "field",
+      "id": 1794,
+      "name": "QA T4 dbl t4run8955",
+      "area": 3.5
+    },
+    "inflight": {
+      "kind": "field",
+      "id": 1795,
+      "name": "QA T4 inflight t4run8955",
+      "area": 3.5
+    },
+    "rival": {
+      "kind": "field",
+      "id": 1796,
+      "name": "QA T4 rival t4run8955",
+      "area": 3.5
+    },
+    "cancelmid": {
+      "kind": "field",
+      "id": 1797,
+      "name": "QA T4 cancelmid t4run8955",
+      "area": 3.5
+    },
+    "balmid": {
+      "kind": "field",
+      "id": 1798,
+      "name": "QA T4 balmid t4run8955",
+      "area": 3.5
+    },
+    "editmid": {
+      "kind": "field",
+      "id": 1799,
+      "name": "QA T4 editmid t4run8955",
+      "area": 42
+    },
+    "delmid": {
+      "kind": "field",
+      "id": 1800,
+      "name": "QA T4 delmid t4run8955",
+      "area": 3.5
+    },
+    "session": {
+      "kind": "field",
+      "id": 1801,
+      "name": "QA T4 session t4run8955",
+      "area": 3.5
+    },
+    "cancelfly": {
+      "kind": "field",
+      "id": 1802,
+      "name": "QA T4 cancelfly t4run8955",
+      "area": 3.5
+    },
+    "delfly": {
+      "kind": "field",
+      "id": 1803,
+      "name": "QA T4 delfly t4run8955",
+      "area": 3.5
+    },
+    "pg01": {
+      "kind": "field",
+      "id": 1804,
+      "name": "QA T4 pg01 t4run8955",
+      "area": 3.5
+    },
+    "pg02": {
+      "kind": "field",
+      "id": 1805,
+      "name": "QA T4 pg02 t4run8955",
+      "area": 3.5
+    },
+    "pg03": {
+      "kind": "animal",
+      "id": 1467,
+      "type": "sheep",
+      "amount": 3
+    },
+    "pg04": {
+      "kind": "field",
+      "id": 1806,
+      "name": "QA T4 pg04 t4run8955",
+      "area": 3.5
+    },
+    "pg05": {
+      "kind": "field",
+      "id": 1807,
+      "name": "QA T4 pg05 t4run8955",
+      "area": 3.5
+    },
+    "pg06": {
+      "kind": "animal",
+      "id": 1468,
+      "type": "sheep",
+      "amount": 6
+    },
+    "pg07": {
+      "kind": "field",
+      "id": 1808,
+      "name": "QA T4 pg07 t4run8955",
+      "area": 3.5
+    },
+    "pg08": {
+      "kind": "field",
+      "id": 1809,
+      "name": "QA T4 pg08 t4run8955",
+      "area": 3.5
+    },
+    "pg09": {
+      "kind": "animal",
+      "id": 1469,
+      "type": "sheep",
+      "amount": 9
+    },
+    "pg10": {
+      "kind": "field",
+      "id": 1810,
+      "name": "QA T4 pg10 t4run8955",
+      "area": 3.5
+    },
+    "pg11": {
+      "kind": "field",
+      "id": 1811,
+      "name": "QA T4 pg11 t4run8955",
+      "area": 3.5
+    },
+    "pg12": {
+      "kind": "field",
+      "id": 1812,
+      "name": "QA T4 pg12 t4run8955",
+      "area": 3.5
+    },
+    "pg13": {
+      "kind": "animal",
+      "id": 1470,
+      "type": "sheep",
+      "amount": 13
+    },
+    "pg14": {
+      "kind": "field",
+      "id": 1813,
+      "name": "QA T4 pg14 t4run8955",
+      "area": 3.5
+    },
+    "pg15": {
+      "kind": "field",
+      "id": 1814,
+      "name": "QA T4 pg15 t4run8955",
+      "area": 3.5
+    },
+    "pg16": {
+      "kind": "animal",
+      "id": 1471,
+      "type": "sheep",
+      "amount": 16
+    },
+    "pg17": {
+      "kind": "field",
+      "id": 1815,
+      "name": "QA T4 pg17 t4run8955",
+      "area": 3.5
+    },
+    "pg18": {
+      "kind": "field",
+      "id": 1816,
+      "name": "QA T4 pg18 t4run8955",
+      "area": 3.5
+    },
+    "pg19": {
+      "kind": "animal",
+      "id": 1472,
+      "type": "sheep",
+      "amount": 19
+    },
+    "pg20": {
+      "kind": "field",
+      "id": 1817,
+      "name": "QA T4 pg20 t4run8955",
+      "area": 3.5
+    },
+    "xss": {
+      "kind": "field",
+      "id": 1818,
+      "name": "QAt4run8955<img src=x onerror=\"document.title='QA-XSS-FIRED-T4'\">",
+      "area": 3.5
+    },
+    "longword": {
+      "kind": "field",
+      "id": 1819,
+      "name": "QA T4 longword t4run8955",
+      "area": 3.5
+    }
+  }
+}

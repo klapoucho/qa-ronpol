@@ -1,0 +1,103 @@
+{
+  "browse": {
+    "balance": "20.2 ROL",
+    "filter": "QA session t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1680,
+        "price": "9.09 ROL",
+        "name": "field #1801",
+        "meta": "Field: QA T4 session t4run8955, Area: 3.5 ha",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "modal": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"field #1801\" for 9.09 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "geometry": {
+    "viewport": {
+      "w": 1366,
+      "h": 768
+    },
+    "overlay": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 768,
+      "top": 0,
+      "right": 1366,
+      "bottom": 768,
+      "left": 0
+    },
+    "content": {
+      "x": 483,
+      "y": 262.390625,
+      "width": 400,
+      "height": 243.21875,
+      "top": 262.390625,
+      "right": 883,
+      "bottom": 505.609375,
+      "left": 483
+    },
+    "leftGap": 483,
+    "rightGap": 483,
+    "topGap": 262.390625,
+    "bottomGap": 262.390625,
+    "cancel": {
+      "x": 672.15625,
+      "y": 450.109375,
+      "width": 81.5,
+      "height": 35.5,
+      "top": 450.109375,
+      "right": 753.65625,
+      "bottom": 485.609375,
+      "left": 672.15625
+    },
+    "confirm": {
+      "x": 765.65625,
+      "y": 450.109375,
+      "width": 93.34375,
+      "height": 35.5,
+      "top": 450.109375,
+      "right": 859,
+      "bottom": 485.609375,
+      "left": 765.65625
+    },
+    "buttonsSameTop": true,
+    "buttonsSameHeight": true,
+    "confirmRightGap": 24,
+    "confirmStyle": {
+      "bg": "rgb(40, 167, 69)",
+      "color": "rgb(255, 255, 255)"
+    }
+  },
+  "mobile": {
+    "w": 375,
+    "content": {
+      "x": 18.75,
+      "y": 284.390625,
+      "width": 337.5,
+      "height": 243.21875,
+      "top": 284.390625,
+      "right": 356.25,
+      "bottom": 527.609375,
+      "left": 18.75
+    },
+    "leftGap": 18.75,
+    "rightGap": 18.75,
+    "scrollW": 397
+  }
+}

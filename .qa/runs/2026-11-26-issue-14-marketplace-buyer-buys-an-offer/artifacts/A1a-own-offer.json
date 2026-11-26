@@ -1,0 +1,567 @@
+{
+  "sellerBalance": 127.48,
+  "price": 12.21,
+  "response": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:00:31.491Z",
+      "error": "Cannot buy your own offer"
+    }
+  },
+  "before": {
+    "offer": {
+      "key": "pickx",
+      "id": 1671,
+      "price": 12.21,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 127.48,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 pickx t4run8955",
+        "area": 3.5,
+        "id": 1792
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        },
+        {
+          "id": 215,
+          "offerId": 1675,
+          "sellerId": 5873,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1796,
+          "price": 15.15,
+          "status": "completed"
+        },
+        {
+          "id": 216,
+          "offerId": 1678,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1799,
+          "price": 18.18,
+          "status": "completed"
+        },
+        {
+          "id": 217,
+          "offerId": 1681,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1802,
+          "price": 6.06,
+          "status": "completed"
+        },
+        {
+          "id": 218,
+          "offerId": 1682,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1803,
+          "price": 5.05,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 5.05,
+          "description": "Marketplace sale",
+          "balanceBefore": 122.43,
+          "balanceAfter": 127.48
+        },
+        {
+          "type": "income",
+          "amount": 6.06,
+          "description": "Marketplace sale",
+          "balanceBefore": 116.37,
+          "balanceAfter": 122.43
+        },
+        {
+          "type": "income",
+          "amount": 18.18,
+          "description": "Marketplace sale",
+          "balanceBefore": 98.19,
+          "balanceAfter": 116.37
+        },
+        {
+          "type": "income",
+          "amount": 15.15,
+          "description": "Marketplace sale",
+          "balanceBefore": 83.04,
+          "balanceAfter": 98.19
+        },
+        {
+          "type": "income",
+          "amount": 12.12,
+          "description": "Marketplace sale",
+          "balanceBefore": 70.92,
+          "balanceAfter": 83.04
+        },
+        {
+          "type": "income",
+          "amount": 14.14,
+          "description": "Marketplace sale",
+          "balanceBefore": 56.78,
+          "balanceAfter": 70.92
+        },
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 9
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 6.05,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        },
+        {
+          "id": 216,
+          "offerId": 1678,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1799,
+          "price": 18.18,
+          "status": "completed"
+        },
+        {
+          "id": 217,
+          "offerId": 1681,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1802,
+          "price": 6.06,
+          "status": "completed"
+        },
+        {
+          "id": 218,
+          "offerId": 1682,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1803,
+          "price": 5.05,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 5.05,
+          "description": "Marketplace purchase",
+          "balanceBefore": 11.1,
+          "balanceAfter": 6.05
+        },
+        {
+          "type": "expense",
+          "amount": 6.06,
+          "description": "Marketplace purchase",
+          "balanceBefore": 17.16,
+          "balanceAfter": 11.1
+        },
+        {
+          "type": "expense",
+          "amount": 18.18,
+          "description": "Marketplace purchase",
+          "balanceBefore": 49.49,
+          "balanceAfter": 31.31
+        },
+        {
+          "type": "expense",
+          "amount": 12.12,
+          "description": "Marketplace purchase",
+          "balanceBefore": 61.61,
+          "balanceAfter": 49.49
+        },
+        {
+          "type": "expense",
+          "amount": 14.14,
+          "description": "Marketplace purchase",
+          "balanceBefore": 75.75,
+          "balanceAfter": 61.61
+        },
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 8
+    }
+  },
+  "after": {
+    "offer": {
+      "key": "pickx",
+      "id": 1671,
+      "price": 12.21,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 127.48,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 pickx t4run8955",
+        "area": 3.5,
+        "id": 1792
+      },
+      "marketplaceHistory": [
+        {
+          "id": 211,
+          "offerId": 1669,
+          "sellerId": 5873,
+          "buyerId": 5877,
+          "itemType": "field",
+          "itemId": 1790,
+          "price": 31.31,
+          "status": "completed"
+        },
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        },
+        {
+          "id": 215,
+          "offerId": 1675,
+          "sellerId": 5873,
+          "buyerId": 5879,
+          "itemType": "field",
+          "itemId": 1796,
+          "price": 15.15,
+          "status": "completed"
+        },
+        {
+          "id": 216,
+          "offerId": 1678,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1799,
+          "price": 18.18,
+          "status": "completed"
+        },
+        {
+          "id": 217,
+          "offerId": 1681,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1802,
+          "price": 6.06,
+          "status": "completed"
+        },
+        {
+          "id": 218,
+          "offerId": 1682,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1803,
+          "price": 5.05,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "income",
+          "amount": 5.05,
+          "description": "Marketplace sale",
+          "balanceBefore": 122.43,
+          "balanceAfter": 127.48
+        },
+        {
+          "type": "income",
+          "amount": 6.06,
+          "description": "Marketplace sale",
+          "balanceBefore": 116.37,
+          "balanceAfter": 122.43
+        },
+        {
+          "type": "income",
+          "amount": 18.18,
+          "description": "Marketplace sale",
+          "balanceBefore": 98.19,
+          "balanceAfter": 116.37
+        },
+        {
+          "type": "income",
+          "amount": 15.15,
+          "description": "Marketplace sale",
+          "balanceBefore": 83.04,
+          "balanceAfter": 98.19
+        },
+        {
+          "type": "income",
+          "amount": 12.12,
+          "description": "Marketplace sale",
+          "balanceBefore": 70.92,
+          "balanceAfter": 83.04
+        },
+        {
+          "type": "income",
+          "amount": 14.14,
+          "description": "Marketplace sale",
+          "balanceBefore": 56.78,
+          "balanceAfter": 70.92
+        },
+        {
+          "type": "income",
+          "amount": 13.13,
+          "description": "Marketplace sale",
+          "balanceBefore": 43.65,
+          "balanceAfter": 56.78
+        },
+        {
+          "type": "income",
+          "amount": 31.31,
+          "description": "Marketplace sale",
+          "balanceBefore": 12.34,
+          "balanceAfter": 43.65
+        }
+      ],
+      "financialCount": 9
+    },
+    "buyer": {
+      "key": "b5",
+      "id": 5880,
+      "status": 200,
+      "balance": 6.05,
+      "item": null,
+      "marketplaceHistory": [
+        {
+          "id": 212,
+          "offerId": 1673,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1794,
+          "price": 13.13,
+          "status": "completed"
+        },
+        {
+          "id": 213,
+          "offerId": 1674,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1795,
+          "price": 14.14,
+          "status": "completed"
+        },
+        {
+          "id": 214,
+          "offerId": 1672,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1793,
+          "price": 12.12,
+          "status": "completed"
+        },
+        {
+          "id": 216,
+          "offerId": 1678,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1799,
+          "price": 18.18,
+          "status": "completed"
+        },
+        {
+          "id": 217,
+          "offerId": 1681,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1802,
+          "price": 6.06,
+          "status": "completed"
+        },
+        {
+          "id": 218,
+          "offerId": 1682,
+          "sellerId": 5873,
+          "buyerId": 5880,
+          "itemType": "field",
+          "itemId": 1803,
+          "price": 5.05,
+          "status": "completed"
+        }
+      ],
+      "marketplaceFinance": [
+        {
+          "type": "expense",
+          "amount": 5.05,
+          "description": "Marketplace purchase",
+          "balanceBefore": 11.1,
+          "balanceAfter": 6.05
+        },
+        {
+          "type": "expense",
+          "amount": 6.06,
+          "description": "Marketplace purchase",
+          "balanceBefore": 17.16,
+          "balanceAfter": 11.1
+        },
+        {
+          "type": "expense",
+          "amount": 18.18,
+          "description": "Marketplace purchase",
+          "balanceBefore": 49.49,
+          "balanceAfter": 31.31
+        },
+        {
+          "type": "expense",
+          "amount": 12.12,
+          "description": "Marketplace purchase",
+          "balanceBefore": 61.61,
+          "balanceAfter": 49.49
+        },
+        {
+          "type": "expense",
+          "amount": 14.14,
+          "description": "Marketplace purchase",
+          "balanceBefore": 75.75,
+          "balanceAfter": 61.61
+        },
+        {
+          "type": "expense",
+          "amount": 13.13,
+          "description": "Marketplace purchase",
+          "balanceBefore": 88.88,
+          "balanceAfter": 75.75
+        }
+      ],
+      "financialCount": 8
+    }
+  },
+  "unchanged": true
+}

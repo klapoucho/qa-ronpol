@@ -1,0 +1,240 @@
+{
+  "check": "R4b",
+  "balance": 30.3,
+  "prices": [
+    20.2,
+    15.15
+  ],
+  "before": {
+    "C": 30.3,
+    "S": 50.41
+  },
+  "after": {
+    "C": 10.1,
+    "S": 70.61,
+    "o4": "sold",
+    "o5": "active"
+  },
+  "ui": {
+    "reqs": [
+      {
+        "t": 373,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1712}"
+      },
+      {
+        "t": 1964,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1713}"
+      },
+      {
+        "t": 4552,
+        "m": "GET",
+        "u": "/api/v1/financial/account",
+        "body": null
+      },
+      {
+        "t": 4552,
+        "m": "GET",
+        "u": "/api/v1/marketplace/offers",
+        "body": null
+      },
+      {
+        "t": 4552,
+        "m": "GET",
+        "u": "/api/v1/marketplace/my-offers",
+        "body": null
+      },
+      {
+        "t": 4552,
+        "m": "GET",
+        "u": "/api/v1/marketplace/transactions",
+        "body": null
+      }
+    ],
+    "resps": [
+      {
+        "t": 4556,
+        "u": "/api/v1/marketplace/buy",
+        "status": 200,
+        "msg": "Purchase completed successfully"
+      },
+      {
+        "t": 4556,
+        "u": "/api/v1/marketplace/buy",
+        "status": 400,
+        "msg": "Insufficient funds to complete purchase (no overdraft allowed)"
+      },
+      {
+        "t": 4580,
+        "u": "/api/v1/financial/account",
+        "status": 200,
+        "balance": 10.1
+      }
+    ],
+    "toasts": [
+      {
+        "t": 4547,
+        "text": "✓ Success × Purchase completed successfully!"
+      },
+      {
+        "t": 4555,
+        "text": "✕ Error × Insufficient funds to complete purchase (no overdraft allowed)"
+      }
+    ],
+    "snaps": [
+      {
+        "t": 1576,
+        "at": "before second",
+        "state": {
+          "balance": "30.3 ROL",
+          "cards": [
+            {
+              "id": 1711,
+              "price": "31.31 ROL",
+              "name": "field #1826",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1712,
+              "price": "20.2 ROL",
+              "name": "field #1827",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1713,
+              "price": "15.15 ROL",
+              "name": "field #1828",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1714,
+              "price": "5.55 ROL",
+              "name": "field #1829",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1715,
+              "price": "11.11 ROL",
+              "name": "field #1830",
+              "buttons": [
+                "Buy Now"
+              ]
+            }
+          ],
+          "history": []
+        }
+      },
+      {
+        "t": 2967,
+        "balance": "30.3 ROL"
+      },
+      {
+        "t": 3974,
+        "balance": "30.3 ROL"
+      },
+      {
+        "t": 4981,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 5985,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 6990,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 7998,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 9005,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 10013,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 11020,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 12026,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 13035,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 14041,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 15048,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 16054,
+        "balance": "10.1 ROL"
+      },
+      {
+        "t": 16057,
+        "at": "end",
+        "state": {
+          "balance": "10.1 ROL",
+          "cards": [
+            {
+              "id": 1711,
+              "price": "31.31 ROL",
+              "name": "field #1826",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1713,
+              "price": "15.15 ROL",
+              "name": "field #1828",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1714,
+              "price": "5.55 ROL",
+              "name": "field #1829",
+              "buttons": [
+                "Buy Now"
+              ]
+            },
+            {
+              "id": 1715,
+              "price": "11.11 ROL",
+              "name": "field #1830",
+              "buttons": [
+                "Buy Now"
+              ]
+            }
+          ],
+          "history": [
+            "Purchase: field #1827 26/11/2026 -20.2 ROL"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -6,7 +6,7 @@ kind: functional
 status: open
 source: "own: 2026-11-25-issue-11-marketplace-sale-between-two-users"
 found: 2026-11-25
-last_checked: 2026-11-25 (still reproduces)
+last_checked: 2026-11-26 (still reproduces)
 ---
 
 ## Environment
@@ -38,3 +38,6 @@ Buy 200 "Purchase completed successfully", delete 200. Buyer 100 → 40 with an 
 
 ## Hint for developers (optional)
 The ownership transfer quietly does nothing when the field is gone, so no reversal runs; field deletion does not take the ledger lock.
+
+## Re-checks
+- Re-checked 2026-11-26 in `2026-11-26-issue-14-marketplace-buyer-buys-an-offer` (U21b): still reproduces through the UI buy: the buyer sees success and is charged 5.05 for a field that no longer exists (1/1). Deleting the field before the confirm is refused correctly (U19). Evidence: `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U21b-seller-deletes-field-during-ui-buy.json`.

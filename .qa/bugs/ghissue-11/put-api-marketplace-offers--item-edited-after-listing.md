@@ -34,3 +34,6 @@ always
 
 ## Regression check
 List a field, `PUT /fields/<id>` with a different area, buy; expect a refusal or a withdrawn offer.
+
+## Re-checks
+- Re-checked 2026-11-26 in `2026-11-26-issue-14-marketplace-buyer-buys-an-offer` (U18): still reproduces while the buyer's confirmation modal is open: the seller shrinks a 42 ha field to 0.01 ha and the buyer pays 18.18 for it; the modal names only `field #<id>`. Evidence: `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U18-seller-edits-field-while-modal-open.json`.

@@ -1,0 +1,19 @@
+{
+  "check": "R8b",
+  "note": "modal opened on a card scrolled into view at 375x812; R8-mobile-modal.png was captured during the 0.3 s slide-in animation",
+  "at0": {
+    "top": 270.7085876464844,
+    "bottom": 501.2913818359375,
+    "opacity": "0"
+  },
+  "at600": {
+    "top": 284.640625,
+    "bottom": 527.359375,
+    "left": 18.75,
+    "right": 356.25,
+    "opacity": "1",
+    "vh": 812,
+    "vw": 375,
+    "scrollY": 467
+  }
+}

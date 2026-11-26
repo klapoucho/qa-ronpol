@@ -1,0 +1,84 @@
+{
+  "tag": "rvw9550",
+  "users": {
+    "S": {
+      "id": 5888,
+      "displayedName": "qa_rselle_5fa06f34"
+    },
+    "B": {
+      "id": 5889,
+      "displayedName": "qa_rbuyer_9c78ca2b"
+    },
+    "C": {
+      "id": 5891,
+      "displayedName": "qa_rbuyer_39b03f11"
+    },
+    "RV": {
+      "id": 5890,
+      "displayedName": "qa_rrival_12544997"
+    }
+  },
+  "fundStatuses": [
+    201,
+    201,
+    201,
+    201
+  ],
+  "balances": {
+    "S": 7.77,
+    "B": 61.17,
+    "C": 30.3,
+    "RV": 40.04
+  },
+  "offers": [
+    {
+      "key": "o1",
+      "owner": "rseller",
+      "fieldId": 1824,
+      "offerId": 1709,
+      "price": 23.45
+    },
+    {
+      "key": "o2",
+      "owner": "rseller",
+      "fieldId": 1825,
+      "offerId": 1710,
+      "price": 19.19
+    },
+    {
+      "key": "o3decoy",
+      "owner": "rseller",
+      "fieldId": 1826,
+      "offerId": 1711,
+      "price": 31.31
+    },
+    {
+      "key": "o4",
+      "owner": "rseller",
+      "fieldId": 1827,
+      "offerId": 1712,
+      "price": 20.2
+    },
+    {
+      "key": "o5",
+      "owner": "rseller",
+      "fieldId": 1828,
+      "offerId": 1713,
+      "price": 15.15
+    },
+    {
+      "key": "own",
+      "owner": "rbuyer",
+      "fieldId": 1829,
+      "offerId": 1714,
+      "price": 5.55
+    },
+    {
+      "key": "o6",
+      "owner": "rseller",
+      "fieldId": 1830,
+      "offerId": 1715,
+      "price": 11.11
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "check": "R10",
+  "boughtFieldId": 1826,
+  "offerId": 1711,
+  "fundStatus": 201,
+  "balanceBefore": 33.38,
+  "balanceAfter": 2.07,
+  "fieldInApi": true,
+  "buyStatus": 200,
+  "optsBefore": [
+    1824,
+    1825,
+    1828,
+    1829
+  ],
+  "optsAfter": [
+    {
+      "v": 1824,
+      "t": "QA rvw9550 o1 (4.2 ha)"
+    },
+    {
+      "v": 1825,
+      "t": "QA rvw9550 o2 (4.2 ha)"
+    },
+    {
+      "v": 1828,
+      "t": "QA rvw9550 o5 (4.2 ha)"
+    },
+    {
+      "v": 1829,
+      "t": "QA rvw9550 own (4.2 ha)"
+    }
+  ],
+  "optsAfterReload": [
+    {
+      "v": 1824,
+      "t": "QA rvw9550 o1 (4.2 ha)"
+    },
+    {
+      "v": 1825,
+      "t": "QA rvw9550 o2 (4.2 ha)"
+    },
+    {
+      "v": 1826,
+      "t": "QA rvw9550 o3decoy (4.2 ha)"
+    },
+    {
+      "v": 1828,
+      "t": "QA rvw9550 o5 (4.2 ha)"
+    },
+    {
+      "v": 1829,
+      "t": "QA rvw9550 own (4.2 ha)"
+    }
+  ],
+  "boughtInDropdownNoReload": false,
+  "boughtInDropdownAfterReload": true
+}

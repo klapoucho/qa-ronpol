@@ -35,3 +35,6 @@ Cancel 200 "Offer cancelled successfully"; the buy then completes with 200 and t
 
 ## Regression check
 Experiment E7 in `.qa/runs/2026-11-25-issue-11-marketplace-sale-between-two-users/scratch/review/exp.mjs`.
+
+## Re-checks
+- Re-checked 2026-11-26 in `2026-11-26-issue-14-marketplace-buyer-buys-an-offer` (U21a): still reproduces through the UI buy: the seller cancels 1.5 s after the buyer confirms in the modal, gets 200, and the buyer sees "Purchase completed successfully!" (1/1). Evidence: `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U21a-seller-cancels-during-ui-buy.json`.

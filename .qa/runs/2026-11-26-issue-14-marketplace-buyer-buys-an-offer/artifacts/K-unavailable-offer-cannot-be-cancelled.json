@@ -1,0 +1,36 @@
+{
+  "offerBefore": {
+    "id": 1679,
+    "sellerId": 5873,
+    "itemType": "field",
+    "itemId": 1800,
+    "price": 19.19,
+    "description": "QA delmid t4run8955",
+    "status": "unavailable",
+    "createdAt": "2026-11-26T17:46:07.930Z",
+    "updatedAt": "2026-11-26T17:56:09.180Z",
+    "details": {},
+    "sellerLabel": "qa_s2_b5355739"
+  },
+  "cancel": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T18:02:15.316Z",
+      "error": "Offer is not active"
+    }
+  },
+  "offerAfter": {
+    "id": 1679,
+    "sellerId": 5873,
+    "itemType": "field",
+    "itemId": 1800,
+    "price": 19.19,
+    "description": "QA delmid t4run8955",
+    "status": "unavailable",
+    "createdAt": "2026-11-26T17:46:07.930Z",
+    "updatedAt": "2026-11-26T17:56:09.180Z",
+    "details": {},
+    "sellerLabel": "qa_s2_b5355739"
+  }
+}

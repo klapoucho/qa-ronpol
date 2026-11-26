@@ -1,0 +1,29 @@
+{
+  "check": "R6 repeat",
+  "beforeNav": {
+    "filter": "rvw9550",
+    "ids": [
+      1711
+    ]
+  },
+  "afterBack": {
+    "filter": "rvw9550",
+    "ids": [
+      1,
+      3,
+      4,
+      6,
+      12,
+      13,
+      14,
+      16,
+      17
+    ]
+  },
+  "afterRetype": {
+    "filter": "rvw9550",
+    "ids": [
+      1711
+    ]
+  }
+}

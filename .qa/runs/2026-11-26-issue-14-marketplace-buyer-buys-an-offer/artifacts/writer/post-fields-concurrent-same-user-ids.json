@@ -1,0 +1,115 @@
+{
+  "sameUserConcurrent": {
+    "userId": 5988,
+    "requests": [
+      {
+        "name": "QA probe same user 1795718214427 1",
+        "area": 1.5
+      },
+      {
+        "name": "QA probe same user 1795718214427 2",
+        "area": 1.5
+      },
+      {
+        "name": "QA probe same user 1795718214427 3",
+        "area": 1.5
+      }
+    ],
+    "responses": [
+      {
+        "status": 201,
+        "data": {
+          "userId": 5988,
+          "name": "QA probe same user 1795718214427 3",
+          "area": 1.5,
+          "id": 1930
+        }
+      },
+      {
+        "status": 201,
+        "data": {
+          "userId": 5988,
+          "name": "QA probe same user 1795718214427 3",
+          "area": 1.5,
+          "id": 1930
+        }
+      },
+      {
+        "status": 201,
+        "data": {
+          "userId": 5988,
+          "name": "QA probe same user 1795718214427 3",
+          "area": 1.5,
+          "id": 1930
+        }
+      }
+    ],
+    "storedFields": [
+      {
+        "userId": 5988,
+        "name": "QA probe same user 1795718214427 2",
+        "area": 1.5,
+        "id": 1928
+      },
+      {
+        "userId": 5988,
+        "name": "QA probe same user 1795718214427 1",
+        "area": 1.5,
+        "id": 1929
+      },
+      {
+        "userId": 5988,
+        "name": "QA probe same user 1795718214427 3",
+        "area": 1.5,
+        "id": 1930
+      }
+    ]
+  },
+  "sameUserSequentialControl": {
+    "responses": [
+      {
+        "status": 201,
+        "data": {
+          "userId": 5988,
+          "name": "QA probe sequential 1795718214500 1",
+          "area": 1.5,
+          "id": 1931
+        }
+      },
+      {
+        "status": 201,
+        "data": {
+          "userId": 5988,
+          "name": "QA probe sequential 1795718214536 2",
+          "area": 1.5,
+          "id": 1932
+        }
+      }
+    ]
+  },
+  "twoUsersConcurrentControl": {
+    "responses": [
+      {
+        "userId": 5989,
+        "status": 201,
+        "data": {
+          "userId": 5989,
+          "name": "QA probe user0 1795718217685",
+          "area": 1.5,
+          "id": 1933
+        }
+      },
+      {
+        "userId": 5990,
+        "status": 201,
+        "data": {
+          "userId": 5990,
+          "name": "QA probe user1 1795718217686",
+          "area": 1.5,
+          "id": 1934
+        }
+      }
+    ]
+  },
+  "when": "2026-11-26T18:36:57.740Z"
+}

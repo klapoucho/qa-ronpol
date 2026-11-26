@@ -1,0 +1,166 @@
+{
+  "apiBefore": {
+    "offer": {
+      "key": "bound",
+      "id": 1669,
+      "price": 31.31,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 12.34,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 bound t4run8955",
+        "area": 3.5,
+        "id": 1790
+      },
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    },
+    "buyer": {
+      "key": "b3",
+      "id": 5878,
+      "status": 200,
+      "balance": 31.3,
+      "item": null,
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    }
+  },
+  "login": {
+    "url": "http://localhost:3000/marketplace.html",
+    "balance": "31.3 ROL"
+  },
+  "browseBefore": {
+    "balance": "31.3 ROL",
+    "filter": "bound t4run8955",
+    "filterField": "",
+    "cards": [
+      {
+        "id": 1669,
+        "price": "31.31 ROL",
+        "name": "field #1790",
+        "disabled": false
+      }
+    ],
+    "pageButtons": [
+      "« Prev(d)",
+      "1*",
+      "Next »(d)"
+    ],
+    "pageSizeValue": "10",
+    "pageSizeLabel": "9 per page"
+  },
+  "modal": {
+    "display": "flex",
+    "title": "Confirm Purchase",
+    "message": "Are you sure you want to buy \"field #1790\" for 31.31 ROL?",
+    "confirm": "Buy Now",
+    "cancel": "Cancel"
+  },
+  "confirm": {
+    "url": "http://localhost:3000/marketplace.html",
+    "header": {
+      "totalOffers": "1265",
+      "myOffersCount": "0",
+      "totalTransactions": "210",
+      "totalValue": "508 072,77",
+      "userBalance": "31.3 ROL"
+    },
+    "requests": [
+      {
+        "t": 7,
+        "m": "POST",
+        "u": "/api/v1/marketplace/buy",
+        "body": "{\"offerId\":1669}"
+      }
+    ],
+    "buyResponses": [
+      {
+        "t": 88,
+        "status": 400,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T17:51:56.442Z",
+          "error": "Insufficient funds to complete purchase (no overdraft allowed)"
+        }
+      }
+    ],
+    "toasts": [
+      {
+        "t": 34,
+        "cls": "notification error",
+        "text": "✕ Error × Insufficient funds to complete purchase (no overdraft allowed)"
+      }
+    ],
+    "modal": {
+      "display": "none",
+      "title": "Confirm Purchase",
+      "message": "Are you sure you want to buy \"field #1790\" for 31.31 ROL?",
+      "confirm": "Buy Now",
+      "cancel": "Cancel"
+    },
+    "browse": {
+      "balance": "31.3 ROL",
+      "filter": "bound t4run8955",
+      "filterField": "",
+      "cards": [
+        {
+          "id": 1669,
+          "price": "31.31 ROL",
+          "name": "field #1790",
+          "disabled": false
+        }
+      ],
+      "pageButtons": [
+        "« Prev(d)",
+        "1*",
+        "Next »(d)"
+      ],
+      "pageSizeValue": "10",
+      "pageSizeLabel": "9 per page"
+    }
+  },
+  "apiAfter": {
+    "offer": {
+      "key": "bound",
+      "id": 1669,
+      "price": 31.31,
+      "statusInSellerMyOffers": "active",
+      "inBuyerBrowse": true
+    },
+    "others": {},
+    "seller": {
+      "key": "s2",
+      "id": 5873,
+      "status": 200,
+      "balance": 12.34,
+      "item": {
+        "userId": 5873,
+        "name": "QA T4 bound t4run8955",
+        "area": 3.5,
+        "id": 1790
+      },
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    },
+    "buyer": {
+      "key": "b3",
+      "id": 5878,
+      "status": 200,
+      "balance": 31.3,
+      "item": null,
+      "marketplaceHistory": [],
+      "marketplaceFinance": [],
+      "financialCount": 1
+    }
+  }
+}
