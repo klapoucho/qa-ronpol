@@ -8,16 +8,17 @@ import type { ApiClientClass, BaseApi } from '#src/api/http/base-api.ts';
 import type { Animal, AnimalInput } from '#src/api/models/animal.ts';
 import type { Field, FieldInput } from '#src/api/models/field.ts';
 import type { FinancialTransaction } from '#src/api/models/financial.ts';
-import type { User, UserInput } from '#src/api/models/user.ts';
 import { buildAnimal } from '#src/data/factories/animal.factory.ts';
 import { buildField } from '#src/data/factories/field.factory.ts';
 import { buildIncome } from '#src/data/factories/income.factory.ts';
 import { buildUser } from '#src/data/factories/user.factory.ts';
+import { TestUser } from '#src/fixtures/test-user.ts';
 
 export type ApiAs = <T extends BaseApi>(Client: ApiClientClass<T>, user?: { token: string }) => T;
 
-export type TestUser = { input: UserInput; id: User['id']; token: string; loginTime: string };
-export type CreateUser = (overrides?: Partial<UserInput>) => Promise<TestUser>;
+export type { TestUser };
+/** Registers a new user; `funds` gives them that much ROL (new users have none). */
+export type CreateUser = (options?: { funds?: number }) => Promise<TestUser>;
 export type CreateField = (owner: TestUser, overrides?: Partial<FieldInput>) => Promise<Field>;
 export type CreateAnimal = (owner: TestUser, overrides?: Partial<AnimalInput>) => Promise<Animal>;
 export type FundUser = (user: TestUser, amount: number) => Promise<FinancialTransaction>;
@@ -42,15 +43,18 @@ export const test = base.extend<ApiFixtures>({
   apiAs: async ({ request }, use) => {
     await use((Client, user) => new Client(request, user?.token));
   },
-  createUser: async ({ playwright, baseURL, extraHTTPHeaders }, use) => {
-    await use(async (overrides) => {
-      const input = buildUser(overrides);
+  createUser: async ({ playwright, request, baseURL, extraHTTPHeaders }, use) => {
+    await use(async ({ funds } = {}) => {
+      const input = buildUser();
       // A fresh context per user: register sets a rolnopolToken cookie on the context it runs in.
       const context = await playwright.request.newContext({ baseURL, extraHTTPHeaders });
       try {
         const registered = await new AuthApi(context).register(input);
-        const { user, token, loginTime } = seeded(registered, `register ${input.email}`);
-        return { input, id: user.id, token, loginTime };
+        const user = new TestUser(request, input, seeded(registered, `register ${input.email}`));
+        if (funds !== undefined) {
+          await user.addFunds(funds);
+        }
+        return user;
       } finally {
         await context.dispose();
       }

@@ -84,6 +84,11 @@ export class MarketplacePage {
     await this.page.goto('/marketplace.html');
   }
 
+  /** The toast with this text. */
+  notification(text: string): Locator {
+    return this.notifications.filter({ hasText: text });
+  }
+
   /** One Browse pagination button by its exact name, such as a page number. */
   browsePageButton(name: string): Locator {
     return this.browsePagination.getByRole('button', { name, exact: true });
