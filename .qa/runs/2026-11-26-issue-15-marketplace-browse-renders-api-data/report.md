@@ -151,7 +151,7 @@
 - `.qa/bugs/ghissue-12/ui-marketplace-browse--field-name-runs-as-html.md` — still reproduces (the card injects `details.name` as HTML on a mocked response; the live API still accepts HTML field names). Major: FAIL even without problem 1.
 
 ## Automation
-Branch `test/ui-mocked-marketplace-browse` (PR: pending approval). `tests/ui-mocked/marketplace/browse.spec.ts` + `browse.params.ts`, 5 tests on mocks:
+Branch `test/ui-mocked-marketplace-browse` (PR: https://github.com/klapoucho/qa-ronpol/pull/36). `tests/ui-mocked/marketplace/browse.spec.ts` + `browse.params.ts`, 5 tests on mocks:
 - a page of offers (3 cards: type, price, seller, details, description; one page), a full page (9 offers, still one page), several pages (10 offers: page 1 = 9 cards, page 2 = 1);
 - no offers: "No offers available", pagination still rendered;
 - a 500: the toast shows the API's error text and the balance still loads (pass); "Failed to load offers" in place of the list is `test.fail()` linked to `.qa/bugs/ghissue-15/ui-marketplace-browse--failed-load-spins-forever.md`.
