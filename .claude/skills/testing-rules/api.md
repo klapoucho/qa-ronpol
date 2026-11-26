@@ -44,7 +44,7 @@ Always check:
 - Each protected endpoint: valid credentials, expired, missing, malformed.
 - Cross-user access: user A cannot read or change user B's resources by id (in the URL, the body, and nested objects).
 - A negative-role check first proves the user is otherwise valid (it can read its own data), so the refusal is for the right reason.
-- Logout and role changes: an old token or session must stop working where the app says it does.
+- Logout, account deletion and role changes: an old token or session must stop working where the app says it does. Try the old token on the endpoints that move money or items, not only on reads.
 
 ## Data integrity
 
