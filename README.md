@@ -10,10 +10,10 @@ ROL), on three levels: the API, the UI against the real backend, and the UI agai
 grow: a new feature or test means new files in known places, not a restructure. Every test creates its own users
 and data through the API, so the suite runs fully in parallel without database resets.
 
-**Status: the framework is built (Phase A); the Marketplace tests come next (Phase B).** The framework, the
-Docker setup, CI and the AI-assisted QA workflow are in place, with 10 framework checks that prove the wiring
-(`tests/*/framework/`). The five Marketplace tests (T1–T5) are written next, one `/qa-pick` run each (see
-[AI-assisted workflow](#ai-assisted-workflow)).
+**Status: the framework is built (Phase A); the Marketplace tests are being written (Phase B).** The framework,
+the Docker setup, CI and the AI-assisted QA workflow are in place, with framework checks that prove the wiring
+(`tests/*/framework/`). The five Marketplace tests (T1–T5) are written one `/qa-pick` run each (see
+[AI-assisted workflow](#ai-assisted-workflow)): T1–T3 are done, T4 and T5 come next.
 
 The full requirements, with IDs (`FR-xx`, `NFR-xx`, `D-xx`) that commits and PRs refer to, are in
 [docs/requirements.md](docs/requirements.md). This README summarises them.
@@ -88,8 +88,8 @@ Type of test first, then feature (D-04). Each folder under `tests/` is one Playw
 └── package.json
 ```
 
-Today each project folder holds a `framework/` folder with the wiring checks. Marketplace tests go into
-`tests/{api,ui,ui-mocked}/marketplace/`.
+Each project folder holds a `framework/` folder with the wiring checks. Marketplace tests go into
+`tests/{api,ui,ui-mocked}/marketplace/` (today `api` and `ui`; `ui-mocked` comes with T5).
 
 ## Prerequisites
 
@@ -97,8 +97,8 @@ Today each project folder holds a `framework/` folder with the wiring checks. Ma
 - **Docker** with **Compose v2** (`docker compose`), for the app under test.
 - Only for `/qa-pick` runs:
   - [GitHub CLI](https://cli.github.com/) `gh` 2.99 or later, logged in with an account that can read
-    `klapoucho/qa-ronpol`. Assigning the issue needs triage access and attaching screenshots needs
-    write access; with read access only, the run posts a text-only summary. With several `gh`
+    `klapoucho/qa-ronpol`. Assigning the issue and setting its status need triage access, and attaching
+    screenshots needs write access; with read access only, the run posts a text-only summary. With several `gh`
     accounts on one machine, pin yours in `CLAUDE.local.md` (`- GitHub account: <login>`);
   - the Playwright CLI the skills drive: `npm install -g @playwright/cli@0.1.25`.
 
@@ -280,7 +280,9 @@ trailer and agent PRs a "Generated with Claude Code" line ([CONTRIBUTING.md](CON
 
 - **Phase A** (built): the framework, CI, the `qa-pick` skills adapted to this repo, and the issue texts, built
   task by task from [docs/implementation-plan.md](docs/implementation-plan.md). No Marketplace tests.
-- **Phase B** (next): the author writes T1–T5 with `/qa-pick <issue>`, one issue per test. The issue texts and
+- **Phase B** (in progress): the author writes T1–T5 with `/qa-pick <issue>`, one issue per test. T1–T3 are
+  done ([#18](https://github.com/klapoucho/qa-ronpol/pull/18), [#25](https://github.com/klapoucho/qa-ronpol/pull/25),
+  [#28](https://github.com/klapoucho/qa-ronpol/pull/28)). The issue texts and
   their titles are in [docs/test-cases/](docs/test-cases/README.md); the issue numbers are added there once the
   issues exist in `klapoucho/qa-ronpol`.
 
@@ -290,6 +292,14 @@ coverage and tries to break the feature, a test writer automates the result on i
 `--repeat-each=10` stability run and poison tests), and a fresh test reviewer reviews each test. Pushes and PRs
 wait for the author's approval. The skills are in `.claude/skills/`, the project's QA settings in
 [CLAUDE.md](CLAUDE.md).
+
+The issue shows where a run is. The coordinator assigns the author and sets the issue's status to **In
+progress**, posts the testing summary as one comment, and sets **In review** when the run ends. The author
+reads the results and closes the issue; test PRs say `Refs #N`, never `Closes #N`. The summary's verdict is
+**FAIL** when any problem on the story's flow is major or critical (security above all, known bugs included);
+**PASS WITH FINDINGS** is for minor and cosmetic problems only. Manual QA runs in the Playwright CLI's default
+browser (the installed Google Chrome), the tests in Playwright's bundled Chromium; the versions may differ, and
+each report names the browser it used.
 
 Each run leaves evidence in `.qa/` (D-09): `runs/<run-id>/` with the story, plan, report, results and
 screenshots, bug files in `bugs/<group>/` (for example `bugs/ghissue-11/`), and lessons in `lessons.md`. A run's folder is committed on its test branch,
