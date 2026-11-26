@@ -39,5 +39,5 @@ Templates are in `.claude/skills/qa-pick/templates/`. A problem entry always has
 - **Files:** never use fixed shared paths. Evidence goes to `{RUN_DIR}/artifacts/`, scratch files to `{RUN_DIR}/scratch/`.
 - **Repo work:** automated tests are written in a separate git worktree per run (`.claude/worktrees/<run-id>`), so branch checkouts and test output don't collide.
 - **Test runner:** run new tests **by file path**, so a run picks up only its own tests.
-- **Accounts:** create fresh accounts per run, so parallel runs don't collide.
+- **Accounts:** create fresh accounts per run, so parallel runs don't collide. Deleting an account can affect others: check what the next registered account inherits (some apps reuse the freed id with its balance and history). Until that is ruled out, delete accounts only in an isolated run, never in a parallel test suite.
 - **Long scripts:** start any seeding or probe script that may run longer than about a minute in the background from the start. A foreground command times out, and a rerun repeats every write the script already made.
