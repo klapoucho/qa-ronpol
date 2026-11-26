@@ -90,9 +90,11 @@ Today each project folder holds a `framework/` folder with the wiring checks. Ma
 
 - **Node.js 26**, as pinned in `.nvmrc`. With nvm: `nvm install` (once), then `nvm use`.
 - **Docker** with **Compose v2** (`docker compose`), for the app under test.
-- Only for the author's `/qa-pick` runs:
-  - [GitHub CLI](https://cli.github.com/) `gh` 2.99 or later, logged in as `klapoucho`
-    (`gh api user --jq .login` must print `klapoucho`);
+- Only for `/qa-pick` runs:
+  - [GitHub CLI](https://cli.github.com/) `gh` 2.99 or later, logged in with an account that can read
+    `klapoucho/qa-ronpol`. Assigning the issue needs triage access and attaching screenshots needs
+    write access; with read access only, the run posts a text-only summary. With several `gh`
+    accounts on one machine, pin yours in `CLAUDE.local.md` (`- GitHub account: <login>`);
   - the Playwright CLI the skills drive: `npm install -g @playwright/cli@0.1.25`.
 
 ## Running the tests
