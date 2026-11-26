@@ -7,7 +7,7 @@ These rules apply to ALL testing — UI and API, manual and automated. When chal
 ### Boundary value analysis
 - For every numeric input test: minimum, minimum-1, minimum+1, maximum, maximum-1, maximum+1.
 - For string length limits test: empty, 1 char, max length, max length+1. Build boundary strings in code and check their length before sending (`s.length === 300`): a hand-repeated alphabet is rarely the length you meant, and a wrong length looks like an app bug.
-- Compare money as numbers rounded to the currency's precision (`Math.round(x * 100)`): float sums like `5.55 + 6.66 + 40` differ from the same total added in another order.
+- Compare money as numbers rounded to the currency's precision (`Math.round(x * 100)`) when the test computes the expected amount: float sums like `5.55 + 6.66 + 40` differ from the same total added in another order. When the expected amount is a written-out literal (`16.72`) and the app is supposed to round, compare exactly: rounding in the assertion would hide a server that stops rounding (`40.17 - 23.45` is `16.720000000000002`).
 - For date ranges test: start, end, one day before start, one day after end.
 
 ### Equivalence partitioning
