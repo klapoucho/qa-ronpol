@@ -2,6 +2,7 @@
 
 Lessons applied after `/qa-pick` runs, newest first. One line per lesson, with the run id.
 
+- 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: general.md rounds money in assertions only when the test computes the expected amount, and compares a written-out literal exactly — the test reviewer flagged T4's exact `16.72` as breaking the rule, though rounding there would hide a server that stops rounding.
 - 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: tester prompt times money operations alone and in parallel and records the page's request timeout in the handoff; general.md says an app-caused flake is filed and isolated, never worked around — the writer's UI buy test failed 3/10 at 4 workers because a global ledger lock queued buys past the page's 15 s timeout, which cost two user decisions.
 - 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: handoff template asks for seed calls that must not run in parallel, write timings and large responses — the writer rediscovered the same-user field-create race and the 460 KB offers response.
 - 2026-11-26-issue-14-marketplace-buyer-buys-an-offer: unattended-runs and the tester prompt require money-moving scripts to check state before each write and save after every step — the tester's main script bought twice before crashing and a blind rerun overwrote its evidence.
