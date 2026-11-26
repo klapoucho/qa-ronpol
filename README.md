@@ -37,8 +37,9 @@ Compose, GitHub Actions. Exact versions are pinned in `package-lock.json`.
 | D-11 | Mocked UI tests in their own project, `tests/ui-mocked/`                                                       | Different contract and setup: fake auth and a network guard.                                                   |
 | D-13 | Docker locally and in CI; agents may start the app, only the author resets it                                  | Same app version everywhere; a reset during a run destroys its data.                                           |
 | D-14 | Import alias `#src/*` through `package.json` `imports`, written with the `.ts` extension                       | `tsc`, Playwright and plain Node all resolve it; no second mechanism needed.                                   |
+| D-18 | API specs group tests by operation, then status; a script measures coverage against a checked-in OpenAPI      | Coverage of the contract, not a count of green tests: what is untested, and where the docs and the app disagree. |
 
-All seventeen decisions, with the alternatives considered, are in
+All eighteen decisions, with the alternatives considered, are in
 [requirements section 12](docs/requirements.md#12-decisions).
 
 ## Project structure
@@ -52,7 +53,11 @@ Type of test first, then feature (D-04). Each folder under `tests/` is one Playw
 ├── .husky/                # git hooks: lint-staged on commit, commitlint on the message
 ├── .qa/                   # qa-pick runs, bug files, lessons (committed, except runs/*/scratch/)
 ├── docs/                  # requirements, implementation plan, test case issue texts
-├── scripts/app-reset.ts   # restores the app's base database (author only)
+│   └── api/openapi.json   # the app's OpenAPI contract, the denominator of API coverage
+├── scripts/
+│   ├── app-reset.ts       # restores the app's base database (author only)
+│   ├── api-coverage.ts    # API coverage against docs/api/openapi.json
+│   └── pr-tests.sh        # the tests a pull request needs
 ├── src/
 │   ├── api/
 │   │   ├── http/          # BaseApi: envelope handling, schema validation, typed ApiResponse
@@ -123,6 +128,7 @@ npm test
 | `npm run test:ui-mocked`               | the `ui-mocked` project                                                          |
 | `npm run test:smoke`                   | tests tagged `@smoke`                                                            |
 | `npm run report`                       | opens the last HTML report                                                       |
+| `npm run coverage:api`                 | API coverage against the OpenAPI contract, as Markdown (see Reports)             |
 | `npm run check`                        | `typecheck`, `lint`, `format:check` and `playwright test --list` (no app needed) |
 | `npm run typecheck`                    | `tsc --noEmit`                                                                   |
 | `npm run lint` / `lint:fix`            | ESLint, with or without fixes                                                    |
@@ -161,6 +167,12 @@ A new environment, such as `staging`, is one more profile plus its `BASE_URL`; t
 
 - `playwright-report/`: the HTML report, after every run. Open it with `npm run report`.
 - `test-results/`: per failed test, a screenshot and a video; a trace on the first retry (so in CI).
+- `npm run coverage:api`: API coverage against the app's OpenAPI contract (`docs/api/openapi.json`), as
+  Markdown on stdout: operations and documented responses with a test, per area, the Marketplace operation by
+  operation, and every status the tests check that the contract does not document. It reads the test list, so
+  it runs no tests. With the app up it first compares the contract with the live `/schema/openapi.json` and
+  stops on any difference; `npm run coverage:api -- --update-contract` refreshes the file after an app update.
+  CI writes the report to the run's summary page.
 - In CI: the HTML report and `reports/` (JUnit XML and the app's container log) are uploaded as workflow
   artifacts and kept for 7 days.
 
@@ -231,28 +243,34 @@ behaviour: `buyer cannot buy an offer above their balance`. Imports use the alia
 3. **Schemas:** zod schemas in `src/api/models/`, types inferred from them. Keep each endpoint's real wire
    format: the envelope `{ success, timestamp, data | error }` for most endpoints, bare objects where the app
    returns them (`/api/version`, `/api/v1/statistics`).
-4. **Data:** a factory in `src/data/factories/` that builds a valid entity with unique values; tests override
+4. **API spec layout:** tests of one endpoint's responses sit in a `test.describe` titled with the method and
+   the path as the app serves it, OpenAPI parameters kept (`POST /api/v1/marketplace/offers`,
+   `DELETE /api/v1/marketplace/offers/{offerId}`), and inside it one `test.describe` per status, ascending
+   (`'200'`, `'400'`, `'401'`, `'403'`, `'404'`). Titles inside still state the behaviour. A scenario that chains
+   several calls (a sale end to end) stays outside these groups. `npm run coverage:api` reads the groups (D-18);
+   a status the contract does not document is a contract bug to file (`testing-rules/api.md`).
+5. **Data:** a factory in `src/data/factories/` that builds a valid entity with unique values; tests override
    only what matters. Users come from the `createUser` fixture; seed further data in fixtures, and make seeding
    errors throw. Shared seeds (users, fields, funds) live in `src/fixtures/api.fixtures.ts`; a feature's own
    fixtures go in `src/fixtures/<feature>.fixtures.ts`, merged in `src/fixtures/index.ts`.
-5. **UI:** a page object per screen in `src/ui/pages/`, repeated parts as components in `src/ui/components/`.
+6. **UI:** a page object per screen in `src/ui/pages/`, repeated parts as components in `src/ui/components/`.
    They expose actions and locators, no assertions. Locators: `getByTestId`, then `getByRole` with a name,
    `getByLabel`, `getByText`; CSS only as a documented last resort, never by index. Log in with
    `createUser` + `loginAs` (cookies, no login form).
-6. **Matcher:** only when a UI check covers many fields or several sources (an offer card, a filled form).
+7. **Matcher:** only when a UI check covers many fields or several sources (an offer card, a filled form).
    Register it in `src/assertions/index.ts`; it reports every mismatching field and retries when it reads the UI.
    For plain API data, `toEqual` or `toMatchObject` on the whole object is enough; an API check across several
    sources reads them into one object in a fixture (for example `readSale`) and compares it with one `toEqual`.
-7. **Mocks:** `ui-mocked` tests get the shared page-load calls (`authorization`, `feature-flags`,
+8. **Mocks:** `ui-mocked` tests get the shared page-load calls (`authorization`, `feature-flags`,
    `/api/version`) answered already. Add a `src/mocks/handlers/<feature>.ts` for the feature's own endpoints,
    with payloads from `src/mocks/payloads/` built from the same zod schemas, in each endpoint's real wire format.
    Any `/api/` request no handler serves fails the test, with its method and path.
-8. **Cases:** parametrized cases in `<name>.params.ts` as a typed array, each with a readable title used in the
+9. **Cases:** parametrized cases in `<name>.params.ts` as a typed array, each with a readable title used in the
    test name.
-9. **Tags:** `@smoke` for the minimal set that proves the app works, `@critical` for paths that move money. Never
-   tag the level; the project says it.
-10. **Known app bug:** mark the test `test.fail()` and annotate it with a link to its file in `.qa/bugs/`.
-11. **Before the commit:** `npm run check`, then run the new test; break its expected value and one step of its
+10. **Tags:** `@smoke` for the minimal set that proves the app works, `@critical` for paths that move money. Never
+    tag the level; the project says it.
+11. **Known app bug:** mark the test `test.fail()` and annotate it with a link to its file in `.qa/bugs/`.
+12. **Before the commit:** `npm run check`, then run the new test; break its expected value and one step of its
     scenario (the poison test in `.claude/skills/testing-rules/general.md`) and confirm it fails both times.
 
 ## AI-assisted workflow

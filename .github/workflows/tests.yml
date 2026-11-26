@@ -46,6 +46,11 @@ jobs:
       - name: Run the full suite
         if: github.event_name != 'pull_request'
         run: npm test
+      # Coverage against the OpenAPI contract, on the run's summary page. A contract that differs
+      # from the running app's fails this step (scripts/api-coverage.ts).
+      - name: Report API coverage
+        if: always()
+        run: npm run --silent coverage:api >> "$GITHUB_STEP_SUMMARY"
       - name: Collect application logs
         if: always()
         run: |
