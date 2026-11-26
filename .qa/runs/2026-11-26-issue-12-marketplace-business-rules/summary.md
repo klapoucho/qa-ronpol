@@ -8,7 +8,7 @@
 | **Tested** | issue #12, no linked PR |
 | **Roles** | registered user as seller, buyer, stranger and observer (fresh accounts) · skipped: admin (no admin rule in the story), demo accounts (not allowed) |
 | **Reviewer** | GAPS CLOSED: coverage of AC-1, 2, 4, 6, 7 confirmed; added the UI create form and the session lifecycle (15 experiments, 4 broke) |
-| **Automation** | branch `test/marketplace-business-rules`: 13 API tests (1 positive + 1 negative parametrized test), stability 130/130 · PR pending |
+| **Automation** | branch `test/marketplace-business-rules`: 13 API tests (1 positive + 1 negative parametrized test), stability 130/130 · [PR #25](https://github.com/klapoucho/qa-ronpol/pull/25) |
 
 The rules as written hold for fields and animal groups: every refusal has the right status and exact message, and both balances, the offer, the item's owner and both users' histories stay unchanged. The verdict is FAIL because of what happens around those rules: two problems break AC-7 directly (3, 4), a deleted account can still buy (5), and a field name runs as script on the offer card (2).
 
@@ -158,6 +158,7 @@ The rules as written hold for fields and animal groups: every refusal has the ri
 
 - **Agents:** QA tester — Opus 5.5, default effort — exploratory API testing of five rules × two item types; QA reviewer — Opus 5.5, fresh context — coverage check and break attempts; test writer — Opus 5.5, own worktree — parametrized API spec; test reviewer — fresh context, after the writer.
 - **Lessons applied:** non-round starting balances for every actor; transfer checks before / during / after a sale for both item types; "nothing changed" includes both users' histories.
+- **Retro** ([PR #26](https://github.com/klapoucho/qa-ronpol/pull/26)): the tester now checks one boundary through the screen that sets the same rule and old tokens on money endpoints, and backs every Problems claim with its own artifact; the writer sizes the spec to the story's Test section; boundary strings are built in code with a length check and money is compared in cents; account deletion runs only in an isolated run.
 
 </details>
 

@@ -553,7 +553,7 @@
     "status": "done",
     "skip_reason": null,
     "branch": "test/marketplace-business-rules",
-    "pr_url": null
+    "pr_url": "https://github.com/klapoucho/qa-ronpol/pull/25"
   },
   "assumptions": [
     "'Letters (including Polish)' = ASCII letters + the 18 Polish letters; other scripts refused as intended",
@@ -582,5 +582,6 @@
     "writer: first version had 50 tests (every case for both item types, many boundary values); the author asked for a lean spec — trimmed to 13 (one positive, one negative parametrized test). Lesson: size T-specs to the task's '5 readable tests', not to the full manual test plan",
     "writer: commitlint flagged a body line starting `Connection: close` as a footer; reworded",
     "writer: two poison scripts needed fixes (Prettier re-wrapped a target line; await in a non-async arrow)"
-  ]
+  ],
+  "retro_pr_url": "https://github.com/klapoucho/qa-ronpol/pull/26"
 }
