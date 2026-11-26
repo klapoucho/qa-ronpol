@@ -1,7 +1,9 @@
-# Marketplace: seller lists an item (UI) — PASS WITH FINDINGS
+# Marketplace: seller lists an item (UI) — FAIL
 
 **Source:** https://github.com/klapoucho/qa-ronpol/issues/13 (no linked PR) · **Run:** 2026-11-26-issue-13-marketplace-seller-lists-an-item · **Env:** http://localhost:3000 · **Platforms:** web, installed Google Chrome 158.0.8127.88 (playwright-cli 0.1.24 default `chrome` channel, 1366×768, cookie login), API (Node fetch with `X-Synthetic-Token`) · **App version:** Rolnopol 1.126.0 (Docker `jaktestowac/rolnopol:1.126.0`) · **Date:** 2026-11-26
 **Roles tested:** registered user as seller and as another user (fresh accounts, cookie login) · **Skipped:** admin (no admin rule in the story); demo accounts (QA settings forbid them)
+
+The verdict is FAIL because two major security problems sit on the story's own flow: a field name with HTML runs as script on the offer card the seller creates (now also in My Offers), and a deleted account's token still creates fields whose live offer the next registered user inherits. Both are known bugs that this story's flow reaches; the acceptance criteria themselves pass.
 
 The Create Offer form works for both item types.
 - **Field:** a seller picked the second of two free fields, entered 12.34 and a Polish description, and got "Offer created successfully!". The form reset, and the card showed in My Offers with the name, price, description and an enabled Cancel button.

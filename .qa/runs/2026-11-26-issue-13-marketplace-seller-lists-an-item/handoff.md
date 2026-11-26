@@ -1,6 +1,6 @@
 # Marketplace: seller lists an item (UI) — handoff to the test writer
 
-**Run:** 2026-11-26-issue-13-marketplace-seller-lists-an-item · **Env:** http://localhost:3000 · **App version:** Rolnopol 1.126.0 (Docker `jaktestowac/rolnopol:1.126.0`) · **Verdict:** PASS WITH FINDINGS — the Create Offer form lists a field or an animal group, shows "Offer created successfully!", the offer appears in My Offers and in another user's Browse (not in the seller's). The findings are around the flow: no double-submit guard, already-listed items still offered in the dropdown, a long word in a description breaks the page width, the known field-name XSS.
+**Run:** 2026-11-26-issue-13-marketplace-seller-lists-an-item · **Env:** http://localhost:3000 · **App version:** Rolnopol 1.126.0 (Docker `jaktestowac/rolnopol:1.126.0`) · **Verdict:** FAIL (two major security problems on the flow, both known bugs) — the Create Offer form lists a field or an animal group, shows "Offer created successfully!", the offer appears in My Offers and in another user's Browse (not in the seller's). The findings are around the flow: no double-submit guard, already-listed items still offered in the dropdown, a long word in a description breaks the page width, the known field-name XSS.
 
 ## Seed recipe
 - Scripts (all in `{RUN_DIR}/scratch/`):

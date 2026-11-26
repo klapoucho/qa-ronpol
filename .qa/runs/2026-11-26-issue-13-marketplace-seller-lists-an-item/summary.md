@@ -1,5 +1,5 @@
 <!-- qa-pick summary · run 2026-11-26-issue-13-marketplace-seller-lists-an-item -->
-## 🧪 QA: Marketplace: seller lists an item (UI) — ⚠️ PASS WITH FINDINGS
+## 🧪 QA: Marketplace: seller lists an item (UI) — ❌ FAIL
 
 | | |
 |---|---|
@@ -10,7 +10,7 @@
 | **Reviewer** | GAPS CLOSED: PASS for AC-1 and AC-3 confirmed with read-back evidence; added the logged-out gate, another user's item, the full allowed character set, phone width and the empty state (14 experiments, 5 broke) |
 | **Automation** | branch `test/ui-seller-lists-item`: one UI test for T3 (U1), stability 10/10 + slow network, 8/8 poisons caught · [PR #28](https://github.com/klapoucho/qa-ronpol/pull/28) |
 
-Creating an offer works through the UI for both item types. A seller picks a field, enters a price and a Polish description, and gets "Offer created successfully!". The offer appears in My Offers, is stored exactly as typed, and shows in other users' Browse but not in the seller's own. Wrong input is refused with a readable message, and the form keeps its values. The problems are around those criteria. Two of them are major, both known bugs with a wider reach. The rest are minor UX and layout issues.
+The verdict is FAIL because two major security problems sit on the story's own flow: a field name with HTML runs as script on the offer card the seller creates (now also in My Offers), and a deleted account's token still creates fields whose live offer the next registered user inherits. Both are known bugs that this story's flow reaches; the acceptance criteria themselves pass. Creating an offer works through the UI for both item types. A seller picks a field, enters a price and a Polish description, and gets "Offer created successfully!". The offer appears in My Offers, is stored exactly as typed, and shows in other users' Browse but not in the seller's own. Wrong input is refused with a readable message, and the form keeps its values. The rest of the problems are minor UX and layout issues.
 
 ### Problems
 
