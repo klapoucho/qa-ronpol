@@ -10,6 +10,8 @@ export const offerInputSchema = z.object({
   description: z.string().optional(),
 });
 export type OfferInput = z.infer<typeof offerInputSchema>;
+/** A field or an animal group, as an offer refers to it. */
+export type OfferItem = Pick<OfferInput, 'itemType' | 'itemId'>;
 
 // Browse and My Offers add `details` and `sellerLabel` to each offer; they are not modelled.
 export const offerSchema = offerInputSchema.extend({
@@ -34,6 +36,10 @@ export const createOfferEnvelopeSchema = successEnvelope(
 )
   .extend({ message: z.union([z.string(), z.number()]).optional() })
   .transform((envelope) => envelope.data);
+
+// DELETE /api/v1/marketplace/offers/{offerId}: the message sits inside `data`, while the OpenAPI
+// spec puts it at the top level (.qa/bugs/ghissue-12/post-api-marketplace-offers--openapi-write-ops-differ.md).
+export const cancelOfferResultSchema = z.object({ message: z.string() });
 
 export const marketplaceTransactionSchema = z.object({
   id: z.number().int(),

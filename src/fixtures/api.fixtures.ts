@@ -1,12 +1,15 @@
 import { test as base } from '@playwright/test';
+import { AnimalsApi } from '#src/api/clients/animals-api.ts';
 import { AuthApi } from '#src/api/clients/auth-api.ts';
 import { FieldsApi } from '#src/api/clients/fields-api.ts';
 import { FinancialApi } from '#src/api/clients/financial-api.ts';
 import type { ApiResponse } from '#src/api/http/api-response.ts';
 import type { ApiClientClass, BaseApi } from '#src/api/http/base-api.ts';
+import type { Animal, AnimalInput } from '#src/api/models/animal.ts';
 import type { Field, FieldInput } from '#src/api/models/field.ts';
 import type { FinancialTransaction } from '#src/api/models/financial.ts';
 import type { User, UserInput } from '#src/api/models/user.ts';
+import { buildAnimal } from '#src/data/factories/animal.factory.ts';
 import { buildField } from '#src/data/factories/field.factory.ts';
 import { buildIncome } from '#src/data/factories/income.factory.ts';
 import { buildUser } from '#src/data/factories/user.factory.ts';
@@ -16,12 +19,14 @@ export type ApiAs = <T extends BaseApi>(Client: ApiClientClass<T>, user?: { toke
 export type TestUser = { input: UserInput; id: User['id']; token: string; loginTime: string };
 export type CreateUser = (overrides?: Partial<UserInput>) => Promise<TestUser>;
 export type CreateField = (owner: TestUser, overrides?: Partial<FieldInput>) => Promise<Field>;
+export type CreateAnimal = (owner: TestUser, overrides?: Partial<AnimalInput>) => Promise<Animal>;
 export type FundUser = (user: TestUser, amount: number) => Promise<FinancialTransaction>;
 
 type ApiFixtures = {
   apiAs: ApiAs;
   createUser: CreateUser;
   createField: CreateField;
+  createAnimal: CreateAnimal;
   fundUser: FundUser;
 };
 
@@ -55,6 +60,12 @@ export const test = base.extend<ApiFixtures>({
     await use(async (owner, overrides) => {
       const input = buildField(overrides);
       return seeded(await apiAs(FieldsApi, owner).create(input), `create field for user ${owner.id}`);
+    });
+  },
+  createAnimal: async ({ apiAs }, use) => {
+    await use(async (owner, overrides) => {
+      const input = buildAnimal(overrides);
+      return seeded(await apiAs(AnimalsApi, owner).create(input), `create animals for user ${owner.id}`);
     });
   },
   fundUser: async ({ apiAs }, use) => {

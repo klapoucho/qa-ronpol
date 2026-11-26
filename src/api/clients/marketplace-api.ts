@@ -1,6 +1,7 @@
 import { BaseApi } from '#src/api/http/base-api.ts';
 import {
   buyResultSchema,
+  cancelOfferResultSchema,
   createOfferEnvelopeSchema,
   marketplaceTransactionListSchema,
   offerListSchema,
@@ -19,7 +20,16 @@ export class MarketplaceApi extends BaseApi {
 
   // The schema unwraps the envelope itself because of the numeric `message` bug (see the schema).
   createOffer(input: OfferInput) {
-    return this.post('marketplace/offers', input, createOfferEnvelopeSchema, { envelope: false });
+    return this.createOfferUnchecked(input);
+  }
+
+  /** Sends the body as is, for refusal tests that need a value `OfferInput` does not allow. */
+  createOfferUnchecked(body: Record<string, unknown>) {
+    return this.post('marketplace/offers', body, createOfferEnvelopeSchema, { envelope: false });
+  }
+
+  cancel(offerId: number) {
+    return this.delete(`marketplace/offers/${offerId}`, cancelOfferResultSchema);
   }
 
   buy(offerId: number) {
