@@ -21,10 +21,24 @@ export class MarketplacePage {
   readonly confirmation: ConfirmationModal;
   /** Transaction History entries, newest first; rendered while the tab is hidden too. */
   readonly transactions: Locator;
+  /** Browse's cards on the current page. */
+  readonly browseCards: Locator;
+  /**
+   * What Browse shows in place of cards: "No offers available" for an empty list, "Failed to load
+   * offers" with a warning icon for an answer the page cannot read. No test id or role, so CSS.
+   */
+  readonly browseMessage: Locator;
+  /** Browse's pagination buttons in order: "« Prev", up to 5 page numbers, "Next »". */
+  readonly browsePageButtons: Locator;
+  readonly browsePrev: Locator;
+  readonly browseNext: Locator;
+  /** The highlighted page number; marked only by the class "active" (no aria-current), so CSS. */
+  readonly browseCurrentPage: Locator;
   private readonly tabs: Locator;
   private readonly createForm: Locator;
   private readonly myOffers: Locator;
   private readonly browseOffers: Locator;
+  private readonly browsePagination: Locator;
 
   constructor(private readonly page: Page) {
     this.notifications = page.getByRole('alert');
@@ -35,6 +49,14 @@ export class MarketplacePage {
     this.createForm = page.locator('#createOfferForm');
     this.myOffers = page.locator('#myOffers');
     this.browseOffers = page.locator('#browseOffers');
+    this.browseCards = this.browseOffers.locator('.offer-card');
+    this.browseMessage = this.browseOffers.locator('.empty-state');
+    // Rebuilt on every page change; locators re-resolve, element handles would go stale.
+    this.browsePagination = page.locator('#offersPagination');
+    this.browsePageButtons = this.browsePagination.getByRole('button');
+    this.browseCurrentPage = this.browsePagination.locator('button.active');
+    this.browsePrev = this.browsePageButton('« Prev');
+    this.browseNext = this.browsePageButton('Next »');
   }
 
   /**
@@ -52,6 +74,19 @@ export class MarketplacePage {
       this.loaded('/api/v1/marketplace/offers'),
       this.page.goto('/marketplace.html'),
     ]);
+  }
+
+  /**
+   * Opens the page without waiting for its data, for a mocked API whose answer may be an error.
+   * Browse shows "Loading offers..." until the offers are handled: assert the state you expect.
+   */
+  async open(): Promise<void> {
+    await this.page.goto('/marketplace.html');
+  }
+
+  /** One Browse pagination button by its exact name, such as a page number. */
+  browsePageButton(name: string): Locator {
+    return this.browsePagination.getByRole('button', { name, exact: true });
   }
 
   /** Fills Create Offer with the seller's own item and submits it once. */
