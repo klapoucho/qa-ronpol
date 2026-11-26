@@ -1,6 +1,6 @@
 ---
 name: qa-pick
-description: Autonomous QA run for one story given after the command as free text or as a GitHub issue number — a coordinator starts an unattended QA tester agent, then a fresh QA reviewer that checks coverage and tries to break the feature, publishes a testing summary, then a separate test-writer agent and a fresh-context test reviewer, and ends with bug-KB updates and applied lessons. Use when the user types "/qa-pick <story text>" or "/qa-pick <issue number>", or says "follow up on <run-id>" for a run started this way.
+description: Autonomous QA run for one story given after the command as free text or as a GitHub issue number — a coordinator starts an unattended QA tester agent, then a fresh QA reviewer that checks coverage and tries to break the feature, posts a testing summary as a comment on the issue, then a separate test-writer agent and a fresh-context test reviewer, and ends with bug-KB updates and applied lessons. Use when the user types "/qa-pick <story text>" or "/qa-pick <issue number>", or says "follow up on <run-id>" for a run started this way.
 ---
 
 # QA Pick — coordinator for autonomous QA runs
@@ -128,8 +128,19 @@ When it finishes, make sure `review.md` is in the run folder and merge its outpu
 
 1. Every finding → a bug file `.qa/bugs/<area>--<slug>.md` from `templates/bug.md` (all severities; `source: own: <run-id>`), and its path into `findings[].bug_file` in `results.json`. Only the coordinator files bugs. Update `last_checked` on known bugs the tester or reviewer re-checked.
 2. Sanity-check the report against `references/vision.md`: short, user-facing, every problem has steps / expected / actual / evidence / env. Fix it if not.
-3. Write `{RUN_DIR}/summary.md`: verdict, env, roles covered, problems (with evidence paths), the test-case table (reviewer experiments marked), the reviewer's coverage verdict, not-verified items, and an **Automation** line (`writing tests` or `skipped — <reason>`). Problems first; keep it short. If the Artifact tool is available, also publish it as a page (load `artifact-design` first) and republish the same page on every update.
-4. Tell the user in chat: verdict, reviewer verdict, top problems (one line each), summary path or link, and that tests are being written.
+3. Write `{RUN_DIR}/summary.md` from `templates/summary.md` (GitHub-flavoured Markdown; follow the comments in it): verdict, env, roles covered, the reviewer's coverage verdict, an **Automation** line (`writing tests` or `skipped — <reason>`), problems with their key screenshots, not-verified items, and the test-case table (reviewer experiments marked) and run notes folded in `<details>`. Problems first; keep it short. Never publish it as an Artifact or any other hosted page: it goes on the issue (step 4) or stays in the run folder.
+4. **Post it on the issue** (issue path only; with story text, skip this step and the summary stays local). Start the §6 writer first: it never waits for this step.
+   - Before posting: re-check the account (`gh api user --jq .login`, as in §1). Grep `summary.md` for `token`, `password` and `Bearer` and remove live values. Look at every image you attach: no token, password or personal data on it. `wc -c summary.md` must stay under 60000 (GitHub's limit is 65536): if it doesn't, shorten the test-case table. At most ~10 images, each under 10 MB.
+   - Ask the user before posting, unless the project's `CLAUDE.md` allows `/qa-pick` to comment on the issue it tests.
+   - Post from the run folder, one `--attach` per image the body references, the path written exactly as in the body:
+     ```bash
+     cd {RUN_DIR} && gh issue comment <N> --repo <repo> --body-file summary.md \
+       --attach ./artifacts/<file>.png --attach ./artifacts/review/<file>.png
+     ```
+     `gh` prints the comment URL (`…#issuecomment-<id>`): save it as `summary_comment_url` in `results.json`.
+   - Read the posted body back (`gh api repos/<repo>/issues/comments/<id> --jq .body`) and write it over `summary.md`, so the local copy keeps the uploaded image URLs and updates need no re-upload. Every image must now point at `https://github.com/user-attachments/…`. A reference still reading `./artifacts/…` did not match its `--attach` path: upload it again and edit the comment.
+   - **Updating the comment** (§6, §7, follow-ups): edit `summary.md`, then `gh api -X PATCH repos/<repo>/issues/comments/<id> -F body=@summary.md`. Always the same comment, never a new one. The account check, the grep and the approval rule apply to every update. An image added later needs its own `gh issue comment … --attach`, so do that only when the reader must see it; otherwise cite its path.
+5. Tell the user in chat: verdict, reviewer verdict, top problems (one line each), the comment link (story text: the `summary.md` path), and that tests are being written.
 
 ## 6. Test writer + test reviewer
 
@@ -148,7 +159,7 @@ Then `SendMessage` the writer with the reviewer's reply: fix what can be fixed, 
 
 - **Commit the run evidence** to the test branch: copy `{RUN_DIR}` without `scratch/`, and the bug files this run created or updated, into the worktree at the same paths. Update `report.md`, `results.json` and `summary.md` with the branch first. Grep the copy for `token`, `password` and `Bearer`, judge each hit (prose mentions of the words are fine) and remove live values. Commit as `docs(qa): add qa-pick run <run-id>`.
 - **ask the user** before pushing the branch and opening the PR (title in the repo's commit format, body: test intent card + **Decisions for the reviewer** — the reviewer's open points, or "none"). Push and open it only after a yes, and follow the repo's own rules for PRs and AI attribution.
-- update `report.md` (Automation section), `results.json` (`automation`: `done`, branch, pr_url; append the writer's `struggles` prefixed `writer:`) and `summary.md`
+- update `report.md` (Automation section), `results.json` (`automation`: `done`, branch, pr_url; append the writer's `struggles` prefixed `writer:`) and `summary.md`, then update the issue comment (§5 step 4)
 - tell the user: branch / PR link + decisions needing them (one line each)
 
 ## 7. Retro — apply lessons
@@ -160,7 +171,7 @@ Read `struggles` in `results.json` (tester, reviewer and writer; ask the agent i
 - review gaps (what the reviewer had to close) → improve the tester prompt above, `testing-rules` or the `qa-review` checklist
 - handoff gaps (the writer had to rediscover something) → improve `templates/handoff.md` or the tester prompt
 - skill or rule edits go on their own branch, one coherent commit per run, and reach the main branch only through a PR — ask before pushing
-- log every applied lesson as one line at the top of `.qa/lessons.md` and list them in `summary.md`
+- log every applied lesson as one line at the top of `.qa/lessons.md` and list them in `summary.md` (and update the issue comment, §5 step 4)
 
 ## 8. Final evidence and clean-up
 
@@ -173,7 +184,7 @@ d. Remove the run's worktree (`git worktree remove`) only after its branch is pu
 
 ## Follow-ups
 
-"Follow up on <run-id>: <what>" → if §8 already ran, restore the run first: put the committed run files and bug files back into the main checkout from the run's branch (`git restore --source=<branch> -- .qa/runs/<run-id> <bug files>`; `scratch/` was never removed), and re-add the worktree if §8d removed it (`git worktree add .claude/worktrees/<run-id> <branch>`). If that branch is already merged, pull the main branch instead and commit the follow-up's evidence through §8b. Then route it to the right agent: more manual testing → the tester, "try to break X" → the reviewer, test changes → the writer. If that agent is still reachable, `SendMessage` it; otherwise start a new one with the same prompt plus "Previous report: `{RUN_DIR}/report.md` — read it first; this run only covers: <request>". Results append to `report.md` under a dated "Follow-up" heading and `summary.md` is updated. After a follow-up, re-run §8a or §8b.
+"Follow up on <run-id>: <what>" → if §8 already ran, restore the run first: put the committed run files and bug files back into the main checkout from the run's branch (`git restore --source=<branch> -- .qa/runs/<run-id> <bug files>`; `scratch/` was never removed), and re-add the worktree if §8d removed it (`git worktree add .claude/worktrees/<run-id> <branch>`). If that branch is already merged, pull the main branch instead and commit the follow-up's evidence through §8b. Then route it to the right agent: more manual testing → the tester, "try to break X" → the reviewer, test changes → the writer. If that agent is still reachable, `SendMessage` it; otherwise start a new one with the same prompt plus "Previous report: `{RUN_DIR}/report.md` — read it first; this run only covers: <request>". Results append to `report.md` under a dated "Follow-up" heading, and `summary.md` and the issue comment (§5 step 4) are updated. After a follow-up, re-run §8a or §8b.
 
 ## External bugs
 
