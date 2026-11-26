@@ -11,19 +11,19 @@ On the normal path AC-4 and AC-5 hold for fields and animals: the price, the ite
 
 | # | Severity | Problem | Bug file | Evidence |
 |---|---|---|---|---|
-| R-1 | major | Seller deletes the field while a buy runs → buyer charged, no field (5/6) | `.qa/bugs/ghissue-11/api-marketplace-buy--field-deleted-during-buy.md` | `artifacts/review/E5-…round1.json`, `…round2.json` |
-| R-2 | major | Listed field/animal can be edited; buyer pays the listed price for the edited item | `.qa/bugs/ghissue-11/api-marketplace-offers--item-edited-after-listing.md` | `artifacts/review/E4-item-edited-after-listing.json` |
-| R-3 | major | Any user can attach animals/staff to another user's field, blocking its sale | `.qa/bugs/ghissue-11/api-fields-ownership--non-owner-attaches-animals-and-staff.md` | `artifacts/review/E3b-…json` |
-| R-4 | major | Non-owner `DELETE /fields/:id` → 200 and wipes the owner's staff assignments | `.qa/bugs/ghissue-11/api-fields-ownership--non-owner-delete-wipes-assignments.md` | `artifacts/review/E3c-…json` |
-| 1 | minor | Create offer → HTTP 200 with `"message": 201` instead of 201 | `.qa/bugs/ghissue-11/api-marketplace-offers--create-offer-status-in-message.md` | `artifacts/01-happy-buy-response.json` |
-| 2 | minor | Malformed JSON → 500 instead of 400 (app-wide) | `.qa/bugs/ghissue-11/api-app-input--malformed-json-500.md` | `artifacts/15b-…json` |
-| 3 | minor | `offerId` as a string → 404 for an active offer | `.qa/bugs/ghissue-11/api-marketplace-buy--string-offer-id-404.md` | `artifacts/15-invalid-offer-ids.json` |
-| 4 | minor | Invalid token → 403 instead of 401 | `.qa/bugs/ghissue-11/api-auth-token--invalid-token-403.md` | `artifacts/16-buy-without-auth.json` |
-| R-5 | minor | Seller adds animals during a buy → buyer gets an encumbered field | `.qa/bugs/ghissue-11/api-marketplace-buy--animals-added-during-buy.md` | `artifacts/review/E6-…json` |
-| R-6 | minor | Cancel during a buy says "cancelled", the offer is sold anyway | `.qa/bugs/ghissue-11/api-marketplace-offers--cancel-during-buy-still-sold.md` | `artifacts/review/E7-…json` |
-| R-7 | minor | Seller's staff assignment stays on the buyer's field after a sale | `.qa/bugs/ghissue-11/api-marketplace-buy--seller-assignment-survives-sale.md` | `artifacts/review/E3-…json` |
-| 5 | cosmetic | `offerId: 0` → "Missing required field" | `.qa/bugs/ghissue-11/api-marketplace-buy--offer-id-zero-message.md` | `artifacts/15-invalid-offer-ids.json` |
-| 6 | cosmetic | OpenAPI shape of the marketplace history is wrong | `.qa/bugs/ghissue-11/api-marketplace-docs--openapi-history-shape.md` | `artifacts/05-happy-marketplace-history.json` |
+| R-1 | major | Seller deletes the field while a buy runs → buyer charged, no field (5/6) | `.qa/bugs/ghissue-11/post-api-marketplace-buy--field-deleted-during-buy.md` | `artifacts/review/E5-…round1.json`, `…round2.json` |
+| R-2 | major | Listed field/animal can be edited; buyer pays the listed price for the edited item | `.qa/bugs/ghissue-11/put-api-marketplace-offers--item-edited-after-listing.md` | `artifacts/review/E4-item-edited-after-listing.json` |
+| R-3 | major | Any user can attach animals/staff to another user's field, blocking its sale | `.qa/bugs/ghissue-11/post-api-fields-ownership--non-owner-attaches-animals-and-staff.md` | `artifacts/review/E3b-…json` |
+| R-4 | major | Non-owner `DELETE /fields/:id` → 200 and wipes the owner's staff assignments | `.qa/bugs/ghissue-11/delete-api-fields-ownership--non-owner-delete-wipes-assignments.md` | `artifacts/review/E3c-…json` |
+| 1 | minor | Create offer → HTTP 200 with `"message": 201` instead of 201 | `.qa/bugs/ghissue-11/post-api-marketplace-offers--create-offer-status-in-message.md` | `artifacts/01-happy-buy-response.json` |
+| 2 | minor | Malformed JSON → 500 instead of 400 (app-wide) | `.qa/bugs/ghissue-11/post-api-app-input--malformed-json-500.md` | `artifacts/15b-…json` |
+| 3 | minor | `offerId` as a string → 404 for an active offer | `.qa/bugs/ghissue-11/post-api-marketplace-buy--string-offer-id-404.md` | `artifacts/15-invalid-offer-ids.json` |
+| 4 | minor | Invalid token → 403 instead of 401 | `.qa/bugs/ghissue-11/post-api-auth-token--invalid-token-403.md` | `artifacts/16-buy-without-auth.json` |
+| R-5 | minor | Seller adds animals during a buy → buyer gets an encumbered field | `.qa/bugs/ghissue-11/post-api-marketplace-buy--animals-added-during-buy.md` | `artifacts/review/E6-…json` |
+| R-6 | minor | Cancel during a buy says "cancelled", the offer is sold anyway | `.qa/bugs/ghissue-11/delete-api-marketplace-offers--cancel-during-buy-still-sold.md` | `artifacts/review/E7-…json` |
+| R-7 | minor | Seller's staff assignment stays on the buyer's field after a sale | `.qa/bugs/ghissue-11/post-api-marketplace-buy--seller-assignment-survives-sale.md` | `artifacts/review/E3-…json` |
+| 5 | cosmetic | `offerId: 0` → "Missing required field" | `.qa/bugs/ghissue-11/post-api-marketplace-buy--offer-id-zero-message.md` | `artifacts/15-invalid-offer-ids.json` |
+| 6 | cosmetic | OpenAPI shape of the marketplace history is wrong | `.qa/bugs/ghissue-11/get-api-marketplace-docs--openapi-history-shape.md` | `artifacts/05-happy-marketplace-history.json` |
 
 Full steps, expected and actual for each: `report.md`.
 

@@ -25,7 +25,7 @@ export type Offer = z.infer<typeof offerSchema>;
 // GET /api/v1/marketplace/offers and GET /api/v1/marketplace/my-offers
 export const offerListSchema = z.object({ offers: z.array(offerSchema), total: z.number().int() });
 
-// Bug .qa/bugs/ghissue-11/api-marketplace-offers--create-offer-status-in-message.md:
+// Bug .qa/bugs/ghissue-11/post-api-marketplace-offers--create-offer-status-in-message.md:
 // POST /marketplace/offers answers HTTP 200 with a numeric top-level `message` (201), which the
 // shared envelope rejects. This schema reads the whole envelope, accepts a string or a number
 // there, and returns `data`, so the call keeps working once the bug is fixed.
