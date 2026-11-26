@@ -1,347 +1,137 @@
 # qa-ronpol
 
 A test automation framework for [Rolnopol](https://github.com/jaktestowac/rolnopol), built with Playwright and
-TypeScript as a recruitment task ([original task](docs/requirements-original.md), Polish).
+TypeScript as a recruitment task ([original task](docs/requirements-original.md), in Polish).
 
-## What this is
+It tests one Rolnopol feature, the **Marketplace** (users sell fields and animals to each other for ROL, the
+in-app currency), on three levels: the API, the UI on the real backend, and the UI on a mocked API.
 
-The framework tests one Rolnopol feature, the **Marketplace** (users sell fields and animals to each other for
-ROL), on three levels: the API, the UI against the real backend, and the UI against a mocked API. It is built to
-grow: a new feature or test means new files in known places, not a restructure. Every test creates its own users
-and data through the API, so the suite runs fully in parallel without database resets.
+## The five tests
 
-**Status: the framework is built (Phase A); the Marketplace tests are being written (Phase B).** The framework,
-the Docker setup, CI and the AI-assisted QA workflow are in place, with framework checks that prove the wiring
-(`tests/*/framework/`). The five Marketplace tests (T1–T5) are written one `/qa-pick` run each (see
-[AI-assisted workflow](#ai-assisted-workflow)): T1–T4 are done, T5 is the last.
+| #   | Level       | Scenario                                                                 | Spec                                                                                         |
+| --- | ----------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
+| T1  | API         | A sale between two users: money, ownership, offer status, both histories | [tests/api/marketplace/sale.spec.ts](tests/api/marketplace/sale.spec.ts)                     |
+| T2  | API         | Business rules: what the Marketplace accepts and refuses (data-driven)   | [tests/api/marketplace/business-rules.spec.ts](tests/api/marketplace/business-rules.spec.ts) |
+| T3  | UI          | A seller lists a field in the Create Offer form                          | [tests/ui/marketplace/create-offer.spec.ts](tests/ui/marketplace/create-offer.spec.ts)       |
+| T4  | UI          | A buyer buys an offer in Browse                                          | [tests/ui/marketplace/buy-offer.spec.ts](tests/ui/marketplace/buy-offer.spec.ts)             |
+| T5  | UI on mocks | Browse renders what the API returns: cards, pages, empty list, a 500     | [tests/ui-mocked/marketplace/browse.spec.ts](tests/ui-mocked/marketplace/browse.spec.ts)     |
 
-The full requirements, with IDs (`FR-xx`, `NFR-xx`, `D-xx`) that commits and PRs refer to, are in
-[docs/requirements.md](docs/requirements.md). This README summarises them.
-
-## Tech stack and decisions
-
-Node.js 26 LTS, Playwright Test 1.65, TypeScript 6.0 (native ES modules, ES2025, `strict`), zod 4, faker 10, ESLint
-10 with `typescript-eslint` and `eslint-plugin-playwright`, Prettier, Husky with lint-staged and commitlint, Docker
-Compose, GitHub Actions. Exact versions are pinned in `package-lock.json`.
-
-| ID   | Decision                                                                                                       | Why                                                                                                            |
-| ---- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| D-01 | Tests run against `BASE_URL`; the framework does not start the app. A Docker Compose setup for 1.126.0 ships with it. | The framework stays independent of how the app is hosted; the image pins the version.                          |
-| D-02 | TypeScript 6.0, not 7.0                                                                                        | `typescript-eslint` does not support 7.x yet.                                                                  |
-| D-03 | ESLint + Prettier, not Biome                                                                                   | Biome has no Playwright rules; a missing `await` before `expect` is the most common Playwright bug.            |
-| D-04 | `tests/<type>/<feature>/`                                                                                      | The type maps 1:1 to a Playwright project (browser, auth and network setup differ), and CI can run one alone. |
-| D-05 | Per-test data through the API; DB reset only on request, once, in global setup                                 | Resets between tests break parallel runs; shared data couples tests.                                           |
-| D-06 | Known app bugs: `test.fail()` with a link to the bug file                                                      | The suite stays green while the bug stays visible; Playwright flags the test when the bug is fixed.            |
-| D-07 | Parametrized cases in typed `.params.ts` files                                                                 | Type checking, factories and editor hints; JSON only if non-developers edit cases.                             |
-| D-08 | zod schemas shared by API clients and mock payloads                                                            | A contract change breaks compilation or validation instead of letting a mock drift.                            |
-| D-11 | Mocked UI tests in their own project, `tests/ui-mocked/`                                                       | Different contract and setup: fake auth and a network guard.                                                   |
-| D-13 | Docker locally and in CI; agents may start the app, only the author resets it                                  | Same app version everywhere; a reset during a run destroys its data.                                           |
-| D-14 | Import alias `#src/*` through `package.json` `imports`, written with the `.ts` extension                       | `tsc`, Playwright and plain Node all resolve it; no second mechanism needed.                                   |
-| D-18 | API specs group tests by operation, then status; a script measures coverage against a checked-in OpenAPI      | Coverage of the contract, not a count of green tests: what is untested, and where the docs and the app disagree. |
-
-All eighteen decisions, with the alternatives considered, are in
-[requirements section 12](docs/requirements.md#12-decisions).
-
-## Project structure
-
-Type of test first, then feature (D-04). Each folder under `tests/` is one Playwright project; the only exception
-is `ui-ledger`, which runs the `@ledger` tests of `tests/ui/` on their own (see [the app's money queue](#the-app-under-test)).
-
-```text
-.
-├── .claude/skills/        # qa-pick workflow skills and testing rules (committed for reviewers)
-├── .github/workflows/     # CI: checks, then the tests a pull request needs; the full suite on main
-├── .husky/                # git hooks: lint-staged on commit, commitlint on the message
-├── .qa/                   # qa-pick runs, bug files, lessons (committed, except runs/*/scratch/)
-├── docs/                  # requirements, implementation plan, test case issue texts
-│   └── api/openapi.json   # the app's OpenAPI contract, the denominator of API coverage
-├── scripts/
-│   ├── app-reset.ts       # restores the app's base database (author only)
-│   ├── api-coverage.ts    # API coverage against docs/api/openapi.json
-│   └── pr-tests.sh        # the tests a pull request needs
-├── src/
-│   ├── api/
-│   │   ├── http/          # BaseApi: envelope handling, schema validation, typed ApiResponse
-│   │   ├── clients/       # one client per API resource (AuthApi, UsersApi, HealthApi, DebugApi)
-│   │   └── models/        # zod schemas and the types inferred from them
-│   ├── ui/
-│   │   ├── pages/         # one page object per screen (ProfilePage)
-│   │   ├── components/    # repeated UI parts (added with the first feature that needs them)
-│   │   └── session.ts     # the login cookies the app sets, built from an API token
-│   ├── assertions/        # custom matchers (expect.extend), e.g. toShowFields
-│   ├── mocks/
-│   │   ├── mock-api.ts    # routes every /api/ request; records the ones no handler serves
-│   │   ├── handlers/      # shared.ts (every page) and one file per feature
-│   │   └── payloads/      # payload builders typed by the zod schemas
-│   ├── data/              # factories (data/factories/) and run-unique values
-│   ├── fixtures/          # Playwright fixtures; index.ts exports test and expect
-│   └── config/            # env schema (zod), profiles per TEST_ENV, loader
-├── tests/
-│   ├── api/               # project api: no browser
-│   ├── ui/                # project ui: Chromium, real backend
-│   ├── ui-mocked/         # project ui-mocked: Chromium, mocked API, network guard
-│   └── global-setup.ts    # app reachable? expected version? optional DB reset
-├── compose.yaml           # Rolnopol 1.126.0 container with a healthcheck
-├── playwright.config.ts
-├── eslint.config.js
-├── tsconfig.json
-├── .env.example
-└── package.json
-```
-
-Each project folder holds a `framework/` folder with the wiring checks. Marketplace tests go into
-`tests/{api,ui,ui-mocked}/marketplace/`.
-
-## Prerequisites
-
-- **Node.js 26**, as pinned in `.nvmrc`. With nvm: `nvm install` (once), then `nvm use`.
-- **Docker** with **Compose v2** (`docker compose`), for the app under test.
-- Only for `/qa-pick` runs:
-  - [GitHub CLI](https://cli.github.com/) `gh` 2.99 or later, logged in with an account that can read
-    `klapoucho/qa-ronpol`. Assigning the issue and setting its status need triage access, and attaching
-    screenshots needs write access; with read access only, the run posts a text-only summary. With several `gh`
-    accounts on one machine, pin yours in `CLAUDE.local.md` (`- GitHub account: <login>`);
-  - the Playwright CLI the skills drive, at its current version: `npm install -g @playwright/cli`. Nothing pins
-    it or its browser; reports and `.qa/notes/playwright-cli.md` record the versions a run used.
+T2 and T5 run once per case, so the runner lists more than five tests. The specs in `tests/*/framework/` are
+not business tests: they check the framework's own wiring (login through cookies, the mock layer, factories).
 
 ## Running the tests
 
-From a fresh clone:
+You need **Node.js 26** (pinned in `.nvmrc`) and **Docker** with Compose v2 for the app under test.
 
 ```bash
 git clone https://github.com/klapoucho/qa-ronpol.git
 cd qa-ronpol
-nvm use                                       # Node 26 from .nvmrc
+nvm use                                       # Node 26 from .nvmrc (nvm install, the first time)
 npm ci
 npx playwright install --with-deps chromium
-npm run app:up                                # starts Rolnopol 1.126.0 and waits until it is healthy
+npm run app:up                                # starts Rolnopol 1.126.0 in Docker and waits until it is healthy
 npm test
+npm run report                                # opens the HTML report
 ```
 
-`npm run check` runs the static checks without the app (CI runs it before the tests).
+Every test creates its own users and data through the API, so the suite runs in parallel and needs no database
+reset. The whole suite takes about a minute.
 
-### npm scripts
+| Script                                            | What it does                                                    |
+| ------------------------------------------------- | --------------------------------------------------------------- |
+| `npm test`                                        | the whole suite                                                 |
+| `npm run test:api` / `test:ui` / `test:ui-mocked` | one level                                                       |
+| `npm run test:smoke`                              | tests tagged `@smoke`                                           |
+| `npm run check`                                   | type check, ESLint, Prettier and a test listing (no app needed) |
+| `npm run app:up` / `app:down` / `app:logs`        | start, stop or follow the app container                         |
 
-| Script                                 | What it does                                                                     |
-| -------------------------------------- | -------------------------------------------------------------------------------- |
-| `npm test`                             | all projects; `ui-ledger` after `api` and `ui`, one test at a time               |
-| `npm run test:api`                     | the `api` project                                                                |
-| `npm run test:ui`                      | the `ui` project, without the `@ledger` tests                                    |
-| `npm run test:ui-mocked`               | the `ui-mocked` project                                                          |
-| `npm run test:ui-ledger`               | the `ui-ledger` project alone (the `@ledger` tests), without the projects first  |
-| `npm run test:smoke`                   | tests tagged `@smoke`                                                            |
-| `npm run report`                       | opens the last HTML report                                                       |
-| `npm run coverage:api`                 | API coverage against the OpenAPI contract, as Markdown (see Reports)             |
-| `npm run check`                        | `typecheck`, `lint`, `format:check` and `playwright test --list` (no app needed) |
-| `npm run typecheck`                    | `tsc --noEmit`                                                                   |
-| `npm run lint` / `lint:fix`            | ESLint, with or without fixes                                                    |
-| `npm run format` / `format:check`      | Prettier, write or check                                                         |
-| `npm run app:up`                       | starts the app container and waits for its healthcheck                           |
-| `npm run app:logs`                     | follows the app's logs                                                           |
-| `npm run app:down` / `app:reset`       | stops the app / restores its base database (author only, see below)            |
-
-Any Playwright option works after `--`, for example `npm test -- --grep "healthy"` or
-`npm run test:ui -- --headed`.
+Any Playwright option works after `--`, for example `npm run test:ui -- --headed`.
 
 ### Configuration
 
-Settings come from environment variables, or from a `.env` file in the repo root (`cp .env.example .env`); a
-variable set in the shell wins over the file. They are validated at startup: an invalid value stops the run before
-any test, with a message naming the variable.
+Settings come from environment variables or a `.env` file (`cp .env.example .env`). They are validated at
+startup, so an invalid value stops the run with a message naming the variable.
 
-| Variable               | Default                 | Meaning                                                                       |
-| ---------------------- | ----------------------- | ----------------------------------------------------------------------------- |
-| `BASE_URL`             | `http://localhost:3000` | the app under test (`http` or `https`)                                        |
-| `TEST_ENV`             | `local`                 | run profile: `local` or `ci`                                                  |
-| `EXPECTED_APP_VERSION` | `1.126.0`               | the version the suite targets; a different one logs a warning and continues   |
-| `SYNTHETIC_TOKEN`      | `local-synthetic-token` | sent as `X-Synthetic-Token` so test traffic skips the app's API rate limit    |
-| `RESET_DB`             | `false`                 | `true` restores the base database once before the run (wipes shared data)     |
+| Variable               | Default                 | Meaning                                                                    |
+| ---------------------- | ----------------------- | -------------------------------------------------------------------------- |
+| `BASE_URL`             | `http://localhost:3000` | the app under test                                                         |
+| `TEST_ENV`             | `local`                 | run profile, `local` or `ci`: retries, workers, reporters, timeouts        |
+| `EXPECTED_APP_VERSION` | `1.126.0`               | the version the suite targets; another one logs a warning                  |
+| `SYNTHETIC_TOKEN`      | `local-synthetic-token` | sent as `X-Synthetic-Token` so test traffic skips the app's API rate limit |
+| `RESET_DB`             | `false`                 | `true` restores the app's base database once before the run                |
 
-Profiles (`src/config/profiles.ts`) set retries, workers, reporters and timeouts:
+A new environment is one more profile in `src/config/profiles.ts` plus its `BASE_URL`; tests do not change.
 
-| Profile | Retries | Workers                 | Reporters                                   | Other                                                    |
-| ------- | ------- | ----------------------- | ------------------------------------------- | -------------------------------------------------------- |
-| `local` | 0       | Playwright default      | `list`, `html`                              |                                                          |
-| `ci`    | 1       | 4                       | `github`, `html`, `junit` (`reports/junit.xml`) | `forbidOnly`; a test that passes only on retry fails the run |
+### Reports and CI
 
-A new environment, such as `staging`, is one more profile plus its `BASE_URL`; tests do not change.
+Every run writes an HTML report (`playwright-report/`); a failed test also leaves a screenshot, a video and, on
+a retry, a trace. GitHub Actions ([tests.yml](.github/workflows/tests.yml)) runs the static checks, starts the
+app in Docker and runs the tests with the `ci` profile, which adds JUnit XML and one retry. More in
+[docs/ci-and-reports.md](docs/ci-and-reports.md).
 
-### Reports
+## Tech stack and decisions
 
-- `playwright-report/`: the HTML report, after every run. Open it with `npm run report`.
-- `test-results/`: per failed test, a screenshot and a video; a trace on the first retry (so in CI).
-- `npm run coverage:api`: API coverage against the app's OpenAPI contract (`docs/api/openapi.json`), as
-  Markdown on stdout: operations and documented responses with a test, per area, the Marketplace operation by
-  operation, and every status the tests check that the contract does not document. It reads the test list, so
-  it runs no tests. With the app up it first compares the contract with the live `/schema/openapi.json` and
-  stops on any difference; `npm run coverage:api -- --update-contract` refreshes the file after an app update.
-  CI writes the report to the run's summary page.
-- In CI: the HTML report and `reports/` (JUnit XML and the app's container log) are uploaded as workflow
-  artifacts and kept for 7 days.
+Playwright Test, TypeScript (strict, native ES modules), zod, faker, ESLint with `typescript-eslint` and
+`eslint-plugin-playwright`, Prettier, Husky with lint-staged and commitlint, Docker Compose, GitHub Actions.
+Exact versions are pinned in `package-lock.json`.
 
-### CI
+| Decision                                                              | Why                                                                                                 |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Tests are grouped by level, then feature: `tests/<level>/<feature>/`  | A level is a Playwright project (browser, auth and network differ), and CI can run one alone.       |
+| Each test creates its own users and data through the API              | Tests stay independent and parallel; no shared state, no resets between tests.                      |
+| UI tests log in with cookies and seed through the API                 | The UI is used only where the UI is what the test checks.                                           |
+| zod schemas are shared by the API clients and the mock payloads       | A contract change fails validation instead of letting a mock drift from the real API.               |
+| Mocked UI tests have a network guard                                  | A request no mock answers fails the test, so a mocked test never passes on a call nobody defined.   |
+| A known app bug is an expected failure: `test.fail()` plus a bug file | The suite stays green, the bug stays visible, and Playwright flags the test once the bug is fixed.  |
+| ESLint and Prettier, not Biome                                        | Biome has no Playwright rules; a missing `await` before `expect` is the most common Playwright bug. |
+| The app runs from a pinned Docker image, locally and in CI            | The same app version everywhere; the framework itself only needs `BASE_URL`.                        |
 
-GitHub Actions (`.github/workflows/tests.yml`) runs `npm run check`, starts the app in Docker and runs the tests
-with the `ci` profile. How many tests depends on the trigger:
+All decisions, with the alternatives considered, are in [docs/requirements.md](docs/requirements.md#12-decisions).
 
-| Trigger                     | Tests                                                                             |
-| --------------------------- | --------------------------------------------------------------------------------- |
-| pull request                | the `@smoke` files plus the test files the change touches (`scripts/pr-tests.sh`) |
-| push to `main`              | the full suite                                                                    |
-| nightly (03:00 UTC), manual | the full suite                                                                    |
+## Project structure
 
-"Touches" follows imports: a change in `src/` runs every test file that uses the changed code, and a
-documentation-only change runs only the smoke tests. A change Playwright cannot follow (`playwright.config.ts`,
-global setup, `src/config/`, dependencies, `compose.yaml`, the workflow) runs the full suite. A selected `@ledger`
-test also runs the whole `api` and `ui` projects: its project waits for them, and Playwright runs a project it
-waits for in full. To see what a branch would run: `DRY_RUN=1 scripts/pr-tests.sh origin/main`.
+```text
+├── src/
+│   ├── api/             # API clients (one per resource), zod schemas, typed responses
+│   ├── ui/              # page objects and components, cookie login
+│   ├── mocks/           # mock API for the browser: handlers, payloads, network guard
+│   ├── data/            # test data factories
+│   ├── fixtures/        # Playwright fixtures; index.ts exports the test and expect every spec imports
+│   ├── assertions/      # custom matchers
+│   └── config/          # environment variables (validated) and run profiles
+├── tests/
+│   ├── api/             # project api: no browser
+│   ├── ui/              # projects ui and ui-ledger: Chromium, real backend
+│   ├── ui-mocked/       # project ui-mocked: Chromium, mocked API
+│   └── global-setup.ts  # is the app reachable, and is it the expected version?
+├── scripts/             # CI test selection, API coverage report, database reset
+├── docs/                # requirements, conventions, the app's quirks, the AI workflow
+├── .qa/, .claude/       # evidence and skills of the AI-assisted QA workflow
+├── compose.yaml         # Rolnopol 1.126.0
+└── playwright.config.ts
+```
 
-## The app under test
-
-Rolnopol runs from the Docker image `jaktestowac/rolnopol:1.126.0` on port 3000 (`compose.yaml`). Global setup
-checks that it is reachable and that it is the expected version before any test runs; if it is not reachable, the
-run stops with `Start it with: npm run app:up`.
-
-The `ui-mocked` project needs the running app too: it mocks only `/api/**`, the pages' HTML and JavaScript still
-come from the app, and global setup checks it for every project.
-
-- **Apple Silicon.** The image is published for `linux/amd64` only. `compose.yaml` sets the platform, so Docker
-  runs it under emulation: the first start is slower, and API calls are slower than on an amd64 machine.
-- **Who may reset the app.** Anyone, including AI agents, may start it with `npm run app:up`. Only the author
-  stops or resets it (`npm run app:down`, `npm run app:reset`, `RESET_DB=true`): a reset wipes the data another
-  run may depend on. Tests never need a reset; each creates its own users.
-- **Rate limit.** The app allows 100 API requests per 30 s per IP, and all workers share one IP. `compose.yaml`
-  starts it with `SYNTHETIC_TOKEN`, and every request the tests make sends the same value as `X-Synthetic-Token`,
-  which the app exempts from that limit. The value is a local default, not a secret; browsers send it to every
-  origin a page loads, CDNs included. Global setup stops the run when the app does not accept the token, for
-  example an app started before this setting or with another `.env`. Recreating it (`npm run app:up` after
-  changing the value) resets its data, so only the author does that.
-- **Money queue.** The app runs every operation that moves money (income, purchase, transfer) one at a time
-  behind one global lock: an income takes about 2 s and a purchase about 4 s, and parallel workers queue behind
-  each other. Its pages give up on a request after 15 s, while the server still completes it
-  ([bug](.qa/bugs/ghissue-14/post-api-marketplace-buy--ui-gives-up-after-15s-but-charges.md)). A UI test that moves
-  money through the page is tagged `@ledger` and runs in the `ui-ledger` project: one test at a time, after the
-  `api` and `ui` projects have finished, so no other test queues money in front of it (`ui-mocked` never reaches
-  the app's API, so it may still run). If a test in `api` or `ui` fails, Playwright does not run `ui-ledger` (it
-  reports its tests as not run). To run it alone: `npm run test:ui-ledger`. API tests wait up to Playwright's 30 s
-  per request and stay parallel.
-- **Port 3000 is taken.** `npm run app:up` fails with
-  `Bind for 0.0.0.0:3000 failed: port is already allocated`. Stop whatever listens on port 3000 (for example a
-  local Rolnopol clone started with `npm start`) and run it again. The Compose project is named after the folder,
-  so a second checkout of this repo in a folder with another name starts a second container and hits the same
-  error; use the app the first one started (`npm test` only needs `BASE_URL`).
-- **Without Docker.** Clone [Rolnopol](https://github.com/jaktestowac/rolnopol) and check out commit `fb7fd89`
-  (1.126.0; the repo has no version tags, and its `main` is newer), run `npm install` and `npm start`, and point
-  `BASE_URL` at it (port 3000 by default). The tests target 1.126.0; another version logs a warning and may
-  fail. A running clone writes to its tracked `data/*.json` files, so its working tree changes as tests run.
-
-## How to add a test or feature
-
-**Naming.** Files in kebab-case; specs `*.spec.ts`, parametrized cases `*.params.ts` next to their spec; classes
-in PascalCase named after the screen or resource (`MarketplacePage`, `MarketplaceApi`). Test titles state the
-behaviour: `buyer cannot buy an offer above their balance`. Imports use the alias: `#src/<path>.ts`.
-
-**Checklist** for a new feature (`<feature>` is, for example, `marketplace`):
-
-1. Tests go in `tests/api/<feature>/`, `tests/ui/<feature>/` or `tests/ui-mocked/<feature>/`, by level. Import
-   `test` and `expect` from `#src/fixtures/index.ts`, never from `@playwright/test`. No raw HTTP calls, raw
-   selectors or data literals in a test.
-   `src/fixtures/index.ts` exports only `test` and `expect`; import everything else a test needs from its own
-   module (`#src/api/clients/...`, `#src/data/factories/...`, `#src/mocks/...`, `#src/ui/pages/...`). A new page
-   object becomes a fixture (for example `marketplacePage`) in `src/fixtures/ui.fixtures.ts`. ESLint rejects
-   value imports from `@playwright/test` in specs.
-2. **API client:** one class per resource in `src/api/clients/`, extending `BaseApi`. Tests get it with
-   `apiAs(Client, user)`. Responses are `ApiResponse` objects: `status`, `error` and `data`, which throws a clear
-   error when the call failed.
-3. **Schemas:** zod schemas in `src/api/models/`, types inferred from them. Keep each endpoint's real wire
-   format: the envelope `{ success, timestamp, data | error }` for most endpoints, bare objects where the app
-   returns them (`/api/version`, `/api/v1/statistics`).
-4. **API spec layout:** tests of one endpoint's responses sit in a `test.describe` titled with the method and
-   the path as the app serves it, OpenAPI parameters kept (`POST /api/v1/marketplace/offers`,
-   `DELETE /api/v1/marketplace/offers/{offerId}`), and inside it one `test.describe` per status, ascending
-   (`'200'`, `'400'`, `'401'`, `'403'`, `'404'`). Titles inside still state the behaviour. A scenario that chains
-   several calls (a sale end to end) stays outside these groups. `npm run coverage:api` reads the groups (D-18);
-   a status the contract does not document is a contract bug to file (`testing-rules/api.md`).
-5. **Data:** a factory in `src/data/factories/` that builds a valid entity with unique values; tests override
-   only what matters. Users come from the `createUser` fixture; seed further data in fixtures, and make seeding
-   errors throw. Shared seeds (users, fields, funds) live in `src/fixtures/api.fixtures.ts`; a feature's own
-   fixtures go in `src/fixtures/<feature>.fixtures.ts`, merged in `src/fixtures/index.ts`.
-6. **UI:** a page object per screen in `src/ui/pages/`, repeated parts as components in `src/ui/components/`.
-   They expose actions and locators, no assertions. Locators: `getByTestId`, then `getByRole` with a name,
-   `getByLabel`, `getByText`; CSS only as a documented last resort, never by index. Log in with
-   `createUser` + `loginAs` (cookies, no login form).
-7. **Matcher:** only when a UI check covers many fields or several sources (an offer card, a filled form).
-   Register it in `src/assertions/index.ts`; it reports every mismatching field and retries when it reads the UI.
-   For plain API data, `toEqual` or `toMatchObject` on the whole object is enough; an API check across several
-   sources reads them into one object in a fixture (for example `readSale`) and compares it with one `toEqual`.
-8. **Mocks:** `ui-mocked` tests get the shared page-load calls (`authorization`, `feature-flags`,
-   `/api/version`) answered already. Add a `src/mocks/handlers/<feature>.ts` for the feature's own endpoints,
-   with payloads from `src/mocks/payloads/` built from the same zod schemas, in each endpoint's real wire format.
-   Any `/api/` request no handler serves fails the test, with its method and path.
-9. **Cases:** parametrized cases in `<name>.params.ts` as a typed array, each with a readable title used in the
-   test name.
-10. **Tags:** `@smoke` for the minimal set that proves the app works, `@critical` for paths that move money,
-    `@ledger` for a UI test that moves money through the page (it then runs alone in the `ui-ledger` project; see
-    [the app's money queue](#the-app-under-test)). Never tag the level; the project says it.
-11. **Known app bug:** mark the test `test.fail()` and annotate it with a link to its file in `.qa/bugs/`.
-12. **Before the commit:** `npm run check`, then run the new test; break its expected value and one step of its
-    scenario (the poison test in `.claude/skills/testing-rules/general.md`) and confirm it fails both times.
-
-## AI-assisted workflow
-
-This project is built with an AI coding agent (Claude Code), openly: agent commits carry a `Co-Authored-By:`
-trailer and agent PRs a "Generated with Claude Code" line ([CONTRIBUTING.md](CONTRIBUTING.md)).
-
-- **Phase A** (built): the framework, CI, the `qa-pick` skills adapted to this repo, and the issue texts, built
-  task by task from [docs/implementation-plan.md](docs/implementation-plan.md). No Marketplace tests.
-- **Phase B** (in progress): the author writes T1–T5 with `/qa-pick <issue>`, one issue per test. T1–T4 are
-  done ([#18](https://github.com/klapoucho/qa-ronpol/pull/18), [#25](https://github.com/klapoucho/qa-ronpol/pull/25),
-  [#28](https://github.com/klapoucho/qa-ronpol/pull/28), [#34](https://github.com/klapoucho/qa-ronpol/pull/34)); T5
-  ([#15](https://github.com/klapoucho/qa-ronpol/issues/15)) adds the `ui-mocked` Browse spec. The issue texts and
-  their titles are in [docs/test-cases/](docs/test-cases/README.md); the issue numbers are added there once the
-  issues exist in `klapoucho/qa-ronpol`.
-
-`/qa-pick <issue number>` (in Claude Code, in this repo) reads the issue and runs a pipeline of agents: a QA
-tester tests the story by hand (UI through the Playwright CLI, API over HTTP), a fresh reviewer checks the
-coverage and tries to break the feature, a test writer automates the result on its own branch (with a
-`--repeat-each=10` stability run and poison tests), and a fresh test reviewer reviews each test. Pushes and PRs
-wait for the author's approval. The skills are in `.claude/skills/`, the project's QA settings in
-[CLAUDE.md](CLAUDE.md).
-
-The issue shows where a run is. The coordinator assigns the author and sets the issue's status to **In
-progress**, posts the testing summary as one comment, and sets **In review** when the run ends. The author
-reads the results and closes the issue; test PRs say `Refs #N`, never `Closes #N`. The summary's verdict is
-**FAIL** when any problem on the story's flow is major or critical (security above all, known bugs included);
-**PASS WITH FINDINGS** is for minor and cosmetic problems only. Manual QA runs in the Playwright CLI's default
-browser (the installed Google Chrome), the tests in Playwright's bundled Chromium; the versions may differ, and
-each report names the browser it used.
-
-Each run leaves evidence in `.qa/` (D-09): `runs/<run-id>/` with the story, plan, report, results and
-screenshots, bug files in `bugs/<group>/` (for example `bugs/ghissue-11/`), and lessons in `lessons.md`. A run's folder is committed on its test branch,
-so it reaches `main` in the same PR as the tests it explains (D-15). `runs/*/scratch/` holds live tokens and is
-ignored. Details: [.qa/README.md](.qa/README.md).
+Tests contain no raw HTTP calls, selectors or hard-coded test data: they use the API clients, page objects and
+factories in `src/`. How to add a test or a feature: [docs/writing-tests.md](docs/writing-tests.md).
 
 ## Assumptions and limits
 
-- **Chromium only.** Firefox and WebKit are a project entry in `playwright.config.ts` away (NFR-18).
-- **Marketplace only.** Other Rolnopol areas (farm resources, finance screens, admin, feature-flagged screens,
-  GraphQL, WebSockets) are out of scope for the first delivery. The layout takes them without changes.
-- **Rolnopol 1.126.0.** Facts about the app were read from its source and the running app
-  ([requirements 4.1](docs/requirements.md#41-rolnopol)). Rolnopol contains intentional bugs; a test that hits
-  one is marked as an expected failure (D-06) rather than bent to pass.
-- **No secrets in the repo.** Tests create throwaway users per run, so they need no credentials. Test artifacts
-  (traces, videos, the HTML report) do record those users' tokens and passwords; the values only work on that
-  run's app instance. Artifacts are never committed, and CI keeps them for 7 days (NFR-20).
-- **The suite does not clean up.** Tests leave their users and data behind; unique values keep tests and runs
-  apart. Only the author resets the database (`npm run app:reset` or `RESET_DB=true`).
+- **Marketplace only, Chromium only.** Other Rolnopol areas and browsers are out of scope; another browser is
+  one more project in `playwright.config.ts`.
+- **Rolnopol 1.126.0.** The app contains intentional bugs. A test that hits one is marked as an expected failure
+  and links the bug file in `.qa/bugs/`; it is not bent to pass.
+- **The app moves money one operation at a time.** A purchase takes about 4 s behind a global lock, and the
+  page gives up after 15 s. The one UI test that buys through the page therefore runs alone, in its own
+  `ui-ledger` project, after the others. More in [docs/app-under-test.md](docs/app-under-test.md).
+- **No clean-up.** Tests leave their users and data behind; unique values keep tests and runs apart.
+- **No secrets.** Tests create throwaway users, and the synthetic token is a local default. Reports and traces
+  are never committed.
 
-Future work (more features, browsers, sharding, OpenAPI-generated types, contract tests of the mocks) is listed in
-[requirements section 13](docs/requirements.md#13-left-to-the-builder-and-future-work).
+## More documentation
 
-## Documentation
-
-- [Framework requirements](docs/requirements.md): scope, decisions and the first five tests
-- [Phase A implementation plan](docs/implementation-plan.md): how the framework was built, task by task
-- [Test cases T1–T5](docs/test-cases/README.md): the issue texts
-- [Original task requirements](docs/requirements-original.md) (Polish)
-- [Contributing](CONTRIBUTING.md): branch naming, commit messages, pull request workflow
+- [docs/writing-tests.md](docs/writing-tests.md): naming rules and the checklist for a new test or feature
+- [docs/app-under-test.md](docs/app-under-test.md): running the app, its rate limit, its money queue, running without Docker
+- [docs/ci-and-reports.md](docs/ci-and-reports.md): what CI runs on which trigger, the reports, API coverage
+- [docs/ai-workflow.md](docs/ai-workflow.md): how the tests were written with an AI agent, and what `.qa/` holds
+- [docs/requirements.md](docs/requirements.md): the full framework requirements and decisions
+- [CONTRIBUTING.md](CONTRIBUTING.md): branch names, commit messages, the pull request workflow
