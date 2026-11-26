@@ -1,0 +1,60 @@
+{
+  "case": "U6j-description-lt",
+  "input": {
+    "id": "U6j-description-lt",
+    "itemType": "field",
+    "itemId": 1605,
+    "price": "5.55",
+    "description": {
+      "length": 17,
+      "head": "Pole <b>super</b>"
+    }
+  },
+  "postsSent": 1,
+  "postBodies": [
+    {
+      "itemType": "field",
+      "itemId": 1605,
+      "price": 5.55,
+      "description": {
+        "length": 17,
+        "head": "Pole <b>super</b>",
+        "hasCR": false
+      }
+    }
+  ],
+  "responses": [
+    {
+      "status": 400,
+      "error": "Description contains invalid characters",
+      "offerId": null,
+      "stored": null
+    }
+  ],
+  "state": {
+    "formValid": true,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "1605",
+      "validationMessage": ""
+    },
+    "price": {
+      "value": "5.55",
+      "validationMessage": ""
+    },
+    "description": {
+      "length": 17,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 17,
+    "toasts": [
+      {
+        "type": "notification error",
+        "message": "Description contains invalid characters"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "control301String": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T16:39:51.514Z",
+      "error": "Description cannot exceed 300 characters"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 1626,
+      "price": 2.22,
+      "description": "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+    }
+  },
+  "array500": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T16:39:51.557Z",
+      "data": {
+        "offer": {
+          "id": 1584,
+          "sellerId": 5708,
+          "itemType": "field",
+          "itemId": 1626,
+          "price": 2.22,
+          "description": {
+            "type": "array",
+            "length": 500
+          },
+          "status": "active",
+          "createdAt": "2026-11-26T16:39:51.534Z",
+          "updatedAt": "2026-11-26T16:39:51.534Z"
+        }
+      },
+      "message": 201
+    }
+  },
+  "storedDescription": {
+    "type": "array",
+    "length": 500
+  },
+  "observerBrowseDescription": {
+    "type": "array",
+    "length": 500
+  },
+  "sellerAfterListings": {
+    "balance": 3.21,
+    "transactions": [
+      "income:3.21:QA seed funds"
+    ],
+    "myOffers": [
+      "1583:active:4.56",
+      "1584:active:2.22"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "case": "U6k-description-question",
+  "input": {
+    "id": "U6k-description-question",
+    "itemType": "field",
+    "itemId": 1605,
+    "price": "5.55",
+    "description": {
+      "length": 11,
+      "head": "Czy kupisz?"
+    }
+  },
+  "postsSent": 1,
+  "postBodies": [
+    {
+      "itemType": "field",
+      "itemId": 1605,
+      "price": 5.55,
+      "description": {
+        "length": 11,
+        "head": "Czy kupisz?",
+        "hasCR": false
+      }
+    }
+  ],
+  "responses": [
+    {
+      "status": 400,
+      "error": "Description contains invalid characters",
+      "offerId": null,
+      "stored": null
+    }
+  ],
+  "state": {
+    "formValid": true,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "1605",
+      "validationMessage": ""
+    },
+    "price": {
+      "value": "5.55",
+      "validationMessage": ""
+    },
+    "description": {
+      "length": 11,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 11,
+    "toasts": [
+      {
+        "type": "notification error",
+        "message": "Description contains invalid characters"
+      }
+    ]
+  }
+}

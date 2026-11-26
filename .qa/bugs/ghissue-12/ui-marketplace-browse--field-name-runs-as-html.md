@@ -40,3 +40,6 @@ Seed a field named `QA<img src=x onerror="document.title='QA-XSS-FIRED'">`, list
 
 ## Hint for developers (optional)
 `public/js/pages/marketplace.js` builds the card from template strings into `innerHTML` (`details.name`, `details.type`, `sellerLabel`, `description`).
+
+## Re-checks
+- Re-checked 2026-11-26 in `2026-11-26-issue-13-marketplace-seller-lists-an-item` (U13): still reproduces, and it also runs in the seller's own **My Offers**, right after the create and on every load while the (even cancelled) offer is listed. The cancel-confirmation modal escapes the name (R7). Evidence: `.qa/runs/2026-11-26-issue-13-marketplace-seller-lists-an-item/artifacts/U13-html-field-name-my-offers.json`, `.qa/runs/2026-11-26-issue-13-marketplace-seller-lists-an-item/artifacts/U13b-observer-browse-html-name.json`.

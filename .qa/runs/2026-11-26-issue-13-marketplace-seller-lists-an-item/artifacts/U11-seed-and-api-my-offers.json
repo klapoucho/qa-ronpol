@@ -1,0 +1,103 @@
+{
+  "buyStatus": 200,
+  "buyError": null,
+  "oOfferId": 1578,
+  "s1MyOffersApi": [
+    {
+      "id": 1566,
+      "itemType": "field",
+      "itemId": 1602,
+      "status": "active",
+      "price": 12.34,
+      "createdAt": "2026-11-26T16:22:02.964Z"
+    },
+    {
+      "id": 1567,
+      "itemType": "animal",
+      "itemId": 1463,
+      "status": "active",
+      "price": 7.07,
+      "createdAt": "2026-11-26T16:22:57.050Z"
+    },
+    {
+      "id": 1568,
+      "itemType": "field",
+      "itemId": 1605,
+      "status": "sold",
+      "price": 1,
+      "createdAt": "2026-11-26T16:24:42.402Z"
+    },
+    {
+      "id": 1569,
+      "itemType": "field",
+      "itemId": 1606,
+      "status": "active",
+      "price": 3.33,
+      "createdAt": "2026-11-26T16:24:45.682Z"
+    },
+    {
+      "id": 1570,
+      "itemType": "field",
+      "itemId": 1609,
+      "status": "active",
+      "price": 4.44,
+      "createdAt": "2026-11-26T16:24:56.549Z"
+    },
+    {
+      "id": 1571,
+      "itemType": "field",
+      "itemId": 1610,
+      "status": "active",
+      "price": 8.88,
+      "createdAt": "2026-11-26T16:25:18.600Z"
+    },
+    {
+      "id": 1572,
+      "itemType": "field",
+      "itemId": 1601,
+      "status": "active",
+      "price": 9.99,
+      "createdAt": "2026-11-26T16:25:39.354Z"
+    },
+    {
+      "id": 1573,
+      "itemType": "field",
+      "itemId": 1611,
+      "status": "active",
+      "price": 9.99,
+      "createdAt": "2026-11-26T16:26:00.042Z"
+    },
+    {
+      "id": 1574,
+      "itemType": "field",
+      "itemId": 1608,
+      "status": "cancelled",
+      "price": 2.22,
+      "createdAt": "2026-11-26T16:26:39.937Z"
+    },
+    {
+      "id": 1575,
+      "itemType": "field",
+      "itemId": 1612,
+      "status": "active",
+      "price": 2.01,
+      "createdAt": "2026-11-26T16:27:54.691Z"
+    },
+    {
+      "id": 1576,
+      "itemType": "field",
+      "itemId": 1613,
+      "status": "active",
+      "price": 2.02,
+      "createdAt": "2026-11-26T16:27:54.767Z"
+    },
+    {
+      "id": 1577,
+      "itemType": "field",
+      "itemId": 1614,
+      "status": "active",
+      "price": 2.03,
+      "createdAt": "2026-11-26T16:27:54.832Z"
+    }
+  ]
+}

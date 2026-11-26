@@ -1,0 +1,65 @@
+{
+  "case": "U6l-price-1-boundary",
+  "input": {
+    "id": "U6l-price-1-boundary",
+    "itemType": "field",
+    "itemId": 1605,
+    "price": "1",
+    "description": {
+      "length": 14,
+      "head": "Cena minimalna"
+    }
+  },
+  "postsSent": 1,
+  "postBodies": [
+    {
+      "itemType": "field",
+      "itemId": 1605,
+      "price": 1,
+      "description": {
+        "length": 14,
+        "head": "Cena minimalna",
+        "hasCR": false
+      }
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "error": null,
+      "offerId": 1568,
+      "stored": {
+        "price": 1,
+        "description": "Cena minimalna",
+        "itemId": 1605,
+        "itemType": "field"
+      }
+    }
+  ],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "itemId": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "price": {
+      "value": "",
+      "validationMessage": "Please fill in this field."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": [
+      {
+        "type": "notification success",
+        "message": "Offer created successfully!"
+      }
+    ]
+  }
+}

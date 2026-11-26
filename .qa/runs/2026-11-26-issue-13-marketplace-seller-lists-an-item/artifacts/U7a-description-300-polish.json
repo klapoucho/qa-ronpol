@@ -1,0 +1,65 @@
+{
+  "case": "U7a-description-300-polish",
+  "input": {
+    "id": "U7a-description-300-polish",
+    "itemType": "field",
+    "itemId": 1606,
+    "price": "3.33",
+    "description": {
+      "length": 300,
+      "head": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęł"
+    }
+  },
+  "postsSent": 1,
+  "postBodies": [
+    {
+      "itemType": "field",
+      "itemId": 1606,
+      "price": 3.33,
+      "description": {
+        "length": 300,
+        "head": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęł",
+        "hasCR": false
+      }
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "error": null,
+      "offerId": 1569,
+      "stored": {
+        "price": 3.33,
+        "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘ",
+        "itemId": 1606,
+        "itemType": "field"
+      }
+    }
+  ],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "itemId": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "price": {
+      "value": "",
+      "validationMessage": "Please fill in this field."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": [
+      {
+        "type": "notification success",
+        "message": "Offer created successfully!"
+      }
+    ]
+  }
+}

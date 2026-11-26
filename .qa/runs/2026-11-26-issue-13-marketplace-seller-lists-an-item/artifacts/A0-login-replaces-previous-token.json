@@ -1,0 +1,10 @@
+{
+  "registerTokenBeforeLogin": 200,
+  "login": 200,
+  "registerTokenAfterLogin": {
+    "status": 403,
+    "error": "Invalid or expired token"
+  },
+  "loginToken": 200,
+  "pass": true
+}

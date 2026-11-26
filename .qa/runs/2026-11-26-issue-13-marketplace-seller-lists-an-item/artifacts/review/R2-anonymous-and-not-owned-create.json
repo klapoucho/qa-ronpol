@@ -1,0 +1,48 @@
+{
+  "anonymous": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 401,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T16:38:57.387Z",
+      "error": "Access token required"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 1626,
+      "price": 5,
+      "description": "anon"
+    }
+  },
+  "notOwnedField": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T16:38:57.416Z",
+      "error": "Item not found or not owned by user"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 1627,
+      "price": 5,
+      "description": "not mine"
+    }
+  },
+  "rsBefore": {
+    "txCount": 1,
+    "myOffers": []
+  },
+  "observerFieldAfter": [
+    {
+      "id": 1627,
+      "name": "QA RV observer field"
+    }
+  ],
+  "observerMyOffers": {
+    "txCount": 0,
+    "myOffers": []
+  }
+}

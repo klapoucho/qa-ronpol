@@ -1,0 +1,23 @@
+{
+  "controlBeforeLogout": {
+    "status": 200,
+    "offerId": 1579
+  },
+  "logout": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T16:29:28.994Z",
+      "message": "Logout successful"
+    }
+  },
+  "createWithOldToken": {
+    "status": 403,
+    "error": "Invalid or expired token"
+  },
+  "myOffersAfterRelogin": [
+    "1579:1615:active"
+  ],
+  "targetFieldListed": false,
+  "pass": true
+}

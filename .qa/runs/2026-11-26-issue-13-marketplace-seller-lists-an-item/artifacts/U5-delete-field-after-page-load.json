@@ -1,0 +1,22 @@
+{
+  "deleteField": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T16:25:06.763Z",
+      "data": {
+        "message": "field deleted"
+      }
+    }
+  },
+  "sellerFieldsAfter": [
+    1601,
+    1602,
+    1603,
+    1605,
+    1606,
+    1608,
+    1609,
+    1610
+  ]
+}

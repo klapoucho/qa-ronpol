@@ -1,0 +1,35 @@
+{
+  "case": "U3 dropdown contents for seller S1 (fields A=1601,B=1602 free; C=1603 has animal G2; G1=1463 free pig x2; G2=1464 cow x3 on C; observer field 1604)",
+  "fieldOptions": [
+    {
+      "value": "",
+      "text": "Select an item"
+    },
+    {
+      "value": "1601",
+      "text": "QA T3 Łąka A (1.7 ha)"
+    },
+    {
+      "value": "1602",
+      "text": "QA T3 Pole B (2.3 ha)"
+    }
+  ],
+  "animalOptions": [
+    {
+      "value": "",
+      "text": "Select an item"
+    },
+    {
+      "value": "1463",
+      "text": "pig (2 units)"
+    }
+  ],
+  "verdict": {
+    "fieldListsAandB": true,
+    "fieldOmitsC": true,
+    "fieldOmitsObserver": true,
+    "animalListsG1": true,
+    "animalOmitsG2": true
+  },
+  "pass": true
+}

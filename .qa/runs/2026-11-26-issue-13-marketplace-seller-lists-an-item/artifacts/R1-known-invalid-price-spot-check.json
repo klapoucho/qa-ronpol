@@ -1,0 +1,13 @@
+{
+  "price0": {
+    "status": 400,
+    "error": "Missing required fields: itemType, itemId, price"
+  },
+  "price12abc": {
+    "status": 200,
+    "stored": 12,
+    "error": null
+  },
+  "stillReproduces": true,
+  "cleanupCancel": 200
+}

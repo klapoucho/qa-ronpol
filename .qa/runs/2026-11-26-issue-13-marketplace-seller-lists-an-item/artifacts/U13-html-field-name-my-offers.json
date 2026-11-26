@@ -1,0 +1,11 @@
+{"case":"U13 field name with HTML: dropdown vs My Offers card (seller's own view)","fieldName":"QA<b>bold</b><img src=x onerror=\"document.title='QA-T3-XSS'\">","titleSetBeforeCreate":"Marketplace - Rolnopol","dropdown":{
+  "optionText": "QA<b>bold</b><img src=x onerror=\"document.title='QA-T3-XSS'\"> (1.4 ha)",
+  "optionChildElements": 0
+},"myOffersCard":{
+  "nameHtml": "QA<b>bold</b><img src=\"x\" onerror=\"document.title='QA-T3-XSS'\">",
+  "metaHtml": "Field: <b>QA<b>bold</b><img src=\"x\" onerror=\"document.title='QA-T3-XSS'\"></b>, Area: <b>1.4 ha</b>",
+  "imgCount": 2,
+  "bCount": 5,
+  "visibleText": "Field 2.22 ROL QAbold Offered by: qa_seller_1402942e Field: QAbold, Area: 1.4 ha Nazwa z HTML Cancel",
+  "title": "QA-T3-XSS"
+}}

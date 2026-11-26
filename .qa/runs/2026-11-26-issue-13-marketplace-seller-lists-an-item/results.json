@@ -1,0 +1,614 @@
+{
+  "run_id": "2026-11-26-issue-13-marketplace-seller-lists-an-item",
+  "title": "Marketplace: seller lists an item (UI)",
+  "source": {
+    "type": "github-issue",
+    "issue_url": "https://github.com/klapoucho/qa-ronpol/issues/13",
+    "pr_url": null,
+    "pr_head_sha": null,
+    "summary_comment_url": "https://github.com/klapoucho/qa-ronpol/issues/13#issuecomment-7198109101"
+  },
+  "kind": "ui+api",
+  "status": "PASS_WITH_FINDINGS",
+  "blocked_reason": null,
+  "env": "http://localhost:3000",
+  "app_version": "Rolnopol 1.126.0 (Docker jaktestowac/rolnopol:1.126.0)",
+  "platforms": [
+    "web Google Chrome 158.0.8127.88 (playwright-cli 0.1.24 default channel; tester 1366x768, reviewer 1280x720, 1366x768, 375x812)",
+    "API"
+  ],
+  "roles": [
+    "registered user (seller)",
+    "registered user (other user / observer)"
+  ],
+  "items": [
+    {
+      "id": "U1",
+      "check": "Seller lists field B (2nd of 2) at 12.34 with a Polish description: success toast, form reset, My Offers card, stored as typed, other user's Browse API lists it, seller's does not",
+      "requirement": "AC-1, AC-3",
+      "role": "seller, other user",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/U1-api-readback.json"
+    },
+    {
+      "id": "U2",
+      "check": "Seller lists an animal group (pig x2) at 7.07 with empty description",
+      "requirement": "AC-1, AC-3",
+      "role": "seller, other user",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/U2-api-readback.json"
+    },
+    {
+      "id": "U3",
+      "check": "Dropdown lists own free fields / free animal groups only; other user's dropdown lists only their own field",
+      "requirement": "AC-1",
+      "role": "seller, other user",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U3-dropdown-contents.json"
+    },
+    {
+      "id": "U3c",
+      "check": "Already-listed items are still offered in the dropdown after reload",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/U3c-dropdown-lists-already-offered-items.json"
+    },
+    {
+      "id": "U4",
+      "check": "Already-listed field via the form: error toast 'Item is already offered for sale', input kept, one active offer",
+      "requirement": "AC-1/AC-2",
+      "role": "seller",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/U4-already-offered-form-state.json"
+    },
+    {
+      "id": "U5",
+      "check": "Field deleted after page load: toast 'Item not found or not owned by user' (404), nothing stored",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/U5-item-deleted-after-page-load.json"
+    },
+    {
+      "id": "U6a",
+      "check": "Empty form blocked by the browser, 0 requests",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6a-empty-form.json"
+    },
+    {
+      "id": "U6b",
+      "check": "Type without item blocked, 0 requests",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6b-type-no-item.json"
+    },
+    {
+      "id": "U6c",
+      "check": "No price blocked, 0 requests",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6c-no-price.json"
+    },
+    {
+      "id": "U6d",
+      "check": "Price 0 blocked, 0 requests",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6d-price-0.json"
+    },
+    {
+      "id": "U6e",
+      "check": "Price 0.5 blocked by min=1 (known bug)",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/U6e-price-0.5.json"
+    },
+    {
+      "id": "U6f",
+      "check": "Price 0.99 blocked by min=1 (known bug)",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/U6f-price-0.99.json"
+    },
+    {
+      "id": "U6g",
+      "check": "Price -5 blocked, 0 requests",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6g-price-negative.json"
+    },
+    {
+      "id": "U6h",
+      "check": "Price 12.345 blocked by step=0.01",
+      "requirement": "assumption",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6h-price-3-decimals.json"
+    },
+    {
+      "id": "U6i",
+      "check": "301-char description: client toast 'Description cannot exceed 300 characters.', 0 requests",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6i-description-301.json"
+    },
+    {
+      "id": "U6j",
+      "check": "Description with <b>: 400 toast 'Description contains invalid characters', input kept",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6j-description-lt.json"
+    },
+    {
+      "id": "U6k",
+      "check": "Description with '?': 400 toast 'Description contains invalid characters', input kept",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U6k-description-question.json"
+    },
+    {
+      "id": "U6l",
+      "check": "Price 1 accepted and stored",
+      "requirement": "AC-1",
+      "role": "seller, other user",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/U6l-api-readback.json"
+    },
+    {
+      "id": "U7a",
+      "check": "300 Polish letters accepted through the form, stored byte-equal",
+      "requirement": "AC-1",
+      "role": "seller, other user",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/U7a-api-readback.json"
+    },
+    {
+      "id": "U7b",
+      "check": "300 chars with newlines sent as LF and accepted",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U7b-description-300-with-newlines.json"
+    },
+    {
+      "id": "U8",
+      "check": "Input kept after refused submits, reset after success",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U4-already-offered-form-state.json"
+    },
+    {
+      "id": "U9",
+      "check": "Double click sends two requests and shows Error + Success toasts",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/U9-double-click-submit.json"
+    },
+    {
+      "id": "U9b",
+      "check": "Slow backend (3 s): no loading state, button enabled",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/U9b-slow-backend-feedback.json"
+    },
+    {
+      "id": "U10",
+      "check": "Session replaced while form filled: 403, redirect to login, input lost, no explanation",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli + API",
+      "result": "FAIL",
+      "evidence": "artifacts/U10-session-ended-while-form-filled.json"
+    },
+    {
+      "id": "U11",
+      "check": "My Offers renders 12 own offers in all states in API order, no other user's offer",
+      "requirement": "AC-3",
+      "role": "seller, other user",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/U11-my-offers-many-states.json"
+    },
+    {
+      "id": "U12a",
+      "check": "Seller's Browse UI does not show own offer (filtered)",
+      "requirement": "AC-3",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U12a-seller-browse-own-offer-hidden.json"
+    },
+    {
+      "id": "U12b",
+      "check": "Other user's Browse UI shows the offer with Buy Now (filtered)",
+      "requirement": "AC-3",
+      "role": "other user",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U12b-observer-browse-sees-offer.json"
+    },
+    {
+      "id": "U13",
+      "check": "HTML field name runs as script in My Offers and Browse (known bug)",
+      "requirement": "known bug",
+      "role": "seller, other user",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/U13-html-field-name-my-offers.json"
+    },
+    {
+      "id": "U14",
+      "check": "Long unbroken word in description overflows card and page (scrollWidth 2583 in 1366)",
+      "requirement": "user expectation",
+      "role": "seller, other user",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/U14b-observer-browse-long-word-overflow.json"
+    },
+    {
+      "id": "U14c",
+      "check": "Form top row aligned at 1366x768 (price input 1.5 px shorter, cosmetic)",
+      "requirement": "user expectation",
+      "role": "other user",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/U14c-form-geometry.json"
+    },
+    {
+      "id": "A0",
+      "check": "A new login replaces the previous token",
+      "requirement": "assumption",
+      "role": "user",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A0-login-replaces-previous-token.json"
+    },
+    {
+      "id": "A2",
+      "check": "Cancelled offer stays in My Offers as cancelled, leaves the other user's Browse",
+      "requirement": "AC-3",
+      "role": "seller, other user",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A2-cancelled-offer-visibility.json"
+    },
+    {
+      "id": "A3",
+      "check": "Logged-out token cannot create an offer",
+      "requirement": "AC-1 (user expectation)",
+      "role": "user",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A3-logged-out-token-create.json"
+    },
+    {
+      "id": "A4",
+      "check": "Deleted account token: create offer refused (400 User not found), but POST /fields 201 and the next user inherits field, balance and live offer",
+      "requirement": "AC-1 (user expectation)",
+      "role": "deleted user, new user",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/A4-deleted-account-token-create.json"
+    },
+    {
+      "id": "K1",
+      "check": "Known invalid-price bug spot check (price 0 message, '12abc' accepted)",
+      "requirement": "known bug",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/R1-known-invalid-price-spot-check.json"
+    },
+    {
+      "id": "K2",
+      "check": "Known item-edited-after-listing bug",
+      "requirement": "known bug",
+      "role": "seller, other user",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/R2-known-item-edited-after-listing.json"
+    },
+    {
+      "id": "R1",
+      "check": "Direct URL /marketplace.html without cookies redirects to /login.html, no form",
+      "requirement": "AC-1 (gate)",
+      "role": "logged-out user",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/review/R1-logged-out-direct-url.json",
+      "source": "reviewer"
+    },
+    {
+      "id": "R2",
+      "check": "Create without token 401; another user's existing field 404 'Item not found or not owned by user'",
+      "requirement": "AC-1",
+      "role": "anonymous, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R2-anonymous-and-not-owned-create.json",
+      "source": "reviewer"
+    },
+    {
+      "id": "R3a",
+      "check": "Description with every allowed character (; _ tab newline . , : ! ( ) -, 18 Polish letters, digits) accepted and stored byte-equal",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R3-description-charset-cases.jsonl",
+      "source": "reviewer"
+    },
+    {
+      "id": "R3b",
+      "check": "'Café Müller Straße' and NFD 'Zielona łąka' refused: 'Description contains invalid characters'",
+      "requirement": "AC-1 ('letters (including Polish)')",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R3b-non-polish-letters-refused.png",
+      "source": "reviewer"
+    },
+    {
+      "id": "R4",
+      "check": "description sent as a 500-char array: 200, stored as an array, bypasses the 300 limit (a 301-char string is refused)",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R4-description-array-bypasses-limit.json",
+      "source": "reviewer"
+    },
+    {
+      "id": "R5",
+      "check": "Price 123456789012.34 accepted from the form; shared TOTAL VALUE header jumps to 123 457 295 737,19",
+      "requirement": "user expectation",
+      "role": "seller, other user",
+      "platform": "playwright-cli + API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R5-my-offers-huge-price-and-array-description.png",
+      "source": "reviewer"
+    },
+    {
+      "id": "R6",
+      "check": "Listing moves no money and adds no transaction",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R6-listing-moves-no-money.json",
+      "source": "reviewer"
+    },
+    {
+      "id": "R7",
+      "check": "Cancel-confirmation modal escapes an HTML field name (not a new sink of the known XSS)",
+      "requirement": "known bug",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/review/R7-confirm-modal-field-name-html.json",
+      "source": "reviewer"
+    },
+    {
+      "id": "R8",
+      "check": "375x812: form stacks and creates the offer, card fits; tab bar 397 px wide, 'Transaction History' cut off, page scrolls sideways",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R8-mobile-375-create-form.png",
+      "source": "reviewer"
+    },
+    {
+      "id": "R9",
+      "check": "Status dot overlaps the 'L' of 'ROL' on every offer card",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R9-status-dot-over-price.png",
+      "source": "reviewer"
+    },
+    {
+      "id": "R10",
+      "check": "List, cancel through the modal, relist the same field through the form; My Offers shows both; Browse shows only the new one",
+      "requirement": "AC-3",
+      "role": "seller, other user",
+      "platform": "playwright-cli + API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R10-relist-after-cancel.jsonl",
+      "source": "reviewer"
+    },
+    {
+      "id": "R11",
+      "check": "Price typed as '12,34' (keystrokes) sent and stored as 12.34",
+      "requirement": "user expectation",
+      "role": "seller",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/review/R11-price-comma-typed.json",
+      "source": "reviewer"
+    },
+    {
+      "id": "R12",
+      "check": "Seller's Browse has 0 own offers; other user sees exactly the 6 active ones, not the cancelled ones",
+      "requirement": "AC-3",
+      "role": "seller, other user",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R12-readback-and-cleanup.json",
+      "source": "reviewer"
+    },
+    {
+      "id": "R13",
+      "check": "My Offers empty state 'You have no active offers', 0 console errors",
+      "requirement": "AC-3",
+      "role": "other user",
+      "platform": "playwright-cli",
+      "result": "PASS",
+      "evidence": "artifacts/review/R13-my-offers-empty-state.json",
+      "source": "reviewer"
+    }
+  ],
+  "findings": [
+    {
+      "title": "A field name with HTML runs as script on the offer card, also in the seller's own My Offers",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-12/ui-marketplace-browse--field-name-runs-as-html.md",
+      "evidence": "artifacts/U13-html-field-name-my-offers.json"
+    },
+    {
+      "title": "A deleted account's token still creates fields; the next registered user inherits them and the deleted account's live offer",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-12/post-api-register--new-user-inherits-deleted-account.md",
+      "evidence": "artifacts/A4-deleted-account-token-create.json"
+    },
+    {
+      "title": "One long word in an offer description stretches every buyer's Marketplace page sideways",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-browse--long-description-word-overflows.md",
+      "evidence": "artifacts/U14b-observer-browse-long-word-overflow.json"
+    },
+    {
+      "title": "Double-clicking Create Offer sends two requests and shows Error next to Success; no loading state on a slow connection",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-create--double-submit-error-and-success.md",
+      "evidence": "artifacts/U9-double-click-submit.json"
+    },
+    {
+      "title": "The Item dropdown offers items that are already listed",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-create--dropdown-lists-offered-items.md",
+      "evidence": "artifacts/U3c-dropdown-lists-already-offered-items.json"
+    },
+    {
+      "title": "When the session ends elsewhere, Create Offer redirects to login without a message and the typed offer is lost",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-create--session-end-loses-offer.md",
+      "evidence": "artifacts/U10-session-ended-while-form-filled.json"
+    },
+    {
+      "title": "Description rules invisible until submit; the invalid-characters message does not say which character",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-create--description-rules-hidden.md",
+      "evidence": "artifacts/U6k-description-question.json"
+    },
+    {
+      "title": "Offer card heading shows 'field #id' / 'animal #id' instead of the item name; description line breaks collapsed",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-browse--card-heading-shows-id.md",
+      "evidence": "artifacts/U12b-observer-browse-card.png"
+    },
+    {
+      "title": "The Create Offer form refuses prices below 1 (known)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-12/ui-marketplace-create--price-below-one-refused.md",
+      "evidence": "artifacts/U6e-price-0.5.json"
+    },
+    {
+      "title": "Letters outside the Polish alphabet (é, ü, ß) and decomposed Polish letters are refused as invalid description characters",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/post-api-marketplace-offers--non-polish-letters-refused.md",
+      "evidence": "artifacts/review/R3-description-charset-cases.jsonl",
+      "source": "reviewer"
+    },
+    {
+      "title": "A description sent as a JSON array bypasses the 300-character limit and is stored as an array",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/post-api-marketplace-offers--array-description-bypasses-limit.md",
+      "evidence": "artifacts/review/R4-description-array-bypasses-limit.json",
+      "source": "reviewer"
+    },
+    {
+      "title": "On a 375 px screen the Marketplace tab bar is wider than the screen; the page scrolls sideways",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-tabs--mobile-tab-bar-overflows.md",
+      "evidence": "artifacts/review/R8-mobile-375-create-form.json",
+      "source": "reviewer"
+    },
+    {
+      "title": "Any price is accepted without a check; one offer takes over the shared TOTAL VALUE header",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-create--implausible-price-skews-total-value.md",
+      "evidence": "artifacts/review/R12-readback-and-cleanup.json",
+      "source": "reviewer"
+    },
+    {
+      "title": "The status dot covers the end of the price on every offer card",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-browse--status-dot-over-price.md",
+      "evidence": "artifacts/review/R9-status-dot-over-price.png",
+      "source": "reviewer"
+    }
+  ],
+  "automation": {
+    "status": "done",
+    "skip_reason": null,
+    "branch": "test/ui-seller-lists-item",
+    "pr_url": null
+  },
+  "assumptions": [
+    "Unattended run: plan not approved by a human.",
+    "Double submit and stale dropdown are routine actions but store nothing wrong: rated minor, not major.",
+    "AC-1 'a message naming the problem' is met by 'Description contains invalid characters'; the missing hint is reported as UX.",
+    "Price with 3 decimals blocked by the browser is accepted as intended (API rounds to 2 dp).",
+    "The deleted-account probe ran last; a sink account absorbed the reused user id immediately."
+  ],
+  "lessons": [
+    "A POST /login replaces the user's previous token: cookie-login with the register token, never log the same user in again in a test that keeps using the old token.",
+    "Once the Create Offer tab is open there are two 'Create Offer' buttons; scope the submit to #createOfferForm.",
+    "Toasts can be captured reliably with a MutationObserver installed before the click (6 s lifetime, max 3)."
+  ],
+  "struggles": [
+    "pwcli: `run-code` output echoes the whole code, including the session token in the cookie-login script; piped it through `tail -1` and kept such output out of artifacts.",
+    "pwcli: `run-code --filename` code runs in the browser-driver context without `process`; a script using process.env failed with 'ReferenceError: process is not defined' after its click had already fired, which created an unintended offer (1572). Workaround: inline absolute paths; the stray offer is recorded in ui-cases-log.txt and not used as evidence.",
+    "pwcli: `console error` is cumulative per page load, so later console files repeat earlier errors and several 0-error files are byte-identical; documented in the Console section.",
+    "env: re-logging the seller through POST /login (to get loginTime) invalidated the register token used by the probes (403); added relogin.mjs that stores the new token.",
+    "reviewer: pwcli: `run-code` with an inline function that used `document` outside `page.evaluate` failed with \"ReferenceError: document is not defined\" (own mistake). Workaround: DOM reads inside `page.evaluate`, longer code in a file via `--filename`.",
+    "reviewer: pwcli: `locator.scrollIntoViewIfNeeded` failed \"Element is not attached to the DOM\" right after a create, because My Offers re-renders. Workaround: wait ~1 s, locate the card by `button[data-offer-id]`.",
+    "reviewer: pwcli: default viewport is 1280x720 while the tester used 1366x768; set it explicitly with `page.setViewportSize` in `run-code` for layout checks.",
+    "reviewer: no env problems; finished in ~40 min.",
+    "writer: `toShowFields` (src/assertions/ui-matchers.ts) reads innerText, which includes hidden (display:none) elements; a card in an unopened tab passed every field (poison P6). Added an explicit toBeVisible; the shared matcher deserves a follow-up.",
+    "writer: the Marketplace builds the Item list only when Item Type changes, from /fields and /animals loaded once at page load; on a slow network an early pick leaves the list empty for good. goto() waits for both responses. The handoff named the once-per-load read but not this timing trap.",
+    "writer: with a broken session cookie the page redirects to login before requesting fields, so goto() waits out the 30 s test timeout instead of failing fast (poison P8).",
+    "writer: handoff recipe, locators and payloads were correct; used `.marketplace-tabs` + getByRole('button', { name }) instead of `.tab-button[data-tab]`.",
+    "test-reviewer: could not find stability or poison evidence in the run folder; they live only in the writer's reply. The intent card carries them."
+  ]
+}

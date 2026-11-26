@@ -1,0 +1,55 @@
+{
+  "statuses": {
+    "myOffers": 200,
+    "sellerBrowse": 200,
+    "observerBrowse": 200
+  },
+  "expected": {
+    "itemId": 1605,
+    "price": 1,
+    "description": "Cena minimalna",
+    "status": "active"
+  },
+  "sellerMyOffers": {
+    "id": 1568,
+    "sellerId": 5701,
+    "itemType": "field",
+    "itemId": 1605,
+    "price": 1,
+    "description": "Cena minimalna",
+    "status": "active",
+    "details": {
+      "name": "QA T3 Field D",
+      "area": 1.1
+    },
+    "sellerLabel": "qa_seller_1402942e"
+  },
+  "observerBrowse": {
+    "id": 1568,
+    "sellerId": 5701,
+    "itemType": "field",
+    "itemId": 1605,
+    "price": 1,
+    "description": "Cena minimalna",
+    "status": "active",
+    "details": {
+      "name": "QA T3 Field D",
+      "area": 1.1
+    },
+    "sellerLabel": "qa_seller_1402942e"
+  },
+  "sellerBrowseContainsOwnOffer": false,
+  "sellerBrowseContainsAnyOwnOffer": false,
+  "sellerActiveOffers": [
+    "1566:field:1602",
+    "1567:animal:1463",
+    "1568:field:1605",
+    "1569:field:1606"
+  ],
+  "verdict": {
+    "storedAsTyped": true,
+    "observerSeesIt": true,
+    "sellerBrowseHidesIt": true
+  },
+  "pass": true
+}

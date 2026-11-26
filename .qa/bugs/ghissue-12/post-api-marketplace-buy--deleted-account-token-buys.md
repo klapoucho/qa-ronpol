@@ -38,3 +38,6 @@ Buy → 200 "Purchase completed successfully". D's balance goes 15.15 → 10.10,
 
 ## Regression check
 Register, fund, `DELETE /users/profile`, then `POST /marketplace/buy` with the old token → expect 401 and nothing changed.
+
+## Re-checks
+- Re-checked 2026-11-26 in `2026-11-26-issue-13-marketplace-seller-lists-an-item` (A4): a deleted account's token is refused on `POST /marketplace/offers` (400 "User not found"), but `POST /fields` still answers 201 with it. Evidence: `.qa/runs/2026-11-26-issue-13-marketplace-seller-lists-an-item/artifacts/A4-deleted-account-token-create.json`.

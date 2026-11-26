@@ -1,0 +1,124 @@
+{
+  "case": "U11 My Offers renders every own offer in every state, none of O's",
+  "uiCards": [
+    {
+      "id": "1566",
+      "cls": "offer-active",
+      "name": "QA T3 Pole B",
+      "status": null,
+      "price": "12.34 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1567",
+      "cls": "offer-active",
+      "name": "animal #1463",
+      "status": null,
+      "price": "7.07 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1568",
+      "cls": "offer-sold",
+      "name": "field #1605 (Sold)",
+      "status": "This item has been sold",
+      "price": "1 ROL",
+      "cancelDisabled": true
+    },
+    {
+      "id": "1569",
+      "cls": "offer-active",
+      "name": "QA T3 Field E",
+      "status": null,
+      "price": "3.33 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1570",
+      "cls": "offer-active",
+      "name": "QA T3 Field G",
+      "status": null,
+      "price": "4.44 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1571",
+      "cls": "offer-active",
+      "name": "QA T3 Field I",
+      "status": null,
+      "price": "8.88 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1572",
+      "cls": "offer-active",
+      "name": "QA T3 Łąka A",
+      "status": null,
+      "price": "9.99 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1573",
+      "cls": "offer-active",
+      "name": "QA T3 Field J",
+      "status": null,
+      "price": "9.99 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1574",
+      "cls": "offer-cancelled",
+      "name": "QAbold (Cancelled)",
+      "status": "This offer has been cancelled",
+      "price": "2.22 ROL",
+      "cancelDisabled": true
+    },
+    {
+      "id": "1575",
+      "cls": "offer-active",
+      "name": "QA T3 Many 1",
+      "status": null,
+      "price": "2.01 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1576",
+      "cls": "offer-active",
+      "name": "QA T3 Many 2",
+      "status": null,
+      "price": "2.02 ROL",
+      "cancelDisabled": false
+    },
+    {
+      "id": "1577",
+      "cls": "offer-active",
+      "name": "QA T3 Many 3",
+      "status": null,
+      "price": "2.03 ROL",
+      "cancelDisabled": false
+    }
+  ],
+  "apiIdsInOrder": [
+    1566,
+    1567,
+    1568,
+    1569,
+    1570,
+    1571,
+    1572,
+    1573,
+    1574,
+    1575,
+    1576,
+    1577
+  ],
+  "verdict": {
+    "sameIdsSameOrder": true,
+    "count": 12,
+    "observerOfferAbsent": true,
+    "soldShown": true,
+    "cancelledShown": true,
+    "activeCancelEnabled": true
+  },
+  "pass": true
+}

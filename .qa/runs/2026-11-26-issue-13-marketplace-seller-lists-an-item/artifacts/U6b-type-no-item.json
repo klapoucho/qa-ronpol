@@ -1,0 +1,32 @@
+{
+  "case": "U6b-type-no-item",
+  "input": {
+    "id": "U6b-type-no-item",
+    "itemType": "field",
+    "price": "5.55"
+  },
+  "postsSent": 0,
+  "postBodies": [],
+  "responses": [],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "price": {
+      "value": "5.55",
+      "validationMessage": ""
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": []
+  }
+}
