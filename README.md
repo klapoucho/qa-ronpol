@@ -44,7 +44,8 @@ All eighteen decisions, with the alternatives considered, are in
 
 ## Project structure
 
-Type of test first, then feature (D-04). Each folder under `tests/` is one Playwright project.
+Type of test first, then feature (D-04). Each folder under `tests/` is one Playwright project; the only exception
+is `ui-ledger`, which runs the `@ledger` tests of `tests/ui/` on their own (see [the app's money queue](#the-app-under-test)).
 
 ```text
 .
@@ -123,10 +124,11 @@ npm test
 
 | Script                                 | What it does                                                                     |
 | -------------------------------------- | -------------------------------------------------------------------------------- |
-| `npm test`                             | all three projects                                                               |
+| `npm test`                             | all projects; `ui-ledger` after `api` and `ui`, one test at a time               |
 | `npm run test:api`                     | the `api` project                                                                |
-| `npm run test:ui`                      | the `ui` project                                                                 |
+| `npm run test:ui`                      | the `ui` project, without the `@ledger` tests                                    |
 | `npm run test:ui-mocked`               | the `ui-mocked` project                                                          |
+| `npm run test:ui-ledger`               | the `ui-ledger` project alone (the `@ledger` tests), without the projects first  |
 | `npm run test:smoke`                   | tests tagged `@smoke`                                                            |
 | `npm run report`                       | opens the last HTML report                                                       |
 | `npm run coverage:api`                 | API coverage against the OpenAPI contract, as Markdown (see Reports)             |
@@ -190,8 +192,9 @@ with the `ci` profile. How many tests depends on the trigger:
 
 "Touches" follows imports: a change in `src/` runs every test file that uses the changed code, and a
 documentation-only change runs only the smoke tests. A change Playwright cannot follow (`playwright.config.ts`,
-global setup, `src/config/`, dependencies, `compose.yaml`, the workflow) runs the full suite. To see what a branch
-would run: `DRY_RUN=1 scripts/pr-tests.sh origin/main`.
+global setup, `src/config/`, dependencies, `compose.yaml`, the workflow) runs the full suite. A selected `@ledger`
+test also runs the whole `api` and `ui` projects: its project waits for them, and Playwright runs a project it
+waits for in full. To see what a branch would run: `DRY_RUN=1 scripts/pr-tests.sh origin/main`.
 
 ## The app under test
 
@@ -213,6 +216,15 @@ come from the app, and global setup checks it for every project.
   origin a page loads, CDNs included. Global setup stops the run when the app does not accept the token, for
   example an app started before this setting or with another `.env`. Recreating it (`npm run app:up` after
   changing the value) resets its data, so only the author does that.
+- **Money queue.** The app runs every operation that moves money (income, purchase, transfer) one at a time
+  behind one global lock: an income takes about 2 s and a purchase about 4 s, and parallel workers queue behind
+  each other. Its pages give up on a request after 15 s, while the server still completes it
+  ([bug](.qa/bugs/ghissue-14/post-api-marketplace-buy--ui-gives-up-after-15s-but-charges.md)). A UI test that moves
+  money through the page is tagged `@ledger` and runs in the `ui-ledger` project: one test at a time, after the
+  `api` and `ui` projects have finished, so no other test queues money in front of it (`ui-mocked` never reaches
+  the app's API, so it may still run). If a test in `api` or `ui` fails, Playwright does not run `ui-ledger` (it
+  reports its tests as not run). To run it alone: `npm run test:ui-ledger`. API tests wait up to Playwright's 30 s
+  per request and stay parallel.
 - **Port 3000 is taken.** `npm run app:up` fails with
   `Bind for 0.0.0.0:3000 failed: port is already allocated`. Stop whatever listens on port 3000 (for example a
   local Rolnopol clone started with `npm start`) and run it again. The Compose project is named after the folder,
@@ -268,8 +280,9 @@ behaviour: `buyer cannot buy an offer above their balance`. Imports use the alia
    Any `/api/` request no handler serves fails the test, with its method and path.
 9. **Cases:** parametrized cases in `<name>.params.ts` as a typed array, each with a readable title used in the
    test name.
-10. **Tags:** `@smoke` for the minimal set that proves the app works, `@critical` for paths that move money. Never
-    tag the level; the project says it.
+10. **Tags:** `@smoke` for the minimal set that proves the app works, `@critical` for paths that move money,
+    `@ledger` for a UI test that moves money through the page (it then runs alone in the `ui-ledger` project; see
+    [the app's money queue](#the-app-under-test)). Never tag the level; the project says it.
 11. **Known app bug:** mark the test `test.fail()` and annotate it with a link to its file in `.qa/bugs/`.
 12. **Before the commit:** `npm run check`, then run the new test; break its expected value and one step of its
     scenario (the poison test in `.claude/skills/testing-rules/general.md`) and confirm it fails both times.

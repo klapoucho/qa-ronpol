@@ -13,7 +13,7 @@ Users sell fields and animals they own to other users for ROL, the in-app curren
 
 ## Test
 
-- **Level:** UI (Playwright project `ui`, folder `tests/ui/marketplace/`)
+- **Level:** UI (Playwright project `ui-ledger`, folder `tests/ui/marketplace/`; tagged `@ledger`, so it runs alone, D-19)
 - **Scenario:** **Buyer buys an offer.** Offer seeded through the API; funded buyer buys it in Browse and confirms in the modal. Assert the balance shown, the offer gone from Browse, the entry in transaction history.
 - **What it shows:** Full user path on the real backend
 - **Done means:** section 11 of the requirements.
