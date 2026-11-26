@@ -1,0 +1,41 @@
+{
+  "viewport": 1366,
+  "grid": {
+    "l": 103,
+    "r": 1263,
+    "t": 470,
+    "b": 690,
+    "w": 1160
+  },
+  "gridTemplateColumns": "373.328px 373.336px 373.336px",
+  "gap": "20px",
+  "columnLefts": [],
+  "cardWidths": [],
+  "rightmostCardRight": null,
+  "leftGap": null,
+  "rightGap": null,
+  "emptyState": {
+    "box": {
+      "l": 103,
+      "r": 476,
+      "t": 470,
+      "b": 690,
+      "w": 373
+    },
+    "text": {
+      "l": 216,
+      "r": 364,
+      "t": 582,
+      "b": 603
+    },
+    "gridCenterX": 683
+  },
+  "pagination": {
+    "l": 103,
+    "r": 1263,
+    "t": 720,
+    "b": 757,
+    "w": 1160
+  },
+  "cards": []
+}

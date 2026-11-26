@@ -1,0 +1,51 @@
+{
+  "listAreaHtml": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:58.120Z",
+      "data": {
+        "offer": {
+          "id": 1955,
+          "sellerId": 6216,
+          "itemType": "field",
+          "itemId": 2097,
+          "price": 2.34,
+          "description": "Pole testowe recenzenta",
+          "status": "active",
+          "createdAt": "2026-11-26T21:19:58.093Z",
+          "updatedAt": "2026-11-26T21:19:58.093Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 2097,
+      "price": 2.34,
+      "description": "Pole testowe recenzenta"
+    }
+  },
+  "inViewerBrowse": {
+    "status": 200,
+    "offer": {
+      "id": 1955,
+      "sellerId": 6216,
+      "itemType": "field",
+      "itemId": 2097,
+      "price": 2.34,
+      "description": "Pole testowe recenzenta",
+      "status": "active",
+      "createdAt": "2026-11-26T21:19:58.093Z",
+      "updatedAt": "2026-11-26T21:19:58.093Z",
+      "details": {
+        "name": "QA rv15 6216 pole",
+        "area": "2<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">"
+      },
+      "sellerLabel": "qa_rvatk_b3042686"
+    }
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "case": "M8d-mock-429",
+  "mock": {
+    "status": 429,
+    "body": {
+      "success": false,
+      "error": "Too many requests from this IP, please try again later.",
+      "timestamp": "2026-11-26T12:00:00.000Z"
+    }
+  },
+  "offersAnswered": 1,
+  "requests": [
+    {
+      "t": 115,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 116,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 136,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 136,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 136,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 136,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 137,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 137,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 137,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 205,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 208,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 221,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 233,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 240,
+      "method": "GET",
+      "url": "/api/version"
+    }
+  ],
+  "toasts": [
+    "notification error show | ✕ Error × Too many requests from this IP, please try again later."
+  ],
+  "maxToastsAtOnce": 1,
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  ],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 210,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "0",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "waited": "timeout",
+      "label": "after-load",
+      "t": 7533,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "final-7s",
+      "t": 8023,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "filter-after-429",
+      "t": 8443,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "empty-state"
+      ],
+      "emptyState": {
+        "text": "No offers available",
+        "icon": "fas fa-store",
+        "visible": true
+      },
+      "loading": null,
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "field",
+        "field": "itemType",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    }
+  ]
+}

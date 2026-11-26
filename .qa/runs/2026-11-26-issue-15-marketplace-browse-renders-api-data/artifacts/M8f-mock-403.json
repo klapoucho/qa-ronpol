@@ -1,0 +1,143 @@
+{
+  "case": "M8f-mock-403",
+  "mock": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:00:00.000Z",
+      "error": "Invalid or expired token"
+    }
+  },
+  "offersAnswered": 1,
+  "requests": [
+    {
+      "t": 56,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 56,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 75,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 76,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 76,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 76,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 77,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 77,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 77,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 136,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 211,
+      "method": "GET",
+      "url": "/api/version"
+    }
+  ],
+  "toasts": [],
+  "maxToastsAtOnce": 0,
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 280,
+      "url": "/login.html",
+      "title": "Login - Rolnopol",
+      "browseVisible": false,
+      "gridChildren": null,
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 0,
+      "myCards": [],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": null,
+      "filter": {
+        "enabled": true
+      },
+      "header": {},
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "waited": "timeout",
+      "label": "after-load",
+      "t": 3711,
+      "url": "/login.html",
+      "title": "Login - Rolnopol",
+      "browseVisible": false,
+      "gridChildren": null,
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 0,
+      "myCards": [],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": null,
+      "filter": {
+        "enabled": true
+      },
+      "header": {},
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "final",
+      "t": 5745,
+      "url": "/login.html",
+      "title": "Login - Rolnopol",
+      "browseVisible": false,
+      "gridChildren": null,
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 0,
+      "myCards": [],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": null,
+      "filter": {
+        "enabled": true
+      },
+      "header": {},
+      "docWidth": 1366,
+      "viewport": 1366
+    }
+  ]
+}

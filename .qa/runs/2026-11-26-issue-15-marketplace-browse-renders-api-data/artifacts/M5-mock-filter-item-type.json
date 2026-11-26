@@ -1,0 +1,2385 @@
+{
+  "case": "M5-mock-filter-item-type",
+  "mock": {
+    "offers": 18
+  },
+  "offersAnswered": 2,
+  "requests": [
+    {
+      "t": 64,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 64,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 82,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 82,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 82,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 82,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 83,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 83,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 83,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 142,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 184,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 188,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 209,
+      "method": "GET",
+      "url": "/api/version"
+    },
+    {
+      "t": 3954,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 4381,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    }
+  ],
+  "toasts": [],
+  "consoleErrors": [],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 192,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1.25 ROL",
+          "name": "field #7001",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 001, Area: 1.5 ha",
+          "description": "Mock description 001",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5001",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2.25 ROL",
+          "name": "field #7002",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 002, Area: 1.5 ha",
+          "description": "Mock description 002",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5002",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "4.25 ROL",
+          "name": "field #7004",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 004, Area: 1.5 ha",
+          "description": "Mock description 004",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5004",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "5.25 ROL",
+          "name": "field #7005",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 005, Area: 1.5 ha",
+          "description": "Mock description 005",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5005",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "7.25 ROL",
+          "name": "field #7007",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 007, Area: 1.5 ha",
+          "description": "Mock description 007",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5007",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "8.25 ROL",
+          "name": "field #7008",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 008, Area: 1.5 ha",
+          "description": "Mock description 008",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5008",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 457,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "0",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "waited": "rendered",
+      "label": "after-load",
+      "t": 510,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1.25 ROL",
+          "name": "field #7001",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 001, Area: 1.5 ha",
+          "description": "Mock description 001",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5001",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2.25 ROL",
+          "name": "field #7002",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 002, Area: 1.5 ha",
+          "description": "Mock description 002",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5002",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "4.25 ROL",
+          "name": "field #7004",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 004, Area: 1.5 ha",
+          "description": "Mock description 004",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5004",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "5.25 ROL",
+          "name": "field #7005",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 005, Area: 1.5 ha",
+          "description": "Mock description 005",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5005",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "7.25 ROL",
+          "name": "field #7007",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 007, Area: 1.5 ha",
+          "description": "Mock description 007",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5007",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "8.25 ROL",
+          "name": "field #7008",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 008, Area: 1.5 ha",
+          "description": "Mock description 008",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5008",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 457,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "field-itemType-empty-query",
+      "t": 923,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1.25 ROL",
+          "name": "field #7001",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 001, Area: 1.5 ha",
+          "description": "Mock description 001",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5001",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2.25 ROL",
+          "name": "field #7002",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 002, Area: 1.5 ha",
+          "description": "Mock description 002",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5002",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "4.25 ROL",
+          "name": "field #7004",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 004, Area: 1.5 ha",
+          "description": "Mock description 004",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5004",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "5.25 ROL",
+          "name": "field #7005",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 005, Area: 1.5 ha",
+          "description": "Mock description 005",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5005",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "7.25 ROL",
+          "name": "field #7007",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 007, Area: 1.5 ha",
+          "description": "Mock description 007",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5007",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "8.25 ROL",
+          "name": "field #7008",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 008, Area: 1.5 ha",
+          "description": "Mock description 008",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5008",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 457,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "itemType",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "itemType-animal",
+      "t": 1341,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 6,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "12.25 ROL",
+          "name": "animal #7012",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Type: cow, Amount: 12",
+          "description": "Mock description 012",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5012",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "15.25 ROL",
+          "name": "animal #7015",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 15",
+          "description": "Mock description 015",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5015",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "18.25 ROL",
+          "name": "animal #7018",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 18",
+          "description": "Mock description 018",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5018",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "animal",
+        "field": "itemType",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "itemType-field",
+      "t": 1760,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1.25 ROL",
+          "name": "field #7001",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 001, Area: 1.5 ha",
+          "description": "Mock description 001",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5001",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2.25 ROL",
+          "name": "field #7002",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 002, Area: 1.5 ha",
+          "description": "Mock description 002",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5002",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "4.25 ROL",
+          "name": "field #7004",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 004, Area: 1.5 ha",
+          "description": "Mock description 004",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5004",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "5.25 ROL",
+          "name": "field #7005",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 005, Area: 1.5 ha",
+          "description": "Mock description 005",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5005",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "7.25 ROL",
+          "name": "field #7007",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 007, Area: 1.5 ha",
+          "description": "Mock description 007",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5007",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "8.25 ROL",
+          "name": "field #7008",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 008, Area: 1.5 ha",
+          "description": "Mock description 008",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5008",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "10.25 ROL",
+          "name": "field #7010",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 010, Area: 1.5 ha",
+          "description": "Mock description 010",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5010",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "11.25 ROL",
+          "name": "field #7011",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 011, Area: 1.5 ha",
+          "description": "Mock description 011",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5011",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "13.25 ROL",
+          "name": "field #7013",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 013, Area: 1.5 ha",
+          "description": "Mock description 013",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5013",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 457,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "field",
+        "field": "itemType",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "itemType-ANIMAL-case",
+      "t": 2177,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 6,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "12.25 ROL",
+          "name": "animal #7012",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Type: cow, Amount: 12",
+          "description": "Mock description 012",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5012",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "15.25 ROL",
+          "name": "animal #7015",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 15",
+          "description": "Mock description 015",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5015",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "18.25 ROL",
+          "name": "animal #7018",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 18",
+          "description": "Mock description 018",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5018",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "ANIMAL",
+        "field": "itemType",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "allfields-field",
+      "t": 2606,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1.25 ROL",
+          "name": "field #7001",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 001, Area: 1.5 ha",
+          "description": "Mock description 001",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5001",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2.25 ROL",
+          "name": "field #7002",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 002, Area: 1.5 ha",
+          "description": "Mock description 002",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5002",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "4.25 ROL",
+          "name": "field #7004",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 004, Area: 1.5 ha",
+          "description": "Mock description 004",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5004",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "5.25 ROL",
+          "name": "field #7005",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 005, Area: 1.5 ha",
+          "description": "Mock description 005",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5005",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "7.25 ROL",
+          "name": "field #7007",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 007, Area: 1.5 ha",
+          "description": "Mock description 007",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5007",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "8.25 ROL",
+          "name": "field #7008",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 008, Area: 1.5 ha",
+          "description": "Mock description 008",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5008",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "10.25 ROL",
+          "name": "field #7010",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 010, Area: 1.5 ha",
+          "description": "Mock description 010",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5010",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "11.25 ROL",
+          "name": "field #7011",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 011, Area: 1.5 ha",
+          "description": "Mock description 011",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5011",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "13.25 ROL",
+          "name": "field #7013",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 013, Area: 1.5 ha",
+          "description": "Mock description 013",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5013",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 457,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "field",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "allfields-cow",
+      "t": 3022,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 6,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "12.25 ROL",
+          "name": "animal #7012",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Type: cow, Amount: 12",
+          "description": "Mock description 012",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5012",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "15.25 ROL",
+          "name": "animal #7015",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 15",
+          "description": "Mock description 015",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5015",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "18.25 ROL",
+          "name": "animal #7018",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 18",
+          "description": "Mock description 018",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5018",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "cow",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "whitespace",
+      "t": 3436,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1.25 ROL",
+          "name": "field #7001",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 001, Area: 1.5 ha",
+          "description": "Mock description 001",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5001",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2.25 ROL",
+          "name": "field #7002",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 002, Area: 1.5 ha",
+          "description": "Mock description 002",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5002",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "4.25 ROL",
+          "name": "field #7004",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 004, Area: 1.5 ha",
+          "description": "Mock description 004",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5004",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "5.25 ROL",
+          "name": "field #7005",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 005, Area: 1.5 ha",
+          "description": "Mock description 005",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5005",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "7.25 ROL",
+          "name": "field #7007",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Field: Mock field 007, Area: 1.5 ha",
+          "description": "Mock description 007",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5007",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "8.25 ROL",
+          "name": "field #7008",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 008, Area: 1.5 ha",
+          "description": "Mock description 008",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5008",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 457,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "   ",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "no-match",
+      "t": 3921,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "empty-state"
+      ],
+      "emptyState": {
+        "text": "No offers available",
+        "icon": "fas fa-store",
+        "visible": true
+      },
+      "loading": null,
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "zzz-no-match",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "on-my-offers",
+      "t": 4366,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "my-offers",
+      "browseVisible": false,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 6,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": true
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "12.25 ROL",
+          "name": "animal #7012",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Type: cow, Amount: 12",
+          "description": "Mock description 012",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5012",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "15.25 ROL",
+          "name": "animal #7015",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 15",
+          "description": "Mock description 015",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5015",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "18.25 ROL",
+          "name": "animal #7018",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 18",
+          "description": "Mock description 018",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5018",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": false,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "animal",
+        "field": "itemType",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "back-to-browse-filter-kept",
+      "t": 4796,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 6,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "6.25 ROL",
+          "name": "animal #7006",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 6",
+          "description": "Mock description 006",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5006",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.25 ROL",
+          "name": "animal #7009",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Type: cow, Amount: 9",
+          "description": "Mock description 009",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5009",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "12.25 ROL",
+          "name": "animal #7012",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Type: cow, Amount: 12",
+          "description": "Mock description 012",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5012",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "15.25 ROL",
+          "name": "animal #7015",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 15",
+          "description": "Mock description 015",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5015",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "18.25 ROL",
+          "name": "animal #7018",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Type: cow, Amount: 18",
+          "description": "Mock description 018",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5018",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "animal",
+        "field": "itemType",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    }
+  ]
+}

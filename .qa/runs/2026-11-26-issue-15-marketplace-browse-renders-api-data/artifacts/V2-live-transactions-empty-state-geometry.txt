@@ -1,0 +1,1 @@
+"{\"container\":{\"l\":103,\"r\":1263,\"w\":1160},\"display\":\"block\",\"emptyBox\":{\"l\":103,\"r\":1263,\"w\":1160},\"text\":\"No transactions found\",\"textCenterX\":683,\"containerCenterX\":683}"

@@ -1,0 +1,84 @@
+{
+  "status": 200,
+  "envelopeKeys": [
+    "success",
+    "timestamp",
+    "data"
+  ],
+  "dataKeys": [
+    "offers",
+    "total"
+  ],
+  "total": 1387,
+  "offersLength": 1387,
+  "totalEqualsLength": true,
+  "sampleSellerOffer": {
+    "id": 1952,
+    "sellerId": 6215,
+    "itemType": "field",
+    "itemId": 2094,
+    "price": 4.37,
+    "description": "Sloneczne pole przy lesie",
+    "status": "active",
+    "createdAt": "2026-11-26T20:59:23.568Z",
+    "updatedAt": "2026-11-26T20:59:23.568Z",
+    "details": {
+      "name": "QA t5 sellerA 6215",
+      "area": 3.5
+    },
+    "sellerLabel": "qa_seller_c87842a7"
+  },
+  "sampleAnimalOffer": {
+    "id": 1954,
+    "sellerId": 6215,
+    "itemType": "animal",
+    "itemId": 1489,
+    "price": 7.01,
+    "description": "Owce zdrowe",
+    "status": "active",
+    "createdAt": "2026-11-26T20:59:23.655Z",
+    "updatedAt": "2026-11-26T20:59:23.655Z",
+    "details": {
+      "type": "sheep",
+      "amount": 4
+    },
+    "sellerLabel": "qa_seller_c87842a7"
+  },
+  "offerKeySets": [
+    "createdAt,description,details,id,itemId,itemType,price,sellerId,sellerLabel,status,updatedAt"
+  ],
+  "statuses": [
+    "active"
+  ],
+  "itemTypes": [
+    "animal",
+    "field"
+  ],
+  "emptyDetailsCount": 0,
+  "missingSellerLabel": 0,
+  "priceTypes": [
+    "number"
+  ],
+  "order": {
+    "firstIds": [
+      1,
+      3,
+      4,
+      6,
+      12
+    ],
+    "lastIds": [
+      1948,
+      1949,
+      1952,
+      1953,
+      1954
+    ],
+    "ascendingById": true
+  },
+  "withParams": {
+    "status": 200,
+    "length": 1387,
+    "sameIdsAsPlain": true
+  }
+}

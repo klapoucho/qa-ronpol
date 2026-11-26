@@ -1,0 +1,221 @@
+{
+  "case": "M8a-mock-502-html",
+  "mock": {
+    "status": 502,
+    "raw": "<html><body>502 Bad Gateway</body></html>",
+    "contentType": "text/html"
+  },
+  "offersAnswered": 1,
+  "requests": [
+    {
+      "t": 85,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 86,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 103,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 104,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 104,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 104,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 105,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 105,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 105,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 187,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 188,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 203,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 217,
+      "method": "GET",
+      "url": "/api/version"
+    }
+  ],
+  "toasts": [
+    "notification error show | ✕ Error × Invalid JSON response"
+  ],
+  "maxToastsAtOnce": 2,
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 502 (Bad Gateway)"
+  ],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 191,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "0",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "waited": "timeout",
+      "label": "after-load",
+      "t": 3642,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "final",
+      "t": 4656,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    }
+  ]
+}

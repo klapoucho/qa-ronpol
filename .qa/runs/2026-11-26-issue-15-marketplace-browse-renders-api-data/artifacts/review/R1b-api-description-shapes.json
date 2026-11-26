@@ -1,0 +1,56 @@
+{
+  "nestedArray": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:38.183Z",
+      "error": "Description contains invalid characters"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 2097,
+      "price": 2.34,
+      "description": [
+        [
+          "QA<img src=x onerror=\"document.title='QA-RV15-XSS-DESC'\">"
+        ]
+      ]
+    }
+  },
+  "objectDesc": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:38.204Z",
+      "error": "Description contains invalid characters"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 2097,
+      "price": 2.34,
+      "description": {
+        "a": "QA<img src=x onerror=\"document.title='QA-RV15-XSS-DESC'\">"
+      }
+    }
+  },
+  "entityEscaped": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:38.217Z",
+      "error": "Description contains invalid characters"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 2097,
+      "price": 2.34,
+      "description": "QA &lt;b&gt;x&lt;/b&gt;"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "request": {
+    "name": "QA t5 <b>bold</b>",
+    "area": 1.1
+  },
+  "status": 201,
+  "created": {
+    "userId": 6215,
+    "name": "QA t5 <b>bold</b>",
+    "area": 1.1,
+    "id": 2096
+  },
+  "storedAsSent": true,
+  "listed": false
+}

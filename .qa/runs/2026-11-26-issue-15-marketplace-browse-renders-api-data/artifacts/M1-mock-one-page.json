@@ -1,0 +1,484 @@
+{
+  "case": "M1-mock-one-page",
+  "mock": {
+    "offers": [
+      {
+        "id": 801,
+        "sellerId": 91,
+        "itemType": "field",
+        "itemId": 3001,
+        "price": 12.34,
+        "description": "Pole nad rzeka",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Mock Meadow",
+          "area": 2.75
+        },
+        "sellerLabel": "Mock Seller A"
+      },
+      {
+        "id": 802,
+        "sellerId": 92,
+        "itemType": "animal",
+        "itemId": 3002,
+        "price": 7,
+        "description": "Krowy mleczne",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "type": "cow",
+          "amount": 5
+        },
+        "sellerLabel": "Mock Seller B"
+      },
+      {
+        "id": 803,
+        "sellerId": 93,
+        "itemType": "field",
+        "itemId": 3003,
+        "price": 0.5,
+        "description": "",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {}
+      }
+    ]
+  },
+  "offersAnswered": 1,
+  "requests": [
+    {
+      "t": 63,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 65,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 85,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 85,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 85,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 85,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 87,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 87,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 87,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 153,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 183,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 187,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 208,
+      "method": "GET",
+      "url": "/api/version"
+    }
+  ],
+  "toasts": [],
+  "consoleErrors": [],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 191,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 3,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "12.34 ROL",
+          "name": "field #3001",
+          "seller": "Offered by: Mock Seller A",
+          "meta": "Field: Mock Meadow, Area: 2.75 ha",
+          "description": "Pole nad rzeka",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "801",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "7 ROL",
+          "name": "animal #3002",
+          "seller": "Offered by: Mock Seller B",
+          "meta": "Type: cow, Amount: 5",
+          "description": "Krowy mleczne",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "802",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "0.5 ROL",
+          "name": "field #3003",
+          "seller": "Offered by: Unknown",
+          "meta": "Field: undefined, Area: undefined ha",
+          "description": null,
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "803",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "0",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "waited": "rendered",
+      "label": "after-load",
+      "t": 506,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 3,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "12.34 ROL",
+          "name": "field #3001",
+          "seller": "Offered by: Mock Seller A",
+          "meta": "Field: Mock Meadow, Area: 2.75 ha",
+          "description": "Pole nad rzeka",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "801",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "7 ROL",
+          "name": "animal #3002",
+          "seller": "Offered by: Mock Seller B",
+          "meta": "Type: cow, Amount: 5",
+          "description": "Krowy mleczne",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "802",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "0.5 ROL",
+          "name": "field #3003",
+          "seller": "Offered by: Unknown",
+          "meta": "Field: undefined, Area: undefined ha",
+          "description": null,
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "803",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "after-screenshot",
+      "t": 1013,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 3,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "12.34 ROL",
+          "name": "field #3001",
+          "seller": "Offered by: Mock Seller A",
+          "meta": "Field: Mock Meadow, Area: 2.75 ha",
+          "description": "Pole nad rzeka",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "801",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "7 ROL",
+          "name": "animal #3002",
+          "seller": "Offered by: Mock Seller B",
+          "meta": "Type: cow, Amount: 5",
+          "description": "Krowy mleczne",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "802",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "0.5 ROL",
+          "name": "field #3003",
+          "seller": "Offered by: Unknown",
+          "meta": "Field: undefined, Area: undefined ha",
+          "description": null,
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "803",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    }
+  ]
+}

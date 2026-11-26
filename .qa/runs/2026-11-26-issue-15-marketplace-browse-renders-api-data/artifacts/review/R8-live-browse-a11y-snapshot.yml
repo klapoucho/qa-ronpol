@@ -1,0 +1,208 @@
+- generic [active] [ref=f4e1]:
+  - navigation [ref=f4e2]:
+    - generic [ref=f4e3]:
+      - link "Rolnopol" [ref=f4e4] [cursor=pointer]:
+        - /url: /
+      - list [ref=f4e6]:
+        - listitem [ref=f4e7]:
+          - link "Home" [ref=f4e8] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f4e10]:
+          - link "Staff & Fields Management" [ref=f4e11] [cursor=pointer]:
+            - /url: /staff-fields-main.html
+        - listitem [ref=f4e13]:
+          - link "Financial Tracking" [ref=f4e14] [cursor=pointer]:
+            - /url: /financial.html
+        - listitem [ref=f4e16]:
+          - link "Marketplace" [ref=f4e17] [cursor=pointer]:
+            - /url: /marketplace.html
+        - listitem [ref=f4e19]:
+          - link "Rolnopol Map" [ref=f4e20] [cursor=pointer]:
+            - /url: /rolnopolmap.html
+        - listitem [ref=f4e22]:
+          - link "Alerts" [ref=f4e23] [cursor=pointer]:
+            - /url: /alerts.html
+        - listitem [ref=f4e25]:
+          - link "Documentation" [ref=f4e26] [cursor=pointer]:
+            - /url: /docs.html
+        - listitem [ref=f4e28]:
+          - link "API Explorer" [ref=f4e29] [cursor=pointer]:
+            - /url: /swagger.html
+        - listitem [ref=f4e31]:
+          - link "Profile" [ref=f4e32] [cursor=pointer]:
+            - /url: /profile.html
+            - generic [ref=f4e34]: Welcome, qa_viewer_766382b4
+          - button "Logout" [ref=f4e35] [cursor=pointer]
+  - generic [ref=f4e37]:
+    - generic [ref=f4e38]:
+      - generic [ref=f4e42]:
+        - heading "Marketplace" [level=1] [ref=f4e43]
+        - paragraph [ref=f4e44]: Buy and sell fields and animals with other farmers
+      - generic [ref=f4e45]:
+        - generic [ref=f4e46]:
+          - generic [ref=f4e47]: "1387"
+          - generic [ref=f4e48]: Active
+        - generic [ref=f4e49]:
+          - generic [ref=f4e50]: "1"
+          - generic [ref=f4e51]: My Offers
+        - generic [ref=f4e52]:
+          - generic [ref=f4e53]: "328"
+          - generic [ref=f4e54]: Trades
+        - generic [ref=f4e55]:
+          - generic [ref=f4e56]: 514 566,02
+          - generic [ref=f4e57]: Total Value
+    - generic [ref=f4e58]: "Your Balance: 13.57 ROL"
+    - generic [ref=f4e60]:
+      - button "Browse Offers" [ref=f4e61] [cursor=pointer]
+      - button "My Offers" [ref=f4e62] [cursor=pointer]
+      - button "Create Offer" [ref=f4e63] [cursor=pointer]
+      - button "Transaction History" [ref=f4e64] [cursor=pointer]
+    - generic [ref=f4e65]:
+      - generic [ref=f4e66]:
+        - textbox "Filter offers by any text..." [ref=f4e67]
+        - combobox [ref=f4e68]:
+          - option "All Fields" [selected]
+          - option "Item Type"
+          - option "Name"
+          - option "Description"
+          - option "Price"
+      - generic [ref=f4e69]:
+        - generic [ref=f4e70]:
+          - generic [ref=f4e71]:
+            - generic [ref=f4e72]: Animal
+            - generic [ref=f4e73]: 130.99 ROL
+          - generic [ref=f4e74]:
+            - generic [ref=f4e75]: "animal #6"
+            - generic [ref=f4e76]: "Offered by: Demo User"
+            - generic [ref=f4e77]: "Type: goat, Amount: 500"
+            - generic [ref=f4e78]: Healthy animals for sale.
+          - button "Buy Now" [ref=f4e80] [cursor=pointer]
+        - generic [ref=f4e81]:
+          - generic [ref=f4e82]:
+            - generic [ref=f4e83]: Field
+            - generic [ref=f4e84]: 1200 ROL
+          - generic [ref=f4e85]:
+            - generic [ref=f4e86]: "field #13"
+            - generic [ref=f4e87]: "Offered by: Demo User"
+            - generic [ref=f4e88]: "Field: Moje Pole 5, Area: 132 ha"
+            - generic [ref=f4e89]: Prime agricultural land. Great for crops or livestock especially for pigs.
+          - button "Buy Now" [ref=f4e91] [cursor=pointer]
+        - generic [ref=f4e92]:
+          - generic [ref=f4e93]:
+            - generic [ref=f4e94]: Field
+            - generic [ref=f4e95]: 300 ROL
+          - generic [ref=f4e96]:
+            - generic [ref=f4e97]: "field #14"
+            - generic [ref=f4e98]: "Offered by: John Brown"
+            - generic [ref=f4e99]: "Field: Green Meadow, Area: 120 ha"
+            - generic [ref=f4e100]: Prime land for crops.
+          - button "Buy Now" [ref=f4e102] [cursor=pointer]
+        - generic [ref=f4e103]:
+          - generic [ref=f4e104]:
+            - generic [ref=f4e105]: Field
+            - generic [ref=f4e106]: 400 ROL
+          - generic [ref=f4e107]:
+            - generic [ref=f4e108]: "field #18"
+            - generic [ref=f4e109]: "Offered by: Jane Smith"
+            - generic [ref=f4e110]: "Field: Smith's Patch, Area: 22 ha"
+            - generic [ref=f4e111]: Large field, great for expansion.
+          - button "Buy Now" [ref=f4e113] [cursor=pointer]
+        - generic [ref=f4e114]:
+          - generic [ref=f4e115]:
+            - generic [ref=f4e116]: Field
+            - generic [ref=f4e117]: 250 ROL
+          - generic [ref=f4e118]:
+            - generic [ref=f4e119]: "field #22"
+            - generic [ref=f4e120]: "Offered by: John Brown"
+            - generic [ref=f4e121]: "Field: Willow Grove, Area: 28 ha"
+            - generic [ref=f4e122]: Willow Grove, fertile and well-irrigated.
+          - button "Buy Now" [ref=f4e124] [cursor=pointer]
+        - generic [ref=f4e125]:
+          - generic [ref=f4e126]:
+            - generic [ref=f4e127]: Animal
+            - generic [ref=f4e128]: 300 ROL
+          - generic [ref=f4e129]:
+            - generic [ref=f4e130]: "animal #17"
+            - generic [ref=f4e131]: "Offered by: John Doe"
+            - generic [ref=f4e132]: "Type: horse, Amount: 3"
+            - generic [ref=f4e133]: Strong horses, perfect for farm work.
+          - button "Buy Now" [ref=f4e135] [cursor=pointer]
+        - generic [ref=f4e136]:
+          - generic [ref=f4e137]:
+            - generic [ref=f4e138]: Animal
+            - generic [ref=f4e139]: 110 ROL
+          - generic [ref=f4e140]:
+            - generic [ref=f4e141]: "animal #18"
+            - generic [ref=f4e142]: "Offered by: Developer Account"
+            - generic [ref=f4e143]: "Type: sheep, Amount: 12"
+            - generic [ref=f4e144]: Healthy sheep, ready for a new home.
+          - button "Buy Now" [ref=f4e146] [cursor=pointer]
+        - generic [ref=f4e147]:
+          - generic [ref=f4e148]:
+            - generic [ref=f4e149]: Animal
+            - generic [ref=f4e150]: 95 ROL
+          - generic [ref=f4e151]:
+            - generic [ref=f4e152]: "animal #20"
+            - generic [ref=f4e153]: "Offered by: John Brown"
+            - generic [ref=f4e154]: "Type: goat, Amount: 15"
+            - generic [ref=f4e155]: Goats, healthy and ready for sale.
+          - button "Buy Now" [ref=f4e157] [cursor=pointer]
+        - generic [ref=f4e158]:
+          - generic [ref=f4e159]:
+            - generic [ref=f4e160]: Field
+            - generic [ref=f4e161]: 999.99 ROL
+          - generic [ref=f4e162]:
+            - generic [ref=f4e163]: "field #27"
+            - generic [ref=f4e164]: "Offered by: Government Account"
+            - generic [ref=f4e165]: "Field: Research Field Alpha, Area: 150 ha"
+            - generic [ref=f4e166]: Government field for sale.
+          - button "Buy Now" [ref=f4e168] [cursor=pointer]
+      - generic [ref=f4e169]:
+        - combobox [ref=f4e170]:
+          - option "9 per page" [selected]
+          - option "18 per page"
+          - option "36 per page"
+        - button "« Prev" [disabled] [ref=f4e171]
+        - button "1" [ref=f4e172] [cursor=pointer]
+        - button "2" [ref=f4e173] [cursor=pointer]
+        - button "3" [ref=f4e174] [cursor=pointer]
+        - button "4" [ref=f4e175] [cursor=pointer]
+        - button "5" [ref=f4e176] [cursor=pointer]
+        - button "Next »" [ref=f4e177] [cursor=pointer]
+    - contentinfo [ref=f4e179]:
+      - paragraph
+      - navigation "Footer navigation" [ref=f4e180]:
+        - link "Contact us" [ref=f4e181] [cursor=pointer]:
+          - /url: /contact.html
+          - text: Contact
+        - text: "|"
+        - link "Backend tools and feature flags" [ref=f4e182] [cursor=pointer]:
+          - /url: /backend.html
+          - text: Backend
+      - text: © 2026 Rolnopol v1.126.0. build by
+      - link "jaktestowac.pl" [ref=f4e183] [cursor=pointer]:
+        - /url: https://jaktestowac.pl
+      - text: "|"
+      - link "GitHub Rolnopol repository" [ref=f4e184] [cursor=pointer]:
+        - /url: https://github.com/jaktestowac/rolnopol
+      - text: "|"
+      - link "GitHub" [ref=f4e186] [cursor=pointer]:
+        - /url: https://github.com/jaktestowac
+      - text: "|"
+      - link "YouTube" [ref=f4e188] [cursor=pointer]:
+        - /url: https://www.youtube.com/@jaktestowac?sub_confirmation=1
+      - text: "|"
+      - link "LinkedIn jaktestowac.pl" [ref=f4e190] [cursor=pointer]:
+        - /url: https://www.linkedin.com/company/jaktestowac
+      - link "AI_Testers" [ref=f4e192] [cursor=pointer]:
+        - /url: https://aitesters.pl
+      - text: "|"
+      - link "GitHub" [ref=f4e193] [cursor=pointer]:
+        - /url: https://github.com/AI-Testers-pl
+      - text: "|"
+      - link "YouTube" [ref=f4e195] [cursor=pointer]:
+        - /url: https://www.youtube.com/@AITesterspl?sub_confirmation=1
+      - text: "|"
+      - link "LinkedIn AI_Testers" [ref=f4e197] [cursor=pointer]:
+        - /url: https://www.linkedin.com/company/aitesters
+      - paragraph

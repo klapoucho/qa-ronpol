@@ -1,0 +1,212 @@
+{
+  "financial/account": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:54.959Z",
+      "data": {
+        "account": {
+          "id": 6205,
+          "userId": 6214,
+          "balance": 13.57,
+          "currency": "ROL",
+          "createdAt": "2026-11-26T20:59:15.015Z",
+          "updatedAt": "2026-11-26T20:59:17.128Z",
+          "transactions": [
+            {
+              "id": 1597,
+              "type": "income",
+              "amount": 13.57,
+              "description": "QA seed funds",
+              "category": "seed",
+              "referenceId": null,
+              "timestamp": "2026-11-26T20:59:17.128Z",
+              "balanceBefore": 0,
+              "balanceAfter": 13.57
+            }
+          ]
+        }
+      }
+    }
+  },
+  "fields": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:54.980Z",
+      "data": [
+        {
+          "userId": 6214,
+          "name": "QA t5 own 6214",
+          "area": 2.25,
+          "id": 2093
+        }
+      ]
+    }
+  },
+  "animals": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:54.997Z",
+      "data": []
+    }
+  },
+  "marketplace/my-offers": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:55.017Z",
+      "data": {
+        "offers": [
+          {
+            "id": 1951,
+            "sellerId": 6214,
+            "itemType": "field",
+            "itemId": 2093,
+            "price": 3.33,
+            "description": "Own offer of the viewer",
+            "status": "active",
+            "createdAt": "2026-11-26T20:59:23.529Z",
+            "updatedAt": "2026-11-26T20:59:23.529Z",
+            "details": {
+              "name": "QA t5 own 6214",
+              "area": 2.25
+            },
+            "sellerLabel": "qa_viewer_766382b4"
+          }
+        ],
+        "total": 1
+      }
+    }
+  },
+  "marketplace/transactions": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:55.033Z",
+      "data": {
+        "transactions": [],
+        "total": 0
+      }
+    }
+  },
+  "financial/stats": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:55.046Z",
+      "data": {
+        "statistics": {
+          "currentBalance": 13.57,
+          "totalIncome": 13.57,
+          "totalExpenses": 0,
+          "totalTransferred": 0,
+          "transactionCount": 1,
+          "categories": {
+            "seed": {
+              "count": 1,
+              "total": 13.57
+            }
+          },
+          "monthlyStats": {
+            "2026-11": {
+              "income": 13.57,
+              "expenses": 0,
+              "count": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "financial/marketplace-stats": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:55.058Z",
+      "data": {
+        "totalActiveOffers": 1387,
+        "totalOffers": 1954,
+        "totalTransactions": 328,
+        "totalVolume": 16141.790000000186,
+        "offersByType": {
+          "field": 1229,
+          "animal": 725
+        },
+        "activeOffersByType": {
+          "field": 839,
+          "animal": 548
+        }
+      }
+    }
+  },
+  "/api/v1/statistics": {
+    "status": 200,
+    "body": {
+      "users": 6211,
+      "farms": 6211,
+      "area": 123021.24000000021,
+      "staff": 23,
+      "animals": 16676,
+      "avgStaffAge": 41,
+      "offers": 1387,
+      "totalValue": 514566.02000000275,
+      "advanced": {
+        "avgAreaPerFarm": 19.81,
+        "avgAnimalsPerFarm": 2.68,
+        "avgStaffPerFarm": 0,
+        "avgAnimalsPerStaff": 725.04,
+        "avgOfferValue": 359.23,
+        "completedTransactions": 328,
+        "totalCompletedValue": 16316.790000000059,
+        "totalActiveValue": 498249.2300000027
+      }
+    }
+  },
+  "marketplace/offers": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:10:55.419Z",
+      "data": {
+        "total": 1386,
+        "offers": [
+          {
+            "id": 1952,
+            "sellerId": 6215,
+            "itemType": "field",
+            "itemId": 2094,
+            "price": 4.37,
+            "description": "Sloneczne pole przy lesie",
+            "status": "active",
+            "createdAt": "2026-11-26T20:59:23.568Z",
+            "updatedAt": "2026-11-26T20:59:23.568Z",
+            "details": {
+              "name": "QA t5 sellerA 6215",
+              "area": 3.5
+            },
+            "sellerLabel": "qa_seller_c87842a7"
+          },
+          {
+            "id": 1954,
+            "sellerId": 6215,
+            "itemType": "animal",
+            "itemId": 1489,
+            "price": 7.01,
+            "description": "Owce zdrowe",
+            "status": "active",
+            "createdAt": "2026-11-26T20:59:23.655Z",
+            "updatedAt": "2026-11-26T20:59:23.655Z",
+            "details": {
+              "type": "sheep",
+              "amount": 4
+            },
+            "sellerLabel": "qa_seller_c87842a7"
+          }
+        ]
+      }
+    },
+    "note": "offers truncated to the last 2"
+  }
+}

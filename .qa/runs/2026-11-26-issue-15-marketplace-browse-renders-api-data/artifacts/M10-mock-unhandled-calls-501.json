@@ -1,0 +1,41 @@
+{
+  "evidence": "mocked: every call except authorization/feature-flags/version/offers answered 501",
+  "requests": [
+    "GET /api/v1/authorization",
+    "GET /api/v1/feature-flags",
+    "GET /api/v1/financial/account",
+    "GET /api/v1/fields",
+    "GET /api/v1/animals",
+    "GET /api/v1/marketplace/offers",
+    "GET /api/v1/marketplace/my-offers",
+    "GET /api/v1/marketplace/transactions",
+    "GET /api/v1/financial/stats",
+    "GET /api/v1/financial/marketplace-stats",
+    "GET /api/v1/authorization",
+    "GET /api/v1/statistics",
+    "GET /api/v1/feature-flags",
+    "GET /api/version"
+  ],
+  "toasts": [
+    "✕ Error × No mock handler for GET /api/v1/financial/account",
+    "✕ Error × No mock handler for GET /api/v1/fields",
+    "✕ Error × No mock handler for GET /api/v1/animals",
+    "✕ Error × No mock handler for GET /api/v1/marketplace/my-offers",
+    "✕ Error × No mock handler for GET /api/v1/marketplace/transactions",
+    "✕ Error × No mock handler for GET /api/v1/financial/stats",
+    "✕ Error × No mock handler for GET /api/v1/financial/marketplace-stats"
+  ],
+  "maxToastsAtOnce": 14,
+  "state": {
+    "cards": 1,
+    "balance": "Loading...",
+    "header": [
+      "0",
+      "0",
+      "0",
+      "0,00"
+    ],
+    "myOffers": "Loading your offers...",
+    "tx": "Loading transactions..."
+  }
+}

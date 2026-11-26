@@ -1,0 +1,1275 @@
+{
+  "case": "M3-live-page-size-9-shows-10",
+  "mock": "live",
+  "offersAnswered": 0,
+  "requests": [
+    {
+      "t": 48,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 49,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 69,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 69,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 69,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 69,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 69,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 69,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 69,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 511,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 512,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 528,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 540,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 546,
+      "method": "GET",
+      "url": "/api/version"
+    }
+  ],
+  "toasts": [],
+  "maxToastsAtOnce": 0,
+  "consoleErrors": [],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 52,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "0",
+        "myOffersCount": "0",
+        "balance": "Loading..."
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "waited": "rendered",
+      "label": "after-load",
+      "t": 834,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "130.99 ROL",
+          "name": "animal #6",
+          "seller": "Offered by: Demo User",
+          "meta": "Type: goat, Amount: 500",
+          "description": "Healthy animals for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "1",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1200 ROL",
+          "name": "field #13",
+          "seller": "Offered by: Demo User",
+          "meta": "Field: Moje Pole 5, Area: 132 ha",
+          "description": "Prime agricultural land. Great for crops or livestock especially for pigs.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "3",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "300 ROL",
+          "name": "field #14",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Green Meadow, Area: 120 ha",
+          "description": "Prime land for crops.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "4",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "400 ROL",
+          "name": "field #18",
+          "seller": "Offered by: Jane Smith",
+          "meta": "Field: Smith's Patch, Area: 22 ha",
+          "description": "Large field, great for expansion.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "6",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "250 ROL",
+          "name": "field #22",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Willow Grove, Area: 28 ha",
+          "description": "Willow Grove, fertile and well-irrigated.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "12",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "300 ROL",
+          "name": "animal #17",
+          "seller": "Offered by: John Doe",
+          "meta": "Type: horse, Amount: 3",
+          "description": "Strong horses, perfect for farm work.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "13",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "110 ROL",
+          "name": "animal #18",
+          "seller": "Offered by: Developer Account",
+          "meta": "Type: sheep, Amount: 12",
+          "description": "Healthy sheep, ready for a new home.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "14",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "95 ROL",
+          "name": "animal #20",
+          "seller": "Offered by: John Brown",
+          "meta": "Type: goat, Amount: 15",
+          "description": "Goats, healthy and ready for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "16",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "999.99 ROL",
+          "name": "field #27",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Field Alpha, Area: 150 ha",
+          "description": "Government field for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "17",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 625,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "3",
+            "page": "3",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "4",
+            "page": "4",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "5",
+            "page": "5",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "default",
+      "t": 1242,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "130.99 ROL",
+          "name": "animal #6",
+          "seller": "Offered by: Demo User",
+          "meta": "Type: goat, Amount: 500",
+          "description": "Healthy animals for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "1",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1200 ROL",
+          "name": "field #13",
+          "seller": "Offered by: Demo User",
+          "meta": "Field: Moje Pole 5, Area: 132 ha",
+          "description": "Prime agricultural land. Great for crops or livestock especially for pigs.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "3",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "300 ROL",
+          "name": "field #14",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Green Meadow, Area: 120 ha",
+          "description": "Prime land for crops.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "4",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "400 ROL",
+          "name": "field #18",
+          "seller": "Offered by: Jane Smith",
+          "meta": "Field: Smith's Patch, Area: 22 ha",
+          "description": "Large field, great for expansion.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "6",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "250 ROL",
+          "name": "field #22",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Willow Grove, Area: 28 ha",
+          "description": "Willow Grove, fertile and well-irrigated.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "12",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "300 ROL",
+          "name": "animal #17",
+          "seller": "Offered by: John Doe",
+          "meta": "Type: horse, Amount: 3",
+          "description": "Strong horses, perfect for farm work.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "13",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "110 ROL",
+          "name": "animal #18",
+          "seller": "Offered by: Developer Account",
+          "meta": "Type: sheep, Amount: 12",
+          "description": "Healthy sheep, ready for a new home.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "14",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "95 ROL",
+          "name": "animal #20",
+          "seller": "Offered by: John Brown",
+          "meta": "Type: goat, Amount: 15",
+          "description": "Goats, healthy and ready for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "16",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "999.99 ROL",
+          "name": "field #27",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Field Alpha, Area: 150 ha",
+          "description": "Government field for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "17",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 625,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "3",
+            "page": "3",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "4",
+            "page": "4",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "5",
+            "page": "5",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "size18",
+      "t": 1667,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 18,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "130.99 ROL",
+          "name": "animal #6",
+          "seller": "Offered by: Demo User",
+          "meta": "Type: goat, Amount: 500",
+          "description": "Healthy animals for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "1",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1200 ROL",
+          "name": "field #13",
+          "seller": "Offered by: Demo User",
+          "meta": "Field: Moje Pole 5, Area: 132 ha",
+          "description": "Prime agricultural land. Great for crops or livestock especially for pigs.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "3",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "300 ROL",
+          "name": "field #14",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Green Meadow, Area: 120 ha",
+          "description": "Prime land for crops.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "4",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "400 ROL",
+          "name": "field #18",
+          "seller": "Offered by: Jane Smith",
+          "meta": "Field: Smith's Patch, Area: 22 ha",
+          "description": "Large field, great for expansion.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "6",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "250 ROL",
+          "name": "field #22",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Willow Grove, Area: 28 ha",
+          "description": "Willow Grove, fertile and well-irrigated.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "12",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "300 ROL",
+          "name": "animal #17",
+          "seller": "Offered by: John Doe",
+          "meta": "Type: horse, Amount: 3",
+          "description": "Strong horses, perfect for farm work.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "13",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "110 ROL",
+          "name": "animal #18",
+          "seller": "Offered by: Developer Account",
+          "meta": "Type: sheep, Amount: 12",
+          "description": "Healthy sheep, ready for a new home.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "14",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "95 ROL",
+          "name": "animal #20",
+          "seller": "Offered by: John Brown",
+          "meta": "Type: goat, Amount: 15",
+          "description": "Goats, healthy and ready for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "16",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "999.99 ROL",
+          "name": "field #27",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Field Alpha, Area: 150 ha",
+          "description": "Government field for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "17",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "499.99 ROL",
+          "name": "animal #21",
+          "seller": "Offered by: Government Account",
+          "meta": "Type: cow, Amount: 20",
+          "description": "Government cows for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "18",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1500 ROL",
+          "name": "field #29",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Orchard Delta, Area: 120 ha",
+          "description": "Lush government orchard with mature fruit trees and irrigation system.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "19",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "799.99 ROL",
+          "name": "animal #22",
+          "seller": "Offered by: Government Account",
+          "meta": "Type: sheep, Amount: 35",
+          "description": "Healthy sheep, ideal for wool production and eco-farming.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "20",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "299.99 ROL",
+          "name": "animal #23",
+          "seller": "Offered by: Government Account",
+          "meta": "Type: sheep, Amount: 12",
+          "description": "Bee colonies for pollination and honey production, government-certified.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "21",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1200 ROL",
+          "name": "field #28",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Field Beta, Area: 275 ha",
+          "description": "Spacious research field, ideal for crop rotation experiments and soil studies.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "22",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "950 ROL",
+          "name": "field #30",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Field Gamma, Area: 160 ha",
+          "description": "Experimental wheat plot with advanced irrigation and monitoring systems.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "23",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2200 ROL",
+          "name": "field #31",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Meadow, Area: 100 ha",
+          "description": "Large solar research meadow, perfect for renewable energy projects and biodiversity studies.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "24",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "199.99 ROL",
+          "name": "animal #26",
+          "seller": "Offered by: Government Account",
+          "meta": "Type: duck, Amount: 15",
+          "description": "Government ducks for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "25",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1800 ROL",
+          "name": "field #32",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Experimental Plot Delta, Area: 80 ha",
+          "description": "Experimental Plot Delta, ideal for research.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "26",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 625,
+        "pageSize": {
+          "value": "18",
+          "selectedText": "18 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "3",
+            "page": "3",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "4",
+            "page": "4",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "5",
+            "page": "5",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "back-to-9-per-page",
+      "t": 2083,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 10,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "130.99 ROL",
+          "name": "animal #6",
+          "seller": "Offered by: Demo User",
+          "meta": "Type: goat, Amount: 500",
+          "description": "Healthy animals for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "1",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1200 ROL",
+          "name": "field #13",
+          "seller": "Offered by: Demo User",
+          "meta": "Field: Moje Pole 5, Area: 132 ha",
+          "description": "Prime agricultural land. Great for crops or livestock especially for pigs.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "3",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "300 ROL",
+          "name": "field #14",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Green Meadow, Area: 120 ha",
+          "description": "Prime land for crops.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "4",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "400 ROL",
+          "name": "field #18",
+          "seller": "Offered by: Jane Smith",
+          "meta": "Field: Smith's Patch, Area: 22 ha",
+          "description": "Large field, great for expansion.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "6",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "250 ROL",
+          "name": "field #22",
+          "seller": "Offered by: John Brown",
+          "meta": "Field: Willow Grove, Area: 28 ha",
+          "description": "Willow Grove, fertile and well-irrigated.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "12",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "300 ROL",
+          "name": "animal #17",
+          "seller": "Offered by: John Doe",
+          "meta": "Type: horse, Amount: 3",
+          "description": "Strong horses, perfect for farm work.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "13",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "110 ROL",
+          "name": "animal #18",
+          "seller": "Offered by: Developer Account",
+          "meta": "Type: sheep, Amount: 12",
+          "description": "Healthy sheep, ready for a new home.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "14",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "95 ROL",
+          "name": "animal #20",
+          "seller": "Offered by: John Brown",
+          "meta": "Type: goat, Amount: 15",
+          "description": "Goats, healthy and ready for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "16",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "999.99 ROL",
+          "name": "field #27",
+          "seller": "Offered by: Government Account",
+          "meta": "Field: Research Field Alpha, Area: 150 ha",
+          "description": "Government field for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "17",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "499.99 ROL",
+          "name": "animal #21",
+          "seller": "Offered by: Government Account",
+          "meta": "Type: cow, Amount: 20",
+          "description": "Government cows for sale.",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "18",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 613,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "2",
+            "page": "2",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "3",
+            "page": "3",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "4",
+            "page": "4",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "5",
+            "page": "5",
+            "disabled": false,
+            "active": false
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": false,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    }
+  ]
+}

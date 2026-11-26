@@ -1,0 +1,30 @@
+{
+  "evidence": "live app, browser offline (context.setOffline), no route mock",
+  "before": {
+    "cards": 9,
+    "first": "animal #6",
+    "empty": null,
+    "loading": false
+  },
+  "toasts": [
+    "✕ Error × Failed to fetch"
+  ],
+  "afterOffline": {
+    "cards": 9,
+    "first": "animal #6",
+    "empty": null,
+    "loading": false
+  },
+  "filterWhileOffline": {
+    "cards": 9,
+    "first": "animal #18",
+    "empty": null,
+    "loading": false
+  },
+  "afterOnline": {
+    "cards": 9,
+    "first": "animal #6",
+    "empty": null,
+    "loading": false
+  }
+}
