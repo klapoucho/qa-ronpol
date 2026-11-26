@@ -102,6 +102,7 @@ Filter noise before it reaches a human: cheap, rule-shaped feedback is fixed by 
    npx playwright test <files> --repeat-each=10 --retries=0 --workers=4
    ```
    Every run must pass. A single failure is a flaky test: find the cause (a missing wait, shared data between workers, order dependence, a time-dependent value) and fix it — never add retries or fixed waits to make it pass. Then rerun the 10.
+   When the cause is the app itself (a shared lock or queue that parallel tests overload, proven with a trace), don't weaken the test or override the app: file the bug, report to the coordinator with the numbers, and isolate the test as the user decides (this repo: UI tests that move money are tagged `@ledger` and run alone in the `ui-ledger` project, see the README).
    **UI tests also run once on a slow connection** (see `ui.md` → "Slow network"). A test that passes only on a fast connection is waiting for the wrong thing. Record both results (passes out of 10, slow-network pass) in the test intent card.
 3. **`/simplify`, then `/code-review`** on the branch; fix the findings. Commit first and pass the level and branch explicitly (e.g. `/code-review medium <branch>`); a review that reports an empty diff did not see your changes, so rerun it.
 4. **Test review** — a subagent with fresh context that gets only the story, the test plan and the diff (not your reasoning) and answers, for each new test:
