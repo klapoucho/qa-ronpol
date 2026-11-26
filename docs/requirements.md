@@ -226,14 +226,15 @@ of one object are checked by one assertion (FR-20).
 
 ### Running and reporting
 
-- **FR-16 Playwright projects.** `api` (no browser), `ui` (Chromium, real backend) and
-  `ui-mocked` (Chromium, mocked API, network guard). Each project maps to one folder under
-  `tests/`.
-- **FR-17 Tags.** `@smoke` for the minimal set that proves the app works and `@critical` for
-  money-moving paths. Projects already express the test level, so tags never repeat it. A test
+- **FR-16 Playwright projects.** `api` (no browser), `ui` (Chromium, real backend), `ui-mocked`
+  (Chromium, mocked API, network guard) and `ui-ledger` (the `@ledger` tests of `tests/ui/`, one
+  worker, after `api` and `ui`; D-19). Each other project maps to one folder under `tests/`.
+- **FR-17 Tags.** `@smoke` for the minimal set that proves the app works, `@critical` for
+  money-moving paths and `@ledger` for a UI test that moves money through the page (it runs in
+  `ui-ledger`, D-19). Projects already express the test level, so tags never repeat it. A test
   hitting a known app bug is marked `test.fail()` with an annotation linking the bug file
   (D-06).
-- **FR-18 npm scripts.** `test`, `test:api`, `test:ui`, `test:ui-mocked`, `test:smoke`,
+- **FR-18 npm scripts.** `test`, `test:api`, `test:ui`, `test:ui-mocked`, `test:ui-ledger`, `test:smoke`,
   `report`, `coverage:api` (FR-21), `lint`, `lint:fix`, `format`, `format:check`, `typecheck`, `check` (typecheck +
   lint + format check + `playwright test --list`), and the app scripts in section 9.
 - **FR-19 Reporting.** The built-in HTML report always. Locally the `list` reporter; in CI
@@ -324,7 +325,8 @@ Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix
 - **NFR-13 No fixed waits.** Use web-first assertions and `waitForResponse`, never
   `waitForTimeout`.
 - **NFR-14 Parallel.** `fullyParallel: true`. The suite passes with any worker count and in any
-  order.
+  order, except the `@ledger` tests: the app queues every money operation behind one lock and its
+  pages give up on a request after 15 s, so they run alone in `ui-ledger` (D-19).
 - **NFR-15 Retries.** None locally; one in CI. A test that passes only on retry is reported as
   flaky and fixed, not accepted.
 - **NFR-16 Runtime.** The full suite runs in under 2 minutes in CI.
@@ -357,7 +359,8 @@ Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix
 
 ## 8. Project structure
 
-Type of test first, then feature (D-04). Each top-level test folder is one Playwright project.
+Type of test first, then feature (D-04). Each top-level test folder is one Playwright project; the
+exception is `ui-ledger`, which runs the `@ledger` tests of `tests/ui/` alone (D-19).
 
 ```text
 .
@@ -561,6 +564,7 @@ test criteria above, merged with CI green on `main`.
 | D-16 | Test traffic sends `X-Synthetic-Token`; compose starts the app with the matching `SYNTHETIC_TOKEN` (a local, non-secret default) | `NODE_ENV=test` in compose; fewer workers | The app's own exemption for automated checks lifts only the API rate limit. `NODE_ENV=test` also skips the feature-flag overrides and changes DB writes, so the tests would run against a different app |
 | D-17 | Pull requests run the `@smoke` files plus the test files the change touches (`--only-changed`, which follows imports); a change Playwright cannot follow (config, global setup, dependencies, `compose.yaml`, CI) runs the full suite; `main`, a nightly run and manual runs always run the full suite | The full suite on every pull request; smoke only on pull requests | Pull-request runs stay short as the suite grows, without merging untested changes to the code a test uses. Anything a pull request skips is covered on `main` the same day. Sharding comes next if the full suite outgrows NFR-16 |
 | D-18 | API specs group tests in describe blocks by operation (`<METHOD> <path>`), then status; `scripts/api-coverage.ts` measures coverage from `playwright test --list` against a checked-in OpenAPI that it first compares with the live one (FR-21) | One spec file per operation; per-test annotations; an OpenAPI coverage tool that records live traffic | Shows what is untested and where the docs and the app disagree, not only how many tests pass. Describe blocks fit the planned scenario and params files and read well in the HTML report; the checked-in contract keeps the denominator fixed to the pinned app, and the live comparison catches drift. Adapted from an API testing course framework |
+| D-19 | UI tests that move money through the page (`@ledger`) run in their own project, `ui-ledger`: one worker, with `dependencies` on `api` and `ui`, so they start once those have finished. Chosen by the user on 2026-11-26 | A separate CI step and npm script after the parallel run; a lock fixture that serializes money-moving tests across workers; `test.fail()` while the app bug stands; fewer workers for the whole suite | The app runs every money operation behind one global lock (an income ~2 s, a purchase ~4 s), and its pages give up on a request after 15 s while the server still completes it (`.qa/bugs/ghissue-14/post-api-marketplace-buy--ui-gives-up-after-15s-but-charges.md`). A UI purchase queued behind parallel workers failed 3–7 times in 10. One project setting covers `npm test`, the CI full run and the pull-request run with one report. Costs: about 12 s of serial tail per run; a failure in `api` or `ui` reports the `@ledger` tests as not run; a pull request that selects one runs the whole `api` and `ui` projects |
 
 ## 13. Left to the builder and future work
 
