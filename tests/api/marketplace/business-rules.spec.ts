@@ -1,89 +1,143 @@
 import { test, expect } from '#src/fixtures/index.ts';
-import { MarketplaceApi } from '#src/api/clients/marketplace-api.ts';
 import { buildOffer } from '#src/data/factories/offer.factory.ts';
-import { OPERATIONS, refusals, validOffers, type RefusalCase } from './business-rules.params.ts';
+import { expectFailureBecauseOf } from '#src/fixtures/known-bug.ts';
+import { invalidOffers, validOffers } from './business-rules.params.ts';
 
-// T2: one positive and one negative test, each driven by its case table (FR-09). Tests are grouped
-// by operation, then by status (testing-rules/api.md), so each case registers under its own group.
+// What the Marketplace accepts and what it refuses. A refusal must also change nothing, so the
+// tests read what the users have before the call and compare it afterwards.
+//
+// Tests are grouped by endpoint, then by the status it answers with (docs/writing-tests.md).
 
-test.describe(OPERATIONS.createOffer, () => {
-  // The app answers 200 where the contract documents 201
-  // (.qa/bugs/ghissue-11/post-api-marketplace-offers--create-offer-status-in-message.md). The test
-  // asserts the status the app serves, so it fails and gets updated when the bug is fixed.
+test.describe('POST /api/v1/marketplace/offers', () => {
+  // The app answers 200 where its contract documents 201
+  // (.qa/bugs/ghissue-11/post-api-marketplace-offers--create-offer-status-in-message.md).
   test.describe('200', () => {
-    for (const { title, itemType, offer } of validOffers) {
-      test(`a valid offer for ${title} is stored and shown to other users`, async ({
-        createUser,
-        createItem,
-        apiAs,
-      }) => {
-        const [seller, observer] = await Promise.all([createUser(), createUser()]);
-        const item = await createItem(seller, itemType);
-        const input = buildOffer(item, offer);
+    for (const { title, offer } of validOffers) {
+      test(`an offer with ${title} is created and other users can browse it`, async ({ createUser }) => {
+        const [seller, visitor] = await Promise.all([createUser(), createUser()]);
+        const field = await seller.createField();
+        const input = buildOffer({ itemType: 'field', itemId: field.id }, offer);
 
-        const created = await apiAs(MarketplaceApi, seller).createOffer(input);
+        const response = await seller.api.marketplace.createOffer(input);
 
-        expect({ status: created.status, error: created.error }).toEqual({ status: 200, error: undefined });
-        expect(created.data.offer).toMatchObject({
-          ...item,
-          price: input.price,
-          description: input.description ?? '',
+        expect(response).toMatchObject({ status: 200, error: undefined });
+        const created = response.data.offer;
+        expect(created).toMatchObject({
+          ...input,
+          description: input.description ?? '', // no description is stored as an empty one
           sellerId: seller.id,
           status: 'active',
         });
-        const [myOffers, browse] = await Promise.all([
-          apiAs(MarketplaceApi, seller).myOffers(),
-          apiAs(MarketplaceApi, observer).offers(),
-        ]);
-        expect({
-          myOffers: myOffers.data.offers,
-          browse: browse.data.offers.filter(({ sellerId }) => sellerId === seller.id),
-        }).toEqual({ myOffers: [created.data.offer], browse: [created.data.offer] });
+        expect(await seller.myOffers()).toEqual([created]);
+        const browsable = await visitor.browseOffers();
+        expect(browsable.filter(({ sellerId }) => sellerId === seller.id)).toEqual([created]);
       });
     }
   });
 
-  registerRefusals(OPERATIONS.createOffer);
-});
+  test.describe('400', () => {
+    for (const { title, offer, error, bug } of invalidOffers) {
+      test(`an offer with ${title} is refused`, async ({ createUser }) => {
+        const seller = await createUser();
+        const field = await seller.createField();
+        const input = { ...buildOffer({ itemType: 'field', itemId: field.id }), ...offer };
+        expectFailureBecauseOf(bug);
 
-test.describe(OPERATIONS.buy, () => {
-  registerRefusals(OPERATIONS.buy);
-});
+        const response = await seller.api.marketplace.createOfferUnchecked(input);
 
-test.describe(OPERATIONS.cancel, () => {
-  registerRefusals(OPERATIONS.cancel);
-});
+        expect(response).toMatchObject({ status: 400, error });
+        expect(await seller.myOffers()).toEqual([]);
+      });
+    }
 
-// One test body for every refusal: the status, the exact message, and that both users' money,
-// histories, offers and items are exactly as before (readMarket).
-function registerRefusals(operation: RefusalCase['operation']) {
-  const cases = refusals.filter((refusal) => refusal.operation === operation);
-  for (const status of [...new Set(cases.map((refusal) => refusal.status))].sort((a, b) => a - b)) {
-    test.describe(`${status}`, () => {
-      for (const refusal of cases.filter((candidate) => candidate.status === status)) {
-        const { title, error, bug, arrange } = refusal;
-        // Only the buy cases fund a user and buy, and the app runs incomes and buys one at a time
-        // across all workers.
-        const slow = operation === OPERATIONS.buy;
+    test('a second offer for an item that is already on offer is refused', async ({ createUser }) => {
+      const seller = await createUser();
+      const animal = await seller.createAnimal();
+      const first = await seller.offerAnimal(animal, { price: 11.11 });
+      const second = buildOffer({ itemType: 'animal', itemId: animal.id }, { price: 22.22 });
 
-        test(
-          `${title}: refused and nothing changes`,
-          { annotation: bug ? [{ type: 'bug', description: `${bug.title} (${bug.file})` }] : [] },
-          async ({ createUser, createItem, createOffer, fundUser, apiAs, readMarket }) => {
-            test.slow(slow, 'funds a user and buys');
-            const scene = await arrange({ createUser, createItem, createOffer, fundUser, apiAs });
-            const before = await readMarket(scene);
-            expect(before.other.browseFromSeller.map(({ id }) => id)).toEqual(scene.browsableBefore);
-            // Marked after the seed, so a broken setup is never an expected failure.
-            test.fail(bug !== undefined, bug?.title);
+      const response = await seller.api.marketplace.createOffer(second);
 
-            const response = await scene.act();
-
-            expect({ status: response.status, error: response.error }).toEqual({ status, error });
-            expect(await readMarket(scene)).toEqual(before);
-          },
-        );
-      }
+      expect(response).toMatchObject({ status: 400, error: 'Item is already offered for sale' });
+      expect(await seller.myOffers()).toEqual([first]);
     });
-  }
-}
+  });
+
+  test.describe('404', () => {
+    test("an offer for another user's item is refused", async ({ createUser }) => {
+      const [seller, owner] = await Promise.all([createUser(), createUser()]);
+      const animal = await owner.createAnimal();
+      // The seller owns animals too, so only the ownership of this group can refuse the offer.
+      await seller.createAnimal();
+
+      const response = await seller.api.marketplace.createOffer(
+        buildOffer({ itemType: 'animal', itemId: animal.id }),
+      );
+
+      expect(response).toMatchObject({ status: 404, error: 'Item not found or not owned by user' });
+      expect(await seller.myOffers()).toEqual([]);
+      expect(await owner.animals()).toEqual([animal]);
+    });
+  });
+});
+
+test.describe('POST /api/v1/marketplace/buy', () => {
+  test.describe('400', () => {
+    test('a seller cannot buy their own offer', async ({ createUser }) => {
+      test.slow(); // the app moves money one operation at a time, 2 to 4 s each
+      // The seller can afford the offer, so only the own-offer rule can refuse the buy.
+      const seller = await createUser({ funds: 88.88 });
+      const offer = await seller.offerField(await seller.createField(), { price: 20.5 });
+      const before = await seller.everything();
+
+      const response = await seller.api.marketplace.buy(offer.id);
+
+      expect(response).toMatchObject({ status: 400, error: 'Cannot buy your own offer' });
+      expect(await seller.everything()).toEqual(before);
+    });
+
+    test('a buyer one cent short of the price cannot buy', async ({ createUser }) => {
+      test.slow();
+      const [seller, buyer] = await Promise.all([createUser({ funds: 17.43 }), createUser({ funds: 50.24 })]);
+      const offer = await seller.offerField(await seller.createField(), { price: 50.25 });
+      const before = await Promise.all([seller.everything(), buyer.everything()]);
+
+      const response = await buyer.api.marketplace.buy(offer.id);
+
+      expect(response).toMatchObject({
+        status: 400,
+        error: 'Insufficient funds to complete purchase (no overdraft allowed)',
+      });
+      expect(await Promise.all([seller.everything(), buyer.everything()])).toEqual(before);
+    });
+  });
+
+  test.describe('404', () => {
+    test('a cancelled offer cannot be bought', async ({ createUser }) => {
+      test.slow();
+      const [seller, buyer] = await Promise.all([createUser(), createUser({ funds: 66.66 })]);
+      const offer = await seller.offerAnimal(await seller.createAnimal());
+      await seller.cancelOffer(offer);
+      const before = await Promise.all([seller.everything(), buyer.everything()]);
+
+      const response = await buyer.api.marketplace.buy(offer.id);
+
+      expect(response).toMatchObject({ status: 404, error: 'Offer not found or not available' });
+      expect(await Promise.all([seller.everything(), buyer.everything()])).toEqual(before);
+    });
+  });
+});
+
+test.describe('DELETE /api/v1/marketplace/offers/{offerId}', () => {
+  test.describe('403', () => {
+    test("a user cannot cancel another user's offer", async ({ createUser }) => {
+      const [seller, stranger] = await Promise.all([createUser(), createUser()]);
+      const offer = await seller.offerField(await seller.createField());
+
+      const response = await stranger.api.marketplace.cancel(offer.id);
+
+      expect(response).toMatchObject({ status: 403, error: 'Not authorized to cancel this offer' });
+      expect(await seller.myOffers()).toEqual([offer]);
+    });
+  });
+});
