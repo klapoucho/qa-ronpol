@@ -1,0 +1,111 @@
+{
+  "sellerMyOffers": [
+    {
+      "id": 1583,
+      "status": "active",
+      "itemId": 1620,
+      "price": 4.56,
+      "description": "Pole_nr 7; ok: (a) b, c. d! e - f\tTAB\nnowa linia ĄĆĘŁŃÓŚŹŻ ąćęłńóśźż 0123456789"
+    },
+    {
+      "id": 1584,
+      "status": "active",
+      "itemId": 1626,
+      "price": 2.22,
+      "description": "[array len 500]"
+    },
+    {
+      "id": 1585,
+      "status": "active",
+      "itemId": 1623,
+      "price": 123456789012.34,
+      "description": "Duza cena"
+    },
+    {
+      "id": 1586,
+      "status": "cancelled",
+      "itemId": 1624,
+      "price": 6.66,
+      "description": "Pierwsza oferta"
+    },
+    {
+      "id": 1587,
+      "status": "active",
+      "itemId": 1624,
+      "price": 7.77,
+      "description": "Druga oferta"
+    },
+    {
+      "id": 1588,
+      "status": "cancelled",
+      "itemId": 1628,
+      "price": 3.03,
+      "description": "Modal test"
+    },
+    {
+      "id": 1589,
+      "status": "active",
+      "itemId": 1625,
+      "price": 9.99,
+      "description": "Widok mobilny"
+    },
+    {
+      "id": 1590,
+      "status": "active",
+      "itemId": 1629,
+      "price": 12.34,
+      "description": ""
+    }
+  ],
+  "sellerOwnBrowse": [],
+  "observerBrowseFromSeller": [
+    {
+      "id": 1583,
+      "status": "active",
+      "itemId": 1620,
+      "price": 4.56,
+      "description": "Pole_nr 7; ok: (a) b, c. d! e - f\tTAB\nnowa linia ĄĆĘŁŃÓŚŹŻ ąćęłńóśźż 0123456789"
+    },
+    {
+      "id": 1584,
+      "status": "active",
+      "itemId": 1626,
+      "price": 2.22,
+      "description": "[array len 500]"
+    },
+    {
+      "id": 1585,
+      "status": "active",
+      "itemId": 1623,
+      "price": 123456789012.34,
+      "description": "Duza cena"
+    },
+    {
+      "id": 1587,
+      "status": "active",
+      "itemId": 1624,
+      "price": 7.77,
+      "description": "Druga oferta"
+    },
+    {
+      "id": 1589,
+      "status": "active",
+      "itemId": 1625,
+      "price": 9.99,
+      "description": "Widok mobilny"
+    },
+    {
+      "id": 1590,
+      "status": "active",
+      "itemId": 1629,
+      "price": 12.34,
+      "description": ""
+    }
+  ],
+  "cleanup": {
+    "cancel1585": 200,
+    "cancel1584": 200
+  },
+  "totalValueBefore": "\"totalValue\":123457295767.29001",
+  "totalValueAfterCleanup": "\"totalValue\":506752.7300000028"
+}

@@ -1,0 +1,32 @@
+{
+  "case": "U6c-no-price",
+  "input": {
+    "id": "U6c-no-price",
+    "itemType": "field",
+    "itemId": 1605
+  },
+  "postsSent": 0,
+  "postBodies": [],
+  "responses": [],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "1605",
+      "validationMessage": ""
+    },
+    "price": {
+      "value": "",
+      "validationMessage": "Please fill in this field."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": []
+  }
+}

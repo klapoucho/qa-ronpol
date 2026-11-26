@@ -1,0 +1,42 @@
+{
+  "case": "U6i-description-301",
+  "input": {
+    "id": "U6i-description-301",
+    "itemType": "field",
+    "itemId": 1605,
+    "price": "5.55",
+    "description": {
+      "length": 301,
+      "head": "Abc def. Abc def. Abc def. Abc def. Abc "
+    }
+  },
+  "postsSent": 0,
+  "postBodies": [],
+  "responses": [],
+  "state": {
+    "formValid": true,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "1605",
+      "validationMessage": ""
+    },
+    "price": {
+      "value": "5.55",
+      "validationMessage": ""
+    },
+    "description": {
+      "length": 301,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 301,
+    "toasts": [
+      {
+        "type": "notification error",
+        "message": "Description cannot exceed 300 characters."
+      }
+    ]
+  }
+}

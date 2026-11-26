@@ -1,0 +1,65 @@
+{
+  "case": "U7b-description-300-with-newlines",
+  "input": {
+    "id": "U7b-description-300-with-newlines",
+    "itemType": "field",
+    "itemId": 1609,
+    "price": "4.44",
+    "description": {
+      "length": 300,
+      "head": "Linia pierwsza: łąka.\nLinia pierwsza: łą"
+    }
+  },
+  "postsSent": 1,
+  "postBodies": [
+    {
+      "itemType": "field",
+      "itemId": 1609,
+      "price": 4.44,
+      "description": {
+        "length": 300,
+        "head": "Linia pierwsza: łąka.\nLinia pierwsza: łą",
+        "hasCR": false
+      }
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "error": null,
+      "offerId": 1570,
+      "stored": {
+        "price": 4.44,
+        "description": "Linia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza: łąka.\nLinia pierwsza",
+        "itemId": 1609,
+        "itemType": "field"
+      }
+    }
+  ],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "itemId": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "price": {
+      "value": "",
+      "validationMessage": "Please fill in this field."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": [
+      {
+        "type": "notification success",
+        "message": "Offer created successfully!"
+      }
+    ]
+  }
+}

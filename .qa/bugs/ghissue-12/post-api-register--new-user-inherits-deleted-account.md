@@ -41,3 +41,6 @@ The new id looks like it is derived from the current number of users rather than
 
 ## Impact on test automation
 Any test that deletes an account hands its leftovers to whichever test registers next, so in a parallel suite an account-deletion test contaminates other tests. Keep such a test in its own isolated run until this is fixed.
+
+## Re-checks
+- Re-checked 2026-11-26 in `2026-11-26-issue-13-marketplace-seller-lists-an-item` (A4): still reproduces and goes further. After `DELETE /users/profile`, the old token still created a field (`POST /fields` → 201, field 1619). The next registered user got the deleted account's id (5707), balance 1.11, that post-deletion field and the deleted account's offer 1582, which was `active` in another user's Browse for a field removed with the account; the new user could cancel it (200). Evidence: `.qa/runs/2026-11-26-issue-13-marketplace-seller-lists-an-item/artifacts/A4-deleted-account-token-create.json`, `.qa/runs/2026-11-26-issue-13-marketplace-seller-lists-an-item/artifacts/A4-cleanup-sink-cancels-inherited-offer.json`.

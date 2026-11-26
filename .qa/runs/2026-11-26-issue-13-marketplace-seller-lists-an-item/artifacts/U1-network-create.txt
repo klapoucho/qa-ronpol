@@ -1,0 +1,5 @@
+## request body
+{"itemType":"field","itemId":1602,"price":12.34,"description":"Żyzna łąka nad rzeką: 2,3 ha (bez zwierząt) - polecam!"}
+
+## response
+{"success":true,"timestamp":"2026-11-26T16:22:02.989Z","data":{"offer":{"id":1566,"sellerId":5701,"itemType":"field","itemId":1602,"price":12.34,"description":"Żyzna łąka nad rzeką: 2,3 ha (bez zwierząt) - polecam!","status":"active","createdAt":"2026-11-26T16:22:02.964Z","updatedAt":"2026-11-26T16:22:02.964Z"},"message":"Offer created successfully"},"message":201}

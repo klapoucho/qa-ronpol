@@ -1,0 +1,28 @@
+{
+  "viewport": {
+    "w": 1366,
+    "h": 768,
+    "clientWidth": 1366
+  },
+  "documentScrollWidth": 2583,
+  "horizontalScroll": true,
+  "card1569": {
+    "left": 103,
+    "right": 476.328125,
+    "width": 373.328125
+  },
+  "description1569": {
+    "scrollWidth": 2459,
+    "clientWidth": 329,
+    "rightEdgePx": 2584,
+    "overflowWrap": "normal",
+    "wordBreak": "normal",
+    "overflow": "visible",
+    "whiteSpace": "normal"
+  },
+  "newlineCard1570": {
+    "whiteSpace": "normal",
+    "renderedLines": 6,
+    "storedNewlines": 13
+  }
+}

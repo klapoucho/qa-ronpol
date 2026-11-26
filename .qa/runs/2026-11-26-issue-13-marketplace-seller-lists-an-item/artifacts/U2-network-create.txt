@@ -1,0 +1,4 @@
+## request 76
+{"itemType":"animal","itemId":1463,"price":7.07,"description":""}
+
+{"success":true,"timestamp":"2026-11-26T16:22:57.077Z","data":{"offer":{"id":1567,"sellerId":5701,"itemType":"animal","itemId":1463,"price":7.07,"description":"","status":"active","createdAt":"2026-11-26T16:22:57.050Z","updatedAt":"2026-11-26T16:22:57.050Z"},"message":"Offer created successfully"},"message":201}

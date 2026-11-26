@@ -1,0 +1,11 @@
+{
+  "offerId": 1574,
+  "status": 200,
+  "body": {
+    "success": true,
+    "timestamp": "2026-11-26T16:27:44.657Z",
+    "data": {
+      "message": "Offer cancelled successfully"
+    }
+  }
+}

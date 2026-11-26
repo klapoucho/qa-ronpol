@@ -1,0 +1,45 @@
+{
+  "case": "U3c dropdown after a fresh page load: already-listed fields and sold field",
+  "s1FieldOptions": [
+    ":Select an item",
+    "1601:QA T3 Łąka A (1.7 ha)",
+    "1602:QA T3 Pole B (2.3 ha)",
+    "1606:QA T3 Field E (1.2 ha)",
+    "1608:QA<b>bold</b><img src=x onerror=\"document.title='QA-T3-XSS'\"> (1.4 ha)",
+    "1609:QA T3 Field G (1.5 ha)",
+    "1610:QA T3 Field I (1.6 ha)",
+    "1611:QA T3 Field J (1.8 ha)",
+    "1612:QA T3 Many 1 (0.51 ha)",
+    "1613:QA T3 Many 2 (0.52 ha)",
+    "1614:QA T3 Many 3 (0.53 ha)"
+  ],
+  "s1ActiveFieldOfferItemIds": [
+    "1602",
+    "1606",
+    "1609",
+    "1610",
+    "1601",
+    "1611",
+    "1612",
+    "1613",
+    "1614"
+  ],
+  "listedFieldsStillOffered": [
+    "1601",
+    "1602",
+    "1606",
+    "1609",
+    "1610",
+    "1611",
+    "1612",
+    "1613",
+    "1614"
+  ],
+  "soldField1605InSellerDropdown": false,
+  "observerFieldOptionsAfterBuying1605": [
+    ":Select an item",
+    "1604:QA T3 Observer field (0.9 ha)",
+    "1605:QA T3 Field D (1.1 ha)"
+  ],
+  "observerHas1605": true
+}

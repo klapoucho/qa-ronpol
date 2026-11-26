@@ -1,0 +1,39 @@
+{
+  "deletedUserId": 5707,
+  "control": {
+    "status": 200,
+    "offerId": 1582
+  },
+  "deleteProfile": 200,
+  "loginAfterDelete": 401,
+  "createWithOldTokenOnOldField": {
+    "status": 400,
+    "error": "User not found",
+    "offerId": null
+  },
+  "createFieldWithOldToken": {
+    "status": 201,
+    "error": null,
+    "fieldId": 1619
+  },
+  "createOfferOnThatField": {
+    "status": 400,
+    "error": "User not found",
+    "offerId": null
+  },
+  "observerBrowseHasOffersFromDeletedId": [
+    1582
+  ],
+  "sink": {
+    "id": 5707,
+    "sameIdAsDeleted": true,
+    "fields": [
+      "1619:QA T3 field by deleted token"
+    ],
+    "offers": [
+      "1582:active"
+    ],
+    "balance": 1.11
+  },
+  "refused": false
+}

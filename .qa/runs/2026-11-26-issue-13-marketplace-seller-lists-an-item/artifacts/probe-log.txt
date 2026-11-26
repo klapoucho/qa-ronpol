@@ -1,0 +1,22 @@
+2026-11-26T16:20:55.006Z seed {"s1":5701,"o":5702,"fA":1601,"fB":1602,"fC":1603,"g1":1463,"g2":1464,"oField":1604}
+2026-11-26T16:21:10.983Z relogin s1 5701 oldTokenAfterLogin=403 (seen once for s1)
+2026-11-26T16:22:33.431Z U1-api-readback {"offerId":1566,"storedAsTyped":true,"observerSeesIt":true,"sellerBrowseHidesIt":true,"pass":true}
+2026-11-26T16:22:46.924Z U4-api-readback-one-offer {"offerId":1566,"storedAsTyped":true,"observerSeesIt":true,"sellerBrowseHidesIt":true,"pass":true}
+2026-11-26T16:23:07.882Z U2-api-readback {"offerId":1567,"storedAsTyped":true,"observerSeesIt":true,"sellerBrowseHidesIt":true,"pass":true}
+2026-11-26T16:23:21.857Z seed2 {"D":1605,"E":1606,"F":1607,"H":1608,"Hname":"QA<b>bold</b><img src=x onerror=\"document.title='QA-T3-XSS'\">"}
+2026-11-26T16:24:41.107Z seed3 {"G":1609,"I":1610}
+2026-11-26T16:24:54.558Z U7a-api-readback {"offerId":1569,"storedAsTyped":true,"observerSeesIt":true,"sellerBrowseHidesIt":true,"pass":true}
+2026-11-26T16:24:55.172Z U6l-api-readback {"offerId":1568,"storedAsTyped":true,"observerSeesIt":true,"sellerBrowseHidesIt":true,"pass":true}
+2026-11-26T16:25:06.780Z U5-delete 200 [1601,1602,1603,1605,1606,1608,1609,1610]
+2026-11-26T16:25:52.233Z seed4 J 1611
+2026-11-26T16:26:23.805Z relogin s1 5701 oldTokenAfterLogin=403 (seen once for s1)
+2026-11-26T16:27:18.652Z relogin o 5702 oldTokenAfterLogin=403 (seen once for s1)
+2026-11-26T16:27:44.667Z cleanup cancel 1574 200
+2026-11-26T16:27:59.081Z U11 seed {"buy":200,"extra":[1575,1576,1577],"oOffer":1578,"count":12}
+2026-11-26T16:29:23.431Z A0 {"registerTokenBeforeLogin":200,"login":200,"registerTokenAfterLogin":{"status":403,"error":"Invalid or expired token"},"loginToken":200,"pass":true}
+2026-11-26T16:29:23.711Z A2 {"offerId":1574,"cancelledAt":"cleanup after U13 (artifacts/cleanup-cancel-html-name-offer.json)","sellerMyOffersStatus":"cancelled","observerBrowseContains":false,"observerBrowseContainsActiveControl1566":true,"pass":true}
+2026-11-26T16:29:30.058Z A3 {"control":200,"logout":200,"old":403,"err":"Invalid or expired token","listed":false}
+2026-11-26T16:29:35.344Z R1 {"price0":{"status":400,"error":"Missing required fields: itemType, itemId, price"},"price12abc":{"status":200,"stored":12,"error":null},"stillReproduces":true,"cleanupCancel":200}
+2026-11-26T16:29:40.950Z R2 {"offerId":1581,"put":200,"myOffers":{"status":"active","details":{"name":"QA T3 Małe pole","area":0.01},"description":"Duże pole 100 ha"},"observerBrowse":{"present":true,"details":{"name":"QA T3 Małe pole","area":0.01},"price":9.5},"stillReproduces":true,"cleanupCancel":200}
+2026-11-26T16:30:19.714Z A4 {"deletedUserId":5707,"control":{"status":200,"offerId":1582},"deleteProfile":200,"loginAfterDelete":401,"createWithOldTokenOnOldField":{"status":400,"error":"User not found","offerId":null},"createFieldWithOldToken":{"status":201,"error":null,"fieldId":1619},"createOfferOnThatField":{"status":400,"error":"User not found","offerId":null},"observerBrowseHasOffersFromDeletedId":[1582],"sink":{"id":5707,"sameIdAsDeleted":true,"fields":["1619:QA T3 field by deleted token"],"offers":["1582:active"],"balance":1.11},"refused":false}
+2026-11-26T16:30:30.970Z A4 cleanup {"cancel1582BySink":{"status":200,"body":{"success":true,"timestamp":"2026-11-26T16:30:30.685Z","data":{"message":"Offer cancelled successfully"}}},"observerBrowseHas1582After":false}

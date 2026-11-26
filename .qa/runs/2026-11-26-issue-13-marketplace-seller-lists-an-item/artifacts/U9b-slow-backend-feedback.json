@@ -1,0 +1,17 @@
+{
+  "case": "U9b-slow-backend-feedback",
+  "delayMs": 3000,
+  "during": {
+    "buttonDisabled": false,
+    "buttonText": "Create Offer",
+    "ariaBusy": null,
+    "spinnerVisible": false,
+    "notifications": []
+  },
+  "after": {
+    "notifications": [
+      "Offer created successfully!"
+    ],
+    "itemType": ""
+  }
+}

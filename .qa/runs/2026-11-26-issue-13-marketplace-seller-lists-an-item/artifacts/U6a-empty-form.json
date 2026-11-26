@@ -1,0 +1,30 @@
+{
+  "case": "U6a-empty-form",
+  "input": {
+    "id": "U6a-empty-form"
+  },
+  "postsSent": 0,
+  "postBodies": [],
+  "responses": [],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "itemId": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "price": {
+      "value": "",
+      "validationMessage": "Please fill in this field."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": []
+  }
+}

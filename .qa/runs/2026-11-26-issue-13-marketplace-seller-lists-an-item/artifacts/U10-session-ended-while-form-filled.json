@@ -1,0 +1,12 @@
+{
+  "case": "U10-session-ended-while-form-filled",
+  "posts": [
+    {
+      "status": 403,
+      "body": null
+    }
+  ],
+  "urlAfter": "http://localhost:3000/login.html",
+  "rolnopolCookiesLeft": [],
+  "descriptionFieldAfter": null
+}

@@ -1,0 +1,13 @@
+{
+  "cancel1582BySink": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T16:30:30.685Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "observerBrowseHas1582After": false
+}

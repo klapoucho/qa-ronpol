@@ -1,0 +1,33 @@
+{
+  "case": "U6g-price-negative",
+  "input": {
+    "id": "U6g-price-negative",
+    "itemType": "field",
+    "itemId": 1605,
+    "price": "-5"
+  },
+  "postsSent": 0,
+  "postBodies": [],
+  "responses": [],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "1605",
+      "validationMessage": ""
+    },
+    "price": {
+      "value": "-5",
+      "validationMessage": "Value must be greater than or equal to 1."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": []
+  }
+}

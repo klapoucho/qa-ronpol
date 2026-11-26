@@ -1,0 +1,22 @@
+{
+  "offerId": 1581,
+  "put": 200,
+  "myOffers": {
+    "status": "active",
+    "details": {
+      "name": "QA T3 Małe pole",
+      "area": 0.01
+    },
+    "description": "Duże pole 100 ha"
+  },
+  "observerBrowse": {
+    "present": true,
+    "details": {
+      "name": "QA T3 Małe pole",
+      "area": 0.01
+    },
+    "price": 9.5
+  },
+  "stillReproduces": true,
+  "cleanupCancel": 200
+}

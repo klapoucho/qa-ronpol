@@ -1,0 +1,61 @@
+{
+  "case": "U5-item-deleted-after-page-load",
+  "input": {
+    "id": "U5-item-deleted-after-page-load",
+    "reload": false,
+    "itemType": "field",
+    "itemId": 1607,
+    "price": "6.66",
+    "description": {
+      "length": 13,
+      "head": "Pole usunięte"
+    }
+  },
+  "postsSent": 1,
+  "postBodies": [
+    {
+      "itemType": "field",
+      "itemId": 1607,
+      "price": 6.66,
+      "description": {
+        "length": 13,
+        "head": "Pole usunięte",
+        "hasCR": false
+      }
+    }
+  ],
+  "responses": [
+    {
+      "status": 404,
+      "error": "Item not found or not owned by user",
+      "offerId": null,
+      "stored": null
+    }
+  ],
+  "state": {
+    "formValid": true,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "1607",
+      "validationMessage": ""
+    },
+    "price": {
+      "value": "6.66",
+      "validationMessage": ""
+    },
+    "description": {
+      "length": 13,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 13,
+    "toasts": [
+      {
+        "type": "notification error",
+        "message": "Item not found or not owned by user"
+      }
+    ]
+  }
+}

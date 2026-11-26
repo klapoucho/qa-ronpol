@@ -1,0 +1,33 @@
+{
+  "case": "U6h-price-3-decimals",
+  "input": {
+    "id": "U6h-price-3-decimals",
+    "itemType": "field",
+    "itemId": 1605,
+    "price": "12.345"
+  },
+  "postsSent": 0,
+  "postBodies": [],
+  "responses": [],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "field",
+      "validationMessage": ""
+    },
+    "itemId": {
+      "value": "1605",
+      "validationMessage": ""
+    },
+    "price": {
+      "value": "12.345",
+      "validationMessage": "Please enter a valid value. The two nearest valid values are 12,34 and 12,35."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": []
+  }
+}

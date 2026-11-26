@@ -1,0 +1,19 @@
+{
+  "itemType": "",
+  "itemId": "",
+  "itemOptions": [
+    ":Select an item"
+  ],
+  "price": "",
+  "priceValidation": "Please fill in this field.",
+  "description": "",
+  "toasts": [
+    {
+      "at": 1795710177079,
+      "cls": "notification success",
+      "title": "Success",
+      "message": "Offer created successfully!",
+      "role": "alert"
+    }
+  ]
+}

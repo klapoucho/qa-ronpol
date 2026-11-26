@@ -1,0 +1,78 @@
+{
+  "viewport": "1366x768",
+  "form": {
+    "left": 124,
+    "top": 466.8,
+    "right": 1242,
+    "bottom": 691.4,
+    "width": 1118,
+    "height": 224.6
+  },
+  "itemType": {
+    "left": 124,
+    "top": 497.4,
+    "right": 480.7,
+    "bottom": 532.9,
+    "width": 356.7,
+    "height": 35.5
+  },
+  "itemId": {
+    "left": 504.7,
+    "top": 497.4,
+    "right": 861.3,
+    "bottom": 532.9,
+    "width": 356.7,
+    "height": 35.5
+  },
+  "price": {
+    "left": 885.3,
+    "top": 497.4,
+    "right": 1242,
+    "bottom": 531.4,
+    "width": 356.7,
+    "height": 34
+  },
+  "description": {
+    "left": 124,
+    "top": 579.7,
+    "right": 1242,
+    "bottom": 639.7,
+    "width": 1118,
+    "height": 60
+  },
+  "submit": {
+    "left": 1128.9,
+    "top": 655.9,
+    "right": 1242,
+    "bottom": 691.4,
+    "width": 113.1,
+    "height": 35.5
+  },
+  "labels": [
+    {
+      "for": "itemType",
+      "top": 466.8
+    },
+    {
+      "for": "itemId",
+      "top": 466.8
+    },
+    {
+      "for": "price",
+      "top": 466.8
+    },
+    {
+      "for": "description",
+      "top": 549.1
+    }
+  ],
+  "rules": {
+    "controlsTopAligned": true,
+    "controlsSameHeight": false,
+    "labelsTopAligned": true,
+    "descriptionSpansRow": true,
+    "submitRightAligned": true,
+    "controlsInsideForm": true,
+    "gapsEqual": true
+  }
+}

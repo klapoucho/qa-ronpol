@@ -1,0 +1,53 @@
+{
+  "statuses": {
+    "myOffers": 200,
+    "sellerBrowse": 200,
+    "observerBrowse": 200
+  },
+  "expected": {
+    "itemType": "field",
+    "itemId": 1602,
+    "price": 12.34,
+    "description": "Żyzna łąka nad rzeką: 2,3 ha (bez zwierząt) - polecam!",
+    "status": "active"
+  },
+  "sellerMyOffers": {
+    "id": 1566,
+    "sellerId": 5701,
+    "itemType": "field",
+    "itemId": 1602,
+    "price": 12.34,
+    "description": "Żyzna łąka nad rzeką: 2,3 ha (bez zwierząt) - polecam!",
+    "status": "active",
+    "details": {
+      "name": "QA T3 Pole B",
+      "area": 2.3
+    },
+    "sellerLabel": "qa_seller_1402942e"
+  },
+  "observerBrowse": {
+    "id": 1566,
+    "sellerId": 5701,
+    "itemType": "field",
+    "itemId": 1602,
+    "price": 12.34,
+    "description": "Żyzna łąka nad rzeką: 2,3 ha (bez zwierząt) - polecam!",
+    "status": "active",
+    "details": {
+      "name": "QA T3 Pole B",
+      "area": 2.3
+    },
+    "sellerLabel": "qa_seller_1402942e"
+  },
+  "sellerBrowseContainsOwnOffer": false,
+  "sellerBrowseContainsAnyOwnOffer": false,
+  "sellerActiveOffers": [
+    "1566:field:1602"
+  ],
+  "verdict": {
+    "storedAsTyped": true,
+    "observerSeesIt": true,
+    "sellerBrowseHidesIt": true
+  },
+  "pass": true
+}

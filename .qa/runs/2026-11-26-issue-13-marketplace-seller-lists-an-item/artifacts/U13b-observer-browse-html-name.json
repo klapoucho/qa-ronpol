@@ -1,0 +1,12 @@
+{
+  "viewer": "O (observer)",
+  "filter": "bold",
+  "title": "QA-T3-XSS",
+  "cards": [
+    {
+      "buyId": "1574",
+      "imgs": 1,
+      "metaHtml": "Field: <b>QA<b>bold</b><img src=\"x\" onerror=\"document.title='QA-T3-XSS'\"></b>, Area: <b>1.4 ha</b>"
+    }
+  ]
+}

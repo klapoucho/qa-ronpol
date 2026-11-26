@@ -1,0 +1,21 @@
+{
+  "itemType": "field",
+  "itemId": "1602",
+  "itemOptions": [
+    ":Select an item",
+    "1601:QA T3 Łąka A (1.7 ha)",
+    "1602:QA T3 Pole B (2.3 ha)"
+  ],
+  "price": "15.5",
+  "priceValidation": "",
+  "description": "Druga próba",
+  "toasts": [
+    {
+      "at": 1795710161241,
+      "cls": "notification error",
+      "title": "Error",
+      "message": "Item is already offered for sale",
+      "role": "alert"
+    }
+  ]
+}

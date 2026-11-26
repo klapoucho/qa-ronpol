@@ -1,0 +1,87 @@
+{
+  "case": "U9-double-click-submit",
+  "input": {
+    "id": "U9-double-click-submit",
+    "itemType": "field",
+    "itemId": 1610,
+    "price": "8.88",
+    "description": {
+      "length": 13,
+      "head": "Podwójny klik"
+    },
+    "clicks": 2,
+    "waitMs": 3000
+  },
+  "postsSent": 2,
+  "postBodies": [
+    {
+      "itemType": "field",
+      "itemId": 1610,
+      "price": 8.88,
+      "description": {
+        "length": 13,
+        "head": "Podwójny klik",
+        "hasCR": false
+      }
+    },
+    {
+      "itemType": "field",
+      "itemId": 1610,
+      "price": 8.88,
+      "description": {
+        "length": 13,
+        "head": "Podwójny klik",
+        "hasCR": false
+      }
+    }
+  ],
+  "responses": [
+    {
+      "status": 400,
+      "error": "Item is already offered for sale",
+      "offerId": null,
+      "stored": null
+    },
+    {
+      "status": 200,
+      "error": null,
+      "offerId": 1571,
+      "stored": {
+        "price": 8.88,
+        "description": "Podwójny klik",
+        "itemId": 1610,
+        "itemType": "field"
+      }
+    }
+  ],
+  "state": {
+    "formValid": false,
+    "itemType": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "itemId": {
+      "value": "",
+      "validationMessage": "Please select an item in the list."
+    },
+    "price": {
+      "value": "",
+      "validationMessage": "Please fill in this field."
+    },
+    "description": {
+      "length": 0,
+      "validationMessage": ""
+    },
+    "formDataDescriptionLength": 0,
+    "toasts": [
+      {
+        "type": "notification error",
+        "message": "Item is already offered for sale"
+      },
+      {
+        "type": "notification success",
+        "message": "Offer created successfully!"
+      }
+    ]
+  }
+}
