@@ -1,0 +1,72 @@
+{
+  "offerId": 213,
+  "before": {
+    "sellerBalance": 24.84,
+    "buyerBalance": 33.17,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:12.5:marketplace",
+      "income:12.34:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:12.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "stringOfferId": {
+    "status": 404,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:34.831Z",
+      "error": "Offer not found or not available"
+    }
+  },
+  "offerIdZero": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:34.842Z",
+      "error": "Missing required field: offerId"
+    }
+  },
+  "malformedJson": {
+    "status": 500,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:34.851Z",
+      "error": "Internal server error"
+    }
+  },
+  "invalidToken": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:34.855Z",
+      "error": "Invalid or expired token"
+    }
+  },
+  "after": {
+    "sellerBalance": 24.84,
+    "buyerBalance": 33.17,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:12.5:marketplace",
+      "income:12.34:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:12.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "unchanged": true
+}

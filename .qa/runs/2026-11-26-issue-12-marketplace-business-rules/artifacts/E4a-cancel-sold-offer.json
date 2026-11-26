@@ -1,0 +1,64 @@
+{
+  "offerId": 212,
+  "before": {
+    "sellerBalance": 24.84,
+    "buyerBalance": 33.17,
+    "offerStatus": "sold",
+    "offerInBuyerBrowse": false,
+    "sellerOwnsItem": false,
+    "buyerOwnsItem": true,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:12.5:marketplace",
+      "income:12.34:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:12.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "seller": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:32.938Z",
+      "error": "Offer is not active"
+    }
+  },
+  "buyer": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:32.941Z",
+      "error": "Not authorized to cancel this offer"
+    }
+  },
+  "stranger": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:32.944Z",
+      "error": "Not authorized to cancel this offer"
+    }
+  },
+  "after": {
+    "sellerBalance": 24.84,
+    "buyerBalance": 33.17,
+    "offerStatus": "sold",
+    "offerInBuyerBrowse": false,
+    "sellerOwnsItem": false,
+    "buyerOwnsItem": true,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:12.5:marketplace",
+      "income:12.34:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:12.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "unchanged": true
+}

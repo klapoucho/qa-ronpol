@@ -1,0 +1,290 @@
+[
+  {
+    "case": "description number 12345",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": 12345
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.302Z",
+        "data": {
+          "offer": {
+            "id": 183,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": 12345,
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.284Z",
+            "updatedAt": "2026-11-26T12:13:40.284Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "description array [\"a\",\"b\"]",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": [
+        "a",
+        "b"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.376Z",
+        "data": {
+          "offer": {
+            "id": 184,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": [
+              "a",
+              "b"
+            ],
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.358Z",
+            "updatedAt": "2026-11-26T12:13:40.358Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "description true",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": true
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.447Z",
+        "data": {
+          "offer": {
+            "id": 185,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": true,
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.428Z",
+            "updatedAt": "2026-11-26T12:13:40.428Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "description number 12345",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": 12345
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.506Z",
+        "data": {
+          "offer": {
+            "id": 186,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": 12345,
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.490Z",
+            "updatedAt": "2026-11-26T12:13:40.490Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "description array [\"a\",\"b\"]",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": [
+        "a",
+        "b"
+      ]
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.571Z",
+        "data": {
+          "offer": {
+            "id": 187,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": [
+              "a",
+              "b"
+            ],
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.552Z",
+            "updatedAt": "2026-11-26T12:13:40.552Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "description true",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": true
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.635Z",
+        "data": {
+          "offer": {
+            "id": 188,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": true,
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.616Z",
+            "updatedAt": "2026-11-26T12:13:40.616Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  }
+]

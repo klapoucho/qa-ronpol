@@ -1,0 +1,1008 @@
+[
+  {
+    "case": "price 0",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 0,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.829Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price -1",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": -1,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.855Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price -0.01",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": -0.01,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.883Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 0.001 (rounds to 0)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 0.001,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.910Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 0.004 (rounds to 0)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 0.004,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.932Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price \"abc\"",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": "abc",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.955Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price \"\"",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": "",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.975Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price null",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": null,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:34.997Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price missing",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.018Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price true",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": true,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.039Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price {}",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": {},
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.061Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price \"12abc\"",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": "12abc",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.103Z",
+        "data": {
+          "offer": {
+            "id": 125,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 12,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.083Z",
+            "updatedAt": "2026-11-26T12:13:35.083Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "price [5]",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": [
+        5
+      ],
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.163Z",
+        "data": {
+          "offer": {
+            "id": 126,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 5,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.145Z",
+            "updatedAt": "2026-11-26T12:13:35.145Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "price \"Infinity\"",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": "Infinity",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.211Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 1e307 (huge)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 1e+307,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.246Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 1e15 (huge, finite)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 1000000000000000,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.290Z",
+        "data": {
+          "offer": {
+            "id": 127,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 1000000000000000,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.271Z",
+            "updatedAt": "2026-11-26T12:13:35.271Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "price 0",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 0,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.336Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price -1",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": -1,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.359Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price -0.01",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": -0.01,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.380Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 0.001 (rounds to 0)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 0.001,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.402Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 0.004 (rounds to 0)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 0.004,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.431Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Price must be greater than 0"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price \"abc\"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": "abc",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.451Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price \"\"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": "",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.472Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price null",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": null,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.495Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price missing",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.516Z",
+        "error": "Missing required fields: itemType, itemId, price"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Missing required fields: itemType, itemId, price",
+      "changed": []
+    }
+  },
+  {
+    "case": "price true",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": true,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.536Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price {}",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": {},
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.558Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price \"12abc\"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": "12abc",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.596Z",
+        "data": {
+          "offer": {
+            "id": 128,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 12,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.580Z",
+            "updatedAt": "2026-11-26T12:13:35.580Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "price [5]",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": [
+        5
+      ],
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.662Z",
+        "data": {
+          "offer": {
+            "id": 129,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 5,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.642Z",
+            "updatedAt": "2026-11-26T12:13:35.642Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  },
+  {
+    "case": "price \"Infinity\"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": "Infinity",
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.705Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 1e307 (huge)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 1e+307,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:35.727Z",
+        "error": "Price must be greater than 0"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Price must be greater than 0",
+      "changed": []
+    }
+  },
+  {
+    "case": "price 1e15 (huge, finite)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 1000000000000000,
+      "description": "QA price case"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:35.764Z",
+        "data": {
+          "offer": {
+            "id": 130,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 1000000000000000,
+            "description": "QA price case",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:35.748Z",
+            "updatedAt": "2026-11-26T12:13:35.748Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "/price/i"
+    },
+    "verdict": {
+      "pass": false,
+      "status": 200,
+      "message": "Offer created successfully",
+      "changed": [
+        "sellerOffers",
+        "observerBrowseFromSeller"
+      ],
+      "cleanup": 200
+    }
+  }
+]

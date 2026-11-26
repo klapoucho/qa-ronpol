@@ -1,0 +1,76 @@
+{
+  "offerId": 224,
+  "browseBefore": {
+    "id": 224,
+    "sellerId": 260,
+    "itemType": "field",
+    "itemId": 151,
+    "price": 9.99,
+    "description": "Big field 100 ha",
+    "status": "active",
+    "createdAt": "2026-11-26T12:19:08.318Z",
+    "updatedAt": "2026-11-26T12:19:08.318Z",
+    "details": {
+      "name": "QA big field",
+      "area": 100
+    },
+    "sellerLabel": "qa_f7s_f7b21191"
+  },
+  "put": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:19:08.365Z",
+      "data": {
+        "userId": 260,
+        "name": "QA big field",
+        "area": 0.01,
+        "id": 151
+      },
+      "message": "Updated successfully"
+    }
+  },
+  "browseAfter": {
+    "id": 224,
+    "sellerId": 260,
+    "itemType": "field",
+    "itemId": 151,
+    "price": 9.99,
+    "description": "Big field 100 ha",
+    "status": "active",
+    "createdAt": "2026-11-26T12:19:08.318Z",
+    "updatedAt": "2026-11-26T12:19:08.318Z",
+    "details": {
+      "name": "QA big field",
+      "area": 0.01
+    },
+    "sellerLabel": "qa_f7s_f7b21191"
+  },
+  "buy": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:19:12.461Z",
+      "data": {
+        "transaction": {
+          "id": 87,
+          "offerId": 224,
+          "sellerId": 260,
+          "buyerId": 261,
+          "itemType": "field",
+          "itemId": 151,
+          "price": 9.99,
+          "status": "completed",
+          "createdAt": "2026-11-26T12:19:12.440Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  },
+  "buyerReceived": {
+    "userId": 261,
+    "name": "QA big field",
+    "area": 0.01,
+    "id": 151
+  }
+}

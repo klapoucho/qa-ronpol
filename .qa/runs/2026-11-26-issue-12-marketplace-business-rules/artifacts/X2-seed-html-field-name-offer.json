@@ -1,0 +1,35 @@
+{
+  "field": {
+    "userId": 229,
+    "name": "QA<img src=x onerror=\"document.title='QA-XSS-FIRED'\">",
+    "area": 2.5,
+    "id": 131
+  },
+  "offer": {
+    "id": 191,
+    "sellerId": 229,
+    "itemType": "field",
+    "itemId": 131,
+    "price": 3.21,
+    "description": "QA html name check",
+    "status": "active",
+    "createdAt": "2026-11-26T12:14:42.858Z",
+    "updatedAt": "2026-11-26T12:14:42.858Z"
+  },
+  "buyerBrowseEntry": {
+    "id": 191,
+    "sellerId": 229,
+    "itemType": "field",
+    "itemId": 131,
+    "price": 3.21,
+    "description": "QA html name check",
+    "status": "active",
+    "createdAt": "2026-11-26T12:14:42.858Z",
+    "updatedAt": "2026-11-26T12:14:42.858Z",
+    "details": {
+      "name": "QA<img src=x onerror=\"document.title='QA-XSS-FIRED'\">",
+      "area": 2.5
+    },
+    "sellerLabel": "qa_xsssel_0b0ed1ff"
+  }
+}

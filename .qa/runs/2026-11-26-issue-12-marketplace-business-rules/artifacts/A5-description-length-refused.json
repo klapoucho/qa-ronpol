@@ -1,0 +1,170 @@
+[
+  {
+    "case": "301 ASCII chars",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 x"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.613Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description cannot exceed 300 characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description cannot exceed 300 characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "301 Polish letters",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘż"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.643Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description cannot exceed 300 characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description cannot exceed 300 characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "1000 chars",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.669Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description cannot exceed 300 characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description cannot exceed 300 characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "301 ASCII chars",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 x"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.693Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description cannot exceed 300 characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description cannot exceed 300 characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "301 Polish letters",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘż"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.715Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description cannot exceed 300 characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description cannot exceed 300 characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "1000 chars",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.737Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description cannot exceed 300 characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description cannot exceed 300 characters",
+      "changed": []
+    }
+  }
+]

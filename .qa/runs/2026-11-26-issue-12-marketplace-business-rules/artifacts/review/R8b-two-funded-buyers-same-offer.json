@@ -1,0 +1,53 @@
+{
+  "rounds": [
+    {
+      "offer": 242,
+      "results": [
+        {
+          "status": 200
+        },
+        {
+          "status": 404,
+          "error": "Offer not found or not available"
+        }
+      ],
+      "seller": 33.51,
+      "b1": 17.59,
+      "b2": 52.13,
+      "pass": true
+    },
+    {
+      "offer": 243,
+      "results": [
+        {
+          "status": 200
+        },
+        {
+          "status": 404,
+          "error": "Offer not found or not available"
+        }
+      ],
+      "seller": 33.51,
+      "b1": 17.59,
+      "b2": 52.13,
+      "pass": true
+    },
+    {
+      "offer": 244,
+      "results": [
+        {
+          "status": 200
+        },
+        {
+          "status": 404,
+          "error": "Offer not found or not available"
+        }
+      ],
+      "seller": 33.51,
+      "b1": 17.59,
+      "b2": 52.13,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

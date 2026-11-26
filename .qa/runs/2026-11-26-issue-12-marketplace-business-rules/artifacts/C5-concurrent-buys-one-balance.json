@@ -1,0 +1,76 @@
+{
+  "buyerStart": 61.17,
+  "offers": [
+    210,
+    211
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:17:22.584Z",
+        "data": {
+          "transaction": {
+            "id": 80,
+            "offerId": 210,
+            "sellerId": 241,
+            "buyerId": 240,
+            "itemType": "field",
+            "itemId": 138,
+            "price": 40,
+            "status": "completed",
+            "createdAt": "2026-11-26T12:17:22.568Z"
+          },
+          "message": "Purchase completed successfully"
+        }
+      }
+    },
+    {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:17:22.586Z",
+        "error": "Insufficient funds to complete purchase (no overdraft allowed)"
+      }
+    }
+  ],
+  "after": {
+    "seller1": {
+      "sellerBalance": 45.55,
+      "buyerBalance": 21.17,
+      "offerStatus": "sold",
+      "offerInBuyerBrowse": false,
+      "sellerOwnsItem": false,
+      "buyerOwnsItem": true,
+      "sellerMarketplaceTx": 1,
+      "buyerMarketplaceTx": 1,
+      "sellerFinancialTx": [
+        "income:40:marketplace",
+        "income:5.55:seed"
+      ],
+      "buyerFinancialTx": [
+        "expense:40:marketplace",
+        "income:61.17:seed"
+      ]
+    },
+    "seller2": {
+      "sellerBalance": 6.66,
+      "buyerBalance": 21.17,
+      "offerStatus": "active",
+      "offerInBuyerBrowse": true,
+      "sellerOwnsItem": true,
+      "buyerOwnsItem": false,
+      "sellerMarketplaceTx": 0,
+      "buyerMarketplaceTx": 1,
+      "sellerFinancialTx": [
+        "income:6.66:seed"
+      ],
+      "buyerFinancialTx": [
+        "expense:40:marketplace",
+        "income:61.17:seed"
+      ]
+    }
+  },
+  "pass": false
+}

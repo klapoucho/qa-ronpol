@@ -1,0 +1,18 @@
+{
+  "offerId": 235,
+  "statusWithAnimalOnField": "unavailable",
+  "inObserverBrowse": false,
+  "deleteAnimal": 200,
+  "statusAfterAnimalRemoved": "unavailable",
+  "sellerCancel": {
+    "status": 400,
+    "error": "Offer is not active"
+  },
+  "relist": {
+    "status": 200
+  },
+  "myOffersForField": [
+    "235:unavailable",
+    "236:active"
+  ]
+}

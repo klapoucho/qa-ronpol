@@ -1,0 +1,1172 @@
+[
+  {
+    "case": "all Polish letters",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.773Z",
+        "data": {
+          "offer": {
+            "id": 145,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.753Z",
+            "updatedAt": "2026-11-26T12:13:36.753Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation .",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole . ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.825Z",
+        "data": {
+          "offer": {
+            "id": 146,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole . ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.805Z",
+            "updatedAt": "2026-11-26T12:13:36.805Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole . ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole . ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole . ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation ,",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole , ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.877Z",
+        "data": {
+          "offer": {
+            "id": 147,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole , ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.859Z",
+            "updatedAt": "2026-11-26T12:13:36.859Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole , ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole , ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole , ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation ;",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ; ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.930Z",
+        "data": {
+          "offer": {
+            "id": 148,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole ; ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.910Z",
+            "updatedAt": "2026-11-26T12:13:36.910Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ; ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ; ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ; ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation :",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole : ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.983Z",
+        "data": {
+          "offer": {
+            "id": 149,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole : ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.965Z",
+            "updatedAt": "2026-11-26T12:13:36.965Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole : ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole : ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole : ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation !",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ! ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.036Z",
+        "data": {
+          "offer": {
+            "id": 150,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole ! ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.018Z",
+            "updatedAt": "2026-11-26T12:13:37.018Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ! ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ! ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ! ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation (",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ( ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.095Z",
+        "data": {
+          "offer": {
+            "id": 151,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole ( ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.075Z",
+            "updatedAt": "2026-11-26T12:13:37.075Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ( ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ( ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ( ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation )",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ) ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.149Z",
+        "data": {
+          "offer": {
+            "id": 152,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole ) ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.132Z",
+            "updatedAt": "2026-11-26T12:13:37.132Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ) ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ) ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ) ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation -",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole - ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.206Z",
+        "data": {
+          "offer": {
+            "id": 153,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole - ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.187Z",
+            "updatedAt": "2026-11-26T12:13:37.187Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole - ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole - ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole - ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation _",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole _ ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.263Z",
+        "data": {
+          "offer": {
+            "id": 154,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole _ ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.244Z",
+            "updatedAt": "2026-11-26T12:13:37.244Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole _ ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole _ ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole _ ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "all allowed punctuation together",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1."
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.320Z",
+        "data": {
+          "offer": {
+            "id": 155,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1.",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.303Z",
+            "updatedAt": "2026-11-26T12:13:37.303Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1.",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole: duże, żyzne; (blisko) - tanio! nr_1."
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1."
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "digits only",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "1234567890"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.378Z",
+        "data": {
+          "offer": {
+            "id": 156,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "1234567890",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.358Z",
+            "updatedAt": "2026-11-26T12:13:37.358Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "1234567890",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "1234567890"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "1234567890"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "tab and newline",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Line one\tTab\nLine two"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.435Z",
+        "data": {
+          "offer": {
+            "id": 157,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Line one\tTab\nLine two",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.418Z",
+            "updatedAt": "2026-11-26T12:13:37.418Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Line one\tTab\nLine two",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Line one\tTab\nLine two"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Line one\tTab\nLine two"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "all Polish letters",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.490Z",
+        "data": {
+          "offer": {
+            "id": 158,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.473Z",
+            "updatedAt": "2026-11-26T12:13:37.473Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation .",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole . ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.551Z",
+        "data": {
+          "offer": {
+            "id": 159,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole . ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.531Z",
+            "updatedAt": "2026-11-26T12:13:37.531Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole . ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole . ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole . ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation ,",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole , ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.609Z",
+        "data": {
+          "offer": {
+            "id": 160,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole , ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.592Z",
+            "updatedAt": "2026-11-26T12:13:37.592Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole , ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole , ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole , ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation ;",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ; ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.674Z",
+        "data": {
+          "offer": {
+            "id": 161,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole ; ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.656Z",
+            "updatedAt": "2026-11-26T12:13:37.656Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ; ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ; ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ; ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation :",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole : ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.736Z",
+        "data": {
+          "offer": {
+            "id": 162,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole : ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.719Z",
+            "updatedAt": "2026-11-26T12:13:37.719Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole : ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole : ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole : ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation !",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ! ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.798Z",
+        "data": {
+          "offer": {
+            "id": 163,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole ! ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.782Z",
+            "updatedAt": "2026-11-26T12:13:37.782Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ! ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ! ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ! ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation (",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ( ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.852Z",
+        "data": {
+          "offer": {
+            "id": 164,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole ( ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.836Z",
+            "updatedAt": "2026-11-26T12:13:37.836Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ( ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ( ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ( ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation )",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ) ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.902Z",
+        "data": {
+          "offer": {
+            "id": 165,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole ) ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.883Z",
+            "updatedAt": "2026-11-26T12:13:37.883Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ) ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ) ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ) ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation -",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole - ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:37.953Z",
+        "data": {
+          "offer": {
+            "id": 166,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole - ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.936Z",
+            "updatedAt": "2026-11-26T12:13:37.936Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole - ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole - ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole - ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "punctuation _",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole _ ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:38.001Z",
+        "data": {
+          "offer": {
+            "id": 167,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole _ ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:37.986Z",
+            "updatedAt": "2026-11-26T12:13:37.986Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole _ ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole _ ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole _ ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "all allowed punctuation together",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1."
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:38.053Z",
+        "data": {
+          "offer": {
+            "id": 168,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1.",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:38.036Z",
+            "updatedAt": "2026-11-26T12:13:38.036Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1.",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole: duże, żyzne; (blisko) - tanio! nr_1."
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole: duże, żyzne; (blisko) - tanio! nr_1."
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "digits only",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "1234567890"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:38.105Z",
+        "data": {
+          "offer": {
+            "id": 169,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "1234567890",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:38.085Z",
+            "updatedAt": "2026-11-26T12:13:38.085Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "1234567890",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "1234567890"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "1234567890"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "tab and newline",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Line one\tTab\nLine two"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:38.153Z",
+        "data": {
+          "offer": {
+            "id": 170,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Line one\tTab\nLine two",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:38.134Z",
+            "updatedAt": "2026-11-26T12:13:38.134Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Line one\tTab\nLine two",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Line one\tTab\nLine two"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Line one\tTab\nLine two"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  }
+]

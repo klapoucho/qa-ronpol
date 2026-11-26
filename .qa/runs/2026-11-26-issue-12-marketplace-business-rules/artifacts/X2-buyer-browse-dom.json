@@ -1,0 +1,7 @@
+{
+  "url": "http://localhost:3000/marketplace.html",
+  "title": "QA-XSS-FIRED",
+  "filter": "html name check",
+  "cardHtml": "<div class=\"offer-card offer-active\"> <div class=\"offer-header\"> <span class=\"offer-badge badge-field\"> Field </span> <span class=\"offer-price\">3.21 ROL</span> </div> <div class=\"offer-details\"> <div class=\"offer-name\">field #131</div> <div class=\"offer-seller\">Offered by: <b>qa_xsssel_0b0ed1ff</b></div> <div class=\"offer-meta\">Field: <b>QA<img src=\"x\" onerror=\"document.title='QA-XSS-FIRED'\"></b>, Area: <b>2.5 ha</b></div> <div class=\"offer-description\">QA html name check</div> </div> <div class=\"offer-actions\"> <button class=\"btn-buy\" data-offer-id=\"191\">Buy Now</button> </div> </div>"
+}
+### Ran Playwright code

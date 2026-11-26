@@ -1,0 +1,586 @@
+{
+  "run_id": "2026-11-26-issue-12-marketplace-business-rules",
+  "title": "Marketplace: business rules for offers and purchases (API)",
+  "source": {
+    "type": "github-issue",
+    "issue_url": "https://github.com/klapoucho/qa-ronpol/issues/12",
+    "pr_url": null,
+    "pr_head_sha": null,
+    "summary_comment_url": "https://github.com/klapoucho/qa-ronpol/issues/12#issuecomment-7192276293"
+  },
+  "kind": "api",
+  "status": "FAIL",
+  "blocked_reason": null,
+  "env": "http://localhost:3000/api/v1",
+  "app_version": "Rolnopol 1.126.0 (Docker jaktestowac/rolnopol:1.126.0)",
+  "platforms": [
+    "API (Node fetch)",
+    "Chromium via playwright-cli (UI confirmation and the reviewer's create-form checks)"
+  ],
+  "roles": [
+    "seller",
+    "buyer",
+    "stranger",
+    "observer (all fresh registered users)"
+  ],
+  "items": [
+    {
+      "id": "A1",
+      "check": "Valid field offer stored and visible to another user",
+      "requirement": "AC-1",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A1-create-valid-field.json"
+    },
+    {
+      "id": "A2",
+      "check": "Valid animal-group offer stored and visible to another user",
+      "requirement": "AC-1",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A2-create-valid-animal.json"
+    },
+    {
+      "id": "A3",
+      "check": "Invalid prices refused with message, nothing changed (24/32 pass; price 0 message, \"12abc\", [5], 1e15 fail)",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/A3-price-invalid.json"
+    },
+    {
+      "id": "A4",
+      "check": "Price boundaries accepted and rounded (0.01, 0.005, 10.555, 99999999.99, \"5\")",
+      "requirement": "AC-1",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A4-price-accepted.json"
+    },
+    {
+      "id": "A5",
+      "check": "Description 300 accepted (ASCII, Polish), 301 refused, both types",
+      "requirement": "AC-1",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A5b-description-300-301-polish.json; artifacts/A5-description-length-accepted.json; artifacts/A5-description-length-refused.json"
+    },
+    {
+      "id": "A6",
+      "check": "Allowed description characters accepted and stored equal (26 cases)",
+      "requirement": "AC-1",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A6-description-allowed-chars.json"
+    },
+    {
+      "id": "A7",
+      "check": "Disallowed description characters refused, nothing changed (66 cases)",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A7-description-disallowed-chars.json"
+    },
+    {
+      "id": "A8",
+      "check": "Optional description: empty, missing, null, whitespace accepted",
+      "requirement": "AC-1",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A8-description-optional.json"
+    },
+    {
+      "id": "A8b",
+      "check": "Non-string description refused",
+      "requirement": "AC-1 / contract",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/A8-description-wrong-type.json"
+    },
+    {
+      "id": "A9",
+      "check": "Invalid itemType/itemId refused (14/18; itemId \"abc\"/1.5 answer 404 not 400)",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/A9-item-type-and-id-invalid.json"
+    },
+    {
+      "id": "A10",
+      "check": "Item not owned (field, animal) -> 404, owner control 200",
+      "requirement": "AC-1",
+      "role": "seller, other",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A10-item-not-owned.json"
+    },
+    {
+      "id": "A11",
+      "check": "Item in use (field with animals, animal on field) -> 400",
+      "requirement": "assumption",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A11-item-in-use.json"
+    },
+    {
+      "id": "A12",
+      "check": "Create without token 401; invalid token 403 (known); malformed JSON 500 (known)",
+      "requirement": "AC-1",
+      "role": "anonymous, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A12-auth-and-malformed.json"
+    },
+    {
+      "id": "B1",
+      "check": "Duplicate field offer -> 400, one active offer",
+      "requirement": "AC-2",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/B1-duplicate-field.json"
+    },
+    {
+      "id": "B2",
+      "check": "Duplicate animal offer -> 400, one active offer",
+      "requirement": "AC-2",
+      "role": "seller, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/B2-duplicate-animal.json"
+    },
+    {
+      "id": "B3",
+      "check": "Relist after cancel (field, animal)",
+      "requirement": "assumption",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/B3-relist-after-cancel-field.json; artifacts/B3-relist-after-cancel-animal.json"
+    },
+    {
+      "id": "B4",
+      "check": "Field and animal with the same id both listable",
+      "requirement": "AC-2",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/B4-same-id-field-and-animal.json"
+    },
+    {
+      "id": "B5",
+      "check": "Concurrent duplicate creates keep one active offer (6 rounds)",
+      "requirement": "AC-2",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/B5-concurrent-duplicate-create.json"
+    },
+    {
+      "id": "C1",
+      "check": "Field: balance equals price -> 200, balances moved",
+      "requirement": "AC-4",
+      "role": "buyer, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/C1-field-balance-equals-price.json"
+    },
+    {
+      "id": "C2",
+      "check": "Field: balance one cent below -> 400, nothing changed",
+      "requirement": "AC-4",
+      "role": "buyer, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/C2-field-balance-one-cent-below.json"
+    },
+    {
+      "id": "C3",
+      "check": "Animal: one cent below refused, exact balance buys",
+      "requirement": "AC-4",
+      "role": "buyer, seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/C3-animal-balance-one-cent-below.json; artifacts/C3-animal-balance-equals-price.json"
+    },
+    {
+      "id": "C4",
+      "check": "Buyer without money -> 400, nothing changed",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/C4-field-buyer-without-money.json"
+    },
+    {
+      "id": "C5",
+      "check": "Two concurrent buys on one balance: no overdraft",
+      "requirement": "AC-4",
+      "role": "buyer, sellers",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/C5b-concurrent-buys-one-balance.json (first run artifacts/C5-concurrent-buys-one-balance.json: same behaviour, false FAIL from a float sum in the probe)"
+    },
+    {
+      "id": "D1",
+      "check": "Buy own field offer -> 400, nothing changed, other user can buy",
+      "requirement": "AC-6",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/D1-buy-own-field-offer.json"
+    },
+    {
+      "id": "D2",
+      "check": "Buy own animal offer -> 400, nothing changed, other user can buy",
+      "requirement": "AC-6",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/D2-buy-own-animal-offer.json"
+    },
+    {
+      "id": "D3",
+      "check": "Unfunded seller gets own-offer message",
+      "requirement": "AC-6",
+      "role": "seller",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/D3-buy-own-offer-without-money.json"
+    },
+    {
+      "id": "E1",
+      "check": "Stranger cancels field offer -> 403, nothing changed, still buyable",
+      "requirement": "AC-7",
+      "role": "stranger",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/E1-stranger-cancels-field-offer.json"
+    },
+    {
+      "id": "E2",
+      "check": "Stranger cancels animal offer -> 403, nothing changed",
+      "requirement": "AC-7",
+      "role": "stranger",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/E2-stranger-cancels-animal-offer.json"
+    },
+    {
+      "id": "E3",
+      "check": "Seller cancels (field, animal): cancelled, gone from browse, buy 404, cancel again 400",
+      "requirement": "AC-7",
+      "role": "seller, buyer, observer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/E3-seller-cancels-field-offer.json; artifacts/E3-seller-cancels-animal-offer.json"
+    },
+    {
+      "id": "E4a",
+      "check": "Cancel a sold offer: seller 400, buyer/stranger 403",
+      "requirement": "AC-7",
+      "role": "seller, buyer, stranger",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/E4a-cancel-sold-offer.json"
+    },
+    {
+      "id": "E4b",
+      "check": "Cancel id and auth edge cases; stranger cancels own offer (control)",
+      "requirement": "AC-7",
+      "role": "seller, anonymous, stranger",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/E4b-cancel-id-and-auth-cases.json"
+    },
+    {
+      "id": "E5",
+      "check": "Former owner cannot relist sold field/animal; new owner can",
+      "requirement": "assumption",
+      "role": "former owner, new owner",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/E5-relist-after-sale.json"
+    },
+    {
+      "id": "F2-F5",
+      "check": "Buy input re-checks: string id, id 0, malformed JSON, invalid token (all known bugs reproduce, nothing changed)",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/F2-F5-buy-input-rechecks.json"
+    },
+    {
+      "id": "F6",
+      "check": "Cancel during buy: cancel 200 yet sold (known bug, 2/2)",
+      "requirement": "AC-7",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/F6-cancel-during-buy.json"
+    },
+    {
+      "id": "F7",
+      "check": "Item edited after listing still sold at listed price (known bug)",
+      "requirement": "assumption",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/F7-item-edited-after-listing.json"
+    },
+    {
+      "id": "F8",
+      "check": "Stranger's animal on seller's field takes the offer down; seller cannot cancel or relist",
+      "requirement": "AC-7, AC-1",
+      "role": "stranger, seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/F8-stranger-animal-on-seller-field.json"
+    },
+    {
+      "id": "F9",
+      "check": "Seller relist during buy refused; after buy 404",
+      "requirement": "AC-2",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/F9-relist-during-buy.json"
+    },
+    {
+      "id": "X2",
+      "check": "HTML in field name executes on buyer's offer card",
+      "requirement": "assumption (security)",
+      "role": "seller, buyer",
+      "platform": "API + Chromium",
+      "result": "FAIL",
+      "evidence": "artifacts/X2-buyer-browse-dom.json; artifacts/X2-html-field-name-executes-in-browse.png; artifacts/X1-html-in-other-offer-card-fields.json"
+    },
+    {
+      "id": "R1",
+      "check": "Regular user cannot set own or another user's balance via PUT /financial/accounts/balance",
+      "requirement": "AC-4 (user expectation)",
+      "role": "user",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R1-user-sets-balance-via-admin-endpoint.json"
+    },
+    {
+      "id": "R2",
+      "check": "After logout the old token cannot read, create, cancel or buy; state unchanged (403, known invalid-token-403)",
+      "requirement": "AC-1/4/7 (user expectation)",
+      "role": "seller/buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R2-old-token-after-logout.json"
+    },
+    {
+      "id": "R3",
+      "check": "Seller deletes account: their active offers leave browse and cannot be bought",
+      "requirement": "AC-4/AC-7 (user expectation)",
+      "role": "seller, buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R3-seller-account-deleted-with-active-offers.json"
+    },
+    {
+      "id": "R3b",
+      "check": "Deleted account's token cannot buy",
+      "requirement": "AC-4 (user expectation)",
+      "role": "deleted user, seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R3b-deleted-account-token.json; artifacts/review/R3c-deleted-account-token-buys-repeat.json"
+    },
+    {
+      "id": "R4",
+      "check": "Cancel with id spellings 228.0 / 228%20 / 0228 / +228: stranger still 403",
+      "requirement": "AC-7",
+      "role": "stranger",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R4-cancel-id-spellings.json"
+    },
+    {
+      "id": "R5",
+      "check": "Price with decimal comma / thousands separator refused",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R5-price-decimal-comma.json"
+    },
+    {
+      "id": "R6",
+      "check": "Mass assignment ignored on create (sellerId, status, id, createdAt) and buy (buyerId, userId, price)",
+      "requirement": "AC-1/AC-4",
+      "role": "seller, buyer, victim",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R6-mass-assignment-create-and-buy.json"
+    },
+    {
+      "id": "R7",
+      "check": "Offer marked unavailable comes back or can be withdrawn after the item is freed",
+      "requirement": "AC-7 (user expectation)",
+      "role": "seller",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R7-own-animal-on-own-listed-field.json"
+    },
+    {
+      "id": "R8",
+      "check": "Double-submitted buy of one offer: one 200, one 404, charged once; two funded buyers: exactly one wins (3/3)",
+      "requirement": "AC-4",
+      "role": "buyer",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R8-same-offer-bought-concurrently.json; artifacts/review/R8b-two-funded-buyers-same-offer.json"
+    },
+    {
+      "id": "R9",
+      "check": "Stranger's animal on a listed field: seller cannot cancel or relist (confirms problem 2)",
+      "requirement": "AC-7",
+      "role": "seller, stranger",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R9-stranger-animal-blocks-relist.json"
+    },
+    {
+      "id": "U1",
+      "check": "UI create form accepts a price > 0 below 1 (0.5)",
+      "requirement": "AC-1 (user expectation)",
+      "role": "seller",
+      "platform": "UI Chromium",
+      "result": "FAIL",
+      "evidence": "artifacts/review/U1-ui-price-0.5-blocked.png; artifacts/review/U1-U3-ui-offers-read-back.json"
+    },
+    {
+      "id": "U2",
+      "check": "UI shows the server's invalid-description message; nothing stored",
+      "requirement": "AC-1",
+      "role": "seller",
+      "platform": "UI Chromium",
+      "result": "PASS",
+      "evidence": "artifacts/review/U2-ui-invalid-description-message.png; artifacts/review/console-review-marketplace.txt"
+    },
+    {
+      "id": "U3",
+      "check": "UI create with Polish description stored and rendered exactly; Cancel only on own offers, Browse only Buy Now",
+      "requirement": "AC-1/AC-7",
+      "role": "seller",
+      "platform": "UI Chromium",
+      "result": "PASS",
+      "evidence": "artifacts/review/U3-ui-my-offers-cancel-button.png; artifacts/review/U1-U3-ui-offers-read-back.json"
+    },
+    {
+      "id": "W1",
+      "check": "A user registered after an account deletion gets a new id and nothing of the deleted account",
+      "requirement": "user expectation (security)",
+      "role": "deleted user, new user",
+      "platform": "API",
+      "result": "FAIL",
+      "evidence": "artifacts/coordinator/id-reuse-after-delete.json"
+    }
+  ],
+  "findings": [
+    {
+      "title": "A newly registered user gets a deleted account's user id, with its balance and financial history (found by the test writer, reproduced by the coordinator)",
+      "severity": "critical",
+      "bug_file": ".qa/bugs/ghissue-12/post-api-register--new-user-inherits-deleted-account.md",
+      "evidence": "artifacts/coordinator/id-reuse-after-delete.json"
+    },
+    {
+      "title": "Field name is rendered as HTML on the Marketplace offer card: a seller runs script in every buyer's browser",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-12/ui-marketplace-browse--field-name-runs-as-html.md",
+      "evidence": "artifacts/X2-buyer-browse-dom.json"
+    },
+    {
+      "title": "Any user takes down another user's active field offer by attaching an animal; the seller can neither cancel nor relist",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-11/post-api-fields-ownership--non-owner-attaches-animals-and-staff.md",
+      "evidence": "artifacts/F8-stranger-animal-on-seller-field.json"
+    },
+    {
+      "title": "Seller is told the offer is cancelled, but a buy in flight completes (contradicts AC-7; raised to major)",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-11/delete-api-marketplace-offers--cancel-during-buy-still-sold.md",
+      "evidence": "artifacts/F6-cancel-during-buy.json"
+    },
+    {
+      "title": "A deleted account's token can still buy: money leaves the deleted account and the item moves into an account nobody can sign in to",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-12/post-api-marketplace-buy--deleted-account-token-buys.md",
+      "evidence": "artifacts/review/R3c-deleted-account-token-buys-repeat.json"
+    },
+    {
+      "title": "Create offer: price 0 / itemId 0 reported as missing fields; \"12abc\", [5] and non-string descriptions accepted; itemId \"abc\"/1.5 answer 404; \"12,50\" stored as 12 (API only: the form blocks prices below 1)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-12/post-api-marketplace-offers--invalid-price-and-types.md",
+      "evidence": "artifacts/A3-price-invalid.json"
+    },
+    {
+      "title": "OpenAPI vs live: undocumented 400/401/403/500 on the three write operations, cancel body shape, 'unavailable' status missing from the enum",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-12/post-api-marketplace-offers--openapi-write-ops-differ.md",
+      "evidence": "artifacts/E4b-cancel-id-and-auth-cases.json"
+    },
+    {
+      "title": "Create Offer form refuses prices below 1 ROL (min=1) although the rule and the API allow > 0",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-12/ui-marketplace-create--price-below-one-refused.md",
+      "evidence": "artifacts/review/U1-ui-price-0.5-blocked.png"
+    },
+    {
+      "title": "An offer marked unavailable never comes back and cannot be withdrawn; My Offers keeps a dead offer next to the relisted one",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-12/delete-api-marketplace-offers--unavailable-offer-stuck.md",
+      "evidence": "artifacts/review/R7-own-animal-on-own-listed-field.json"
+    }
+  ],
+  "automation": {
+    "status": "done",
+    "skip_reason": null,
+    "branch": "test/marketplace-business-rules",
+    "pr_url": null
+  },
+  "assumptions": [
+    "'Letters (including Polish)' = ASCII letters + the 18 Polish letters; other scripts refused as intended",
+    "Silent coercion of invalid types ('12abc' -> 12) counts as a failure of 'invalid input is refused with 400'",
+    "Item-in-use refusals (400) accepted; the AC is silent",
+    "No price maximum in the requirements: 1e15 accepted is recorded, not failed",
+    "AC-3 and AC-5 absent by design (T2 covers AC-1, 2, 4, 6, 7 per requirements section 5); used only as read-backs"
+  ],
+  "lessons": [
+    "Non-zero, non-round starting balances for every actor",
+    "Transfer: both item types, former owner/stranger/buyer before, during and after the sale",
+    "Refusal snapshot includes histories, not only balances"
+  ],
+  "struggles": [
+    "Test data error: the '300 Polish letters' string was 318 characters (18-letter alphabet repeated 17 times = 306); looked like a length bug; fixed and rerun as A5b",
+    "Probe verdict bug: C5 compared float sums (5.55 + 6.66 + 40) without rounding and reported a false FAIL; rerun as C5b with rounding",
+    "pwcli: `find \"Marketplace\"` returned only the first container match without the link ref; workaround: `find --regex '/link \".*marketplace.*\"/i'`",
+    "pwcli: browse paginates 9 per page, so the seeded card was not on page 1; workaround: typed into the 'Filter offers by any text...' box instead of paging",
+    "Harness: writing report.md was refused for a subagent ('return findings as text'); its full contents are returned in the final message",
+    "reviewer: pwcli: playwright-cli screenshot --filename with a relative path did not write the PNG into artifacts/review on the first call; workaround: absolute path ($PWD/...)",
+    "reviewer: pwcli: playwright-cli open/snapshot run from RUN_DIR wrote .playwright-cli/ (snapshots, console logs) into the run root despite --profile=scratch/review/profile; workaround: moved it to scratch/review/playwright-cli-output/",
+    "reviewer: first R8 two-buyer case was decided by funds, not the race (buyer 1 had spent money on the double-submit offer); rerun as R8b with two freshly funded buyers, 3 rounds",
+    "reviewer: scratch/review/ui-readback.mjs read UI credentials from a file that was deleted after use, so it does not rerun as is",
+    "writer: ECONNRESET in 1 of 480 runs — the app closes keep-alive sockets after 5 s and Playwright reused one after a test waited in the buy queue; fixed with `Connection: close` in BaseApi (commit 93e7bf1)",
+    "writer: account deletion in a parallel suite leaked the deleted account's balance, history and items into the next registered test user (user-id reuse); the deleted-account test was dropped and the bug filed",
+    "writer: first version had 50 tests (every case for both item types, many boundary values); the author asked for a lean spec — trimmed to 13 (one positive, one negative parametrized test). Lesson: size T-specs to the task's '5 readable tests', not to the full manual test plan",
+    "writer: commitlint flagged a body line starting `Connection: close` as a footer; reworded",
+    "writer: two poison scripts needed fixes (Prettier re-wrapped a target line; await in a non-async arrow)"
+  ]
+}

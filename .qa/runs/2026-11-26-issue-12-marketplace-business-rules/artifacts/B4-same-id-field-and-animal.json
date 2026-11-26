@@ -1,0 +1,60 @@
+{
+  "fieldId": 133,
+  "animalId": 133,
+  "createField": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:16:00.176Z",
+      "data": {
+        "offer": {
+          "id": 198,
+          "sellerId": 233,
+          "itemType": "field",
+          "itemId": 133,
+          "price": 8.08,
+          "description": "QA same id field",
+          "status": "active",
+          "createdAt": "2026-11-26T12:16:00.157Z",
+          "updatedAt": "2026-11-26T12:16:00.157Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    }
+  },
+  "createAnimal": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:16:00.198Z",
+      "data": {
+        "offer": {
+          "id": 199,
+          "sellerId": 233,
+          "itemType": "animal",
+          "itemId": 133,
+          "price": 9.09,
+          "description": "QA same id animal",
+          "status": "active",
+          "createdAt": "2026-11-26T12:16:00.180Z",
+          "updatedAt": "2026-11-26T12:16:00.180Z"
+        },
+        "message": "Offer created successfully"
+      },
+      "message": 201
+    }
+  },
+  "activeOffers": [
+    {
+      "id": 198,
+      "itemType": "field",
+      "itemId": 133
+    },
+    {
+      "id": 199,
+      "itemType": "animal",
+      "itemId": 133
+    }
+  ]
+}

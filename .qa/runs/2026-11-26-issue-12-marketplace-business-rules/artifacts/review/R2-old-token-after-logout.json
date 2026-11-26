@@ -1,0 +1,65 @@
+{
+  "logout": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:27:47.833Z",
+      "message": "Logout successful"
+    }
+  },
+  "withOldToken": {
+    "myOffers": {
+      "status": 403,
+      "error": "Invalid or expired token"
+    },
+    "create": {
+      "status": 403,
+      "error": "Invalid or expired token"
+    },
+    "cancel": {
+      "status": 403,
+      "error": "Invalid or expired token"
+    },
+    "buy": {
+      "status": 403,
+      "error": "Invalid or expired token"
+    }
+  },
+  "relogin": 200,
+  "beforeTrade": {
+    "sellerBalance": 7.77,
+    "buyerBalance": 31.41,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:7.77:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:31.41:seed"
+    ]
+  },
+  "afterTrade": {
+    "sellerBalance": 7.77,
+    "buyerBalance": 31.41,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:7.77:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:31.41:seed"
+    ]
+  },
+  "lOffersAfter": [
+    "227:153:active"
+  ],
+  "pass": false
+}

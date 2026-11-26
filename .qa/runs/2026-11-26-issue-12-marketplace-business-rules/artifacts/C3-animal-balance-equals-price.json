@@ -1,0 +1,63 @@
+{
+  "offerId": 207,
+  "price": 33.33,
+  "before": {
+    "sellerBalance": 67.68,
+    "buyerBalance": 33.33,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:50.25:marketplace",
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:33.33:seed"
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:16:59.636Z",
+      "data": {
+        "transaction": {
+          "id": 79,
+          "offerId": 207,
+          "sellerId": 234,
+          "buyerId": 238,
+          "itemType": "animal",
+          "itemId": 137,
+          "price": 33.33,
+          "status": "completed",
+          "createdAt": "2026-11-26T12:16:59.614Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  },
+  "after": {
+    "sellerBalance": 101.01,
+    "buyerBalance": 0,
+    "offerStatus": "sold",
+    "offerInBuyerBrowse": false,
+    "sellerOwnsItem": false,
+    "buyerOwnsItem": true,
+    "sellerMarketplaceTx": 2,
+    "buyerMarketplaceTx": 1,
+    "sellerFinancialTx": [
+      "income:33.33:marketplace",
+      "income:50.25:marketplace",
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": [
+      "expense:33.33:marketplace",
+      "income:33.33:seed"
+    ]
+  },
+  "expectedSellerBalance": 101.01,
+  "pass": true
+}

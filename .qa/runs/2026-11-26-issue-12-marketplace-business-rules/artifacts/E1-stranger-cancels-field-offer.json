@@ -1,0 +1,89 @@
+{
+  "strangerReadsOwnOffers": {
+    "status": 200
+  },
+  "offerId": 212,
+  "before": {
+    "trade": {
+      "sellerBalance": 12.34,
+      "buyerBalance": 45.67,
+      "offerStatus": "active",
+      "offerInBuyerBrowse": true,
+      "sellerOwnsItem": true,
+      "buyerOwnsItem": false,
+      "sellerMarketplaceTx": 0,
+      "buyerMarketplaceTx": 0,
+      "sellerFinancialTx": [
+        "income:12.34:seed"
+      ],
+      "buyerFinancialTx": [
+        "income:45.67:seed"
+      ]
+    },
+    "stranger": {
+      "balance": 9.87,
+      "offers": [
+        "215:active"
+      ]
+    }
+  },
+  "response": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:27.934Z",
+      "error": "Not authorized to cancel this offer"
+    }
+  },
+  "after": {
+    "trade": {
+      "sellerBalance": 12.34,
+      "buyerBalance": 45.67,
+      "offerStatus": "active",
+      "offerInBuyerBrowse": true,
+      "sellerOwnsItem": true,
+      "buyerOwnsItem": false,
+      "sellerMarketplaceTx": 0,
+      "buyerMarketplaceTx": 0,
+      "sellerFinancialTx": [
+        "income:12.34:seed"
+      ],
+      "buyerFinancialTx": [
+        "income:45.67:seed"
+      ]
+    },
+    "stranger": {
+      "balance": 9.87,
+      "offers": [
+        "215:active"
+      ]
+    }
+  },
+  "verdict": {
+    "pass": true,
+    "status": 403,
+    "message": "Not authorized to cancel this offer",
+    "changed": []
+  },
+  "buyAfterRefusedCancel": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:17:32.806Z",
+      "data": {
+        "transaction": {
+          "id": 81,
+          "offerId": 212,
+          "sellerId": 242,
+          "buyerId": 245,
+          "itemType": "field",
+          "itemId": 140,
+          "price": 12.5,
+          "status": "completed",
+          "createdAt": "2026-11-26T12:17:32.782Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  }
+}

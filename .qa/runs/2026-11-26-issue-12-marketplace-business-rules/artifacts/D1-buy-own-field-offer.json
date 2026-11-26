@@ -1,0 +1,71 @@
+{
+  "sellerBalance": 88.88,
+  "price": 20.5,
+  "before": {
+    "sellerBalance": 88.88,
+    "buyerBalance": 45.67,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:88.88:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:45.67:seed"
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:35.039Z",
+      "error": "Cannot buy your own offer"
+    }
+  },
+  "after": {
+    "sellerBalance": 88.88,
+    "buyerBalance": 45.67,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:88.88:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:45.67:seed"
+    ]
+  },
+  "verdict": {
+    "pass": true,
+    "status": 400,
+    "message": "Cannot buy your own offer",
+    "changed": []
+  },
+  "controlBuyByOtherUser": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:17:39.152Z",
+      "data": {
+        "transaction": {
+          "id": 82,
+          "offerId": 216,
+          "sellerId": 246,
+          "buyerId": 248,
+          "itemType": "field",
+          "itemId": 143,
+          "price": 20.5,
+          "status": "completed",
+          "createdAt": "2026-11-26T12:17:39.132Z"
+        },
+        "message": "Purchase completed successfully"
+      }
+    }
+  }
+}

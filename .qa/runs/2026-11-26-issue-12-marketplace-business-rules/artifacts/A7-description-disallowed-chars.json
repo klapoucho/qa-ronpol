@@ -1,0 +1,1850 @@
+[
+  {
+    "case": "char ?",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ? ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.198Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char '",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ' ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.221Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char \"",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole \" ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.244Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char <",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole < ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.267Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char >",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole > ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.291Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char &",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole & ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.314Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char /",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole / ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.337Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char \\",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole \\ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.361Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char @",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole @ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.383Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char #",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole # ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.404Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char $",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole $ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.427Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char %",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole % ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.448Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char ^",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ^ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.468Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char *",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole * ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.502Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char +",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole + ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.525Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char =",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole = ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.544Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char [",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole [ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.565Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char ]",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ] ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.586Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char {",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole { ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.607Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char }",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole } ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.627Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char |",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole | ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.648Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char ~",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ~ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.668Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char `",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ` ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.690Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "emoji",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole 🐄"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.710Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "é ü ß (non-Polish Latin letters)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Café Müller Straße"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.731Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "Cyrillic",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Поле"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.751Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "CJK",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "田んぼ"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.771Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "Arabic (RTL)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "حقل"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.792Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "XSS script",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "<script>alert('xss')</script>"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.814Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "SQL injection",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "' OR 1=1 --"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.834Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "HTML entity",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "&amp;"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.853Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "300 chars with one bad char at the end",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.874Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "description {} (object)",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": {}
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.894Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char ?",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ? ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.915Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char '",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ' ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.935Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char \"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole \" ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.957Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char <",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole < ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.977Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char >",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole > ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:38.999Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char &",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole & ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.020Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char /",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole / ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.041Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char \\",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole \\ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.063Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char @",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole @ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.086Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char #",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole # ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.109Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char $",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole $ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.132Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char %",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole % ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.154Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char ^",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ^ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.175Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char *",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole * ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.197Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char +",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole + ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.224Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char =",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole = ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.246Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char [",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole [ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.267Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char ]",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ] ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.287Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char {",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole { ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.309Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char }",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole } ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.330Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char |",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole | ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.351Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char ~",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ~ ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.373Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "char `",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ` ok"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.394Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "emoji",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole 🐄"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.415Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "é ü ß (non-Polish Latin letters)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Café Müller Straße"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.436Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "Cyrillic",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Поле"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.457Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "CJK",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "田んぼ"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.479Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "Arabic (RTL)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "حقل"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.499Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "XSS script",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "<script>alert('xss')</script>"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.521Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "SQL injection",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "' OR 1=1 --"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.543Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "HTML entity",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "&amp;"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.563Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "300 chars with one bad char at the end",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.583Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "Description contains invalid characters"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  },
+  {
+    "case": "description {} (object)",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": {}
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:39.604Z",
+        "error": "Description contains invalid characters"
+      }
+    },
+    "expected": {
+      "status": 400,
+      "message": "undefined"
+    },
+    "verdict": {
+      "pass": true,
+      "status": 400,
+      "message": "Description contains invalid characters",
+      "changed": []
+    }
+  }
+]

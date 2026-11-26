@@ -1,0 +1,42 @@
+{
+  "fieldCreate": {
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:14:23.612Z",
+      "data": {
+        "userId": 228,
+        "name": "<img src=x onerror=alert(1)>",
+        "area": 1.5,
+        "id": 130
+      },
+      "message": "field added"
+    }
+  },
+  "animalCreate": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:14:23.621Z",
+      "error": "Invalid animal type. Allowed: chicken, chick, cow, pig, majesticHog, piglet, sheep, lamb, goat, duck, turkey, rabbit, fish, shrimp, oyster, squid, kraken, wyvern, moth, aiHarvester, aiDrone, aiAssistant, aiRobot, dinosaur, diplodocus, unicorn, ent, voidBeast, rat, goose, snail, bee, hedgehog, owl, lobster, yak, boar, ant, tardigrade, tortoise."
+    }
+  },
+  "registerHtmlName": {
+    "status": 400,
+    "error": "Validation failed: Displayed name must be 3-20 characters long and contain only letters, numbers, spaces, hyphens, and underscores"
+  },
+  "fieldRename": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T12:14:23.649Z",
+      "data": {
+        "userId": 228,
+        "name": "<b>bold</b>",
+        "area": 1.5,
+        "id": 130
+      },
+      "message": "Updated successfully"
+    }
+  }
+}

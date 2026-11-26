@@ -1,0 +1,58 @@
+[
+  {
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 128,
+      "price": 9.99,
+      "description": "QA not mine"
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.104Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "verdict": {
+      "pass": true,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    },
+    "ownerControl": {
+      "status": 200,
+      "success": true,
+      "cancel": 200
+    }
+  },
+  {
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 43,
+      "price": 9.99,
+      "description": "QA not mine"
+    },
+    "response": {
+      "status": 404,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:41.185Z",
+        "error": "Item not found or not owned by user"
+      }
+    },
+    "verdict": {
+      "pass": true,
+      "status": 404,
+      "message": "Item not found or not owned by user",
+      "changed": []
+    },
+    "ownerControl": {
+      "status": 200,
+      "success": true,
+      "cancel": 200
+    }
+  }
+]

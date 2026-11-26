@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "sent": "12,50",
+      "status": 200,
+      "storedPrice": 12
+    },
+    {
+      "sent": "1 000",
+      "status": 200,
+      "storedPrice": 1
+    },
+    {
+      "sent": "0,99",
+      "status": 400,
+      "error": "Price must be greater than 0"
+    },
+    {
+      "sent": "1.000,00",
+      "status": 200,
+      "storedPrice": 1
+    }
+  ],
+  "pass": false
+}

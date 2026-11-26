@@ -1,0 +1,540 @@
+[
+  {
+    "case": "description \"\"",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": ""
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:39.637Z",
+        "data": {
+          "offer": {
+            "id": 171,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.619Z",
+            "updatedAt": "2026-11-26T12:13:39.619Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": ""
+    },
+    "expected": {
+      "price": 7.77,
+      "description": ""
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description missing",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:39.687Z",
+        "data": {
+          "offer": {
+            "id": 172,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.668Z",
+            "updatedAt": "2026-11-26T12:13:39.668Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": ""
+    },
+    "expected": {
+      "price": 7.77,
+      "description": ""
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description null",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:39.735Z",
+        "data": {
+          "offer": {
+            "id": 173,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.718Z",
+            "updatedAt": "2026-11-26T12:13:39.718Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": ""
+    },
+    "expected": {
+      "price": 7.77,
+      "description": ""
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description whitespace only",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "   "
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:39.786Z",
+        "data": {
+          "offer": {
+            "id": 174,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "   ",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.768Z",
+            "updatedAt": "2026-11-26T12:13:39.768Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "   ",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "   "
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "   "
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description non-breaking space U+00A0",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:39.839Z",
+        "data": {
+          "offer": {
+            "id": 175,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.821Z",
+            "updatedAt": "2026-11-26T12:13:39.821Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description line separator U+2028",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:39.894Z",
+        "data": {
+          "offer": {
+            "id": 176,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Pole ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.879Z",
+            "updatedAt": "2026-11-26T12:13:39.879Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description \"\"",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": ""
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:39.952Z",
+        "data": {
+          "offer": {
+            "id": 177,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.933Z",
+            "updatedAt": "2026-11-26T12:13:39.933Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": ""
+    },
+    "expected": {
+      "price": 7.77,
+      "description": ""
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description missing",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.004Z",
+        "data": {
+          "offer": {
+            "id": 178,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:39.989Z",
+            "updatedAt": "2026-11-26T12:13:39.989Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": ""
+    },
+    "expected": {
+      "price": 7.77,
+      "description": ""
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description null",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": null
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.061Z",
+        "data": {
+          "offer": {
+            "id": 179,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.044Z",
+            "updatedAt": "2026-11-26T12:13:40.044Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": ""
+    },
+    "expected": {
+      "price": 7.77,
+      "description": ""
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description whitespace only",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "   "
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.117Z",
+        "data": {
+          "offer": {
+            "id": 180,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "   ",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.100Z",
+            "updatedAt": "2026-11-26T12:13:40.100Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "   ",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "   "
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "   "
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description non-breaking space U+00A0",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.174Z",
+        "data": {
+          "offer": {
+            "id": 181,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.154Z",
+            "updatedAt": "2026-11-26T12:13:40.154Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "description line separator U+2028",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:40.231Z",
+        "data": {
+          "offer": {
+            "id": 182,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Pole ok",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:40.213Z",
+            "updatedAt": "2026-11-26T12:13:40.213Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Pole ok",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Pole ok"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Pole ok"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "firstCreate": {
+    "status": 200,
+    "success": true,
+    "offerId": 196
+  },
+  "cases": [
+    {
+      "case": "same price and description",
+      "request": {
+        "itemType": "animal",
+        "itemId": 45,
+        "price": 15.15,
+        "description": "QA first offer"
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T12:15:54.711Z",
+          "error": "Item is already offered for sale"
+        }
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Item is already offered for sale",
+        "changed": [],
+        "activeOffersForItem": 1
+      }
+    },
+    {
+      "case": "different price and description",
+      "request": {
+        "itemType": "animal",
+        "itemId": 45,
+        "price": 3.03,
+        "description": "QA cheaper duplicate"
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T12:15:54.735Z",
+          "error": "Item is already offered for sale"
+        }
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Item is already offered for sale",
+        "changed": [],
+        "activeOffersForItem": 1
+      }
+    },
+    {
+      "case": "itemId as string",
+      "request": {
+        "itemType": "animal",
+        "itemId": "45",
+        "price": 4.04
+      },
+      "response": {
+        "status": 400,
+        "body": {
+          "success": false,
+          "timestamp": "2026-11-26T12:15:54.773Z",
+          "error": "Item is already offered for sale"
+        }
+      },
+      "verdict": {
+        "pass": true,
+        "status": 400,
+        "message": "Item is already offered for sale",
+        "changed": [],
+        "activeOffersForItem": 1
+      }
+    }
+  ]
+}

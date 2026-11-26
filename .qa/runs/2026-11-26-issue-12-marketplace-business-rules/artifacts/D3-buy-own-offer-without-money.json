@@ -1,0 +1,48 @@
+{
+  "before": {
+    "sellerBalance": 0,
+    "buyerBalance": 4.67,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 2,
+    "sellerFinancialTx": [],
+    "buyerFinancialTx": [
+      "expense:20.5:marketplace",
+      "expense:20.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:46.684Z",
+      "error": "Cannot buy your own offer"
+    }
+  },
+  "after": {
+    "sellerBalance": 0,
+    "buyerBalance": 4.67,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 0,
+    "buyerMarketplaceTx": 2,
+    "sellerFinancialTx": [],
+    "buyerFinancialTx": [
+      "expense:20.5:marketplace",
+      "expense:20.5:marketplace",
+      "income:45.67:seed"
+    ]
+  },
+  "verdict": {
+    "pass": true,
+    "status": 400,
+    "message": "Cannot buy your own offer",
+    "changed": []
+  }
+}

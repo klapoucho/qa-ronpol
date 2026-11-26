@@ -1,0 +1,35 @@
+{
+  "doubleSubmit": [
+    {
+      "status": 200,
+      "buyer": 285
+    },
+    {
+      "status": 404,
+      "error": "Offer not found or not available"
+    }
+  ],
+  "twoBuyers": [
+    {
+      "status": 400,
+      "error": "Insufficient funds to complete purchase (no overdraft allowed)"
+    },
+    {
+      "status": 200,
+      "buyer": 286
+    }
+  ],
+  "balances": {
+    "seller": 53.71,
+    "expectedSeller": 53.71,
+    "b1": 27.69,
+    "b2": 21.83,
+    "paid1": 20.2,
+    "paid2": 30.3
+  },
+  "sellerMarketplaceTx": [
+    "240:285",
+    "241:286"
+  ],
+  "pass": true
+}

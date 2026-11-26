@@ -1,0 +1,246 @@
+2026-11-26T12:13:34.736Z A1 field valid create PASS http=200 envelope.message=201
+2026-11-26T12:13:34.813Z A2 animal valid create PASS http=200 envelope.message=201
+2026-11-26T12:13:34.844Z A3 field price 0 FAIL 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:34.868Z A3 field price -1 PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:34.900Z A3 field price -0.01 PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:34.923Z A3 field price 0.001 (rounds to 0) PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:34.945Z A3 field price 0.004 (rounds to 0) PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:34.967Z A3 field price "abc" PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:34.988Z A3 field price "" PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:35.009Z A3 field price null PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:35.031Z A3 field price missing PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:35.052Z A3 field price true PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.073Z A3 field price {} PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.136Z A3 field price "12abc" FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:35.199Z A3 field price [5] FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:35.234Z A3 field price "Infinity" PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.260Z A3 field price 1e307 (huge) PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.325Z A3 field price 1e15 (huge, finite) FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:35.350Z A3 animal price 0 FAIL 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:35.372Z A3 animal price -1 PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.393Z A3 animal price -0.01 PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.423Z A3 animal price 0.001 (rounds to 0) PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.443Z A3 animal price 0.004 (rounds to 0) PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.463Z A3 animal price "abc" PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.484Z A3 animal price "" PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:35.507Z A3 animal price null PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:35.527Z A3 animal price missing PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:35.548Z A3 animal price true PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.572Z A3 animal price {} PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.634Z A3 animal price "12abc" FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:35.695Z A3 animal price [5] FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:35.717Z A3 animal price "Infinity" PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.739Z A3 animal price 1e307 (huge) PASS 400 "Price must be greater than 0" 
+2026-11-26T12:13:35.800Z A3 animal price 1e15 (huge, finite) FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:35.851Z A4 field price 0.01 (minimum) PASS 200 "" stored=0.01/"QA price case"
+2026-11-26T12:13:35.897Z A4 field price 0.005 (rounds up to 0.01) PASS 200 "" stored=0.01/"QA price case"
+2026-11-26T12:13:35.949Z A4 field price 10.555 (rounds to 10.56) PASS 200 "" stored=10.56/"QA price case"
+2026-11-26T12:13:36.002Z A4 field price 99999999.99 PASS 200 "" stored=99999999.99/"QA price case"
+2026-11-26T12:13:36.061Z A4 field price "5" (numeric string) PASS 200 "" stored=5/"QA price case"
+2026-11-26T12:13:36.117Z A4 animal price 0.01 (minimum) PASS 200 "" stored=0.01/"QA price case"
+2026-11-26T12:13:36.174Z A4 animal price 0.005 (rounds up to 0.01) PASS 200 "" stored=0.01/"QA price case"
+2026-11-26T12:13:36.231Z A4 animal price 10.555 (rounds to 10.56) PASS 200 "" stored=10.56/"QA price case"
+2026-11-26T12:13:36.285Z A4 animal price 99999999.99 PASS 200 "" stored=99999999.99/"QA price case"
+2026-11-26T12:13:36.341Z A4 animal price "5" (numeric string) PASS 200 "" stored=5/"QA price case"
+2026-11-26T12:13:36.408Z A5 field 300 ASCII chars PASS 200 "" stored=7.77/"Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1
+2026-11-26T12:13:36.420Z A5 field 300 Polish letters FAIL 400 "Description cannot exceed 300 characters" stored=undefined/undefined
+2026-11-26T12:13:36.476Z A5 field 1 char PASS 200 "" stored=7.77/"x"
+2026-11-26T12:13:36.534Z A5 animal 300 ASCII chars PASS 200 "" stored=7.77/"Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1
+2026-11-26T12:13:36.540Z A5 animal 300 Polish letters FAIL 400 "Description cannot exceed 300 characters" stored=undefined/undefined
+2026-11-26T12:13:36.596Z A5 animal 1 char PASS 200 "" stored=7.77/"x"
+2026-11-26T12:13:36.631Z A5 field 301 ASCII chars PASS 400 "Description cannot exceed 300 characters" 
+2026-11-26T12:13:36.658Z A5 field 301 Polish letters PASS 400 "Description cannot exceed 300 characters" 
+2026-11-26T12:13:36.683Z A5 field 1000 chars PASS 400 "Description cannot exceed 300 characters" 
+2026-11-26T12:13:36.706Z A5 animal 301 ASCII chars PASS 400 "Description cannot exceed 300 characters" 
+2026-11-26T12:13:36.728Z A5 animal 301 Polish letters PASS 400 "Description cannot exceed 300 characters" 
+2026-11-26T12:13:36.750Z A5 animal 1000 chars PASS 400 "Description cannot exceed 300 characters" 
+2026-11-26T12:13:36.805Z A6 field all Polish letters PASS 200 "" stored=7.77/"ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+2026-11-26T12:13:36.858Z A6 field punctuation . PASS 200 "" stored=7.77/"Pole . ok"
+2026-11-26T12:13:36.910Z A6 field punctuation , PASS 200 "" stored=7.77/"Pole , ok"
+2026-11-26T12:13:36.963Z A6 field punctuation ; PASS 200 "" stored=7.77/"Pole ; ok"
+2026-11-26T12:13:37.017Z A6 field punctuation : PASS 200 "" stored=7.77/"Pole : ok"
+2026-11-26T12:13:37.074Z A6 field punctuation ! PASS 200 "" stored=7.77/"Pole ! ok"
+2026-11-26T12:13:37.131Z A6 field punctuation ( PASS 200 "" stored=7.77/"Pole ( ok"
+2026-11-26T12:13:37.186Z A6 field punctuation ) PASS 200 "" stored=7.77/"Pole ) ok"
+2026-11-26T12:13:37.243Z A6 field punctuation - PASS 200 "" stored=7.77/"Pole - ok"
+2026-11-26T12:13:37.301Z A6 field punctuation _ PASS 200 "" stored=7.77/"Pole _ ok"
+2026-11-26T12:13:37.356Z A6 field all allowed punctuation together PASS 200 "" stored=7.77/"Pole: duże, żyzne; (blisko) - tanio! nr
+2026-11-26T12:13:37.415Z A6 field digits only PASS 200 "" stored=7.77/"1234567890"
+2026-11-26T12:13:37.471Z A6 field tab and newline PASS 200 "" stored=7.77/"Line one\tTab\nLine two"
+2026-11-26T12:13:37.529Z A6 animal all Polish letters PASS 200 "" stored=7.77/"ąćęłńóśźżĄĆĘŁŃÓŚŹŻ"
+2026-11-26T12:13:37.590Z A6 animal punctuation . PASS 200 "" stored=7.77/"Pole . ok"
+2026-11-26T12:13:37.653Z A6 animal punctuation , PASS 200 "" stored=7.77/"Pole , ok"
+2026-11-26T12:13:37.715Z A6 animal punctuation ; PASS 200 "" stored=7.77/"Pole ; ok"
+2026-11-26T12:13:37.780Z A6 animal punctuation : PASS 200 "" stored=7.77/"Pole : ok"
+2026-11-26T12:13:37.835Z A6 animal punctuation ! PASS 200 "" stored=7.77/"Pole ! ok"
+2026-11-26T12:13:37.883Z A6 animal punctuation ( PASS 200 "" stored=7.77/"Pole ( ok"
+2026-11-26T12:13:37.936Z A6 animal punctuation ) PASS 200 "" stored=7.77/"Pole ) ok"
+2026-11-26T12:13:37.985Z A6 animal punctuation - PASS 200 "" stored=7.77/"Pole - ok"
+2026-11-26T12:13:38.035Z A6 animal punctuation _ PASS 200 "" stored=7.77/"Pole _ ok"
+2026-11-26T12:13:38.085Z A6 animal all allowed punctuation together PASS 200 "" stored=7.77/"Pole: duże, żyzne; (blisko) - tanio! nr
+2026-11-26T12:13:38.134Z A6 animal digits only PASS 200 "" stored=7.77/"1234567890"
+2026-11-26T12:13:38.186Z A6 animal tab and newline PASS 200 "" stored=7.77/"Line one\tTab\nLine two"
+2026-11-26T12:13:38.211Z A7 field char ? PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.235Z A7 field char ' PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.257Z A7 field char " PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.280Z A7 field char < PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.304Z A7 field char > PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.327Z A7 field char & PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.350Z A7 field char / PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.373Z A7 field char \ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.396Z A7 field char @ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.417Z A7 field char # PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.439Z A7 field char $ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.459Z A7 field char % PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.486Z A7 field char ^ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.515Z A7 field char * PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.536Z A7 field char + PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.556Z A7 field char = PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.577Z A7 field char [ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.598Z A7 field char ] PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.619Z A7 field char { PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.640Z A7 field char } PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.660Z A7 field char | PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.681Z A7 field char ~ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.702Z A7 field char ` PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.722Z A7 field emoji PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.743Z A7 field é ü ß (non-Polish Latin letters) PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.763Z A7 field Cyrillic PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.784Z A7 field CJK PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.805Z A7 field Arabic (RTL) PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.826Z A7 field XSS script PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.845Z A7 field SQL injection PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.865Z A7 field HTML entity PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.886Z A7 field 300 chars with one bad char at the end PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.906Z A7 field description {} (object) PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.927Z A7 animal char ? PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.948Z A7 animal char ' PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.969Z A7 animal char " PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:38.989Z A7 animal char < PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.011Z A7 animal char > PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.032Z A7 animal char & PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.053Z A7 animal char / PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.075Z A7 animal char \ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.098Z A7 animal char @ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.122Z A7 animal char # PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.145Z A7 animal char $ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.166Z A7 animal char % PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.187Z A7 animal char ^ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.211Z A7 animal char * PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.237Z A7 animal char + PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.258Z A7 animal char = PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.279Z A7 animal char [ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.301Z A7 animal char ] PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.321Z A7 animal char { PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.342Z A7 animal char } PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.365Z A7 animal char | PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.385Z A7 animal char ~ PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.406Z A7 animal char ` PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.428Z A7 animal emoji PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.448Z A7 animal é ü ß (non-Polish Latin letters) PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.469Z A7 animal Cyrillic PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.491Z A7 animal CJK PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.511Z A7 animal Arabic (RTL) PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.535Z A7 animal XSS script PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.555Z A7 animal SQL injection PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.575Z A7 animal HTML entity PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.595Z A7 animal 300 chars with one bad char at the end PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.617Z A7 animal description {} (object) PASS 400 "Description contains invalid characters" 
+2026-11-26T12:13:39.668Z A8 field description "" PASS 200 "" stored=7.77/""
+2026-11-26T12:13:39.717Z A8 field description missing PASS 200 "" stored=7.77/""
+2026-11-26T12:13:39.768Z A8 field description null PASS 200 "" stored=7.77/""
+2026-11-26T12:13:39.819Z A8 field description whitespace only PASS 200 "" stored=7.77/"   "
+2026-11-26T12:13:39.877Z A8 field description non-breaking space U+00A0 PASS 200 "" stored=7.77/"Pole ok"
+2026-11-26T12:13:39.931Z A8 field description line separator U+2028 PASS 200 "" stored=7.77/"Pole ok"
+2026-11-26T12:13:39.988Z A8 animal description "" PASS 200 "" stored=7.77/""
+2026-11-26T12:13:40.043Z A8 animal description missing PASS 200 "" stored=7.77/""
+2026-11-26T12:13:40.097Z A8 animal description null PASS 200 "" stored=7.77/""
+2026-11-26T12:13:40.152Z A8 animal description whitespace only PASS 200 "" stored=7.77/"   "
+2026-11-26T12:13:40.211Z A8 animal description non-breaking space U+00A0 PASS 200 "" stored=7.77/"Pole ok"
+2026-11-26T12:13:40.266Z A8 animal description line separator U+2028 PASS 200 "" stored=7.77/"Pole ok"
+2026-11-26T12:13:40.341Z A8 field description number 12345 FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:40.417Z A8 field description array ["a","b"] FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:40.480Z A8 field description true FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:40.541Z A8 animal description number 12345 FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:40.606Z A8 animal description array ["a","b"] FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:40.671Z A8 animal description true FAIL 200 "Offer created successfully" changed=sellerOffers,observerBrowseFromSeller
+2026-11-26T12:13:40.699Z A9 field itemType missing PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:40.719Z A9 field itemType "Field" (case) PASS 400 "Invalid item type. Must be \"field\" or \"animal\"" 
+2026-11-26T12:13:40.742Z A9 field itemType "tractor" PASS 400 "Invalid item type. Must be \"field\" or \"animal\"" 
+2026-11-26T12:13:40.764Z A9 field itemId missing PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:40.785Z A9 field itemId 0 PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:40.810Z A9 field itemId -1 PASS 404 "Item not found or not owned by user" 
+2026-11-26T12:13:40.832Z A9 field itemId 99999999 (no such item) PASS 404 "Item not found or not owned by user" 
+2026-11-26T12:13:40.854Z A9 field itemId "abc" FAIL 404 "Item not found or not owned by user" 
+2026-11-26T12:13:40.879Z A9 field itemId 1.5 FAIL 404 "Item not found or not owned by user" 
+2026-11-26T12:13:40.903Z A9 animal itemType missing PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:40.925Z A9 animal itemType "Field" (case) PASS 400 "Invalid item type. Must be \"field\" or \"animal\"" 
+2026-11-26T12:13:40.948Z A9 animal itemType "tractor" PASS 400 "Invalid item type. Must be \"field\" or \"animal\"" 
+2026-11-26T12:13:40.970Z A9 animal itemId missing PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:40.995Z A9 animal itemId 0 PASS 400 "Missing required fields: itemType, itemId, price" 
+2026-11-26T12:13:41.020Z A9 animal itemId -1 PASS 404 "Item not found or not owned by user" 
+2026-11-26T12:13:41.043Z A9 animal itemId 99999999 (no such item) PASS 404 "Item not found or not owned by user" 
+2026-11-26T12:13:41.064Z A9 animal itemId "abc" FAIL 404 "Item not found or not owned by user" 
+2026-11-26T12:13:41.086Z A9 animal itemId 1.5 FAIL 404 "Item not found or not owned by user" 
+2026-11-26T12:13:41.164Z A10 field not owned PASS 404 "Item not found or not owned by user" owner control 200
+2026-11-26T12:13:41.246Z A10 animal not owned PASS 404 "Item not found or not owned by user" owner control 200
+2026-11-26T12:13:41.321Z A11 field item in use PASS 400 "Cannot sell field with assigned animals"
+2026-11-26T12:13:41.349Z A11 animal item in use PASS 400 "Cannot sell animal assigned to a field"
+2026-11-26T12:13:41.366Z A12 no token 401 "Access token required" | invalid token 403 "Invalid or expired token" | malformed 500 "Internal server error" | active offers for field after 0
+2026-11-26T12:13:41.366Z A done
+2026-11-26T12:14:23.652Z X1 field 201 "<img src=x onerror=alert(1)>" | animal 400 "Invalid animal type. Allowed: chicken, chick, cow, pig, majesticHog, piglet, sheep, lamb, goat, duck, turkey, rabbit, fish, shrimp, oyster, squid, kraken, wyvern, moth, aiHarvester, aiDrone, aiAssistant, aiRobot, dinosaur, diplodocus, unicorn, ent, voidBeast, rat, goose, snail, bee, hedgehog, owl, lobster, yak, boar, ant, tardigrade, tortoise." | register 400 "Validation failed: Displayed name must be 3-20 characters long and contain only letters, numbers, spaces, hyphens, and underscores" | put 200 "<b>bold</b>"
+2026-11-26T12:14:42.894Z X2 seeded offer 191 details {"name":"QA<img src=x onerror=\"document.title='QA-XSS-FIRED'\">","area":2.5}
+2026-11-26T12:15:42.059Z X2 cleanup cancel offer 191 200 {"message":"Offer cancelled successfully"}
+2026-11-26T12:15:42.279Z A5b field 300 Polish letters PASS 200 stored length 300 | 301 Polish PASS 400 "Description cannot exceed 300 characters"
+2026-11-26T12:15:42.374Z A5b animal 300 Polish letters PASS 200 stored length 300 | 301 Polish PASS 400 "Description cannot exceed 300 characters"
+2026-11-26T12:15:54.534Z B1 field same price and description PASS 400 "Item is already offered for sale" active=1
+2026-11-26T12:15:54.562Z B1 field different price and description PASS 400 "Item is already offered for sale" active=1
+2026-11-26T12:15:54.586Z B1 field itemId as string PASS 400 "Item is already offered for sale" active=1
+2026-11-26T12:15:54.655Z B3 field relist after cancel PASS cancel=200 relist=200
+2026-11-26T12:15:54.724Z B2 animal same price and description PASS 400 "Item is already offered for sale" active=1
+2026-11-26T12:15:54.751Z B2 animal different price and description PASS 400 "Item is already offered for sale" active=1
+2026-11-26T12:15:54.786Z B2 animal itemId as string PASS 400 "Item is already offered for sale" active=1
+2026-11-26T12:15:54.845Z B3 animal relist after cancel PASS cancel=200 relist=200
+2026-11-26T12:16:00.205Z B4 field 133 animal 133 PASS 200 200 "" active=2
+2026-11-26T12:16:00.263Z B5 field round 1 PASS statuses=200,400 active=1
+2026-11-26T12:16:00.319Z B5 field round 2 PASS statuses=200,400 active=1
+2026-11-26T12:16:00.370Z B5 field round 3 PASS statuses=200,400 active=1
+2026-11-26T12:16:00.429Z B5 animal round 1 PASS statuses=200,400 active=1
+2026-11-26T12:16:00.487Z B5 animal round 2 PASS statuses=200,400 active=1
+2026-11-26T12:16:00.546Z B5 animal round 3 PASS statuses=200,400 active=1
+2026-11-26T12:16:00.547Z B done
+2026-11-26T12:16:51.272Z C2 field field-balance-one-cent-below PASS 400 "Insufficient funds to complete purchase (no overdraft allowed)" buyer 50.24->50.24 seller 17.43->17.43 offer active inBrowse true 
+2026-11-26T12:16:51.321Z C4 field field-buyer-without-money PASS 400 "Insufficient funds to complete purchase (no overdraft allowed)" buyer 0->0 seller 17.43->17.43 offer active inBrowse true 
+2026-11-26T12:16:55.482Z C1 field field-balance-equals-price PASS 200 buyer 50.25->0 seller 17.43->67.68 (exp 67.68) owner buyer=true offer sold
+2026-11-26T12:16:55.542Z C3 animal animal-balance-one-cent-below PASS 400 "Insufficient funds to complete purchase (no overdraft allowed)" buyer 33.32->33.32 seller 67.68->67.68 offer active inBrowse true 
+2026-11-26T12:16:59.693Z C3 animal animal-balance-equals-price PASS 200 buyer 33.33->0 seller 67.68->101.01 (exp 101.01) owner buyer=true offer sold
+2026-11-26T12:16:59.746Z E5 field relist after sale PASS former owner 404 "Item not found or not owned by user" new owner 200
+2026-11-26T12:16:59.798Z E5 animal relist after sale PASS former owner 404 "Item not found or not owned by user" new owner 200
+2026-11-26T12:17:22.649Z C5 concurrent buys FAIL statuses 200,400 "Insufficient funds to complete purchase (no overdraft allowed)" buyer 21.17 sellers 45.55,6.66 offers sold,active
+2026-11-26T12:17:32.815Z E1 field stranger cancel PASS 403 "Not authorized to cancel this offer" offer active inBrowse true buy afterwards 200 
+2026-11-26T12:17:32.915Z E2 animal stranger cancel PASS 403 "Not authorized to cancel this offer" offer active inBrowse true  
+2026-11-26T12:17:32.969Z E4a field cancel sold offer PASS seller 400 "Offer is not active" buyer 403 stranger 403 offer sold unchanged=true
+2026-11-26T12:17:34.892Z F2-F5 string id 404 "Offer not found or not available" | id 0 400 "Missing required field: offerId" | malformed 500 "Internal server error" | bad token 403 "Invalid or expired token" | unchanged=true
+2026-11-26T12:17:34.988Z E3 field seller cancel PASS cancel 200 status cancelled browse true->false buy 404 "Offer not found or not available" again 400 "Offer is not active" unchanged=true
+2026-11-26T12:17:39.159Z D1 field buy own offer PASS 400 "Cannot buy your own offer" seller balance 88.88->88.88 (price 20.5) control buy by other 200 
+2026-11-26T12:17:39.258Z E3 animal seller cancel PASS cancel 200 status cancelled browse true->false buy 404 "Offer not found or not available" again 400 "Offer is not active" unchanged=true
+2026-11-26T12:17:39.307Z E4b unknown id 99999999 404 "Offer not found"
+2026-11-26T12:17:39.307Z E4b id "abc" 400 "Invalid offerId format. Must be a positive integer."
+2026-11-26T12:17:39.307Z E4b id 0 400 "Invalid offerId format. Must be a positive integer."
+2026-11-26T12:17:39.308Z E4b id -1 400 "Invalid offerId format. Must be a positive integer."
+2026-11-26T12:17:39.308Z E4b id 1.5 400 "Invalid offerId format. Must be a positive integer."
+2026-11-26T12:17:39.308Z E4b no token 401 "Access token required"
+2026-11-26T12:17:39.308Z E4b invalid token 403 "Invalid or expired token"
+2026-11-26T12:17:39.308Z E4b stranger cancels own offer (control) 200 "Offer cancelled successfully"
+2026-11-26T12:17:39.308Z E done
+2026-11-26T12:17:43.344Z D2 animal buy own offer PASS 400 "Cannot buy your own offer" seller balance 109.38->109.38 (price 20.5) control buy by other 200 
+2026-11-26T12:17:46.718Z D3 field own offer, no money PASS 400 "Cannot buy your own offer"
+2026-11-26T12:17:46.742Z CD done
+2026-11-26T12:17:51.680Z F8 stranger animal on unlisted 201 owner list 400 "Cannot sell field with assigned animals" | stranger animal on listed 201 offer in browse active -> absent my-offers unavailable seller cancel 400 "Offer is not active" seller sees 0 animals
+2026-11-26T12:17:51.684Z F done F8
+2026-11-26T12:18:29.440Z C5b concurrent buys PASS statuses 200,400 buyer 21.17 sellers 45.55,6.66 offers sold,active
+2026-11-26T12:18:43.872Z F6 delay 1500 cancel 200 "Offer cancelled successfully" @1534ms buy 200 @4096ms offer sold buyerOwns true buyer 41.41 seller 39.39
+2026-11-26T12:18:58.168Z F6 delay 800 cancel 200 "Offer cancelled successfully" @841ms buy 200 @4076ms offer sold buyerOwns true buyer 41.41 seller 39.39
+2026-11-26T12:19:12.481Z F7 put 200 browse {"name":"QA big field","area":100} -> {"name":"QA big field","area":0.01} status active buy 200 buyer got {"userId":261,"name":"QA big field","area":0.01,"id":151}
+2026-11-26T12:19:26.806Z F9 relist during buy 400 "Item is already offered for sale" buy 200@4086ms relist after 404 "Item not found or not owned by user" seller offers 225:sold buyer owns true
+2026-11-26T12:19:26.806Z F done F6,F7,F9

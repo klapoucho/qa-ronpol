@@ -1,0 +1,72 @@
+{
+  "strangerReadsOwnOffers": {
+    "status": 200
+  },
+  "offerId": 214,
+  "before": {
+    "trade": {
+      "sellerBalance": 24.84,
+      "buyerBalance": 33.17,
+      "offerStatus": "active",
+      "offerInBuyerBrowse": true,
+      "sellerOwnsItem": true,
+      "buyerOwnsItem": false,
+      "sellerMarketplaceTx": 1,
+      "buyerMarketplaceTx": 1,
+      "sellerFinancialTx": [
+        "income:12.5:marketplace",
+        "income:12.34:seed"
+      ],
+      "buyerFinancialTx": [
+        "expense:12.5:marketplace",
+        "income:45.67:seed"
+      ]
+    },
+    "stranger": {
+      "balance": 9.87,
+      "offers": [
+        "215:active"
+      ]
+    }
+  },
+  "response": {
+    "status": 403,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:17:32.879Z",
+      "error": "Not authorized to cancel this offer"
+    }
+  },
+  "after": {
+    "trade": {
+      "sellerBalance": 24.84,
+      "buyerBalance": 33.17,
+      "offerStatus": "active",
+      "offerInBuyerBrowse": true,
+      "sellerOwnsItem": true,
+      "buyerOwnsItem": false,
+      "sellerMarketplaceTx": 1,
+      "buyerMarketplaceTx": 1,
+      "sellerFinancialTx": [
+        "income:12.5:marketplace",
+        "income:12.34:seed"
+      ],
+      "buyerFinancialTx": [
+        "expense:12.5:marketplace",
+        "income:45.67:seed"
+      ]
+    },
+    "stranger": {
+      "balance": 9.87,
+      "offers": [
+        "215:active"
+      ]
+    }
+  },
+  "verdict": {
+    "pass": true,
+    "status": 403,
+    "message": "Not authorized to cancel this offer",
+    "changed": []
+  }
+}

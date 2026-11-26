@@ -1,0 +1,53 @@
+{
+  "offerId": 207,
+  "price": 33.33,
+  "buyer": "canimlow",
+  "before": {
+    "sellerBalance": 67.68,
+    "buyerBalance": 33.32,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:50.25:marketplace",
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:33.32:seed"
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:16:55.516Z",
+      "error": "Insufficient funds to complete purchase (no overdraft allowed)"
+    }
+  },
+  "after": {
+    "sellerBalance": 67.68,
+    "buyerBalance": 33.32,
+    "offerStatus": "active",
+    "offerInBuyerBrowse": true,
+    "sellerOwnsItem": true,
+    "buyerOwnsItem": false,
+    "sellerMarketplaceTx": 1,
+    "buyerMarketplaceTx": 0,
+    "sellerFinancialTx": [
+      "income:50.25:marketplace",
+      "income:17.43:seed"
+    ],
+    "buyerFinancialTx": [
+      "income:33.32:seed"
+    ]
+  },
+  "verdict": {
+    "pass": true,
+    "status": 400,
+    "message": "Insufficient funds to complete purchase (no overdraft allowed)",
+    "changed": []
+  }
+}

@@ -1,12 +1,12 @@
 ---
 title: Seller is told "Offer cancelled successfully" but the offer is sold anyway
 area: api/marketplace/offers
-severity: minor
+severity: major
 kind: functional
 status: open
 source: "own: 2026-11-25-issue-11-marketplace-sale-between-two-users"
 found: 2026-11-25
-last_checked: 2026-11-25 (still reproduces)
+last_checked: 2026-11-26 (still reproduces)
 ---
 
 ## Environment
@@ -26,6 +26,7 @@ The cancel fails, or the buy fails.
 Cancel 200 "Offer cancelled successfully"; the buy then completes with 200 and the offer ends `sold`, with the field and the money moved.
 
 ## Evidence
+- `.qa/runs/2026-11-26-issue-12-marketplace-business-rules/artifacts/F6-cancel-during-buy.json` (2026-11-26 re-check, 2 of 2; severity raised to major: a seller cancelling during a buy needs no crafted input, and the seller is told the opposite of what happened. It also contradicts issue #12 AC-7, "a cancelled offer cannot be bought")
 - `.qa/runs/2026-11-25-issue-11-marketplace-sale-between-two-users/artifacts/review/E7-race-cancel-during-buy-round1.json`
 - `.qa/runs/2026-11-25-issue-11-marketplace-sale-between-two-users/artifacts/review/E7-race-cancel-during-buy-round2.json`
 

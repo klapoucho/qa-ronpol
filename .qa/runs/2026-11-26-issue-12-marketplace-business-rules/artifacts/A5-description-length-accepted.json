@@ -1,0 +1,234 @@
+[
+  {
+    "case": "300 ASCII chars",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 "
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.364Z",
+        "data": {
+          "offer": {
+            "id": 141,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 ",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.344Z",
+            "updatedAt": "2026-11-26T12:13:36.344Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 ",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 "
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 "
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "300 Polish letters",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘ"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.415Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "stored": {
+      "inBrowse": false
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘ"
+    },
+    "pass": false
+  },
+  {
+    "case": "1 char",
+    "itemType": "field",
+    "request": {
+      "itemType": "field",
+      "itemId": 127,
+      "price": 7.77,
+      "description": "x"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.439Z",
+        "data": {
+          "offer": {
+            "id": 142,
+            "sellerId": 225,
+            "itemType": "field",
+            "itemId": 127,
+            "price": 7.77,
+            "description": "x",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.422Z",
+            "updatedAt": "2026-11-26T12:13:36.422Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "x",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "x"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "x"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "300 ASCII chars",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 "
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.495Z",
+        "data": {
+          "offer": {
+            "id": 143,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 ",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.478Z",
+            "updatedAt": "2026-11-26T12:13:36.478Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 ",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 "
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 Ab1 "
+    },
+    "cancelStatus": 200,
+    "pass": true
+  },
+  {
+    "case": "300 Polish letters",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘ"
+    },
+    "response": {
+      "status": 400,
+      "body": {
+        "success": false,
+        "timestamp": "2026-11-26T12:13:36.536Z",
+        "error": "Description cannot exceed 300 characters"
+      }
+    },
+    "stored": {
+      "inBrowse": false
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "ąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘŁŃÓŚŹŻąćęłńóśźżĄĆĘ"
+    },
+    "pass": false
+  },
+  {
+    "case": "1 char",
+    "itemType": "animal",
+    "request": {
+      "itemType": "animal",
+      "itemId": 42,
+      "price": 7.77,
+      "description": "x"
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "success": true,
+        "timestamp": "2026-11-26T12:13:36.559Z",
+        "data": {
+          "offer": {
+            "id": 144,
+            "sellerId": 225,
+            "itemType": "animal",
+            "itemId": 42,
+            "price": 7.77,
+            "description": "x",
+            "status": "active",
+            "createdAt": "2026-11-26T12:13:36.541Z",
+            "updatedAt": "2026-11-26T12:13:36.541Z"
+          },
+          "message": "Offer created successfully"
+        },
+        "message": 201
+      }
+    },
+    "stored": {
+      "price": 7.77,
+      "description": "x",
+      "status": "active",
+      "inBrowse": true,
+      "browseDescription": "x"
+    },
+    "expected": {
+      "price": 7.77,
+      "description": "x"
+    },
+    "cancelStatus": 200,
+    "pass": true
+  }
+]
