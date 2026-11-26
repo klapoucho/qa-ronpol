@@ -1,0 +1,7 @@
+### Result
+Total messages: 1 (Errors: 1, Warnings: 0)
+
+[ERROR] Error loading offers: TypeError: Cannot read properties of undefined (reading 'offers')
+    at MarketplacePage._loadOffers (http://localhost:3000/js/pages/marketplace.js:357:42)
+    at async Promise.all (index 3)
+    at async MarketplacePage._loadInitialData (http://localhost:3000/js/pages/marketplace.js:226:7) @ http://localhost:3000/js/pages/marketplace.js:364

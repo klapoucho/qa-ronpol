@@ -1,0 +1,9 @@
+{
+  "evidence": "live, no cookies",
+  "finalUrl": "http://localhost:3000/login.html",
+  "title": "Login - Rolnopol",
+  "offersRequested": false,
+  "requests": [
+    "GET /api/version"
+  ]
+}

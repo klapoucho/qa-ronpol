@@ -1,0 +1,312 @@
+{
+  "viewport": 1366,
+  "grid": {
+    "l": 103,
+    "r": 1263,
+    "t": 470,
+    "b": 1315,
+    "w": 1160
+  },
+  "gridTemplateColumns": "373.328px 373.336px 373.336px",
+  "gap": "20px",
+  "columnLefts": [
+    103,
+    496,
+    890
+  ],
+  "cardWidths": [
+    373
+  ],
+  "rightmostCardRight": 1263,
+  "leftGap": 0,
+  "rightGap": 0,
+  "emptyState": null,
+  "pagination": {
+    "l": 103,
+    "r": 1263,
+    "t": 1345,
+    "b": 1381,
+    "w": 1160
+  },
+  "cards": [
+    {
+      "id": "1",
+      "card": {
+        "l": 103,
+        "r": 476,
+        "t": 470,
+        "b": 736,
+        "w": 373
+      },
+      "priceText": "130.99 ROL",
+      "price": {
+        "l": 344,
+        "r": 454,
+        "t": 496,
+        "b": 520
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 448,
+        "r": 460,
+        "t": 486,
+        "b": 498
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "3",
+      "card": {
+        "l": 496,
+        "r": 870,
+        "t": 470,
+        "b": 736,
+        "w": 373
+      },
+      "priceText": "1200 ROL",
+      "price": {
+        "l": 756,
+        "r": 848,
+        "t": 496,
+        "b": 520
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 842,
+        "r": 854,
+        "t": 486,
+        "b": 498
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "4",
+      "card": {
+        "l": 890,
+        "r": 1263,
+        "t": 470,
+        "b": 736,
+        "w": 373
+      },
+      "priceText": "300 ROL",
+      "price": {
+        "l": 1158,
+        "r": 1241,
+        "t": 496,
+        "b": 520
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 1235,
+        "r": 1247,
+        "t": 486,
+        "b": 498
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "6",
+      "card": {
+        "l": 103,
+        "r": 476,
+        "t": 772,
+        "b": 1017,
+        "w": 373
+      },
+      "priceText": "400 ROL",
+      "price": {
+        "l": 371,
+        "r": 454,
+        "t": 798,
+        "b": 821
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 448,
+        "r": 460,
+        "t": 788,
+        "b": 800
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "12",
+      "card": {
+        "l": 496,
+        "r": 870,
+        "t": 772,
+        "b": 1017,
+        "w": 373
+      },
+      "priceText": "250 ROL",
+      "price": {
+        "l": 766,
+        "r": 848,
+        "t": 798,
+        "b": 821
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 842,
+        "r": 854,
+        "t": 788,
+        "b": 800
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "13",
+      "card": {
+        "l": 890,
+        "r": 1263,
+        "t": 772,
+        "b": 1017,
+        "w": 373
+      },
+      "priceText": "300 ROL",
+      "price": {
+        "l": 1158,
+        "r": 1241,
+        "t": 798,
+        "b": 821
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 1235,
+        "r": 1247,
+        "t": 788,
+        "b": 800
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "14",
+      "card": {
+        "l": 103,
+        "r": 476,
+        "t": 1053,
+        "b": 1299,
+        "w": 373
+      },
+      "priceText": "110 ROL",
+      "price": {
+        "l": 378,
+        "r": 454,
+        "t": 1079,
+        "b": 1103
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 448,
+        "r": 460,
+        "t": 1069,
+        "b": 1081
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "16",
+      "card": {
+        "l": 496,
+        "r": 870,
+        "t": 1053,
+        "b": 1299,
+        "w": 373
+      },
+      "priceText": "95 ROL",
+      "price": {
+        "l": 778,
+        "r": 848,
+        "t": 1079,
+        "b": 1103
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 842,
+        "r": 854,
+        "t": 1069,
+        "b": 1081
+      },
+      "dotOverlapsPriceText": true
+    },
+    {
+      "id": "17",
+      "card": {
+        "l": 890,
+        "r": 1263,
+        "t": 1053,
+        "b": 1299,
+        "w": 373
+      },
+      "priceText": "999.99 ROL",
+      "price": {
+        "l": 1127,
+        "r": 1241,
+        "t": 1079,
+        "b": 1103
+      },
+      "dotAfter": {
+        "content": "\"\"",
+        "w": "12px",
+        "h": "12px",
+        "top": "16px",
+        "right": "16px"
+      },
+      "dot": {
+        "l": 1235,
+        "r": 1247,
+        "t": 1069,
+        "b": 1081
+      },
+      "dotOverlapsPriceText": true
+    }
+  ]
+}

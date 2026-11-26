@@ -1,0 +1,161 @@
+{
+  "field": {
+    "method": "POST",
+    "path": "fields",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:28.985Z",
+      "data": {
+        "userId": 6216,
+        "name": "QA rv15 6216 pole",
+        "area": 1.25,
+        "id": 2097
+      },
+      "message": "field added"
+    },
+    "requestBody": {
+      "name": "QA rv15 6216 pole",
+      "area": 1.25
+    }
+  },
+  "ctrlString": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:29.002Z",
+      "error": "Description contains invalid characters"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 2097,
+      "price": 2.34,
+      "description": "QA<img src=x onerror=\"document.title='QA-RV15-XSS-DESC'\">"
+    }
+  },
+  "attackArray": {
+    "method": "POST",
+    "path": "marketplace/offers",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:29.018Z",
+      "error": "Description contains invalid characters"
+    },
+    "requestBody": {
+      "itemType": "field",
+      "itemId": 2097,
+      "price": 2.34,
+      "description": [
+        "QA<img src=x onerror=\"document.title='QA-RV15-XSS-DESC'\">"
+      ]
+    }
+  },
+  "registerHtmlName": {
+    "method": "POST",
+    "path": "register",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:29.021Z",
+      "error": "Validation failed: Displayed name must be 3-20 characters long and contain only letters, numbers, spaces, hyphens, and underscores"
+    },
+    "requestBody": {
+      "email": "qa.t5.rvname.6216@example.test",
+      "displayedName": "<b>QA</b>",
+      "password": "<redacted>"
+    }
+  },
+  "profileGet": {
+    "method": "GET",
+    "path": "users/profile",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:29.034Z",
+      "data": {
+        "displayedName": "qa_rvatk_b3042686",
+        "email": "qa.t5.rvatk.b3042686@example.test",
+        "isActive": true,
+        "lastLogin": null,
+        "id": 6216
+      }
+    }
+  },
+  "profilePutHtml": {
+    "method": "PUT",
+    "path": "users/profile",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:29.046Z",
+      "error": "Validation failed: Displayed name must be 3-20 characters long and contain only letters, numbers, spaces, hyphens, and underscores"
+    },
+    "requestBody": {
+      "displayedName": "<b>QAname</b>"
+    }
+  },
+  "profilePutArray": {
+    "method": "PUT",
+    "path": "users/profile",
+    "status": 500,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:29.067Z",
+      "error": "displayedName.trim is not a function"
+    },
+    "requestBody": {
+      "displayedName": [
+        "<b>QAname</b>"
+      ]
+    }
+  },
+  "profileAfter": {
+    "method": "GET",
+    "path": "users/profile",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:29.082Z",
+      "data": {
+        "displayedName": "qa_rvatk_b3042686",
+        "email": "qa.t5.rvatk.b3042686@example.test",
+        "isActive": true,
+        "lastLogin": null,
+        "id": 6216
+      }
+    }
+  },
+  "animalHtmlType": {
+    "method": "POST",
+    "path": "animals",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:29.094Z",
+      "error": "Invalid animal type. Allowed: chicken, chick, cow, pig, majesticHog, piglet, sheep, lamb, goat, duck, turkey, rabbit, fish, shrimp, oyster, squid, kraken, wyvern, moth, aiHarvester, aiDrone, aiAssistant, aiRobot, dinosaur, diplodocus, unicorn, ent, voidBeast, rat, goose, snail, bee, hedgehog, owl, lobster, yak, boar, ant, tardigrade, tortoise."
+    },
+    "requestBody": {
+      "type": "<b>sheep</b>",
+      "amount": 1
+    }
+  },
+  "animalArrayType": {
+    "method": "POST",
+    "path": "animals",
+    "status": 400,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T21:19:29.107Z",
+      "error": "Invalid animal type. Allowed: chicken, chick, cow, pig, majesticHog, piglet, sheep, lamb, goat, duck, turkey, rabbit, fish, shrimp, oyster, squid, kraken, wyvern, moth, aiHarvester, aiDrone, aiAssistant, aiRobot, dinosaur, diplodocus, unicorn, ent, voidBeast, rat, goose, snail, bee, hedgehog, owl, lobster, yak, boar, ant, tardigrade, tortoise."
+    },
+    "requestBody": {
+      "type": [
+        "<b>sheep</b>"
+      ],
+      "amount": 1
+    }
+  }
+}

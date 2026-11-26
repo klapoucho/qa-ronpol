@@ -1,0 +1,81 @@
+{
+  "V": {
+    "id": 6214
+  },
+  "S": {
+    "id": 6215
+  },
+  "items": {
+    "vf": {
+      "userId": 6214,
+      "name": "QA t5 own 6214",
+      "area": 2.25,
+      "id": 2093
+    },
+    "sf1": {
+      "userId": 6215,
+      "name": "QA t5 sellerA 6215",
+      "area": 3.5,
+      "id": 2094
+    },
+    "sf2": {
+      "userId": 6215,
+      "name": "QA t5 sellerB 6215",
+      "area": 1.75,
+      "id": 2095
+    },
+    "sa": {
+      "userId": 6215,
+      "type": "sheep",
+      "amount": 4,
+      "createdAt": "2026-11-26T20:59:23.484Z",
+      "id": 1489
+    }
+  },
+  "offers": {
+    "vOwn": {
+      "id": 1951,
+      "sellerId": 6214,
+      "itemType": "field",
+      "itemId": 2093,
+      "price": 3.33,
+      "description": "Own offer of the viewer",
+      "status": "active",
+      "createdAt": "2026-11-26T20:59:23.529Z",
+      "updatedAt": "2026-11-26T20:59:23.529Z"
+    },
+    "s1": {
+      "id": 1952,
+      "sellerId": 6215,
+      "itemType": "field",
+      "itemId": 2094,
+      "price": 4.37,
+      "description": "Sloneczne pole przy lesie",
+      "status": "active",
+      "createdAt": "2026-11-26T20:59:23.568Z",
+      "updatedAt": "2026-11-26T20:59:23.568Z"
+    },
+    "s2": {
+      "id": 1953,
+      "sellerId": 6215,
+      "itemType": "field",
+      "itemId": 2095,
+      "price": 12.5,
+      "description": "Drugie pole sprzedawcy",
+      "status": "active",
+      "createdAt": "2026-11-26T20:59:23.613Z",
+      "updatedAt": "2026-11-26T20:59:23.613Z"
+    },
+    "s3": {
+      "id": 1954,
+      "sellerId": 6215,
+      "itemType": "animal",
+      "itemId": 1489,
+      "price": 7.01,
+      "description": "Owce zdrowe",
+      "status": "active",
+      "createdAt": "2026-11-26T20:59:23.655Z",
+      "updatedAt": "2026-11-26T20:59:23.655Z"
+    }
+  }
+}

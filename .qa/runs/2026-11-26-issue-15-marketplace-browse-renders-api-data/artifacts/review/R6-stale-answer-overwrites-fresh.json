@@ -1,0 +1,52 @@
+{
+  "offersRequests": 3,
+  "log": [
+    {
+      "req": 0,
+      "at": 0
+    },
+    {
+      "fulfilled": 0,
+      "at": 0
+    },
+    {
+      "req": 1,
+      "at": 160
+    },
+    {
+      "req": 2,
+      "at": 481
+    },
+    {
+      "fulfilled": 2,
+      "at": 482
+    },
+    {
+      "fulfilled": 1,
+      "at": 3160
+    }
+  ],
+  "snaps": [
+    {
+      "label": "after-load",
+      "cards": [
+        "Field: initial field 1, Area: 1.5 ha"
+      ]
+    },
+    {
+      "label": "fresh-answered",
+      "cards": [
+        "Field: fresh field 201, Area: 1.5 ha",
+        "Field: fresh field 202, Area: 1.5 ha",
+        "Field: fresh field 203, Area: 1.5 ha"
+      ]
+    },
+    {
+      "label": "stale-answered-last",
+      "cards": [
+        "Field: stale field 101, Area: 1.5 ha",
+        "Field: stale field 102, Area: 1.5 ha"
+      ]
+    }
+  ]
+}

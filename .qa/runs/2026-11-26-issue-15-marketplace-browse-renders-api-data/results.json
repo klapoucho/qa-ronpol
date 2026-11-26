@@ -1,0 +1,476 @@
+{
+  "run_id": "2026-11-26-issue-15-marketplace-browse-renders-api-data",
+  "title": "Marketplace: browse renders API data (UI on mocks)",
+  "source": {
+    "type": "github-issue",
+    "issue_url": "https://github.com/klapoucho/qa-ronpol/issues/15",
+    "pr_url": null,
+    "pr_head_sha": null,
+    "summary_comment_url": "https://github.com/klapoucho/qa-ronpol/issues/15#issuecomment-7203736730"
+  },
+  "kind": "ui+api",
+  "status": "FAIL",
+  "blocked_reason": null,
+  "env": "http://localhost:3000/marketplace.html",
+  "app_version": "Rolnopol 1.126.0 (Docker jaktestowac/rolnopol:1.126.0)",
+  "platforms": [
+    "Google Chrome 158.0.8127.88 via playwright-cli 0.1.24, 1366x768",
+    "API (Node fetch)"
+  ],
+  "roles": [
+    "viewer V (registered user, 13.57 ROL)",
+    "seller S (registered user, 21.09 ROL)",
+    "logged-out visitor"
+  ],
+  "items": [
+    {
+      "id": "A1",
+      "check": "Browse API contract and ignored query params",
+      "requirement": "AC-8 (mock input)",
+      "role": "V",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A1-browse-api-contract.json"
+    },
+    {
+      "id": "A2",
+      "check": "Browse shows other users' active offers, not own; My Offers shows own",
+      "requirement": "AC-3",
+      "role": "V, S",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A2-visibility-api.json"
+    },
+    {
+      "id": "A3",
+      "check": "Cancelled offer leaves Browse, stays in seller's My Offers",
+      "requirement": "AC-3",
+      "role": "S, V",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A3-cancelled-offer-leaves-browse.json"
+    },
+    {
+      "id": "A4",
+      "check": "Live shapes of all page-load calls",
+      "requirement": "assumption (writer input)",
+      "role": "V",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/A4-page-load-response-shapes.json"
+    },
+    {
+      "id": "L1",
+      "check": "Live Browse renders cards; own offer absent",
+      "requirement": "AC-3, AC-8",
+      "role": "V",
+      "platform": "web live",
+      "result": "PASS",
+      "evidence": "artifacts/L1-live-browse.json"
+    },
+    {
+      "id": "L2",
+      "check": "Live My Offers shows own offer",
+      "requirement": "AC-3",
+      "role": "V",
+      "platform": "web live",
+      "result": "PASS",
+      "evidence": "artifacts/L1-live-browse.json"
+    },
+    {
+      "id": "M1",
+      "check": "Mocked page of 3 offers renders type, price, seller, details",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M1-mock-one-page.json"
+    },
+    {
+      "id": "M2",
+      "check": "Pagination edges 9/10/18/19/36/37/100, last page",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M2h-mock-100-last-page.json"
+    },
+    {
+      "id": "M3",
+      "check": "9 per page after changing size shows 9",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web live + mock",
+      "result": "FAIL",
+      "evidence": "artifacts/M3-live-page-size-9-shows-10.json"
+    },
+    {
+      "id": "M4",
+      "check": "Page size or filter change on page N returns to page 1",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M2h-mock-100-last-page.json"
+    },
+    {
+      "id": "M5",
+      "check": "Filter by item type, any text, no match, kept across tabs",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M5-mock-filter-item-type.json"
+    },
+    {
+      "id": "M6",
+      "check": "Empty list state and controls still usable",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M6-mock-empty.json"
+    },
+    {
+      "id": "M7",
+      "check": "500 shows a readable lasting error",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "FAIL",
+      "evidence": "artifacts/M7a-mock-500.json"
+    },
+    {
+      "id": "M8a-d",
+      "check": "502/400/404/429 show an error",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "FAIL",
+      "evidence": "artifacts/M8d-mock-429.json"
+    },
+    {
+      "id": "M8e-f",
+      "check": "401/403 redirect to login",
+      "requirement": "user expectation",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M8f-mock-403.json"
+    },
+    {
+      "id": "M8g-h",
+      "check": "Network abort shows an error",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "FAIL",
+      "evidence": "artifacts/M8g-mock-abort-failed.json"
+    },
+    {
+      "id": "M8i-m",
+      "check": "200 with malformed/partial body",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M8i-mock-malformed-json-200.json"
+    },
+    {
+      "id": "M8n",
+      "check": "Slow response shows loading state then cards",
+      "requirement": "user expectation",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M8n-mock-slow-3s.json"
+    },
+    {
+      "id": "M8o-p",
+      "check": "No answer: timeout shows an error",
+      "requirement": "AC-8",
+      "role": "V",
+      "platform": "web mock",
+      "result": "FAIL",
+      "evidence": "artifacts/M8p-mock-hang-no-input.json"
+    },
+    {
+      "id": "M8q",
+      "check": "Live offline reload of Browse",
+      "requirement": "user expectation",
+      "role": "V",
+      "platform": "web live offline",
+      "result": "PASS",
+      "evidence": "artifacts/M8q-live-offline-browse-tab.json"
+    },
+    {
+      "id": "M9",
+      "check": "Card rendering of odd values a mock may send",
+      "requirement": "assumption (writer input)",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M9-mock-odd-offers.json"
+    },
+    {
+      "id": "M10",
+      "check": "Unmocked page-load calls (501) effect",
+      "requirement": "assumption (writer input)",
+      "role": "V",
+      "platform": "web mock",
+      "result": "PASS",
+      "evidence": "artifacts/M10-mock-unhandled-calls-501.json"
+    },
+    {
+      "id": "V1",
+      "check": "Grid and pagination geometry at 1366x768",
+      "requirement": "user expectation",
+      "role": "V",
+      "platform": "web live",
+      "result": "PASS",
+      "evidence": "artifacts/V1-R3-live-grid-geometry.json"
+    },
+    {
+      "id": "V2",
+      "check": "Empty state centred like other empty states",
+      "requirement": "user expectation",
+      "role": "V",
+      "platform": "web mock + live",
+      "result": "FAIL",
+      "evidence": "artifacts/V2-mock-empty-state-geometry.json"
+    },
+    {
+      "id": "X1",
+      "check": "Logged-out visitor redirected; API refuses no/bad token",
+      "requirement": "user expectation",
+      "role": "visitor",
+      "platform": "web live + API",
+      "result": "PASS",
+      "evidence": "artifacts/X1-live-logged-out-redirect.json"
+    },
+    {
+      "id": "K1",
+      "check": "Known: card heading shows id",
+      "requirement": "regression",
+      "role": "V",
+      "platform": "web live",
+      "result": "FAIL",
+      "evidence": "artifacts/L1-live-browse.json"
+    },
+    {
+      "id": "K2",
+      "check": "Known: long description word overflows",
+      "requirement": "regression",
+      "role": "V",
+      "platform": "web mock",
+      "result": "FAIL",
+      "evidence": "artifacts/M9-mock-odd-offers.json"
+    },
+    {
+      "id": "K3",
+      "check": "Known: status dot over price",
+      "requirement": "regression",
+      "role": "V",
+      "platform": "web live",
+      "result": "FAIL",
+      "evidence": "artifacts/V1-R3-live-grid-geometry.json"
+    },
+    {
+      "id": "K4",
+      "check": "Known: field name runs as HTML",
+      "requirement": "regression",
+      "role": "V",
+      "platform": "web mock + API",
+      "result": "FAIL",
+      "evidence": "artifacts/M9-mock-odd-offers.json"
+    },
+    {
+      "id": "R1",
+      "check": "Description as array/nested array/object/entities skips the character whitelist",
+      "requirement": "regression (field-name XSS bug claim)",
+      "role": "seller (fresh)",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R1b-api-description-shapes.json"
+    },
+    {
+      "id": "R2",
+      "check": "Displayed name (seller label) with HTML refused at register and profile update",
+      "requirement": "regression",
+      "role": "seller (fresh)",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R1-R3-api-open-text.json"
+    },
+    {
+      "id": "R3",
+      "check": "Animal type with HTML or as array refused",
+      "requirement": "regression",
+      "role": "seller (fresh)",
+      "platform": "API",
+      "result": "PASS",
+      "evidence": "artifacts/review/R1-R3-api-open-text.json"
+    },
+    {
+      "id": "R4",
+      "check": "Field area with HTML is stored and runs on another user's Browse card",
+      "requirement": "user expectation (security)",
+      "role": "seller (fresh), viewer V",
+      "platform": "API + web live",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R4-live-area-html-runs-in-viewer-browse.json"
+    },
+    {
+      "id": "R5",
+      "check": "Browser Marketplace load counts against the per-IP rate limit (problem 1 reachability)",
+      "requirement": "AC-8 (problem 1 severity)",
+      "role": "V",
+      "platform": "web live",
+      "result": "PASS",
+      "evidence": "artifacts/review/R5-browser-load-rate-limit-headers.json"
+    },
+    {
+      "id": "R6",
+      "check": "A late answer from an earlier offers request does not replace the newer list",
+      "requirement": "user expectation",
+      "role": "V",
+      "platform": "web mock",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R6-stale-answer-overwrites-fresh.json"
+    },
+    {
+      "id": "R7",
+      "check": "Price filter field matching",
+      "requirement": "user expectation",
+      "role": "V",
+      "platform": "web mock",
+      "result": "INFO",
+      "evidence": "artifacts/review/R7-mock-price-filter-substring.json"
+    },
+    {
+      "id": "R8",
+      "check": "Filter-field and page-size selects have an accessible name",
+      "requirement": "user expectation (a11y)",
+      "role": "V",
+      "platform": "web live",
+      "result": "FAIL",
+      "evidence": "artifacts/review/R8-live-browse-a11y-snapshot.yml"
+    }
+  ],
+  "findings": [
+    {
+      "title": "When loading the offers fails (5xx, 400/404/429, network, timeout), Browse shows 'Loading offers...' forever; the error is only a 6 s toast, and typing a filter then claims 'No offers available'",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-15/ui-marketplace-browse--failed-load-spins-forever.md",
+      "evidence": "artifacts/M7a-mock-500.json"
+    },
+    {
+      "title": "Known (filed by issue 14): '9 per page' shows 10 offers per page once the page size was changed (option value 10)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-14/ui-marketplace-browse--nine-per-page-shows-ten.md",
+      "evidence": "artifacts/M3-live-page-size-9-shows-10.json"
+    },
+    {
+      "title": "Error toasts show raw technical text: 'Failed to fetch', 'signal timed out', 'Invalid JSON response'",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-15/ui-marketplace-browse--raw-network-error-text.md",
+      "evidence": "artifacts/M8q-live-offline-browse-tab.json"
+    },
+    {
+      "title": "One failed 5xx load shows the same error toast twice",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-15/ui-marketplace-browse--error-toast-shown-twice.md",
+      "evidence": "artifacts/M7b-mock-500-two-toasts.png"
+    },
+    {
+      "title": "A filter with no match says 'No offers available', the same as an empty marketplace",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-15/ui-marketplace-browse--no-match-says-no-offers.md",
+      "evidence": "artifacts/M5-filter-no-match.png"
+    },
+    {
+      "title": "Empty and error states sit in the first card column instead of the middle of the list",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-15/ui-marketplace-browse--empty-state-off-centre.md",
+      "evidence": "artifacts/V2-mock-empty-state-geometry.json"
+    },
+    {
+      "title": "Known: field name runs as HTML on the offer card (still reproduces)",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-12/ui-marketplace-browse--field-name-runs-as-html.md",
+      "evidence": "artifacts/M9-mock-odd-offers.json"
+    },
+    {
+      "title": "Known: long description word overflows (still reproduces)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-browse--long-description-word-overflows.md",
+      "evidence": "artifacts/M9-mock-odd-offers.json"
+    },
+    {
+      "title": "Known: card heading shows id (still reproduces)",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-browse--card-heading-shows-id.md",
+      "evidence": "artifacts/L1-live-browse.json"
+    },
+    {
+      "title": "Known: status dot over price (still reproduces)",
+      "severity": "cosmetic",
+      "bug_file": ".qa/bugs/ghissue-13/ui-marketplace-browse--status-dot-over-price.md",
+      "evidence": "artifacts/V1-R3-live-grid-geometry.json"
+    },
+    {
+      "title": "A field's area containing HTML runs as script in every viewer's browser on the Browse card",
+      "severity": "major",
+      "bug_file": ".qa/bugs/ghissue-15/post-api-fields--area-accepts-html-runs-on-card.md",
+      "evidence": "artifacts/review/R4-live-area-html-runs-in-viewer-browse.json"
+    },
+    {
+      "title": "A late answer from an earlier offers request replaces the newer Browse list",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-15/ui-marketplace-browse--late-answer-replaces-newer-list.md",
+      "evidence": "artifacts/review/R6-stale-answer-overwrites-fresh.json"
+    },
+    {
+      "title": "The filter-field and per-page selects on Browse have no accessible name",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-15/ui-marketplace-browse--selects-without-accessible-name.md",
+      "evidence": "artifacts/review/R8-live-browse-a11y-snapshot.yml"
+    },
+    {
+      "title": "Updating the profile with displayedName as an array answers 500 (outside the story's scope)",
+      "severity": "minor",
+      "bug_file": ".qa/bugs/ghissue-15/put-api-users-profile--array-displayed-name-500.md",
+      "evidence": "artifacts/review/R1-R3-api-open-text.json"
+    }
+  ],
+  "automation": {
+    "status": "done",
+    "skip_reason": null,
+    "branch": "test/ui-mocked-marketplace-browse",
+    "pr_url": null
+  },
+  "assumptions": [
+    "'Filters by item type' = filter-field select 'Item Type' plus the type typed in the text box; there is no dedicated type dropdown.",
+    "'Readable error without breaking the page' = an error that stays visible in place of the list; a 6 s toast over an endless spinner does not meet it.",
+    "Offers response shape for mocks taken from the live API (A1), not from OpenAPI."
+  ],
+  "lessons": [
+    "Read the served frontend source to list the states, then proved each one in the browser; the source suggested 'Failed to load offers' on 500 and the browser showed an endless spinner.",
+    "Mocked only the endpoint under test; everything else stayed live."
+  ],
+  "struggles": [
+    "pwcli: `run-code --filename=<file>` failed with 'SyntaxError: Unexpected token ;' when the file ended with `};`. Workaround: end the file with the closing brace of the function expression, no semicolon.",
+    "pwcli: `requests` lists only part of the session's requests (22 lines incl. the earlier login page) and gave no per-navigation view; redirecting its output to a file once produced an empty file. Workaround: record requests inside the run-code case with page.on('request') and return them in the JSON.",
+    "pwcli: `eval` output wraps a returned JSON string in extra quoting and other lines; a `sed -n 2,3p` slice cut the result. Workaround: return JSON.stringify(...) and grep the line starting with a quote, then JSON.parse twice.",
+    "Own mistake: the first case template ran only one action per step (if/else chain), so a multi-key step silently skipped actions; rewrote it to run every key in a fixed order and re-ran the affected cases (M5).",
+    "Own mistake: seed.mjs derived displayedName from the email wrongly; fixed seed-state.json and the script before the browser login used it.",
+    "Write of report.md refused by the harness (subagents may not write report files); its full contents are returned in the final message. handoff.md and results.json were written.",
+    "reviewer: pwcli: `snapshot` without `--filename` printed no snapshot path and no new page-*.yml appeared under scratch/review/.playwright-cli/. Workaround: `snapshot --filename=<absolute path>`.",
+    "reviewer: the tester's runcase.sh/mkcase.mjs are hard-wired to the tester's session name and to artifacts/; had to copy and re-point them for a second session.",
+    "reviewer: wrote custom run-code generators for the out-of-order (R6) and rate-limit header (R5) checks.",
+    "writer: the nine-per-page bug already existed on origin/main under ghissue-14; the run filed a duplicate because the coordinator's main checkout was behind origin/main when it grepped known bugs.",
+    "writer: commitlint parsed a body line starting with `failure:` as a footer (footer-leading-blank); and rejected 'T4' in a subject (subject-case). Reworded both.",
+    "writer: autosquash rebase refused to start with uncommitted README edits; committed them first.",
+    "writer: /code-review on the branch reported findings on lines the branch did not change (goto(), answer()); noted, not changed."
+  ]
+}

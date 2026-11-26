@@ -23,7 +23,7 @@ last_checked: 2026-11-26 (still reproduces)
 The field name shows as plain text on the card. The offer description is whitelisted (issue #12 AC-1) to keep markup off this card; the field name needs the same protection (validation or escaping).
 
 ## Actual
-The `<img>` is inserted into the card and its `onerror` runs in the buyer's session: the page title becomes `QA-XSS-FIRED`. `PUT /fields/{id}` also accepts HTML names (`<b>bold</b>` → 200), so a seller can change the name after listing. Animal types are a whitelist and display names are validated, so the field name is the only open text found on the card.
+The `<img>` is inserted into the card and its `onerror` runs in the buyer's session: the page title becomes `QA-XSS-FIRED`. `PUT /fields/{id}` also accepts HTML names (`<b>bold</b>` → 200), so a seller can change the name after listing. Animal types are a whitelist and display names are validated, so the field name is the only open text found on the card. Update 2026-11-26 (run 2026-11-26-issue-15-marketplace-browse-renders-api-data): not the only one — a field's area also accepts HTML and runs on the card, see `.qa/bugs/ghissue-15/post-api-fields--area-accepts-html-runs-on-card.md`.
 
 ## Evidence
 - `.qa/runs/2026-11-26-issue-12-marketplace-business-rules/artifacts/X2-buyer-browse-dom.json` (page title and card HTML)
@@ -43,4 +43,3 @@ Seed a field named `QA<img src=x onerror="document.title='QA-XSS-FIRED'">`, list
 
 ## Re-checks
 - Re-checked 2026-11-26 in `2026-11-26-issue-13-marketplace-seller-lists-an-item` (U13): still reproduces, and it also runs in the seller's own **My Offers**, right after the create and on every load while the (even cancelled) offer is listed. The cancel-confirmation modal escapes the name (R7). Evidence: `.qa/runs/2026-11-26-issue-13-marketplace-seller-lists-an-item/artifacts/U13-html-field-name-my-offers.json`, `.qa/runs/2026-11-26-issue-13-marketplace-seller-lists-an-item/artifacts/U13b-observer-browse-html-name.json`.
-- Re-checked 2026-11-26 in `2026-11-26-issue-14-marketplace-buyer-buys-an-offer` (U25): still reproduces on the buyer's Browse card, and after the buyer buys such a field it also runs in the **buyer's own Transaction History** on every Marketplace load (the history builds the name from the buyer's fields). The purchase confirmation escapes the name. Evidence: `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U25-field-name-html-browse-and-history.json`, `.qa/runs/2026-11-26-issue-14-marketplace-buyer-buys-an-offer/artifacts/U25b-field-name-html-in-buyer-history.png`.

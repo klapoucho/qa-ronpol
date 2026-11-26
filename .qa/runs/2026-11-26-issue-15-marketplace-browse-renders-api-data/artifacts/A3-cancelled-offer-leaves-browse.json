@@ -1,0 +1,32 @@
+{
+  "beforeInVBrowse": true,
+  "cancel": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T20:59:48.923Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "afterInVBrowse": false,
+  "sMyOffersStatus": [
+    {
+      "id": 1952,
+      "status": "active"
+    },
+    {
+      "id": 1953,
+      "status": "cancelled"
+    },
+    {
+      "id": 1954,
+      "status": "active"
+    }
+  ],
+  "otherSellerOffersStill": [
+    true,
+    true
+  ]
+}

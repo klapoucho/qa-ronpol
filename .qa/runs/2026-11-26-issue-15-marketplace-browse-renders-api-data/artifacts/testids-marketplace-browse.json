@@ -1,0 +1,38 @@
+{
+  "testids": [
+    "button mobile-menu-toggle",
+    "a nav-home",
+    "a nav-staff-fields",
+    "a nav-financial",
+    "a nav-marketplace",
+    "a nav-map",
+    "a nav-alerts",
+    "a nav-docs",
+    "a nav-api-explorer",
+    "a nav-profile",
+    "button logout-btn",
+    "a footer-backend",
+    "a footer-github",
+    "a footer-github",
+    "a footer-youtube",
+    "a footer-linkedin",
+    "a footer-github",
+    "a footer-youtube",
+    "a footer-linkedin",
+    "div confirmation-modal",
+    "div confirmation-modal-content",
+    "h3 confirmation-modal-title",
+    "button confirmation-modal-close",
+    "p confirmation-modal-message",
+    "button confirmation-modal-cancel",
+    "button confirmation-modal-confirm"
+  ],
+  "browseRoles": {
+    "filterInput": null,
+    "filterLabel": false,
+    "fieldSelectLabel": false,
+    "pageSizeLabel": false,
+    "grid": null,
+    "live": null
+  }
+}

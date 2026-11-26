@@ -1,0 +1,131 @@
+{
+  "cancelOffer": {
+    "method": "DELETE",
+    "path": "marketplace/offers/1955",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:20:47.425Z",
+      "data": {
+        "message": "Offer cancelled successfully"
+      }
+    }
+  },
+  "restoreArea2097": {
+    "method": "PUT",
+    "path": "fields/2097",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:20:47.472Z",
+      "data": {
+        "userId": 6216,
+        "name": "QA rv15 6216 pole",
+        "area": 1.25,
+        "id": 2097
+      },
+      "message": "Updated successfully"
+    },
+    "requestBody": {
+      "area": 1.25
+    }
+  },
+  "restoreArea2098": {
+    "method": "PUT",
+    "path": "fields/2098",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:20:47.507Z",
+      "data": {
+        "userId": 6216,
+        "name": "QA rv15 area",
+        "area": 1.25,
+        "id": 2098
+      },
+      "message": "Updated successfully"
+    },
+    "requestBody": {
+      "area": 1.25
+    }
+  },
+  "restoreArea2099": {
+    "method": "PUT",
+    "path": "fields/2099",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:20:47.541Z",
+      "data": {
+        "userId": 6216,
+        "name": "QA rv15 area",
+        "area": 1.25,
+        "id": 2099
+      },
+      "message": "Updated successfully"
+    },
+    "requestBody": {
+      "area": 1.25
+    }
+  },
+  "fieldsAfter": {
+    "method": "GET",
+    "path": "fields",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:20:47.556Z",
+      "data": [
+        {
+          "userId": 6216,
+          "name": "QA rv15 6216 pole",
+          "area": 1.25,
+          "id": 2097
+        },
+        {
+          "userId": 6216,
+          "name": "QA rv15 area",
+          "area": 1.25,
+          "id": 2098
+        },
+        {
+          "userId": 6216,
+          "name": "QA rv15 area",
+          "area": 1.25,
+          "id": 2099
+        }
+      ]
+    }
+  },
+  "stillInViewerBrowse": false,
+  "myOffers": {
+    "method": "GET",
+    "path": "marketplace/my-offers",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:20:47.919Z",
+      "data": {
+        "offers": [
+          {
+            "id": 1955,
+            "sellerId": 6216,
+            "itemType": "field",
+            "itemId": 2097,
+            "price": 2.34,
+            "description": "Pole testowe recenzenta",
+            "status": "cancelled",
+            "createdAt": "2026-11-26T21:19:58.093Z",
+            "updatedAt": "2026-11-26T21:20:47.398Z",
+            "details": {
+              "name": "QA rv15 6216 pole",
+              "area": 1.25
+            },
+            "sellerLabel": "qa_rvatk_b3042686"
+          }
+        ],
+        "total": 1
+      }
+    }
+  }
+}

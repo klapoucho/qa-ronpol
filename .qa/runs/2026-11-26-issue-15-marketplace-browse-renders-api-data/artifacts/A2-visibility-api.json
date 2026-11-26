@@ -1,0 +1,36 @@
+{
+  "vBrowseHasSellerOffers": [
+    true,
+    true,
+    true
+  ],
+  "vBrowseHasOwnOffer": false,
+  "vBrowseAnyOwnSeller": 0,
+  "sBrowseHasSellerOffers": [
+    false,
+    false,
+    false
+  ],
+  "sBrowseHasViewerOffer": true,
+  "vMyOffers": [
+    1951
+  ],
+  "sMyOffers": [
+    1952,
+    1953,
+    1954
+  ],
+  "myOffersKeySet": [
+    "createdAt",
+    "description",
+    "details",
+    "id",
+    "itemId",
+    "itemType",
+    "price",
+    "sellerId",
+    "sellerLabel",
+    "status",
+    "updatedAt"
+  ]
+}

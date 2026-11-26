@@ -1,0 +1,12 @@
+### Result
+Total messages: 9 (Errors: 8, Warnings: 1)
+Returning 8 messages for level "error"
+
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/financial/account:1
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/fields:1
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/animals:1
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/marketplace/my-offers:1
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/marketplace/transactions:1
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/financial/stats:1
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/financial/marketplace-stats:1
+[ERROR] Failed to load resource: the server responded with a status of 501 (Not Implemented) @ http://localhost:3000/api/v1/statistics:1

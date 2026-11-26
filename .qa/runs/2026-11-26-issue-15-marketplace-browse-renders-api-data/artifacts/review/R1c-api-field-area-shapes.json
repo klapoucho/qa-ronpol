@@ -1,0 +1,96 @@
+{
+  "areaString": {
+    "method": "POST",
+    "path": "fields",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:45.563Z",
+      "data": {
+        "userId": 6216,
+        "name": "QA rv15 area",
+        "area": "2<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">",
+        "id": 2098
+      },
+      "message": "field added"
+    },
+    "requestBody": {
+      "name": "QA rv15 area",
+      "area": "2<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">"
+    }
+  },
+  "areaArray": {
+    "method": "POST",
+    "path": "fields",
+    "status": 201,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:45.606Z",
+      "data": {
+        "userId": 6216,
+        "name": "QA rv15 area",
+        "area": [
+          "<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">"
+        ],
+        "id": 2099
+      },
+      "message": "field added"
+    },
+    "requestBody": {
+      "name": "QA rv15 area",
+      "area": [
+        "<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">"
+      ]
+    }
+  },
+  "putAreaString": {
+    "method": "PUT",
+    "path": "fields/2097",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:45.641Z",
+      "data": {
+        "userId": 6216,
+        "name": "QA rv15 6216 pole",
+        "area": "2<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">",
+        "id": 2097
+      },
+      "message": "Updated successfully"
+    },
+    "requestBody": {
+      "area": "2<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">"
+    }
+  },
+  "fieldAfter": {
+    "method": "GET",
+    "path": "fields",
+    "status": 200,
+    "body": {
+      "success": true,
+      "timestamp": "2026-11-26T21:19:45.658Z",
+      "data": [
+        {
+          "userId": 6216,
+          "name": "QA rv15 6216 pole",
+          "area": "2<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">",
+          "id": 2097
+        },
+        {
+          "userId": 6216,
+          "name": "QA rv15 area",
+          "area": "2<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">",
+          "id": 2098
+        },
+        {
+          "userId": 6216,
+          "name": "QA rv15 area",
+          "area": [
+            "<img src=x onerror=\"document.title='QA-RV15-XSS-AREA'\">"
+          ],
+          "id": 2099
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,897 @@
+{
+  "case": "M9-mock-odd-offers",
+  "mock": {
+    "offers": [
+      {
+        "id": 901,
+        "sellerId": 95,
+        "itemType": "field",
+        "itemId": 4901,
+        "price": 9.99,
+        "description": "Mock",
+        "status": "sold",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Mock 901",
+          "area": 1
+        },
+        "sellerLabel": "mock_seller"
+      },
+      {
+        "id": 902,
+        "sellerId": 95,
+        "itemType": "field",
+        "itemId": 4902,
+        "price": 9.99,
+        "description": "Mock",
+        "status": "cancelled",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Mock 902",
+          "area": 1
+        },
+        "sellerLabel": "mock_seller"
+      },
+      {
+        "id": 903,
+        "sellerId": 95,
+        "itemType": "field",
+        "itemId": 4903,
+        "price": 9.99,
+        "description": "Mock",
+        "status": "unavailable",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Mock 903",
+          "area": 1
+        },
+        "sellerLabel": "mock_seller"
+      },
+      {
+        "id": 904,
+        "sellerId": 95,
+        "itemType": "field",
+        "itemId": 4904,
+        "price": 9.99,
+        "description": "Mock",
+        "status": "pending",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Mock 904",
+          "area": 1
+        },
+        "sellerLabel": "mock_seller"
+      },
+      {
+        "id": 905,
+        "sellerId": 95,
+        "itemType": "machine",
+        "itemId": 4905,
+        "price": 9.99,
+        "description": "Mock",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Tractor"
+        },
+        "sellerLabel": "mock_seller"
+      },
+      {
+        "id": 906,
+        "sellerId": 95,
+        "itemType": "field",
+        "itemId": 4906,
+        "price": "12.50",
+        "description": "Mock",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Mock 906",
+          "area": 1
+        },
+        "sellerDisplayedName": "Fallback Name"
+      },
+      {
+        "id": 907,
+        "sellerId": 95,
+        "itemType": "field",
+        "itemId": 4907,
+        "price": 9.99,
+        "description": "Mock",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "QA<img src=x onerror=\"document.title='QA-XSS-MOCK'\">",
+          "area": 2
+        },
+        "sellerLabel": "mock_seller"
+      },
+      {
+        "id": 908,
+        "sellerId": 95,
+        "itemType": "field",
+        "itemId": 4908,
+        "price": 9.99,
+        "description": "ĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżż",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "name": "Mock 908",
+          "area": 1
+        },
+        "sellerLabel": "mock_seller"
+      },
+      {
+        "id": 909,
+        "sellerId": 95,
+        "itemType": "animal",
+        "itemId": 4909,
+        "price": 1000000,
+        "description": "Mock",
+        "status": "active",
+        "createdAt": "2026-11-20T10:00:00.000Z",
+        "updatedAt": "2026-11-20T10:00:00.000Z",
+        "details": {
+          "type": "pig",
+          "amount": 0
+        },
+        "sellerLabel": "mock_seller"
+      }
+    ]
+  },
+  "offersAnswered": 1,
+  "requests": [
+    {
+      "t": 149,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 150,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 173,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 175,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 175,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 175,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 177,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 177,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 177,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 280,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 314,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 315,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 338,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 349,
+      "method": "GET",
+      "url": "/api/version"
+    }
+  ],
+  "toasts": [],
+  "maxToastsAtOnce": 0,
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 323,
+      "url": "/marketplace.html",
+      "title": "QA-XSS-MOCK",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-sold",
+        "offer-card offer-cancelled",
+        "offer-card offer-unavailable",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-sold",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4901 (Sold)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 901, Area: 1 ha",
+          "description": "Mock",
+          "status": "This item has been sold",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "901",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-cancelled",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4902 (Cancelled)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 902, Area: 1 ha",
+          "description": "Mock",
+          "status": "This offer has been cancelled",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "902",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-unavailable",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4903 (Unavailable)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 903, Area: 1 ha",
+          "description": "Mock",
+          "status": "Item is currently in use and unavailable for purchase",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "903",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4904",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 904, Area: 1 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "904",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.99 ROL",
+          "name": "machine #4905",
+          "seller": "Offered by: mock_seller",
+          "meta": null,
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "905",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "12.50 ROL",
+          "name": "field #4906",
+          "seller": "Offered by: Fallback Name",
+          "meta": "Field: Mock 906, Area: 1 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "906",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4907",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: QA, Area: 2 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "907",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4908",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 908, Area: 1 ha",
+          "description": "ĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżż",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "908",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "1000000 ROL",
+          "name": "animal #4909",
+          "seller": "Offered by: mock_seller",
+          "meta": "Type: pig, Amount: 0",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "909",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 3020,
+      "viewport": 1366
+    },
+    {
+      "waited": "rendered",
+      "label": "after-load",
+      "t": 644,
+      "url": "/marketplace.html",
+      "title": "QA-XSS-MOCK",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-sold",
+        "offer-card offer-cancelled",
+        "offer-card offer-unavailable",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-sold",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4901 (Sold)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 901, Area: 1 ha",
+          "description": "Mock",
+          "status": "This item has been sold",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "901",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-cancelled",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4902 (Cancelled)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 902, Area: 1 ha",
+          "description": "Mock",
+          "status": "This offer has been cancelled",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "902",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-unavailable",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4903 (Unavailable)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 903, Area: 1 ha",
+          "description": "Mock",
+          "status": "Item is currently in use and unavailable for purchase",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "903",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4904",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 904, Area: 1 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "904",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.99 ROL",
+          "name": "machine #4905",
+          "seller": "Offered by: mock_seller",
+          "meta": null,
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "905",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "12.50 ROL",
+          "name": "field #4906",
+          "seller": "Offered by: Fallback Name",
+          "meta": "Field: Mock 906, Area: 1 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "906",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4907",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: QA, Area: 2 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "907",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4908",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 908, Area: 1 ha",
+          "description": "ĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżż",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "908",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "1000000 ROL",
+          "name": "animal #4909",
+          "seller": "Offered by: mock_seller",
+          "meta": "Type: pig, Amount: 0",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "909",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 3020,
+      "viewport": 1366
+    },
+    {
+      "label": "shot",
+      "t": 1145,
+      "url": "/marketplace.html",
+      "title": "QA-XSS-MOCK",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-sold",
+        "offer-card offer-cancelled",
+        "offer-card offer-unavailable",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 9,
+      "myCards": [
+        {
+          "name": "field #2093",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-sold",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4901 (Sold)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 901, Area: 1 ha",
+          "description": "Mock",
+          "status": "This item has been sold",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "901",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-cancelled",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4902 (Cancelled)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 902, Area: 1 ha",
+          "description": "Mock",
+          "status": "This offer has been cancelled",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "902",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-unavailable",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4903 (Unavailable)",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 903, Area: 1 ha",
+          "description": "Mock",
+          "status": "Item is currently in use and unavailable for purchase",
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "903",
+            "disabled": true
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4904",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 904, Area: 1 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "904",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "9.99 ROL",
+          "name": "machine #4905",
+          "seller": "Offered by: mock_seller",
+          "meta": null,
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "905",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "12.50 ROL",
+          "name": "field #4906",
+          "seller": "Offered by: Fallback Name",
+          "meta": "Field: Mock 906, Area: 1 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "906",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4907",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: QA, Area: 2 ha",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "907",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "9.99 ROL",
+          "name": "field #4908",
+          "seller": "Offered by: mock_seller",
+          "meta": "Field: Mock 908, Area: 1 ha",
+          "description": "ĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄĄżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżżż",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "908",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "1000000 ROL",
+          "name": "animal #4909",
+          "seller": "Offered by: mock_seller",
+          "meta": "Type: pig, Amount: 0",
+          "description": "Mock",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "909",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 3020,
+      "viewport": 1366
+    }
+  ]
+}

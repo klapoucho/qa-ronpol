@@ -1,0 +1,403 @@
+{
+  "case": "M7d-mock-500-reload",
+  "mock": {
+    "status": 500,
+    "body": {
+      "success": false,
+      "timestamp": "2026-11-26T12:00:00.000Z",
+      "error": "Failed to get marketplace offers"
+    }
+  },
+  "offersAnswered": 2,
+  "requests": [
+    {
+      "t": 103,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 103,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 120,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 179,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 221,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 223,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 246,
+      "method": "GET",
+      "url": "/api/version"
+    },
+    {
+      "t": 4706,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 4706,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 4729,
+      "method": "GET",
+      "url": "/api/v1/financial/account"
+    },
+    {
+      "t": 4730,
+      "method": "GET",
+      "url": "/api/v1/fields"
+    },
+    {
+      "t": 4730,
+      "method": "GET",
+      "url": "/api/v1/animals"
+    },
+    {
+      "t": 4730,
+      "method": "GET",
+      "url": "/api/v1/marketplace/offers"
+    },
+    {
+      "t": 4730,
+      "method": "GET",
+      "url": "/api/v1/marketplace/my-offers"
+    },
+    {
+      "t": 4731,
+      "method": "GET",
+      "url": "/api/v1/marketplace/transactions"
+    },
+    {
+      "t": 4731,
+      "method": "GET",
+      "url": "/api/v1/financial/stats"
+    },
+    {
+      "t": 4801,
+      "method": "GET",
+      "url": "/api/v1/financial/marketplace-stats"
+    },
+    {
+      "t": 4824,
+      "method": "GET",
+      "url": "/api/v1/statistics"
+    },
+    {
+      "t": 4825,
+      "method": "GET",
+      "url": "/api/v1/authorization"
+    },
+    {
+      "t": 4840,
+      "method": "GET",
+      "url": "/api/v1/feature-flags"
+    },
+    {
+      "t": 4846,
+      "method": "GET",
+      "url": "/api/version"
+    }
+  ],
+  "toasts": [
+    "notification error show | ✕ Error × Failed to get marketplace offers"
+  ],
+  "maxToastsAtOnce": 2,
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+  ],
+  "snaps": [
+    {
+      "label": "early",
+      "t": 225,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "0",
+        "myOffersCount": "0",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "waited": "timeout",
+      "label": "after-load",
+      "t": 2562,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "loading"
+      ],
+      "emptyState": null,
+      "loading": {
+        "text": "Loading offers...",
+        "visible": true
+      },
+      "cardCount": 0,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [],
+      "pagination": {
+        "visible": true,
+        "html": 0,
+        "pageSize": null,
+        "buttons": []
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    },
+    {
+      "label": "after-reload",
+      "t": 5236,
+      "url": "/marketplace.html",
+      "title": "Marketplace - Rolnopol",
+      "activeTab": "browse",
+      "browseVisible": true,
+      "gridChildren": [
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active",
+        "offer-card offer-active"
+      ],
+      "emptyState": null,
+      "loading": null,
+      "cardCount": 5,
+      "myCards": [
+        {
+          "name": "QA t5 own 6214",
+          "price": "3.33 ROL",
+          "offerId": "1951",
+          "visible": false
+        }
+      ],
+      "myEmpty": null,
+      "cards": [
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "1.25 ROL",
+          "name": "field #7001",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 001, Area: 1.5 ha",
+          "description": "Mock description 001",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5001",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "2.25 ROL",
+          "name": "field #7002",
+          "seller": "Offered by: mock_seller_1",
+          "meta": "Field: Mock field 002, Area: 1.5 ha",
+          "description": "Mock description 002",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5002",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Animal",
+          "price": "3.25 ROL",
+          "name": "animal #7003",
+          "seller": "Offered by: mock_seller_2",
+          "meta": "Type: cow, Amount: 3",
+          "description": "Mock description 003",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5003",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "4.25 ROL",
+          "name": "field #7004",
+          "seller": "Offered by: mock_seller_3",
+          "meta": "Field: Mock field 004, Area: 1.5 ha",
+          "description": "Mock description 004",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5004",
+            "disabled": false
+          }
+        },
+        {
+          "cls": "offer-card offer-active",
+          "badge": "Field",
+          "price": "5.25 ROL",
+          "name": "field #7005",
+          "seller": "Offered by: mock_seller_0",
+          "meta": "Field: Mock field 005, Area: 1.5 ha",
+          "description": "Mock description 005",
+          "status": null,
+          "button": {
+            "text": "Buy Now",
+            "cls": "btn-buy",
+            "offerId": "5005",
+            "disabled": false
+          }
+        }
+      ],
+      "pagination": {
+        "visible": true,
+        "html": 413,
+        "pageSize": {
+          "value": "10",
+          "selectedText": "9 per page",
+          "options": [
+            "10=9 per page",
+            "18=18 per page",
+            "36=36 per page"
+          ]
+        },
+        "buttons": [
+          {
+            "text": "« Prev",
+            "page": "prev",
+            "disabled": true,
+            "active": false
+          },
+          {
+            "text": "1",
+            "page": "1",
+            "disabled": false,
+            "active": true
+          },
+          {
+            "text": "Next »",
+            "page": "next",
+            "disabled": true,
+            "active": false
+          }
+        ]
+      },
+      "filter": {
+        "text": "",
+        "field": "",
+        "enabled": true
+      },
+      "header": {
+        "totalOffers": "1387",
+        "myOffersCount": "1",
+        "balance": "13.57 ROL"
+      },
+      "docWidth": 1366,
+      "viewport": 1366
+    }
+  ]
+}
