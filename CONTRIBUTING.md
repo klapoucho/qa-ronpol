@@ -25,7 +25,7 @@ Pushing a rewritten branch uses `git push --force-with-lease`, never plain `--fo
   (lint-staged), and commitlint rejects a message that does not follow the format below.
 - **CI** (GitHub Actions, check `tests`): a PR runs `npm run check`, then the smoke tests plus the tests
   the change touches; a change to config, dependencies, the app version or CI runs the full suite.
-  `main`, a nightly run and manual runs always run the full suite. Details: the CI section of the README.
+  `main`, a nightly run and manual runs always run the full suite. Details: [docs/ci-and-reports.md](docs/ci-and-reports.md).
 - **The `main` ruleset** on GitHub: changes reach `main` only through a PR with a green `tests` check,
   merged by rebase; linear history; no force-push and no deletion. Nobody bypasses it.
 

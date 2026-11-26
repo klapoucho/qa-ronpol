@@ -5,7 +5,7 @@ export type OfferCardField = 'type' | 'price' | 'name' | 'seller' | 'details' | 
 
 /**
  * One offer card, as Browse and My Offers render it. The card has no test ids or roles, so its
- * parts are found by their CSS classes (a documented last resort, README "How to add a test").
+ * parts are found by their CSS classes (a documented last resort, docs/writing-tests.md).
  */
 export class OfferCard implements FieldView<OfferCardField> {
   readonly fields: Readonly<Record<OfferCardField, Locator>>;

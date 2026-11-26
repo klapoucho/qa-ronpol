@@ -340,8 +340,8 @@ Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix
   layout. Existing tests and shared code do change when the feature changes their behaviour, or
   when a refactor removes duplication; that is normal maintenance.
 - **NFR-18 Adding an environment or browser** is a config change (FR-07, FR-16).
-- **NFR-19 Conventions are written down.** The README has a "How to add a test or feature"
-  section with naming rules and a checklist.
+- **NFR-19 Conventions are written down.** [docs/writing-tests.md](writing-tests.md) has the
+  naming rules and a checklist for a new test or feature; the README links to it.
 
 ### 7.5 Security and portability
 
@@ -427,7 +427,7 @@ CI the repo ships setup for the pinned Docker image:
 - CI starts the same container with `npm run app:up` before the tests.
 - On pull requests CI runs the `@smoke` files plus the test files the change touches; `main`, a
   nightly run and manual runs run the full suite (D-17, `scripts/pr-tests.sh`).
-- The README also mentions the fallback for people without Docker: a local clone of Rolnopol
+- [docs/app-under-test.md](app-under-test.md) also describes the fallback for people without Docker: a local clone of Rolnopol
   started with `npm start`, with the note that the tests target 1.126.0 and that a running clone
   writes to its tracked `data/*.json` files.
 - **Who may start and reset the app.** Agents (including `qa-pick` agents) may start it with
