@@ -459,8 +459,10 @@ Marketplace tests**:
    `/qa-pick <issue>`.
 
 **Phase B: the author's QA runs, outside the plan.** The author runs `/qa-pick <issue number>`
-for each issue. The coordinator reads the issue, assigns the author if not assigned yet, and
-runs the pipeline. The test writer adds the feature-specific clients, pages, components,
+for each issue. The coordinator reads the issue, assigns the author if not assigned yet, sets
+the issue's status to In progress, and runs the pipeline. When the run ends it sets In review;
+the author closes the issue after reading the results, so test PRs reference it with `Refs #N`,
+not `Closes #N`. The test writer adds the feature-specific clients, pages, components,
 factories, assertions and mocks the test needs, following section 8. Phase A must not write
 these Marketplace parts in advance.
 
