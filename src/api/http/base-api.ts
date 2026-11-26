@@ -44,7 +44,12 @@ export abstract class BaseApi {
     const response = await this.request.fetch(url, {
       method,
       data: body,
-      headers: this.token ? { Authorization: `Bearer ${this.token}` } : undefined,
+      headers: {
+        // The app closes a keep-alive socket after 5 s idle (`Keep-Alive: timeout=5`). A call that
+        // reuses a socket the app is closing fails with ECONNRESET, so every call opens its own.
+        Connection: 'close',
+        ...(this.token ? { Authorization: `Bearer ${this.token}` } : {}),
+      },
     });
     const status = response.status();
     const line = `${method} ${url} -> ${status}`;
