@@ -243,15 +243,17 @@ of one object are checked by one assertion (FR-20).
 
 ### Assertions
 
-- **FR-20 Domain assertions.** When a check covers many fields or several sources (an offer
-  card, a filled form, a settled sale across balances, ownership and history), it is one custom
-  matcher registered with Playwright's `expect.extend`, for example
+- **FR-20 Domain assertions.** When a UI check covers many fields or several sources (an offer
+  card, a filled form), it is one custom matcher registered with Playwright's `expect.extend`, for example
   `await expect(page.offerCard(id)).toShowOffer(offer)`. Matchers live in `src/assertions/` and
   are exported through the fixtures entry point. Each matcher:
   - reports **every** mismatching field in one failure message, not only the first one;
   - retries until its timeout when it reads the UI, like the built-in web-first assertions;
   - is used only where a built-in matcher does not fit: for plain API data, `toEqual` or
-    `toMatchObject` on the whole object is already one assertion.
+    `toMatchObject` on the whole object is already one assertion. An API check across several
+    sources (a settled sale across balances, ownership and history) is a fixture that reads them
+    into one plain object, compared with one `toEqual` (`readSale` in
+    `src/fixtures/marketplace.fixtures.ts`).
 
 ## 7. Non-functional requirements
 

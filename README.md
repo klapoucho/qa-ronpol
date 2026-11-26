@@ -233,14 +233,16 @@ behaviour: `buyer cannot buy an offer above their balance`. Imports use the alia
    returns them (`/api/version`, `/api/v1/statistics`).
 4. **Data:** a factory in `src/data/factories/` that builds a valid entity with unique values; tests override
    only what matters. Users come from the `createUser` fixture; seed further data in fixtures, and make seeding
-   errors throw.
+   errors throw. Shared seeds (users, fields, funds) live in `src/fixtures/api.fixtures.ts`; a feature's own
+   fixtures go in `src/fixtures/<feature>.fixtures.ts`, merged in `src/fixtures/index.ts`.
 5. **UI:** a page object per screen in `src/ui/pages/`, repeated parts as components in `src/ui/components/`.
    They expose actions and locators, no assertions. Locators: `getByTestId`, then `getByRole` with a name,
    `getByLabel`, `getByText`; CSS only as a documented last resort, never by index. Log in with
    `createUser` + `loginAs` (cookies, no login form).
-6. **Matcher:** only when a check covers many fields or several sources (a card, a settled sale). Register it in
-   `src/assertions/index.ts`; it reports every mismatching field and retries when it reads the UI. For plain API
-   data, `toEqual` or `toMatchObject` on the whole object is enough.
+6. **Matcher:** only when a UI check covers many fields or several sources (an offer card, a filled form).
+   Register it in `src/assertions/index.ts`; it reports every mismatching field and retries when it reads the UI.
+   For plain API data, `toEqual` or `toMatchObject` on the whole object is enough; an API check across several
+   sources reads them into one object in a fixture (for example `readSale`) and compares it with one `toEqual`.
 7. **Mocks:** `ui-mocked` tests get the shared page-load calls (`authorization`, `feature-flags`,
    `/api/version`) answered already. Add a `src/mocks/handlers/<feature>.ts` for the feature's own endpoints,
    with payloads from `src/mocks/payloads/` built from the same zod schemas, in each endpoint's real wire format.
