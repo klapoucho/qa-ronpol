@@ -11,6 +11,7 @@
 - Create more data than fits the view, including data that must be filtered out, and confirm it is absent.
 - Known bugs in the area (`.qa/bugs/`) are re-checked as regressions on every related story.
 - **Acceptance criteria are input, not the bar.** Use them for coverage, but decide the verdict from the user's side: a user-facing regression, dead end or broken flow the story causes fails it even when every criterion is ticked. "All criteria pass" is never a verdict on its own. Label checks beyond the criteria "user expectation".
+- **Verdict:** FAIL when any problem the story's flow reaches is critical or major, security problems above all, and known bugs count too. PASS WITH FINDINGS only when every problem is minor or cosmetic. PASS: no problems. BLOCKED: the story could not be tested.
 - A PASS counts only with a negative control: would this check have failed if the feature were partly broken?
 
 ## Automated tests reach a human filtered

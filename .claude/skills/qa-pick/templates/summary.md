@@ -1,7 +1,7 @@
 <!-- qa-pick summary · run <run-id> -->
 <!--
 GitHub-flavoured Markdown: this file is posted as an issue comment (SKILL.md §5).
-- Verdict emoji: ✅ PASS · ⚠️ PASS WITH FINDINGS · ❌ FAIL · ⛔ BLOCKED.
+- Verdict emoji: ✅ PASS · ⚠️ PASS WITH FINDINGS · ❌ FAIL · ⛔ BLOCKED. Any critical or major problem on the story's flow (security above all, known bugs included) is ❌ FAIL; ⚠️ is for minor and cosmetic problems only.
 - One alert per problem, most severe first: critical/major → [!CAUTION], minor → [!WARNING], cosmetic → [!NOTE].
   No problems → a single "> [!TIP]" line saying so. BLOCKED → the blocker is problem 1.
 - Images: `![alt](./artifacts/<file>.png)`, written exactly as the --attach path, so gh swaps in the uploaded URL.
