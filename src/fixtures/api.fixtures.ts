@@ -1,47 +1,23 @@
 import { test as base } from '@playwright/test';
-import { AnimalsApi } from '#src/api/clients/animals-api.ts';
 import { AuthApi } from '#src/api/clients/auth-api.ts';
-import { FieldsApi } from '#src/api/clients/fields-api.ts';
-import { FinancialApi } from '#src/api/clients/financial-api.ts';
-import type { ApiResponse } from '#src/api/http/api-response.ts';
 import type { ApiClientClass, BaseApi } from '#src/api/http/base-api.ts';
-import type { Animal, AnimalInput } from '#src/api/models/animal.ts';
-import type { Field, FieldInput } from '#src/api/models/field.ts';
-import type { FinancialTransaction } from '#src/api/models/financial.ts';
-import { buildAnimal } from '#src/data/factories/animal.factory.ts';
-import { buildField } from '#src/data/factories/field.factory.ts';
-import { buildIncome } from '#src/data/factories/income.factory.ts';
 import { buildUser } from '#src/data/factories/user.factory.ts';
 import { TestUser } from '#src/fixtures/test-user.ts';
 
-export type ApiAs = <T extends BaseApi>(Client: ApiClientClass<T>, user?: { token: string }) => T;
+/** An API client for calls without a user, such as the healthcheck or an anonymous request. */
+export type AnonymousApi = <T extends BaseApi>(Client: ApiClientClass<T>) => T;
 
-export type { TestUser };
 /** Registers a new user; `funds` gives them that much ROL (new users have none). */
 export type CreateUser = (options?: { funds?: number }) => Promise<TestUser>;
-export type CreateField = (owner: TestUser, overrides?: Partial<FieldInput>) => Promise<Field>;
-export type CreateAnimal = (owner: TestUser, overrides?: Partial<AnimalInput>) => Promise<Animal>;
-export type FundUser = (user: TestUser, amount: number) => Promise<FinancialTransaction>;
 
 type ApiFixtures = {
-  apiAs: ApiAs;
+  anonymousApi: AnonymousApi;
   createUser: CreateUser;
-  createField: CreateField;
-  createAnimal: CreateAnimal;
-  fundUser: FundUser;
 };
 
-// A seed step that fails must fail the test loudly, never look like an expected failure.
-export function seeded<T>(response: ApiResponse<T>, step: string): T {
-  if (!response.ok) {
-    throw new Error(`Seeding failed: ${step} -> ${response.status}: ${response.error}`);
-  }
-  return response.data;
-}
-
 export const test = base.extend<ApiFixtures>({
-  apiAs: async ({ request }, use) => {
-    await use((Client, user) => new Client(request, user?.token));
+  anonymousApi: async ({ request }, use) => {
+    await use((Client) => new Client(request));
   },
   createUser: async ({ playwright, request, baseURL, extraHTTPHeaders }, use) => {
     await use(async ({ funds } = {}) => {
@@ -49,8 +25,9 @@ export const test = base.extend<ApiFixtures>({
       // A fresh context per user: register sets a rolnopolToken cookie on the context it runs in.
       const context = await playwright.request.newContext({ baseURL, extraHTTPHeaders });
       try {
-        const registered = await new AuthApi(context).register(input);
-        const user = new TestUser(request, input, seeded(registered, `register ${input.email}`));
+        // `.data` throws when the app refuses the registration.
+        const registered = (await new AuthApi(context).register(input)).data;
+        const user = new TestUser(request, input, registered);
         if (funds !== undefined) {
           await user.addFunds(funds);
         }
@@ -58,24 +35,6 @@ export const test = base.extend<ApiFixtures>({
       } finally {
         await context.dispose();
       }
-    });
-  },
-  createField: async ({ apiAs }, use) => {
-    await use(async (owner, overrides) => {
-      const input = buildField(overrides);
-      return seeded(await apiAs(FieldsApi, owner).create(input), `create field for user ${owner.id}`);
-    });
-  },
-  createAnimal: async ({ apiAs }, use) => {
-    await use(async (owner, overrides) => {
-      const input = buildAnimal(overrides);
-      return seeded(await apiAs(AnimalsApi, owner).create(input), `create animals for user ${owner.id}`);
-    });
-  },
-  fundUser: async ({ apiAs }, use) => {
-    await use(async (user, amount) => {
-      const income = await apiAs(FinancialApi, user).addIncome(buildIncome(amount));
-      return seeded(income, `add income ${amount} for user ${user.id}`).transaction;
     });
   },
 });

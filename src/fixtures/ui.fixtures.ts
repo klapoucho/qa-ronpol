@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import type { TestUser } from '#src/fixtures/api.fixtures.ts';
+import type { TestUser } from '#src/fixtures/test-user.ts';
 import { sessionCookies, toSession } from '#src/ui/session.ts';
 import { MarketplacePage } from '#src/ui/pages/marketplace-page.ts';
 import { ProfilePage } from '#src/ui/pages/profile-page.ts';

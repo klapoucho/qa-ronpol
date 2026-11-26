@@ -1,10 +1,10 @@
 import { test, expect } from '#src/fixtures/index.ts';
 import { UsersApi } from '#src/api/clients/users-api.ts';
 
-test('registered user reads their own profile with their token', async ({ createUser, apiAs }) => {
+test('registered user reads their own profile with their token', async ({ createUser }) => {
   const user = await createUser();
 
-  const profile = await apiAs(UsersApi, user).profile();
+  const profile = await user.api.users.profile();
 
   expect(profile.data).toMatchObject({
     id: user.id,
@@ -13,10 +13,13 @@ test('registered user reads their own profile with their token', async ({ create
   });
 });
 
-test('a call without a token stays anonymous after users were created', async ({ createUser, apiAs }) => {
+test('a call without a token stays anonymous after users were created', async ({
+  createUser,
+  anonymousApi,
+}) => {
   await createUser();
 
-  const profile = await apiAs(UsersApi).profile();
+  const profile = await anonymousApi(UsersApi).profile();
 
   expect(profile.status).toBe(401);
   expect(profile.error).toBeTruthy();
