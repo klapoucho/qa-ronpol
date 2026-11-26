@@ -251,10 +251,9 @@ of one object are checked by one assertion (FR-20).
   - reports **every** mismatching field in one failure message, not only the first one;
   - retries until its timeout when it reads the UI, like the built-in web-first assertions;
   - is used only where a built-in matcher does not fit: for plain API data, `toEqual` or
-    `toMatchObject` on the whole object is already one assertion. An API check across several
-    sources (a settled sale across balances, ownership and history) is a fixture that reads them
-    into one plain object, compared with one `toEqual` (`readSale` in
-    `src/fixtures/marketplace.fixtures.ts`).
+    `toMatchObject` on the whole object is already one assertion. To prove that a refused call changed
+    nothing, a test reads everything the users have before and after it and compares the two
+    (`TestUser.everything()` in `src/fixtures/test-user.ts`).
 
 ### API contract coverage
 
@@ -383,7 +382,7 @@ exception is `ui-ledger`, which runs the `@ledger` tests of `tests/ui/` alone (D
 ├── tests/
 │   ├── api/marketplace/       # sale.spec.ts, rules.spec.ts + rules.params.ts
 │   ├── ui/marketplace/        # sell-offer.spec.ts, buy-offer.spec.ts
-│   ├── ui-mocked/marketplace/ # browse.spec.ts + browse.params.ts
+│   ├── ui-mocked/marketplace/ # browse.spec.ts
 │   └── global-setup.ts
 ├── compose.yaml               # Rolnopol 1.126.0 container
 ├── playwright.config.ts

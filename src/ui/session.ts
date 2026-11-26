@@ -1,6 +1,6 @@
 import type { Cookie } from '@playwright/test';
 import type { User } from '#src/api/models/user.ts';
-import type { TestUser } from '#src/fixtures/api.fixtures.ts';
+import type { TestUser } from '#src/fixtures/test-user.ts';
 
 export type Session = { token: string; userId: User['id']; userLabel: string; loginTime: string };
 

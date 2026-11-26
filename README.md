@@ -16,7 +16,7 @@ in-app currency), on three levels: the API, the UI on the real backend, and the 
 | T4  | UI          | A buyer buys an offer in Browse                                          | [tests/ui/marketplace/buy-offer.spec.ts](tests/ui/marketplace/buy-offer.spec.ts)             |
 | T5  | UI on mocks | Browse renders what the API returns: cards, pages, empty list, a 500     | [tests/ui-mocked/marketplace/browse.spec.ts](tests/ui-mocked/marketplace/browse.spec.ts)     |
 
-T2 and T5 run once per case, so the runner lists more than five tests. The specs in `tests/*/framework/` are
+T2 and T5 each cover several cases, so the runner lists more than five tests. The specs in `tests/*/framework/` are
 not business tests: they check the framework's own wiring (login through cookies, the mock layer, factories).
 
 ## Running the tests
