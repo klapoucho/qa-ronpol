@@ -2,6 +2,7 @@
 
 Lessons applied after `/qa-pick` runs, newest first. One line per lesson, with the run id.
 
+- 2026-11-26-issue-13-marketplace-seller-lists-an-item: a critical or major problem on the story's flow (security above all, known bugs included) makes the verdict FAIL; vision.md holds the rule, and qa-pick, qa-test and the templates point to it — issue 13 was posted as PASS WITH FINDINGS with two major security bugs on its flow, and the author corrected it.
 - 2026-11-26-issue-13-marketplace-seller-lists-an-item: qa-test keeps playwright-cli's default browser (installed Google Chrome) and records its version; report, summary and bug templates name the real browser — env lines said "Chromium" for a Chrome run, and the author chose to keep each tool's own default.
 - 2026-11-26-issue-13-marketplace-seller-lists-an-item: report template fixes tester ids (U… UI, A… API, K… known-bug checks) and reserves R… for the reviewer — the tester's R1/R2 collided with the reviewer's.
 - 2026-11-26-issue-13-marketplace-seller-lists-an-item: qa-review resizes to the tester's viewport (1366x768) — the reviewer measured layout at the CLI default 1280x720.

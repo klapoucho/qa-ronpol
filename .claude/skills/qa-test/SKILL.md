@@ -72,7 +72,7 @@ Use the `playwright-cli` skill for the command reference.
 
 ### Report
 
-Fill `report.md`, `results.json` and `handoff.md` from `.claude/skills/qa-pick/templates/`. Every executed check is a row with its result and evidence, failures included. Every problem has steps, expected, actual, evidence, environment. Known bugs you were asked to re-check get a line under "Regression checks".
+Fill `report.md`, `results.json` and `handoff.md` from `.claude/skills/qa-pick/templates/`. Every executed check is a row with its result and evidence, failures included. Every problem has steps, expected, actual, evidence, environment. Known bugs you were asked to re-check get a line under "Regression checks". Set the verdict by the rule in `.claude/skills/qa-pick/references/vision.md`: any critical or major problem on the story's flow, security above all and known bugs included, makes it FAIL; PASS WITH FINDINGS is for minor and cosmetic problems only.
 
 ## Phase 5 — Automated tests (only on request)
 

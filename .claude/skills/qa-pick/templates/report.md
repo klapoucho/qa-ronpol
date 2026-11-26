@@ -1,4 +1,5 @@
 # <story title> — <PASS | FAIL | PASS WITH FINDINGS | BLOCKED>
+<!-- FAIL when any problem on the story's flow is critical or major (security above all, known bugs included); PASS WITH FINDINGS only when every problem is minor or cosmetic. -->
 
 **Source:** <story text | issue URL + PR URL> · **Run:** <run-id> · **Env:** <app URL> · **Platforms:** <web: browser + version + viewport, e.g. "Google Chrome 158.0.8127.88 via playwright-cli, 1366x768" | API> · **App version:** <commit / version> · **Date:** <YYYY-MM-DD>
 **Roles tested:** <list> · **Skipped:** <role — why>
