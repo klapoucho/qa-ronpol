@@ -224,7 +224,7 @@ Every console file was saved after a navigation or page load (`artifacts/console
 - `.qa/bugs/ghissue-12/post-api-register--new-user-inherits-deleted-account.md`: still reproduces, now with an active offer and a post-deletion field (A4, problem 2).
 
 ## Automation
-Branch `test/ui-seller-lists-item` (PR pending): one UI test, `tests/ui/marketplace/create-offer.spec.ts` › "seller lists a field in the form; it shows in My Offers and other users can browse it" (T3, AC-1 + AC-3), with a new `MarketplacePage` page object, an `OfferCard` component and a `marketplacePage` fixture. Sized to the five-test task: no animal-group, validation or known-bug cases (T2 covers the rules over the API; the findings stay in the bug files).
+Branch `test/ui-seller-lists-item`, [PR #28](https://github.com/klapoucho/qa-ronpol/pull/28): one UI test, `tests/ui/marketplace/create-offer.spec.ts` › "seller lists a field in the form; it shows in My Offers and other users can browse it" (T3, AC-1 + AC-3), with a new `MarketplacePage` page object, an `OfferCard` component and a `marketplacePage` fixture. Sized to the five-test task: no animal-group, validation or known-bug cases (T2 covers the rules over the API; the findings stay in the bug files).
 - Stability: 10/10 (`--repeat-each=10 --retries=0 --workers=4`), slow network (400 ms, 400 kbit/s) pass.
 - Poison: 8/8 failed at the targeted assertion, 5 of them partial breaks (first field listed, description dropped, wrong reader for the seller's Browse, wrong card, My Offers tab never opened).
 - Fresh-context test review: no partial break that would pass; two readability fixes applied.
@@ -234,3 +234,6 @@ Branch `test/ui-seller-lists-item` (PR pending): one UI test, `tests/ui/marketpl
 - Ran playwright-cli from `scratch/` with absolute screenshot paths (`.qa/notes/playwright-cli.md`).
 - Built boundary strings in code and checked their length (300/301, Polish 18-letter set repeated with `.slice`).
 - Ran the account deletion last and absorbed the reused id with a sink account.
+
+## Retro lessons
+Committed on `docs/qa-pick-lessons-issue-13` (see `summary.md`, Run notes).

@@ -8,7 +8,7 @@
 | **Tested** | issue #13, no linked PR |
 | **Roles** | registered user as seller and as another user, logged-out and anonymous (fresh accounts) · skipped: admin (no admin rule in the story), demo accounts (not allowed) |
 | **Reviewer** | GAPS CLOSED: PASS for AC-1 and AC-3 confirmed with read-back evidence; added the logged-out gate, another user's item, the full allowed character set, phone width and the empty state (14 experiments, 5 broke) |
-| **Automation** | writing tests: one UI test for the T3 scenario (U1) |
+| **Automation** | branch `test/ui-seller-lists-item`: one UI test for T3 (U1), stability 10/10 + slow network, 8/8 poisons caught · [PR #28](https://github.com/klapoucho/qa-ronpol/pull/28) |
 
 Creating an offer works through the UI for both item types. A seller picks a field, enters a price and a Polish description, and gets "Offer created successfully!". The offer appears in My Offers, is stored exactly as typed, and shows in other users' Browse but not in the seller's own. Wrong input is refused with a readable message, and the form keeps its values. The problems are around those criteria. Two of them are major, both known bugs with a wider reach. The rest are minor UX and layout issues.
 
@@ -194,7 +194,13 @@ Creating an offer works through the UI for both item types. A seller picks a fie
 
 - **Agents:** QA tester (Opus, background, ~17 min) — UI + API exploratory testing; QA reviewer (Opus, fresh context, ~8 min) — coverage check and break attempts; test writer (Opus, own worktree) — one UI test for T3, sized to the five-test task.
 - **Browsers:** manual QA uses playwright-cli's default (installed Google Chrome); the automated test uses Playwright Test's default (bundled Chromium). The versions may differ.
-- **Lessons applied:** pending — retro after the test PR.
+- **Lessons applied** (branch `docs/qa-pick-lessons-issue-13`):
+  - qa-test keeps playwright-cli's default browser (installed Chrome) and records its version; templates name the real browser.
+  - Tester ids are U/A/K; R… is reserved for the reviewer (the tester's R1/R2 collided).
+  - qa-review resizes to the tester's 1366×768 viewport.
+  - The handoff template asks for page readiness (data loaded once on start) — the writer hit an empty Item list on a slow network.
+  - `.qa/notes/playwright-cli.md`: default browser and its flag bar, 1280×720 default viewport, `run-code` echoing secrets, no `process` in `run-code`, cumulative `console error`.
+- **Follow-up:** the shared `toShowFields` matcher reads hidden elements (found by the writer's poison P6).
 
 </details>
 

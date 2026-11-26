@@ -582,7 +582,7 @@
     "status": "done",
     "skip_reason": null,
     "branch": "test/ui-seller-lists-item",
-    "pr_url": null
+    "pr_url": "https://github.com/klapoucho/qa-ronpol/pull/28"
   },
   "assumptions": [
     "Unattended run: plan not approved by a human.",
