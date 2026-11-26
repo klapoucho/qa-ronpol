@@ -27,7 +27,7 @@ Project specifics (app URL, how to start it, API base URL, accounts/roles, test 
 | PR material (issue path only) | `{RUN_DIR}/pr-files.txt`, `{RUN_DIR}/pr.diff` |
 | Scratch (seed/probe scripts, session state) | `{RUN_DIR}/scratch/` |
 | Evidence | `{RUN_DIR}/artifacts/` (reviewer: `artifacts/review/`) |
-| Bug KB | `.qa/bugs/<group>/<area>--<slug>.md` — `<group>` is `ghissue-<N>` on the issue path, `<run-id>` for story text, `external` for external bugs; `<area>` with `/` replaced by `-` (`ui/login/validation` → `ui-login-validation--<slug>.md`). A known bug stays in the folder it was filed in. |
+| Bug KB | `.qa/bugs/<group>/<method>-<area>--<slug>.md` — `<group>` is `ghissue-<N>` on the issue path, `<run-id>` for story text, `external` for external bugs; `<method>` is the lowercase HTTP method of the request the bug's Expected names first (the one that should have answered or behaved differently), left out with its `-` for a UI bug that no single request shows; `<area>` with `/` replaced by `-` (`api/marketplace/buy` → `post-api-marketplace-buy--<slug>.md`, `ui/login/validation` → `ui-login-validation--<slug>.md`). A known bug stays in the folder it was filed in. |
 | Tool notes | `.qa/notes/<tool>.md` (e.g. `playwright-cli.md`) |
 | Lessons log | `.qa/lessons.md` |
 | Templates | `templates/` next to this file |
@@ -127,7 +127,7 @@ When it finishes, make sure `review.md` is in the run folder and merge its outpu
 
 ## 5. Testing summary — right after QA
 
-1. Every finding → a bug file `.qa/bugs/<group>/<area>--<slug>.md` (see Paths) from `templates/bug.md` (all severities; `source: own: <run-id>`), and its path into `findings[].bug_file` in `results.json`. Only the coordinator files bugs. Update `last_checked` on known bugs the tester or reviewer re-checked, in the folder they were filed in.
+1. Every finding → a bug file `.qa/bugs/<group>/<method>-<area>--<slug>.md` (see Paths) from `templates/bug.md` (all severities; `source: own: <run-id>`), and its path into `findings[].bug_file` in `results.json`. Only the coordinator files bugs. Update `last_checked` on known bugs the tester or reviewer re-checked, in the folder they were filed in.
 2. Sanity-check the report against `references/vision.md`: short, user-facing, every problem has steps / expected / actual / evidence / env. Fix it if not.
 3. Write `{RUN_DIR}/summary.md` from `templates/summary.md` (GitHub-flavoured Markdown; follow the comments in it): verdict, env, roles covered, the reviewer's coverage verdict, an **Automation** line (`writing tests` or `skipped — <reason>`), problems with their key screenshots, not-verified items, and the test-case table (reviewer experiments marked) and run notes folded in `<details>`. Problems first; keep it short. Never publish it as an Artifact or any other hosted page: it goes on the issue (step 4) or stays in the run folder.
 4. **Post it on the issue** (issue path only; with story text, skip this step and the summary stays local). Start the §6 writer first: it never waits for this step.
