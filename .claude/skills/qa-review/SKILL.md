@@ -33,7 +33,7 @@ Time-box: about 45 minutes of experiments; up to 90 when the story touches permi
 
 ## 3. Try to break it
 
-Reuse the tester's scripts and accounts from `handoff.md` / `{RUN_DIR}/scratch/`; create fresh accounts for anything destructive. Your scripts go to `{RUN_DIR}/scratch/review/`, evidence to `{RUN_DIR}/artifacts/review/`. Browser session `-s=<run-id>-review` with `--profile={RUN_DIR}/scratch/review/profile`; close it with `playwright-cli -s=<run-id>-review close` when you finish.
+Reuse the tester's scripts and accounts from `handoff.md` / `{RUN_DIR}/scratch/`; create fresh accounts for anything destructive. Your scripts go to `{RUN_DIR}/scratch/review/`, evidence to `{RUN_DIR}/artifacts/review/`. Browser session `-s=<run-id>-review` with `--profile={RUN_DIR}/scratch/review/profile`, resized to the tester's viewport (`resize 1366 768`; the CLI default is 1280x720) unless an experiment needs another; close it with `playwright-cli -s=<run-id>-review close` when you finish.
 
 Attack ideas — pick what fits the charter, don't run the whole list:
 - **Permissions:** call the API as the forbidden role; another user's id in body/URL/nested objects; direct URL as a role without access; change a role while a session is open.

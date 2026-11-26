@@ -1,6 +1,6 @@
 # <story title> — <PASS | FAIL | PASS WITH FINDINGS | BLOCKED>
 
-**Source:** <story text | issue URL + PR URL> · **Run:** <run-id> · **Env:** <app URL> · **Platforms:** <web Chromium | API> · **App version:** <commit / version> · **Date:** <YYYY-MM-DD>
+**Source:** <story text | issue URL + PR URL> · **Run:** <run-id> · **Env:** <app URL> · **Platforms:** <web: browser + version + viewport, e.g. "Google Chrome 158.0.8127.88 via playwright-cli, 1366x768" | API> · **App version:** <commit / version> · **Date:** <YYYY-MM-DD>
 **Roles tested:** <list> · **Skipped:** <role — why>
 
 ## Problems (user-facing)
@@ -14,7 +14,7 @@
 - **Hint (optional):** …
 
 ## Test cases
-<!-- Every case executed (same ids as results.json items), failures included. Requirement = the acceptance criterion it verifies, or "assumption". -->
+<!-- Every case executed (same ids as results.json items), failures included. Tester ids: U… (UI), A… (API), K… (known-bug re-checks); R… is reserved for the reviewer. Requirement = the acceptance criterion it verifies, or "assumption". -->
 | # | Result | Role | Tool | Case | Requirement | Evidence |
 |---|---|---|---|---|---|---|
 | 1 | PASS / FAIL / NOT_RUN | … | playwright-cli / API / script | … | AC … | artifacts/… |

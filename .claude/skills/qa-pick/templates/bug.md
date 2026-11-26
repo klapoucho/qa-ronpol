@@ -10,7 +10,7 @@ last_checked: <YYYY-MM-DD> (<still reproduces|fixed|could not check>)
 ---
 
 ## Environment
-- App URL: <…> · Platform: <Chromium 1366x768 | API>
+- App URL: <…> · Platform: <browser + version + viewport, e.g. Google Chrome 158 1366x768 | API>
 - App version: <commit / version>
 - Role / account: <role; never put passwords here>
 
