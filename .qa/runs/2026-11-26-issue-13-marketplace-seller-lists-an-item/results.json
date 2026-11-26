@@ -9,7 +9,7 @@
     "summary_comment_url": "https://github.com/klapoucho/qa-ronpol/issues/13#issuecomment-7198109101"
   },
   "kind": "ui+api",
-  "status": "PASS_WITH_FINDINGS",
+  "status": "FAIL",
   "blocked_reason": null,
   "env": "http://localhost:3000",
   "app_version": "Rolnopol 1.126.0 (Docker jaktestowac/rolnopol:1.126.0)",
@@ -589,7 +589,8 @@
     "Double submit and stale dropdown are routine actions but store nothing wrong: rated minor, not major.",
     "AC-1 'a message naming the problem' is met by 'Description contains invalid characters'; the missing hint is reported as UX.",
     "Price with 3 decimals blocked by the browser is accepted as intended (API rounds to 2 dp).",
-    "The deleted-account probe ran last; a sink account absorbed the reused user id immediately."
+    "The deleted-account probe ran last; a sink account absorbed the reused user id immediately.",
+    "Verdict corrected from PASS_WITH_FINDINGS to FAIL by the author's rule: any major problem on the story's flow, security above all and known bugs included, fails the story."
   ],
   "lessons": [
     "A POST /login replaces the user's previous token: cookie-login with the register token, never log the same user in again in a test that keeps using the old token.",
