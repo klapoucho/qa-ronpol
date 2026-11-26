@@ -100,7 +100,8 @@ Each project folder holds a `framework/` folder with the wiring checks. Marketpl
     `klapoucho/qa-ronpol`. Assigning the issue and setting its status need triage access, and attaching
     screenshots needs write access; with read access only, the run posts a text-only summary. With several `gh`
     accounts on one machine, pin yours in `CLAUDE.local.md` (`- GitHub account: <login>`);
-  - the Playwright CLI the skills drive: `npm install -g @playwright/cli@0.1.25`.
+  - the Playwright CLI the skills drive, at its current version: `npm install -g @playwright/cli`. Nothing pins
+    it or its browser; reports and `.qa/notes/playwright-cli.md` record the versions a run used.
 
 ## Running the tests
 
