@@ -7,7 +7,7 @@ description: Manual/exploratory QA of one story given as text or as a GitHub iss
 
 > **Unattended run?** If a coordinator or the session instructions say this run is unattended, read `.claude/skills/testing-rules/unattended-runs.md` first — it replaces every stop/ask step below and sets the report and artifact paths.
 
-Input: the story — free text, or a GitHub issue with its linked PR as collected by the coordinator (in an unattended run: `{RUN_DIR}/story.md`, plus `pr-files.txt` and `pr.diff` when there is a PR). Used directly with an issue number, collect the same material first with the read-only `gh` calls in `qa-pick` §1. `{RUN_DIR}` is given by the caller; otherwise it is `<repo root>/.qa/runs/<YYYY-MM-DD>-<slug>/` and `<run-id>` is its folder name. Project specifics — app URL, API base URL, how to start the app, roles and how to create accounts — come from the project's `CLAUDE.md`, section **QA settings**.
+Input: the story — free text, or a GitHub issue with its linked PR as collected by the coordinator (in an unattended run: `{RUN_DIR}/story.md`, plus `pr-files.txt` and `pr.diff` when there is a PR). Used directly with an issue number, collect the same material first with the read-only `gh` calls in `qa-pick` §1. `{RUN_DIR}` is given by the caller; otherwise it is `<repo root>/.qa/runs/<YYYY-MM-DD>-<slug>/` and `<run-id>` is its folder name. Project specifics — app URL, API base URL, how to start the app, roles and how to create accounts — come from the project's `AGENTS.md`, section **QA settings**.
 
 ## Phase 1 — Understand
 
@@ -76,4 +76,4 @@ Fill `report.md`, `results.json` and `handoff.md` from `.claude/skills/qa-pick/t
 
 ## Phase 5 — Automated tests (only on request)
 
-Not in an unattended QA run — the coordinator starts a separate writer. When the user asks for tests directly, follow the project's `CLAUDE.md` / `CONTRIBUTING.md` and "Before opening a PR with automated tests" in `testing-rules/general.md`. Lean coverage: one positive, one negative and one edge case per behaviour, at the lowest level that catches the regression (API before UI).
+Not in an unattended QA run — the coordinator starts a separate writer. When the user asks for tests directly, follow the project's `AGENTS.md` / `CONTRIBUTING.md` and "Before opening a PR with automated tests" in `testing-rules/general.md`. Lean coverage: one positive, one negative and one edge case per behaviour, at the lowest level that catches the regression (API before UI).

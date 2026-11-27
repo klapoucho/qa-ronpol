@@ -16,7 +16,7 @@
 
 ## Automated tests reach a human filtered
 
-Agent writes the test → deterministic gate (type check, lint, test listing) → stability (10 repeats in parallel, plus a slow-network run for UI) → /simplify + /code-review → fresh-context test review (why it exists, which regression, does the assertion prove the name, invented assumptions, right level, duplicates, passes when half broken) → the human sees a PR with a test intent card and only the decisions no rule can make.
+Agent writes the test → deterministic gate (type check, lint, test listing) → stability (10 repeats in parallel, plus a slow-network run for UI) → simplify pass + code review (`/simplify`, `/code-review` in Claude Code) → fresh-context test review (why it exists, which regression, does the assertion prove the name, invented assumptions, right level, duplicates, passes when half broken) → the human sees a PR with a test intent card and only the decisions no rule can make.
 
 ## What a good report is
 

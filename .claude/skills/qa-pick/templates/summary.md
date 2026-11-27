@@ -62,4 +62,4 @@ GitHub-flavoured Markdown: this file is posted as an issue comment (SKILL.md §5
 
 </details>
 
-<sub>Posted by <code>/qa-pick</code> · full evidence in <code>.qa/runs/&lt;run-id&gt;/</code> · 🤖 Generated with [Claude Code](https://claude.com/claude-code)</sub>
+<sub>Posted by <code>/qa-pick</code> · full evidence in <code>.qa/runs/&lt;run-id&gt;/</code> · 🤖 Generated with &lt;your agent, as a link: e.g. [Claude Code](https://claude.com/claude-code)&gt;</sub>
