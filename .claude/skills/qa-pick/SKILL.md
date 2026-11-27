@@ -16,7 +16,7 @@ The text after `/qa-pick` (`$ARGUMENTS`) takes one of two forms:
 
 If it is empty, ask the user for an issue number or the story text and stop.
 
-Project specifics (app URL, how to start it, API base URL, accounts/roles, test framework) come from the project's `CLAUDE.md`, section **QA settings**. If that section is missing or the app is not reachable, ask the user once, then continue unattended.
+Project specifics (app URL, how to start it, API base URL, accounts/roles, test framework) come from the project's `CLAUDE.md`, section **QA settings**. When QA settings list several **Environments**, the whole run (manual QA, test writing, gate, stability runs) uses the default one; another environment is used only for the check in "Running on another environment". If that section is missing or the app is not reachable, ask the user once, then continue unattended.
 
 ## Paths
 
@@ -203,6 +203,12 @@ e. **Issue path:** set the issue's Status to **In review** ("Issue status"), aft
 ## Follow-ups
 
 "Follow up on <run-id>: <what>" → if §8 already ran, restore the run first: put the committed run files and bug files back into the main checkout from the run's branch (`git restore --source=<branch> -- .qa/runs/<run-id> <bug files>`; `scratch/` was never removed), and re-add the worktree if §8d removed it (`git worktree add .claude/worktrees/<run-id> <branch>`). If that branch is already merged, pull the main branch instead and commit the follow-up's evidence through §8b. Then route it to the right agent: more manual testing → the tester, "try to break X" → the reviewer, test changes → the writer. If that agent is still reachable, `SendMessage` it; otherwise start a new one with the same prompt plus "Previous report: `{RUN_DIR}/report.md` — read it first; this run only covers: <request>". Results append to `report.md` under a dated "Follow-up" heading, and `summary.md` and the issue comment (§5 step 4) are updated. After a follow-up, re-run §8a or §8b.
+
+## Running on another environment
+
+"Run the tests on <environment>" (for a run: "follow up on <run-id>: run its tests on staging") → only when QA settings name that environment. Run the tests with the command QA settings give for it: the run's test files from its branch or worktree, or the files the user names. Start, stop and reset nothing there, and do no manual QA there unless the user asks for it.
+
+Report per test: passed or failed, and for a failure the assertion that failed. Say which environment and address ran. A test that passes on the default environment and fails here usually means this environment does not have the change yet, or behaves differently: report that as the result. Never edit a test, mark it as an expected failure or file a bug because of this check alone; ask the user what the difference means. For a run, add the result to `report.md` (Automation section) as one line per environment.
 
 ## External bugs
 
