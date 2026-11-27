@@ -69,6 +69,9 @@ a retry, a trace. GitHub Actions ([tests.yml](.github/workflows/tests.yml)) runs
 app in Docker and runs the tests with the `ci` profile, which adds JUnit XML and one retry. More in
 [docs/ci-and-reports.md](docs/ci-and-reports.md).
 
+Two extras go beyond the core setup: `npm run coverage:api` reports which API operations the tests call, compared
+with the app's OpenAPI contract, and a pull request runs only the smoke tests plus the tests its change touches.
+
 ## Tech stack and decisions
 
 Playwright Test, TypeScript (strict, native ES modules), zod, faker, ESLint with `typescript-eslint` and
