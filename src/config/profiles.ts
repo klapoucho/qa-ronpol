@@ -29,6 +29,11 @@ export const profiles: Record<Env['TEST_ENV'], Profile> = {
     failOnFlakyTests: true,
     timeout: 30_000,
     expectTimeout: 5_000,
-    reporter: [['github'], ['html', { open: 'never' }], ['junit', { outputFile: 'reports/junit.xml' }]],
+    reporter: [
+      ['github'],
+      ['html', { open: 'never' }],
+      ['junit', { outputFile: 'reports/junit.xml' }],
+      ['./src/reporters/step-summary.ts'],
+    ],
   },
 };
