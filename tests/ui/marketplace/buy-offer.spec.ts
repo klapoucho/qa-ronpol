@@ -1,6 +1,5 @@
 import { test, expect } from '#src/fixtures/index.ts';
 import { uniqueId } from '#src/data/unique.ts';
-import { TransactionItem } from '#src/ui/components/transaction-item.ts';
 
 // Non-round amounts whose sums are float traps in JavaScript (40.17 - 23.45 is 16.720000000000002),
 // so a balance the app forgot to round shows. Both users start with money, so a balance that
@@ -56,7 +55,7 @@ test(
     // Transaction History shows the purchase
     await marketplacePage.openTransactionHistory();
     await expect(marketplacePage.transactions).toHaveCount(1);
-    await expect(new TransactionItem(marketplacePage.transactions)).toShowFields({
+    await expect(marketplacePage.transaction(0)).toShowFields({
       type: /^\s*Purchase: /,
       amount: `-${PRICE} ROL`,
     });

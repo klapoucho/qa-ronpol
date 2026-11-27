@@ -2,6 +2,7 @@ import type { Locator, Page, Request, Response } from '@playwright/test';
 import type { OfferInput } from '#src/api/models/marketplace.ts';
 import { ConfirmationModal } from '#src/ui/components/confirmation-modal.ts';
 import { OfferCard } from '#src/ui/components/offer-card.ts';
+import { TransactionItem } from '#src/ui/components/transaction-item.ts';
 
 /** A purchase confirmed in the modal. */
 export type Purchase = {
@@ -111,6 +112,11 @@ export class MarketplacePage {
 
   async openTransactionHistory(): Promise<void> {
     await this.tabs.getByRole('button', { name: 'Transaction History' }).click();
+  }
+
+  /** One Transaction History entry by its position, newest first: 0 is the latest. */
+  transaction(position: number): TransactionItem {
+    return new TransactionItem(this.transactions.nth(position));
   }
 
   /** The seller's card for one offer; My Offers lists every status, oldest first. */
