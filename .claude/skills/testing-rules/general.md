@@ -73,6 +73,10 @@ Lint and the formatter cover syntax. These rules cover what they cannot see; the
 - **Override only what the test is about.** Factories fill the rest, so the reader sees which inputs matter.
 - **Run in parallel only what is independent:** creating two users, reading two states. Steps that depend on each other stay in order, and the call under test never shares a `Promise.all` with anything.
 - **Assert a whole object in one `expect`** (`toEqual`, `toMatchObject`) when its fields belong together; separate `expect`s when they are separate outcomes, each under its own comment line.
+- **A failure says what broke without opening the code.** The runner prints the failing line, so the expression inside `expect` must name what is checked: `expect(await seller.balance()).toBe(133.45)` does, `expect(ok).toBe(true)` and `expect(list.length).toBe(1)` do not. Assert on the object or the locator itself, or give the `expect` a message: `expect(count, 'offers on page 2').toBe(1)`.
+- **Nothing the result depends on is hidden.** Every user, record and amount the `Then` checks is created in the test's own `Given`. A fixture may do what every test needs and none asserts on (log in, answer page-load calls); it never creates the data a test checks.
+- **Readable before DRY.** The same three setup lines in two tests are fine. Extract a helper into the framework only when several tests repeat the same steps and the helper's name says more than the lines did; never extract assertions out of a test.
+- **Assert what the user or the API client gets:** visible text, state, a response body, stored data. Never a CSS class, the DOM structure or the name of an internal function.
 
 ## Comments in a test body (automated tests)
 
@@ -103,6 +107,7 @@ An assertion that always passes is worse than none — it creates false confiden
 - **Vacuous truth:** `expect(expected.every(i => actual.includes(i))).toBe(true)` passes when `expected` is empty. Prefer `expect(actual).toEqual(expected)`.
 - **Broad locators:** a locator matching every row lets an assertion pass on the wrong row. Scope to the row first (`page.getByRole('row', { name: … })`), then assert inside it.
 - **Fixed waits:** `waitForTimeout` hides timing bugs and slows the suite. Wait for a state with web-first assertions (`await expect(locator).toBeVisible()`) or for a response (`page.waitForResponse`).
+- **One-shot reads:** `isVisible()`, `textContent()` or `count()` inside `expect(...)` read once and do not wait. Use the web-first form (`await expect(locator).toBeVisible()`, `toHaveText`, `toHaveCount`). A one-shot read belongs only inside a matcher that retries it.
 - **Setup failures under `test.fail()`:** a test marked as an expected failure counts any failure, including a broken seed, as "expected". Seed in fixtures or `beforeEach` and make seeding errors throw with a clear message, so a broken seed fails loudly.
 
 ## Committed tests on the changed surface
