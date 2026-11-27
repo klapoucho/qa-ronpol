@@ -241,8 +241,9 @@ of one object are checked by one assertion (FR-20).
   `report`, `coverage:api` (FR-21), `lint`, `lint:fix`, `format`, `format:check`, `typecheck`, `check` (typecheck +
   lint + format check + `playwright test --list`), and the app scripts in section 9.
 - **FR-19 Reporting.** The built-in HTML report always. Locally the `list` reporter; in CI
-  `github`, `html` and `junit`. Trace on first retry, screenshot on failure, video kept on
-  failure. Every test has a title stating the expected behaviour and uses `test.step` for its
+  `github`, `html`, `junit` and a summary of the result on the run's page. Trace on first
+  retry, screenshot on failure, video kept on failure. A full-suite CI run publishes its HTML
+  report to GitHub Pages at an address of its own; the newest 20 are kept. Every test has a title stating the expected behaviour and uses `test.step` for its
   main stages, so the report reads as a scenario.
 
 ### Assertions
@@ -586,7 +587,6 @@ Possible extensions, not in the first delivery:
 - Contract tests of the mocks against the live API.
 - Feature-flag-driven tests (commodities trading, 2FA), GraphQL and WebSocket clients.
 - Dependency updates through Renovate or Dependabot.
-- Report publishing to GitHub Pages.
 
 ## Appendix A. Version check (2026-11-25)
 

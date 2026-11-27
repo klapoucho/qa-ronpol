@@ -67,11 +67,12 @@ Profiles (`src/config/profiles.ts`) set retries, workers, reporters and timeouts
 - In CI, on the run's summary page: the counts of passed, failed, flaky and skipped tests, then every failed
   and flaky test with the first line of its error (`src/reporters/step-summary.ts`), so the result reads
   without downloading anything.
-- In CI, as a web page: a full-suite run (push to `main`, nightly, manual) publishes its HTML report as the
-  repository's GitHub Pages site, with screenshots, videos and traces that open in the browser. The run's
-  `report` job and summary page link to it. The site holds one report, the latest full-suite run's, and a failed
-  run publishes too. Pull requests do not publish: they would replace each other's report, and a fork gets no
-  permission to deploy.
+- In CI, as a web page: a full-suite run (push to `main`, nightly, manual) publishes its HTML report on the
+  repository's GitHub Pages site, with screenshots, videos and traces that open in the browser. Each run has
+  its own address, `runs/<run number>/`, linked from the run's summary page; the site's root redirects to the
+  newest report and `runs/` lists the ones kept. The newest 20 are kept, and a failed run publishes too. The
+  reports live on the `gh-pages` branch, which `scripts/publish-report.sh` rewrites as one commit each time, so
+  dropped reports do not stay in the repository. Pull requests do not publish: a fork gets no permission to.
 - In CI, as files: the HTML report and `reports/` (JUnit XML and the app's container log) are uploaded as
   workflow artifacts on every run and kept for 7 days. A pull request's full report is this artifact.
 - Traces, videos and the HTML report record the throwaway users' tokens and passwords. The values only work on
@@ -81,8 +82,8 @@ Profiles (`src/config/profiles.ts`) set retries, workers, reporters and timeouts
 ## CI
 
 GitHub Actions (`.github/workflows/tests.yml`) runs `npm run check`, starts the app in Docker and runs the tests
-with the `ci` profile. A second job, `report`, publishes a full-suite run's HTML report to GitHub Pages (the
-repository's Pages source must be set to GitHub Actions). How many tests depends on the trigger:
+with the `ci` profile. A second job, `report`, publishes a full-suite run's HTML report to the `gh-pages` branch
+(the repository's Pages source must be that branch). How many tests depends on the trigger:
 
 | Trigger                     | Tests                                                                             |
 | --------------------------- | --------------------------------------------------------------------------------- |
