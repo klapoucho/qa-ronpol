@@ -88,17 +88,16 @@ with the app's OpenAPI contract, and a pull request runs only the smoke tests pl
 
 ## Adding a test
 
-The default way to add a test is **`/qa-pick`**, a workflow of AI agents run in
+The default way to add a test is **`/qa-pick`**, a workflow of AI agents run in a coding agent such as
 [Claude Code](https://claude.com/claude-code): it tests the story by hand first and automates only what that
 testing proved. T1–T5 were written this way. A test can still be written by hand; both ways follow
 [docs/writing-tests.md](docs/writing-tests.md).
 
 1. Describe the scenario in a GitHub issue: a user story with acceptance criteria. The texts of the existing
    ones are in [docs/test-cases/](docs/test-cases/README.md).
-2. Start the app (`npm run app:up`) and open Claude Code in the repository root. The files are also set up
-   for other coding agents, though no run was made with one yet:
-   [Other coding agents](docs/ai-workflow.md#other-coding-agents).
-3. Type the command with the issue number:
+2. Start the app (`npm run app:up`) and open your coding agent in the repository root.
+3. Start the skill with the issue number. In Claude Code and Antigravity that is a command (Codex writes it
+   `$qa-pick 12`, and in Gemini CLI you describe the task):
 
    ```text
    /qa-pick 12
@@ -129,9 +128,12 @@ Running the tests needs none of this; it is only for running the workflow.
 
 - **Everything in [Running the tests](#running-the-tests):** Node, Docker, `npm ci`, Playwright's Chromium, and
   the app running (`npm run app:up`).
-- **[Claude Code](https://claude.com/claude-code)**, opened in this repository. It loads the workflow's own
-  skills from `.claude/skills/` (`qa-pick`, `qa-test`, `qa-review`, `testing-rules`) and the QA settings from
-  [AGENTS.md](AGENTS.md), which `CLAUDE.md` imports; nothing to install.
+- **A coding agent that supports [Agent Skills](https://agentskills.io)**, opened in this repository. It loads
+  the workflow's own skills from `.claude/skills/` (`qa-pick`, `qa-test`, `qa-review`, `testing-rules`) and the
+  QA settings from [AGENTS.md](AGENTS.md); nothing to install. Full runs were made with
+  [Claude Code](https://claude.com/claude-code) and Antigravity. The files are also set up for Codex and
+  Gemini CLI, but no run was made with them yet:
+  [Other coding agents](docs/ai-workflow.md#other-coding-agents).
 - **[GitHub CLI](https://cli.github.com/) `gh` 2.99 or later**, logged in with an account that can read
   `klapoucho/qa-ronpol`. Assigning the issue and setting its status need triage access, and screenshots in the
   summary need write access; with read access only, the run posts a text-only summary.
