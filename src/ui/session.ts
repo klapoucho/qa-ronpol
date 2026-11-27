@@ -16,7 +16,7 @@ export function toSession(user: TestUser): Session {
 
 // The five cookies the login page and backend set; the frontend reads them to restore the session.
 export function sessionCookies(session: Session, baseURL: string): Cookie[] {
-  const { hostname } = new URL(baseURL);
+  const { hostname, protocol } = new URL(baseURL);
   const cookie = (name: string, value: string): Cookie => ({
     name,
     value,
@@ -24,7 +24,8 @@ export function sessionCookies(session: Session, baseURL: string): Cookie[] {
     path: '/',
     expires: -1,
     httpOnly: false,
-    secure: false,
+    // Follows the address: the local app is plain http, another environment may be https.
+    secure: protocol === 'https:',
     sameSite: 'Lax',
   });
   return [
