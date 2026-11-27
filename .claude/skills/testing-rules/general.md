@@ -61,6 +61,19 @@ Always try:
 - **Output:** the saved data actually works — it is returned by the API, shown in the list, rendered.
 - Both phases must pass: input validation passing does not prove the output works.
 
+## Code in a test body (automated tests)
+
+Lint and the formatter cover syntax. These rules cover what they cannot see; the project's own conventions document (QA settings name it) adds its fixtures, clients and file layout.
+
+- **Name things by their role in the scenario:** `seller`, `buyer`, `stranger`, `offer`, `cancelledOffer`; never `user1`, `data`, `res` or `tmp`. The result of the call under test is `response`, or the domain noun when the test goes on to use it (`purchase`).
+- **One behaviour per test.** One `When`; a second one only in a journey whose later step needs the earlier one (open the list, then go to page 2). Two rules that can break separately are two tests.
+- **No logic in the body:** no `if`, `try`/`catch`, helper closures or loops over expected structures. The one loop allowed is the one that generates parametrized tests from a data file. When a test needs logic, it belongs in the framework code.
+- **Write expected values out.** `expect(balance).toBe(76.55)`, not `funds - price`: a test that repeats the app's formula repeats its bug. Derive a value only from what the test itself sent or created (`offer.id`, `seller.id`).
+- **A value picked on purpose has a name or a reason.** Used in several places or across tests: a constant at the top of the file with a comment saying why this value. Used once: inline, with the reason in the block's comment.
+- **Override only what the test is about.** Factories fill the rest, so the reader sees which inputs matter.
+- **Run in parallel only what is independent:** creating two users, reading two states. Steps that depend on each other stay in order, and the call under test never shares a `Promise.all` with anything.
+- **Assert a whole object in one `expect`** (`toEqual`, `toMatchObject`) when its fields belong together; separate `expect`s when they are separate outcomes, each under its own comment line.
+
 ## Comments in a test body (automated tests)
 
 Every test, API and UI alike, reads top to bottom as one scenario, and its comments mark the parts:
@@ -112,7 +125,7 @@ Filter noise before it reaches a human: cheap, rule-shaped feedback is fixed by 
    npx playwright test <files> --repeat-each=10 --retries=0 --workers=4
    ```
    Every run must pass. A single failure is a flaky test: find the cause (a missing wait, shared data between workers, order dependence, a time-dependent value) and fix it — never add retries or fixed waits to make it pass. Then rerun the 10.
-   When the cause is the app itself (a shared lock or queue that parallel tests overload, proven with a trace), don't weaken the test or override the app: file the bug, report to the coordinator with the numbers, and isolate the test as the user decides (this repo: UI tests that move money are tagged `@ledger` and run alone in the `ui-ledger` project, see the README).
+   When the cause is the app itself (a shared lock or queue that parallel tests overload, proven with a trace), don't weaken the test or override the app: file the bug, report to the coordinator with the numbers, and isolate the test as the user decides (this repo: UI tests that move money are tagged `@ledger` and run alone in the `ui-ledger` project, see `docs/app-under-test.md`).
    **UI tests also run once on a slow connection** (see `ui.md` → "Slow network"). A test that passes only on a fast connection is waiting for the wrong thing. Record both results (passes out of 10, slow-network pass) in the test intent card.
 3. **`/simplify`, then `/code-review`** on the branch; fix the findings. Commit first and pass the level and branch explicitly (e.g. `/code-review medium <branch>`); a review that reports an empty diff did not see your changes, so rerun it.
 4. **Test review** — a subagent with fresh context that gets only the story, the test plan and the diff (not your reasoning) and answers, for each new test:
@@ -123,6 +136,7 @@ Filter noise before it reaches a human: cheap, rule-shaped feedback is fixed by 
    - Is this the right level? Default to the lowest level that catches the regression (API before UI); UI only for what needs the real screen.
    - Does it duplicate an existing test (grep the suite) or another new one?
    - Would it still pass if the feature were partly broken?
+   - Does it follow "Code in a test body" and "Comments in a test body" above, and the project's conventions document?
 
    Fix what can be fixed. What needs a human decision goes into the PR description.
 

@@ -7,10 +7,10 @@ in PascalCase named after the screen or resource (`MarketplacePage`, `Marketplac
 behaviour: `buyer cannot buy an offer above their balance`. Imports use the alias: `#src/<path>.ts`.
 
 **Shape of a test.** A test reads top to bottom as one scenario: prepare the data, do the one thing the test is about,
-check the outcome. Comments mark the parts: `// Given`, `// When` and `// Then` in every test, plus a line where a
-value or a step needs a reason (the rule is in `.claude/skills/testing-rules/general.md`, "Comments in a test body").
-No helper closures, loops over expected structures or conditionals in a test body: when a test needs them, the logic
-belongs in `src/`. A reader who does not know the framework should understand a test without opening another file.
+check the outcome, with `// Given`, `// When` and `// Then` marking the parts. A reader who does not know the
+framework should understand a test without opening another file. The rules for the code and the comments in a test
+body are in `.claude/skills/testing-rules/general.md` ("Code in a test body", "Comments in a test body"); the
+test-writing agent and its reviewer read the same file.
 
 **Checklist** for a new feature (`<feature>` is, for example, `marketplace`):
 
@@ -28,21 +28,18 @@ belongs in `src/`. A reader who does not know the framework should understand a 
 3. **Schemas:** zod schemas in `src/api/models/`, types inferred from them. Keep each endpoint's real wire
    format: the envelope `{ success, timestamp, data | error }` for most endpoints, bare objects where the app
    returns them (`/api/version`, `/api/v1/statistics`).
-4. **API spec layout:** tests of one endpoint's responses sit in a `test.describe` titled with the method and
-   the path as the app serves it, OpenAPI parameters kept (`POST /api/v1/marketplace/offers`,
-   `DELETE /api/v1/marketplace/offers/{offerId}`), and inside it one `test.describe` per status, ascending
-   (`'200'`, `'400'`, `'401'`, `'403'`, `'404'`). Titles inside still state the behaviour. A scenario that chains
-   several calls (a sale end to end) stays outside these groups. `npm run coverage:api` reads the groups (D-18);
-   a status the contract does not document is a contract bug to file (`testing-rules/api.md`).
+4. **API spec layout:** one `test.describe` per endpoint, titled `<METHOD> <path>`, with one nested
+   `test.describe` per status; the rule is in `.claude/skills/testing-rules/api.md` ("Automated API specs"). `npm
+   run coverage:api` reads these groups (D-18).
 5. **Data:** a factory in `src/data/factories/` that builds a valid entity with unique values; tests override
    only what matters. Users come from the `createUser` fixture, which returns a `TestUser`. Its shortcuts prepare
    data (`createField`, `offerField`, `addFunds`) and read state (`balance`, `fields`, `myOffers`); they throw
    when the app refuses, so a broken setup never looks like a tested refusal. The call a test is about goes
    through `user.api`, which returns the response, refused or not.
 6. **UI:** a page object per screen in `src/ui/pages/`, repeated parts as components in `src/ui/components/`.
-   They expose actions and locators, no assertions. Locators: `getByTestId`, then `getByRole` with a name,
-   `getByLabel`, `getByText`; CSS only as a documented last resort, never by index. Log in with
-   `createUser` + `loginAs` (cookies, no login form).
+   They expose actions and locators, no assertions. Which locator to pick is in
+   `.claude/skills/testing-rules/ui.md` ("Locators"): test ids first. Log in with `createUser` + `loginAs`
+   (cookies, no login form).
 7. **Matcher:** only when a UI check covers many fields or several sources (an offer card, a filled form).
    Register it in `src/assertions/index.ts`; it reports every mismatching field and retries when it reads the UI.
    For plain API data, `toEqual` or `toMatchObject` on the whole object is enough; to prove a refused call
