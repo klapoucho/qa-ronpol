@@ -18,6 +18,8 @@ export default defineConfig<MockOptions>({
   timeout: profile.timeout,
   expect: { timeout: profile.expectTimeout },
   reporter: profile.reporter,
+  // Shown at the top of the HTML report, so a report says which server it describes.
+  metadata: { environment: config.APP_ENV, baseURL: config.BASE_URL },
   use: {
     baseURL: config.BASE_URL,
     extraHTTPHeaders: config.syntheticHeaders,

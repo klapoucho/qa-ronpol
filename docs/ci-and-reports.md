@@ -10,6 +10,7 @@
 | `npm run test:ui-mocked`               | the `ui-mocked` project                                                          |
 | `npm run test:ui-ledger`               | the `ui-ledger` project alone (the `@ledger` tests), without the projects first  |
 | `npm run test:smoke`                   | tests tagged `@smoke`                                                            |
+| `npm run test:staging`                 | all projects against the `staging` environment (see Environments)                |
 | `npm run report`                       | opens the last HTML report                                                       |
 | `npm run coverage:api`                 | API coverage against the OpenAPI contract, as Markdown (see Reports)             |
 | `npm run check`                        | `typecheck`, `lint`, `format:check` and `playwright test --list` (no app needed) |
@@ -22,7 +23,29 @@
 
 `app:down` and `app:reset` wipe data other runs may depend on; see [the app under test](app-under-test.md).
 
+## Environments
+
+`APP_ENV` picks the server the tests run against, from `src/config/environments.ts`:
+
+| Environment | Address                 | Reset allowed | Used by                                    |
+| ----------- | ----------------------- | ------------- | ------------------------------------------ |
+| `dev`       | `http://localhost:3000` | yes           | the default: local runs, CI, new tests     |
+| `staging`   | `http://localhost:3000` | no            | on request: `npm run test:staging`         |
+
+`staging` is a placeholder: the project has no staging server, so it points at the local app and shows only
+that the switch works. With a real address there, a run answers "do these tests pass on staging"; tests for a
+change that staging does not have yet fail there, and that is the answer, not a reason to change them.
+
+- Any command takes it: `APP_ENV=staging npm run test:api`, `APP_ENV=staging npx playwright test <files>`.
+- Global setup prints the environment and its address first, and the HTML report shows both in its header.
+- `BASE_URL` overrides the address of whichever environment is chosen. A `BASE_URL` line in `.env` therefore
+  applies to `staging` too; leave it out unless the app runs somewhere else.
+- `RESET_DB=true` and `npm run app:reset` work on `dev` only; on another environment they stop with an error.
+- The app must accept the tests' `SYNTHETIC_TOKEN` on every environment (see [the app under test](app-under-test.md)).
+
 ## Profiles
+
+`TEST_ENV` picks how a run behaves, on any environment.
 
 Profiles (`src/config/profiles.ts`) set retries, workers, reporters and timeouts:
 
