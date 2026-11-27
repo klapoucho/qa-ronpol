@@ -25,6 +25,8 @@ jobs:
     timeout-minutes: 15
     env:
       TEST_ENV: ci
+    outputs:
+      report: ${{ steps.pages.outcome == 'success' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -67,6 +69,18 @@ jobs:
           path: playwright-report/
           retention-days: 7
           if-no-files-found: ignore
+      # Full-suite runs also publish the HTML report as the repository's GitHub Pages site, where it
+      # opens in the browser with its traces. A pull request keeps the downloadable artifact only:
+      # the site holds one report, and a pull request from a fork must not replace it.
+      - name: Hand the Playwright report to GitHub Pages
+        id: pages
+        if: ${{ !cancelled() && github.event_name != 'pull_request' && hashFiles('playwright-report/index.html') != '' }}
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: playwright-report/
+      - name: Say where the report is
+        if: ${{ !cancelled() && github.event_name == 'pull_request' && hashFiles('playwright-report/index.html') != '' }}
+        run: echo 'Full report - the `playwright-report` artifact of this run (download it and open `index.html`).' >> "$GITHUB_STEP_SUMMARY"
       - name: Upload run reports and logs
         if: always()
         uses: actions/upload-artifact@v7
@@ -75,3 +89,27 @@ jobs:
           path: reports/
           retention-days: 7
           if-no-files-found: ignore
+
+  # Publishes the report of a full-suite run, also when its tests failed: that is when it is read.
+  report:
+    needs: tests
+    if: ${{ !cancelled() && needs.tests.outputs.report == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pages: write
+      id-token: write
+    # One deployment at a time; a newer report waits for the one in progress.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v5
+      - name: Link the report on the run's summary page
+        env:
+          PAGE_URL: ${{ steps.deploy.outputs.page_url }}
+        run: echo "Full Playwright report with traces - $PAGE_URL" >> "$GITHUB_STEP_SUMMARY"

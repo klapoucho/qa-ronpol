@@ -52,7 +52,7 @@ Profiles (`src/config/profiles.ts`) set retries, workers, reporters and timeouts
 | Profile | Retries | Workers                 | Reporters                                   | Other                                                    |
 | ------- | ------- | ----------------------- | ------------------------------------------- | -------------------------------------------------------- |
 | `local` | 0       | Playwright default      | `list`, `html`                              |                                                          |
-| `ci`    | 1       | 4                       | `github`, `html`, `junit` (`reports/junit.xml`) | `forbidOnly`; a test that passes only on retry fails the run |
+| `ci`    | 1       | 4                       | `github`, `html`, `junit` (`reports/junit.xml`), run summary | `forbidOnly`; a test that passes only on retry fails the run |
 
 ## Reports
 
@@ -64,15 +64,25 @@ Profiles (`src/config/profiles.ts`) set retries, workers, reporters and timeouts
   it runs no tests. With the app up it first compares the contract with the live `/schema/openapi.json` and
   stops on any difference; `npm run coverage:api -- --update-contract` refreshes the file after an app update.
   CI writes the report to the run's summary page.
-- In CI: the HTML report and `reports/` (JUnit XML and the app's container log) are uploaded as workflow
-  artifacts and kept for 7 days.
+- In CI, on the run's summary page: the counts of passed, failed, flaky and skipped tests, then every failed
+  and flaky test with the first line of its error (`src/reporters/step-summary.ts`), so the result reads
+  without downloading anything.
+- In CI, as a web page: a full-suite run (push to `main`, nightly, manual) publishes its HTML report as the
+  repository's GitHub Pages site, with screenshots, videos and traces that open in the browser. The run's
+  `report` job and summary page link to it. The site holds one report, the latest full-suite run's, and a failed
+  run publishes too. Pull requests do not publish: they would replace each other's report, and a fork gets no
+  permission to deploy.
+- In CI, as files: the HTML report and `reports/` (JUnit XML and the app's container log) are uploaded as
+  workflow artifacts on every run and kept for 7 days. A pull request's full report is this artifact.
 - Traces, videos and the HTML report record the throwaway users' tokens and passwords. The values only work on
-  that run's app instance, and the artifacts are never committed.
+  that run's app instance, which is gone when the CI job ends, so the public Pages site exposes nothing usable.
+  The artifacts are never committed.
 
 ## CI
 
 GitHub Actions (`.github/workflows/tests.yml`) runs `npm run check`, starts the app in Docker and runs the tests
-with the `ci` profile. How many tests depends on the trigger:
+with the `ci` profile. A second job, `report`, publishes a full-suite run's HTML report to GitHub Pages (the
+repository's Pages source must be set to GitHub Actions). How many tests depends on the trigger:
 
 | Trigger                     | Tests                                                                             |
 | --------------------------- | --------------------------------------------------------------------------------- |
