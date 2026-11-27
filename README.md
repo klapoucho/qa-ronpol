@@ -86,6 +86,66 @@ the run's summary page, and a full-suite run publishes its HTML report to GitHub
 Two extras go beyond the core setup: `npm run coverage:api` reports which API operations the tests call, compared
 with the app's OpenAPI contract, and a pull request runs only the smoke tests plus the tests its change touches.
 
+## Adding a test
+
+The default way to add a test is **`/qa-pick`**, a workflow of AI agents run in
+[Claude Code](https://claude.com/claude-code): it tests the story by hand first and automates only what that
+testing proved. T1–T5 were written this way. A test can still be written by hand; both ways follow
+[docs/writing-tests.md](docs/writing-tests.md).
+
+1. Describe the scenario in a GitHub issue: a user story with acceptance criteria. The texts of the existing
+   ones are in [docs/test-cases/](docs/test-cases/README.md).
+2. Start the app (`npm run app:up`) and open Claude Code in the repository root. The files are also set up
+   for other coding agents, though no run was made with one yet:
+   [Other coding agents](docs/ai-workflow.md#other-coding-agents).
+3. Type the command with the issue number:
+
+   ```text
+   /qa-pick 12
+   ```
+
+   `#12` and the issue URL work too. Without an issue, give the story as text: `/qa-pick <story text>`.
+
+The run is unattended from there:
+
+| Step             | What happens                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------ |
+| Take the issue   | The coordinator assigns you and sets the issue's status to In progress.                                |
+| Manual QA        | A QA tester agent plans and tests the story: the UI through the Playwright CLI, the API over HTTP.     |
+| QA review        | A fresh agent checks that every pass is proven, then tries to break the feature.                       |
+| Testing summary  | The verdict and the findings go to the issue as one comment; bugs get a file in `.qa/bugs/`.           |
+| Test writing     | A test writer automates the result on a `test/<slug>` branch in its own git worktree.                  |
+| Test checks      | The gate, a `--repeat-each=10` stability run and poison tests (break the app's answer, expect a fail). |
+| Test review      | A fresh agent reviews every new test; the writer fixes what it finds.                                  |
+| Your decision    | The run asks before it pushes the branch and opens the PR. It never merges and never closes the issue. |
+
+Each run leaves its plan, report and evidence in `.qa/runs/<run-id>/`, committed on the test branch. To continue
+a finished run, say `follow up on <run-id>: <what>`. How the workflow works and what `.qa/` holds:
+[docs/ai-workflow.md](docs/ai-workflow.md).
+
+### What `/qa-pick` needs
+
+Running the tests needs none of this; it is only for running the workflow.
+
+- **Everything in [Running the tests](#running-the-tests):** Node, Docker, `npm ci`, Playwright's Chromium, and
+  the app running (`npm run app:up`).
+- **[Claude Code](https://claude.com/claude-code)**, opened in this repository. It loads the workflow's own
+  skills from `.claude/skills/` (`qa-pick`, `qa-test`, `qa-review`, `testing-rules`) and the QA settings from
+  [AGENTS.md](AGENTS.md), which `CLAUDE.md` imports; nothing to install.
+- **[GitHub CLI](https://cli.github.com/) `gh` 2.99 or later**, logged in with an account that can read
+  `klapoucho/qa-ronpol`. Assigning the issue and setting its status need triage access, and screenshots in the
+  summary need write access; with read access only, the run posts a text-only summary.
+- **The Playwright CLI:** `npm install -g @playwright/cli`. Manual QA drives the installed Google Chrome with it.
+- **The Playwright skills** `playwright-cli` and `playwright-trace`, which teach the agents the CLI's commands
+  and how to read a trace. They are Playwright's own files, committed in `.claude/skills/` so a clone has them.
+  After a CLI upgrade, `playwright-cli install --skills` in the repository root refreshes `playwright-cli`;
+  `playwright-trace` is a copy of `node_modules/playwright-core/lib/tools/skills/playwright-trace/`.
+- **`git` and `python3`:** the test writer works in a git worktree, and `python3` validates the run's JSON
+  results.
+
+With several `gh` accounts on one machine, pin yours, so a run never reads or writes as the wrong one: copy
+[AGENTS.local.example.md](AGENTS.local.example.md) to `AGENTS.local.md` (git ignores it) and fill in the login.
+
 ## Tech stack and decisions
 
 Playwright Test, TypeScript (strict, native ES modules), zod, faker, ESLint with `typescript-eslint` and
@@ -130,7 +190,8 @@ All decisions, with the alternatives considered, are in [docs/requirements.md](d
 ```
 
 Tests contain no raw HTTP calls, selectors or hard-coded test data: they use the API clients, page objects and
-factories in `src/`. How to add a test or a feature: [docs/writing-tests.md](docs/writing-tests.md).
+factories in `src/`. How to add a test: [Adding a test](#adding-a-test); the rules a test follows:
+[docs/writing-tests.md](docs/writing-tests.md).
 
 ## Assumptions and limits
 
@@ -150,6 +211,6 @@ factories in `src/`. How to add a test or a feature: [docs/writing-tests.md](doc
 - [docs/writing-tests.md](docs/writing-tests.md): naming rules and the checklist for a new test or feature
 - [docs/app-under-test.md](docs/app-under-test.md): running the app, its rate limit, its money queue, running without Docker
 - [docs/ci-and-reports.md](docs/ci-and-reports.md): what CI runs on which trigger, the reports, API coverage
-- [docs/ai-workflow.md](docs/ai-workflow.md): how the tests were written with an AI agent, and what `.qa/` holds
+- [docs/ai-workflow.md](docs/ai-workflow.md): how `/qa-pick` works, its prerequisites, and what `.qa/` holds
 - [docs/requirements.md](docs/requirements.md): the full framework requirements and decisions
 - [CONTRIBUTING.md](CONTRIBUTING.md): branch names, commit messages, the pull request workflow
