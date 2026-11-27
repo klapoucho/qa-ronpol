@@ -32,9 +32,14 @@ first branch or commit; its rules apply as if they were written here.
 
 ## Local settings
 
-Settings for one machine (for example the pinned GitHub account) go in a file git ignores:
-`AGENTS.local.md`, or `CLAUDE.local.md`, which Claude Code loads by itself. If `AGENTS.local.md` exists
-and your agent has not loaded it, read it at the start of the session: it adds to the QA settings below.
+Settings for one machine (for example the pinned GitHub account) go in `AGENTS.local.md`, which git
+ignores. The file is optional; `AGENTS.local.example.md` is the template to copy. Claude Code also loads
+`CLAUDE.local.md` by itself, so either name works there.
+
+- If `AGENTS.local.md` exists and your agent has not loaded it, read it at the start of the session: it
+  adds to the QA settings below.
+- If no GitHub account is pinned and `gh auth status` lists more than one account, stop before the first
+  `gh` command, ask the user which account to use, and offer to create `AGENTS.local.md` from the template.
 
 ## Skills
 
