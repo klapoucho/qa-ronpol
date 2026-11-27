@@ -9,3 +9,4 @@ reports/
 .playwright-cli/
 .qa/runs/*/scratch/
 CLAUDE.local.md
+AGENTS.local.md

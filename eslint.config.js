@@ -13,6 +13,7 @@ export default defineConfig(
       'blob-report',
       'reports',
       '.claude',
+      '.agents',
       '.qa',
     ],
   },
