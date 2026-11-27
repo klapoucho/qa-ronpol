@@ -59,7 +59,8 @@ Running the tests needs none of this; it is only for running the workflow yourse
 - [GitHub CLI](https://cli.github.com/) `gh` 2.99 or later, logged in with an account that can read
   `klapoucho/qa-ronpol`. Assigning the issue and setting its status need triage access, and attaching
   screenshots needs write access; with read access only, the run posts a text-only summary. With several `gh`
-  accounts on one machine, pin yours in `CLAUDE.local.md` (Claude Code) or `AGENTS.local.md` (other agents):
-  `- GitHub account: <login>`. Git ignores both.
+  accounts on one machine, pin yours: copy [AGENTS.local.example.md](../AGENTS.local.example.md) to
+  `AGENTS.local.md` (git ignores it) and fill in the login. Without the file, an agent that finds several
+  accounts asks which one to use.
 - The Playwright CLI the skills drive, at its current version: `npm install -g @playwright/cli`. Nothing pins
   it or its browser; reports and `.qa/notes/playwright-cli.md` record the versions a run used.
