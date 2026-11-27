@@ -6,11 +6,11 @@ Conventions for adding a test or a feature to the framework.
 in PascalCase named after the screen or resource (`MarketplacePage`, `MarketplaceApi`). Test titles state the
 behaviour: `buyer cannot buy an offer above their balance`. Imports use the alias: `#src/<path>.ts`.
 
-**Shape of a test.** A test reads top to bottom as one scenario: prepare the data, do the one thing the test is
-about, check the outcome. Comments (`// Given`, `// When`, `// Then`, or one short line per outcome) mark the
-parts. No helper closures, loops over expected structures or conditionals in a test body: when a test needs
-them, the logic belongs in `src/`. A reader who does not know the framework should understand a test without
-opening another file.
+**Shape of a test.** A test reads top to bottom as one scenario: prepare the data, do the one thing the test is about,
+check the outcome. Comments mark the parts: `// Given`, `// When` and `// Then` in every test, plus a line where a
+value or a step needs a reason (the rule is in `.claude/skills/testing-rules/general.md`, "Comments in a test body").
+No helper closures, loops over expected structures or conditionals in a test body: when a test needs them, the logic
+belongs in `src/`. A reader who does not know the framework should understand a test without opening another file.
 
 **Checklist** for a new feature (`<feature>` is, for example, `marketplace`):
 
