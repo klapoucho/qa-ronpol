@@ -1,7 +1,8 @@
 # AI-assisted workflow
 
-This project is built with an AI coding agent (Claude Code), openly: agent commits carry a `Co-Authored-By:`
-trailer and agent PRs a "Generated with Claude Code" line ([CONTRIBUTING.md](../CONTRIBUTING.md)).
+This project is built with AI coding agents (Claude Code and Antigravity so far), openly: agent commits carry
+a `Co-Authored-By:` trailer and agent PRs a "Generated with <agent>" line
+([CONTRIBUTING.md](../CONTRIBUTING.md)).
 
 - **Phase A** (built): the framework, CI, the `qa-pick` skills adapted to this repo, and the issue texts, built
   task by task from [the implementation plan](implementation-plan.md). No Marketplace tests.

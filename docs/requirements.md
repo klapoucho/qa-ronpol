@@ -527,10 +527,11 @@ work tracked like a real backlog:
   Everything else in `.qa/` is committed.
 
 **Attribution.** As `CONTRIBUTING.md` requires: agent commits carry a `Co-Authored-By:` trailer
-and agent PRs a "Generated with Claude Code" line.
+and agent PRs a "Generated with <agent>" line (for example "Generated with Claude Code").
 
-**Other agents.** The rules live in `AGENTS.md` and the skills are linked at `.agents/skills`, so Codex
-and Gemini CLI find them without a plugin. Only Claude Code has been used for runs; see
+**Other agents.** The rules live in `AGENTS.md` and the skills are linked at `.agents/skills`, so Codex,
+Gemini CLI and Antigravity find them without a plugin. Full runs were made with Claude Code and
+Antigravity; see
 [ai-workflow.md](ai-workflow.md), "Other coding agents".
 
 ## 11. Definition of done
