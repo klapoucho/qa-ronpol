@@ -184,11 +184,14 @@ of one object are checked by one assertion (FR-20).
 - **FR-06 Configuration.** All settings come from environment variables, optionally loaded from
   a `.env` file, and are validated by a zod schema at startup. Invalid or missing values stop
   the run with a message naming the variable. `.env.example` lists every variable with its
-  default. Minimum set: `BASE_URL` (default `http://localhost:3000`), `TEST_ENV`
-  (`local` | `ci`), `EXPECTED_APP_VERSION` (default `1.126.0`), `RESET_DB` (default `false`).
-- **FR-07 Environments.** `TEST_ENV` selects a profile with defaults for retries, workers,
-  reporters and timeouts. Adding an environment such as `staging` means adding one profile and
-  setting `BASE_URL`, with no change to tests.
+  default. Minimum set: `APP_ENV` (`dev` | `staging`, default `dev`), `BASE_URL` (default: the
+  address of the chosen environment), `TEST_ENV` (`local` | `ci`), `EXPECTED_APP_VERSION`
+  (default `1.126.0`), `RESET_DB` (default `false`).
+- **FR-07 Environments.** `APP_ENV` selects the server: a named entry in
+  `src/config/environments.ts` with its address and whether its database may be reset.
+  `TEST_ENV` selects a profile with defaults for retries, workers, reporters and timeouts.
+  Adding an environment means adding one entry, with no change to tests. Only `dev` may be
+  reset: `RESET_DB=true` on another environment stops the run.
 - **FR-08 App check.** Global setup calls `/api/v1/healthcheck` and `/api/v1/about`. If the app
   is unreachable it stops with the command that starts it (section 9). If the version differs
   from `EXPECTED_APP_VERSION` it logs a warning and continues.

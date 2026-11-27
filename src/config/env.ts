@@ -1,7 +1,10 @@
 import { z } from 'zod';
+import { environmentNames } from '#src/config/environments.ts';
 
 const envSchema = z.object({
-  BASE_URL: z.url({ protocol: /^https?$/ }).default('http://localhost:3000'),
+  APP_ENV: z.enum(environmentNames).default('dev'),
+  // Overrides the address of the chosen environment, for example for an app on another port.
+  BASE_URL: z.url({ protocol: /^https?$/ }).optional(),
   TEST_ENV: z.enum(['local', 'ci']).default('local'),
   EXPECTED_APP_VERSION: z
     .string()

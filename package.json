@@ -15,6 +15,7 @@
     "test:ui-mocked": "playwright test --project=ui-mocked",
     "test:ui-ledger": "playwright test --project=ui-ledger --no-deps",
     "test:smoke": "playwright test --grep @smoke",
+    "test:staging": "APP_ENV=staging playwright test",
     "report": "playwright show-report",
     "coverage:api": "node scripts/api-coverage.ts --area Marketplace",
     "typecheck": "tsc --noEmit",

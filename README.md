@@ -54,13 +54,18 @@ startup, so an invalid value stops the run with a message naming the variable.
 
 | Variable               | Default                 | Meaning                                                                    |
 | ---------------------- | ----------------------- | -------------------------------------------------------------------------- |
-| `BASE_URL`             | `http://localhost:3000` | the app under test                                                         |
+| `APP_ENV`              | `dev`                   | environment to run against, `dev` or `staging` (see below)                 |
+| `BASE_URL`             | the environment's own   | overrides the address of the chosen environment                            |
 | `TEST_ENV`             | `local`                 | run profile, `local` or `ci`: retries, workers, reporters, timeouts        |
 | `EXPECTED_APP_VERSION` | `1.126.0`               | the version the suite targets; another one logs a warning                  |
 | `SYNTHETIC_TOKEN`      | `local-synthetic-token` | sent as `X-Synthetic-Token` so test traffic skips the app's API rate limit |
 | `RESET_DB`             | `false`                 | `true` restores the app's base database once before the run                |
 
-A new environment is one more profile in `src/config/profiles.ts` plus its `BASE_URL`; tests do not change.
+Environments are listed in `src/config/environments.ts`: `dev` is the local app (the one CI starts too), and
+`staging` is a placeholder that points at the same address, because this project has no real staging server.
+`npm run test:staging` (or `APP_ENV=staging` before any test command) runs the suite there. A new environment
+is one more entry in that file; tests do not change. `TEST_ENV` is a separate choice: it sets how the run
+behaves, not where it goes.
 
 ### Reports and CI
 

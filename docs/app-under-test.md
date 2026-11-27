@@ -2,7 +2,8 @@
 
 Rolnopol runs from the Docker image `jaktestowac/rolnopol:1.126.0` on port 3000 (`compose.yaml`). Global setup
 checks that it is reachable and that it is the expected version before any test runs; if it is not reachable, the
-run stops with `Start it with: npm run app:up`.
+run stops with `Start it with: npm run app:up`. This page describes the `dev` environment; for running against
+another one see [Environments](ci-and-reports.md#environments).
 
 The `ui-mocked` project needs the running app too: it mocks only `/api/**`, the pages' HTML and JavaScript still
 come from the app, and global setup checks it for every project.

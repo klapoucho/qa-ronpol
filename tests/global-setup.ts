@@ -9,8 +9,11 @@ export default async function globalSetup(): Promise<void> {
     extraHTTPHeaders: config.syntheticHeaders,
   });
   try {
+    console.log(`Environment: ${config.APP_ENV} (${config.BASE_URL})`);
+
+    const where = `Rolnopol (${config.APP_ENV}) is not reachable at ${config.BASE_URL}`;
     const notReachable = (cause?: unknown) =>
-      new Error(`Rolnopol is not reachable at ${config.BASE_URL}. Start it with: npm run app:up`, { cause });
+      new Error(`${where}. ${config.environment.whenUnreachable}`, { cause });
 
     // Only a network failure or a non-200 answer counts as "not reachable". A reachable app whose
     // healthcheck no longer matches the schema is a different problem and surfaces below as such.
@@ -25,7 +28,7 @@ export default async function globalSetup(): Promise<void> {
     // fail with 429s that look like flaky tests. Stop here with the cause instead.
     if (probe.headers()['x-synthetic-verified'] !== 'true') {
       throw new Error(
-        `Rolnopol at ${config.BASE_URL} does not accept SYNTHETIC_TOKEN, so the tests would hit its API rate limit. ` +
+        `Rolnopol (${config.APP_ENV}) at ${config.BASE_URL} does not accept SYNTHETIC_TOKEN, so the tests would hit its API rate limit. ` +
           'The app must run with the same SYNTHETIC_TOKEN as the tests (compose.yaml and .env). ' +
           'Recreating it with npm run app:up resets its data, so only the author does that.',
       );

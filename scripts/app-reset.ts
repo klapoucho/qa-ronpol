@@ -1,4 +1,6 @@
 // Restores the app's base database. Only the author runs this (see docs/requirements.md, section 9).
+// It resets the dev environment only; another APP_ENV is refused (src/config/environments.ts).
+const appEnv = process.env.APP_ENV ?? 'dev';
 const baseUrl = process.env.BASE_URL ?? 'http://localhost:3000';
 
 function fail(message: string): never {
@@ -14,6 +16,10 @@ function describe(error: unknown): string {
     return source.message || code || source.name;
   }
   return String(source);
+}
+
+if (appEnv !== 'dev') {
+  fail(`APP_ENV=${appEnv}: only the dev environment may be reset.`);
 }
 
 let url: URL;
