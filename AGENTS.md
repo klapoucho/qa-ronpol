@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Guidance for AI coding agents in this repository (Claude Code, Codex, Gemini CLI and others).
+Guidance for AI coding agents in this repository (Claude Code, Codex, Gemini CLI, Antigravity and others).
 This file is the single source of the rules: `CLAUDE.md` only imports it, and `.gemini/settings.json`
 points Gemini CLI at it.
 
