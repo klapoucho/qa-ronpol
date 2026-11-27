@@ -21,12 +21,12 @@ T2 and T5 each cover several cases, so the runner lists more than five tests. A 
 
 ## Running the tests
 
-You need **Node.js 26** (pinned in `.nvmrc`) and **Docker** with Compose v2 for the app under test.
+You need **Node.js 24 or newer** (26 is pinned in `.nvmrc`) and **Docker** with Compose v2 for the app under test.
 
 ```bash
 git clone https://github.com/klapoucho/qa-ronpol.git
 cd qa-ronpol
-nvm use                                       # Node 26 from .nvmrc (nvm install, the first time)
+nvm use                                       # optional: Node 26 from .nvmrc
 npm ci
 npx playwright install --with-deps chromium
 npm run app:up                                # starts Rolnopol 1.126.0 in Docker and waits until it is healthy
