@@ -9,7 +9,8 @@ points Gemini CLI at it.
 A test automation framework for [Rolnopol](https://github.com/jaktestowac/rolnopol), built with Playwright
 and TypeScript as a recruitment task. The task is in `docs/requirements-original.md` (Polish).
 
-Current phase: Phase B: the author writes the Marketplace tests with `/qa-pick <issue>`.
+Current phase: Phases A and B are done: the framework and the five Marketplace tests (T1–T5) are on `main`.
+Further tests are written the same way, with `/qa-pick <issue>`.
 
 ## Conventions
 
