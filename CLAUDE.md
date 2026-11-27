@@ -37,7 +37,7 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 - Rate limit: 100 API requests per 30 s per IP, shared by every worker and agent. Send `X-Synthetic-Token: local-synthetic-token` (or `SYNTHETIC_TOKEN` from `.env`) on manual API calls to skip it; the Playwright config already sends it.
 - Roles: user → `POST /api/v1/register` with `{ email, displayedName, password }` returns a token. New users have 0 ROL; add funds with `POST /api/v1/financial/transactions`. Never use the demo accounts.
 - Test framework: Playwright Test (TypeScript). Framework code in `src/`, tests in `tests/{api,ui,ui-mocked}/<feature>/`, conventions in `docs/writing-tests.md`. Runner process name: `playwright`
-- Install dependencies: `npm ci` (needs Node 26, pinned in `.nvmrc`; if `node -v` shows another version, run `nvm use` first)
+- Install dependencies: `npm ci` (needs Node 24 or newer; 26 is pinned in `.nvmrc`, so `nvm use` selects it)
 - Gate: `npm run typecheck`, `npx eslint <files>`, `npx playwright test --list <files>`
 - Main branch: main
 - Issue repository: klapoucho/qa-ronpol

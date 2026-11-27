@@ -281,8 +281,9 @@ of one object are checked by one assertion (FR-20).
 
 Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix A).
 
-- **NFR-01 Node.js 26 LTS** ("Lithium", currently 26.13.x), pinned in `.nvmrc` and
-  `package.json` `engines`. Playwright supports Node 22, 24 and 26. The app runs in its own
+- **NFR-01 Node.js 26 LTS** ("Lithium", currently 26.13.x), pinned in `.nvmrc`, which CI uses.
+  `package.json` `engines` accepts Node 24 and newer, so the previous LTS runs the suite too.
+  Playwright supports Node 22, 24 and 26. The app runs in its own
   container, so its Node version does not constrain ours.
 - **NFR-02 Playwright `@playwright/test` 1.65.x**, the latest stable release. No alpha or beta
   builds.
@@ -353,7 +354,7 @@ Versions checked on 2026-11-25 against the npm registry and nodejs.org (appendix
   container is gone when the job ends. Artifacts are therefore never committed, and CI keeps
   them for 7 days. Redacting traces was considered and rejected: it means rewriting Playwright's
   trace archives after every run, which breaks when their format changes.
-- **NFR-21 Third-party run.** A clean machine with Node 26 and Docker runs the suite with
+- **NFR-21 Third-party run.** A clean machine with Node 24 or newer and Docker runs the suite with
   `npm ci`, `npx playwright install --with-deps chromium`, `npm run app:up`, `npm test`.
 
 ## 8. Project structure
