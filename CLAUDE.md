@@ -31,7 +31,8 @@ Branch names, commit messages and the PR workflow are defined in CONTRIBUTING.md
 
 ## QA settings
 
-- App URL: http://localhost:3000 (Rolnopol 1.126.0 in Docker)
+- App URL: http://localhost:3000 (Rolnopol 1.126.0 in Docker). This is the `dev` environment, the default for everything below.
+- Environments: `APP_ENV` selects one from `src/config/environments.ts`. `dev` (default) is the local app and what CI starts: manual QA, new tests, the gate and the stability runs all use it. `staging` is a placeholder at the same address. Run tests there only when the user asks ("run the tests on staging"): `APP_ENV=staging npx playwright test <files>` or `npm run test:staging`, then report what passed and failed. A failure there may mean staging lacks the change: report it, never edit a test to make it pass on staging. Never start, stop or reset an environment other than `dev`, and do no manual QA there unless asked.
 - API base URL: http://localhost:3000/api/v1
 - Start the app: `npm run app:up` in this repo. Agents may start the app when it is not running. They never stop or reset it (`npm run app:down`, `npm run app:reset`, `RESET_DB=true`, `POST /api/debug/database/restore-base`); only the author does.
 - Rate limit: 100 API requests per 30 s per IP, shared by every worker and agent. Send `X-Synthetic-Token: local-synthetic-token` (or `SYNTHETIC_TOKEN` from `.env`) on manual API calls to skip it; the Playwright config already sends it.
