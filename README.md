@@ -116,6 +116,7 @@ All decisions, with the alternatives considered, are in [docs/requirements.md](d
 ├── scripts/             # CI test selection, API coverage report, database reset
 ├── docs/                # requirements, conventions, the app's quirks, the AI workflow
 ├── .qa/, .claude/       # evidence and skills of the AI-assisted QA workflow
+├── AGENTS.md            # rules for AI coding agents (CLAUDE.md imports it)
 ├── compose.yaml         # Rolnopol 1.126.0
 └── playwright.config.ts
 ```
