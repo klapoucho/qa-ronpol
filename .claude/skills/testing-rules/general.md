@@ -61,6 +61,16 @@ Always try:
 - **Output:** the saved data actually works — it is returned by the API, shown in the list, rendered.
 - Both phases must pass: input validation passing does not prove the output works.
 
+## Comments in a test body (automated tests)
+
+Every test, API and UI alike, reads top to bottom as one scenario, and its comments mark the parts:
+
+- **`// Given`, `// When`, `// Then`** start the three blocks, one blank line between them. Leave `Given` out only when the test prepares nothing. A test that acts twice repeats `// When` and `// Then`.
+- **The comment says what the block is about, in the domain's words:** `// Given an offer its seller cancelled, and a buyer with money to spend`, never a bare `// Given`. In a parametrized test it describes what every row shares; the row's title says the rest.
+- **A long `Then` gets one short lowercase line per outcome** (`// the field belongs to the buyer`), so a reader sees what was checked without reading every `expect`.
+- **A "why" comment only where the code cannot say it:** a value picked on purpose (a boundary, a float trap, a price one cent too high), data that rules out another cause of the same answer, a workaround for the app (a slow operation, a queue), a known bug with its bug file.
+- **No comment that repeats the line under it** (`// Then the status is 400` above `expect(status).toBe(400)`), and no commented-out code.
+
 ## Assertion integrity (automated tests)
 
 ### Write assertions that can fail
