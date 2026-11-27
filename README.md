@@ -1,5 +1,7 @@
 # qa-ronpol
 
+[![Tests](https://github.com/klapoucho/qa-ronpol/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/klapoucho/qa-ronpol/actions/workflows/tests.yml)
+
 A test automation framework for [Rolnopol](https://github.com/jaktestowac/rolnopol), built with Playwright and
 TypeScript as a recruitment task ([original task](docs/requirements-original.md), in Polish).
 
@@ -37,6 +39,10 @@ npm run report                                # opens the HTML report
 Every test creates its own users and data through the API, so the suite runs in parallel and needs no database
 reset. The whole suite takes about a minute.
 
+The list marks some tests with `✘` while the run still ends with every test passed. They are expected failures:
+each checks the correct behaviour where the app has a known bug, so it counts as passed until the bug is fixed
+(see [Assumptions and limits](#assumptions-and-limits)).
+
 | Script                                            | What it does                                                    |
 | ------------------------------------------------- | --------------------------------------------------------------- |
 | `npm test`                                        | the whole suite                                                 |
@@ -72,8 +78,9 @@ behaves, not where it goes.
 Every run writes an HTML report (`playwright-report/`); a failed test also leaves a screenshot, a video and, on
 a retry, a trace. GitHub Actions ([tests.yml](.github/workflows/tests.yml)) runs the static checks, starts the
 app in Docker and runs the tests with the `ci` profile, which adds JUnit XML and one retry. The result is on
-the run's summary page, and a full-suite run publishes its HTML report to GitHub Pages. More in
-[docs/ci-and-reports.md](docs/ci-and-reports.md).
+the run's summary page, and a full-suite run publishes its HTML report to GitHub Pages:
+[the newest report](https://klapoucho.github.io/qa-ronpol/), with the earlier ones under
+[runs/](https://klapoucho.github.io/qa-ronpol/runs/). More in [docs/ci-and-reports.md](docs/ci-and-reports.md).
 
 Two extras go beyond the core setup: `npm run coverage:api` reports which API operations the tests call, compared
 with the app's OpenAPI contract, and a pull request runs only the smoke tests plus the tests its change touches.
