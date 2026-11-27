@@ -11,7 +11,7 @@ trailer and agent PRs a "Generated with Claude Code" line ([CONTRIBUTING.md](../
   [#36](https://github.com/klapoucho/qa-ronpol/pull/36)). The issue texts and their issue numbers are in
   [docs/test-cases/](test-cases/README.md).
 
-`/qa-pick <issue number>` (in Claude Code, in this repo) reads the issue and runs a pipeline of agents: a QA
+`/qa-pick <issue number>` (in a coding agent opened in this repo) reads the issue and runs a pipeline of agents: a QA
 tester tests the story by hand (UI through the Playwright CLI, API over HTTP), a fresh reviewer checks the
 coverage and tries to break the feature, a test writer automates the result on its own branch (with a
 `--repeat-each=10` stability run and poison tests), and a fresh test reviewer reviews each test. Pushes and PRs
@@ -42,13 +42,13 @@ than Claude Code can use them:
 | [CLAUDE.md](../CLAUDE.md) | Imports `AGENTS.md` and `CONTRIBUTING.md` for Claude Code. |
 | `.gemini/settings.json` | Tells Gemini CLI to read `AGENTS.md` as its context file. |
 | `.claude/skills/` | The skills, in the [Agent Skills](https://agentskills.io) format. |
-| `.agents/skills` | A symbolic link to `.claude/skills/`, where Codex and Gemini CLI look for project skills. |
+| `.agents/skills` | A symbolic link to `.claude/skills/`, where Codex, Gemini CLI and Antigravity look for project skills. |
 | `.claude/skills/qa-pick/references/agent-tools.md` | What each action the skills name ("start an agent with fresh context", "ask the user") is in each agent, and how to run the pipeline without subagents. |
 
-**What is verified:** every run in `.qa/runs/` was done with Claude Code. The Codex and Gemini CLI setup
-follows their documentation as read on 2026-11-27 and has not been run; the Gemini CLI documentation also
-says that Antigravity CLI replaced it in June 2026, and that agent was not checked. Expect to adjust
-`agent-tools.md` on the first run with another agent. On Windows, git creates the `.agents/skills` link
+**What is verified:** every run in `.qa/runs/` was done with Claude Code. A full run was also made with
+Antigravity; its run folder is not in `.qa/runs/`. The Codex and Gemini CLI setup follows their
+documentation as read on 2026-11-27 and has not been run (the Gemini CLI documentation says Antigravity CLI
+replaced Gemini CLI in June 2026). Expect to adjust `agent-tools.md` on the first run with one of those two. On Windows, git creates the `.agents/skills` link
 only with `core.symlinks` enabled; without it, point the agent at `.claude/skills/`.
 
 

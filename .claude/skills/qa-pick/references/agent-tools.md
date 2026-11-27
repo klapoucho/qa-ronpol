@@ -1,10 +1,9 @@
 # Actions and agent tools
 
 The QA skills name actions, not tools. This table says what each action is in four coding agents.
-Only the Claude Code column has been used for real runs in this repository. The Codex, Gemini CLI and
-Antigravity columns come from their documentation or tool inspection (2026-11-27) and are unverified in
-full runs: check the agent's current docs when something does not work, and fix this file in the retro
-(§7 of `qa-pick`).
+The Claude Code and Antigravity columns have been used for full runs in this repository. The Codex and
+Gemini CLI columns come from their documentation (read 2026-11-27) and are unverified: check the agent's
+current docs when something does not work, and fix this file in the retro (§7 of `qa-pick`).
 
 | Action in the skills | Claude Code | Codex | Gemini CLI | Antigravity |
 |---|---|---|---|---|
