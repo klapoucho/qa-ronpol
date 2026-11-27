@@ -47,6 +47,7 @@ each checks the correct behaviour where the app has a known bug, so it counts as
 | ------------------------------------------------- | --------------------------------------------------------------- |
 | `npm test`                                        | the whole suite                                                 |
 | `npm run test:api` / `test:ui` / `test:ui-mocked` | one level                                                       |
+| `npm run test:ui-ledger`                          | the UI test that buys through the page (T4); `test:ui` skips it |
 | `npm run test:smoke`                              | tests tagged `@smoke`                                           |
 | `npm run check`                                   | type check, ESLint, Prettier and a test listing (no app needed) |
 | `npm run app:up` / `app:down` / `app:logs`        | start, stop or follow the app container                         |

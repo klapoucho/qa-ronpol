@@ -34,7 +34,9 @@ come from the app, and global setup checks it for every project.
   so a second checkout of this repo in a folder with another name starts a second container and hits the same
   error; use the app the first one started (`npm test` only needs `BASE_URL`).
 - **Without Docker.** Clone [Rolnopol](https://github.com/jaktestowac/rolnopol) and check out commit `fb7fd89`
-  (1.126.0; the repo has no version tags, and its `main` is newer), run `npm install` and `npm start`, and point
-  `BASE_URL` at it (port 3000 by default). The tests target 1.126.0; another version logs a warning and may
-  fail. A running clone writes to its tracked `data/*.json` files, so its working tree changes as tests run.
+  (1.126.0; the repo has no version tags, and its `main` is newer), run `npm install`, start it with
+  `SYNTHETIC_TOKEN=local-synthetic-token npm start`, and point `BASE_URL` at it (port 3000 by default). The app
+  has no default token, and without the one the tests send global setup stops the run (see Rate limit above).
+  The tests target 1.126.0; another version logs a warning and may fail. A running clone writes to its tracked
+  `data/*.json` files, so its working tree changes as tests run.
 
