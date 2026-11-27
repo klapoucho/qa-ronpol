@@ -91,6 +91,7 @@ One logical change per commit. Unrelated changes go into separate commits, or be
 
 ## AI-assisted work
 
-This project is built together with an AI coding agent (Claude Code), and that is stated openly.
-Commits the agent authored or co-authored end with a `Co-Authored-By:` trailer naming the model,
-and PRs it opened end with a "Generated with Claude Code" line. Keep them, never strip them.
+This project is built together with an AI coding agent (Claude Code so far), and that is stated openly.
+Commits an agent authored or co-authored end with a `Co-Authored-By:` trailer naming the model,
+and PRs it opened end with a "Generated with <agent>" line ("Generated with Claude Code"). Keep them,
+never strip them. The rules for agents are in [AGENTS.md](AGENTS.md).

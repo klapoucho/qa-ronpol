@@ -493,7 +493,7 @@ work tracked like a real backlog:
 - `gh` installed, version 2.99 or later (the Playwright CLI skill uses `--attach`).
 - Logged in as **`klapoucho`** with access to `klapoucho/qa-ronpol`. Another GitHub account is
   also logged in on the author's machine, so `gh api user --jq .login` must print `klapoucho`
-  before **every** `gh` command, reads included (as `CLAUDE.md` requires). On a mismatch, stop
+  before **every** `gh` command, reads included (as `AGENTS.md` requires). On a mismatch, stop
   and ask the author; the fix is `gh auth switch -u klapoucho`. The `qa-pick` coordinator runs
   this check before its first `gh` call, not only before assigning.
 - CI does not need `gh`; GitHub Actions uses its own token.
@@ -501,7 +501,8 @@ work tracked like a real backlog:
 ### Required adaptations before the first run
 
 - Copy the skills to `.claude/skills/` and commit them, so reviewers can read the workflow.
-- Add the **QA settings** section to `CLAUDE.md`: app URL, API base `/api/v1`, start command
+- Add the **QA settings** section to `AGENTS.md` (first written in `CLAUDE.md`, which now imports
+  it): app URL, API base `/api/v1`, start command
   `npm run app:up` (agents may start the app, never stop or reset it; section 9), how to create a
   user (`POST /api/v1/register`), framework and test folders, install `npm ci`, gate
   `npm run typecheck`, `npx eslint <files>`, `npx playwright test --list <files>`, main branch
@@ -509,7 +510,7 @@ work tracked like a real backlog:
   `jaktestowac/rolnopol`.
 - Move the `qa-pick` coordinator's account check (`gh api user --jq .login`) before its first
   `gh` read of the issue. The skill currently checks only before assigning.
-- Add the self-assignment exception to the rules in `CLAUDE.md`: `/qa-pick` may add the
+- Add the self-assignment exception to the rules in `AGENTS.md`: `/qa-pick` may add the
   `klapoucho` account as assignee of the issue it tests without asking. Every other GitHub write
   still needs approval.
 - **`.qa/` is committed, not ignored** (D-09). The skills assume it is ignored and pass absolute
@@ -527,6 +528,10 @@ work tracked like a real backlog:
 
 **Attribution.** As `CONTRIBUTING.md` requires: agent commits carry a `Co-Authored-By:` trailer
 and agent PRs a "Generated with Claude Code" line.
+
+**Other agents.** The rules live in `AGENTS.md` and the skills are linked at `.agents/skills`, so Codex
+and Gemini CLI find them without a plugin. Only Claude Code has been used for runs; see
+[ai-workflow.md](ai-workflow.md), "Other coding agents".
 
 ## 11. Definition of done
 
