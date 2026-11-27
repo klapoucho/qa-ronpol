@@ -1,7 +1,9 @@
 // Restores the app's base database. Only the author runs this (see docs/requirements.md, section 9).
-// It resets the dev environment only; another APP_ENV is refused (src/config/environments.ts).
-const appEnv = process.env.APP_ENV ?? 'dev';
-const baseUrl = process.env.BASE_URL ?? 'http://localhost:3000';
+// The target comes from the same config as the tests (APP_ENV, BASE_URL, .env), and only an
+// environment marked resettable in src/config/environments.ts may be reset.
+import { config } from '#src/config/index.ts';
+
+const baseUrl = config.BASE_URL;
 
 function fail(message: string): never {
   console.error(message);
@@ -18,22 +20,18 @@ function describe(error: unknown): string {
   return String(source);
 }
 
-if (appEnv !== 'dev') {
-  fail(`APP_ENV=${appEnv}: only the dev environment may be reset.`);
-}
-
-let url: URL;
-try {
-  url = new URL('/api/debug/database/restore-base', baseUrl);
-} catch {
-  fail(`Invalid BASE_URL "${baseUrl}": expected an absolute URL such as http://localhost:3000.`);
+if (!config.environment.resettable) {
+  fail(`APP_ENV=${config.APP_ENV}: this environment must not be reset.`);
 }
 
 let response: Response;
 try {
-  response = await fetch(url, { method: 'POST' });
+  response = await fetch(new URL('/api/debug/database/restore-base', baseUrl), {
+    method: 'POST',
+    headers: config.syntheticHeaders,
+  });
 } catch (error) {
-  fail(`Cannot reach ${baseUrl}: ${describe(error)}. Is the app running (npm run app:up)?`);
+  fail(`Cannot reach ${baseUrl}: ${describe(error)}. ${config.environment.whenUnreachable}`);
 }
 
 const body: unknown = await response.json().catch(() => undefined);

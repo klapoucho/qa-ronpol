@@ -27,7 +27,7 @@
     "app:up": "docker compose up --detach --wait",
     "app:down": "docker compose down",
     "app:logs": "docker compose logs --follow",
-    "app:reset": "node --env-file-if-exists=.env scripts/app-reset.ts",
+    "app:reset": "node scripts/app-reset.ts",
     "prepare": "husky"
   },
   "devDependencies": {
